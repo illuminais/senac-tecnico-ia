@@ -74,6 +74,7 @@ bgPreset: animate
 | **Geração de código** | Escreve e completa código enquanto o dev trabalha | Startups usando assistentes para acelerar desenvolvimento interno |
 | **Agente de suporte** | Sugere resposta ao atendente humano, que aprova antes de enviar | Agentes que ajudam o time, não o cliente direto |
 | **Fábrica de LLM local** | Modelo open source no servidor da empresa, dados não saem | Empresa com LLM próprio vendendo integrações sob medida |
+| **Geração e curadoria de arte** | IA cria imagens, vídeos ou trilhas sob demanda a partir de prompts | Uso de modelos como Stable Diffusion para criação de conteúdo visual |
 
 </SlideTable>
 
