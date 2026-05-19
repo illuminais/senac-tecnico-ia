@@ -13,7 +13,8 @@
       "Skill(grill-me)",
       "Skill(grill-me:*)",
       "Bash(curl -s http://localhost:3030)",
-      "Bash(awk '/^---$/{if\\(prev_dash\\){print NR\": double dash detectado\"}; prev_dash=1; next} /[^\\\\s]/{prev_dash=0} /^$/{next}' /home/leo-zanini/Documents/senac-tecnico-ia/aulas/05mai/A25_UC04+09_16mai/slides.md)"
+      "Bash(awk '/^---$/{if\\(prev_dash\\){print NR\": double dash detectado\"}; prev_dash=1; next} /[^\\\\s]/{prev_dash=0} /^$/{next}' /home/leo-zanini/Documents/senac-tecnico-ia/aulas/05mai/A25_UC04+09_16mai/slides.md)",
+      "Bash(gh api *)"
     ]
   }
 }
