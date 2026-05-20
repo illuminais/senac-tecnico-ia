@@ -26,6 +26,9 @@ desktop.ini
 *.swp
 *.swo
 
+# Obsidian vault
+.obsidian/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

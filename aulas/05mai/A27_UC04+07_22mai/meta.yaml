@@ -1,0 +1,21 @@
+# Metadados da Aula — Neural Slides
+# Preenchido pelo CLI ao rodar `course new`
+
+aula: "A27_UC04+07_22mai"
+slug: "a27-uc04-07-22mai"
+title: ""
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: []
+
+date: "TBD"
+
+# draft | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+slideCount: 0
+
+agentsUsed: []

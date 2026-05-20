@@ -1,10 +1,38 @@
-# Contexto — Desenvolvimento de Linguagem Python (D05-UC03)
+---
+schema: contexto-uc
+uc: UC05
+disciplina: Python para IA
+ha-total: 80
+ha-dado: 24
+ha-restante: 56
+trimestre-atual: T2
+---
 
-**Código:** D05-UC03  
-**UC:** UC03 — Desenvolvimento de Linguagem Python  
-**Disciplina:** Python para IA  
-**Carga Total:** 67h (80 HA) | `T1: 26 HA (ajustado: 20) · T2: 27 HA · T3: 27 HA`  
-**Peso no dia:** Pesado (3 HA/bloco, sempre no Bloco 1)
+# Contexto — UC05 Python para IA
+
+## Plano Anual
+
+| T | # | Tópico | HA | Status |
+|---|---|---|---|---|
+| T1 | 1 | vars · tipos · print · input · aritmética | 2 | ✅ A04 |
+| T1 | 2 | f-string · type() · conversão de tipo | 2 | ✅ A05 |
+| T1 | 3 | if/elif/else · operadores de comparação · lógicos | 4 | ✅ A08/A09 |
+| T1 | 4 | for · while · break · continue | 2 | ✅ A1x |
+| T1 | 5 | listas: criação · indexação · append · len · max · min | 2 | ✅ A1x |
+| T1 | 6 | funções: def · return (intro) | 1 | ✅ A04 |
+| T1 | 7 | módulos: import · random · math (intro leve) | 1 | ✅ A1x (parcial) |
+| T2 | 8 | tipos compostos: list slicing · dict · tuple · set | 3 | ⏳ A26 |
+| T2 | 9 | funções avançadas: parâmetros default · escopo · docstrings | 2 | ⬜ |
+| T2 | 10 | módulos aprofundados: random · math · os | 1 | ⬜ |
+| T2 | 11 | arquivos: open() · read() · write() · CSV | 2 | ⬜ |
+| T2 | 12 | try/except: exceções comuns · ZeroDivision · ValueError | 1 | ⬜ |
+| T2 | 13 | NumPy: arrays · operações vetorizadas · reshape | 3 | ⬜ |
+| T2 | 14 | pandas: read_csv · .head() · .describe() · filter · groupby | 4 | ⬜ |
+| T3 | 15 | matplotlib: plot · histogram · scatter | 2 | ⬜ |
+| T3 | 16 | sklearn: fit · predict · train_test_split | 3 | ⬜ |
+| T3 | 17 | projeto final: dataset real end-to-end | 4 | ⬜ |
+
+**Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
 
 ---
 
@@ -12,110 +40,66 @@
 
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 20 (ajustado) | 12 | 8 |
+| T1 | 26 | 24 | 0 (T1 encerrado, 2 HA de déficit absorvidos) |
 | T2 | 27 | 0 | 27 |
-| T3 | 27 | 0 | 27 |
+| T3 | 13 | 0 | 13 |
+
+---
+
+## Última Aula
+<!-- REPLACE a cada aula — não é append -->
+A25 · 16/05 · sem Python (Shark Tank Tech + Relatório de Visita Técnica)
 
 ---
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Elabora código conforme funcionalidades e características do aplicativo, na linguagem Python | Em andamento |
-| 2 | Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada | Pendente |
-| 3 | Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica (T2) | Pendente |
-| 4 | Utiliza bibliotecas de manipulação de dados para aplicações de IA (T3) | Pendente |
-
----
-
-## Aulas Realizadas
-
-| Aula | Data | HA (D05) | Tópicos Principais | Status |
-|---|---|---|---|---|
-| A01 | 26/02/2026 | 0 | Não trabalhada | - |
-| A02 | 27/02/2026 | ~0,5 | Reconhecimento do ambiente: VS Code, GitHub, Jupyter Notebook, onde rodar Python | Ministrada |
-| A03 | 05/03/2026 | 0 | Não trabalhada | - |
-| A04 | 06/03/2026 | ~2 | Variáveis, tipos (str/int/float/bool), `print()`, `input()`, operadores aritméticos (+, -, *, /, //, %, **), `if/elif/else`, `def/return`, ecossistema Python (Jupyter/Colab, pip) | Ministrada |
-| A05 | 12/03/2026 | ~2 | `print()` aprofundado: f-string, `sep`, `end`; consolidação de tipos com `type()` e armadilhas; `input()` + conversão de tipo: `float(input())`, `int(input())`; exercício livre: 3 notas via `input()`, cálculo de média manual com f-string — ~20 slides percorridos | Ministrada |
-| A06 | 13/03/2026 | 0 | Não trabalhada | - |
-| A07 | 19/03/2026 | 0 | Não trabalhada | - |
-| A08 | 20/03/2026 | ~2 | if/else (introdução e reforço), operadores lógicos `and`, `or`, `not`, tabela verdade | Ministrada |
-| A09 | 26/03/2026 | ~4 | Anatomia de variável + vocabulário técnico; tipos + `type()`; built-ins e `float(input())`; operadores de comparação (`==`, `!=`, `<`, `>`, `<=`, `>=`); `elif` em cadeias; comparação + `and`/`or`; tabela verdade revisão; desafio integrador — aula não rendeu, turma com grande dificuldade de solidificação; ~2 exercícios concluídos | Ministrada |
-| A10 | 27/03/2026 | ~2 | Gincana de Python em times: questões de código e leitura de output ("o que é impresso"); alunos engajaram bem; reforço de conceitos já vistos | Ministrada |
-
----
-
-## Conceitos Consolidados (não reintroduzir no mesmo nível)
-
-| Conceito | Aula | Nível de Profundidade |
-|---|---|---|
-| Ambientes Python (VS Code, Jupyter) | A02 | Reconhecimento |
-| Variáveis e atribuição | A04 | Introdutório |
-| Tipos de dados: str, int, float, bool | A04 | Introdutório |
-| `print()` básico | A04 | Introdutório |
-| `input()` básico | A04 | Introdutório |
-| Operadores aritméticos (+, -, *, /, //, %, **) | A04 | Introdutório |
-| `print()` aprofundado: f-string, `sep`, `end` | A05 | Introdutório |
-| `type()` para diagnóstico de tipo | A05 | Introdutório |
-| Conversão de tipo: `float()`, `int()`, `str()` | A05 | Introdutório |
-| `float(input())` e `int(input())` como padrão de leitura numérica | A05 | Introdutório |
-| Condicionais: `if/elif/else` básico | A08 | Introdutório |
-| Operadores lógicos: `and`, `or`, `not` | A08 | Introdutório |
-| Tabela verdade (and, or, not) | A08 | Introdutório |
-| Vocabulário técnico: operador de atribuição, built-in, argumento | A09 | Introdutório |
-| Operadores de comparação: `==`, `!=`, `<`, `>`, `<=`, `>=` | A09 | Introdutório |
-| `elif` em cadeias com múltiplos limiares | A09 | Introdutório |
-| Comparação + `and`/`or` no `if` | A09 | Introdutório |
-| Leitura e rastreamento de output de código (output tracing) | A10 | Reconhecimento |
-
----
-
-## Tópicos Pendentes no T1 (~10 HA restantes)
-
-> A09 cobriu: operadores de comparação, elif em cadeias, comparação + and/or, tabela verdade revisão, vocabulário técnico.
-
-| Seq. | Tópico | HA | Ind. |
+| Ind. | Descrição | Status T1 | Status T2 |
 |---|---|---|---|
-| — | ~~Operadores de comparação~~ | ~~0,5~~ | — |
-| — | ~~Condicionais com múltiplas condições + elif + lógico~~ | ~~1~~ | — |
-| 3 | Loops: `for` com `range()` e sobre listas, `while`, `break`, `continue` | 2 | 1 |
-| 4 | Listas: criação, indexação, `append`, `len`, `max`, `min`, `for` sobre listas | 2 | 1 |
-| 5 | Funções avançadas: parâmetros default, docstrings, escopo | 1,5 | 1 |
-| 6 | Módulos e importações: `import`, `random`, `math`, `os` | 2 | 2 |
-| 7 | Leitura e escrita de arquivos: `open()`, `read()`, `write()`, `.csv` | 2 | 2 |
-| 8 | Tratamento de erros: `try/except` | 1 | 1 |
-| 9 | Exercício integrador: mini-projeto com dados de IA | 1,5 | 1, 2 |
+| 1 | Elabora código conforme funcionalidades e características do aplicativo, em Python | Em andamento | — |
+| 2 | Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada | Pendente | — |
+| 3 | Realiza a depuração, verificando e corrigindo erros na programação (T2) | — | Pendente |
+| 4 | Utiliza bibliotecas de manipulação de dados para aplicações de IA (T3) | — | — |
 
 ---
 
-## Recomendações para o Próximo Encontro
+## Log de Execução
+<!-- APPEND-ONLY — nunca editar linhas existentes -->
 
-> A09 cobriu vocabulário técnico, operadores de comparação, elif em cadeias e comparação + lógico.
-> Próximo bloco Python: verificar se turma absorveu elif (via exercício N0 no início) e, se sim, iniciar `for` com `range()` — primeiro contato com loops.
-> Manter densidade baixa. Começar sempre com E0 (leitura de código) antes de qualquer exercício de escrita.
-> Se elif ainda fraco: fazer mais um exercício de elif antes de avançar para loops.
+| Aula | Data | HA | Tópicos | Feedback |
+|---|---|---|---|---|
+| A02 | 27/02 | ~0,5 | Reconhecimento de ambiente: VS Code, GitHub, Jupyter, onde rodar Python | introdutório, ok |
+| A04 | 06/03 | ~2 | vars, tipos, print, input, aritmética, if/elif/else (intro), def/return (intro) | ritmo lento, turma sem experiência prévia |
+| A05 | 12/03 | ~2 | f-string, sep, end; type(), conversão: float(), int(), str(); float(input()) como padrão | turma absorveu ~20 slides em 3 HA — densidade real muito abaixo do planejado |
+| A08 | 20/03 | ~2 | if/else, operadores lógicos and/or/not, tabela verdade | muita dificuldade, demorou muito para exercícios |
+| A09 | 26/03 | ~4 | vocabulário técnico, operadores de comparação, elif em cadeias, comparação + and/or | turma com grande dificuldade de solidificação; ~2 exercícios concluídos |
+| A10 | 27/03 | ~2 | Gincana Python em times: leitura de output, código | alunos engajaram bem; reforço de conceitos já vistos |
 
 ---
 
 ## Feedback de Campo
 
-| Data | Observacao | Acao tomada |
+| Data | Observação | Ação tomada |
 |---|---|---|
-| 2026-03-05 | Alunos sem nenhuma experiencia previa em programacao | Introducao ao Python iniciada em Fundamentos de Computacao com ritmo bem lento |
-| 2026-03-05 | Dinamicas em dupla funcionam melhor do que exercicios individuais para programacao | Estrutura de pares adotada como padrao para exercicios de codigo |
-| 2026-03-12 | Turma absorveu apenas ~20 slides em 3 HA de bloco Python | Densidade dos slides reduzida; planejamento A06 readequado para comecar com comparacao antes de loops |
-| 2026-03-12 | O unico exercicio completo da aula foi o EX-print() (sep, end, f-string) + exercicio livre do professor: 3 notas via input, calculo de media | Confirma que ritmo real e muito abaixo do planejado > planejar com 50% da densidade original |
-| 2026-03-20 | Alunos com muita dificuldade em if/else e operadores logicos; demorou muito para conseguir fazer exercicios | Reforcar logica booleana no inicio do proximo bloco Python; manter densidade baixa |
-| 2026-03-27 | Gincana de Python rendeu bastante; já notada dificuldade de alguns alunos em programar por conta própria | Próximas aulas com exercícios de escrita guiada; suporte individual para alunos com mais dificuldade |
-| 2026-03-27 | Professor deu chamada de atenção entre A09 e A10 nos alunos desmotivados — engajamento voltou na gincana | Manter postura firme de cobrança; dinâmicas em time ajudam a mobilizar quem trava sozinho |
+| 2026-03-05 | Alunos sem nenhuma experiência prévia em programação | Introdução ao Python iniciada com ritmo bem lento |
+| 2026-03-05 | Dinâmicas em dupla funcionam melhor do que exercícios individuais | Estrutura de pares adotada como padrão para exercícios de código |
+| 2026-03-12 | Turma absorveu apenas ~20 slides em 3 HA | Densidade reduzida; planejar com 50% da densidade original |
+| 2026-03-20 | Muita dificuldade em if/else e operadores lógicos | Reforçar lógica booleana no início de cada bloco Python |
+| 2026-03-27 | Gincana rendeu bastante; dificuldade de alguns em programar sozinhos | Exercícios de escrita guiada; suporte individual para alunos com mais dificuldade |
+| 2026-03-27 | Chamada de atenção entre A09 e A10 — engajamento voltou na gincana | Manter postura firme de cobrança; dinâmicas em time mobilizam quem trava sozinho |
 
 ---
 
-## Conexoes com Outras Disciplinas
+## Conexões com Outras Disciplinas
 
-| Conceito | Disciplina Relacionada | Observacao |
+| Conceito | Disciplina | Observação |
 |---|---|---|
-| GPU para treino | Arquitetura de Computadores e GPU | Python usa PyTorch/TF que dependem de GPU |
-| CSV como formato de dados | Fundamentos de Computacao | Base para Pandas e leitura de datasets |
-| Estatistica descritiva | Estatistica Aplicada a IA | Pandas describe() vai precisar desse embasamento |
+| set Python ↔ conjuntos formais (∪ ∩ −) | UC03 Fundamentos Matemáticos | Espelhar notação formal em A26 |
+| GPU para treino | UC06 Arquitetura de Computadores | Python usa PyTorch/TF que dependem de GPU |
+| CSV como formato de dados | UC01 Fundamentos de Computação | Base para pandas e leitura de datasets |
+| Estatística descritiva | UC09 Estatística Aplicada | pandas .describe() vai precisar desse embasamento |
+
+## Refs
+↑ [roteiro-t2](roteiro-t2.md)
+→ [semana01](semanas/semana01.md)
+→ [metodologias](../metodologias-ativas-senac.md)

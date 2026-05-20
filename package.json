@@ -109,7 +109,13 @@
     "export:a24-uc07-04-15mai": "npm run export --workspace=a24-uc07-04-15mai",
     "dev:a25-uc04-09-16mai": "npm run dev --workspace=a25-uc04-09-16mai",
     "build:a25-uc04-09-16mai": "npm run build --workspace=a25-uc04-09-16mai",
-    "export:a25-uc04-09-16mai": "npm run export --workspace=a25-uc04-09-16mai"
+    "export:a25-uc04-09-16mai": "npm run export --workspace=a25-uc04-09-16mai",
+    "dev:a26-uc04-05-21mai": "npm run dev --workspace=a26-uc04-05-21mai",
+    "build:a26-uc04-05-21mai": "npm run build --workspace=a26-uc04-05-21mai",
+    "export:a26-uc04-05-21mai": "npm run export --workspace=a26-uc04-05-21mai",
+    "dev:a27-uc04-07-22mai": "npm run dev --workspace=a27-uc04-07-22mai",
+    "build:a27-uc04-07-22mai": "npm run build --workspace=a27-uc04-07-22mai",
+    "export:a27-uc04-07-22mai": "npm run export --workspace=a27-uc04-07-22mai"
   },
   "devDependencies": {
     "@slidev/cli": "^0.49.0",

@@ -1,10 +1,51 @@
-# Contexto — Desenvolvimento de Banco de Dados (D08-UC06)
+---
+schema: contexto-uc
+uc: UC08
+disciplina: Banco de Dados
+ha-total: 80
+ha-dado: 21
+ha-restante: 59
+trimestre-atual: T2
+---
 
-**Código:** D08-UC06  
-**UC:** UC06 — Desenvolvimento de Banco de Dados  
-**Disciplina:** Banco de Dados  
-**Carga Total:** 67h (80 HA) | `T1: 26 HA (ajustado: 20) · T2: 27 HA · T3: 27 HA`  
-**Peso no dia:** Pesado (3 HA/bloco — sempre no Bloco 1)
+# Contexto — UC08 Banco de Dados
+
+## Plano Anual
+
+| T | # | Tópico | HA | Status |
+|---|---|---|---|---|
+| T1 | 1 | Dados sem estrutura → BD como solução · anatomia de tabela · SGBD | 1 | ✅ A06 |
+| T1 | 2 | SQL básico: SELECT · FROM · WHERE · ORDER BY · operadores · agregação | 2 | ✅ A06 |
+| T1 | 3 | Tipos SQL: INTEGER · VARCHAR · FLOAT · BOOLEAN · DDL vs DML | 1 | ✅ A08 |
+| T1 | 4 | CREATE TABLE · INSERT INTO · PK (intro) | 1 | ✅ A08 |
+| T1 | 5 | 4 Ds (DDL/DML/DQL/DCL) · ALTER TABLE · constraints (PK/NOT NULL/UNIQUE/DEFAULT) | 2 | ✅ A10 |
+| T1 | 6 | UPDATE · DELETE · TRUNCATE vs DROP · SELECT++ (LIMIT/DISTINCT/AS) | 1 | ✅ A10 |
+| T2 | 7 | FK (chave estrangeira) · INNER JOIN | 2 | ⏳ A27 |
+| T2 | 8 | Mini-projeto: BD notas com SQLite | 2 | ⬜ |
+| T2 | 9 | Python + SQLite: sqlite3 · cursor.execute() · fetchall() | 2 | ⬜ |
+| T2 | 10 | SQL-DCL: USER · GRANT · REVOKE · perfis de acesso | 2 | ⬜ |
+| T2 | 11 | SQL-DQL avançado: GROUP BY · HAVING · subqueries | 3 | ⬜ |
+| T2 | 12 | Transações: BEGIN · COMMIT · ROLLBACK | 1 | ⬜ |
+| T2 | 13 | Normalização: 1NF · 2NF · 3NF | 3 | ⬜ |
+| T2 | 14 | Views e índices: CREATE VIEW · CREATE INDEX | 2 | ⬜ |
+| T3 | 15 | Backup: DUMP · restauração · tipos de backup | 2 | ⬜ |
+| T3 | 16 | Armazenamento: importação/exportação de dados | 2 | ⬜ |
+| T3 | 17 | Projeto final: BD completo para aplicação de IA | 6 | ⬜ |
+
+**Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
+
+---
+
+## Estratégia Pedagógica Central — Excel como Andaime
+
+**Decisão permanente do professor (12/03/2026):** nunca abrir SQL direto. Sequência: Excel que os alunos conhecem → problema real com Excel caótico → BD como solução → SQL como linguagem do BD.
+
+| Conceito BD | Analogia Excel |
+|---|---|
+| Tabela | Planilha (aba) |
+| Chave primária | Sem equivalente direto — ID único que nunca repete |
+| Chave estrangeira | =Aba!A2 (referência entre abas) → ponteiro formal |
+| SELECT | Filtro / PROCV — mas padronizado e sem mouse |
 
 ---
 
@@ -12,196 +53,43 @@
 
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 20 (ajustado) | 9 | 11 |
+| T1 | 26 | 21 | 0 (T1 encerrado, 5 HA de déficit absorvidos) |
 | T2 | 27 | 0 | 27 |
 | T3 | 27 | 0 | 27 |
 
 ---
 
-## Indicadores Curriculares — Completos
+## Última Aula
+<!-- REPLACE a cada aula — não é append -->
+A25 · 16/05 · sem BD (Shark Tank Tech + Relatório de Visita Técnica)
 
-| Ind. | Descrição | Trimestre | Status |
+---
+
+## Indicadores Curriculares
+
+| Ind. | Descrição | Status T1 | Status T2 |
 |---|---|---|---|
-| 1 | Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura | T1 | Pendente |
-| 2 | Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação | T1 | Pendente |
-| 3 | Cria a estrutura física de banco de dados, de acordo com os requisitos da aplicação e da modelagem de dados | T1–T2 | Pendente |
-| 4 | Gerencia a permissão de acesso ao banco de dados, de acordo com o perfil do usuário e as políticas de acesso | T2 | Pendente |
-| 5 | Cria e manipula consultas SQL de forma adequada para resolução de problemas | T2–T3 | Pendente |
-| 6 | Cria e manipula armazenamento e backup de banco de dados | T3 | Pendente |
+| 1 | Propõe alteração no acesso aos dados de acordo com os relacionamentos físicos | Pendente | — |
+| 2 | Seleciona o SGBD de acordo com as necessidades da aplicação | Pendente | — |
+| 3 | Cria a estrutura física de BD de acordo com requisitos e modelagem | Pendente | — |
+| 4 | Gerencia permissão de acesso ao BD conforme perfil do usuário | — | Pendente |
+| 5 | Cria e manipula consultas SQL para resolução de problemas | — | Pendente |
+| 6 | Cria e manipula armazenamento e backup de BD | — | — |
 
 ---
 
-## Elementos de Competência (Conhecimentos) — Currículo Oficial
+## Log de Execução
+<!-- APPEND-ONLY — nunca editar linhas existentes -->
 
-> Fonte: documento de competências do curso. Usar como referência ao sequenciar tópicos.
-
-| Conhecimento | Trimestre sugerido |
-|---|---|
-| SGBD: conceito, estrutura, requisitos de software e hardware | T1 |
-| Banco de dados: características, arquitetura relacional e não relacional | T1 |
-| Modelos de BD: conceitual, lógico e físico | T1 |
-| Análise de requisitos funcionais e não funcionais | T1 |
-| Dados e domínios: tipos, conceito e aplicabilidade | T1 |
-| Níveis de restrição de integridade: tabela, atributos e relacionamento | T1–T2 |
-| SQL-DDL: `CREATE`, `ALTER`, `DROP`, `TRUNCATE` | T1–T2 |
-| SQL-DCL: `USER`, `GRANT`, `REVOKE` | T2 |
-| SQL-DQL: `SELECT` | T1–T2 |
-| SQL-DML: `INSERT`, `DELETE`, `UPDATE` | T2 |
-| Normalização; performance: índices, views, `JOIN` | T2–T3 |
-| Serviço do mecanismo de BD: iniciar, parar, pausar, timeout, reinicialização | T2–T3 |
-| Backup: restauração, conceitos, tipos | T3 |
-| Armazenamento: importação e exportação de dados | T3 |
-
----
-
-## Estratégia Pedagógica Central — Excel como Andaime
-
-> **Decisão do professor (12/03/2026):** a disciplina de BD começa SEMPRE com analogias de Excel.
-> Nunca abrir SQL direto. A sequência de andaimes é:
-> 1. Excel que os alunos já conhecem → 2. Problema real com Excel caótico → 3. BD como solução → 4. SQL como linguagem do BD
-
-**Mapa de analogias:**
-
-| Conceito de BD | Analogia Excel | O que muda no BD |
-|---|---|---|
-| Tabela | Planilha (aba) | Estrutura rígida, tipagem por coluna |
-| Coluna/campo | Coluna da planilha | Tem tipo fixo: TEXT, INT, DECIMAL… |
-| Linha/registro | Linha da planilha | Cada linha é uma "entrada" de dados |
-| Chave primária | Nenhum equivalente direto | ID único que nunca se repete |
-| Chave estrangeira | Célula que referencia outra aba (=Aba!A2) | Ponteiro formal entre tabelas |
-| SQL SELECT | Filtro / PROCV | Linguagem padronizada, não depende de mouse |
-| SQL INSERT | Nova linha digitada | Comando explícito, auditável |
-| SGBD | O próprio Excel | Software que gerencia o arquivo de dados |
-
----
-
-## Resumo por Aula
-
-| Aula | Data | HA | Conteúdo |
-|---|---|---|---|
-| A01–A05 | 26/02–12/03/2026 | 0 | Não trabalhada |
-| A06 | 13/03/2026 | 3 | INÍCIO — ver abaixo |
-| A07 | 19/03/2026 | 0 | Não trabalhada |
-| A08 | 20/03/2026 | ~3 | Tipos de dados, CREATE TABLE, INSERT INTO — ver abaixo |
-| A10 | 27/03/2026 | 3 | Os 4 Ds (DDL/DML/DQL/DCL), ALTER TABLE, constraints (PK/NOT NULL/UNIQUE/DEFAULT), UPDATE, DELETE, TRUNCATE vs DROP, SELECT++ (LIMIT/DISTINCT/AS) — ver abaixo |
-
----
-
-## Aulas Realizadas
-
-### A06 — 13/03/2026 (~3 HA)
-
-**Tópicos cobertos:**
-- Dados no cotidiano: ações comuns geram dados (Waze, Instagram, Google)
-- Evolução da organização: caderno → planilha Excel → banco de dados
-- Anatomia de uma tabela: campo (coluna), registro (linha), chave primária (id único)
-- SGBD: conceito, por que o Excel tem limites (1M registros, simultaneidade, segurança)
-- Excel e SQL: mapeamento de ações Excel para palavras-chave SQL
-- SQL básico: `SELECT`, `FROM`, `WHERE`, `ORDER BY`
-- Operadores SQL: comparação (`=`, `<>`, `<`, `>`, `<=`, `>=`) e lógicos (`AND`, `OR`, `NOT`)
-- Funções de agregação: `COUNT`, `SUM`, `MAX`, `MIN`, `AVG`
-- Exercícios práticos: montar tabela de loja de games, traduzir 4 queries para SQL
-- Dinâmica: Verdade ou Mito sobre Banco de Dados
-
-**Dinâmicas que funcionaram:** Hook “Qual o tamanho do Excel do iFood?” (600M pedidos) gerou engajamento alto.
----
-
-### A07 — 19/03/2026
-
-**Não trabalhada** (Sem2 Qui — bloco de Transformação Digital / Fundamentos de Computação)
-
----
-
-### A08 — 20/03/2026 (~3 HA)
-
-**Tópicos cobertos:**
-- Tipos de dados: `INTEGER`, `VARCHAR` (com tamanho), `FLOAT`, `BOOLEAN`
-- DDL vs DML: DDL modifica estrutura (CREATE, ALTER, DROP); DML manipula dados (INSERT, UPDATE, DELETE)
-- `CREATE TABLE`: sintaxe completa com tipos de dados e constraints
-- `INSERT INTO`: inserção de registros na tabela
-- Constraints: `PRIMARY KEY` e `NOT NULL` — vistos por cima, sem aprofundamento
-
-**Feedback do professor:** Foram 3 aulas seguidas de BD (referência ao bloco de A06 + continuação em A08).
----
-
-### A10 — 27/03/2026 (~3 HA)
-
-**Tópicos cobertos:**
-- Os 4 Ds do SQL: DDL, DML, DQL, DCL — visão panorâmica com tabela de comandos
-- `ALTER TABLE`: ADD COLUMN, RENAME COLUMN, DROP COLUMN
-- Constraints aprofundadas: `PRIMARY KEY`, `NOT NULL`, `UNIQUE`, `DEFAULT` — com exemplos e analogia Excel
-- DML completo: `UPDATE` com `WHERE` (e perigo de UPDATE sem WHERE), `DELETE` com `WHERE`
-- `TRUNCATE TABLE` vs `DROP TABLE` vs `DELETE FROM` — diferenças práticas
-- DQL avançado: `LIMIT`, `DISTINCT`, `AS` (alias)
-- Exercícios: UPDATE na tabela `produto`, DELETE com condição, SELECT com LIMIT/DISTINCT/AS
-- Contexto de IA: tabela `modelo_ia` usada como exemplo central
-- DCL (`GRANT`/`REVOKE`) apresentado no mapa final — aprofundamento previsto para T2
----
-
-## Conceitos Consolidados (não reintroduzir no mesmo nível)
-
-| Conceito | Aula | Nível de Profundidade |
-|---|---|---|
-| Tabela: campo, registro, estrutura bidimensional | A06 | Introdutório |
-| Chave primária (PK): identificador único, não se repete | A06 | Introdutório |
-| SGBD: conceito, limitações do Excel como “pseudo-SGBD” | A06 | Introdutório |
-| SQL: `SELECT`, `FROM`, `WHERE`, `ORDER BY` | A06 | Introdutório |
-| Operadores de comparação SQL: `=`, `<>`, `<`, `>`, `<=`, `>=` | A06 | Introdutório |
-| Operadores lógicos SQL: `AND`, `OR`, `NOT` | A06 | Introdutório |
-| Funções de agregação: `COUNT`, `SUM`, `MAX`, `MIN`, `AVG` | A06 | Introdutório |
-| Tipos de dados SQL: `INTEGER`, `VARCHAR`, `FLOAT`, `BOOLEAN` | A08 | Introdutório |
-| DDL vs DML: conceitos | A08 | Introdutório |
-| `CREATE TABLE` com tipos e constraints | A08 | Introdutório |
-| `INSERT INTO`: inserção de registros | A08 | Introdutório |
-| `PRIMARY KEY`: constraint de chave primária | A08 | Reconhecimento |
-| `NOT NULL`: constraint de obrigatoriedade | A08 | Reconhecimento || `ALTER TABLE`: ADD/RENAME/DROP COLUMN | A10 | Introdutório |
-| `NOT NULL`, `UNIQUE`, `DEFAULT`: constraints completas | A10 | Introdutório |
-| `UPDATE` com `WHERE` | A10 | Introdutório |
-| `DELETE` com `WHERE` | A10 | Introdutório |
-| `TRUNCATE TABLE` vs `DROP TABLE` | A10 | Reconhecimento |
-| `LIMIT`, `DISTINCT`, `AS` no SELECT | A10 | Introdutório |
----
-
-## Sequência Planejada T1 (20 HA) — com Andaime Excel
-
-| Seq. | Tópico | HA | Ind. | Analogia Excel usada |
+| Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
-| 1 | O problema dos dados sem estrutura: Excel caótico → necessidade de BD | 1 | — | Planilha com dados duplicados, coluna "nome" com 3 formatos diferentes |
-| 2 | O que é BD: tabelas, campos, registros, tipos de dado. Relacional vs NoSQL | 2 | 1, 2 | Planilha → tabela; aba → tabela separada; célula tipada |
-| 3 | Chave primária e chave estrangeira: relacionamentos entre tabelas | 2 | 1 | =Aba!A2 no Excel vs FK formal |
-| 4 | SGBDs: SQLite (zero instalação), PostgreSQL, MySQL, MongoDB — quando usar | 1 | 2 | "Excel é um SGBD? Mais ou menos..." |
-| 5 | Modelagem conceitual: DER simplificado (retângulos e linhas) | 2 | 1, 3 | Diagrama de abas do Excel com setas |
-| 6 | SQL-DDL: `CREATE TABLE`, `ALTER TABLE`, `DROP TABLE` | 2 | 3 | Criar/renomear/deletar aba no Excel |
-| 7 | SQL-DQL básico: `SELECT`, `FROM`, `WHERE`, `ORDER BY`, `LIMIT` | 3 | 3, 5 | Filtro e PROCV do Excel → SELECT com WHERE |
-| 8 | SQL-DML: `INSERT INTO`, `UPDATE`, `DELETE` | 2 | 3 | Digitar linha, editar célula, deletar linha no Excel |
-| 9 | Mini-projeto: criar BD de notas de alunos com SQLite — sem Python ainda | 3 | 3 | "Sua planilha de notas, mas em SQL" |
-| 10 | Python + SQLite: `import sqlite3`, `cursor.execute()`, `fetchall()` | 2 | 1, 3 | Conexão pelo código em vez do mouse |
-
----
-
-## Pré-requisitos dos Alunos
-
-| Conceito | Origem | Nível |
-|---|---|---|
-| Planilhas Excel/Calc | UC01 A01–A04 | Reconhecimento / Introdutório |
-| Tipos de dados (str, int, float) | UC05 A04–A05 | Introdutório |
-| snake_case e nomenclatura profissional | UC05 + UC01 | Introdutório |
-| Dados estruturados (tabelas) | UC01 (Calc) | Reconhecimento |
-
----
-
-## Vocabulário de SQL/BD a Introduzir
-
-| Termo | Definição | Status |
-|---|---|---|
-| tabela | estrutura bidimensional de dados (linhas × colunas) | **Introduzido A06** |
-| campo/coluna | atributo de uma entidade — tem tipo fixo | **Introduzido A06** |
-| registro/linha | uma instância/entrada de dados | **Introduzido A06** |
-| chave primária (PK) | identificador único de cada registro, nunca se repete | **Introduzido A06** |
-| chave estrangeira (FK) | campo que referencia a PK de outra tabela | Pendente |
-| SGBD | software que gerencia o banco de dados | **Introduzido A06** |
-| SQL | linguagem padrão para consultar e manipular dados | **Introduzido A06** |
-| relacional | modelo baseado em tabelas com relacionamentos formais | **Introduzido A06** |
+| A06 | 13/03 | 6 | Dados no cotidiano · tabela · SGBD · Excel vs BD · SELECT/FROM/WHERE/ORDER BY · operadores · COUNT/SUM/MAX/MIN/AVG | 6h registradas no sistema (bloco duplo); hook "iFood" gerou engajamento alto |
+| A08 | 20/03 | 2 | Tipos SQL (INTEGER/VARCHAR/FLOAT/BOOLEAN) · DDL vs DML · CREATE TABLE · INSERT INTO · PK e NOT NULL (intro rápida) | constraints vistas por cima, sem aprofundamento |
+| A10 | 27/03 | 3 | 4 Ds (DDL/DML/DQL/DCL) · ALTER TABLE · constraints completas (PK/NOT NULL/UNIQUE/DEFAULT) · UPDATE · DELETE · TRUNCATE vs DROP · LIMIT/DISTINCT/AS | DCL apresentado no mapa, aprofundar T2 |
+| A?? | 10/04 | 2 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A?? | 17/04 | 2 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A?? | 24/04 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A?? | 08/05 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
 
 ---
 
@@ -209,30 +97,22 @@
 
 | Data | Observação | Ação tomada |
 |---|---|---|
-| 2026-03-12 | Professor decide usar Excel como andaime pedagógico antes de qualquer SQL | Estratégia registrada como diretriz permanente da disciplina |
-| 2026-03-20 | Foram 3 aulas seguidas de BD (nota do professor — A06 3HA + A08 3HA); constraints PRIMARY KEY e NOT NULL vistos por cima sem aprofundamento | Reforçar constraints na próxima aula antes de avançar |
-| 2026-03-27 | A10 rendeu de certa forma mas ritmo ainda lento; turma relembrou tipos de dados, constraints, 4 D's, CREATE TABLE, INSERT INTO e UPDATE | Conteudo consolidado via revisao; proximo passo: chave estrangeira (FK) e JOIN |
+| 2026-03-12 | Decidido usar Excel como andaime antes de qualquer SQL | Diretriz permanente da disciplina |
+| 2026-03-20 | Constraints PK e NOT NULL vistas por cima — sem aprofundamento | Reforçar constraints antes de avançar para FK |
+| 2026-03-27 | Turma relembrou bem via revisão; ritmo lento mas progresso | Próximo passo: FK + JOIN |
 
 ---
 
-## Recomendações para o Próximo Encontro (A09+)
+## Conexões com Outras Disciplinas
 
-> A10 cobriu: os 4 Ds (DDL/DML/DQL/DCL), ALTER TABLE, constraints (PRIMARY KEY/NOT NULL/UNIQUE/DEFAULT), UPDATE, DELETE, TRUNCATE, SELECT++ (LIMIT/DISTINCT/AS).
-> DCL (GRANT/REVOKE) apresentado no mapa — aprofundar em T2.
-> Próximo passo: chave estrangeira (FK) e JOIN entre tabelas.
-| SGBD | Sistema de Gerenciamento de Banco de Dados | **Introduzido A06** |
-| SQLite | BD relacional embutido — arquivo único `.db` | Pendente |
-| query | consulta SQL | **Introduzido A06** |
-| SELECT | comando SQL para recuperar dados | **Introduzido A06** |
-| JOIN | operação de combinação entre tabelas | Pendente |
+| Conceito | Disciplina | Observação |
+|---|---|---|
+| tipos de dados (str/int/float) | UC05 Python | Mapear Python types ↔ SQL types na introdução |
+| CSV como formato | UC01 Fundamentos | Base para importação e pandas |
+| LGPD e acesso a dados | UC07 Transformação Digital | Conectar ao falar em DCL (GRANT/REVOKE) |
+| sqlite3 em Python | UC05 Python | python + BD integrado — mostrar junto com pandas |
 
----
-
-## Regras para o Copilot
-
-1. **Primeira aula:** Começar com "o problema antes do BD" — planilha caótica vs BD estruturado
-2. **SQLite sempre primeiro:** Funciona no Google Colab sem instalação — contexto de IA
-3. **Python + SQL desde cedo:** Mostrar `sqlite3` nas primeiras aulas de SQL
-4. **snake_case para tudo:** tabelas = `modelo_ml`, `resultado_treino`; campos = `epoch_num`, `loss_value`
-5. **Dataset de IA como contexto:** As tabelas de exercícios são sempre de resultados de modelos, logs de predição, catálogo de datasets
-6. **Segurança:** Conectar com LGPD (D07) sempre que falar em permissões e acesso a dados
+## Refs
+↑ [roteiro-t2](roteiro-t2.md)
+→ [semana01](semanas/semana01.md)
+→ [metodologias](../metodologias-ativas-senac.md)

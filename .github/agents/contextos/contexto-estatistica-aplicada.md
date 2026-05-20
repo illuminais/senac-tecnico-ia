@@ -1,9 +1,35 @@
-# Contexto — Estatística Aplicada e Lógica Matemática em IA (UC09)
+---
+schema: contexto-uc
+uc: UC09
+disciplina: Estatística Aplicada e Lógica Matemática em IA
+ha-total: 40
+ha-dado: 12
+ha-restante: 28
+trimestre-atual: T2
+---
 
-**Código:** UC09  
-**UC:** UC09 — Utilização da Estatística Aplicada e Lógica Matemática em IA  
-**Disciplina:** Estatística Aplicada e Lógica Matemática  
-**Carga Total:** 33h (40 HA) | `T1: 13 HA (ajustado: 11) · T2: 14 HA · T3: 13 HA`
+# Contexto — UC09 Estatística Aplicada e Lógica Matemática em IA
+
+## Plano Anual
+
+| T | # | Tópico | HA | Status |
+|---|---|---|---|---|
+| T1 | 1 | Função linear: y=ax+b · coeficientes · Python def f(x) | 1 | ✅ A05 |
+| T1 | 2 | Funções polinomial · exponencial · logarítmica · Kahoot | 3 | ✅ A06 |
+| T2 | 3 | pandas: read_csv · .head() · .describe() | 1 | ⏳ A27 |
+| T2 | 4 | Média vs mediana: robustez a outlier · mean() vs median() em Python | 1 | ⏳ A27 |
+| T2 | 5 | Exercício guiado: modelos_ia.csv completo | 1 | ⏳ A27 |
+| T2 | 6 | Variáveis: qualitativas vs quantitativas · discretas vs contínuas | 1 | ⬜ |
+| T2 | 7 | Probabilidades básicas: espaço amostral · P(A) · P(A∩B) | 2 | ⬜ |
+| T2 | 8 | matplotlib: scatter · hist · personalização de eixos | 2 | ⬜ |
+| T2 | 9 | Exercício integrador: CSV → gráfico → média/mediana → conclusão | 2 | ⬜ |
+| T3 | 10 | Frequência: absoluta · relativa · tabela de frequências | 2 | ⬜ |
+| T3 | 11 | Variância e desvio padrão: np.std() · np.var() · o que medem | 2 | ⬜ |
+| T3 | 12 | Distribuição normal: curva de Gauss · regra 68-95-99.7 | 2 | ⬜ |
+| T3 | 13 | Correlação: Pearson · scatter matrix · heatmap | 2 | ⬜ |
+| T3 | 14 | Projeto final: análise estatística de dataset de IA | 3 | ⬜ |
+
+**Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
 
 ---
 
@@ -11,93 +37,70 @@
 
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 11 (ajustado) | 4 | 7 |
-| T2 | 14 | 0 | 14 |
+| T1 | 13 | 9 | 0 (T1 encerrado, 4 HA de déficit absorvidos) |
+| T2 | 14 | 3 | 11 |
 | T3 | 13 | 0 | 13 |
+
+> T1 encerrado com déficit de 7 HA — conteúdo de pandas/matplotlib/estatística descritiva migrado para T2.
+
+---
+
+## Última Aula
+<!-- REPLACE a cada aula — não é append -->
+A25 · 16/05 · sem UC09 (Shark Tank Tech + Relatório de Visita Técnica)
 
 ---
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Compreende e aplica funções matemáticas lineares | 🟡 Em andamento (A05–A06) |
-| 2 | Compreende e aplica funções matemáticas polinomiais | 🟡 Em andamento (A06) |
-| 3 | Compreende e aplica funções matemáticas logarítmicas | 🟡 Em andamento (A06) |
-| 4 | Compreende e aplica funções matemáticas exponenciais | 🟡 Em andamento (A06) |
-| 5 | Relaciona probabilidades básicas em situações presentes no cotidiano (T2) | Pendente |
-| 6 | Distingue variáveis qualitativas e quantitativas em conjuntos de dados (T2) | Pendente |
-| 7 | Diferencia dados discretos de contínuos para representação estatística (T2–T3) | Pendente |
-| 8 | Calcula e interpreta frequência absoluta e relativa (T3) | Pendente |
-| 9 | Calcula e interpreta medidas de tendência central (média, mediana, moda) (T3) | Pendente |
-| 10 | Calcula e interpreta variância e desvio padrão em distribuições (T3) | Pendente |
-
----
-
-## Resumo por Aula
-
-| Aula | Data | HA | Conteúdo |
+| Ind. | Descrição | Status T1 | Status T2 |
 |---|---|---|---|
-| A01 | 26/02/2026 | 0 | Não trabalhada |
-| A02 | 27/02/2026 | 0 | Não trabalhada |
-| A03 | 05/03/2026 | 0 | Não trabalhada |
-| A04 | 06/03/2026 | 0 | Não trabalhada |
-| A05 | 12/03/2026 | ~1 | **INICIO:** Conceito de função `y = f(x)`, função linear `y = ax + b`, coeficiente angular `a` e coeficiente linear `b`, implementação em Python: `def f_linear(x, a, b): return a*x + b` |
-| A06 | 13/03/2026 | ~3 | Revisão e aprofundamento função linear (Uber, salário, água); função polinomial `f(x)=ax²+bx+c` (frenagem de carro, parábola, área); função exponencial `f(x)=a·bˣ` (post viral, juros compostos, crescimento de dados); função logarítmica `f(x)=log_b(x)` (Richter, decíbeis, faturamentos); exercício em dupla: identificar tipo de função em 5 situações; Kahoot 10 perguntas |
-| A07 | 19/03/2026 | 0 | Não trabalhada (Sem2-Qui — bloco UC07/UC01/UC02) |
-| A08 | 20/03/2026 | 0 | Não trabalhada (Sem2-Sex — bloco UC05/UC08/UC06) |
-| A09 | 26/03/2026 | 0 | Não trabalhada (Sem1-Qui — bloco UC05/UC03/UC04) |
-| A10 | 27/03/2026 | 0 | Não trabalhada — bloco da Sem1-Sex foi gincana Python (UC05) + SQL extenso (UC08); UC09 não chegou a ser aberta |
+| 1 | Compreende e aplica funções matemáticas lineares | Em andamento | — |
+| 2 | Compreende e aplica funções matemáticas polinomiais | Em andamento | — |
+| 3 | Compreende e aplica funções matemáticas logarítmicas | Em andamento | — |
+| 4 | Compreende e aplica funções matemáticas exponenciais | Em andamento | — |
+| 5 | Relaciona probabilidades básicas em situações do cotidiano (T2) | — | Pendente |
+| 6 | Distingue variáveis qualitativas e quantitativas em conjuntos de dados (T2) | — | Pendente |
+| 7 | Diferencia dados discretos de contínuos para representação estatística (T2–T3) | — | Pendente |
+| 8 | Calcula e interpreta frequência absoluta e relativa (T3) | — | — |
+| 9 | Calcula e interpreta medidas de tendência central (T3) | — | — |
+| 10 | Calcula e interpreta variância e desvio padrão (T3) | — | — |
 
 ---
 
-## Pré-requisitos dos Alunos
+## Log de Execução
+<!-- APPEND-ONLY — nunca editar linhas existentes -->
 
-Conceitos que os alunos já têm (relevantes para esta disciplina):
-- **Operadores aritméticos Python:** `+, -, *, /, //, **` — vistos em UC05 A04
-- **Funções `def/return`:** Vistos em UC05 A04 — conectar `f(x)` matemático com `def f(x):`
-- **UC03:** Verificar antes de cada aula o que foi coberto lá — não repetir
-
----
-
-## Sequência Planejada T1 (11 HA, 1 HA/aula)
-
-| Seq. | Tópico | HA | Ind. | Conexão IA |
+| Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
-| 1 | Função linear: `y = ax + b`, coeficientes, gráfico | 1 | 1 | Regressão linear — prever preço de GPU por ano |
-| 2 | Função linear: predição prática, erro de predição (MAE intuitivo) | 1 | 1 | Exercício: prever custo de treino com n epochs |
-| 3 | Função polinomial: quadrática, raízes, gráfico em forma de U | 1 | 2 | Curva de loss em overfitting (formato U) |
-| 4 | Função polinomial: cúbica e comportamento — padrões em séries temporais | 1 | 2 | Previsão de demanda em sazonalidade |
-| 5 | matplotlib + numpy: importar, plotar `y = ax + b` em Python, personalizar eixos | 1 | 1 | Primeiro gráfico real — "ver a reta que vocês calcularam" |
-| 6 | Scatter plot: dados reais (~8 pontos, ex: horas de estudo vs nota), observar tendência visual | 1 | 1 | Dataset de exemplo tabular simples |
-| 7 | Pandas: `read_csv`, `.head()`, `.describe()` — explorar dataset aberto real | 1 | 1–2 | Primeiro contato com DataFrame |
-| 8 | Média e mediana: `np.mean()`, `np.median()` — o que dizem sobre os dados; linha de média no gráfico | 1 | 1 | Estatística descritiva + visual lado a lado |
-| 9 | Exercício integrador (pt.1): carregar CSV → scatter → calcular média/mediana → gráfico final | 1 | 1–4 | Dataset aberto (temperaturas, preços, notas) |
-| 10–11 | Exercício integrador (pt.2): análise em dupla → gráfico + conclusão em 3 linhas → apresentar | 2 | 1–4 | Laboratório de dados completo |
+| A05/A06 | 12–13/03 | ~4 | Função linear (y=ax+b, coef. angular/linear, Python def f_linear) · f. polinomial · f. exponencial · f. logarítmica · Kahoot | Registros informais — sistema não registrou essas datas como UC09 |
+| A?? | 27/03 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A?? | 24/04 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A?? | 08/05 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A25 | 16/05 | 3 | T2 — tópicos não registrados no contexto | — |
 
 ---
 
-## Vocabulário a Introduzir
+## Feedback de Campo
 
-| Termo | Definição | Status |
+| Data | Observação | Ação tomada |
 |---|---|---|
-| função linear | f(x) = ax + b — relação proporcional | **Introduzido A05** |
-| coeficiente angular | `a` = inclinação da reta | **Introduzido A05** |
-| coeficiente linear | `b` = onde a reta cruza o eixo y | **Introduzido A05** |
-| matplotlib | biblioteca Python para criar gráficos (`plt.plot`, `plt.scatter`, `plt.show`) | Pendente — A18 |
-| numpy | biblioteca para cálculos numéricos com arrays (`np.mean`, `np.median`, `np.array`) | Pendente — A18 |
-| pandas | biblioteca para dados tabulares — `DataFrame`, `read_csv`, `.describe()` | Pendente — A18 |
-| scatter plot | gráfico de pontos — cada ponto é um par (x, y) de dados reais | Pendente — A18 |
-| dataset | conjunto de dados estruturado em linhas e colunas para análise | Pendente — A18 |
-
+| 2026-03-12 | Python def/return já visto em UC05 — ponto de entrada natural para f(x) matemático | Conectar sempre math notation ↔ código Python |
+| 2026-03-13 | Kahoot funcionou bem como revisão; exemplos do cotidiano (Richter, juros) engajaram | Manter contextos reais e Brazilian-daily em todos os exercícios |
 
 ---
 
-## Regras para o Copilot
+## Conexões com Outras Disciplinas
 
-1. **Metodologia obrigatória:** Python + matplotlib + numpy + pandas em todo bloco UC09 — nunca gerar teoria pura sem código rodável em aula.
-2. **Baseline da turma:** Alunos sabem função linear y=ax+b (conceito), Python básico (variáveis, if, for, print, f-string). **Não assumir nenhum conhecimento de NumPy/Pandas/matplotlib** — introduzir do zero com scaffold visual.
-3. **Coordenar com UC03:** Verificar `contexto-fundamentos-matematicos.md` antes de gerar — nunca repetir conteúdo matemático já coberto lá.
-4. **1 HA = 1 conceito + 1 exercício em código:** Sempre terminar com alunos tendo um gráfico ou cálculo rodando na tela.
-5. **Datasets reais e abertos:** Usar CSVs simples (dados públicos, Kaggle) — não inventar dados fictícios. Preferir contextos próximos: notas, temperaturas, preços locais.
-6. **Sem funções avançadas em T1:** sigmoid, softmax, log, exponencial não são o foco agora — focar em linear + matplotlib + estatística descritiva básica até a turma consolidar o laboratório de dados.
+| Conceito | Disciplina | Observação |
+|---|---|---|
+| def/return Python | UC05 Python | f(x) matemático = def f(x): return em Python — usar sempre |
+| Funções (linear, log, exp) | UC03 Fundamentos Matemáticos | Verificar contexto-fundamentos-matematicos.md antes de gerar — nunca repetir |
+| pandas / NumPy | UC05 Python | Apresentar pandas em A27 coordenado com UC05 |
+| matplotlib | UC05 Python | Introduzir no T2 junto com a progressão de Python |
+
+## Refs
+↑ [roteiro-t2](roteiro-t2.md)
+→ [semana01](semanas/semana01.md)
+→ [contexto-fundamentos-matematicos](contexto-fundamentos-matematicos.md)
+→ [metodologias](../metodologias-ativas-senac.md)
