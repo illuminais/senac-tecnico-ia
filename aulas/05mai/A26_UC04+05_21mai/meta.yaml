@@ -12,7 +12,7 @@ disciplines: []
 date: "TBD"
 
 # draft | ready | published
-status: em-planejamento
+status: published
 
 deployUrl: ""
 
