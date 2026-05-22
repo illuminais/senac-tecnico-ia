@@ -1,7 +1,7 @@
 # Metadados da Aula — Neural Slides
 # Preenchido pelo CLI ao rodar `course new`
 
-aula: "A25_UC04+09_16mai"
+aula: "25"
 slug: "a25-uc04-09-16mai"
 title: "Shark Tank"
 author: "Leonardo Zanini"
@@ -9,7 +9,7 @@ courseTitle: "Técnico em Inteligência Artificial"
 
 disciplines: []
 
-date: "16/05/2026"
+date: "16/05"
 
 # draft | ready | published
 status: published

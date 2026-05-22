@@ -1,7 +1,7 @@
 # Metadados da Aula — Neural Slides
 # Preenchido pelo CLI ao rodar `course new`
 
-aula: "A24_UC07+04_15mai"
+aula: "24"
 slug: "a24-uc07-04-15mai"
 title: "Visita Parque Tec"
 author: "Leonardo Zanini"

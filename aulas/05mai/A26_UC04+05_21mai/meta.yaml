@@ -1,9 +1,9 @@
 # Metadados da Aula — Neural Slides
 # Preenchido pelo CLI ao rodar `course new`
 
-aula: "A26_UC04+05_21mai"
+aula: "26"
 slug: "a26-uc04-05-21mai"
-title: ""
+title: "Shark Tank e Python"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
