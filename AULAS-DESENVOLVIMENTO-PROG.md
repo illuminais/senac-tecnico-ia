@@ -36,4 +36,5 @@
 | A15 | UC05 | Python para IA | 2 | 17/04 | 6 |
 | A15 | UC08 | Banco de Dados | 2 | 17/04 | 7 |
 | A15 | UC06 | Arquitetura e GPU | 2 | 17/04 | 6 |
+| A27 | UC04+07 | Shark Tank Apresent. Finais + Mesa Redonda | 6 | 22/05 | — |
 ---
