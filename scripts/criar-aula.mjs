@@ -132,6 +132,9 @@ ${c.cyan}  ┌─ UCs disponíveis ───────────────
 ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.reset}`)
   const ucsInput = (await ask(rl, `${c.yellow}UCs do dia${c.reset} (ex: 05+01+02, Enter para UCXX): `)).trim()
 
+  // 4. Título (opcional)
+  const titleInput = (await ask(rl, `${c.yellow}Título da aula${c.reset} (opcional, Enter para deixar em branco): `)).trim()
+
   let ucPart
   if (!ucsInput) {
     ucPart = 'UCXX'
@@ -150,6 +153,14 @@ ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.re
   const slug     = toSlug(dirName)
   const mesPasta = MES_FOLDER[mesAbrev]
   const destDir  = path.join(AULAS_BASE, mesPasta, dirName)
+
+  // Date ISO: derivar o ano atual do sistema
+  const MES_NUM = {
+    jan:'01', fev:'02', mar:'03', abr:'04', mai:'05', jun:'06',
+    jul:'07', ago:'08', set:'09', out:'10', nov:'11', dez:'12'
+  }
+  const ano = new Date().getFullYear()
+  const dateISO = `${ano}-${MES_NUM[mesAbrev]}-${dia}`
 
   // ---------- Confirmação ----------
 
@@ -207,17 +218,31 @@ ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.re
 
   step('3/5', 'Configurando meta.yaml...')
   const metaPath = path.join(destDir, 'meta.yaml')
-  if (fs.existsSync(metaPath)) {
-    let meta = fs.readFileSync(metaPath, 'utf8')
-    meta = meta.replace(/^aula:\s*.+$/m,   `aula: "${dirName}"`)
-    meta = meta.replace(/^slug:\s*.+$/m,   `slug: "${slug}"`)
-    meta = meta.replace(/^date:\s*.+$/m,   `date: "TBD"`)
-    meta = meta.replace(/^status:\s*.+$/m, `status: em-planejamento`)
-    fs.writeFileSync(metaPath, meta, 'utf8')
-    ok('meta.yaml atualizado (status: em-planejamento)')
-  } else {
-    warn('meta.yaml não encontrado — pulando')
-  }
+  const ucList   = ucPart === 'UCXX'
+    ? '[]'
+    : '[' + ucPart.replace(/^UC/, '').split('+').map(u => `"UC${u}"`).join(', ') + ']'
+  const metaContent = `# Metadados da Aula — Neural Slides
+
+aula: "${numAula}"
+slug: "${slug}"
+title: "${titleInput}"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ${ucList}
+
+# formato ISO: YYYY-MM-DD
+date: "${dateISO}"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []
+`
+  fs.writeFileSync(metaPath, metaContent, 'utf8')
+  ok(`meta.yaml gerado (aula: "${numAula}", date: "${dateISO}")`)
 
   // ---------- slides.md ----------
 
@@ -263,11 +288,11 @@ layout: cover
   console.log(`
   ${c.bold}${dirName}${c.reset}
   aulas/${mesPasta}/${dirName}/
+  ${c.gray}date: ${dateISO} · title: ${titleInput || '(em branco)'}${c.reset}
 
 ${c.yellow}Próximos passos:${c.reset}
   npm run dev:${slug}
   → Use @produtor-aula para gerar os slides
-  → Edite meta.yaml com a data exata e UCs confirmadas
   → Mude status para "published" quando pronto
 `)
 }

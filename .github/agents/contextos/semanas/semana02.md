@@ -25,7 +25,7 @@ Encerramento do Shark Tank via avaliação cruzada entre grupos (UC07) · Iníci
 
 **Prep A28:**
 - Preparar rotação dos projetos Shark Tank (grupo A analisa B, B analisa C, etc.)
-- Imprimir ou compartilhar a planilha custo×receita usada na A27 como guia de análise
+- Imprimir planilha custo×receita em branco (1 por grupo) para preencher durante a análise cruzada — modelo: custo de implantação / custo operacional / receita ou economia / retorno esperado
 - Folha de referência ABNT+Word (ver seção Material de Apoio abaixo) impressa ou no Classroom
 
 ---

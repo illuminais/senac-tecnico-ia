@@ -1,18 +1,18 @@
 # Metadados da Aula — Neural Slides
 
-aula: ""
-slug: ""
-title: ""
+aula: "28"
+slug: "a28-uc07-01-28mai"
+title: "Mesa Redonda Shark Tank + Word ABNT"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
-disciplines: []
+disciplines: ["UC07", "UC01"]
 
 # formato ISO: YYYY-MM-DD
-date: ""
+date: "2026-05-28"
 
 # em-planejamento | ready | published
-status: em-planejamento
+status: published
 
 deployUrl: ""
 

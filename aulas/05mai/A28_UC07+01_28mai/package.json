@@ -1,0 +1,28 @@
+{
+  "name": "a28-uc07-01-28mai",
+  "version": "1.0.0",
+  "description": "Aula A28_UC07+01_28mai — Tecnico em Inteligencia Artificial SENAC",
+  "keywords": [
+    "slidev-theme"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "dev:demo": "slidev slides-demo.md --open",
+    "build": "slidev build slides.md --out dist",
+    "export": "slidev export slides.md --format pdf --output aula-export.pdf",
+    "export:pptx": "slidev export slides.md --format pptx --output aula-export.pptx",
+    "publish": "npm run build && node .github/scripts/publish.mjs"
+  },
+  "slidev": {
+    "colorSchema": "both"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/types": "^0.49.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.0.0",
+    "vue": "^3.0.0"
+  }
+}
