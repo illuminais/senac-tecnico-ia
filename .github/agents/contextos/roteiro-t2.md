@@ -11,9 +11,9 @@ fim: 2026-07-XX
 |---|---|---|---|---|---|---|
 | 01 | A26 | 21/05 | Sem1-Qui | UC04·UC05 | sala-inversa·live-coding | [S01](semanas/semana01.md) |
 | 01 | A27 | 22/05 | Sem1-Sex | UC04·UC07 | sala-inversa·live-coding | [S01](semanas/semana01.md) |
-| 02 | A28 | 28/05 | Sem2-Qui | UC07·UC01 | — | — |
-| 02 | A29 | 29/05 | Sem2-Sex | UC05·UC03 | — | — |
-| 02 | A30 | 30/05 | Reposição-Sab | — | a definir | — |
+| 02 | A28 | 28/05 | Sem2-Qui | UC07·UC01 | mesa-redonda·lab-guiado | [S02](semanas/semana02.md) |
+| 02 | A29 | 29/05 | Sem2-Sex | UC05·UC03 | live-coding·prática | [S02](semanas/semana02.md) |
+| 02 | A30 | 30/05 | Reposição-Sab | UC06·UC02 | desmontagem·sala-invertida | [S02](semanas/semana02.md) |
 | 03 | — | 04/06 | — | **sem aula** | Corpus Christi | — |
 | 03 | — | 05/06 | — | **sem aula** | recesso | — |
 | 04 | A31 | 11/06 | Sem1-Qui | UC05·UC02 | — | — |

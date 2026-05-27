@@ -49,9 +49,17 @@ Encerramento do Shark Tank via avaliação cruzada entre grupos (UC07) · Iníci
 
 ## A30 — 30/05 · Reposição Sáb
 
-**UC a definir após confirmar como foi A28+A29.**
+| # | UC | HA | Método | Tópicos | Ind. |
+|---|---|---|---|---|---|
+| 1 | UC06 Arquitetura de Computadores e GPU | 1h30 | desmontagem ao vivo | Professor desmonta o PC na frente da turma: placa-mãe, CPU, GPU, RAM, SSD, PSU, cooler — nomeia cada peça em PT e EN ao mesmo tempo | UC06-1, UC06-2 |
+| 2 | UC02 Inglês Instrumental | 30min | vocabulário contextual | Tabela de termos técnicos de hardware em inglês introduzida durante a desmontagem: motherboard, socket, slot, VRAM, PSU, heatsink, benchmark, overclock | UC02-1, UC02-3 |
+| 3 | UC06 + UC02 | 1h | sala-invertida | Grupos criam 2 perguntas sobre o componente que receberam (enunciado obrigatoriamente com 1 termo EN) → passam para o grupo ao lado responder | UC06-1, UC02-1 |
+| 4 | UC06 + UC02 | 30min | correção coletiva | Cada grupo apresenta a pergunta que criou + a resposta que recebeu → professor complementa → fechamento: GPU e treino de IA em escala (clusters, OpenAI, Google) | UC06-2, UC02-1 |
 
-Decidir na sexta-feira após a aula, com base no que ficou pendente ou precisa de reforço.
+**Prep A30:**
+- Trazer o PC para desmontar (chave de fenda Phillips, superfície estável)
+- Slide 4 e Slide 6 com tabelas de vocabulário visíveis no projetor durante a desmontagem
+- Folha de papel por grupo para anotar as perguntas da sala invertida
 
 ---
 
