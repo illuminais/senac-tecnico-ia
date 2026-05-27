@@ -20,11 +20,14 @@
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Diferencia conceitos de hardware e software, operando SO Windows para organizar arquivos, pastas e configurações básicas | Em andamento |
-| 2 | Cria, edita, formata e imprime documentos digitais no Word, com texto, tabelas, símbolos, figuras e layout de página | Pendente |
-| 3 | Aplica estratégias de edição e revisão para solucionar problemas de digitação e estrutura em documentos | Pendente |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Diferencia conceitos de hardware e software, operando SO Windows para organizar arquivos, pastas e configurações básicas | ✅ principal | — | — |
+| 2 | Cria, edita, formata e imprime documentos digitais no Word, com texto, tabelas, símbolos, figuras e layout de página | ✅ principal | — | — |
+| 3 | Aplica estratégias de edição e revisão para solucionar problemas de digitação e estrutura em documentos | 🔄 muito fraco | ✅ foco | 🔄 continua |
+| 4 | Acessa e utiliza navegadores de internet com segurança, realizando pesquisas por palavras-chave e critérios de confiabilidade | — | ✅ foco | 🔄 continua |
+| 5 | Organiza e armazena informações digitais de forma lógica e coerente, demonstrando autonomia e criticidade | — | ✅ foco | 🔄 continua |
+| 6 | Organiza e analisa informações digitais identificando padrões e relações que orientem a tomada de decisões | — | — | ✅ foco |
 
 ---
 

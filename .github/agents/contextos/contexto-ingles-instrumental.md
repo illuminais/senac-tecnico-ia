@@ -19,12 +19,12 @@
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Reconhece vocabulário técnico em inglês presente em softwares, interfaces e ambientes de programação | Em andamento |
-| 2 | Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia | Pendente |
-| 3 | Aplica estratégias básicas de leitura para textos técnicos curtos (T2) | Pendente |
-| 4 | Relaciona termos técnicos com suas funções no cotidiano digital (T3) | Pendente |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Reconhece vocabulário técnico em inglês presente em softwares, interfaces e ambientes de programação | 🔄 fraco | ✅ foco | — |
+| 2 | Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia | 🔄 fraco | ✅ foco | — |
+| 3 | Utiliza estratégias básicas de leitura para compreender textos técnicos curtos | — | ✅ foco | 🔄 continua |
+| 4 | Relaciona termos técnicos em inglês com suas funções no cotidiano digital e computacional | — | — | ✅ foco |
 
 ---
 

@@ -67,14 +67,14 @@ A25 · 16/05 · sem BD (Shark Tank Tech + Relatório de Visita Técnica)
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 | Status T2 |
-|---|---|---|---|
-| 1 | Propõe alteração no acesso aos dados de acordo com os relacionamentos físicos | Pendente | — |
-| 2 | Seleciona o SGBD de acordo com as necessidades da aplicação | Pendente | — |
-| 3 | Cria a estrutura física de BD de acordo com requisitos e modelagem | Pendente | — |
-| 4 | Gerencia permissão de acesso ao BD conforme perfil do usuário | — | Pendente |
-| 5 | Cria e manipula consultas SQL para resolução de problemas | — | Pendente |
-| 6 | Cria e manipula armazenamento e backup de BD | — | — |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Propõe alteração no acesso aos dados de acordo com os relacionamentos físicos e estrutura | ✅ principal | — | — |
+| 2 | Seleciona o SGBD de acordo com as necessidades da aplicação | ✅ principal | — | — |
+| 3 | Cria a estrutura física de BD de acordo com os requisitos da aplicação e modelagem | 🔄 fraco | ✅ foco | — |
+| 4 | Gerencia permissão de acesso ao BD conforme perfil do usuário e políticas de acesso | — | ✅ foco | 🔄 continua |
+| 5 | Cria e manipula consultas SQL de forma adequada para resolução de problemas | — | ✅ foco | 🔄 continua |
+| 6 | Cria e manipula armazenamento e backup de banco de dados | — | — | ✅ foco |
 
 ---
 

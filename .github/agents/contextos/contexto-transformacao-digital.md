@@ -19,18 +19,18 @@
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Compreende as aplicações dos fundamentos em transformação digital em práticas pedagógicas | 🔄 Em andamento (A01, A02) |
-| 2 | Utiliza as ferramentas digitais de IA conforme boas práticas de mercado | 🔄 Em andamento (A01, A07) |
-| 3 | Considera a segurança digital na transformação digital em uma organização | 🔄 Em andamento (A07) |
-| 4 | Compreende as rupturas das tecnologias emergentes para práticas na transformação digital | 🔄 Em andamento (A07) |
-| 5 | Propõe análise estratégica de informações (T2) | Pendente |
-| 6 | Considera o custo-benefício no processo de aquisição e implementação de sistemas (T2) | Pendente |
-| 7 | Considera o ciclo de vida da informação (T2–T3) | Pendente |
-| 8 | Mapeia as fontes de dados para sua área de atuação (T3) | Pendente |
-| 9 | Analisa a cultura informacional (T3) | Pendente |
-| 10 | Utiliza ferramentas de BI para apoio à tomada de decisão (T3) | Pendente |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Compreende as aplicações dos fundamentos em transformação digital em práticas pedagógicas | ✅ principal | — | — |
+| 2 | Utiliza as ferramentas digitais de IA conforme boas práticas de mercado | ✅ principal | — | — |
+| 3 | Considera a segurança digital na transformação digital em uma organização | 🔄 fraco | ✅ foco | — |
+| 4 | Compreende as rupturas das tecnologias emergentes para a transformação digital | 🔄 fraco | ✅ foco | — |
+| 5 | Analisa objetivos estratégicos e cria um plano de implementação | — | ✅ foco | — |
+| 6 | Realiza análise de custo-benefício para garantir alinhamento financeiro | — | ✅ foco | — |
+| 7 | Estuda o ciclo de vida da informação e avalia a cultura organizacional | — | ✅ foco | 🔄 continua |
+| 8 | Identifica fontes de dados relevantes e aplica técnicas de análise descritiva, preditiva e prescritiva | — | — | ✅ foco |
+| 9 | Analisa os tipos de cultura informacional e avalia a influência na estratégia de informação | — | — | ✅ foco |
+| 10 | Explora ferramentas analíticas e desenvolve relatórios integrados com BI | — | — | ✅ foco |
 
 ---
 

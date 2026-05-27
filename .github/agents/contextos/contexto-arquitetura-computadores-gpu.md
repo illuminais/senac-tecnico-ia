@@ -19,13 +19,13 @@
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Reconhece modelos aplicados em arquitetura de computadores e GPU | Em andamento |
-| 2 | Reconhece e aplica conceitos de Pipeline para GPU | Pendente |
-| 3 | Interpreta processos e threads em arquitetura de computadores e GPU (T2) | Pendente |
-| 4 | Reconhece protocolos e serviços básicos de redes de computadores (T2) | Pendente |
-| 5 | Compreende e aplica endereçamento de redes IPv4 e IPv6 (T3) | Pendente |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Reconhece modelos aplicados em arquitetura de computadores e GPU | ✅ principal | — | — |
+| 2 | Reconhece e aplica conceitos de Pipeline para GPU | 🔄 fraco | ✅ foco | — |
+| 3 | Interpreta processos e threads em arquitetura de computadores e GPU | — | ✅ foco | — |
+| 4 | Reconhece protocolos e serviços básicos de redes de computadores | — | ✅ foco | 🔄 continua |
+| 5 | Compreende e aplica endereçamento de redes IPv4 e IPv6 | — | — | ✅ foco |
 
 ---
 

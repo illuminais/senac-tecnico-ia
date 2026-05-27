@@ -3,11 +3,11 @@ schema: horario-rotacao
 trimestre: T2
 inicio: 2026-05-21
 fim: 2026-09-04
-ha-disponivel-t2: 156
+ha-disponivel-t2: 162
 ha-disponivel-t3: 174
-ha-total-t2t3: 330
+ha-total-t2t3: 336
 ha-necessario-t2t3: 356
-gap: -26
+gap: -20
 ---
 
 # Horário — Rotação T2
@@ -50,7 +50,7 @@ gap: -26
 | Sem | Tipo | Quinta | Sexta | Obs |
 |---|---|---|---|---|
 | 01 | Sem 1 | 21/05 — UC05+UC02 | 22/05 — UC08+UC06 | |
-| 02 | Sem 2 | 28/05 — UC07+UC01 | 29/05 — UC05+UC03 | |
+| 02 | Sem 2 | 28/05 — UC07+UC01 | 29/05 — UC05+UC03 | +30/05 Sab — Reposição (A30, UC a definir) |
 | 03 | Sem 3 | ~~04/06~~ ← Corpus Christi | ~~05/06~~ ← recesso | **sem aula** |
 | 04 | Sem 1 | 11/06 — UC05+UC02 | 12/06 — UC08+UC06 | |
 | 05 | Sem 2 | 18/06 — UC07+UC01 | 19/06 — UC05+UC03 | |
@@ -71,9 +71,9 @@ gap: -26
 
 | | Dias | HA | Notas |
 |---|---|---|---|
-| T2 | 26 | 156 | -6h Corpus (04/06) · -6h recesso 05/06 · -24h recesso jul |
+| T2 | 27 | 162 | -6h Corpus (04/06) · -6h recesso 05/06 · -24h recesso jul · +6h reposição 30/05 |
 | T3 | 29 | 174 | -6h Nov/20 (Zumbi — sexta) |
-| **Total** | **55** | **330** | vs 356 necessário → gap **-26 HA** |
+| **Total** | **56** | **336** | vs 356 necessário → gap **-20 HA** |
 
 ---
 

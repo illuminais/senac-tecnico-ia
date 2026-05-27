@@ -19,12 +19,12 @@
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Identifica conceitos e fundamentos de Inteligência Artificial | Em andamento |
-| 2 | Classifica diferentes métodos, algoritmos e técnicas em IA | Avançado (ML/CV/NLP distintos, tabela comparativa) |
-| 3 | Compreende e utiliza resultados supervisionados, não supervisionados e por reforço (T2) | Pendente |
-| 4 | Compreende e aplica questões éticas e impactos sociais relacionados ao uso de IA (T3) | Semeado |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Identifica conceitos e fundamentos de Inteligência Artificial | ✅ principal | — | — |
+| 2 | Classifica diferentes métodos, algoritmos e técnicas em IA | 🔄 fraco | ✅ foco | — |
+| 3 | Compreende e utiliza resultados supervisionados, não supervisionados e por reforço | — | ✅ foco | 🔄 continua |
+| 4 | Compreende e aplica questões éticas e impactos sociais relacionados ao uso de IA | — | — | ✅ foco |
 
 ---
 

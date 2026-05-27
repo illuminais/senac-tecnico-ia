@@ -53,18 +53,18 @@ A25 · 16/05 · sem UC09 (Shark Tank Tech + Relatório de Visita Técnica)
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 | Status T2 |
-|---|---|---|---|
-| 1 | Compreende e aplica funções matemáticas lineares | Em andamento | — |
-| 2 | Compreende e aplica funções matemáticas polinomiais | Em andamento | — |
-| 3 | Compreende e aplica funções matemáticas logarítmicas | Em andamento | — |
-| 4 | Compreende e aplica funções matemáticas exponenciais | Em andamento | — |
-| 5 | Relaciona probabilidades básicas em situações do cotidiano (T2) | — | Pendente |
-| 6 | Distingue variáveis qualitativas e quantitativas em conjuntos de dados (T2) | — | Pendente |
-| 7 | Diferencia dados discretos de contínuos para representação estatística (T2–T3) | — | Pendente |
-| 8 | Calcula e interpreta frequência absoluta e relativa (T3) | — | — |
-| 9 | Calcula e interpreta medidas de tendência central (T3) | — | — |
-| 10 | Calcula e interpreta variância e desvio padrão (T3) | — | — |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Compreende e aplica funções matemáticas lineares | ✅ principal | — | — |
+| 2 | Compreende e aplica funções matemáticas polinomiais | ✅ principal | — | — |
+| 3 | Compreende e aplica funções matemáticas logarítmicas | 🔄 fraco | ✅ foco | — |
+| 4 | Compreende e aplica funções matemáticas exponenciais | 🔄 fraco | ✅ foco | — |
+| 5 | Interpreta e aplica probabilidades básicas | — | ✅ foco | — |
+| 6 | Compreende variável qualitativa e quantitativa | — | ✅ foco | — |
+| 7 | Aplica dados discretos e contínuos | — | ✅ foco | 🔄 continua |
+| 8 | Aplica frequência absoluta e relativa | — | — | ✅ foco |
+| 9 | Usa medidas de tendência central em aplicações de IA | — | — | ✅ foco |
+| 10 | Aplica raiz quadrada da variância em aplicações de IA | — | — | ✅ foco |
 
 ---
 

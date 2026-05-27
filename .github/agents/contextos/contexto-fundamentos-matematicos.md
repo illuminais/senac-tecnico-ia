@@ -19,14 +19,16 @@
 
 ## Indicadores Curriculares
 
-| Ind. | Descrição | Status T1 |
-|---|---|---|
-| 1 | Aplica operações fundamentais da aritmética e álgebra em problemas de computação | **Em progresso** (potências, raízes, expressões algébricas — A09) |
-| 2 | Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos | Pendente |
-| 3 | Emprega noções de conjuntos, funções e matrizes na organização de informações | Pendente |
-| 4 | Reconhece padrões e sequências numéricas para construção de algoritmos básicos | Pendente |
-| 5 | Aplica conceitos de probabilidade em situações cotidianas (T2) | Pendente |
-| 6 | Resolve situações-problema usando matemática com clareza lógica (T2–T3) | Pendente |
+| Ind. | Descrição | T1 | T2 | T3 |
+|---|---|---|---|---|
+| 1 | Aplica operações fundamentais da aritmética e da álgebra em problemas de computação | ✅ principal | — | — |
+| 2 | Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples | ✅ principal | — | — |
+| 3 | Emprega noções de conjuntos, funções e matrizes na organização e representação de informações | ✅ principal | — | — |
+| 4 | Reconhece padrões e sequências numéricas para apoiar a construção de algoritmos básicos | 🔄 quase nada | ✅ foco | — |
+| 5 | Interpreta e representa dados em tabelas e gráficos, aplicando conceitos estatísticos iniciais | — | ✅ foco | — |
+| 6 | Resolve situações-problema utilizando estratégias matemáticas aplicadas à computação e IA | — | ✅ foco | 🔄 continua |
+| 7 | Demonstra clareza, estrutura lógica e capacidade de comunicação na explicação de procedimentos matemáticos | — | — | ✅ foco |
+| 8 | Age com persistência, criticidade e ética no uso da matemática em contextos digitais | — | — | ✅ foco |
 
 ---
 
