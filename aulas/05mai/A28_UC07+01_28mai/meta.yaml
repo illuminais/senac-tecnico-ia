@@ -9,7 +9,7 @@ courseTitle: "Técnico em Inteligência Artificial"
 disciplines: ["UC07", "UC01"]
 
 # formato ISO: YYYY-MM-DD
-date: "2026-05-28"
+date: "28/05"
 
 # em-planejamento | ready | published
 status: published
