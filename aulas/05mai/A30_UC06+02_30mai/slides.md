@@ -165,8 +165,8 @@ aulaNum: "Aula 30"
 <!-- SLIDE 7 -->
 
 # BLOCO 2
-## Sala Invertida
-### Cada grupo vira professor
+## Atividade em Grupos
+### Cada grupo vira especialista de 1 componente
 
 ---
 layout: default
@@ -177,22 +177,20 @@ aulaNum: "Aula 30"
 
 <!-- SLIDE 8 -->
 
-<!-- objetivo: aluno entende a dinâmica da sala invertida e o que precisa entregar -->
+# Distribuição dos grupos
 
-# Como funciona a sala invertida
+<SlideTable fullWidth>
 
-**Cada grupo recebe 1 componente.**
+| Grupo | Componente | Termos-chave em inglês |
+|---|---|---|
+| Grupo 1 | CPU | core, clock speed, socket, cache |
+| Grupo 2 | GPU | VRAM, parallel processing, CUDA |
+| Grupo 3 | RAM | volatile, DDR, slot, frequency |
+| Grupo 4 | Motherboard | chipset, PCI-E, BIOS, form factor |
+| Grupo 5 | SSD / HDD | NVMe, SATA, read/write speed |
+| Grupo 6 | PSU + Cooler | wattage, heatsink, thermal paste |
 
-Em 15 minutos, o grupo cria **2 perguntas** sobre o componente:
-
-1. Uma pergunta sobre **o que é ou para que serve**
-2. Uma pergunta que use pelo menos **1 termo técnico em inglês**
-
-Depois as perguntas passam para o grupo seguinte responder.
-
-<MLToast title="REGRA">
-  O enunciado de cada pergunta precisa ter pelo menos 1 palavra em inglês do vocabulário da aula.
-</MLToast>
+</SlideTable>
 
 ---
 layout: default
@@ -203,42 +201,19 @@ aulaNum: "Aula 30"
 
 <!-- SLIDE 9 -->
 
-<!-- objetivo: cada grupo sabe qual componente é o seu e o que precisa pesquisar -->
+# Parte 1 — Apresentação criativa (40 min para preparar)
 
-# Distribuição dos grupos
+O grupo escolhe **1 formato** para apresentar o componente:
 
-<SlideTable fullWidth>
+- Comercial de TV
+- Perfil de app de namoro do componente ("CPU procura GPU...")
+- Tribunal — o componente está sendo julgado pela turma
+- Tutorial de YouTube
+- Rap ou música
 
-| Grupo | Componente | Foco da pergunta |
-|---|---|---|
-| Grupo 1 | CPU | Função, núcleos, socket |
-| Grupo 2 | GPU | Paralelo, VRAM, IA |
-| Grupo 3 | RAM | Memória volátil, slot, velocidade |
-| Grupo 4 | Motherboard | Conexão de componentes, slots |
-| Grupo 5 | SSD / PSU | Armazenamento ou energia |
-
-</SlideTable>
-
-> Se houver menos grupos, mescle os componentes ou o professor participa com um.
-
----
-layout: brainstorm
-bgPreset: palette
-pulse: true
-aulaNum: "Aula 30"
----
-
-<!-- SLIDE 10 -->
-
-# Agora: 15 minutos para criar as perguntas
-
-O componente está na sua bancada (ou em foto no slide).
-
-**Crie 2 perguntas:**
-- Pergunta 1: o que é / para que serve?
-- Pergunta 2: use um termo técnico em inglês no enunciado
-
-> Escreva no papel. Daqui a 15 minutos, troca com o grupo ao lado.
+<MLToast title="REGRA">
+  O nome técnico em inglês aparece pelo menos 3 vezes na apresentação. Mais que isso é bônus.
+</MLToast>
 
 ---
 layout: default
@@ -247,18 +222,37 @@ card: true
 aulaNum: "Aula 30"
 ---
 
+<!-- SLIDE 10 -->
+
+# Parte 2 — Exercício criativo para os outros (dentro dos 40 min)
+
+Junto com a apresentação, o grupo cria **1 exercício** sobre o próprio componente.
+
+**Precisa ter:**
+- Pelo menos 1 termo em inglês no enunciado
+- Uma resposta que a turma consegue dar sem pesquisar
+- Alguma criatividade: adivinha, verdadeiro/falso com pegadinha, completar frase, desenho, mímica de termo técnico
+
+> Formato livre — surpreendam.
+
+---
+layout: brainstorm
+bgPreset: palette
+pulse: true
+aulaNum: "Aula 30"
+---
+
 <!-- SLIDE 11 -->
 
-<!-- objetivo: aluno recebe as perguntas do grupo ao lado e responde com os termos técnicos corretos -->
+# Agora: 40 minutos para preparar
 
-# Agora: responda as perguntas do outro grupo
+O componente está na sua bancada.
 
-Você tem **15 minutos** para responder as 2 perguntas que recebeu.
+**Entregas do grupo:**
+1. Apresentação criativa (formato livre, 1 formato dos 5 sugeridos)
+2. 1 exercício criativo para os outros grupos resolverem
 
-**Dicas:**
-- Use os termos técnicos em inglês quando a resposta pedir
-- Se não souber, olhe a tabela de vocabulário do Slide 4
-- Uma resposta incompleta mas com raciocínio vale mais do que deixar em branco
+> Escreva no papel ou prepare oralmente. Daqui 40 minutos começamos as apresentações.
 
 ---
 layout: center
@@ -272,8 +266,8 @@ aulaNum: "Aula 30"
 <!-- SLIDE 12 -->
 
 # BLOCO 3
-## Conclusão Coletiva
-### Cada grupo corrige o grupo que respondeu
+## Apresentações + Exercícios
+### Cada grupo mostra e aplica
 
 ---
 layout: default
@@ -284,17 +278,18 @@ aulaNum: "Aula 30"
 
 <!-- SLIDE 13 -->
 
-<!-- objetivo: aluno consolida o vocabulário corrigindo as respostas do outro grupo em voz alta -->
+# Apresentação + exercício (40 min no total)
 
-# Correção em voz alta (20 min)
+Cada grupo faz 2 coisas em sequência:
 
-Cada grupo apresenta:
+1. **Apresenta** o componente no formato criativo escolhido
+2. **Aplica o exercício** — os outros grupos respondem na hora
 
-1. **A pergunta que criou**
-2. **A resposta que recebeu do outro grupo**
-3. **Se a resposta está certa ou precisa de complemento**
+**Ordem:** Grupos 1 a 6, em sequência.
 
-> O professor complementa quando necessário e reforça os termos em inglês.
+<MLToast title="DURANTE">
+  Quem está assistindo: anote os termos em inglês que o grupo usar. Vão aparecer na mesa redonda.
+</MLToast>
 
 ---
 layout: brainstorm
