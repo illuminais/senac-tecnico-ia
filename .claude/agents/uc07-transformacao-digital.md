@@ -48,7 +48,7 @@ Leia o contexto → verifique o que foi coberto em A01 e A02 → determine próx
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC07 - Transformação Digital`
-1. Leia `.github/agents/contextos/contexto-transformacao-digital.md`
+1. Leia `contextos/contexto-transformacao-digital.md`
 2. Verifique o conteúdo coberto em A01 e A02 — não repetir 4ª Revolução/casos já vistos
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

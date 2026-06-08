@@ -41,7 +41,7 @@ Ex: `A14_UC07+01+02_16abr` → `a14-uc07-01-02-16abr`
 ## Protocolo de Execução
 
 ### Passo 1 — Identificar o número e data da nova aula
-1. Leia `.github/agents/contextos/contexto-horario-trimestral.md` para identificar a próxima aula programada, sua data e as UCs do dia
+1. Leia `contextos/contexto-horario-trimestral.md` para identificar a próxima aula programada, sua data e as UCs do dia
 2. Monte o nome completo: `A{NN}_UC{XX}+{XX}_{DD}{MMM}` (use `UCXX` se professor não confirmou UCs)
 3. Confirme com o professor antes de prosseguir
 

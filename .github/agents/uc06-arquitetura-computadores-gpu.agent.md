@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC06 - Arquitetura de Computadores e GPU` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-arquitetura-computadores-gpu.md`
+1. Leia `contextos/contexto-arquitetura-computadores-gpu.md`
 2. Verifique o conteúdo coberto em A03 — não repetir CPU/GPU básico
 3. Leia `.github/copilot-instructions.md`
 4. Consulte **Diretrizes Metodológicas** neste arquivo e garanta que exercícios e atividades reflitam a metodologia prescrita
@@ -110,12 +110,12 @@ Fluxo obrigatório — **não pule etapas**:
 
 ## Delegação para Geração de Slides
 
-1. Leia `.github/agents/contextos/contexto-arquitetura-computadores-gpu.md`
+1. Leia `contextos/contexto-arquitetura-computadores-gpu.md`
 2. Gere `estrutura-aula.md` (map T→E→D→TC)
 3. Aguarde aprovação
 4. Gere `A{NN}-UC06.md` (slides)
 5. Gere `A{NN}-UC06-exercicios.md` (exercícios)
-6. Atualize `.github/agents/contextos/contexto-arquitetura-computadores-gpu.md`
+6. Atualize `contextos/contexto-arquitetura-computadores-gpu.md`
 
 ---
 

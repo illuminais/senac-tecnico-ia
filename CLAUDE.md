@@ -26,7 +26,7 @@ senac-tecnico-ia/
 │   ├── estrutura-aula/         ← ordem T→E→D→TC, tags, templates
 │   ├── revisao-conteudo/       ← checklists de revisão e commit
 │   └── uc01/ … uc09/           ← diretrizes, consolidado e indicadores por disciplina
-├── .github/agents/contextos/   ← memória viva por disciplina (compartilhada por ambos)
+├── contextos/   ← memória viva por disciplina (compartilhada por ambos)
 │   ├── contexto-calendario.md
 │   ├── ATIVIDADES_AVALIATIVAS.md
 │   ├── contexto-banco-de-dados.md
@@ -60,9 +60,9 @@ claude
 ## Regras Fundamentais
 
 1. **Agentes vivem em `.claude/agents/`** (Claude Code) ou `.github/agents/` (Copilot) — nunca criar `.github/` dentro de subpastas de aula
-2. **Contextos são a memória viva** — antes de gerar qualquer slide, leia `.github/agents/contextos/contexto-{disciplina}.md`
-3. **Horário trimestral** — para montar blocos de aulas e planejar avaliações, leia `.github/agents/contextos/contexto-horario-trimestral.md`
-4. **Plano de avaliações T1** — para saber avaliações pendentes e aprovadas, leia `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md`
+2. **Contextos são a memória viva** — antes de gerar qualquer slide, leia `contextos/contexto-{disciplina}.md`
+3. **Horário trimestral** — para montar blocos de aulas e planejar avaliações, leia `contextos/contexto-horario-trimestral.md`
+4. **Plano de avaliações T1** — para saber avaliações pendentes e aprovadas, leia `contextos/ATIVIDADES_AVALIATIVAS.md`
 5. **Nunca** criar arquivos de apresentação dentro de `slidev-theme-neural/`
 6. **Nunca** copiar `.github/agents/` para pastas de aula — os agentes são globais
 7. **referencia-tecnica.md** — leia SEMPRE em `.github/agents/referencia-tecnica.md` antes de gerar qualquer slide
@@ -73,7 +73,7 @@ Use o agente `atualizador-pos-aula` com um relato em linguagem natural:
 > "Na A07 dei Python: operadores de comparação ==, !=, <, > e lógicos and/or/not, if/elif/else com comparação. ~3 HA. Turma teve dificuldade com precedência de operadores."
 
 O agente vai atualizar automaticamente:
-- `.github/agents/contextos/contexto-python-para-ia.md`
+- `contextos/contexto-python-para-ia.md`
 - `AULAS-DADAS.md`
 
 ## Fluxo de Nova Aula
@@ -88,8 +88,8 @@ Use o agente `criar-nova-aula` para criar a próxima pasta de aula. O agente cop
 - **Avaliações aplicadas**: Av.01 (concluída), Av.03 (23/04 — TriaBot TokenLab)
 - **Avaliações pendentes**: Av.02 (30/04 Limber), Av.04 (30/04 Quiz GPU), Av.05 (07/05), Av.06 (08/05)
 - **Histórico completo**: ver `AULAS-DADAS.md`
-- **Calendário e composição de UCs**: ver `.github/agents/contextos/contexto-calendario.md`
-- **Plano de avaliações T1**: ver `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md`
+- **Calendário e composição de UCs**: ver `contextos/contexto-calendario.md`
+- **Plano de avaliações T1**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
 
 > ⚠️ **Manter esta seção atualizada** após cada uso de `atualizador-pos-aula`.
 

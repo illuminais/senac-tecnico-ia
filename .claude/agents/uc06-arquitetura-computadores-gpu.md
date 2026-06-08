@@ -48,7 +48,7 @@ Leia o contexto → verifique o que foi coberto em A03 → determine próximo t�
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC06 - Arquitetura de Computadores e GPU`
-1. Leia `.github/agents/contextos/contexto-arquitetura-computadores-gpu.md`
+1. Leia `contextos/contexto-arquitetura-computadores-gpu.md`
 2. Verifique o conteúdo coberto em A03 — não repetir CPU/GPU básico
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

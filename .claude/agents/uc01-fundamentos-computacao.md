@@ -53,7 +53,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — verifique se a seção `## UC01 - Fundamentos de Computação` existe; se não existir, crie-a ao final
-1. Leia `.github/agents/contextos/contexto-fundamentos-de-computacao.md`
+1. Leia `contextos/contexto-fundamentos-de-computacao.md`
 2. Identifique qual foi o último conteúdo coberto e qual o próximo tópico pendente
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

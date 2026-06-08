@@ -74,7 +74,7 @@ Você sempre recebe um ou mais **Handoff Cards** antes de gerar qualquer conteú
 
 1. Ler a **seção da UC** em `plano-aula.md` da aula atual — contém a lista de slides a gerar
 2. Confirmar o que está **Consolidado** no Handoff Card — nada consolidado é reintroduzido no mesmo nível
-3. **Somente se o Handoff Card NÃO incluir a seção "Consolidado"**, ler `.github/agents/contextos/contexto-[slug].md` como fallback
+3. **Somente se o Handoff Card NÃO incluir a seção "Consolidado"**, ler `contextos/contexto-[slug].md` como fallback
 
 > **Por que não ler o contexto sempre?** O Handoff Card gerado pelo agente de UC já inclui tudo que o `autor-slides` precisa (Consolidado, Ensinar hoje, Cross-ref). Ler o contexto seria uma leitura duplicada — o `@produtor-aula` já leu na FASE 0 e o `@uc{NN}` já leu para gerar o Handoff Card.
 
@@ -199,7 +199,7 @@ Corrija antes de continuar para a próxima UC. Sugestões:
 
 ### Conteúdo
 
-- **Nunca reintroduzir** conceito já listado como "Consolidado" no Handoff Card ou no `.github/agents/contextos/contexto-*.md`
+- **Nunca reintroduzir** conceito já listado como "Consolidado" no Handoff Card ou no `contextos/contexto-*.md`
 - **Sempre usar contexto IA/dados** em exemplos: tokens, datasets, modelos, outputs — nunca calculadoras genéricas
 - Todo slide de teoria deve ter um `<!-- objetivo: ... -->` HTML comment indicando a competência desenvolvida — esse comentário fica **DENTRO** do slide (após o `---` que fecha o frontmatter), **NUNCA entre dois `---` separadores** (causaria um ghost slide vazio)
 - Cite **autores ou instituições** como âncoras de conteúdo nos slides de teoria (não apenas fatos soltos)
@@ -363,6 +363,6 @@ Conteúdo textual.
 - [ ] Zero em-dashes (`—`) em qualquer texto de slide
 - [ ] Todo texto visível em pt-BR
 - [ ] Exercícios com gabaritos **dentro de `<AdminOnly>`** no `slides.md` — nunca em `<v-click>` puro, nunca em arquivo separado
-- [ ] `.github/agents/contextos/contexto-*.md` atualizado ao final da sessão
+- [ ] `contextos/contexto-*.md` atualizado ao final da sessão
 - [ ] ⚠️ NÃO leu slides.md de aulas anteriores
 - [ ] ⚠️ NÃO rodou semantic_search

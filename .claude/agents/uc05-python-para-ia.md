@@ -48,7 +48,7 @@ Leia o contexto → identifique exatamente onde os alunos pararam → determine 
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC05 - Python para IA`
-1. Leia `.github/agents/contextos/contexto-python-para-ia.md`
+1. Leia `contextos/contexto-python-para-ia.md`
 2. Identifique exatamente onde os alunos pararam — não rever o que já foi consolidado
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

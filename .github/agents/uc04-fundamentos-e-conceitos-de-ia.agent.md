@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC04 - Fundamentos e Conceitos de IA` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-fundamentos-e-conceitos-de-ia.md`
+1. Leia `contextos/contexto-fundamentos-e-conceitos-de-ia.md`
 2. Verifique o que foi coberto em A01, A03 e A04 — não repetir conteúdo consolidado
 3. Leia `.github/copilot-instructions.md`
 4. Consulte **Diretrizes Metodológicas** neste arquivo e garanta que exercícios e atividades reflitam a metodologia prescrita
@@ -110,12 +110,12 @@ Fluxo obrigatório — **não pule etapas**:
 
 ## Delegação para Geração de Slides
 
-1. Leia `.github/agents/contextos/contexto-fundamentos-e-conceitos-de-ia.md` integralmente
+1. Leia `contextos/contexto-fundamentos-e-conceitos-de-ia.md` integralmente
 2. Gere `estrutura-aula.md` (map T→E→D→TC, máx. 2 TEORIA consecutivos)
 3. Aguarde aprovação
 4. Gere `A{NN}-UC04.md` (slides)
 5. Gere `A{NN}-UC04-exercicios.md` (exercícios)
-6. Atualize `.github/agents/contextos/contexto-fundamentos-e-conceitos-de-ia.md`
+6. Atualize `contextos/contexto-fundamentos-e-conceitos-de-ia.md`
 
 ---
 

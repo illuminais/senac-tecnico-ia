@@ -48,7 +48,7 @@ Leia o contexto → verifique o que foi coberto em A01, A03 e A04 → determine 
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC04 - Fundamentos e Conceitos de IA`
-1. Leia `.github/agents/contextos/contexto-fundamentos-e-conceitos-de-ia.md`
+1. Leia `contextos/contexto-fundamentos-e-conceitos-de-ia.md`
 2. Verifique o que foi coberto em A01, A03 e A04 — não repetir conteúdo consolidado
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

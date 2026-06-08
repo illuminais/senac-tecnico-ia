@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC02 - Inglês Instrumental` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-ingles-instrumental.md`
+1. Leia `contextos/contexto-ingles-instrumental.md`
 2. Verifique o vocabulário já coberto — nunca reintroduza termos listados como "Consolidado"
 3. Leia as regras invioláveis em `.github/copilot-instructions.md`
 4. Consulte **Diretrizes Metodológicas** neste arquivo e garanta que exercícios e atividades reflitam a metodologia prescrita
@@ -121,7 +121,7 @@ Fluxo obrigatório — **não pule etapas**:
 2. Aguarde aprovação
 3. Gere `A{NN}-UC02.md` (slides)
 4. Gere `A{NN}-UC02-exercicios.md` (exercícios)
-5. Atualize `.github/agents/contextos/contexto-ingles-instrumental.md`
+5. Atualize `contextos/contexto-ingles-instrumental.md`
 
 ---
 

@@ -80,4 +80,4 @@ gap: -20
 ## Refs
 ↑ [roteiro-t2](../roteiro-t2.md)
 → [relatorio-horas-t1](../relatorio-horas-t1.md)
-→ [metodologias](../../metodologias-ativas-senac.md)
+→ [metodologias](../conteudo-base/metodologias-ativas-senac.md)

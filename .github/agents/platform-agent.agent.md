@@ -249,7 +249,7 @@ zone_name = "seudominio.com"              # ← pendente (ISSUE-2)
 
 | Issue | O que falta |
 |---|---|
-| ISSUE-1 | Criar `.github/agents/contextos/contexto-nomenclatura-dirs.md` |
+| ISSUE-1 | Criar `contextos/contexto-nomenclatura-dirs.md` |
 | ISSUE-2 | `wrangler.toml` tem `database_id = "SUBSTITUIR_PELO_ID_REAL"` — precisa UUID real + wrangler login Cloudflare |
 | ISSUE-3 | `npm install` nunca rodou — `platform/portal/node_modules` ausente + falta `.gitignore` em `platform/portal/` |
 | ISSUE-4 | `.github/workflows/deploy-platform.yml` não existe |
@@ -261,7 +261,7 @@ zone_name = "seudominio.com"              # ← pendente (ISSUE-2)
 
 ### ISSUE-1 — Criar contexto-nomenclatura-dirs.md
 
-**Criar:** `.github/agents/contextos/contexto-nomenclatura-dirs.md`
+**Criar:** `contextos/contexto-nomenclatura-dirs.md`
 
 Conteúdo deve cobrir:
 - Formato `A{NN}_UC{XX}+{XX}_{DD}{MMM}` com exemplos
@@ -271,7 +271,7 @@ Conteúdo deve cobrir:
 - Como usar `node scripts/renomear-aula.mjs <antigo> <novo>`
 - Redirect pós-publicação: adicionar em `platform/dist/_redirects`: `/<slug-antigo>/* /<slug-novo>/:splat 301`
 
-**Acceptance:** arquivo existe em `.github/agents/contextos/contexto-nomenclatura-dirs.md`
+**Acceptance:** arquivo existe em `contextos/contexto-nomenclatura-dirs.md`
 
 ---
 

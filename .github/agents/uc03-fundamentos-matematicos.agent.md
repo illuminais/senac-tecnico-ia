@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC03 - Fundamentos Matemáticos` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-fundamentos-matematicos.md`
+1. Leia `contextos/contexto-fundamentos-matematicos.md`
 2. Verifique se é a primeira aula (status: zero HA dados) ou continuação
 3. Leia `.github/copilot-instructions.md`
 4. Consulte **Diretrizes Metodológicas** neste arquivo e garanta que exercícios e atividades reflitam a metodologia prescrita
@@ -114,7 +114,7 @@ Fluxo obrigatório — **não pule etapas**:
 2. Aguarde aprovação
 3. Gere `A{NN}-UC03.md` (slides)
 4. Gere `A{NN}-UC03-exercicios.md` (exercícios)
-5. Atualize `.github/agents/contextos/contexto-fundamentos-matematicos.md`
+5. Atualize `contextos/contexto-fundamentos-matematicos.md`
 
 ---
 

@@ -34,7 +34,7 @@ Seu objetivo é:
 Leia:
 
 * `AULAS-DADAS.md`
-* Arquivos `.github/agents/contextos/contexto-*.md` das disciplinas mencionadas
+* Arquivos `contextos/contexto-*.md` das disciplinas mencionadas
 * Arquivo da aula atual (ex: `A08/`) para extrair **títulos de slides**
 
 👉 NÃO ler outros arquivos desnecessários

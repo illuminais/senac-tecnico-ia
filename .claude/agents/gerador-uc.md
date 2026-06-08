@@ -23,15 +23,15 @@ Você é o agente genérico responsável por gerar slides e exercícios de **qua
 
 | UC | Nome | Skill | Contexto |
 |---|---|---|---|
-| UC01 | Fundamentos de Computação | `.claude/skills/uc01-fundamentos-computacao/SKILL.md` | `.github/agents/contextos/contexto-fundamentos-de-computacao.md` |
-| UC02 | Inglês Instrumental | `.claude/skills/uc02-ingles-instrumental/SKILL.md` | `.github/agents/contextos/contexto-ingles-instrumental.md` |
-| UC03 | Fundamentos Matemáticos | `.claude/skills/uc03-fundamentos-matematicos/SKILL.md` | `.github/agents/contextos/contexto-fundamentos-matematicos.md` |
-| UC04 | Fundamentos e Conceitos de IA | `.claude/skills/uc04-fundamentos-e-conceitos-de-ia/SKILL.md` | `.github/agents/contextos/contexto-fundamentos-e-conceitos-de-ia.md` |
-| UC05 | Python para IA | `.claude/skills/uc05-python-para-ia/SKILL.md` | `.github/agents/contextos/contexto-python-para-ia.md` |
-| UC06 | Arquitetura e GPU | `.claude/skills/uc06-arquitetura-computadores-gpu/SKILL.md` | `.github/agents/contextos/contexto-arquitetura-computadores-gpu.md` |
-| UC07 | Transformação Digital | `.claude/skills/uc07-transformacao-digital/SKILL.md` | `.github/agents/contextos/contexto-transformacao-digital.md` |
-| UC08 | Banco de Dados | `.claude/skills/uc08-banco-de-dados/SKILL.md` | `.github/agents/contextos/contexto-banco-de-dados.md` |
-| UC09 | Estatística Aplicada | `.claude/skills/uc09-estatistica-aplicada/SKILL.md` | `.github/agents/contextos/contexto-estatistica-aplicada.md` |
+| UC01 | Fundamentos de Computação | `.claude/skills/uc01-fundamentos-computacao/SKILL.md` | `contextos/contexto-fundamentos-de-computacao.md` |
+| UC02 | Inglês Instrumental | `.claude/skills/uc02-ingles-instrumental/SKILL.md` | `contextos/contexto-ingles-instrumental.md` |
+| UC03 | Fundamentos Matemáticos | `.claude/skills/uc03-fundamentos-matematicos/SKILL.md` | `contextos/contexto-fundamentos-matematicos.md` |
+| UC04 | Fundamentos e Conceitos de IA | `.claude/skills/uc04-fundamentos-e-conceitos-de-ia/SKILL.md` | `contextos/contexto-fundamentos-e-conceitos-de-ia.md` |
+| UC05 | Python para IA | `.claude/skills/uc05-python-para-ia/SKILL.md` | `contextos/contexto-python-para-ia.md` |
+| UC06 | Arquitetura e GPU | `.claude/skills/uc06-arquitetura-computadores-gpu/SKILL.md` | `contextos/contexto-arquitetura-computadores-gpu.md` |
+| UC07 | Transformação Digital | `.claude/skills/uc07-transformacao-digital/SKILL.md` | `contextos/contexto-transformacao-digital.md` |
+| UC08 | Banco de Dados | `.claude/skills/uc08-banco-de-dados/SKILL.md` | `contextos/contexto-banco-de-dados.md` |
+| UC09 | Estatística Aplicada | `.claude/skills/uc09-estatistica-aplicada/SKILL.md` | `contextos/contexto-estatistica-aplicada.md` |
 
 ---
 
@@ -59,7 +59,7 @@ Leia o contexto → veja `AULAS-DESENVOLVIMENTO-PROG.md` → determine próximo 
 
 1. **Identificar a UC** — confirmar com o usuário se não foi especificada
 2. **Ler a skill da UC** — carregar `SKILL.md` correspondente (mapeamento acima)
-3. **Ler o contexto vivo** — `.github/agents/contextos/contexto-{slug}.md`
+3. **Ler o contexto vivo** — `contextos/contexto-{slug}.md`
 4. **Ler `AULAS-DESENVOLVIMENTO-PROG.md`** — verificar o que já foi produzido para esta UC
 5. **Lembrar**: todo conteúdo visível segue as skills `estilo-pedagogico` e `estrutura-aula`
 

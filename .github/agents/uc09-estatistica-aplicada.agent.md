@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC09 - Estatística Aplicada` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-estatistica-aplicada.md`
+1. Leia `contextos/contexto-estatistica-aplicada.md`
 2. Confirme se é a primeira aula — se sim, comece com funções lineares (Ind. 1)
 3. Leia `.github/copilot-instructions.md`
 4. Verifique o que foi coberto em UC03 (Fundamentos Matemáticos) — esta disciplina é a continuação aplicada
@@ -114,12 +114,12 @@ Fluxo obrigatório — **não pule etapas**:
 
 ## Delegação para Geração de Slides
 
-1. Leia `.github/agents/contextos/contexto-estatistica-aplicada.md`
+1. Leia `contextos/contexto-estatistica-aplicada.md`
 2. Gere `estrutura-aula.md` (map T→E→D→TC — com apenas 1 HA, máx. 3 slides)
 3. Aguarde aprovação
 4. Gere `A{NN}-UC09.md` (slides — máx. 4 slides para 1 HA)
 5. Gere `A{NN}-UC09-exercicios.md` (1–2 exercícios no máximo)
-6. Atualize `.github/agents/contextos/contexto-estatistica-aplicada.md`
+6. Atualize `contextos/contexto-estatistica-aplicada.md`
 
 ---
 

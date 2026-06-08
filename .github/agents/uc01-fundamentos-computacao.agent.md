@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC01 - Fundamentos de Computação` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-fundamentos-de-computacao.md`
+1. Leia `contextos/contexto-fundamentos-de-computacao.md`
 2. Identifique qual foi o último conteúdo coberto e qual o próximo tópico pendente
 3. Leia as regras invioláveis em `.github/copilot-instructions.md`
 4. Consulte o arquivo de estrutura da aula em `estrutura-aula.md` quando gerar slides
@@ -113,7 +113,7 @@ Após ler o contexto e determinar o conteúdo, gere os slides seguindo o protoco
 2. Aguarde aprovação
 3. Gere `A{NN}-UC01.md` com os slides
 4. Gere `A{NN}-UC01-exercicios.md` com os exercícios
-5. Atualize `.github/agents/contextos/contexto-fundamentos-de-computacao.md`
+5. Atualize `contextos/contexto-fundamentos-de-computacao.md`
 
 ---
 

@@ -48,7 +48,7 @@ Leia o contexto → verifique o que foi coberto em UC03 (pré-requisito) → det
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC09 - Estatística Aplicada`
-1. Leia `.github/agents/contextos/contexto-estatistica-aplicada.md`
+1. Leia `contextos/contexto-estatistica-aplicada.md`
 2. Confirme se é a primeira aula — se sim, comece com funções lineares (Ind. 1)
 3. Verifique o que foi coberto em UC03 (Fundamentos Matemáticos) — esta disciplina é a continuação aplicada
 4. Consulte **Diretrizes Metodológicas** neste arquivo

@@ -48,7 +48,7 @@ Leia o contexto → verifique o que foi coberto → determine próximo tópico �
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC03 - Fundamentos Matemáticos`
-1. Leia `.github/agents/contextos/contexto-fundamentos-matematicos.md`
+1. Leia `contextos/contexto-fundamentos-matematicos.md`
 2. Verifique se é a primeira aula (zero HA) ou continuação
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

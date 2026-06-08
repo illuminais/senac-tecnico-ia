@@ -47,10 +47,10 @@ Ao receber trigger ("Planeje A{NN}", "Enriqueça A{NN}", "Plano para A{NN}"):
 
 Para cada UC presente na aula:
 
-1. Leia `.github/agents/contextos/contexto-{slug}.md` — apenas a seção "Conteúdo Consolidado" e "Resumo por Aula"
+1. Leia `contextos/contexto-{slug}.md` — apenas a seção "Conteúdo Consolidado" e "Resumo por Aula"
 2. Identifique: o que já foi ensinado, o que é pré-requisito, o que é novo
 3. Leia `metodologias-ucs-1-ano.md` — extraia a metodologia recomendada para a UC
-4. Leia `propostas_avaliacoes.md` ou `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md` — confirme se há avaliação no dia
+4. Leia `propostas_avaliacoes.md` ou `contextos/ATIVIDADES_AVALIATIVAS.md` — confirme se há avaliação no dia
 
 Slugs das UCs:
 | UC | Slug |

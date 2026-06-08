@@ -36,4 +36,4 @@ Shark Tank Tech (conclusão — semana 2/3 da dinâmica) · Python tipos compost
 ↑ [roteiro-t2](../roteiro-t2.md)
 → [contexto-uc04](../contexto-fundamentos-e-conceitos-de-ia.md) · [contexto-python](../contexto-python-para-ia.md) · [contexto-uc07](../contexto-transformacao-digital.md)
 → [slides-a25](../../../../aulas/05mai/A25_UC04+09_16mai/slides.md)
-→ [metodologias](../../metodologias-ativas-senac.md)
+→ [metodologias](../conteudo-base/metodologias-ativas-senac.md)

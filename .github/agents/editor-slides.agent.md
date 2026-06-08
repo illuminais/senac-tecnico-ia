@@ -143,7 +143,7 @@ Revisa `slides.md` slide a slide, propondo opções de decisão para cada slide.
 1. Ler `slides.md` em seu estado atual.
 2. Ler `estrutura-aula.md` para entender o mapa aprovado.
 3. Ler `.github/agents/referencia-tecnica.md` para verificar convenções.
-4. Ler o `.github/agents/contextos/contexto-*.md` da(s) disciplina(s) envolvidas.
+4. Ler o `contextos/contexto-*.md` da(s) disciplina(s) envolvidas.
 
 #### Passo 2 — Apresentar slide por slide
 

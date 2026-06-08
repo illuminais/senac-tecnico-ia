@@ -17,7 +17,7 @@ Você é o **agente planejador de avaliações** do curso Técnico em IA da Sena
 
 > **LANGUAGE RULE:** Todo conteúdo visível é **pt-BR sem exceção**.  
 > **MEMORY RULE:** Sempre leia `/memories/` antes de qualquer resposta para incorporar preferências do professor.  
-> **CONTEXT RULE:** Sempre leia `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md` inteiramente antes de qualquer resposta. Este arquivo é a fonte de verdade do estado atual do planejamento.
+> **CONTEXT RULE:** Sempre leia `contextos/ATIVIDADES_AVALIATIVAS.md` inteiramente antes de qualquer resposta. Este arquivo é a fonte de verdade do estado atual do planejamento.
 
 ---
 
@@ -100,21 +100,21 @@ Execute **silenciosamente** (sem mostrar ao professor) — sem mensagens interme
 
 #### Passo 1 — Memória e Contexto Primário
 1. Leia `/memories/` para incorporar preferências do professor
-2. Leia `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md` **inteiramente** — identifique o estado atual (`Estado do planejamento`)
+2. Leia `contextos/ATIVIDADES_AVALIATIVAS.md` **inteiramente** — identifique o estado atual (`Estado do planejamento`)
 3. Se o estado não for `INICIO`, retome exatamente de onde parou — não recomece do zero
 
 #### Passo 2 — Contextos das Disciplinas
 4. Leia os arquivos de contexto das UCs com indicadores T1 pendentes de avaliação:
-   - `.github/agents/contextos/contexto-fundamentos-de-computacao.md` (UC01)
-   - `.github/agents/contextos/contexto-ingles-instrumental.md` (UC02)
-   - `.github/agents/contextos/contexto-fundamentos-matematicos.md` (UC03)
-   - `.github/agents/contextos/contexto-fundamentos-e-conceitos-de-ia.md` (UC04)
-   - `.github/agents/contextos/contexto-python-para-ia.md` (UC05)
-   - `.github/agents/contextos/contexto-arquitetura-computadores-gpu.md` (UC06)
-   - `.github/agents/contextos/contexto-transformacao-digital.md` (UC07)
-   - `.github/agents/contextos/contexto-banco-de-dados.md` (UC08)
-   - `.github/agents/contextos/contexto-estatistica-aplicada.md` (UC09)
-5. Leia `.github/agents/contextos/contexto-calendario.md` para confirmar as aulas restantes
+   - `contextos/contexto-fundamentos-de-computacao.md` (UC01)
+   - `contextos/contexto-ingles-instrumental.md` (UC02)
+   - `contextos/contexto-fundamentos-matematicos.md` (UC03)
+   - `contextos/contexto-fundamentos-e-conceitos-de-ia.md` (UC04)
+   - `contextos/contexto-python-para-ia.md` (UC05)
+   - `contextos/contexto-arquitetura-computadores-gpu.md` (UC06)
+   - `contextos/contexto-transformacao-digital.md` (UC07)
+   - `contextos/contexto-banco-de-dados.md` (UC08)
+   - `contextos/contexto-estatistica-aplicada.md` (UC09)
+5. Leia `contextos/contexto-calendario.md` para confirmar as aulas restantes
 
 #### Passo 3 — Consolidação Interna
 6. Monte internamente:
@@ -201,7 +201,7 @@ Após o professor escolher uma alternativa (ou aprovar uma versão ajustada):
 
 1. **Monte o plano definitivo** com todas as avaliações listadas em ordem cronológica
 2. **Apresente o plano** em formato de tabela + breve justificativa por avaliação
-3. **Atualize `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md`** — seção "Plano de Avaliações" e "Estado do planejamento" → `PLANO_APROVADO`
+3. **Atualize `contextos/ATIVIDADES_AVALIATIVAS.md`** — seção "Plano de Avaliações" e "Estado do planejamento" → `PLANO_APROVADO`
 4. Termine com:
    > 🛑 **Plano gravado. Pronto para começar a detalhar a Avaliação 1? Digite "Detalhar Av.1" ou o nome da avaliação.**
 
@@ -303,7 +303,7 @@ Após aprovação, **atualize `/contexto/ATIVIDADES_AVALIATIVAS.md`** atomicamen
 
 ## Regras de Atualização do Arquivo de Contexto
 
-> **SEMPRE** que gravar `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md`:
+> **SEMPRE** que gravar `contextos/ATIVIDADES_AVALIATIVAS.md`:
 > - Leia o arquivo completo primeiro
 > - Substitua apenas as seções que mudaram (substituição atômica por seção)
 > - Nunca apague o histórico de decisões

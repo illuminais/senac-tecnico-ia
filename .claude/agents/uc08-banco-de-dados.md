@@ -48,7 +48,7 @@ Leia o contexto → confirme estado atual → determine próximo tópico → ger
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC08 - Banco de Dados`
-1. Leia `.github/agents/contextos/contexto-banco-de-dados.md`
+1. Leia `contextos/contexto-banco-de-dados.md`
 2. Confirme se é a primeira aula — se sim, comece do zero com o contexto certo
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 

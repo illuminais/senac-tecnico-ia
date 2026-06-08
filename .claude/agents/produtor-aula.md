@@ -78,14 +78,14 @@ Ao receber qualquer trigger de produção ("Gere A0N", "Prepare A0N", "Aula NN")
 1. Leia `AULAS-DADAS.md` — identifique a última aula registrada, seu conteúdo e o número A{NN}
 2. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — verifique o que já foi produzido na sprint atual (evite gerar conteúdo duplicado para UCs que já têm slides na fila)
 3. Leia `roadmap-t1.md` — localize a aula A{NN} no calendário consolidado (composição de UCs, HA, avaliações)
-4. Leia `.github/agents/contextos/contexto-calendario.md` — confirme tipo (`Sem1-Qui`, `Sem1-Sex`, `Sem2-Qui`, `Sem2-Sex`) e horários
+4. Leia `contextos/contexto-calendario.md` — confirme tipo (`Sem1-Qui`, `Sem1-Sex`, `Sem2-Qui`, `Sem2-Sex`) e horários
 
 #### Passo 2 — Carregar contexto da aula
 
 5. Se existir `A{NN}/plano-aula.md`: leia-o — já contém composição, HA e lista de slides
-6. Para cada UC do dia, leia **apenas** `.github/agents/contextos/contexto-{slug}.md` — é o resumo condensado por design (~20 linhas)
+6. Para cada UC do dia, leia **apenas** `contextos/contexto-{slug}.md` — é o resumo condensado por design (~20 linhas)
 7. Leia `.github/agents/referencia-tecnica.md` — layouts e convenções
-8. Leia `.github/agents/contextos/ATIVIDADES_AVALIATIVAS.md` — verifique se alguma avaliação tem data-alvo coincidindo com a aula de hoje (campo "Data-alvo" na tabela do Plano). Se sim, **avise o professor** antes de avançar: pode ser necessário preparar um slide de instruções/enunciado para a turma naquele dia.
+8. Leia `contextos/ATIVIDADES_AVALIATIVAS.md` — verifique se alguma avaliação tem data-alvo coincidindo com a aula de hoje (campo "Data-alvo" na tabela do Plano). Se sim, **avise o professor** antes de avançar: pode ser necessário preparar um slide de instruções/enunciado para a turma naquele dia.
 9. Monte internamente o rascunho de composição (UC, HA, tópico provável)
 
 ---
@@ -306,8 +306,8 @@ Se o usuário pedir apenas slides ou apenas exercícios, execute normalmente as 
 Antes de qualquer delegação, confirme:
 - `AULAS-DADAS.md` foi lido para determinar a última aula concluída
 - `AULAS-DESENVOLVIMENTO-PROG.md` foi lido para verificar o que já foi produzido na sprint atual (evitar duplicação de conteúdo entre sessões)
-- `.github/agents/contextos/contexto-calendario.md` foi lido para resolver data, tipo e composição de UCs do dia
-- `.github/agents/contextos/contexto-*.md` de cada disciplina na composição foi lido (NÃO o slides.md da última aula)
+- `contextos/contexto-calendario.md` foi lido para resolver data, tipo e composição de UCs do dia
+- `contextos/contexto-*.md` de cada disciplina na composição foi lido (NÃO o slides.md da última aula)
 - `plano-aula.md` da aula atual está gravado e aprovado
 
 ---

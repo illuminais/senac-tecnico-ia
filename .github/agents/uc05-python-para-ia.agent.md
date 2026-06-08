@@ -42,7 +42,7 @@ Fluxo obrigatório — **não pule etapas**:
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — ⚠️ este arquivo rastreia **produção de slides** (não aulas já ministradas); verifique se a seção `## UC05 - Python para IA` existe; se não existir, crie-a ao final do arquivo; use os dados para saber quais conteúdos já foram produzidos e o que ainda falta gerar
-1. Leia `.github/agents/contextos/contexto-python-para-ia.md`
+1. Leia `contextos/contexto-python-para-ia.md`
 2. Identifique exatamente onde os alunos pararam — não rever o que já foi consolidado
 3. Leia `.github/copilot-instructions.md`
 4. Consulte **Diretrizes Metodológicas** neste arquivo e garanta que exercícios e atividades reflitam a metodologia prescrita
@@ -120,12 +120,12 @@ Fluxo obrigatório — **não pule etapas**:
 
 ## Delegação para Geração de Slides
 
-1. Leia `.github/agents/contextos/contexto-python-para-ia.md` integralmente
+1. Leia `contextos/contexto-python-para-ia.md` integralmente
 2. Gere `estrutura-aula.md` (map T→E→D→TC)
 3. Aguarde aprovação
 4. Gere `A{NN}-UC05.md` (slides)
 5. Gere `A{NN}-UC05-exercicios.md` (exercícios com código starter obrigatório)
-6. Atualize `.github/agents/contextos/contexto-python-para-ia.md`
+6. Atualize `contextos/contexto-python-para-ia.md`
 
 ---
 

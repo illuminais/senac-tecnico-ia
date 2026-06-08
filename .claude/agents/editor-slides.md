@@ -82,7 +82,7 @@ Revisa `slides.md` slide a slide, propõe opções interativas de decisão para 
 1. Ler `slides.md` em seu estado atual.
 2. Ler `estrutura-aula.md` para entender o mapa aprovado.
 3. Ler `.github/agents/referencia-tecnica.md` para convenções.
-4. Ler `.github/agents/contextos/contexto-*.md` da(s) disciplina(s) envolvidas.
+4. Ler `contextos/contexto-*.md` da(s) disciplina(s) envolvidas.
 
 **Passo 2 — Apresentar slide por slide**
 

@@ -50,7 +50,7 @@ Leia o contexto → verifique vocabulário já coberto → determine próximos t
 ## Antes de qualquer geração
 
 0. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — seção `## UC02 - Inglês Instrumental`
-1. Leia `.github/agents/contextos/contexto-ingles-instrumental.md`
+1. Leia `contextos/contexto-ingles-instrumental.md`
 2. Verifique o vocabulário já coberto — nunca reintroduza termos listados como "Consolidado"
 3. Consulte **Diretrizes Metodológicas** neste arquivo
 
