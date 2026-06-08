@@ -1,9 +1,38 @@
-# Contexto — Arquitetura de Computadores e GPU (UC06)
+---
+schema: contexto-uc
+uc: UC06
+disciplina: Arquitetura de Computadores e GPU
+ha-total: 40
+ha-dado: 1
+ha-restante: 39
+trimestre-atual: T2
+---
 
-**Código:** UC06  
-**UC:** UC06 — Reconhecimento de Modelos de Arquitetura de Computadores e GPU  
-**Disciplina:** Arquitetura de Computadores e GPU  
-**Carga Total:** 33h (40 HA) | `T1: 13 HA (ajustado: 11) · T2: 14 HA · T3: 13 HA`
+# Contexto — UC06 Arquitetura de Computadores e GPU
+
+## Plano Anual
+
+| T | # | Tópico | HA | Status |
+|---|---|---|---|---|
+| T1 | 1 | CPU vs GPU: paralelismo vs IA · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | 1 | ✅ A03 |
+| T1 | 2 | Arquitetura CPU: ALU · CU · registradores · barramento · ciclo fetch-decode-execute | 2 | ⬜ |
+| T1 | 3 | Arquitetura GPU: CUDA cores · VRAM · tensor cores · SIMD | 2 | ⬜ |
+| T1 | 4 | Pipeline GPU: como um modelo ML usa a GPU (batch processing · CUDA stream) | 2 | ⬜ |
+| T1 | 5 | Comparativo CPU vs GPU em inferência vs treino · escolha de hardware | 2 | ⬜ |
+| T1 | 6 | Exercício: configurar servidor de treino ML (qual GPU, quanta VRAM, qual CPU?) | 2 | ⬜ |
+| T2 | 7 | Processos e threads: concorrência · GIL Python · multiprocessing | 3 | ⬜ |
+| T2 | 8 | Cloud computing: GPU na nuvem — Google Colab · AWS · Azure · custo estimado | 2 | ⬜ |
+| T2 | 9 | Redes de computadores: protocolos básicos · TCP/IP · DNS · HTTP/HTTPS | 3 | ⬜ |
+| T2 | 10 | Desmontagem prática: identificar componentes em hardware real | 2 | ⬜ |
+| T2 | 11 | Benchmark: medir performance CPU vs GPU com Python (timeit · torch.cuda) | 2 | ⬜ |
+| T2 | 12 | Protocolos e serviços de rede: FTP · SSH · SMTP · portas padrão | 2 | ⬜ |
+| T3 | 13 | Endereçamento IPv4: classes · máscara de sub-rede · CIDR | 3 | ⬜ |
+| T3 | 14 | Endereçamento IPv6: estrutura · transição · exemplos | 2 | ⬜ |
+| T3 | 15 | Segurança em redes: firewall · VPN · criptografia TLS | 3 | ⬜ |
+| T3 | 16 | Projeto: diagrama de rede para uma empresa que usa IA | 3 | ⬜ |
+| T3 | 17 | Virtualização e contêineres: VMs · Docker (intro) · uso em deploy de modelos | 2 | ⬜ |
+
+**Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
 
 ---
 
@@ -14,6 +43,12 @@
 | T1 | 11 (ajustado) | 1 | 10 |
 | T2 | 14 | 0 | 14 |
 | T3 | 13 | 0 | 13 |
+
+---
+
+## Última Aula
+<!-- REPLACE a cada aula — não é append -->
+A03 · 05/03 · CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · periféricos · comparativo funcional (nível introdutório)
 
 ---
 
@@ -29,52 +64,30 @@
 
 ---
 
-## Resumo por Aula
+## Log de Execução
+<!-- APPEND-ONLY — nunca editar linhas existentes -->
 
-| Aula | Data | HA | Conteúdo |
-|---|---|---|---|
-| A01 | 26/02/2026 | 0 | Não trabalhada |
-| A02 | 27/02/2026 | 0 | Não trabalhada |
-| A03 | 05/03/2026 | ~1 | CPU vs GPU (paralelismo vs IA), RAM, HD vs SSD vs NVMe, periféricos, comparativo de componentes |
-| A04 | 06/03/2026 | 0 | Não trabalhada (Sem2-Sex — bloco UC05/UC08/UC06, mas tempo todo consumido por UC05 e UC08) |
-| A05 | 12/03/2026 | 0 | Não trabalhada (Sem1-Qui — bloco UC05/UC03/UC04) |
-| A06 | 13/03/2026 | 0 | Não trabalhada (Sem1-Sex — bloco UC08/UC09) |
-| A07 | 19/03/2026 | 0 | Não trabalhada (Sem2-Qui — bloco UC07/UC01/UC02) |
-| A08 | 20/03/2026 | 0 | Não trabalhada — bloco UC06 não foi aberto; tempo consumido por dificuldades UC05 (if/else) + UC08 |
-| A09 | 26/03/2026 | 0 | Não trabalhada (Sem1-Qui — bloco UC05/UC03/UC04) |
-| A10 | 27/03/2026 | 0 | Não trabalhada (Sem1-Sex — gincana Python + SQL extenso) |
+| Aula | Data | HA | Tópicos | Feedback |
+|---|---|---|---|---|
+| A03 | 05/03 | ~1 | CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | Apenas comparativo visual/funcional — arquitetura interna não coberta |
 
 ---
 
-## Conteúdo Coberto (A03 — nível introdutório)
+## Conteúdo Coberto (Ind. 1 — parcial)
 
-### Comparativo de Hardware (Ind. 1 — parcial)
-- **CPU vs GPU:** CPU = poucas cores poderosas (sequencial), GPU = milhares de cores simples (paralelo)
-- Analogia: CPU é um chef de cozinha experiente (poucos, cada um excelente); GPU é um batalhão de cozinheiros (muitos, tarefas simples em paralelo)
-- **RAM:** memória volátil, velocidade de acesso vs capacidade
+- **CPU vs GPU:** CPU = poucas cores poderosas (sequencial) · GPU = milhares de cores simples (paralelo)
+- Analogia: CPU é chef experiente · GPU é batalhão de cozinheiros — analogia já usada, não repetir
+- **RAM:** memória volátil · velocidade de acesso vs capacidade
 - **HD vs SSD vs NVMe:** velocidade × custo × durabilidade
-- **Periféricos:** I/O básico (mencionado como parte do modelo E-P-S de D01)
+- **Periféricos:** I/O básico mencionado no modelo E-P-S de UC01
 
-**Profundidade:** Apenas comparativo visual e funcional — arquitetura interna não foi coberta.
-
----
-
-## Próximos Tópicos (Ind. 1 continuação + Ind. 2)
-
-| Seq. | Tópico | HA |
-|---|---|---|
-| 1 | Arquitetura CPU: ALU, CU, registradores, barramento, ciclo fetch-decode-execute | 2 |
-| 2 | Arquitetura GPU: CUDA cores, VRAM, tensor cores, SIMD | 2 |
-| 3 | Pipeline GPU: como um modelo de ML usa a GPU (batch processing, CUDA stream) | 2 |
-| 4 | Comparativo CPU vs GPU em inferência vs treino | 1 |
-| 5 | Exercício: configurar um servidor de treino de ML (qual GPU, quanta VRAM, qual CPU?) | 2 |
-| 6 | Cloud computing: GPU na nuvem (Google Colab, AWS, Azure) | 1 |
+**Não reintroduzir:** analogia chef/batalhão · comparativo funcional CPU/GPU básico
 
 ---
 
 ## Vocabulário Introduzido (A03)
 
-| Termo | Definição Resumida | Status |
+| Termo | Definição | Status |
 |---|---|---|
 | CPU | Central Processing Unit — processador principal | Consolidado |
 | GPU | Graphics Processing Unit — processador de imagem + IA | Consolidado |
@@ -86,18 +99,15 @@
 
 ---
 
-## Conexões com UC01 (Fundamentos de Computação)
+## Conexões com Outras Disciplinas
 
-- Em A01 de D01, o modelo E-P-S (Entrada-Processamento-Saída) foi apresentado como base
-- Os componentes CPU/GPU/RAM/SSD se encaixam dentro do "P" (Processamento) desse modelo
-- Esta disciplina aprofunda o que D01 apenas introduziu
+| Conceito | Disciplina | Observação |
+|---|---|---|
+| GPU para treino de modelos | UC04 IA | Shark Tank levantou questão de custo de GPU |
+| `torch.cuda.is_available()` | UC05 Python | Mostrar quando abordar CUDA |
+| CPU/GPU no modelo E-P-S | UC01 Computação | UC01 introduziu superficialmente — aprofundar aqui |
 
----
-
-## Regras para o Copilot
-
-1. CPU vs GPU básico (A03) — está consolidado. Não reintroduzir a analogia do chef/batalhão
-2. Próximas aulas: arquitetura interna, ciclo fetch-decode-execute, CUDA
-3. Todo conceito de GPU deve ter referência a tarefas reais de treino de ML
-4. Mostrar `torch.cuda.is_available()` e `device = torch.device('cuda')` quando abordar CUDA
-5. Pipeline GPU (Ind. 2) — prioridade após Ind. 1 estar consolidado
+## Refs
+↑ [roteiro-t2](roteiro-t2.md)
+→ [contexto-python](contexto-python-para-ia.md) · [contexto-uc04](contexto-fundamentos-e-conceitos-de-ia.md)
+→ [metodologias](conteudo-base/metodologias-ativas-senac.md)

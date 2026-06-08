@@ -87,25 +87,54 @@ Adicionar no final (antes do bloco de template HTML comment), usando o formato p
 
 ### 5. Atualizar `contextos/contexto-*.md`
 
-Para cada UC:
+Todos os contextos seguem o **Schema 3** (`_schemas.md`). Para cada UC:
 
-#### Adicionar em "Resumo por Aula":
+#### a) Atualizar YAML frontmatter
+
+```yaml
+ha-dado: {valor anterior + HA dado na aula}
+ha-restante: {ha-total - novo ha-dado}
+```
+
+👉 Recalcular ambos os campos
+
+---
+
+#### b) Atualizar `## Plano Anual` (status dos tópicos)
+
+Para cada tópico coberto na aula:
+- Mudar `⬜` ou `⏳` → `✅ A{NN}`
+
+Para o próximo tópico previsto (se o professor indicou):
+- Mudar `⬜` → `⏳ A{NN+1}`
+
+👉 Nunca remover linhas — apenas atualizar a coluna Status
+
+---
+
+#### c) REPLACE em `## Última Aula`
+
+Substituir **toda a linha** (não append):
 
 ```
-| A{NN} | {DD/MM/AAAA} | ~{N} | {tópicos reais} | Ministrada |
+A{NN} · {DD/MM} · {resumo 1 linha: tópicos cobertos}
+```
+
+O comentário `<!-- REPLACE a cada aula — não é append -->` deve permanecer.
+
+---
+
+#### d) APPEND em `## Log de Execução`
+
+Adicionar ao final da tabela (nunca editar linhas existentes):
+
+```
+| A{NN} | {DD/MM} | ~{N} | {tópicos reais separados por ·} | {feedback ou —} |
 ```
 
 ---
 
-#### Em "Conceitos Consolidados":
-
-* Adicionar apenas o que apareceu nos slides ou relato
-* NÃO duplicar
-* NÃO classificar demais
-
----
-
-#### Em "Feedback de Campo" (OBRIGATÓRIO quando aplicável):
+#### e) Em "Feedback de Campo" (OBRIGATÓRIO quando aplicável):
 
 Se o relato do professor contiver QUALQUER um desses sinais, **deve** gerar entrada em "Feedback de Campo":
 - Dificuldade da turma (ex: "turma não conseguiu fazer", "alunos travaram")
@@ -123,11 +152,11 @@ Sem interpretação. Sem classificação subjetiva. Apenas o que foi dito.
 
 ---
 
-### 6. Atualizar `.copilot-instructions.md`
+### 6. Atualizar `CLAUDE.md`
 
-Atualizar a seção "Contexto Atual do Curso":
+Na seção "## Contexto Atual do Curso":
 - **Última aula ministrada**: A{NN} ({DD/MM/AAAA}) — {resumo 1 linha}
-- **Em produção**: Sprint A{NN+1} (se aplicável)
+- **Próxima aula**: A{NN+1} ({data}) — {UCs previstas no roteiro}
 
 ---
 

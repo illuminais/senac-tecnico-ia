@@ -1,9 +1,42 @@
-# Contexto — Transformação Digital e Estratégias de Informação para IA (UC07)
+---
+schema: contexto-uc
+uc: UC07
+disciplina: Transformação Digital e Estratégias de Informação para IA
+ha-total: 80
+ha-dado: 10
+ha-restante: 70
+trimestre-atual: T2
+---
 
-**Código:** UC07  
-**UC:** UC07 — Compreensão sobre a Transformação Digital  
-**Disciplina:** Transformação Digital e Estratégias de Informação  
-**Carga Total:** 67h (80 HA) | `T1: 26 HA (ajustado: 20) · T2: 27 HA · T3: 27 HA`
+# Contexto — UC07 Transformação Digital
+
+## Plano Anual
+
+| T | # | Tópico | HA | Status |
+|---|---|---|---|---|
+| T1 | 1 | 4ª Revolução Industrial · Big Data (5Vs) · IA em setores · mercado de trabalho · cases ML | 2 | ✅ A01/A02 |
+| T1 | 2 | Debate: "IA é trapaça ou ferramenta?" · 4 famílias de ferramentas de IA · prompt engineering básico | 5 | ✅ A07 |
+| T1 | 3 | Prompt engineering aprofundado: exercícios escritos (melhorar prompt ruim · criar do zero) | 1 | ⬜ |
+| T1 | 4 | LGPD na prática: consentimento · finalidade · casos de vazamento · multas | 2 | ⬜ |
+| T1 | 5 | Segurança digital: senhas fortes · phishing · 2FA · backup · ransomware | 2 | ⬜ |
+| T1 | 6 | Tecnologias emergentes: IoT · edge computing · computação quântica (visão geral) | 2 | ⬜ |
+| T1 | 7 | IA como serviço (AIaaS): AWS · Azure · Google Cloud — APIs de IA | 2 | ⬜ |
+| T2 | 8 | Custo-benefício de implementar IA: custo de infra · preço de mercado · risco de não fazer | 2 | ✅ A27 |
+| T2 | 9 | Análise estratégica de empresa: canvas de diagnóstico + protótipo de solução IA | 3 | ⬜ |
+| T2 | 10 | Planejamento de implementação IA: roadmap · stakeholders · KPIs | 3 | ⬜ |
+| T2 | 11 | Segurança organizacional: vazamento de dados · políticas de uso de IA · compliance | 2 | ⬜ |
+| T2 | 12 | Cases brasileiros: Nubank · iFood · Embrapa · análise crítica | 2 | ⬜ |
+| T2 | 13 | BI básico: dashboards · métricas de negócio · apresentação de dados | 3 | ⬜ |
+| T2 | 14 | Simulação: proposta completa de TD para empresa real | 4 | ⬜ |
+| T2 | 15 | Mesa-redonda: impacto da IA no mercado regional (Pato Branco/PR) | 2 | ⬜ |
+| T3 | 16 | Ciclo de vida da informação · cultura organizacional e resistência à mudança | 3 | ⬜ |
+| T3 | 17 | Cultura informacional: tipos · influência na estratégia de informação | 3 | ⬜ |
+| T3 | 18 | Fontes de dados relevantes · análise descritiva · preditiva · prescritiva | 4 | ⬜ |
+| T3 | 19 | Ferramentas analíticas · relatórios integrados com BI | 4 | ⬜ |
+| T3 | 20 | Projeto final: estratégia de informação para organização real | 5 | ⬜ |
+| T3 | 21 | Apresentação e defesa do projeto | 3 | ⬜ |
+
+**Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
 
 ---
 
@@ -12,8 +45,14 @@
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 20 (ajustado) | 7,5 | 12,5 |
-| T2 | 27 | 0 | 27 |
+| T2 | 27 | ~2,5 (A27) | ~24,5 |
 | T3 | 27 | 0 | 27 |
+
+---
+
+## Última Aula
+<!-- REPLACE a cada aula — não é append -->
+A27 · 22/05 · UC07 estreia T2: custo-benefício de implementar IA (custo de infra, preço de mercado, risco de não fazer) · mini-análise financeira da solução do Shark Tank (planilha: custo fixo × receita × margem)
 
 ---
 
@@ -21,8 +60,8 @@
 
 | Ind. | Descrição | T1 | T2 | T3 |
 |---|---|---|---|---|
-| 1 | Compreende as aplicações dos fundamentos em transformação digital em práticas pedagógicas | ✅ principal | — | — |
-| 2 | Utiliza as ferramentas digitais de IA conforme boas práticas de mercado | ✅ principal | — | — |
+| 1 | Compreende as aplicações dos fundamentos em transformação digital | ✅ principal | — | — |
+| 2 | Utiliza ferramentas digitais de IA conforme boas práticas de mercado | ✅ principal | — | — |
 | 3 | Considera a segurança digital na transformação digital em uma organização | 🔄 fraco | ✅ foco | — |
 | 4 | Compreende as rupturas das tecnologias emergentes para a transformação digital | 🔄 fraco | ✅ foco | — |
 | 5 | Analisa objetivos estratégicos e cria um plano de implementação | — | ✅ foco | — |
@@ -34,98 +73,38 @@
 
 ---
 
-## Resumo por Aula
+## Log de Execução
+<!-- APPEND-ONLY — nunca editar linhas existentes -->
 
-| Aula | Data | HA | Conteúdo |
-|---|---|---|---|
-| A01 | 26/02/2026 | ~2 | 4ª Revolução Industrial, Big Data, IA em setores (saúde, varejo, indústria, agro), mercado de trabalho em IA, apresentação do curso |
-| A02 | 27/02/2026 | ~0,5 | Trajetória de carreira em IA, case Mercado Livre logística, case Alibaba warehouse robots, case NVIDIA DRIVE automotivo |
-| A03 | 05/03/2026 | 0 | Não trabalhada |
-| A04 | 06/03/2026 | 0 | Não trabalhada |
-| A05 | 12/03/2026 | 0 | Não trabalhada |
-| A06 | 13/03/2026 | 0 | Não trabalhada |
-| A07 | 19/03/2026 | ~5 | Debate estruturado "IA é trapaça ou ferramenta?" (3 fases: duplas → times → porta-vozes, ocupou quase a manhã toda), 4 famílias de ferramentas de IA (Texto: ChatGPT/Claude/Gemini/Copilot; Imagem: Midjourney/DALL-E/Firefly; Código: GitHub Copilot/Cursor; Voz-Áudio: ElevenLabs/Suno/Whisper), geração de imagem no Gemini (objeto dos alunos + superfície da Lua), prompt engineering básico (anatomia: Papel·Contexto·Tarefa·Formato) |
+| Aula | Data | HA | Tópicos | Feedback |
+|---|---|---|---|---|
+| A01 | 26/02 | ~2 | 4ª Revolução · Big Data 5Vs · IA em setores · mercado de trabalho · apresentação do curso | — |
+| A02 | 27/02 | ~0,5 | Trajetória de carreira em IA · case Mercado Livre · Alibaba · NVIDIA DRIVE | — |
+| A07 | 19/03 | ~5 | Debate "IA: trapaça ou ferramenta?" (3 fases) · 4 famílias de ferramentas · geração de imagem no Gemini · prompt engineering (Papel·Contexto·Tarefa·Formato) | Debate tomou quase toda a manhã — engajamento alto |
+| A27 | 22/05 | ~2,5 | Custo-benefício de implementar IA (custo infra · preço mercado · risco) · mini-análise financeira solução Shark Tank | — |
 
 ---
 
-## Conteúdo Consolidado
+## Conteúdo Consolidado (não retornar ao mesmo nível)
 
-### 4ª Revolução Industrial (A01 — Ind. 1 e 4)
-- Contexto histórico: 1ª (vapor) → 2ª (eletricidade) → 3ª (computadores) → 4ª (fusão digital-físico-biológico)
-- Pilares: IA, IoT, Big Data, robótica, computação em nuvem, impressão 3D, blockchain
-- Impacto no mercado: 85 milhões de empregos transformados até 2025 (WEF), 97 milhões de novos empregos emergentes
-- **Big Data:** Volume, Velocidade, Variedade, Veracidade, Valor (5 Vs)
+- **4ª Revolução:** 1ª (vapor) → 2ª (elétrica) → 3ª (computadores) → 4ª (fusão digital-físico-biológico) · pilares · impacto WEF
+- **IA em Setores:** saúde · varejo · indústria · agro — já mapeados
+- **Cases:** Mercado Livre (fulfilment) · Alibaba (warehouse robots) · NVIDIA DRIVE (automotivo)
+- **Debate ético:** IA como amplificação vs desvantagem — turma chegou a posição matizada
+- **4 Famílias:** Texto (ChatGPT/Claude/Gemini) · Imagem (Midjourney/DALL-E) · Código (Copilot/Cursor) · Voz (ElevenLabs/Suno/Whisper)
+- **Prompt básico:** Papel · Contexto · Tarefa · Formato — já introduzido, aprofundar com exercícios
 
-### IA em Setores (A01 — Ind. 1)
-- Saúde: diagnóstico por imagem, drug discovery, monitoramento remoto
-- Varejo: recomendação, previsão de demanda, logística autônoma
-- Indústria: manutenção preditiva, controle de qualidade, robótica colaborativa
-- Agro: drones, sensores de solo, previsão climática
+## Conexões com Outras Disciplinas
 
-### Cases de empresas (A02 — Ind. 4)
-- **Mercado Livre:** Fulfilment centers com robôs → redução de 70% no tempo de separação
-- **Alibaba:** Cainiao warehouse — 700 robôs, processamento de 1M pedidos/dia
-- **NVIDIA DRIVE:** plataforma IA para veículos autônomos — níveis SAE 0→5
-
-### Debate Ético — IA: Trapaça ou Ferramenta? (A07 — Ind. 1, 2)
-- Dinâmica em 3 fases: duplas → times → porta-vozes; tomou quase toda a manhã
-- Argumento central: IA como calculadora (ferramenta de amplificação) vs. desvantagem acadêmica injusta
-- Resultado: turma chegou a posição matizada — contexto define o uso ético
-
-### 4 Famílias de Ferramentas de IA (A07 — Ind. 2, 4)
-- **Família Texto:** ChatGPT, Claude, Gemini, Copilot — geração de texto, código, análise
-- **Família Imagem:** Midjourney, DALL-E, Firefly — geração de imagens a partir de texto
-- **Família Código:** GitHub Copilot, Cursor — sugestão e geração de código
-- **Família Voz/Áudio:** ElevenLabs (clonagem de voz), Suno (música), Whisper (transcrição)
-
-### Prompt Engineering Básico (A07 — Ind. 2)
-- Anatomia do prompt: **Papel · Contexto · Tarefa · Formato**
-- Prática: geração de imagem no Gemini — objeto da escolha dos alunos + superfície da Lua
-- Nível coberto: introdutório (anatomia + experimentação guiada; exercícios escritos pendentes)
-
----
-
-## Vocabulário Introduzido
-
-| Termo | Definição Resumida | Status |
+| Conceito | Disciplina | Observação |
 |---|---|---|
-| 4ª Revolução Industrial | Fusão de tecnologias digitais, físicas e biológicas | Consolidado |
-| Big Data | Dados em volume, velocidade e variedade além da capacidade tradicional | Consolidado |
-| IoT (Internet das Coisas) | Dispositivos físicos conectados à internet | Introduzido |
-| Edge computing | Processamento próximo à fonte de dados, não na nuvem | Mencionado |
-| Transformação digital | Adoção de tecnologias digitais para transformar processos e modelos de negócio | Consolidado |
+| Custo-benefício IA × GPU | UC06 Arquitetura | Shark Tank tornou concreto o custo de infra |
+| LGPD · dados sensíveis | UC08 BD | SQL com dados pessoais exige cuidado LGPD |
+| Análise de dados/BI | UC09 Estatística | pandas + dashboards como ferramenta de TD |
+| Prompts e code generation | UC05 Python | GitHub Copilot/Cursor como ferramentas de TD |
 
----
-
-## Próximos Tópicos (T1 restante — 12,5 HA)
-
-| Seq. | Tópico | HA | Ind. |
-|---|---|---|---|
-| 1 | Prompt engineering aprofundado: exercícios escritos (melhorar prompt ruim, criar do zero) | 1 | 2 |
-| 2 | LGPD na prática: consentimento, finalidade, exemplos de vazamento e multas | 2 | 3 |
-| 3 | Segurança digital: senhas fortes, phishing, 2FA, backup, ransomware | 2 | 3 |
-| 4 | Tecnologias emergentes disruptivas: IoT, edge computing, computação quântica (visão geral) | 2 | 4 |
-| 5 | IA como serviço (AIaaS): AWS, Azure, Google Cloud — APIs de IA | 2 | 2, 4 |
-| 6 | Planejamento de implementação de IA em empresa: análise custo-benefício simples | 2 | 5, 6 |
-| 7 | Cases brasileiros: Nubank (credit scoring), iFood (entrega), Embrapa (agro IA) | 1 | 1 |
-
----
-
-## Não Cobrir Novamente (mesmo nível)
-
-- 4ª Revolução Industrial — história e pilares (A01)
-- Apresentação do curso (A01)
-- Cases Mercado Livre, Alibaba, NVIDIA DRIVE (A02)
-- Debate "IA é trapaça ou ferramenta?" — já resolvido com consenso (A07)
-- Anatomia do prompt Papel·Contexto·Tarefa·Formato — já introduzida (A07); aprofundar com exercícios
-- As 4 famílias de ferramentas — já mapeadas (A07); apenas referenciar em contextos práticos
-
----
-
-## Regras para o Copilot
-
-1. Verificar "Não Cobrir Novamente" antes de gerar
-2. Casos de sucesso: sempre incluir pelo menos 1 empresa brasileira
-3. Debates estruturados: toda aula D07 termina com debate sobre impacto social/ético
-4. LGPD é prática — perguntar "isso está de acordo com a LGPD?" para cada exemplo de dado
-5. Segurança digital (Ind. 3): obrigatório antes de T1 terminar — priorizar
+## Refs
+↑ [roteiro-t2](roteiro-t2.md)
+→ [contexto-uc04](contexto-fundamentos-e-conceitos-de-ia.md) · [contexto-bd](contexto-banco-de-dados.md)
+→ [semana01](semanas/semana01.md)
+→ [metodologias](conteudo-base/metodologias-ativas-senac.md)

@@ -44,7 +44,7 @@ Execute **silenciosamente** (não mostrar ao usuário):
 1. Rode `git diff --cached --stat` para ver a visão geral dos arquivos
 2. Rode `git diff --cached` para ver o diff completo
 3. Rode `git log --oneline -5` para ver os últimos commits (entender a narrativa recente)
-4. Leia `.copilot-instructions.md` para ter o contexto geral do projeto
+4. Leia `CLAUDE.md` para ter o contexto geral do projeto
 
 ### Etapa 2 — Classificação das mudanças
 

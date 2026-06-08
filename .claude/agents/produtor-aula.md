@@ -69,7 +69,7 @@ Ao receber qualquer trigger de produção ("Gere A0N", "Prepare A0N", "Aula NN")
 2. **Se existir:** leia o plano de conteúdo completo. Este arquivo já contém composição, tópicos detalhados, fontes web, exercícios sugeridos e notas pedagógicas gerados pelo `@planejador-curricular`
 3. **Se existir plano de conteúdo → PULE direto para FASE 3** (gravar `plano-aula.md` e apresentar resumo ao professor). Não é necessário executar FASE 1 e FASE 2 (entrevistas), pois o conteúdo já foi planejado. O professor ainda pode ajustar antes de "Implementar".
 
-> 💡 O `plano-conteudo` substitui a entrevista. O professor teve a oportunidade de revisar o `roadmap-t1.md` e o plano de conteúdo antes de invocar o produtor.
+> 💡 O `plano-conteudo` substitui a entrevista. O professor teve a oportunidade de revisar o roteiro (`contextos/roteiro-t2.md`) e o plano de conteúdo antes de invocar o produtor.
 
 #### Passo 1 — Determinar a próxima aula (quando o número não for informado)
 
@@ -77,8 +77,8 @@ Ao receber qualquer trigger de produção ("Gere A0N", "Prepare A0N", "Aula NN")
 
 1. Leia `AULAS-DADAS.md` — identifique a última aula registrada, seu conteúdo e o número A{NN}
 2. Leia `AULAS-DESENVOLVIMENTO-PROG.md` — verifique o que já foi produzido na sprint atual (evite gerar conteúdo duplicado para UCs que já têm slides na fila)
-3. Leia `roadmap-t1.md` — localize a aula A{NN} no calendário consolidado (composição de UCs, HA, avaliações)
-4. Leia `contextos/contexto-calendario.md` — confirme tipo (`Sem1-Qui`, `Sem1-Sex`, `Sem2-Qui`, `Sem2-Sex`) e horários
+3. Leia `contextos/roteiro-t2.md` — localize a linha `A{NN}` na tabela (composição de UCs, HA, métodos); se existir link para semana, leia `contextos/semanas/semana{NN}.md`
+4. Se `contextos/arquivados/contexto-calendario.md` existir — confirme tipo (`Sem1-Qui`, `Sem1-Sex`) e horários
 
 #### Passo 2 — Carregar contexto da aula
 

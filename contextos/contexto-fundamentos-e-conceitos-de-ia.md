@@ -1,9 +1,37 @@
-# Contexto — Fundamentos e Conceitos de IA (UC04)
+---
+schema: contexto-uc
+uc: UC04
+disciplina: Fundamentos e Conceitos de IA
+ha-total: 41
+ha-dado: 9
+ha-restante: 32
+trimestre-atual: T2
+---
 
-**Código:** UC04  
-**UC:** UC04 — Fundamentos e Conceitos de IA  
-**Disciplina:** Fundamentos e Conceitos de Inteligência Artificial  
-**Carga Total:** 33h (41 HA) | `T1: 13 HA (ajustado: 11) · T2: 14 HA · T3: 14 HA`
+# Contexto — UC04 Fundamentos e Conceitos de IA
+
+## Plano Anual
+
+| T | # | Tópico | HA | Status |
+|---|---|---|---|---|
+| T1 | 1 | Definição IA · história (1943→2024) · tipos ANI/AGI/ASI · ML/DL/NLP/ética/LGPD | 5 | ✅ A01/A03 |
+| T1 | 2 | Vocabulário avançado: Token · LLM · Backpropagation · Epoch · Embedding | 1 | ✅ A04 |
+| T1 | 3 | Decision Trees · Random Forest · SVM · comparação | 2 | ⬜ |
+| T1 | 4 | Clustering: K-Means · DBSCAN · exemplos práticos | 1 | ⬜ |
+| T1 | 5 | Bias · fairness · impacto social — aprofundamento com debate | 1 | ⬜ |
+| T2 | 6 | Shark Tank Tech — arquitetura de solução IA (entrada→IA→saída→GPU→custo) | 3 | ✅ A26/A27 |
+| T2 | 7 | Métricas de avaliação: acurácia · precisão · recall · F1 | 2 | ⬜ |
+| T2 | 8 | Computer Vision: CNN · detecção de objetos · demo prática | 2 | ⬜ |
+| T2 | 9 | NLP avançado: tokenização · embeddings práticos · demo LLM | 2 | ⬜ |
+| T2 | 10 | IA generativa: GANs · diffusion models · ChatGPT por dentro | 2 | ⬜ |
+| T2 | 11 | Projeto: comparar algoritmos num dataset real com sklearn | 3 | ⬜ |
+| T3 | 12 | Ética avançada: viés sistêmico · impacto racial/social · LGPD aprofundado | 3 | ⬜ |
+| T3 | 13 | RL na prática: AlphaGo · agentes de jogo · openAI Gym | 2 | ⬜ |
+| T3 | 14 | Tendências: AGI · multimodal · agentes autônomos · regulamentação | 2 | ⬜ |
+| T3 | 15 | Projeto final: pitch técnico de solução IA real | 5 | ⬜ |
+| T3 | 16 | Revisão e avaliação integradora | 2 | ⬜ |
+
+**Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
 
 ---
 
@@ -12,8 +40,14 @@
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 11 (ajustado) | 6 | 5 |
-| T2 | 14 | 0 | 14 |
+| T2 | 14 | ~3 (A26/A27 Shark Tank) | ~11 |
 | T3 | 14 | 0 | 14 |
+
+---
+
+## Última Aula
+<!-- REPLACE a cada aula — não é append -->
+A27 · 22/05 · Pitch Final Shark Tank (4 min/grupo + 2 perguntas do Shark) · veredicto · encerramento da dinâmica
 
 ---
 
@@ -28,88 +62,46 @@
 
 ---
 
-## Resumo por Aula
+## Log de Execução
+<!-- APPEND-ONLY — nunca editar linhas existentes -->
 
-| Aula | Data | HA | Conteúdo |
-|---|---|---|---|
-| A01 | 26/02/2026 | ~2 | Demo ML pixels→modelo, ML, DL, NLP, robôs autônomos, carros, ética, LGPD |
-| A02 | 27/02/2026 | 0 | Não trabalhada |
-| A03 | 05/03/2026 | ~3 | Definição formal de IA, história completa (1943→2024), ML supervisionado/não-sup./reforço, redes neurais, DL, NLP, ética, LGPD |
-| A04 | 06/03/2026 | ~1 | Vocabulário avançado: NLP, Token, LLM, Backpropagation, Epoch, Embedding |
-| A05 | 12/03/2026 | 0 | Não trabalhada (Sem1-Qui — bloco 100% Python/UC05) |
-| A06 | 13/03/2026 | 0 | Não trabalhada (Sem1-Sex — bloco UC08/UC09) |
-| A07 | 19/03/2026 | 0 | Não trabalhada (debate UC07 tomou toda a manhã) |
-| A08 | 20/03/2026 | 0 | Não trabalhada (Sem2-Sex — bloco UC05/UC08/UC06) |
-| A09 | 26/03/2026 | 0 | Não trabalhada — aula 100% Python (UC05 não rendeu), UC04 não foi aberta |
-| A10 | 27/03/2026 | 0 | Não trabalhada (Sem1-Sex — gincana Python + SQL) |
+| Aula | Data | HA | Tópicos | Feedback |
+|---|---|---|---|---|
+| A01 | 26/02 | ~2 | Demo ML pixels→modelo · ML · DL · NLP · robôs · carros · ética · LGPD | — |
+| A03 | 05/03 | ~3 | Definição formal · história (1943→2024) · ML 3 tipos · redes neurais · DL · NLP · ética | — |
+| A04 | 06/03 | ~1 | Vocabulário avançado: NLP · Token · LLM · Backpropagation · Epoch · Embedding | — |
+| A26 | 21/05 | ~2 | Shark Tank Rodadas 2+3: arquitetura da solução (entrada→IA→saída→GPU) · modelo de negócio | — |
+| A27 | 22/05 | ~1 | Ensaio final · Pitch Final (4 min + 2 perguntas) · veredicto e encerramento | — |
 
 ---
 
 ## Conteúdo Consolidado (Ind. 1 — não retornar ao mesmo nível)
 
-### História e Definição (A01 + A03)
-- Definição: "Inteligência Artificial é a capacidade de sistemas computacionais de executar tarefas que normalmente requerem inteligência humana"
-- Linha do tempo: 1943 (McCulloch-Pitts) → 1950 (Turing Test) → 1956 (Dartmouth) → 1960s (LISP) → 1980s (Expert Systems) → 1990s (primeiro ML prático) → 2012 (AlexNet) → 2017 (Transformer) → 2022 (ChatGPT)
-- Tipos de IA: IA Estreita (ANI), IA Geral (AGI), IA Superinteligente (ASI)
+- **Definição:** "sistemas computacionais que executam tarefas que requerem inteligência humana"
+- **Linha do tempo:** 1943 McCulloch-Pitts → 1950 Turing → 1956 Dartmouth → 2012 AlexNet → 2017 Transformer → 2022 ChatGPT
+- **Tipos de ML:** supervisionado (labeled → predição) · não-sup. (unlabeled → padrões) · reforço (agente + recompensa)
+- **Arquiteturas:** redes neurais · Deep Learning · NLP
+- **Ética (semeada):** LGPD · viés em dados · deepfakes · debate "ferramenta vs trapaça" resolvido
 
-### Categorias de ML (A03)
-- **Supervisionado:** labeled data → predição (classificação, regressão) — ex: spam, preço de imóveis
-- **Não supervisionado:** unlabeled data → descoberta de padrões (clustering, redução dimensionalidade) — ex: segmentação de clientes
-- **Reforço:** agente + ambiente + recompensa → política ótima — ex: AlphaGo, robôs
+## Não Cobrir Novamente (mesmo nível)
 
-### Arquiteturas (A03)
-- Redes neurais (neurônio artificial → camadas → rede)
-- Deep Learning: redes com muitas camadas → padrões complexos
-- NLP: processamento de linguagem natural → texto, fala, tradução
+- Linha do tempo história da IA (A01+A03)
+- Definição geral ML/DL/NLP (A03)
+- Turing Test e Dartmouth Conference
+- Mapa hierárquico IA→ML→DL→CV/NLP/RL (debate A07)
+- Debate "IA é trapaça ou ferramenta?" — já resolvido (A07)
 
-### Ética (A01 + A03 — semeado)
-- LGPD: Lei Geral de Proteção de Dados — consentimento, finalidade, minimização
-- Viés em IA: modelos refletem os dados de treino — dados enviesados → modelo enviesado
-- Mencionados: deepfakes, desinformação, vigilância
+## Conexões com Outras Disciplinas
 
----
-
-## Vocabulário Introduzido (A04)
-
-| Termo | Definição Resumida | Status |
+| Conceito | Disciplina | Observação |
 |---|---|---|
-| NLP (Natural Language Processing) | Subárea de IA que lida com texto e fala | Introduzido |
-| Token | Unidade mínima de texto processada por LLMs | Introduzido |
-| LLM (Large Language Model) | Modelo de linguagem treinado em escala (GPT, Gemini) | Introduzido |
-| Backpropagation | Algoritmo de ajuste de pesos nas redes neurais | Introduzido |
-| Epoch | Uma passagem completa pelos dados de treino | Introduzido |
-| Embedding | Representação vetorial de dados (texto → números) | Introduzido |
+| Python para sklearn/modelos | UC05 | Cada algoritmo UC04 tem código Python paralelo |
+| GPU para treino | UC06 | Shark Tank levantou questão de custo de GPU |
+| Custo-benefício implementar IA | UC07 | Explorado em A27 (estreia UC07 T2) |
+| Dados e datasets | UC08 | SQL → datasets de treino |
 
----
-
-## Próximos Tópicos (T1 restante — 4 HA)
-
-**Prioridade: consolidar Ind. 2 (classificação de métodos/algoritmos)**
-
-| Seq. | Tópico | HA |
-|---|---|---|
-| 1 | Algoritmos de classificação: Decision Trees, Random Forest, SVM | 2 |
-| 2 | Algoritmos de clustering: K-Means, DBSCAN | 1 |
-| 3 | Bias, fairness e impacto social — aprofundar (debate já semeado) | 1 |
-
----
-
-## Não Cobrir Novamente (já consolidado nível apresentação)
-
-- Linha do tempo história da IA (A01 + A03)
-- Definição geral de ML/DL/NLP (A03)
-- Introdução ao Turing Test e Dartmouth Conference
-- LGPD conceito inicial (mencionar, não reintroduzir)
-- Mapa hierárquico IA → ML → DL → CV/NLP/RL (A07 — debate UC07)
-- Tabela comparativa ML geral vs CV vs NLP (A07 — debate UC07)
-- Debate ética: ferramenta vs trapaça — posições já exploradas (A07 — UC07)
-
----
-
-## Regras para o Copilot
-
-1. Verificar esta tabela "Não Cobrir Novamente" antes de qualquer geração
-2. Ind. 2 é a prioridade — classificar e comparar algoritmos com profundidade
-3. Toda aula de IA deve ter pelo menos 1 slide com código Python mostrando o algoritmo
-4. Ética (semeada) — manter presente em debates, não em slides teóricos longos
-5. Com apenas 5 HA restantes no T1, priorizar exercícios de classificação sobre teoria nova
+## Refs
+↑ [roteiro-t2](roteiro-t2.md)
+→ [contexto-python](contexto-python-para-ia.md) · [contexto-uc07](contexto-transformacao-digital.md) · [contexto-uc06](contexto-arquitetura-computadores-gpu.md)
+→ [semana01](semanas/semana01.md)
+→ [metodologias](conteudo-base/metodologias-ativas-senac.md)

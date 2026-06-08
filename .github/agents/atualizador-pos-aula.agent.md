@@ -84,7 +84,7 @@ Adicionar no final (antes do bloco de template HTML comment), usando o formato p
 
 Para cada UC:
 
-#### Adicionar em "Resumo por Aula":
+#### Adicionar em "## Log de Execução":
 
 ```
 | A{NN} | {DD/MM/AAAA} | ~{N} | {tópicos reais} | Ministrada |
@@ -118,7 +118,7 @@ Sem interpretação. Sem classificação subjetiva. Apenas o que foi dito.
 
 ---
 
-### 6. Atualizar `.copilot-instructions.md`
+### 6. Atualizar `CLAUDE.md`
 
 Atualizar a seção "Contexto Atual do Curso":
 - **Última aula ministrada**: A{NN} ({DD/MM/AAAA}) — {resumo 1 linha}
