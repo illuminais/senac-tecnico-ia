@@ -27,11 +27,13 @@ senac-tecnico-ia/
 │   ├── revisao-conteudo/       ← checklists de revisão e commit
 │   └── uc01/ … uc09/           ← diretrizes, consolidado e indicadores por disciplina
 ├── contextos/   ← memória viva por disciplina (compartilhada por ambos)
-│   ├── contexto-calendario.md
+│   ├── MAPA.md                     ← ÍNDICE: o que é cada arquivo e quando ler
 │   ├── ATIVIDADES_AVALIATIVAS.md
 │   ├── contexto-banco-de-dados.md
 │   ├── contexto-python-para-ia.md
-│   └── … (9 arquivos contexto-*.md)
+│   ├── … (9 arquivos contexto-*.md)
+│   ├── horarios/                   ← planejamento mensal jun–dez (A31–A82)
+│   └── semanas/                    ← rotação T2 + planos operacionais por semana
 ├── .github/agents/referencia-tecnica.md  ← referência técnica (ler antes de gerar slides)
 ├── AULAS-DADAS.md              ← histórico cronológico de todas as aulas (A01–atual)
 ├── AULAS-DESENVOLVIMENTO-PROG.md ← tracking de produção de slides por sprint
@@ -60,12 +62,13 @@ claude
 ## Regras Fundamentais
 
 1. **Agentes vivem em `.claude/agents/`** (Claude Code) ou `.github/agents/` (Copilot) — nunca criar `.github/` dentro de subpastas de aula
-2. **Contextos são a memória viva** — antes de gerar qualquer slide, leia `contextos/contexto-{disciplina}.md`
-3. **Horário trimestral** — para montar blocos de aulas e planejar avaliações, leia `contextos/contexto-horario-trimestral.md`
-4. **Plano de avaliações T1** — para saber avaliações pendentes e aprovadas, leia `contextos/ATIVIDADES_AVALIATIVAS.md`
-5. **Nunca** criar arquivos de apresentação dentro de `slidev-theme-neural/`
-6. **Nunca** copiar `.github/agents/` para pastas de aula — os agentes são globais
-7. **referencia-tecnica.md** — leia SEMPRE em `.github/agents/referencia-tecnica.md` antes de gerar qualquer slide
+2. **Navegação de contextos** — em dúvida sobre o que ler, comece por `contextos/MAPA.md`
+3. **Contextos são a memória viva** — antes de gerar qualquer slide, leia `contextos/contexto-{disciplina}.md`
+4. **Horário trimestral** — ciclo Sem1/Sem2/Sem3 em `contextos/semanas/horario-rotacao-t2.md` · planejamento mensal em `contextos/horarios/`
+5. **Plano de avaliações** — para saber avaliações pendentes e aprovadas, leia `contextos/ATIVIDADES_AVALIATIVAS.md`
+6. **Nunca** criar arquivos de apresentação dentro de `slidev-theme-neural/`
+7. **Nunca** copiar `.github/agents/` para pastas de aula — os agentes são globais
+8. **referencia-tecnica.md** — leia SEMPRE em `.github/agents/referencia-tecnica.md` antes de gerar qualquer slide
 
 ## Fluxo Pós-Aula (após cada aula dada)
 
