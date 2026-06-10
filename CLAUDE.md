@@ -7,7 +7,7 @@ Este workspace é um monorepo de apresentações Slidev para o **Curso Técnico 
 ```
 senac-tecnico-ia/
 ├── .github/agents/             ← FONTE DA VERDADE — agentes e contextos (Copilot)
-├── .claude/agents/             ← Agentes para Claude Code (11 agentes)
+├── .claude/agents/             ← Agentes para Claude Code (12 agentes)
 │   ├── produtor-aula.md        ← orquestrador de aula completa
 │   ├── autor-slides.md         ← gera slides via Handoff Card
 │   ├── autor-exercicios.md
@@ -18,6 +18,7 @@ senac-tecnico-ia/
 │   ├── revisor-commit.md
 │   ├── planejador-avaliacoes.md
 │   ├── planejador-curricular.md
+│   ├── planejador-mensal.md    ← planeja um mês inteiro → gera semanaXX.md
 │   └── platform-agent.md (name: Leovio)
 ├── .claude/skills/             ← Skills reutilizáveis (14 skills)
 │   ├── estilo-pedagogico/      ← linguagem ~14 anos, sem en-dash

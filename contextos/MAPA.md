@@ -23,6 +23,7 @@
 | `semanas/horario-rotacao-t2.md` | Ciclo Sem1/Sem2/Sem3 com HA por UC e calendário semana a semana | Verificar qual UC toca em qual dia |
 | `semanas/semana01.md` | Plano operacional detalhado da semana 01 | Produzir ou revisar aulas da semana específica |
 | `semanas/semana02.md` | Plano operacional detalhado da semana 02 | Produzir ou revisar aulas da semana específica |
+| `semanas/semana03.md` … | Plano operacional das semanas seguintes (gerado por @planejador-mensal) | Produzir ou revisar aulas da semana específica |
 | `horarios/06-junho.md` | Aulas A31–A37 · 42 HA | Planejar ou revisar junho |
 | `horarios/07-julho.md` | Aulas A38–A43 · 36 HA | Planejar ou revisar julho |
 | `horarios/08-agosto.md` | Aulas A44–A51 · 48 HA | Planejar ou revisar agosto |
