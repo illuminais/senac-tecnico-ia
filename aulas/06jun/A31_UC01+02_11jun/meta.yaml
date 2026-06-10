@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "31"
+slug: "a31-uc01-02-11jun"
+title: ""
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC01", "UC02"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-06-11"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []
