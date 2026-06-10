@@ -268,8 +268,7 @@ Every class must contain these slide sections in order:
 | 2 | **Theory** | 4–10 | `default`, `big-img-text`, `two-cols-*` | Present theory anchored in an academic or technical source |
 | 3 | **Practical Exercises** | 2–6 | `default` + `card: true` | Apply the concept — individually or in pairs |
 | 4 | **Brainstorming / Debate** | 1–2 | `brainstorm` | Collective reflection, consolidation, real-world connection |
-| 5 | **Homework** | 1 | `default` or `center` | Reinforcement task due next class |
-| 6 | **Closing** | 1 | `end` or `center` | Next class preview + motivation |
+| 5 | **Closing** | 1 | `end` or `center` | Next class preview + motivation |
 
 ### Theory slide rules
 
@@ -282,11 +281,6 @@ Every class must contain these slide sections in order:
 - Use `layout: brainstorm` with `pulse: true`.
 - The central question must be **open-ended** — no single correct answer.
 - Include a future connection: how this debate relates to the next class or UC.
-
-### Homework rules
-
-- Standard title: `## Atividade para Casa — Aula NN`
-- Specify: what to do, how to submit (file, folder, format), and deadline.
 
 ### Block separator slide
 
@@ -337,14 +331,12 @@ CLASS N (1st of block)
   [THEORY 2]             → 3-4 slides, deeper exploration
   [EXERCISE 01-02]       → level 1-2: recognition and guided execution
   [BRAINSTORM]           → short debate, connection to daily life
-  [HOMEWORK]             → reinforcement task
 
 CLASS N+1 (2nd of block)
   [ORAL REVIEW]          → 2 slides: recap of previous class without notes
   [ADVANCED THEORY]      → 4-6 slides, more complex concepts
   [EXERCISE 03-05]       → level 2-3: guided and independent application
   [BRAINSTORM]           → debate with real data or case studies
-  [HOMEWORK]             → application task
 
 CLASS N+2 (3rd of block — consolidation)
   [REVIEW]               → recap of the full block themes
@@ -574,13 +566,11 @@ Tags aparecem em `estrutura-aula.md`, **nunca** nos slides diretamente.
 | `[EXERCICIO]` | Atividade com produto ou resposta esperada: individual, dupla ou grupo |
 | `[DINAMICA]` | Atividade interativa: roleplay, jogo, simulação, dinâmica de grupo |
 | `[ATIV AVALIATIVA]` | Atividade com critério formal de avaliação (Kahoot, entrega de arquivo, quiz, prova) |
-| `[TAREFA DE CASA]` | Tarefa fora da aula, entregue na próxima sessão |
 
 **Regras:**
 - Um slide que debate E tem entregável é `[DEBATE]` se a pergunta aberta é o foco, ou `[EXERCICIO]` se um produto concreto é esperado.
 - Slides divisores de bloco (Parte N, AULA NN) são `[TEORIA]`.
-- Toda aula completa deve ter ao menos: um `[DEBATE]`, um `[EXERCICIO]` ou `[DINAMICA]`, e um `[TAREFA DE CASA]`.
-- **Nunca pular nenhuma tag** ao validar: o `@auditor-estrutura` verifica todas as 6.
+- Toda aula completa deve ter ao menos: um `[DEBATE]` e um `[EXERCICIO]` ou `[DINAMICA]`.
 
 ---
 

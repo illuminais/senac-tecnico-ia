@@ -6,7 +6,6 @@ author: Leonardo Zanini
 github: LeoZanini
 courseTitle: Técnico em Inteligência Artificial
 aulaNum: "Aula 31"
-footerLogo: /assets/senac-logo.png
 bgPreset: palette
 aulaDate: "2026-06-11"
 unlockHour: 13
@@ -14,7 +13,44 @@ layout: cover
 ---
 
 # Aula 31
-## Word Avançado + Inglês Instrumental
+## Relatório da Visita Técnica + Inglês Instrumental
+
+---
+layout: brainstorm
+bgPreset: palette
+pulse: true
+pulseDuration: 6
+---
+
+<!-- ABERTURA -->
+
+## Quem sou eu? Python Edition
+
+Você tem um cartão colado nas costas. Não pode ver o que está escrito.
+
+Anda pela sala e faz perguntas **sim ou não** para os colegas até descobrir quem você é.
+
+<v-click>
+
+**Exemplos de perguntas:**
+- "Eu sou um tipo de dado?" — `string`, `integer`, `list`
+- "Eu sou uma ação que o código executa?" — `function`, `method`, `loop`
+- "Eu apareço em mensagens de erro?" — `TypeError`, `NameError`
+
+</v-click>
+
+<v-click>
+
+**Tempo: 8 minutos.** Quem descobriu explica para a turma em 1 frase o que é.
+
+</v-click>
+
+<AdminOnly>
+
+**Cartões — imprimir e recortar, 1 por aluno:**
+`function` · `method` · `loop` · `list` · `dictionary` · `string` · `integer` · `return` · `import` · `TypeError` · `NameError` · `SyntaxError` · `parameter` · `variable` · `library`
+
+</AdminOnly>
 
 ---
 layout: center
@@ -23,10 +59,12 @@ bgPreset: palette
 pulse: true
 pulseDuration: 8
 ---
+
+<!-- SLIDE 2 -->
 
 # BLOCO 1
-## UC01 - Fundamentos de Computacao
-### Word Avancado: Edicao Profissional
+## UC01 - Fundamentos de Computação
+### Relatório da Visita Técnica em ABNT
 
 ---
 layout: brainstorm
@@ -35,25 +73,21 @@ pulse: true
 pulseDuration: 6
 ---
 
-<!-- objetivo: reativar o que o aluno ja sabe do Word antes de avancar para funcionalidades novas -->
+<!-- SLIDE 3 -->
 
-## O que voce lembra da ultima aula de Word?
+## Vocês foram ao Parque Tecnológico de Pato Branco.
 
-**Na A11 voce criou um documento ABNT do zero.**
+Agora precisamos **documentar** isso.
 
-Hoje vamos dar um passo alem:
+Um técnico de IA que faz uma visita técnica precisa:
 
-<v-click>
-
-- Localizar e substituir texto em um clique
-- Corrigir erros automaticamente com o corretor
-- Inserir imagem, simbolo e numero de pagina
-
-</v-click>
+- Registrar o que aprendeu de forma organizada
+- Ter um documento que comprove a experiência
+- Usar um padrão aceito em qualquer empresa ou universidade: **ABNT**
 
 <v-click>
 
-> Quem terminar cedo ainda tem: mala direta, indice automatico e controle de alteracoes.
+> **Hoje:** você sai daqui com o relatório escrito e com um template ABNT salvo para usar em todos os trabalhos futuros.
 
 </v-click>
 
@@ -63,94 +97,26 @@ bgPreset: default
 card: true
 ---
 
-<!-- objetivo: aluno compreende a funcao Localizar/Substituir para editar documentos grandes com eficiencia (Microsoft, 2024) -->
+<!-- SLIDE 4 -->
 
-## Localizar e Substituir - Ctrl+H
+## ABNT — As 4 Configurações Obrigatórias
 
-Imagine que voce escreveu "inteligencia artificial" 40 vezes e precisa mudar para "IA".
+Antes de escrever uma palavra, configure:
 
-**Sem Localizar/Substituir:** edicao manual linha por linha.
+<SlideTable>
 
-**Com Localizar/Substituir:** 3 segundos.
-
-<v-click>
-
-### Como usar:
-1. Pressione **Ctrl + H** para abrir o painel
-2. Em **Localizar:** digite o texto original
-3. Em **Substituir por:** digite o novo texto
-4. Clique em **Substituir tudo**
-
-</v-click>
-
-<v-click>
-
-> **Dica profissional:** Use a opcao "Diferenciar maiusculas de minusculas" para substituicoes precisas.
-
-</v-click>
-
----
-layout: default
-bgPreset: default
----
-
-<!-- objetivo: aluno usa o corretor ortografico e gramatical do Word como ferramenta de revisao profissional -->
-
-## Corretor Ortografico e Gramatical
-
-O Word sublinha automaticamente:
-
-| Tipo | Cor do sublinhado | Significa |
-|------|-------------------|-----------|
-| Erro ortografico | Vermelho | Palavra com erro de grafia |
-| Erro gramatical | Azul | Frase mal estruturada |
-| Sugestao de estilo | Roxo | Pode ser melhorado |
-
-<v-click>
-
-### Para corrigir:
-- **Clique com botao direito** na palavra sublinhada para ver sugestoes
-- **F7** abre a revisao completa do documento
-- **Revisar > Ortografia e Gramatica** faz a varredura total
-
-</v-click>
-
-<v-click>
-
-> No contexto profissional: um relatorio tecnico com erros ortograficos passa imagem negativa. O corretor e sua primeira linha de defesa.
-
-</v-click>
-
----
-layout: default
-bgPreset: default
-card: true
----
-
-<!-- objetivo: aluno insere imagem em documento Word com redimensionamento e alinhamento adequados -->
-
-## Inserir Imagem no Documento
-
-**Caminho:** Inserir > Imagens > Este Dispositivo
-
-<v-click>
-
-### Configuracoes essenciais apos inserir:
-
-| Configuracao | Onde esta | Para que serve |
+| Configuração | Onde | Valor |
 |---|---|---|
-| Quebra de texto | Clicar na imagem > icone de layout | Define como o texto envolve a imagem |
-| Redimensionar | Arrastar canto com Shift | Manter proporcao sem distorcer |
-| Centralizar | Clicar na imagem > Pagina Inicial > Centralizar | Alinhamento estetico |
+| Margens | Layout > Margens > Personalizadas | Superior/Esquerda: 3 cm · Inferior/Direita: 2 cm |
+| Fonte | Ctrl+A · Início > Fonte | Times New Roman ou Arial, tamanho 12 |
+| Espaçamento | Início > Parágrafo | 1,5 entre linhas |
+| Número de página | Inserir > Número de Página | Início da página, canto direito |
 
-</v-click>
+</SlideTable>
 
 <v-click>
 
-**Tipos de quebra mais usados:**
-- **Inline (embutido):** imagem se comporta como texto
-- **Quadrado:** texto envolve a imagem pelos lados
-- **Atras do texto:** imagem fica atras do texto (marca dagua)
+> **Por que ABNT?** É o padrão exigido em faculdades, concursos e empresas no Brasil. Saber configurar é diferencial.
 
 </v-click>
 
@@ -159,32 +125,35 @@ layout: default
 bgPreset: default
 ---
 
-<!-- objetivo: aluno insere simbolos especiais e numeros de pagina com formatacao profissional -->
+<!-- SLIDE 5 -->
 
-## Simbolos Especiais e Numero de Pagina
-
-### Simbolos (Inserir > Simbolo > Mais Simbolos)
-
-Usados em documentos tecnicos:
-- Grau Celsius: **°C**
-- Marca registrada: **®**
-- Copyright: **©**
-- Seta: **→** (muito usada em documentos de IA e fluxogramas)
+## O Que Vai em Cada Seção
 
 <v-click>
 
-### Numero de Pagina (Inserir > Numero de Pagina)
+**Introdução** — contexto geral
 
-Opcoes de posicionamento:
-- **Inicio da pagina** (cabecalho) - padrao academico
-- **Fim da pagina** (rodape) - padrao ABNT
-- **Posicao atual** - insere onde o cursor esta
+- Data, local e duração da visita
+- Quem participou (turma + professor)
+- Objetivo da visita (1 a 2 frases)
 
 </v-click>
 
 <v-click>
 
-> **ABNT NBR 14724:** numero de pagina no canto superior direito, a partir da terceira pagina (sumario e introducao nao sao numerados visivelmente).
+**Desenvolvimento** — o que aconteceu
+
+- O que você viu: laboratórios, equipamentos, projetos, demonstrações
+- Quem você encontrou: profissionais, pesquisadores, empresas
+
+</v-click>
+
+<v-click>
+
+**Conclusão** — reflexão pessoal
+
+- O que você aprendeu
+- O que mais te chamou atenção ou mais gostou
 
 </v-click>
 
@@ -194,53 +163,40 @@ bgPreset: default
 card: true
 ---
 
-<!-- objetivo: aluno pratica localmente as quatro funcionalidades apresentadas em sequencia guiada -->
+<!-- SLIDE 6 -->
 
-## Atividade Guiada - Lab Word A31
+## Lab — Parte 1: Configure o Word ABNT
 
-**Arquivo:** `word_lab_a31.docx` (ja esta na sua pasta de aula, com estrutura pronta)
-
-### Sequencia de tarefas:
+Abra um documento em branco. Execute na ordem:
 
 <v-click>
 
-**Tarefa 1 - Localizar/Substituir (5 min)**
-- Abra o arquivo
-- Use Ctrl+H para substituir `"modelo de IA"` por `"modelo de machine learning"` em todo o documento
+**Passo 1 — Margens:** Layout > Margens > Personalizadas
+Superior 3 · Inferior 2 · Esquerda 3 · Direita 2 (em cm)
 
 </v-click>
 
 <v-click>
 
-**Tarefa 2 - Corretor (3 min)**
-- Pressione F7 e corrija todos os erros apontados
-- Nao aceite todas as sugestoes automaticamente: leia cada uma
+**Passo 2 — Fonte:** Ctrl+A para selecionar tudo > Início > Times New Roman · Tamanho 12
 
 </v-click>
 
 <v-click>
 
-**Tarefa 3 - Imagem (5 min)**
-- Insira qualquer imagem da pasta `/imagens_lab/`
-- Defina a quebra de texto como "Quadrado"
-- Redimensione para largura de aproximadamente 6 cm
+**Passo 3 — Espaçamento:** Início > Parágrafo > Espaçamento entre linhas: 1,5
 
 </v-click>
 
 <v-click>
 
-**Tarefa 4 - Numero de Pagina (3 min)**
-- Insira numero de pagina no rodape, canto direito
+**Passo 4 — Número de página:** Inserir > Número de Página > Início da Página > Canto Direito
 
 </v-click>
 
 <AdminOnly>
 
-**Gabarito do professor:**
-- Ctrl+H: buscar `modelo de IA`, substituir por `modelo de machine learning`, clicar "Substituir tudo" (aparece confirmacao do numero de substituicoes)
-- Corretor: aceitar correto, rejeitar quando o Word nao entende termos tecnicos (ex: "dataset")
-- Imagem: Inserir > Imagens > clicar na imagem > Layout > Quadrado > redimensionar segurando Shift no canto
-- Numero de pagina: Inserir > Numero de Pagina > Fim da Pagina > Numero sem formatacao 3
+**Atenção:** Fonte — obrigatório Ctrl+A antes de mudar, senão aplica só no trecho selecionado. Espaçamento — ícone de parágrafo na faixa Início, ou clique direito > Parágrafo > Espaçamento entre linhas.
 
 </AdminOnly>
 
@@ -250,32 +206,75 @@ bgPreset: default
 card: true
 ---
 
-<!-- objetivo: aluno conhece funcionalidades avancadas do Word para quem termina as tarefas basicas antes do tempo -->
+<!-- SLIDE 7 -->
 
-## Extras para Quem Terminar Cedo
+## Lab — Parte 2: Escreva o Relatório
 
-Se voce ja concluiu as 4 tarefas basicas, explore:
-
-### Mala Direta (Correspondencias > Iniciar Mala Direta)
-- Cria versoes personalizadas de um mesmo documento
-- Exemplo classico: convites com nomes diferentes para cada destinatario
-- No contexto de IA: gerar relatorios individuais de performance de modelo por cliente
+Com o Word configurado, escreva cada seção:
 
 <v-click>
 
-### Indice Automatico (Referencias > Sumario)
-- Funciona somente se voce usou os estilos H1, H2 (feitos na A11)
-- Gera o sumario em um clique e atualiza automaticamente
-- Tente: clique no sumario gerado, depois em "Atualizar sumario"
+**Introdução** (5 min)
+
+"Esta visita técnica foi realizada em [data], ao [local], com duração de [X horas]. Participaram [turma] e o professor [nome]. O objetivo foi [...]."
 
 </v-click>
 
 <v-click>
 
-### Controle de Alteracoes (Revisar > Controlar Alteracoes)
-- Registra quem mudou o que no documento (como um `git diff` do Word)
-- Essencial para colaboracao profissional em equipe
-- Experimente: ative, edite uma frase, depois aceite ou rejeite a alteracao
+**Desenvolvimento** (10 min)
+
+Descreva o que você viu: ambientes, equipamentos, projetos, demonstrações. Cite quem estava lá.
+
+</v-click>
+
+<v-click>
+
+**Conclusão** (5 min)
+
+O que você aprendeu. O que mais te chamou atenção ou mais gostou.
+
+</v-click>
+
+<AdminOnly>
+
+**Para o professor:** Visita A24 (15/05) ao Parque Tecnológico de Pato Branco, duração ~4h. Mínimo recomendado: 1 parágrafo por seção. Incentive palavras próprias, não cópia do colega.
+
+</AdminOnly>
+
+---
+layout: default
+bgPreset: default
+card: true
+---
+
+<!-- SLIDE 8 -->
+
+## Salvar como Template ABNT
+
+**Este documento configurado é o seu template. Salve uma vez, use para sempre.**
+
+<v-click>
+
+**Como salvar:**
+1. Arquivo > Salvar Como
+2. Em "Tipo", troque `.docx` por **Modelo do Word (.dotx)**
+3. Nome sugerido: `template_abnt`
+4. Salve em Documentos (pasta fácil de encontrar)
+
+</v-click>
+
+<v-click>
+
+**Como usar nos próximos trabalhos:**
+- Abra o `.dotx` — o Word cria uma **cópia nova**, preservando o molde
+- Nunca escreva direto no `.dotx`
+
+</v-click>
+
+<v-click>
+
+> A partir de hoje você não precisa reconfigurar margens, fonte e espaçamento para nenhum trabalho acadêmico.
 
 </v-click>
 
@@ -286,54 +285,24 @@ pulse: true
 pulseDuration: 6
 ---
 
-<!-- objetivo: consolidar a aplicacao profissional do Word conectando com o contexto real de trabalho com IA -->
+<!-- SLIDE 9 -->
 
-## Debate Rapido - 3 minutos
+## Conclusão em voz alta — 3 minutos
 
-### Quando voce vai usar o Word (ou equivalente) como futuro tecnico de IA?
-
-Pense em um relatorio que um tecnico de IA poderia precisar escrever:
+Leia para a turma **1 frase da sua Conclusão** — o que mais te chamou atenção no Parque Tecnológico.
 
 <v-click>
 
-- Documentar resultados de um experimento com modelos
-- Entregar um relatorio de analise de dataset para um cliente
-- Escrever a seccao de metodos de um projeto academico
+Cada um lê a própria frase. Sem repetir o que o colega já disse.
 
 </v-click>
 
 <v-click>
 
-> **Conexao com UC05:** Em Python, voce pode gerar texto e exportar para `.docx` automaticamente com a biblioteca `python-docx`. O que voce aprendeu hoje vai fazer mais sentido quando isso acontecer.
+> Escuta as frases dos colegas. O que aparece mais de uma vez é o que a turma achou mais importante.
 
 </v-click>
 
----
-layout: default
-bgPreset: default
----
-
-## Tarefa de Casa - Aula 31 (UC01)
-
-**Prazo:** Aula 32
-
-**Tarefa:** Criar um documento Word profissional sobre um topico de IA
-
-### O que fazer:
-
-1. Crie um arquivo chamado `relatorio_ia_seuNome.docx`
-2. O documento deve ter ao menos:
-   - Titulo em estilo H1 (qualquer topico de IA - ex: "O que e Machine Learning")
-   - Dois subtitulos em H2
-   - Um paragrafo de texto em cada secao (pode usar o que aprendeu no curso)
-   - Uma imagem com quebra de texto "Quadrado"
-   - Um simbolo especial (sugestao: grau, seta ou copyright)
-   - Numero de pagina no rodape
-
-3. Salve como `.docx` e tambem exporte uma versao `.pdf`
-4. Coloque os dois arquivos na pasta `UC01/A31/` no seu repositorio do GitHub
-
-**Criterio:** documento abre sem erros e contem todos os elementos listados.
 
 ---
 layout: center
@@ -343,9 +312,11 @@ pulse: true
 pulseDuration: 8
 ---
 
+<!-- SLIDE 12 -->
+
 # BLOCO 2
-## UC02 - Ingles Instrumental
-### Bloco 4: Vocabulario de Programacao Python
+## UC02 - Inglês Instrumental
+### Developers Read Docs
 
 ---
 layout: brainstorm
@@ -354,29 +325,34 @@ pulse: true
 pulseDuration: 6
 ---
 
-<!-- objetivo: ativar estrategias de deducao por contexto antes de apresentar os termos formalmente -->
+<!-- SLIDE 13 -->
 
-## Ativacao - Decode Challenge
+## Você já escreve isso em Python.
 
-**Regra do jogo:** 10 termos no quadro. Sem dicionario. Sem celular.
 
-Cada grupo tem **5 minutos** para decidir:
-- O que esse termo significa?
-- Onde voce ja viu esse termo antes?
+Agora você vai aprender a **ler sobre isso em inglês.**
+(menos a função)
+
+```python
+def calcular_media(valores):
+    total = sum(valores)
+    return total / len(valores)
+
+notas = [7.5, 8.0, 9.5]
+notas.append(6.0)
+media = calcular_media(notas)
+```
 
 <v-click>
 
-### Os 10 termos:
-
-`variable` - `function` - `loop` - `list` - `dictionary`
-
-`string` - `integer` - `return` - `import` - `library`
+Todo dia você vai encontrar código com comentários, erros e documentação em inglês.
+Não precisa ser fluente. Precisa reconhecer os termos.
 
 </v-click>
 
 <v-click>
 
-> **Estrategia de leitura:** Tente reconhecer a raiz da palavra em portugues. `function` - funcao. `import` - importar. `library` - biblioteca. Seu cerebro ja sabe mais do que voce pensa.
+> Hoje: **function** e **method** — os dois conceitos mais comuns em qualquer documentação Python.
 
 </v-click>
 
@@ -386,289 +362,39 @@ bgPreset: default
 card: true
 ---
 
-<!-- objetivo: aluno associa cada keyword Python ao seu significado em PT e a sua funcao no codigo (Lutz, Learning Python, 2023) -->
+<!-- SLIDE 14 -->
 
-## Vocabulario Bloco 4 - Python Keywords
+## Function ou method? Fala em voz alta.
 
-<SlideTable>
-
-| Termo EN | Traducao PT | Funcao no codigo |
-|---|---|---|
-| `variable` | variavel | guarda um valor na memoria |
-| `function` | funcao | bloco de codigo reutilizavel |
-| `loop` | laco / repeticao | repete uma acao N vezes |
-| `list` | lista | colecao ordenada de valores |
-| `dictionary` | dicionario | colecao chave-valor |
-
-</SlideTable>
+Olha cada linha. É **function** ou **method**?
 
 <v-click>
 
-<SlideTable>
+`len(notas)` — chama pelo nome, sem ponto
 
-| Termo EN | Traducao PT | Funcao no codigo |
-|---|---|---|
-| `string` | texto / cadeia de caracteres | representa palavras e frases |
-| `integer` | inteiro | numero sem casas decimais |
-| `return` | retornar | envia resultado da funcao |
-| `import` | importar | carrega uma biblioteca |
-| `library` | biblioteca | conjunto de funcoes prontas |
-
-</SlideTable>
-
-</v-click>
-
----
-layout: default
-bgPreset: default
----
-
-<!-- objetivo: aluno le comentarios em ingles em codigo Python e infere o significado sem traducao explicita -->
-
-## Leitura de Codigo Comentado em Ingles
-
-Um tecnico de IA vai ler codigo com comentarios em ingles todo dia.
-
-**Regra de leitura:** foque no verbo e no substantivo. O resto e contexto.
-
-```python {1-3|4-6|7-9|all}
-# Load the dataset from a CSV file
-import pandas as pd
-dataset = pd.read_csv("training_data.csv")
-
-# Count the total number of samples
-total_samples = len(dataset)
-print(total_samples)  # prints the integer value
-
-# Define accuracy as a variable (float, not integer)
-accuracy = 0.94
-```
-
-<v-click>
-
-**Perguntas para a turma:**
-- O que `Load` significa nesse contexto? (carregar)
-- O que `Count` esta pedindo para o codigo fazer? (contar)
-- O que o comentario `prints the integer value` esta descrevendo? (o que o print vai mostrar)
-
-</v-click>
-
----
-layout: default
-bgPreset: default
-card: true
----
-
-<!-- objetivo: aluno pratica decodificacao de snippet Python com comentarios em ingles em situacao de grupo colaborativo -->
-
-## Atividade em Grupos - Snippet Challenge
-
-**4 grupos, 4 snippets diferentes.** Cada grupo recebe um papel impresso.
-
-**Tarefa do grupo (10 minutos):**
-1. Leia o snippet com os comentarios em ingles
-2. Identifique os **termos do Bloco 4** que aparecem no codigo
-3. Explique para a turma o que o codigo faz, **misturando PT e EN**
-
-<v-click>
-
-> **Formato da apresentacao (1 minuto por grupo):**
-> "Esse codigo usa uma `function` (funcao) chamada... ela recebe um `integer`... e faz `return` de..."
+**→ function**
 
 </v-click>
 
 <v-click>
 
-**Ao ouvir os outros grupos:**
-- Anote 1 termo novo que voce ainda nao conhecia
-- Guarde para o Glossario Vivo no final da aula
+`notas.append(10)` — chama com ponto, pertence à lista
 
-</v-click>
-
----
-layout: default
-bgPreset: default
----
-
-<!-- objetivo: grupo 1 decoficia snippet com for loop e lista de acuracias de modelos -->
-
-## Snippet 1 - For Loop + List (Grupo 1)
-
-```python
-# List of model accuracy scores for each training epoch
-accuracy_scores = [0.72, 0.81, 0.88, 0.93, 0.95]
-
-# Loop through each score and print it
-for score in accuracy_scores:
-    # Print each integer index and the accuracy value
-    print(score)
-
-# Find the best accuracy in the list
-best = max(accuracy_scores)
-print("Best accuracy:", best)
-```
-
-**Termos para identificar:** `list`, `loop`, `integer`, `variable`
-
-<AdminOnly>
-
-**Gabarito do professor:**
-- `accuracy_scores` e uma lista (`list`) de valores decimais (float, nao integer - bom ponto de discussao)
-- `for score in accuracy_scores` e um `loop` que percorre a lista
-- `best` e uma `variable` que guarda o maior valor
-- O comentario diz "integer index" mas o loop aqui nao usa indice - e uma oportunidade de debater o ingles tecnico impreciso
-
-</AdminOnly>
-
----
-layout: default
-bgPreset: default
----
-
-<!-- objetivo: grupo 2 decodifica snippet com funcao que recebe parametros e retorna resultado -->
-
-## Snippet 2 - Function + Return (Grupo 2)
-
-```python
-# Function to evaluate if a model is good enough to deploy
-def check_model(accuracy, threshold):
-    # Return True if accuracy is above the threshold integer
-    if accuracy >= threshold:
-        return True
-    else:
-        return False
-
-# Call the function with our model accuracy
-result = check_model(0.91, 0.90)
-print("Deploy approved:", result)
-```
-
-**Termos para identificar:** `function`, `return`, `integer`, `variable`
-
-<AdminOnly>
-
-**Gabarito do professor:**
-- `def check_model` define uma `function` (funcao)
-- `return True` / `return False` usa `return` para enviar o resultado
-- `accuracy` e `threshold` sao `variable` (variaveis / parametros)
-- Comentario diz "integer" mas `threshold = 0.90` e float - mais uma oportunidade de discussao sobre precisao de comentarios em ingles
-
-</AdminOnly>
-
----
-layout: default
-bgPreset: default
----
-
-<!-- objetivo: grupo 3 decodifica snippet com import de biblioteca e manipulacao de string -->
-
-## Snippet 3 - Import + String (Grupo 3)
-
-```python
-# Import the datetime library to log training time
-import datetime
-
-# Create a string with the model name
-model_name = "neural_classifier_v2"
-
-# Build a log message string using the model name
-current_time = datetime.datetime.now()
-log_message = "Training started for: " + model_name
-print(log_message)
-
-# Print the current time as a string
-print("Time:", str(current_time))
-```
-
-**Termos para identificar:** `import`, `library`, `string`, `variable`
-
-<AdminOnly>
-
-**Gabarito do professor:**
-- `import datetime` usa a keyword `import` para carregar a `library` (biblioteca) `datetime`
-- `model_name` e `log_message` sao variaveis do tipo `string` (texto)
-- `str(current_time)` converte o objeto de tempo em `string`
-- O aluno deve notar que `import` e exatamente igual ao verbo portugues "importar"
-
-</AdminOnly>
-
----
-layout: default
-bgPreset: default
----
-
-<!-- objetivo: grupo 4 decodifica snippet com dicionario que mapeia labels de classificacao -->
-
-## Snippet 4 - Dictionary + Integer (Grupo 4)
-
-```python
-# Dictionary mapping class labels to integer codes
-label_map = {
-    "cachorro": 0,
-    "gato": 1,
-    "passaro": 2
-}
-
-# Get the integer code for a specific label
-animal = "gato"
-code = label_map[animal]
-
-# Print the integer result
-print("Class code (integer):", code)
-print("Total classes:", len(label_map))
-```
-
-**Termos para identificar:** `dictionary`, `integer`, `string`, `variable`
-
-<AdminOnly>
-
-**Gabarito do professor:**
-- `label_map` e um `dictionary` (dicionario) que mapeia strings para integers
-- `0`, `1`, `2` sao `integer` (numeros inteiros sem casas decimais)
-- `"cachorro"`, `"gato"`, `"passaro"` sao `string` (texto)
-- `code` e uma `variable` que recebe o valor do dicionario
-- Conexao com UC04: class labels sao exatamente assim em modelos de classificacao
-
-</AdminOnly>
-
----
-layout: default
-bgPreset: default
-card: true
----
-
-<!-- objetivo: aluno registra termos novos de forma estruturada, produzindo a Entrega Parcial 1 do bloco 4 -->
-
-## Entrega Parcial 1 - Glossario Vivo
-
-**Entrega ao final da aula em folha impressa (ou papel).**
-
-### O que escrever:
-
-5 termos novos que voce aprendeu hoje (ou que ficaram mais claros).
-
-**Formato de cada verbete:**
-
-```
-Termo EN: function
-Traducao: funcao
-Exemplo de uso: def calcular_acuracia(predictions):
-O que faz: define um bloco de codigo que pode ser chamado
-                 varias vezes com valores diferentes
-```
-
-<v-click>
-
-**Criterio de avaliacao informal:**
-- Nao vale copiar identico da tabela da aula
-- O exemplo de uso deve ser um codigo diferente do slide
-- O "o que faz" deve ser com suas proprias palavras
+**→ method**
 
 </v-click>
 
 <v-click>
 
-> Este Glossario Vivo vai crescer ao longo do T2. Vamos retomar em toda aula de UC02.
+`"texto".split()` — chama com ponto, pertence à string
+
+**→ method**
+
+</v-click>
+
+<v-click>
+
+> Regra: tem ponto antes? **method.** Não tem? **function.**
 
 </v-click>
 
@@ -679,57 +405,172 @@ pulse: true
 pulseDuration: 6
 ---
 
-<!-- objetivo: reflexao sobre como o ingles tecnico e uma habilidade de sobrevivencia para o tecnico de IA -->
+<!-- SLIDE 15 -->
 
-## Debate Final - Por que importa?
+## Você vai receber uma folha assim.
 
-### Um tecnico de IA que nao le ingles...
+```
+append(object)
+    Append object to the end of the list.
+```
+
+Isso aparece quando alguém digita `help(list.append)` no Python.
 
 <v-click>
 
-- Nao consegue ler a documentacao oficial do Python (`docs.python.org`)
-- Nao entende as mensagens de erro que aparecem no terminal
-- Nao consegue seguir tutoriais do YouTube, Medium, Kaggle
-- Nao consegue usar o GitHub com confianca
+Cada grupo vai receber o `help()` de uma função diferente — em inglês, do jeito que o Python escreve.
 
 </v-click>
 
 <v-click>
 
-> **A pergunta real:** Voce precisa ser fluente em ingles? Nao. Voce precisa reconhecer os termos tecnicos, ler comentarios de codigo e entender mensagens de erro. Isso e o que vamos construir juntos.
-
-</v-click>
-
-<v-click>
-
-**Proxima aula de UC02:** vamos comecar o Bloco 5 - mensagens de erro em ingles (`SyntaxError`, `TypeError`, `NameError`). Voce vai aprender a "ler" o que o Python esta te dizendo quando algo da errado.
+> Sem tradutor. Lê, destaca o que não entende, tenta adivinhar pelo contexto. Isso é Doc Hunter.
 
 </v-click>
 
 ---
 layout: default
 bgPreset: default
+card: true
 ---
 
-## Tarefa de Casa - Aula 31 (UC02)
+<!-- SLIDE 16 -->
 
-**Prazo:** Aula 32
+## Doc Hunter — 15 minutos
 
-**Tarefa:** Expandir o Glossario Vivo com 5 termos adicionais
+Você recebeu um extrato real do `help()` do Python impresso.
 
-### O que fazer:
+**Tarefa individual:**
 
-1. Escolha **5 termos** do Bloco 4 que nao estavam nos seus 5 da sala
-2. Para cada um, escreva:
-   - Traducao em PT
-   - Um exemplo de uso em Python (pode ser simples, 1-2 linhas)
-   - Uma frase em PT descrevendo o que o termo faz
+<v-click>
 
-3. **Bonus:** procure um repositorio no GitHub (qualquer projeto Python) e anote **2 comentarios de codigo em ingles** que voce encontrou, com sua traducao ao lado.
+1. Leia sem usar tradutor
+2. Destaque cada palavra que você não conhece
+3. Tente adivinhar pelo contexto antes de perguntar
+4. Preencha seu Dicionário Pessoal com no mínimo 5 termos
 
-4. Entregue como arquivo `.txt` ou `.md` chamado `glossario_a31_seuNome` na pasta `UC02/A31/` do seu repositorio.
+</v-click>
 
-**Conexao:** os termos que voce aprender aqui vao aparecer toda semana nas aulas de Python.
+<v-click>
+
+**Formato do dicionário:**
+
+```
+TERMO       | ONDE VI              | O QUE SIGNIFICA AQUI
+append      | help(list.append)    | adiciona item ao final da lista
+returns     | docstring do sort()  | o que o método devolve
+```
+
+</v-click>
+
+<AdminOnly>
+
+**4 extratos, um por grupo:** `help(list.append)` · `help(str.split)` · `help(dict.get)` · `help(list.sort)` — todos disponíveis rodando `help()` no Python REPL. Imprima um por grupo. Diga: não quero tradução literal, quero o que a palavra significa NESSE contexto.
+
+</AdminOnly>
+
+---
+layout: default
+bgPreset: default
+card: true
+---
+
+<!-- SLIDE 17 -->
+
+## Error Detective — grupos
+
+Cada grupo recebeu um erro Python impresso com o código que causou ele.
+
+**Tarefa (10 minutos):**
+1. Leia o traceback completo em inglês
+2. Identifique: qual linha causou o erro? o que o Python está dizendo?
+3. Corrija o código no papel
+4. Adicione os termos novos ao dicionário
+
+<v-click>
+
+> **Termos que vão aparecer:** `Traceback` · `line` · `TypeError` · `NameError` · `SyntaxError` · `IndentationError` · `expected` · `undefined` · `unsupported`
+
+</v-click>
+
+<AdminOnly>
+
+**4 erros, um por grupo:**
+- `TypeError: can only concatenate str (not "int") to str` — código: `print("nota: " + 9)`
+- `NameError: name 'resultado' is not defined` — código: variável usada antes de ser definida
+- `SyntaxError: expected ':'` — código: `if x > 5` sem dois pontos
+- `IndentationError: expected an indented block` — código: `def f():` seguido de linha não indentada
+
+</AdminOnly>
+
+---
+layout: default
+bgPreset: default
+card: true
+---
+
+<!-- SLIDE 18 -->
+
+## Dicionário Pessoal — sua referência para o T2
+
+Este dicionário fica com você até o fim do curso.
+
+<v-click>
+
+- Cresce a cada aula de UC02 e UC05
+- Cada termo tem: onde você viu + o que significa naquele contexto
+- Não é cópia — é descoberta
+- No fim do T2: 50+ termos que você mesmo encontrou
+
+</v-click>
+
+<v-click>
+
+**Entrega de hoje:** mínimo 8 termos preenchidos com contexto real (não vale copiar do slide).
+
+</v-click>
+
+<v-click>
+
+> É diferente de um glossário porque o contexto é seu. Você vai lembrar de `append` porque você mesmo leu `help(list.append)` e precisou entender.
+
+</v-click>
+
+---
+layout: brainstorm
+bgPreset: palette
+pulse: true
+pulseDuration: 6
+---
+
+<!-- SLIDE 19 -->
+
+## Debate Final — 3 minutos
+
+### Qual a diferença entre um técnico que trava e um que avança?
+
+<v-click>
+
+Saber ler uma mensagem de erro e uma docstring sem precisar de tradução.
+
+- 90% da documentação Python está em inglês
+- Todo erro que o Python manda está em inglês
+- Todos os bons tutoriais do Kaggle, GitHub e Medium estão em inglês
+
+</v-click>
+
+<v-click>
+
+> Você não precisa ser fluente. Precisa reconhecer os termos no contexto em que aparecem. Isso é o que vamos construir juntos ao longo do T2.
+
+</v-click>
+
+<v-click>
+
+**Próxima aula de UC02 (A32):** você vai escrever as funções Python no papel — e os comentários em inglês. O colega vai tentar entender o código lendo só os comentários. Se o inglês foi claro, a comunicação funcionou.
+
+</v-click>
+
 
 ---
 layout: end
@@ -738,13 +579,15 @@ github: LeoZanini
 avatar: https://github.com/LeoZanini.png?size=256
 ---
 
-## Ate a proxima!
+<!-- SLIDE 24 -->
 
-**Aula 31 concluida:**
+## Até a próxima!
 
-- UC01: Word avancado - localizar/substituir, corretor, imagem, simbolo, numero de pagina
-- UC02: Ingles - Bloco 4 iniciado, 10 keywords Python, Glossario Vivo entregue
+**Aula 31 concluída:**
 
-**Proxima aula (A32):**
-- UC01: Internet com seguranca - pesquisa critica e fontes confiaveis
-- UC02: Bloco 5 - mensagens de erro em ingles (SyntaxError, TypeError, NameError)
+- UC01: Relatório da visita técnica em ABNT (introdução, desenvolvimento, conclusão) + template .dotx salvo
+- UC02: function vs method, anatomia de docstring, Doc Hunter + Error Detective, Dicionário Pessoal iniciado (8+ termos)
+
+**Próxima aula (A32):**
+- UC02: Inglês Day 2 — Comment Engineer (escreve função no papel + comentários em inglês, colega lê e descreve)
+- UC05: Python no papel — Parte 1 (for, função com parâmetro e return, tuple, set)
