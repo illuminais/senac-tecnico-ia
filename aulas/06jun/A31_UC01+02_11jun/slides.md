@@ -178,7 +178,7 @@ Superior 3 · Inferior 2 · Esquerda 3 · Direita 2 (em cm)
 
 <v-click>
 
-**Passo 2 — Fonte:** Ctrl+A para selecionar tudo > Início > Times New Roman · Tamanho 12
+**Passo 2 — Fonte:** Início > Editar > Selecionar > **Selecionar Tudo** · depois Times New Roman · Tamanho 12
 
 </v-click>
 
@@ -196,7 +196,7 @@ Superior 3 · Inferior 2 · Esquerda 3 · Direita 2 (em cm)
 
 <AdminOnly>
 
-**Atenção:** Fonte — obrigatório Ctrl+A antes de mudar, senão aplica só no trecho selecionado. Espaçamento — ícone de parágrafo na faixa Início, ou clique direito > Parágrafo > Espaçamento entre linhas.
+**Atenção:** Use o menu Início > Editar > Selecionar > Selecionar Tudo — não Ctrl+A (em Office PT-BR, Ctrl+A pode abrir "Abrir arquivo" em vez de selecionar). Espaçamento — ícone de parágrafo na faixa Início, ou clique direito > Parágrafo > Espaçamento entre linhas.
 
 </AdminOnly>
 
@@ -287,19 +287,23 @@ pulseDuration: 6
 
 <!-- SLIDE 9 -->
 
-## Conclusão em voz alta — 3 minutos
+## Debate Rápido — 3 minutos
 
-Leia para a turma **1 frase da sua Conclusão** — o que mais te chamou atenção no Parque Tecnológico.
+### Relatório ou story do Instagram — o que dura mais?
+
+Daqui a 5 anos, qual dos dois vai provar que você foi ao Parque Tecnológico?
 
 <v-click>
 
-Cada um lê a própria frase. Sem repetir o que o colega já disse.
+- Um técnico de IA documenta o que vê e aprende
+- Empresas e universidades exigem relatórios técnicos padronizados
+- O template que você criou hoje vai acompanhar você até a faculdade
 
 </v-click>
 
 <v-click>
 
-> Escuta as frases dos colegas. O que aparece mais de uma vez é o que a turma achou mais importante.
+> **Conexão com UC05:** mais pra frente vamos gerar relatórios automaticamente com Python. O formato que você aprendeu hoje é o mesmo que o código vai precisar respeitar.
 
 </v-click>
 
@@ -332,7 +336,6 @@ pulseDuration: 6
 
 Agora você vai aprender a **ler sobre isso em inglês.**
 (menos a função)
-
 ```python
 def calcular_media(valores):
     total = sum(valores)
@@ -364,67 +367,71 @@ card: true
 
 <!-- SLIDE 14 -->
 
-## Function ou method? Fala em voz alta.
+## Function vs Method — diferença real
 
-Olha cada linha. É **function** ou **method**?
+```python
+# FUNCTION: você chama pelo nome
+len(notas)               # built-in function
+calcular_media(notas)    # função que você criou
 
-<v-click>
-
-`len(notas)` — chama pelo nome, sem ponto
-
-**→ function**
-
-</v-click>
-
-<v-click>
-
-`notas.append(10)` — chama com ponto, pertence à lista
-
-**→ method**
-
-</v-click>
+# METHOD: pertence a um objeto, chama com ponto
+notas.append(10.0)       # method de list
+notas.sort()             # method de list
+"texto".split()          # method de str
+dados.get("chave")       # method de dict
+```
 
 <v-click>
 
-`"texto".split()` — chama com ponto, pertence à string
+<SlideTable compact>
 
-**→ method**
+| Termo EN | O que é | Exemplo |
+|---|---|---|
+| `function` | bloco de código reutilizável | `def calcular(x):` |
+| `method` | função que pertence a um tipo | `lista.append(x)` |
+| `parameter` | o que entra nos parênteses | `calcular(x)` → x é o parâmetro |
+| `returns` | o que sai da função | `return resultado` |
 
-</v-click>
-
-<v-click>
-
-> Regra: tem ponto antes? **method.** Não tem? **function.**
+</SlideTable>
 
 </v-click>
 
 ---
-layout: brainstorm
-bgPreset: palette
-pulse: true
-pulseDuration: 6
+layout: default
+bgPreset: default
 ---
 
 <!-- SLIDE 15 -->
 
-## Você vai receber uma folha assim.
+## Como Ler uma Docstring
+
+O Python tem documentação embutida. Digite `help(list.append)` no terminal:
 
 ```
-append(object)
+append(self, object, /)
     Append object to the end of the list.
 ```
 
-Isso aparece quando alguém digita `help(list.append)` no Python.
-
 <v-click>
 
-Cada grupo vai receber o `help()` de uma função diferente — em inglês, do jeito que o Python escreve.
+<SlideTable compact>
+
+| Parte | O que significa |
+|---|---|
+| `append` | nome do method |
+| `self` | o próprio objeto (a lista) |
+| `object` | parameter — o que você quer adicionar |
+| linha de texto | description — o que o method faz |
+
+</SlideTable>
 
 </v-click>
 
 <v-click>
 
-> Sem tradutor. Lê, destaca o que não entende, tenta adivinhar pelo contexto. Isso é Doc Hunter.
+Toda docstring tem: **name · parameters · description** · às vezes **returns** e **raises**
+
+> `raises` = quando o método vai lançar um erro. Já vão ver isso no Error Detective.
 
 </v-click>
 
@@ -438,34 +445,30 @@ card: true
 
 ## Doc Hunter — 15 minutos
 
-Você recebeu um extrato real do `help()` do Python impresso.
-
-**Tarefa individual:**
+Você recebeu uma folha com 6 methods reais de `str` e `dict` — exatamente como o Python documenta.
 
 <v-click>
 
-1. Leia sem usar tradutor
-2. Destaque cada palavra que você não conhece
-3. Tente adivinhar pelo contexto antes de perguntar
-4. Preencha seu Dicionário Pessoal com no mínimo 5 termos
+**Tarefa:**
+
+1. Leia cada extrato sem usar tradutor
+2. Use as dicas da folha se travar
+3. Escreva com suas palavras o que cada method faz
+4. Anote os termos novos no Dicionário — meta: **8 termos**
 
 </v-click>
 
 <v-click>
 
-**Formato do dicionário:**
-
-```
-TERMO       | ONDE VI              | O QUE SIGNIFICA AQUI
-append      | help(list.append)    | adiciona item ao final da lista
-returns     | docstring do sort()  | o que o método devolve
-```
+> Todos têm a mesma folha. Mesmos 6 methods. Ao final, cada grupo explica 1 method para a turma.
 
 </v-click>
 
 <AdminOnly>
 
-**4 extratos, um por grupo:** `help(list.append)` · `help(str.split)` · `help(dict.get)` · `help(list.sort)` — todos disponíveis rodando `help()` no Python REPL. Imprima um por grupo. Diga: não quero tradução literal, quero o que a palavra significa NESSE contexto.
+**Methods na folha:** `str.split` · `str.strip` · `str.replace` · `dict.get` · `dict.keys` · `dict.items`
+
+Circule e pergunte: *"O que entra? O que sai? Quando você usaria isso?"* — não dê a resposta, faça perguntar. Ao final (5 min): cada grupo sorteia 1 method e explica em 1 frase para a turma.
 
 </AdminOnly>
 
@@ -477,29 +480,32 @@ card: true
 
 <!-- SLIDE 17 -->
 
-## Error Detective — grupos
+## Error Detective — 10 minutos
 
-Cada grupo recebeu um erro Python impresso com o código que causou ele.
-
-**Tarefa (10 minutos):**
-1. Leia o traceback completo em inglês
-2. Identifique: qual linha causou o erro? o que o Python está dizendo?
-3. Corrija o código no papel
-4. Adicione os termos novos ao dicionário
+Você recebeu uma folha com 5 erros reais do Python — cada um com o traceback completo em inglês.
 
 <v-click>
 
-> **Termos que vão aparecer:** `Traceback` · `line` · `TypeError` · `NameError` · `SyntaxError` · `IndentationError` · `expected` · `undefined` · `unsupported`
+**Tarefa:**
+
+1. Ache qual linha causou o problema
+2. Leia o que o Python está dizendo
+3. Corrija o código no espaço da folha
+4. Escreva com suas palavras o que é aquele tipo de erro
+
+</v-click>
+
+<v-click>
+
+> Todos têm a mesma folha. Ao final: cada grupo explica 1 erro para a turma — o que causou e como corrigiu.
 
 </v-click>
 
 <AdminOnly>
 
-**4 erros, um por grupo:**
-- `TypeError: can only concatenate str (not "int") to str` — código: `print("nota: " + 9)`
-- `NameError: name 'resultado' is not defined` — código: variável usada antes de ser definida
-- `SyntaxError: expected ':'` — código: `if x > 5` sem dois pontos
-- `IndentationError: expected an indented block` — código: `def f():` seguido de linha não indentada
+**Erros na folha:** `TypeError` · `NameError` · `SyntaxError` · `IndentationError` · `ValueError`
+
+Circule e pergunte: *"O que o `^` está apontando?" / "O que significa `not defined`?"* — não entregue a resposta. Ao final: sorteie 1 erro por grupo para apresentar.
 
 </AdminOnly>
 

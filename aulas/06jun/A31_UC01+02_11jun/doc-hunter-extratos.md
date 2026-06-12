@@ -1,47 +1,32 @@
-# Doc Hunter — Extratos do `help()` do Python
+# Doc Hunter — Lendo Documentação Python em Inglês
 
-**Para o professor — como rodar:**
-1. Imprima esta folha. Recorte em 4 partes (uma por grupo).
-2. Distribua: cada grupo recebe UM extrato diferente.
-3. Fale: *"Isso é o que aparece quando o Python explica uma função pra você. Não pode usar tradutor. Lê, marca o que não entende, tenta adivinhar pelo contexto. Anota no Dicionário."*
-4. Circule e faça perguntas: *"O que essa função faz?" / "O que entra? O que sai?"*
-5. Ao final: cada grupo explica para a turma em 1 frase o que a função faz.
+**Nome:** _____________________________________ **Grupo:** _______
 
 ---
 
-## ✂️ — RECORTE AQUI — ✂️
+## O que é `help()` e o que é um method?
+
+O Python tem documentação embutida. Quando você digita `help(str.split)` no terminal,
+o Python mostra exatamente como aquela função funciona — em inglês.
+
+**Method** = uma função que pertence a um tipo de dado. Você chama com ponto:
+`"texto".split()` → o method `split` pertence ao tipo `str`
+`dados.get("chave")` → o method `get` pertence ao tipo `dict`
+
+**Como ler:** procure as palavras `Return`, `Parameters`, `If` — elas explicam o que entra e o que sai.
 
 ---
 
-### GRUPO 1 — `help(list.append)`
+## Regras da atividade
 
-```
-append(self, object, /)
-    Append object to the end of the list.
-```
-
-**Perguntas para responder no papel:**
-1. O que essa função faz com a lista? (tente usar as palavras do texto)
-2. O que ela recebe como entrada? (hint: `object`)
-3. Ela retorna algum valor? O texto fala sobre isso?
-
-**Dicionário Pessoal — anote os termos novos:**
-
-| TERMO | ONDE VI | O QUE SIGNIFICA AQUI |
-|---|---|---|
-| append | help(list.append) | |
-| object | help(list.append) | |
-| | | |
-| | | |
-| | | |
+1. Leia cada extrato sem usar tradutor
+2. Use as dicas só se travar
+3. Preencha o campo "Com suas palavras" com frases suas — não copie do texto
+4. Anote os termos novos no Dicionário no final
 
 ---
 
-## ✂️ — RECORTE AQUI — ✂️
-
----
-
-### GRUPO 2 — `help(str.split)`
+## METHOD 1 — `str.split()`
 
 ```
 split(self, /, sep=None, maxsplit=-1)
@@ -52,88 +37,169 @@ split(self, /, sep=None, maxsplit=-1)
       The delimiter according to which the string
       should be split. None means split according
       to any whitespace.
-
     maxsplit
       Maximum number of splits to do.
       -1 means no limit.
 ```
 
-**Perguntas para responder no papel:**
-1. O que essa função faz com uma string? (hint: "Return a list of the words")
-2. O que é `sep`? O que acontece se você não passar nada?
-3. O que é `maxsplit`? O que significa `-1`?
+**Dica:** pense em uma frase separada por espaços ou vírgulas. Esse method divide.
 
-**Dicionário Pessoal — anote os termos novos:**
+**Responda:**
 
-| TERMO | ONDE VI | O QUE SIGNIFICA AQUI |
-|---|---|---|
-| split | help(str.split) | |
-| delimiter | help(str.split) | |
-| returns | help(str.split) | |
-| | | |
-| | | |
+O que entra como parâmetro? ________________________________________________
 
----
+O que ele retorna (`Return`)? ________________________________________________
 
-## ✂️ — RECORTE AQUI — ✂️
+Com suas palavras, o que esse method faz?
+
+___________________________________________________________________________
+
+___________________________________________________________________________
 
 ---
 
-### GRUPO 3 — `help(dict.get)`
+## METHOD 2 — `str.strip()`
+
+```
+strip(self, chars=None, /)
+    Return a copy of the string with leading
+    and trailing whitespace removed.
+
+    If chars is given and not None, remove
+    characters in chars instead.
+```
+
+**Dica:** `leading` = início · `trailing` = fim · `whitespace` = espaço em branco
+
+**Responda:**
+
+O que ele remove por padrão (quando você não passa nada)? _____________________
+
+O que acontece se você passar algo como `chars`? _______________________________
+
+Com suas palavras, o que esse method faz?
+
+___________________________________________________________________________
+
+___________________________________________________________________________
+
+---
+
+## METHOD 3 — `str.replace()`
+
+```
+replace(self, old, new, count=-1, /)
+    Return a copy with all occurrences of
+    substring old replaced by new.
+
+    count
+      Maximum number of occurrences to replace.
+      -1 means replace all.
+```
+
+**Dica:** `occurrences` = todas as vezes que aparece · `substring` = pedaço de string
+
+**Responda:**
+
+O que são os parâmetros `old` e `new`? _________________________________________
+
+O que o parâmetro `count` controla? ___________________________________________
+
+Com suas palavras, o que esse method faz?
+
+___________________________________________________________________________
+
+___________________________________________________________________________
+
+---
+
+## METHOD 4 — `dict.get()`
 
 ```
 get(self, key, default=None, /)
-    Return the value for key if key is in the
-    dictionary, else default.
+    Return the value for key if key is in
+    the dictionary, else default.
 ```
 
-**Perguntas para responder no papel:**
-1. O que essa função faz? (o que ela retorna?)
-2. O que acontece se a chave (`key`) não existir no dicionário?
-3. O que é `default`? Por que ele tem `=None`?
+**Dica:** `else default` = se a chave não existir, retorna o valor padrão (None se você não definir)
 
-**Dicionário Pessoal — anote os termos novos:**
+**Responda:**
 
-| TERMO | ONDE VI | O QUE SIGNIFICA AQUI |
-|---|---|---|
-| get | help(dict.get) | |
-| key | help(dict.get) | |
-| default | help(dict.get) | |
-| | | |
-| | | |
+O que acontece se a chave (`key`) não existir no dicionário? ____________________
+
+Por que isso é melhor que escrever `dict["chave"]` diretamente? _________________
+
+Com suas palavras, o que esse method faz?
+
+___________________________________________________________________________
+
+___________________________________________________________________________
 
 ---
 
-## ✂️ — RECORTE AQUI — ✂️
+## METHOD 5 — `dict.keys()`
+
+```
+keys(...)
+    D.keys() -> a set-like object providing
+    a view on D's keys
+```
+
+**Dica:** `keys` = chaves do dicionário · `view` = uma visão em tempo real (muda junto com o dict)
+
+**Responda:**
+
+O que esse method devolve? __________________________________________________
+
+Como você usaria isso com um `for`? __________________________________________
+
+Com suas palavras, o que esse method faz?
+
+___________________________________________________________________________
+
+___________________________________________________________________________
 
 ---
 
-### GRUPO 4 — `help(list.sort)`
+## METHOD 6 — `dict.items()`
 
 ```
-sort(self, /, *, key=None, reverse=False)
-    Sort the list in ascending order and return None.
-
-    The sort is in-place (i.e. the list itself is
-    modified) and stable (i.e. the order of two equal
-    elements is maintained).
-
-    reverse
-      If set to True, then the list elements are sorted
-      in descending order.
+items(...)
+    D.items() -> a set-like object providing
+    a view on D's items
 ```
 
-**Perguntas para responder no papel:**
-1. O que essa função faz com a lista?
-2. O que significa "in-place"? (hint: a frase entre parênteses explica)
-3. O que o parâmetro `reverse=True` faz?
+**Dica:** `items` = itens do dicionário, ou seja, os pares chave + valor juntos
 
-**Dicionário Pessoal — anote os termos novos:**
+**Responda:**
 
-| TERMO | ONDE VI | O QUE SIGNIFICA AQUI |
-|---|---|---|
-| sort | help(list.sort) | |
-| ascending | help(list.sort) | |
-| in-place | help(list.sort) | |
-| | | |
-| | | |
+O que é um "item" de um dicionário? __________________________________________
+
+Como você usaria isso com um `for` para acessar chave E valor ao mesmo tempo? ___
+
+___________________________________________________________________________
+
+Com suas palavras, o que esse method faz?
+
+___________________________________________________________________________
+
+___________________________________________________________________________
+
+---
+
+## Dicionário Pessoal — termos desta atividade
+
+Anote os termos em inglês que você encontrou e não conhecia:
+
+| TERMO | O QUE SIGNIFICA AQUI |
+|---|---|
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+
+**Meta:** mínimo 8 termos preenchidos até o fim da aula.
