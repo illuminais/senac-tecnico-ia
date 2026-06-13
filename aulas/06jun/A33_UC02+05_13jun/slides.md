@@ -13,7 +13,7 @@ layout: cover
 ---
 
 # Aula 33
-## Mini README + Python com Dict
+## Python: os 4 tipos de coleção + Mini README
 
 ---
 layout: brainstorm
@@ -24,21 +24,20 @@ pulseDuration: 6
 
 <!-- ABERTURA -->
 
-## Três dias. Dois blocos. Uma entrega.
+## Hoje o ciclo fecha.
 
-Quinta: você leu documentação em inglês e descobriu vocabulário.
-
-Sexta: você escreveu comentários EN e testou se comunicavam.
+Você escreve o código. Você documenta. Alguém usa só a documentação pra recriar.
 
 <v-click>
 
-**Hoje:** você produz o README do seu código — e digita o código do colega lendo só os comentários dele.
+- **Bloco 1:** `list` · `tuple` · `set` · `dict` — lado a lado, no papel
+- **Bloco 2:** README do seu próprio código — e um colega vai tentar recriar
 
 </v-click>
 
 <v-click>
 
-> Ao fim da aula: README impresso + Dicionário com 15+ termos = prova de que você documenta código em inglês.
+> Ao final da aula: código escrito, documentado e testado por outra pessoa.
 
 </v-click>
 
@@ -53,8 +52,8 @@ pulseDuration: 8
 <!-- SLIDE 2 -->
 
 # BLOCO 1
-## UC02 - Inglês Instrumental
-### Mini README — Day 3
+## UC05 - Python
+### Os 4 tipos de coleção
 
 ---
 layout: brainstorm
@@ -65,23 +64,24 @@ pulseDuration: 6
 
 <!-- SLIDE 3 -->
 
-## O que é um README?
+## Você já ouviu os 4.
 
-É o primeiro arquivo que qualquer pessoa lê num projeto.
+`list` · `tuple` · `set` · `dict`
 
 <v-click>
 
-Você já viu README no GitHub: é o texto que aparece na página do repositório.
+A questão é: **quando usar qual?**
 
-- Explica o que o projeto faz
-- Mostra como usar
-- Dá um exemplo
+- `list`: listas com `for`, `.append()`
+- `tuple`: viu que não dá pra mudar — gera `TypeError`
+- `set`: usou `|` e `&` para união e interseção
+- `dict`: acessou com `.get()`, iterou com `.items()`
 
 </v-click>
 
 <v-click>
 
-> Todo projeto de IA tem um README. Kaggle, Hugging Face, GitHub — todos em inglês. Hoje você escreve o do seu.
+> Hoje você vê os 4 juntos e aprende a escolher o certo para cada situação.
 
 </v-click>
 
@@ -93,99 +93,24 @@ card: true
 
 <!-- SLIDE 4 -->
 
-## O Template do Mini README
+## A diferença que importa
 
-4 seções. 1 página. Tudo em inglês.
+<SlideTable>
 
-```markdown
-## What it does
-[1-2 frases: o que o código faz]
+| Estrutura | Tem ordem? | Pode mudar? | Repete item? | Acessa por |
+|---|---|---|---|---|
+| `list` | sim | sim | sim | índice `[0]` |
+| `tuple` | sim | **não** | sim | índice `[0]` |
+| `set` | não | sim | **não** | iteração |
+| `dict` | sim | sim | chaves: **não** | chave `["nome"]` |
 
-## How to use
-[como chamar a função, quais parâmetros]
-
-## Example
-[trecho de código mostrando a chamada e o resultado]
-
-## Author
-[seu nome]
-```
+</SlideTable>
 
 <v-click>
 
-> Preencha cada seção com frases curtas. Use os verbos do Comment Engineer.
+> `dict` acessa por chave, não por posição — mesmo que tenha ordem interna.
 
 </v-click>
-
----
-layout: default
-bgPreset: default
-card: true
-pulse: false
----
-
-## Exemplo preenchido
-
-```markdown
-## What it does
-This function calculates the average of a list of numbers
-and returns the result as a float.
-
-## How to use
-Call calcular_media() with a list of numbers as input.
-
-## Example
-calcular_media([7.5, 8.0, 9.5])  # returns 8.33
-
-## Author
-Ana Silva
-```
-
-<v-click>
-
-Leia as seções na ordem: o que faz → como usar → exemplo → autor. É o README mínimo que qualquer projeto de IA precisa.
-
-</v-click>
-
----
-layout: default
-bgPreset: default
-card: true
----
-
-<!-- SLIDE 5 -->
-
-## Mini README — grupos (20 minutos)
-
-Em dupla ou trio: escolham **uma função** das que escreveram na quinta ou sexta.
-
-<v-click>
-
-**Preencham as 4 seções em inglês:**
-
-1. `## What it does` — 1 ou 2 frases. Use os verbos do Comment Engineer
-2. `## How to use` — "Call [função]() with [tipo] as input"
-3. `## Example` — copie a chamada e escreva o resultado esperado
-4. `## Author` — nomes do grupo
-
-</v-click>
-
-<v-click>
-
-**Dicas de escrita:**
-- `What it does`: "This function **[verb]** [what] and **returns** [what]"
-- `How to use`: "Call `nome()` with **[tipo]** — [descrição do parâmetro]"
-- `Example`: mostre entrada e saída esperada com `#`
-
-</v-click>
-
-<AdminOnly>
-
-**Para o professor:** Circule e corrija: frase no presente simples ("calculates", não "is calculating"), tipo específico no How to use, resultado real no Example.
-
-Grupos que terminarem cedo: escrever README para uma segunda função — ou acrescentar seção `## Why we built this` em 1 frase.
-
-</AdminOnly>
 
 ---
 layout: brainstorm
@@ -194,36 +119,69 @@ pulse: true
 pulseDuration: 6
 ---
 
+<!-- SLIDE 5 -->
+
+## Quando usar qual — a regra prática
+
+<v-click>
+
+**`list`** — sequência que vai crescer ou mudar
+*notas de um aluno, nomes de arquivos, resultado de busca*
+
+</v-click>
+
+<v-click>
+
+**`tuple`** — valores fixos que não devem ser alterados
+*coordenadas GPS `(lat, lon)`, cor RGB `(255, 0, 0)`*
+
+</v-click>
+
+<v-click>
+
+**`set`** — coleção sem repetição, quando duplicata não faz sentido
+*palavras únicas de um texto, usuários que acessaram hoje*
+
+</v-click>
+
+<v-click>
+
+**`dict`** — cada valor tem um nome (chave)
+*dados de aluno, resultado de modelo de IA, configuração*
+
+</v-click>
+
+---
+layout: default
+bgPreset: default
+card: true
+---
+
 <!-- SLIDE 6 -->
 
-## Apresentação Oral — 3 minutos por grupo
+## Cenário 1 — `list`
 
-Cada grupo apresenta o README para a turma.
+Guarde os nomes de 5 linguagens de programação **em ordem**. Depois adicione `"Rust"` ao final.
 
-<v-click>
-
-**Estrutura da apresentação:**
-
-> "This function **[verbo]**… it **takes** [tipo] as input… it **returns** [tipo]… **Example:** [chamada]"
-
-</v-click>
+```python
+linguagens = [_______, _______, _______, _______, _______]
+linguagens._______(________)
+print(linguagens)
+```
 
 <v-click>
 
-**Verbos que vão aparecer naturalmente:**
-- *defines* · *calculates* · *checks* · *returns* · *takes* · *appends* · *gets*
-
-</v-click>
-
-<v-click>
-
-> Falar código em inglês em voz alta é diferente de escrever. Cada grupo tem 1 minuto — vai rápido.
+**Dica:** quer ordem + poder adicionar → `list` + `.append()`
 
 </v-click>
 
 <AdminOnly>
 
-**Para o professor:** Não corrija pronúncia agora — o objetivo é fluência técnica, não fonética. Corrija só vocabulário técnico errado ("the function is doing" → "the function does"). Aplauda quem usar os verbos do dicionário corretamente.
+```python
+linguagens = ["Python", "JavaScript", "Java", "C++", "R"]
+linguagens.append("Rust")
+print(linguagens)  # ['Python', 'JavaScript', 'Java', 'C++', 'R', 'Rust']
+```
 
 </AdminOnly>
 
@@ -235,80 +193,70 @@ card: true
 
 <!-- SLIDE 7 -->
 
-## Dicionário Pessoal — entrega final do sprint
+## Cenário 2 — `tuple`
 
-Este é o último dia do sprint UC02 de 3 dias.
+Guarde as coordenadas do Parque Tecnológico de Pato Branco: latitude `-26.22`, longitude `-52.67`. **Não pode mudar nunca.**
 
-<v-click>
-
-**Meta acumulada:**
-
-<SlideTable compact>
-
-| Dia | Atividade | Termos esperados |
-|---|---|
-| Thu (A31) | Doc Hunter + Error Detective | 8 termos |
-| Fri (A32) | Comment Engineer + Passa o Código | +5 verbos → 13 |
-| Sat (A33) | Mini README + apresentação oral | +2 novos → **15** |
-
-</SlideTable>
-
-</v-click>
+```python
+COLOQUE O CODIGO AQUI
+print(coordenadas[0])   # latitude
+# tente: coordenadas[0] = 0  → o que acontece?
+```
 
 <v-click>
 
-**Entrega hoje:**
-- Dicionário manuscrito com **mínimo 15 termos** preenchidos (onde vi + o que significa aqui)
-- README impresso ou fotografado
+**Dica:** valor fixo → `tuple`. Tentar mudar gera `TypeError`.
 
 </v-click>
 
-<v-click>
+<AdminOnly>
 
-> Esse dicionário continua. Toda aula de UC02 e UC05 vai adicionar novos termos até o fim do T2.
+```python
+coordenadas = (-26.22, -52.67)
+print(coordenadas[0])   # -26.22
+# coordenadas[0] = 0  → TypeError: 'tuple' object does not support item assignment
+```
 
-</v-click>
+</AdminOnly>
 
 ---
-layout: center
+layout: default
+bgPreset: default
 card: true
-bgPreset: palette
-pulse: true
-pulseDuration: 8
 ---
 
 <!-- SLIDE 8 -->
 
-# BLOCO 2
-## UC05 - Python
-### Python no Papel — Parte 2 + Compilação Real
+## Cenário 3 — `dict`
 
----
-layout: brainstorm
-bgPreset: palette
-pulse: true
-pulseDuration: 6
----
+Guarde os dados de uma aluna: nome `"Ana"`, idade `16`, nota `8.5`. Depois acesse o nome com `.get()`.
 
-<!-- SLIDE 9 -->
-
-## Dict: o tipo de dado mais útil em IA
-
-Em Python de IA, quase tudo é um dicionário.
+```python
+# preencha as chaves (entre aspas) e os valores
+aluna = {
+    "_______": _______,
+    "_______": _______,
+    "_______": _______
+}
+print(aluna.get("_______"))
+```
 
 <v-click>
 
-- Resultado de um modelo: `{"label": "gato", "score": 0.97}`
-- Configuração de treinamento: `{"epochs": 10, "lr": 0.001}`
-- Linha de um dataset: `{"idade": 25, "salario": 3500}`
+**Dica:** cada valor tem um rótulo → `dict`. Acesso seguro → `.get("chave")`.
 
 </v-click>
 
-<v-click>
+<AdminOnly>
 
-> `dict` não é só uma estrutura — é a forma como dados reais chegam até você.
+```python
+aluna = {"nome": "Ana", "idade": 16, "nota": 8.5}
+print(aluna.get("nome"))  # Ana
+```
 
-</v-click>
+Erros comuns: chaves sem aspas `{nome: "Ana"}` → NameError · `.get(nome)` sem aspas → NameError.
+
+</AdminOnly>
 
 ---
 layout: default
@@ -318,174 +266,168 @@ card: true
 
 <!-- SLIDE 10 -->
 
-## Dict — `.get()`: acesso seguro
+## Peer Review — 5 minutos
 
-```python
-pessoa = {"nome": "Ana", "idade": 20, "cidade": "Pato Branco"}
-```
-
-**`.get(chave)` — acessa sem travar se a chave não existir**
-
-```python
-pessoa.get("nome")       # "Ana"
-pessoa.get("email")      # None — sem KeyError
-pessoa.get("email", "—") # "—" como padrão
-```
+Troca o papel com o colega. Avalia os 3 cenários.
 
 <v-click>
 
-> `dict["chave"]` trava com `KeyError` se a chave não existe. `.get()` retorna `None` — ou o padrão que você definir.
-
-</v-click>
-
----
-layout: default
-bgPreset: default
-card: true
-pulse: false
----
-
-## Dict — `.keys()` e `.items()`: iterar
-
-```python
-for chave in pessoa.keys():
-    print(chave)          # nome, idade, cidade
-
-for chave, valor in pessoa.items():
-    print(f"{chave}: {valor}")
 ```
-
-<v-click>
-
-> `.items()` devolve pares `(chave, valor)` — precisa de dois nomes no `for`.
-
-</v-click>
-
----
-layout: default
-bgPreset: default
-card: true
-pulse: false
----
-
-## Dict — função que recebe e processa
-
-```python
-def resumir(dados):
-    return f"{dados.get('nome')} tem {dados.get('idade')} anos"
-
-aluno = {"nome": "Ana", "idade": 20}
-print(resumir(aluno))   # Ana tem 20 anos
-```
-
-<v-click>
-
-> A função recebe o dict como parâmetro — não acessa variável global. Isso é o padrão para funções de IA que processam linhas de um dataset.
-
-</v-click>
-
----
-layout: default
-bgPreset: default
-card: true
----
-
-<!-- SLIDE 11 -->
-
-## Python no Papel — Parte 2: Trecho 1
-
-Escreva no papel, sem consulta. Embaixo: comentário EN.
-
-**Trecho 1 — dict com `.get`, `.items` ou `.keys`**
-
-```
-[dict definido à mão com 3+ pares]
-[loop com .keys() ou .items()]
-```
-
-<v-click>
-
-**Comentário EN logo abaixo:**
-```
-# This code defines a dict and iterates over its [keys / items]
-# It uses: dict, .get(), .items() / .keys()
+Cenário 1 (list):  CERTO ✓ / ERRO ✗  →  motivo: ___________
+Cenário 2 (tuple): CERTO ✓ / ERRO ✗  →  motivo: ___________
+Cenário 3 (dict):  CERTO ✓ / ERRO ✗  →  motivo: ___________
 ```
 
 </v-click>
 
----
-layout: default
-bgPreset: default
-card: true
-pulse: false
----
-
-## Python no Papel — Parte 2: Trecho 2
-
-**Trecho 2 — função que recebe dict e retorna valor calculado**
-
-```
-def nome_funcao(dicionario):
-    [acessa chaves com .get()]
-    return [resultado calculado]
-```
-
 <v-click>
 
-**Comentário EN logo abaixo:**
-```
-# This function receives a dict and returns [resultado]
-# It uses: .get() to access values safely
-```
+**O que verificar:** estrutura certa para o cenário? Colchetes/parênteses/chaves/aspas corretos?
 
 </v-click>
 
 <AdminOnly>
 
-**Para o professor:** Peer review igual à sexta (RODA ✓ / ERRO ✗ + motivo). Erros comuns: usar `dict["chave"]` sem verificar existência — correto com `.get()`. Esquecer `return` na função. Função sem parâmetro quando deveria receber o dict.
+Erros comuns: cenário 2 com `list` em vez de `tuple` (funciona mas não atende "não muda") · cenário 3 sem aspas nas chaves `{nome: "Ana"}` → NameError · `.get(nome)` sem aspas → NameError.
 
 </AdminOnly>
 
 ---
+layout: center
+card: true
+bgPreset: palette
+pulse: true
+pulseDuration: 8
+---
+
+<!-- SLIDE 11 -->
+
+# BLOCO 2
+## UC02 - Inglês Instrumental
+### Mini README — Day 3
+
+---
+layout: brainstorm
+bgPreset: palette
+pulse: true
+pulseDuration: 6
+---
+
+<!-- SLIDE 12 -->
+
+## Você tem código. Agora documente.
+
+Você acabou de escrever 4 trechos de código.
+
+<v-click>
+
+Qualquer pessoa que receba esse código vai precisar saber:
+- O que ele faz?
+- Como usar?
+- Qual o exemplo?
+
+</v-click>
+
+<v-click>
+
+> Um README responde isso em 1 página. Kaggle, GitHub, Hugging Face — todos têm README, todos em inglês. Hoje você escreve o do seu código.
+
+</v-click>
+
+---
 layout: default
 bgPreset: default
 card: true
 ---
 
-<!-- SLIDE 12 -->
+<!-- SLIDE 13 -->
 
-## Peer Review — 5 minutos
+## O Template do Mini README
 
-Troca o papel com o colega. Avalia os 2 trechos.
+4 seções. 1 página. Tudo em inglês.
+
+```markdown
+## What it does
+[1-2 frases: o que o código faz]
+
+## How to use
+[como criar a estrutura, qual método usar]
+
+## Example
+[trecho de código + resultado esperado]
+
+## Author
+[seu nome]
+```
 
 <v-click>
 
-**Para cada trecho:**
+> Verbos: `stores` · `returns` · `removes` · `converts` · `calculates` · `checks`
 
+</v-click>
+
+---
+layout: default
+bgPreset: default
+card: true
+pulse: false
+---
+
+## Exemplo preenchido — README do Cenário 4
+
+```markdown
+## What it does
+This code stores student data in a dict with three
+keys: name, age, and grade.
+
+## How to use
+Create a dict with "nome", "idade", "nota" as keys.
+Use .get("key") to access values safely.
+
+## Example
+aluna = {"nome": "Ana", "idade": 16, "nota": 8.5}
+aluna.get("nome")  # returns "Ana"
+
+## Author
+Ana Silva
 ```
-Trecho 1: RODA ✓ / ERRO ✗
-Motivo: [o que está certo ou errado]
-```
+
+<v-click>
+
+Leia na ordem: o que faz → como usar → exemplo → autor.
+
+</v-click>
+
+---
+layout: default
+bgPreset: default
+card: true
+---
+
+<!-- SLIDE 14 -->
+
+## Mini README — em dupla (20 minutos)
+
+Escolha **um** dos 4 cenários que você escreveu. Escreva o README em inglês.
+
+<v-click>
+
+1. `## What it does` → "This code **[verbo]** [o quê] using **[estrutura]**"
+2. `## How to use` → como criar a estrutura, qual método usar
+3. `## Example` → copie o código do papel + escreva o resultado esperado
+4. `## Author` → seu nome
 
 </v-click>
 
 <v-click>
 
-**O que verificar:**
-- Dict: chaves entre aspas, vírgula entre pares `chave: valor`?
-- `.get()`: passando a chave como string?
-- `.items()`: dois nomes no `for` (`chave, valor`)?
-- Função: tem `def`, `:`, `return`? Recebe o dict como parâmetro?
+> Guarde o README. Ele vai ser usado na próxima atividade.
 
 </v-click>
 
 <AdminOnly>
 
-**Erros comuns para o professor:**
-- `for chave, valor in pessoa` em vez de `pessoa.items()` → TypeError
-- `pessoa[chave]` em vez de `pessoa.get(chave)` — funciona, mas não é o que foi pedido
-- `def resumir():` sem parâmetro → NameError ao usar a variável
-- Chave sem aspas: `{nome: "Ana"}` → NameError
+Circule e corrija: presente simples ("stores", não "is storing") · tipo específico no How to use · resultado real no Example. Quem terminar: escrever README para um segundo cenário.
 
 </AdminOnly>
 
@@ -496,41 +438,35 @@ pulse: true
 pulseDuration: 6
 ---
 
-<!-- SLIDE 13 -->
+<!-- SLIDE 15 -->
 
-## Compilação Real — 30 minutos
+## Compilação Real — 20 minutos
 
-Agora o código sai do papel e vai pro VS Code.
+Você recebe o README do colega. **Sem ver o código** — só o README.
 
 <v-click>
 
-**Regra única:** você digita o código **do colega**, lendo **só os comentários EN** dele.
-
-Não olha para o código. Só para os comentários.
+**Regra única:** leia o README e escreva o código do zero no VS Code.
 
 </v-click>
 
 <v-click>
 
-**Objetivo:** se o código rodar sem modificação → os comentários foram precisos.
+**O teste:** se o código rodar → o README foi preciso o suficiente.
 
-Se precisar corrigir → volta pro colega e pergunta: "what does this line do?"
+Se precisar corrigir → o que estava ambíguo no README?
 
 </v-click>
 
 <v-click>
 
-> Uma dupla por computador é suficiente. Quem não tiver computador digita no papel de rascunho e o colega confirma.
+> Isso é o que acontece em projetos reais: outro dev pega seu README e tenta recriar seu código. README vago = ninguém consegue.
 
 </v-click>
 
 <AdminOnly>
 
-**Para o professor:** Mínimo 1 computador por dupla. Pode usar VS Code, Colab ou IDLE. Não ajude com a lógica — só com erros de digitação.
-
-O teste real: o código do colega roda? Se sim, os comentários funcionaram como documentação. Se não, discutir o que estava ambíguo.
-
-Registre os pares que conseguiram — é evidência de indicador UC02 Ind.3 (produção escrita técnica funcional).
+1 computador por dupla. Não ajude com a lógica — só erros de digitação. Registre quem conseguiu: evidência de UC02-Ind.3 (produção técnica funcional).
 
 </AdminOnly>
 
@@ -540,32 +476,35 @@ bgPreset: default
 card: true
 ---
 
-<!-- SLIDE 14 -->
+<!-- SLIDE 16 -->
 
-## Compilação Real — o que observar
+## Dicionário Pessoal — entrega final do sprint
 
-Enquanto você digita o código do colega:
+Último dia do sprint UC02.
 
 <v-click>
 
-**Se o código rodou:**
-- Os comentários eram precisos o suficiente
-- Tipo certo, verbo certo, resultado descrito corretamente
+<SlideTable compact>
+
+| Dia | Atividade | Meta |
+|---|---|---|
+| Thu (A31) | Doc Hunter + Error Detective | 8 termos |
+| Fri (A32) | Comment Engineer + Passa o Código | 13 termos |
+| Sat (A33) | Mini README + Compilação Real | **15 termos** |
+
+</SlideTable>
 
 </v-click>
 
 <v-click>
 
-**Se não rodou:**
-- Qual linha causou o erro?
-- O comentário dizia o suficiente para escrever essa linha?
-- O que faltou no comentário?
+**Entrega:** dicionário manuscrito com **mínimo 15 termos** + README escrito.
 
 </v-click>
 
 <v-click>
 
-> Este é o teste definitivo do sprint: **código documentado em inglês que outra pessoa consegue recriar.**
+> Esse dicionário continua. Toda aula de UC02 e UC05 vai adicionar termos até o fim do T2.
 
 </v-click>
 
@@ -582,14 +521,14 @@ avatar: https://github.com/LeoZanini.png?size=256
 
 **Sprint UC02 — 3 dias concluídos:**
 
-- A31: Doc Hunter + Error Detective → vocabulário real de docstrings e tracebacks
+- A31: Doc Hunter + Error Detective → vocabulário real de docs e tracebacks
 - A32: Comment Engineer + Passa o Código → documentação de função em inglês
-- A33: Mini README + apresentação oral + Dicionário (15+ termos)
+- A33: Mini README + Compilação Real → README testado por outra pessoa
 
 **Aula 33 concluída:**
 
-- UC02: Mini README escrito + apresentado oralmente + Dicionário entregue
-- UC05: dict com `.get`, `.items`, `.keys` + função com dict + compilação real do código do colega
+- UC05: `list` · `tuple` · `set` · `dict` — comparados, escolhidos, codados no papel
+- UC02: Mini README em inglês + Compilação Real validada
 
 **Próxima semana (A34 — 18/06):**
 - UC07: Transformação Digital
