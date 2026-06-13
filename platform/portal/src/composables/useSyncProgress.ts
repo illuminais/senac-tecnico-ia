@@ -1,22 +1,22 @@
 import { onMounted, onUnmounted } from 'vue'
-import { getUserId } from './useProgress'
+import { useAuth } from './useAuth'
 
 const SYNC_INTERVAL_MS = 30_000
 const API_URL = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev/api/sync'
 
-/** Envia o estado completo de progresso de uma aula para o Worker (idempotente) */
-async function syncPayload(payload: {
-  aulaId: string
-  progresso: number
-  respostas: Record<string, string>
-}) {
+/** Envia o estado completo de progresso de uma aula para o Worker (idempotente).
+ *  Silencioso se o aluno não estiver logado — localStorage permanece a fonte de verdade. */
+async function syncPayload(
+  payload: { aulaId: string; progresso: number; respostas: Record<string, string> },
+  authHeaders: Record<string, string>,
+) {
+  if (!authHeaders.Authorization) return  // não logado, não sincroniza
   try {
     await fetch(API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...authHeaders },
       body: JSON.stringify({
-        userId: getUserId(),
-        aulaId: payload.aulaId,
+        aulaId:    payload.aulaId,
         progresso: payload.progresso,
         respostas: payload.respostas,
       }),
@@ -38,14 +38,15 @@ export function useSyncProgress(getPayload: () => {
   progresso: number
   respostas: Record<string, string>
 }) {
+  const { authHeaders } = useAuth()
   let interval: ReturnType<typeof setInterval>
 
   async function syncNow() {
-    await syncPayload(getPayload())
+    await syncPayload(getPayload(), authHeaders.value)
   }
 
   function onBeforeUnload() {
-    syncPayload(getPayload())  // fire and forget com keepalive
+    syncPayload(getPayload(), authHeaders.value)  // fire and forget com keepalive
   }
 
   onMounted(() => {

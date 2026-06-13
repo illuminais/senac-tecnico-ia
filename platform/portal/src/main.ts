@@ -6,6 +6,7 @@ import AulaView from './views/AulaView.vue'
 import AdminView from './views/AdminView.vue'
 import AvaliacoesView from './views/AvaliacoesView.vue'
 import AvaliacaoView from './views/AvaliacaoView.vue'
+import AuthCallbackView from './views/AuthCallbackView.vue'
 import './style.css'
 
 const router = createRouter({
@@ -16,6 +17,7 @@ const router = createRouter({
     { path: '/avaliacoes', component: AvaliacoesView },
     { path: '/avaliacao/:id', component: AvaliacaoView },
     { path: '/admin', component: AdminView },
+    { path: '/auth/callback', component: AuthCallbackView },
   ],
 })
 

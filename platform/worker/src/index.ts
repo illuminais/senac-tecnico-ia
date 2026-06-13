@@ -1,23 +1,30 @@
 /**
  * Cloudflare Worker — API LMS
- * POST /api/sync           — persiste progresso (público)
- * POST /api/auth/login     — autentica admin, retorna JWT
- * GET  /api/message        — busca mensagem do professor (público)
- * PUT  /api/message        — atualiza mensagem (requer JWT admin)
+ *
+ * Rotas públicas:
+ *   GET  /api/message                — mensagem do professor
+ *   POST /api/auth/login             — login admin (username/password → JWT)
+ *   GET  /api/auth/google            — inicia OAuth Google (redirect)
+ *   GET  /api/auth/google/callback   — callback OAuth Google (emite JWT aluno)
+ *
+ * Rotas autenticadas (aluno ou admin):
+ *   GET  /api/auth/me                — retorna dados do usuário logado
+ *   POST /api/sync                   — salva progresso (aluno)
+ *   POST /api/entregas               — registra entrega de avaliação (aluno)
+ *
+ * Rotas autenticadas (admin):
+ *   PUT  /api/message                — atualiza mensagem do professor
  */
 
 interface Env {
   DB: D1Database
-  ADMIN_USERNAME: string   // wrangler secret
-  ADMIN_PASSWORD: string   // wrangler secret
-  JWT_SECRET: string       // wrangler secret
-}
-
-interface SyncPayload {
-  userId: string
-  aulaId: string
-  progresso: number
-  respostas: Record<string, string>
+  ADMIN_USERNAME: string        // wrangler secret
+  ADMIN_PASSWORD: string        // wrangler secret
+  JWT_SECRET: string            // wrangler secret
+  GOOGLE_CLIENT_ID: string      // wrangler secret
+  GOOGLE_CLIENT_SECRET: string  // wrangler secret
+  GOOGLE_ALLOWED_DOMAIN: string // wrangler secret: escola.pr.gov.br
+  PORTAL_URL: string            // wrangler var: URL do frontend
 }
 
 // ---------------------------------------------------------------------------
@@ -85,6 +92,22 @@ async function safeEqual(a: string, b: string): Promise<boolean> {
 }
 
 // ---------------------------------------------------------------------------
+// Auth helpers
+// ---------------------------------------------------------------------------
+
+async function requireAuth(request: Request, env: Env): Promise<Record<string, unknown> | null> {
+  const authHeader = request.headers.get('Authorization') ?? ''
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
+  if (!token) return null
+  return verifyJwt(token, env.JWT_SECRET)
+}
+
+function oauthCallbackUri(request: Request): string {
+  const url = new URL(request.url)
+  return `${url.protocol}//${url.host}/api/auth/google/callback`
+}
+
+// ---------------------------------------------------------------------------
 // Router
 // ---------------------------------------------------------------------------
 
@@ -96,31 +119,29 @@ export default {
       return new Response(null, { headers: corsHeaders() })
     }
 
-    if (request.method === 'POST' && url.pathname === '/api/sync') {
-      return handleSync(request, env)
-    }
+    // Públicas
+    if (request.method === 'GET'  && url.pathname === '/api/message')                return handleGetMessage(env)
+    if (request.method === 'POST' && url.pathname === '/api/auth/login')             return handleAdminLogin(request, env)
+    if (request.method === 'GET'  && url.pathname === '/api/auth/google')            return handleGoogleInit(request, env)
+    if (request.method === 'GET'  && url.pathname === '/api/auth/google/callback')   return handleGoogleCallback(request, env)
 
-    if (request.method === 'POST' && url.pathname === '/api/auth/login') {
-      return handleLogin(request, env)
-    }
+    // Autenticadas
+    if (request.method === 'GET'  && url.pathname === '/api/auth/me')    return handleMe(request, env)
+    if (request.method === 'POST' && url.pathname === '/api/sync')       return handleSync(request, env)
+    if (request.method === 'POST' && url.pathname === '/api/entregas')   return handleEntrega(request, env)
 
-    if (request.method === 'GET' && url.pathname === '/api/message') {
-      return handleGetMessage(env)
-    }
-
-    if (request.method === 'PUT' && url.pathname === '/api/message') {
-      return handlePutMessage(request, env)
-    }
+    // Admin
+    if (request.method === 'PUT' && url.pathname === '/api/message')     return handlePutMessage(request, env)
 
     return new Response('Not found', { status: 404 })
   },
 }
 
 // ---------------------------------------------------------------------------
-// Handlers
+// Handlers — públicos
 // ---------------------------------------------------------------------------
 
-async function handleLogin(request: Request, env: Env): Promise<Response> {
+async function handleAdminLogin(request: Request, env: Env): Promise<Response> {
   let body: { username?: string; password?: string }
   try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
 
@@ -129,18 +150,108 @@ async function handleLogin(request: Request, env: Env): Promise<Response> {
 
   const userOk = await safeEqual(username, env.ADMIN_USERNAME ?? '')
   const passOk = await safeEqual(password, env.ADMIN_PASSWORD ?? '')
-
-  if (!userOk || !passOk) {
-    return jsonResponse({ error: 'Invalid credentials' }, 401)
-  }
+  if (!userOk || !passOk) return jsonResponse({ error: 'Invalid credentials' }, 401)
 
   const token = await signJwt(
     { sub: username, role: 'admin', exp: Math.floor(Date.now() / 1000) + 86400 },
     env.JWT_SECRET ?? '',
   )
-
   return jsonResponse({ token })
 }
+
+async function handleGoogleInit(request: Request, env: Env): Promise<Response> {
+  // State é um JWT assinado com 5 min de expiração — stateless, sem KV
+  const state = await signJwt(
+    { purpose: 'oauth_state', exp: Math.floor(Date.now() / 1000) + 300 },
+    env.JWT_SECRET,
+  )
+  const params = new URLSearchParams({
+    client_id:     env.GOOGLE_CLIENT_ID,
+    redirect_uri:  oauthCallbackUri(request),
+    response_type: 'code',
+    scope:         'openid email profile',
+    state,
+    prompt:        'select_account',
+  })
+  return Response.redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`, 302)
+}
+
+async function handleGoogleCallback(request: Request, env: Env): Promise<Response> {
+  const url       = new URL(request.url)
+  const code      = url.searchParams.get('code')
+  const state     = url.searchParams.get('state')
+  const portalUrl = env.PORTAL_URL ?? ''
+
+  // Valida state anti-CSRF
+  if (!state) return authErrorRedirect(portalUrl, 'invalid_state')
+  const statePayload = await verifyJwt(state, env.JWT_SECRET)
+  if (!statePayload || statePayload.purpose !== 'oauth_state') {
+    return authErrorRedirect(portalUrl, 'invalid_state')
+  }
+
+  if (!code) return authErrorRedirect(portalUrl, 'no_code')
+
+  // Troca code por access_token
+  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      code,
+      client_id:     env.GOOGLE_CLIENT_ID,
+      client_secret: env.GOOGLE_CLIENT_SECRET,
+      redirect_uri:  oauthCallbackUri(request),
+      grant_type:    'authorization_code',
+    }),
+  })
+  if (!tokenRes.ok) return authErrorRedirect(portalUrl, 'token_exchange_failed')
+
+  const tokenData = await tokenRes.json() as { access_token?: string }
+  if (!tokenData.access_token) return authErrorRedirect(portalUrl, 'no_access_token')
+
+  // Busca info do usuário
+  const userRes = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+    headers: { Authorization: `Bearer ${tokenData.access_token}` },
+  })
+  if (!userRes.ok) return authErrorRedirect(portalUrl, 'userinfo_failed')
+
+  const userInfo = await userRes.json() as { sub?: string; email?: string; name?: string }
+  const { sub, email, name } = userInfo
+  if (!sub || !email) return authErrorRedirect(portalUrl, 'missing_user_info')
+
+  // Valida domínio — suporta múltiplos separados por vírgula (ex: "escola.pr.gov.br,gmail.com" para testes)
+  const allowedDomains = (env.GOOGLE_ALLOWED_DOMAIN ?? 'escola.pr.gov.br').split(',').map(d => d.trim())
+  if (!allowedDomains.some(d => email.endsWith(`@${d}`))) {
+    return authErrorRedirect(portalUrl, 'invalid_domain')
+  }
+
+  // Upsert do aluno no D1
+  await env.DB.prepare(`
+    INSERT INTO users (id, nome, email, created_at)
+    VALUES (?, ?, ?, unixepoch())
+    ON CONFLICT (id) DO UPDATE SET nome = excluded.nome, email = excluded.email
+  `).bind(sub, name ?? email, email).run()
+
+  // Emite JWT do aluno (30 dias)
+  const jwt = await signJwt(
+    { sub, email, name: name ?? email, role: 'student', exp: Math.floor(Date.now() / 1000) + 86400 * 30 },
+    env.JWT_SECRET,
+  )
+  return Response.redirect(`${portalUrl}/auth/callback?token=${encodeURIComponent(jwt)}`, 302)
+}
+
+// ---------------------------------------------------------------------------
+// Handlers — autenticados
+// ---------------------------------------------------------------------------
+
+async function handleMe(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload) return jsonResponse({ error: 'Unauthorized' }, 401)
+  return jsonResponse({ sub: payload.sub, email: payload.email, name: payload.name, role: payload.role })
+}
+
+// ---------------------------------------------------------------------------
+// Handlers — públicos (continuação)
+// ---------------------------------------------------------------------------
 
 async function handleGetMessage(env: Env): Promise<Response> {
   const row = await env.DB.prepare(
@@ -150,12 +261,8 @@ async function handleGetMessage(env: Env): Promise<Response> {
 }
 
 async function handlePutMessage(request: Request, env: Env): Promise<Response> {
-  const authHeader = request.headers.get('Authorization') ?? ''
-  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
-  const payload = await verifyJwt(token, env.JWT_SECRET ?? '')
-  if (!payload || payload.role !== 'admin') {
-    return jsonResponse({ error: 'Unauthorized' }, 401)
-  }
+  const payload = await requireAuth(request, env)
+  if (!payload || payload.role !== 'admin') return jsonResponse({ error: 'Unauthorized' }, 401)
 
   let body: { message?: string }
   try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
@@ -175,13 +282,18 @@ async function handlePutMessage(request: Request, env: Env): Promise<Response> {
 }
 
 async function handleSync(request: Request, env: Env): Promise<Response> {
-  let body: SyncPayload
+  const payload = await requireAuth(request, env)
+  if (!payload) return jsonResponse({ error: 'Unauthorized' }, 401)
+
+  let body: { aulaId?: string; progresso?: number; respostas?: Record<string, string> }
   try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
 
-  const { userId, aulaId, progresso, respostas } = body
-  if (!userId || !aulaId || typeof progresso !== 'number') {
-    return jsonResponse({ error: 'Missing required fields: userId, aulaId, progresso' }, 422)
+  const { aulaId, progresso, respostas } = body
+  if (!aulaId || typeof progresso !== 'number') {
+    return jsonResponse({ error: 'Missing required fields: aulaId, progresso' }, 422)
   }
+
+  const userId = payload.sub as string
 
   await env.DB.prepare(`
     INSERT INTO progress (user_id, aula_slug, progresso, updated_at)
@@ -204,6 +316,34 @@ async function handleSync(request: Request, env: Env): Promise<Response> {
   return jsonResponse({ ok: true })
 }
 
+async function handleEntrega(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload) return jsonResponse({ error: 'Unauthorized' }, 401)
+  if (payload.role !== 'student') return jsonResponse({ error: 'Forbidden' }, 403)
+
+  let body: { avaliacaoId?: string; link?: string }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const { avaliacaoId, link } = body
+  if (!avaliacaoId || !link) return jsonResponse({ error: 'Missing avaliacaoId or link' }, 422)
+  try { new URL(link) } catch { return jsonResponse({ error: 'link must be a valid URL' }, 422) }
+
+  const userId = payload.sub as string
+
+  await env.DB.prepare(`
+    INSERT INTO entregas (user_id, avaliacao_slug, link, updated_at)
+    VALUES (?, ?, ?, unixepoch())
+    ON CONFLICT (user_id, avaliacao_slug)
+    DO UPDATE SET link = excluded.link, updated_at = excluded.updated_at
+  `).bind(userId, avaliacaoId, link.slice(0, 2000)).run()
+
+  return jsonResponse({ ok: true })
+}
+
+// ---------------------------------------------------------------------------
+// Handlers — admin
+// ---------------------------------------------------------------------------
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -221,5 +361,9 @@ function jsonResponse(data: unknown, status = 200): Response {
     status,
     headers: { 'Content-Type': 'application/json', ...corsHeaders() },
   })
+}
+
+function authErrorRedirect(portalUrl: string, error: string): Response {
+  return Response.redirect(`${portalUrl}/auth/callback?error=${error}`, 302)
 }
 

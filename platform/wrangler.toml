@@ -2,9 +2,20 @@ name = "lms-senac-tecnico-ia"
 main = "worker/src/index.ts"
 compatibility_date = "2024-01-01"
 
+[vars]
+PORTAL_URL = "https://lms-senac-tecnico-ia.pages.dev"  # ajustar para a URL real do Cloudflare Pages
+
 # Cloudflare D1 — banco de dados SQLite distribuído
 [[d1_databases]]
 binding = "DB"
 database_name = "lms-progress"
 database_id   = "0c14aadc-4dab-4338-a7bd-68a1336f8547"
+
+# Secrets (configurar via wrangler CLI — nunca commitar):
+#   wrangler secret put ADMIN_USERNAME
+#   wrangler secret put ADMIN_PASSWORD
+#   wrangler secret put JWT_SECRET
+#   wrangler secret put GOOGLE_CLIENT_ID
+#   wrangler secret put GOOGLE_CLIENT_SECRET
+#   wrangler secret put GOOGLE_ALLOWED_DOMAIN   # produção: "escola.pr.gov.br" | dev/teste: "escola.pr.gov.br,gmail.com"
 
