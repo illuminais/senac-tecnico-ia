@@ -1,0 +1,25 @@
+id,nome,grupo,confederacao,ranking_fifa
+1,Brasil,C,CONMEBOL,5
+2,Marrocos,C,CAF,14
+3,Escocia,C,UEFA,39
+4,Haiti,C,CONCACAF,83
+5,Mexico,A,CONCACAF,17
+6,Africa do Sul,A,CAF,59
+7,Coreia do Sul,A,AFC,23
+8,Tchequia,A,UEFA,37
+9,Canada,B,CONCACAF,48
+10,Bosnia-Herzegovina,B,UEFA,58
+11,Catar,B,AFC,38
+12,Suica,B,UEFA,19
+13,EUA,D,CONCACAF,13
+14,Australia,D,AFC,25
+15,Paraguai,D,CONMEBOL,62
+16,Turquia,D,UEFA,29
+17,Franca,I,UEFA,2
+18,Senegal,I,CAF,21
+19,Noruega,I,UEFA,31
+20,Iraque,I,AFC,67
+21,Argentina,J,CONMEBOL,1
+22,Argelia,J,CAF,42
+23,Austria,J,UEFA,26
+24,Jordania,J,AFC,87

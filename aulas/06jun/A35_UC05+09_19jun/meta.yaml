@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "35"
+slug: "a35-uc05-09-19jun"
+title: "Copa Analytics Dia 2 — Python e Estatistica"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC05", "UC09"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-06-19"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []

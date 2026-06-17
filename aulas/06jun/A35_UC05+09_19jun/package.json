@@ -1,0 +1,26 @@
+{
+  "name": "a35-uc05-09-19jun",
+  "version": "1.0.0",
+  "description": "Aula A35_UC05+09_19jun — Tecnico em Inteligencia Artificial SENAC",
+  "keywords": [
+    "slidev-theme"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md --out dist",
+    "export": "slidev export slides.md --format pdf --output aula-export.pdf",
+    "export:pptx": "slidev export slides.md --format pptx --output aula-export.pptx"
+  },
+  "slidev": {
+    "colorSchema": "both"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/types": "^0.49.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.0.0",
+    "vue": "^3.0.0"
+  }
+}
