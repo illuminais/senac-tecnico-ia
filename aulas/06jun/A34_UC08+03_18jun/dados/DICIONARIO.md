@@ -61,6 +61,30 @@ Fonte: FIFA.com · Wikipedia · CBS Sports · Sky Sports
 
 ---
 
+## copa2026_historico.csv
+
+Desempenho histórico das mesmas 24 seleções nas Copas de 2014, 2018 e 2022.
+Fonte: Wikipedia / FIFA.com · Gols e fases: dados reais · Amarelos: estimados por extensão de torneio.
+
+| Coluna | Tipo | Descrição |
+|---|---|---|
+| selecao | texto | Nome da seleção |
+| copa | inteiro | Ano da Copa (2014, 2018 ou 2022) |
+| fase_eliminada | texto | campeao / vice / semi / quartas / oitavas / grupo / nao_classificou |
+| jogos | inteiro | Total de partidas disputadas (0 se não classificou) |
+| gols_pro | inteiro | Gols marcados no torneio |
+| gols_contra | inteiro | Gols sofridos no torneio |
+| amarelos | inteiro | Cartões amarelos acumulados |
+
+**72 linhas** — 24 seleções × 3 edições.
+
+Destaques:
+- Argentina: grupo→oitavas→campeão (evolução em 3 Copas)
+- Marrocos: nao_classificou→grupo→semi (maior ascensão do dataset)
+- Escócia / Haiti / Noruega / Iraque / Jordânia / Áustria: não classificaram em nenhuma das 3 edições — estreantes em 2026
+
+---
+
 ## Perguntas que os times podem responder
 
 1. Qual seleção tem o melhor custo-benefício em gols por chute?
