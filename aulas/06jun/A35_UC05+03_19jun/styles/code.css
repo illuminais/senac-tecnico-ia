@@ -1,0 +1,32 @@
+/* Estilos para blocos de código — mantido mínimo, cores delegadas ao Shiki + tema */
+
+.shiki {
+  @apply rounded-xl;
+  overflow-x: auto;
+}
+
+.shiki .line {
+  @apply leading-relaxed;
+}
+
+.slidev-code-line-numbers {
+  color: var(--theme-text-muted);
+}
+
+.slidev-code .highlighted {
+  @apply bg-blue-500/10;
+  border-left: 3px solid #3b82f6;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+.slidev-code-wrapper .slidev-code-copy {
+  opacity: 0.5 !important;
+  color: var(--theme-text-muted);
+  margin: 8px;
+  border-radius: 5px;
+}
+
+.slidev-code-wrapper .slidev-code-copy:hover {
+  opacity: 1 !important;
+}

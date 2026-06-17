@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "34"
+slug: "a34-uc07-01-18jun"
+title: "Copa Analytics Dia 1 — Banco de Dados e Matematica"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC07", "UC01"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-06-18"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []

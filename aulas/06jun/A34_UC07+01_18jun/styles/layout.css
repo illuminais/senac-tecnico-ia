@@ -1,0 +1,596 @@
+/* Importar IBM Plex Sans */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
+
+/* Variáveis customizadas do tema */
+:root {
+  /* Cores principais */
+  --slidev-theme-primary: #222222;
+  --slidev-theme-secondary: #3a1500;
+  --slidev-theme-accent: #ffc64a;
+  --slidev-theme-links: #73bafc;
+
+  /* Background */
+  --slidev-theme-bg: #0f172a;
+  --slidev-theme-bg-alt: #1e293b;
+
+  /* Texto */
+  --slidev-theme-text: #f1f5f9;
+  --slidev-theme-text-muted: #94a3b8;
+
+  /* Paleta do título (primária/ secundária) */
+  --slidev-title-primary: #37fa10;
+  --slidev-title-secondary: #53baff;
+  --slidev-title-primary-rgb: 55 250 16;
+  --slidev-title-secondary-rgb: 83 186 255;
+
+  /* Tipografia dos títulos */
+  --slidev-h1-size: 2.25rem;   /* text-4xl — padrão big-img-text */
+  --slidev-h1-line-height: 1.25; /* leading-tight */
+
+  /* Gradientes */
+  /* Forte (pra usar quando quiser destaque) */
+  --slidev-gradient-primary: linear-gradient(
+    45deg,
+    var(--slidev-title-secondary) 0%,
+    var(--slidev-title-primary) 70%,
+    var(--slidev-title-secondary) 100%
+  );
+
+  /* Suave (default, pra não poluir todos os slides) */
+  --slidev-gradient-title: linear-gradient(
+    to right,
+    rgb(var(--slidev-title-secondary-rgb) / 0.92) 0%,
+    rgb(var(--slidev-title-primary-rgb) / 0.9) 100%
+  );
+
+  /* Forte só para título (ex: classe .title-gradient), sem mexer no --slidev-gradient-primary */
+  --slidev-gradient-title-strong: linear-gradient(
+    to right,
+    var(--slidev-title-secondary) 0%,
+    var(--slidev-title-primary) 100%
+  );
+
+  /* Override opcional por layout (ex: cover) */
+  --slidev-title-gradient: var(--slidev-gradient-title);
+  --slidev-gradient-success: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #07b17b 50%,
+    #0d9488 100%
+  );
+  --slidev-gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --slidev-gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   THEME TOKENS — dark / light
+   Todas as cores do tema centralizadas aqui.
+   Mexa nos valores abaixo para ajustar o visual.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Dark (padrão) ──────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  /* Slide background */
+  --theme-bg: #000103;
+  --theme-bg-alt: #1e293b;
+
+  /* Texto */
+  --theme-text: #e2e8f0;
+  --theme-text-strong: #f1f5f9;
+  --theme-text-muted: #94a3b8;
+
+  /* Card */
+  --theme-card-bg: transparent;
+  --theme-card-border: rgba(255, 255, 255, 0.15);
+
+  /* Footer */
+  --theme-footer-bg: var(--theme-bg);
+  --theme-footer-border: rgba(255, 255, 255, 0.06);
+  --theme-footer-text: rgba(255, 255, 255, 0.55);
+  --theme-footer-text-strong: rgba(255, 255, 255, 0.65);
+
+  /* Code blocks */
+  --theme-pre-bg: rgba(15, 23, 42, 0.88);
+  --theme-pre-border: rgba(99, 102, 241, 0.2);
+  --theme-code-inline-bg: #030611;
+  --theme-code-inline-text: #b5c1ff;
+
+  /* Links */
+  --theme-link: #73bafc;
+  --theme-link-shadow: rgba(96, 99, 255, 0.5);
+
+  /* Tables */
+  --theme-table-header-bg: #1e293b;
+  --theme-table-header-text: #ffffff;
+  --theme-table-header-border: #334155;
+  --theme-table-header-col-border: #334155;
+  --theme-table-row-border: #1e293b;
+  --theme-table-stripe: #131c31;
+  --theme-table-hover: #1a2744;
+  --theme-table-cell-sep: #1e293b;
+
+  /* Blockquote */
+  --theme-blockquote-bg: rgba(99, 102, 241, 0.08);
+  --theme-blockquote-border: var(--slidev-theme-primary);
+  --theme-blockquote-text: var(--theme-text-muted);
+
+  /* Badges */
+  --theme-badge-bg: rgba(99, 102, 241, 0.2);
+  --theme-badge-text: #a5b4fc;
+  --theme-badge-border: rgba(99, 102, 241, 0.3);
+
+  /* Misc */
+  --theme-hr: rgba(99, 102, 241, 0.3);
+  --theme-card-hover-bg: rgba(90, 91, 92, 0.6);
+  --theme-card-hover-border: rgba(99, 102, 241, 0.5);
+}
+
+/* ── Light (projetor) ───────────────────────────────────────────── */
+[data-theme="light"] {
+  --theme-bg: #faf7f2;
+  --theme-bg-alt: #f1f5f9;
+
+  --theme-text: #1e293b;
+  --theme-text-strong: #0f172a;
+  --theme-text-muted: #475569;
+
+  --theme-card-bg: #fefcf5;
+  --theme-card-border: rgba(0, 0, 0, 0.1);
+
+  --theme-footer-bg: var(--theme-bg);
+  --theme-footer-border: rgba(0, 0, 0, 0.08);
+  --theme-footer-text: rgba(0, 0, 0, 0.5);
+  --theme-footer-text-strong: rgba(0, 0, 0, 0.7);
+
+  --theme-pre-bg: rgba(241, 245, 249, 0.95);
+  --theme-pre-border: rgba(0, 0, 0, 0.1);
+  --theme-code-inline-bg: #e2e8f0;
+  --theme-code-inline-text: #7c3aed;
+
+  --theme-link: #2563eb;
+  --theme-link-shadow: rgba(37, 99, 235, 0.3);
+
+  --theme-table-header-bg: #e2e8f0;
+  --theme-table-header-text: #1e293b;
+  --theme-table-header-border: #cbd5e1;
+  --theme-table-header-col-border: #cbd5e1;
+  --theme-table-row-border: #e2e8f0;
+  --theme-table-stripe: #f8fafc;
+  --theme-table-hover: #dbeafe;
+  --theme-table-cell-sep: #e2e8f0;
+
+  --theme-blockquote-bg: rgba(99, 102, 241, 0.05);
+  --theme-blockquote-border: var(--slidev-theme-primary);
+  --theme-blockquote-text: var(--theme-text-muted);
+
+  --theme-badge-bg: rgba(99, 102, 241, 0.1);
+  --theme-badge-text: #7c3aed;
+  --theme-badge-border: rgba(99, 102, 241, 0.3);
+
+  --theme-hr: rgba(0, 0, 0, 0.12);
+  --theme-card-hover-bg: rgba(255, 255, 255, 0.6);
+  --theme-card-hover-border: rgba(99, 102, 241, 0.4);
+}
+
+/* Estilos globais */
+.slidev-layout {
+  color: var(--theme-text);
+  background: var(--theme-bg);
+  font-family:
+    "IBM Plex Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* Títulos */
+h1 {
+  @apply font-extrabold;
+  font-size: var(--slidev-h1-size);
+  background: var(--slidev-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: var(--slidev-h1-line-height);
+  padding-bottom: 0.2em;
+  overflow: visible;
+}
+
+/* Título com gradiente (só para o slide principal) */
+.title-gradient h1,
+h1.title-gradient {
+  background: var(--slidev-gradient-title-strong);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  @apply text-3xl font-semibold mb-3;
+  color: var(--theme-text-muted);
+}
+
+h3 {
+  @apply text-2xl font-medium mb-2;
+  color: var(--slidev-theme-secondary);
+}
+
+/* Parágrafos */
+p {
+  @apply text-lg leading-relaxed;
+  color: var(--theme-text-strong);
+}
+
+/* Links */
+a {
+  @apply underline decoration-1 decoration-gray-400;
+  color: var(--theme-link);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  @apply decoration-blue-300;
+  text-shadow: 0 0 8px var(--theme-link-shadow);
+}
+
+/* Listas */
+ul,
+ol {
+  @apply space-y-2;
+}
+
+li {
+  @apply text-lg;
+  color: var(--theme-text-strong);
+}
+
+/* Code inline */
+:not(pre) > code {
+  @apply text-sm;
+  background-color: var(--theme-code-inline-bg) !important;
+  color: var(--theme-code-inline-text);
+  -webkit-text-fill-color: var(--theme-code-inline-text);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  font-family: "Fira Code", monospace;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+/* Blocos de código */
+pre {
+  @apply rounded-lg p-4 shadow-sm;
+  background: var(--theme-bg-alt) !important;
+  border: 1px solid var(--theme-pre-border);
+}
+
+/* Animações customizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efeito de brilho em elementos importantes */
+.glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Cards customizados */
+.card {
+  @apply p-6 rounded-xl backdrop-blur-sm;
+  background: var(--theme-card-hover-bg);
+  border: 1px solid var(--theme-pre-border);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  @apply glow;
+  border-color: var(--theme-card-hover-border);
+  transform: translateY(-4px);
+}
+
+/* Card principal dos slides */
+.slide-card {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--theme-card-border);
+  backdrop-filter: blur(24px);
+  background: var(--theme-card-bg);
+  color: var(--theme-text);
+}
+
+.slide-card pre {
+  background-color: var(--theme-pre-bg) !important;
+  border-color: var(--theme-pre-border);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* ── Shiki syntax highlight — responde ao data-theme ───────────── */
+/* Dark mode: força cores Shiki escuras, sem background nos spans */
+.shiki {
+  color: var(--shiki-dark, inherit) !important;
+}
+.shiki span {
+  color: var(--shiki-dark, inherit) !important;
+  font-style: var(--shiki-dark-font-style, inherit) !important;
+  text-decoration: var(--shiki-dark-text-decoration, inherit) !important;
+}
+
+/* Light mode: força cores Shiki claras */
+[data-theme="light"] .shiki {
+  color: var(--shiki-light, inherit) !important;
+  background: var(--shiki-light-bg, transparent) !important;
+}
+[data-theme="light"] .shiki span {
+  color: var(--shiki-light, inherit) !important;
+  font-style: var(--shiki-light-font-style, inherit) !important;
+  text-decoration: var(--shiki-light-text-decoration, inherit) !important;
+}
+
+/* Botões */
+.btn {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  background: var(--slidev-gradient-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  @apply glow;
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium;
+  background: var(--theme-badge-bg);
+  color: var(--theme-badge-text);
+  border: 1px solid var(--theme-badge-border);
+}
+
+/* Separadores */
+hr {
+  @apply my-8 border-t-2;
+  border-color: var(--theme-hr);
+}
+
+/* Blockquotes — pseudo-footer de citação nos slides */
+blockquote {
+  @apply border-l-4 pl-4 italic;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin-top: 0.75em;
+  text-align: left;
+  border-color: var(--theme-blockquote-border);
+  background: var(--theme-blockquote-bg);
+  color: var(--theme-blockquote-text);
+  line-height: 1.45;
+}
+
+blockquote p {
+  text-align: left !important;
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.45;
+}
+
+/* ===================================================================
+   TABLES — Estilização global de tabelas markdown nos slides
+   =================================================================== */
+
+/* Wrapper de centralização gerado pelo SlideTable.vue */
+.slide-table-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Base da tabela: sem collapse nativo — trabalhamos com border-radius */
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0.4em 0;
+  font-size: 0.92rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header destacado com gradiente do tema */
+.slidev-layout thead tr {
+  background: var(--theme-table-header-bg);
+}
+
+.slidev-layout thead th {
+  color: var(--theme-table-header-text);
+  font-weight: 700;
+  padding: 0.6em 1em;
+  text-align: left;
+  border-bottom: 2px solid var(--theme-table-header-border);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Separador vertical entre colunas do header */
+.slidev-layout thead th:not(:last-child) {
+  border-right: 1px solid var(--theme-table-header-col-border);
+}
+
+/* Linhas do body */
+.slidev-layout tbody tr {
+  border-bottom: 1px solid var(--theme-table-row-border);
+  transition: background 0.18s ease;
+}
+
+.slidev-layout tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Zebra stripe suave */
+.slidev-layout tbody tr:nth-child(even) {
+  background: var(--theme-table-stripe);
+}
+
+.slidev-layout tbody tr:hover {
+  background: var(--theme-table-hover);
+}
+
+/* Células de dados */
+.slidev-layout td {
+  padding: 0.5em 1em;
+  color: var(--theme-text);
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+/* Separador vertical leve entre colunas */
+.slidev-layout td:not(:last-child) {
+  border-right: 1px solid var(--theme-table-cell-sep);
+}
+
+/* Tabelas dentro do SlideTable.vue herdam o border-radius do container */
+.slide-table-inner table {
+  border-radius: 0;
+}
+
+/* ===================================================================
+   VISÃO COMPUTACIONAL — Estilos para os slides de ML/imagens
+   (anteriormente em style.css — centralizados aqui para portabilidade)
+   =================================================================== */
+
+/* Filtro grayscale utilitário */
+.img-grayscale {
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* Aplica grayscale em todas as imagens do slide via class no frontmatter */
+.slidev-page.slide-grayscale img,
+.slidev-slide-content.slide-grayscale img,
+.slide-grayscale .slidev-layout img,
+.slide-grayscale img {
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* Renderização pixelada para zoom real */
+.img-pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Frame 16:9 para exibir imagens com zoom */
+.img-zoom-frame {
+  width: min(520px, 88vw);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Imagem com zoom via CSS vars */
+.img-zoom {
+  width: var(--zoom-width, 220px);
+  transform: scale(var(--zoom, 4));
+  transform-origin: var(--zoom-origin, 55% 45%);
+  display: block;
+}
+
+/* Variante de zoom para overlay de matriz de pixels */
+.img-zoom-matrix {
+  width: var(--zoom-width, 160px);
+  transform: scale(var(--zoom, 5));
+  transform-origin: var(--zoom-origin, 52% 48%);
+  display: block;
+}
+
+/* Zoom animado via CSS vars */
+.img-zoom-animated {
+  animation: img-zoom var(--zoom-duration, 2.2s) ease-in-out forwards;
+}
+
+@keyframes img-zoom {
+  from {
+    transform: scale(var(--zoom-from, 1));
+  }
+  to {
+    transform: scale(var(--zoom-to, 4));
+  }
+}
+
+/* ===================================================================
+   MLTOAST — Toast de revelação (bottom-right, v-click)
+   Serve de base para o componente MLToast.vue
+   =================================================================== */
+
+.ml-toast {
+  position: fixed;
+  right: 10px;
+  bottom: 48px;
+  z-index: 9999;
+  max-width: min(460px, 92vw);
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+
+  transform: translateY(8px);
+  opacity: 0;
+  animation: ml-toast-in 300ms ease-out forwards;
+}
+
+.ml-toast__label {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: #a7f3d0;
+  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.ml-toast__body {
+  font-size: 1rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+}
+
+.ml-toast__body strong {
+  color: #a7f3d0;
+  font-weight: 700;
+}
+
+@keyframes ml-toast-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Marker class for ML vs traditional programming comparison slides */
+.slide-ml-compare {}
