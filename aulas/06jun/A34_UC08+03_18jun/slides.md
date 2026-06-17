@@ -162,29 +162,63 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 8 -->
-<!-- objetivo: aluno usa WHERE com AND/OR/NOT para filtrar dados da Copa -->
+<!-- objetivo: aluno usa WHERE com AND para filtrar dados da Copa -->
 
-# WHERE com AND, OR e NOT
+# WHERE com AND
 
-```sql {1-5|7-11|13-17}
+```sql
 -- AND: selecoes com saldo positivo E menos de 2 amarelos
 SELECT nome, saldo_gols, amarelos
 FROM copa2026_stats
 WHERE saldo_gols > 0 AND amarelos < 2
 ORDER BY saldo_gols DESC;
+```
 
+**AND exige que as DUAS condicoes sejam verdadeiras ao mesmo tempo.**
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 8b -->
+<!-- objetivo: aluno usa WHERE com OR para filtrar dados da Copa -->
+
+# WHERE com OR (cont.)
+
+```sql
 -- OR: selecoes do grupo A OU do grupo B
 SELECT nome, grupo
 FROM copa2026_selecoes
 WHERE grupo = 'A' OR grupo = 'B'
 ORDER BY nome;
+```
 
+**OR aceita linhas onde pelo menos UMA das condicoes e verdadeira.**
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 8c -->
+<!-- objetivo: aluno usa WHERE com NOT para filtrar dados da Copa -->
+
+# WHERE com NOT (cont.)
+
+```sql
 -- NOT: selecoes que NAO empataram (ou seja, venceram ou perderam)
 SELECT nome, saldo_gols
 FROM copa2026_stats
 WHERE NOT saldo_gols = 0
 ORDER BY saldo_gols DESC;
 ```
+
+**NOT inverte a condicao: seleciona tudo que NAO satisfaz o criterio.**
 
 ---
 layout: default
@@ -221,11 +255,28 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 10 -->
-<!-- objetivo: aluno entende o conceito de INNER JOIN como cruzamento de tabelas -->
+<!-- objetivo: aluno entende o problema que o INNER JOIN resolve -->
 
-# INNER JOIN - cruzando tabelas
+# INNER JOIN - por que precisamos cruzar tabelas?
 
-**Problema:** `copa2026_partidas` tem o nome do time, mas nao tem o grupo. `copa2026_selecoes` tem o grupo, mas nao tem os gols. Como juntar?
+**Problema:** `copa2026_partidas` tem o nome do time, mas nao tem o grupo. `copa2026_selecoes` tem o grupo, mas nao tem os gols.
+
+**Solucao:** usar `INNER JOIN` para cruzar as duas tabelas em uma so consulta.
+
+- A condicao de ligacao (`ON`) diz qual coluna conecta as duas tabelas
+- So aparecem no resultado as linhas que existem nas DUAS tabelas ao mesmo tempo
+
+---
+layout: default
+card: true
+bgPreset: animate
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 10b -->
+<!-- objetivo: aluno le e interpreta a sintaxe do INNER JOIN -->
+
+# INNER JOIN - a query completa (cont.)
 
 ```sql
 -- INNER JOIN: traz so as linhas que existem nas DUAS tabelas
@@ -544,7 +595,7 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 21 -->
-<!-- objetivo: aluno aplica NOT na tabela verdade e entende como ele inverte o filtro SQL -->
+<!-- objetivo: aluno le a tabela verdade do NOT e entende a inversao logica -->
 
 # NOT - invertendo a condicao
 
@@ -559,13 +610,35 @@ aulaNum: "Aula 34"
 
 </SlideTable>
 
+> Computadores executam bilhoes de operacoes AND, OR, NOT por segundo. Cada pixel da tela, cada byte de dados - tudo passa por portas logicas que fazem exatamente isso.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 21b -->
+<!-- objetivo: aluno identifica o NOT no SQL e as formas equivalentes de escrita -->
+
+# NOT no SQL (cont.)
+
 **No SQL que voce escreveu:**
+
 ```sql
 WHERE NOT saldo_gols = 0
 ```
-e o mesmo que `WHERE saldo_gols <> 0` ou `WHERE saldo_gols != 0`.
 
-> Computadores executam bilhoes de operacoes AND, OR, NOT por segundo. Cada pixel da tela, cada byte de dados - tudo passa por portas logicas que fazem exatamente isso.
+e o mesmo que:
+
+```sql
+WHERE saldo_gols <> 0
+-- ou
+WHERE saldo_gols != 0
+```
+
+**Tres formas de escrever "diferente de zero" em SQL. O NOT e a mais legivel para iniciantes.**
 
 ---
 layout: default
@@ -623,17 +696,24 @@ aulaNum: "Aula 34"
 
 # Exercicio 6 - Nivel 1: Diagrama de Venn no papel
 
-**Missao do Visualizador do time:**
+**Missao do Visualizador:** no papel, desenhe dois circulos sobrepostos.
 
-No papel quadriculado, desenhe dois circulos sobrepostos:
-- Circulo A: selecoes com saldo de gols positivo (use os dados da Rodada 1)
-- Circulo B: selecoes do Grupo A ou Grupo B
+- **Circulo A:** selecoes com saldo de gols positivo (dados da Rodada 1)
+- **Circulo B:** selecoes do Grupo A ou Grupo B
 
-**Coloque cada selecao no lugar correto:**
-- So em A (saldo positivo, grupo diferente de A/B)
-- Intersecao A ∩ B (saldo positivo E grupo A ou B)
-- So em B (grupo A/B mas saldo nao positivo)
-- Fora dos dois circulos (saldo nao positivo E grupo diferente)
+Coloque cada selecao no lugar: so em A / intersecao A∩B / so em B / fora dos dois.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 24b -->
+<!-- objetivo: gabarito do exercicio 6 para o professor -->
+
+# Exercicio 6 - Gabarito (cont.)
 
 <AdminOnly>
 
@@ -657,23 +737,25 @@ aulaNum: "Aula 34"
 
 # Exercicio 7 - Nivel 2: Tabela verdade de tres condicoes
 
-**Missao do Analista de Dados:**
+Monte a tabela verdade para: `WHERE saldo_gols > 0 AND amarelos < 2 AND gols_pro >= 2`
 
-Monte a tabela verdade para a seguinte condicao SQL:
-```sql
-WHERE saldo_gols > 0 AND amarelos < 2 AND gols_pro >= 2
-```
+A = "saldo > 0" · B = "amarelos < 2" · C = "gols_pro >= 2"
 
-Chame de: A = "saldo > 0", B = "amarelos < 2", C = "gols_pro >= 2"
+No papel, preencha as 8 combinacoes possiveis de V/F para A, B e C — e o resultado de `A AND B AND C`.
 
-| A | B | C | A AND B AND C |
-|---|---|---|---|
-| V | V | V | ? |
-| V | V | F | ? |
-| V | F | V | ? |
-| F | V | V | ? |
+> Dica: com 3 variaveis booleanas, quantas linhas a tabela tem ao total?
 
-**Quantas combinacoes existem ao total para 3 variaveis?**
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 25b -->
+<!-- objetivo: gabarito do exercicio 7 para o professor -->
+
+# Exercicio 7 - Gabarito (cont.)
 
 <AdminOnly>
 
@@ -718,21 +800,39 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 27 -->
-<!-- objetivo: aluno interpreta a funcao linear y = ax + b no contexto de ranking e gols -->
+<!-- objetivo: aluno identifica o significado de cada parametro da funcao linear no contexto do grafico -->
 
 # Lendo a funcao linear: y = ax + b
 
-**No nosso grafico:**
+**No nosso grafico, cada letra tem um significado:**
+
 - **y** = gols marcados na Rodada 1
 - **x** = ranking FIFA
 - **a** = inclinacao da reta (negativa = quanto menor o ranking, mais gols)
 - **b** = onde a reta cruza o eixo Y (gols quando ranking = 0)
 
-**Exemplo de leitura:**
+> Se `a` for negativo, times com ranking menor (ex: 1, 2, 3) tendem a marcar mais gols. Isso faria sentido?
 
-Se a reta passa por (1, 4) e (80, 1):
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 27b -->
+<!-- objetivo: aluno calcula a inclinacao da reta com dois pontos reais do grafico -->
+
+# Calculando a inclinacao da reta (cont.)
+
+**Exemplo de leitura com dados reais:**
+
+Se a reta passa pelos pontos (1, 4) e (80, 1):
+
 - inclinacao a = (4 - 1) / (1 - 80) = 3 / (-79) ≈ -0,038
 - Para x = 10: y = -0,038 × 10 + b
+
+**Interpretacao:** a cada 10 posicoes de ranking pior, esperamos aproximadamente 0,38 gols a menos.
 
 > Isso e o inicio do que, na IA, se chama **regressao linear** - um dos algoritmos mais usados para prever valores numericos.
 
@@ -752,7 +852,21 @@ aulaNum: "Aula 34"
 
 Com base nos dados que o Analista de Dados encontrou e no grafico do Visualizador, escreva 3 linhas respondendo a pergunta-guia do time usando linguagem matematica.
 
-**Estrutura minima:**
+> Use os resultados do Exercicio 7 (grafico) e do Exercicio 6 (query AND) para embasar as 3 frases.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 28b -->
+<!-- objetivo: aluno consulta a estrutura minima e salva o arquivo de justificativa -->
+
+# Exercicio 8 - Nivel 4: Justificativa matematica (cont.)
+
+**Estrutura minima das 3 frases:**
 1. "A intersecao dos conjuntos A ∩ B mostra que..."
 2. "A query com AND retornou X selecoes porque..."
 3. "O grafico indica [correlacao positiva / negativa / nenhuma correlacao] porque..."
@@ -790,7 +904,7 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 30 -->
-<!-- tarefa de casa: aula 34 -->
+<!-- tarefa de casa: aula 34 — parte SQL -->
 
 # Tarefa de Casa - Aula 34
 
@@ -799,12 +913,24 @@ aulaNum: "Aula 34"
 **Parte 1 - SQL (UC08):**
 Escreva uma query que responda: "Quais selecoes tiveram mais gols marcados do que sofridos E menos de 3 amarelos?" Ordene pelo saldo de gols.
 
+**Salve como:** `SENAC-TecIA/Aula-34/tarefa_sql_[seu_nome].sql`
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 30b -->
+<!-- tarefa de casa: aula 34 — parte matematica -->
+
+# Tarefa de Casa - Aula 34 (cont.)
+
 **Parte 2 - Matematica (UC03):**
 No papel quadriculado (ou no computador), plote o grafico de ranking FIFA (eixo X) vs saldo de gols (eixo Y) para todas as 12 selecoes que jogaram na Rodada 1. Escreva uma frase descrevendo a correlacao que voce observou.
 
-**Salve como:**
-- `SENAC-TecIA/Aula-34/tarefa_sql_[seu_nome].sql`
-- `SENAC-TecIA/Aula-34/tarefa_grafico_[seu_nome].jpg` (foto do papel) ou `.png`
+**Salve como:** `SENAC-TecIA/Aula-34/tarefa_grafico_[seu_nome].jpg` (foto do papel) ou `.png`
 
 ---
 layout: end
