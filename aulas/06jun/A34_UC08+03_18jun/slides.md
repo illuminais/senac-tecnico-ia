@@ -92,19 +92,18 @@ aulaNum: "Aula 34"
 
 # Como abrir o banco de dados
 
-**Dois passos — e voce ja esta rodando SQL:**
-
-**Opcao 1 — DB Browser for SQLite (no computador):**
+**Opcao 1 — DB Browser for SQLite (recomendado):**
 1. Baixe `copa2026.db` da pasta da aula
 2. Abra o DB Browser > "Abrir banco de dados" > selecione o arquivo
-3. Clique na aba **Executar SQL** e escreva sua query
+3. Clique na aba **Executar SQL** e ja escreva sua query
 
-**Opcao 2 — SQLiteOnline.com (no navegador, sem instalar nada):**
-1. Acesse **sqliteonline.com**
-2. Clique em **File > Open DB** e selecione `copa2026.db`
-3. As 4 tabelas aparecem no painel esquerdo — e so escrever
+**Opcao 2 — Online, sem instalar nada:**
+1. Baixe `setup.sql` da pasta da aula
+2. Acesse **sqliteonline.com** > clique em **SQLite** no menu superior
+3. Cole o conteudo do `setup.sql` no editor e clique em **Run**
+4. As 4 tabelas aparecem prontas no painel esquerdo
 
-> As 4 tabelas ja estao carregadas e populadas. Nao precisa criar nada, nao precisa importar nada.
+> Nao precisa criar tabela, nao precisa importar nada. O banco ja vem montado.
 
 ---
 layout: default
