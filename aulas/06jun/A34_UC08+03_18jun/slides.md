@@ -717,36 +717,33 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 24 -->
-<!-- objetivo: aluno desenha diagramas de Venn e identifica intersecao/uniao/diferenca com dados reais -->
+<!-- objetivo: aluno desenha diagramas de Venn com dados reais da Rodada 1 projetados na tela -->
 
-# Exercicio 6 - Nivel 1: Diagrama de Venn no papel
+# Exercicio 6 - Diagrama de Venn no papel
 
-**Missao do Visualizador:** no papel, desenhe dois circulos sobrepostos.
+**No papel, desenhe dois circulos sobrepostos. Use os dados abaixo.**
 
-- **Circulo A:** selecoes com saldo de gols positivo (dados da Rodada 1)
-- **Circulo B:** selecoes do Grupo A ou Grupo B
+**A** = selecoes com saldo de gols **positivo** · **B** = selecoes do **Grupo A ou Grupo B**
 
-Coloque cada selecao no lugar: so em A / intersecao A∩B / so em B / fora dos dois.
+<SlideTable compact>
 
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 34"
----
+| Selecao | Saldo | Grupo || Selecao | Saldo | Grupo |
+|---|---|---||---|---|---|
+| Argentina | +3 | J || Mexico | +2 | A |
+| EUA | +3 | D || Coreia do Sul | +1 | A |
+| Noruega | +3 | I || Escocia | +1 | C |
+| Franca | +2 | I || Australia | +2 | D |
+| Austria | +2 | J || Tchequia | -1 | A |
+| Brasil | 0 | C || Canada | 0 | B |
+| Suica | 0 | B || Catar | 0 | B |
 
-<!-- SLIDE 24b -->
-<!-- objetivo: gabarito do exercicio 6 para o professor -->
+</SlideTable>
 
-# Exercicio 6 - Gabarito (cont.)
+> **Coloque cada selecao no lugar certo:** so em A / intersecao A∩B / so em B / fora dos dois.
 
 <AdminOnly>
 
-**Gabarito parcial:**
-
-Selecoes com saldo positivo na Rodada 1: Argentina (+3), EUA (+3), Noruega (+3), Franca (+2), Mexico (+2), Coreia do Sul (+1), Escocia (+1), Australia (+2), Austria (+2).
-
-Grupos A e B dependem de como o professor distribuiu os grupos na tabela `copa2026_selecoes.csv`.
+**Gabarito:** A∩B (saldo positivo E grupo A ou B): Mexico (+2, A), Coreia do Sul (+1, A). So em A (saldo positivo, fora de A/B): Argentina, EUA, Noruega, Franca, Austria, Escocia, Australia. So em B (grupo A ou B, saldo zero ou negativo): Tchequia, Canada, Suica, Catar, Bosnia, Africa do Sul.
 
 </AdminOnly>
 
@@ -758,37 +755,34 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 25 -->
-<!-- objetivo: aluno monta tabela verdade para uma condicao de tres variaveis usando dados da Copa -->
+<!-- objetivo: aluno monta tabela verdade de 3 variaveis com dados reais projetados na tela -->
 
-# Exercicio 7 - Nivel 2: Tabela verdade de tres condicoes
+# Exercicio 7 - Tabela verdade de 3 condicoes
 
-Monte a tabela verdade para: `WHERE saldo_gols > 0 AND amarelos < 2 AND gols_pro >= 2`
+**A** = saldo > 0 · **B** = amarelos < 2 · **C** = gols_pro >= 2
 
-A = "saldo > 0" · B = "amarelos < 2" · C = "gols_pro >= 2"
+**No papel, copie a tabela e preencha a ultima coluna: A AND B AND C**
 
-No papel, preencha as 8 combinacoes possiveis de V/F para A, B e C — e o resultado de `A AND B AND C`.
+<SlideTable>
 
-> Dica: com 3 variaveis booleanas, quantas linhas a tabela tem ao total?
+| A | B | C | A AND B AND C |
+|---|---|---|---|
+| V | V | V | ? |
+| V | V | F | ? |
+| V | F | V | ? |
+| V | F | F | ? |
+| F | V | V | ? |
+| F | V | F | ? |
+| F | F | V | ? |
+| F | F | F | ? |
 
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 34"
----
+</SlideTable>
 
-<!-- SLIDE 25b -->
-<!-- objetivo: gabarito do exercicio 7 para o professor -->
-
-# Exercicio 7 - Gabarito (cont.)
+> 3 variaveis booleanas = **2³ = 8 combinacoes** possiveis. AND so e V quando as TRES sao V.
 
 <AdminOnly>
 
-**Gabarito:**
-
-Com 3 variaveis booleanas: 2³ = 8 combinacoes ao total (a tabela acima mostra 4, faltam mais 4 com A=Falso).
-
-A AND B AND C so e Verdadeiro quando as TRES sao verdadeiras. Resultado: apenas a primeira linha (V, V, V) = Verdadeiro.
+**Gabarito:** So a primeira linha (V,V,V) = Verdadeiro. Todas as outras = Falso. Selecoes reais que passam: EUA (saldo+3, amarelos 0, gols 4) e Noruega (saldo+3, amarelos 1, gols 4).
 
 </AdminOnly>
 
@@ -800,22 +794,29 @@ aulaNum: "Aula 34"
 ---
 
 <!-- SLIDE 26 -->
-<!-- objetivo: aluno plota pontos em grafico cartesiano e identifica correlacao visual entre ranking e pontos -->
+<!-- objetivo: aluno plota pontos em grafico cartesiano com dados reais projetados na tela -->
 
-# Funcao linear: Ranking FIFA vs Pontos
+# Exercicio 8 - Grafico: Ranking FIFA vs Gols marcados
 
-**O que queremos descobrir:** times bem ranqueados pontuam melhor?
+**No papel quadriculado:** eixo X = ranking FIFA (1 a 90) · eixo Y = gols marcados (0 a 5). Plote cada ponto abaixo.
 
-**Missao do Visualizador:**
+<SlideTable compact>
 
-No papel quadriculado, crie um grafico:
-- Eixo X: ranking FIFA (use valores de 1 a 80)
-- Eixo Y: gols_pro (de 0 a 5)
-- Plote um ponto para cada selecao com seus dados reais
+| Selecao | Ranking | Gols || Selecao | Ranking | Gols |
+|---|---|---||---|---|---|
+| Argentina | 1 | 3 || Coreia do Sul | 23 | 2 |
+| Franca | 2 | 3 || Australia | 25 | 2 |
+| EUA | 13 | 4 || Austria | 26 | 3 |
+| Marrocos | 14 | 1 || Turquia | 29 | 0 |
+| Mexico | 17 | 2 || Noruega | 31 | 4 |
+| Suica | 19 | 1 || Escocia | 39 | 1 |
+| Senegal | 21 | 1 || Argelia | 42 | 0 |
 
-**Depois:** trace uma reta que "parece" passar pelo meio dos pontos. Isso e a **funcao linear** (y = ax + b).
+</SlideTable>
 
-<!-- professor: mostre como seria no grafico: se a reta cai da esquerda para direita (times menores numero = mais gols), isso indica correlacao negativa - times mais bem ranqueados tendem a marcar mais -->
+**Depois de plotar:** trace uma reta que passa pelo meio dos pontos. Ela sobe ou desce da esquerda pra direita?
+
+<!-- professor: reta descendo = correlacao negativa = quanto menor o ranking, mais gols. Isso e o inicio da regressao linear -->
 
 ---
 layout: default
