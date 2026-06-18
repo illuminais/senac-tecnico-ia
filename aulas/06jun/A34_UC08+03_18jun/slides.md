@@ -727,15 +727,22 @@ aulaNum: "Aula 34"
 
 <SlideTable compact>
 
-| Selecao | Saldo | Grupo || Selecao | Saldo | Grupo |
-|---|---|---||---|---|---|
-| Argentina | +3 | J || Mexico | +2 | A |
-| EUA | +3 | D || Coreia do Sul | +1 | A |
-| Noruega | +3 | I || Escocia | +1 | C |
-| Franca | +2 | I || Australia | +2 | D |
-| Austria | +2 | J || Tchequia | -1 | A |
-| Brasil | 0 | C || Canada | 0 | B |
-| Suica | 0 | B || Catar | 0 | B |
+| Selecao | Saldo | Grupo |
+|---|---|---|
+| Argentina | +3 | J |
+| EUA | +3 | D |
+| Noruega | +3 | I |
+| Franca | +2 | I |
+| Austria | +2 | J |
+| Mexico | +2 | A |
+| Australia | +2 | D |
+| Coreia do Sul | +1 | A |
+| Escocia | +1 | C |
+| Brasil | 0 | C |
+| Canada | 0 | B |
+| Suica | 0 | B |
+| Catar | 0 | B |
+| Tchequia | -1 | A |
 
 </SlideTable>
 
@@ -802,15 +809,22 @@ aulaNum: "Aula 34"
 
 <SlideTable compact>
 
-| Selecao | Ranking | Gols || Selecao | Ranking | Gols |
-|---|---|---||---|---|---|
-| Argentina | 1 | 3 || Coreia do Sul | 23 | 2 |
-| Franca | 2 | 3 || Australia | 25 | 2 |
-| EUA | 13 | 4 || Austria | 26 | 3 |
-| Marrocos | 14 | 1 || Turquia | 29 | 0 |
-| Mexico | 17 | 2 || Noruega | 31 | 4 |
-| Suica | 19 | 1 || Escocia | 39 | 1 |
-| Senegal | 21 | 1 || Argelia | 42 | 0 |
+| Selecao | Ranking | Gols |
+|---|---|---|
+| Argentina | 1 | 3 |
+| Franca | 2 | 3 |
+| EUA | 13 | 4 |
+| Marrocos | 14 | 1 |
+| Mexico | 17 | 2 |
+| Suica | 19 | 1 |
+| Senegal | 21 | 1 |
+| Coreia do Sul | 23 | 2 |
+| Australia | 25 | 2 |
+| Austria | 26 | 3 |
+| Turquia | 29 | 0 |
+| Noruega | 31 | 4 |
+| Escocia | 39 | 1 |
+| Argelia | 42 | 0 |
 
 </SlideTable>
 
