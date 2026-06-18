@@ -65,20 +65,46 @@ aulaNum: "Aula 34"
 
 # Os dados que voce vai usar hoje
 
-**Quatro arquivos CSV formam o banco Copa 2026:**
+**O banco Copa 2026 tem 4 tabelas prontas:**
 
 <SlideTable>
 
-| Arquivo | O que contem |
+| Tabela | O que contem |
 |---|---|
-| `copa2026_selecoes.csv` | 24 selecoes, 6 grupos (A/B/C/D/I/J), ranking FIFA |
-| `copa2026_partidas.csv` | 12 resultados reais da Rodada 1 |
-| `copa2026_stats.csv` | Gols, saldo, posse, chutes, amarelos por selecao |
-| `copa2026_historico.csv` | Desempenho nas Copas 2014, 2018 e 2022 |
+| `copa2026_selecoes` | 24 selecoes, 6 grupos (A/B/C/D/I/J), ranking FIFA |
+| `copa2026_partidas` | 12 resultados reais da Rodada 1 |
+| `copa2026_stats` | Gols, saldo, posse, chutes, amarelos por selecao |
+| `copa2026_historico` | Desempenho nas Copas 2014, 2018 e 2022 |
 
 </SlideTable>
 
-> **Por que 4 arquivos separados?** Para nao repetir dado. Cada tabela guarda um tipo de informacao - isso e **normalizacao** (organizar o banco para evitar duplicatas).
+> **Por que 4 tabelas separadas?** Para nao repetir dado. Cada tabela guarda um tipo de informacao - isso e **normalizacao** (organizar o banco para evitar duplicatas).
+
+---
+layout: default
+card: true
+bgPreset: animate
+aulaNum: "Aula 34"
+---
+
+<!-- SLIDE 4b -->
+<!-- objetivo: aluno abre o banco de dados pronto no DB Browser ou SQLiteOnline sem precisar importar nada -->
+
+# Como abrir o banco de dados
+
+**Dois passos — e voce ja esta rodando SQL:**
+
+**Opcao 1 — DB Browser for SQLite (no computador):**
+1. Baixe `copa2026.db` da pasta da aula
+2. Abra o DB Browser > "Abrir banco de dados" > selecione o arquivo
+3. Clique na aba **Executar SQL** e escreva sua query
+
+**Opcao 2 — SQLiteOnline.com (no navegador, sem instalar nada):**
+1. Acesse **sqliteonline.com**
+2. Clique em **File > Open DB** e selecione `copa2026.db`
+3. As 4 tabelas aparecem no painel esquerdo — e so escrever
+
+> As 4 tabelas ja estao carregadas e populadas. Nao precisa criar nada, nao precisa importar nada.
 
 ---
 layout: default
