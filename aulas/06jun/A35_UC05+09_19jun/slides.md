@@ -18,7 +18,7 @@ layout: cover
 # Aula 35
 ## Copa Analytics - Dia 2
 
-**UC05 Python + UC09 Estatistica**
+**UC05 Python + UC09 Estatística**
 
 ---
 layout: center
@@ -51,9 +51,9 @@ aulaNum: "Aula 35"
 
 - Qual era a pergunta-guia do seu time?
 - O que as queries SQL mostraram sobre os dados de 2026?
-- Qual seleção lidera segundo os dados que voces encontraram?
+- Qual seleção lidera segundo os dados que vocês encontraram?
 
-> Hoje voces vao escrever o codigo Python que confirma ou refuta essa resposta com numeros reais.
+> Hoje vocês vão usar Python para confirmar ou refutar essa resposta com números reais.
 
 ---
 layout: center
@@ -63,11 +63,10 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 4 -->
-<!-- objetivo: apresentar o dataset copa2026_stats.csv como ponto de entrada real para o bloco de Python -->
 
 # O dataset do dia
 
-`copa2026_stats.csv` - 24 selecoes, dados completos da fase de grupos 2026
+`copa2026_stats.csv` - 24 seleções, dados completos da fase de grupos 2026
 
 > Carregar, explorar, analisar, responder.
 
@@ -79,19 +78,37 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 5 -->
-<!-- objetivo: aluno consegue carregar e inspecionar um CSV com pandas usando read_csv, .head() e .describe() -->
+<!-- objetivo: aluno instala o pandas antes de começar -->
+
+# Antes de começar: instale o pandas
+
+Abra o terminal do VS Code com **Ctrl + `** e rode:
+
+```bash
+py -m pip install pandas
+```
+
+Aguarde terminar. Quando aparecer `Successfully installed`, pode continuar.
+
+> O pandas é a biblioteca mais usada para trabalhar com dados em Python.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 6 -->
+<!-- objetivo: aluno consegue carregar e inspecionar um CSV com pandas usando read_csv e .head() -->
 
 # Carregando o dataset com pandas
 
-<!-- professor: pandas ja foi visto na A26 como introducao; este e o primeiro uso formal no T2 -->
-
-**Passo 1: importar e carregar**
-
-```python {1-2|3|4|5}
+```python
 import pandas as pd
 
 df = pd.read_csv('copa2026_stats.csv')
-print(df.head())          # primeiras 5 linhas
+print(df.head())           # primeiras 5 linhas
 print(df.columns.tolist()) # nomes das colunas
 ```
 
@@ -107,54 +124,20 @@ bgPreset: default
 aulaNum: "Aula 35"
 ---
 
-<!-- SLIDE 6 -->
-<!-- objetivo: aluno usa .describe() para ter uma visao geral estatistica do dataset -->
+<!-- SLIDE 7 -->
+<!-- objetivo: aluno usa .describe() para ter uma visão geral do dataset -->
 
 # Explorando com .describe()
 
-```python {1|2|3}
+```python
 df = pd.read_csv('copa2026_stats.csv')
 
-print(df.describe())  # media, min, max de todas as colunas numericas
+print(df.describe())
 ```
 
-**O que o `.describe()` mostra:**
+O `.describe()` mostra um resumo estatístico de todas as colunas numéricas de uma vez.
 
-- `count` - quantas linhas tem dados (sem missing values)
-- `mean` - media de cada coluna numerica
-- `min` / `max` - menor e maior valor
-- `std` - desvio padrao (vamos usar isso no Bloco 2)
-
-> `describe()` e o "relatorio rapido" do seu dataset. Qualquer analista de dados usa isso primeiro.
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 7 -->
-<!-- objetivo: aluno entende quando usar dict para representar dados estruturados de uma selecao -->
-
-# Dict: representando uma selecao
-
-Um `dict` (dicionario) guarda pares **chave: valor**. Perfeito para representar os atributos de uma selecao.
-
-```python {1-7|8|9}
-brasil = {
-    'pontos': 1,
-    'gols_pro': 1,
-    'saldo_gols': 0,
-    'posse_media': 62,
-    'amarelos': 1
-}
-
-print(brasil['pontos'])     # 1
-print(brasil['posse_media']) # 62
-```
-
-**Analogia:** um `dict` e como a ficha de um jogador num videogame - cada atributo tem um nome e um valor.
+> É o primeiro comando que qualquer analista de dados roda ao abrir um novo dataset.
 
 ---
 layout: default
@@ -164,21 +147,16 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 8 -->
-<!-- objetivo: aluno entende a diferenca entre dict, set e tuple e quando cada um faz sentido no contexto de dados -->
+<!-- objetivo: aluno entende o que cada linha do describe() significa -->
 
-# Tres estruturas, tres propositos
+# O que cada linha do .describe() significa
 
-<SlideTable>
+- `count` - quantas linhas têm dados (sem valores ausentes)
+- `mean` - média de cada coluna numérica
+- `min` / `max` - menor e maior valor
+- `std` - desvio padrão (vamos usar no Bloco 2)
 
-| Estrutura | Caracteristica | Uso na Copa Analytics |
-|---|---|---|
-| `dict` | chave: valor, mutavel | ficha de cada selecao |
-| `set` | sem repeticao, sem ordem | filtrar selecoes por criterio |
-| `tuple` | imutavel, ordenado | lacrar o resultado final |
-
-</SlideTable>
-
-> **Regra pratica:** use `dict` para descrever, `set` para filtrar, `tuple` para lacrar.
+> Rode agora e leia os números da coluna `pontos`. Qual seleção tem mais pontos em média?
 
 ---
 layout: default
@@ -188,26 +166,19 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 9 -->
-<!-- objetivo: aluno usa set comprehension para filtrar selecoes que atendem a um criterio numerico -->
+<!-- tarefa de casa: aula 35 UC05 -->
 
-# Set: filtrando selecoes com saldo positivo
+# Tarefa de Casa - UC05
 
-```python {1-6|7-8|9}
-stats = {
-    'Argentina': {'saldo_gols': 3},
-    'Brasil':    {'saldo_gols': 0},
-    'EUA':       {'saldo_gols': 3},
-    'Haiti':     {'saldo_gols': -1}
-}
+> **Prazo: próxima aula (A36)**
 
-saldo_positivo = {s for s in stats if stats[s]['saldo_gols'] > 0}
-# {'Argentina', 'EUA'}  -- ordem pode variar (set nao tem ordem)
-```
+**Desafio: explore o dataset com pandas**
 
-**Por que `set` e nao `list`?**
+Escreva um script que:
 
-- A ordem nao importa aqui - queremos apenas saber **quem** passou
-- `set` garante que cada selecao aparece **uma unica vez**
+1. Carregue o `copa2026_stats.csv` com `pd.read_csv()`
+2. Filtre as seleções do **Grupo A** com `df[df['grupo'] == 'A']`
+3. Imprima nome, pontos e saldo de gols de cada seleção do grupo
 
 ---
 layout: default
@@ -217,245 +188,18 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 10 -->
-<!-- objetivo: aluno entende o conceito de imutabilidade do tuple e quando isso e util para lacrar resultados -->
 
-# Tuple: lacrando o resultado
-
-Depois de calcular, voce nao quer que ninguem (nem o codigo) altere o resultado. Use `tuple`.
-
-```python {1-2|3-4|5-6}
-melhor = ('EUA', 3)  # (nome da selecao, saldo de gols)
-
-print(melhor[0])  # 'EUA'
-print(melhor[1])  # 3
-
-melhor[0] = 'Brasil'  # TypeError: tuple nao permite alteracao!
-```
-
-**Analogia:** um tuple e como um placar lacrado num envelope - depois de fechar, nao da para mudar.
-
-> Em sistemas reais, tuples protegem resultados finais de analises de serem sobrescritos por acidente.
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 11 -->
-<!-- objetivo: aluno escreve uma funcao que integra dict e tuple para responder a pergunta-guia do time -->
-
-# Funcao que responde a pergunta-guia
-
-```python {1-4|5-8|9-10}
-def melhor_selecao(stats, criterio):
-    """Retorna (nome, valor) da selecao com maior valor no criterio."""
-    melhor_nome = max(stats, key=lambda s: stats[s][criterio])
-    melhor_valor = stats[melhor_nome][criterio]
-    return (melhor_nome, melhor_valor)  # tuple imutavel
-
-# Testando:
-resultado = melhor_selecao(stats, 'pontos')
-print(resultado)  # ex: ('Argentina', 7)
-```
-
-**Starter code para o time:** a assinatura da funcao esta pronta - voces completam o corpo.
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 12 -->
-<!-- objetivo: aluno pratica a leitura de codigo com dict e set (nivel N0 - reconhecimento) -->
-
-# Exercicio 1 - Nivel 1: O que esse codigo imprime?
-
-<!-- professor: exercicio de leitura (N0 obrigatorio) antes de pedir escrita -->
+# Tarefa UC05 - dica de início
 
 ```python
-selecoes = {
-    'Franca':   {'pontos': 7, 'grupo': 'A'},
-    'Mexico':   {'pontos': 4, 'grupo': 'B'},
-    'Japao':    {'pontos': 7, 'grupo': 'A'},
-    'Equador':  {'pontos': 1, 'grupo': 'B'}
-}
+import pandas as pd
 
-lider_grupo_a = {s for s in selecoes
-                 if selecoes[s]['grupo'] == 'A'
-                 and selecoes[s]['pontos'] >= 7}
-
-print(lider_grupo_a)
-print(type(lider_grupo_a))
+df = pd.read_csv('copa2026_stats.csv')
+grupo_a = df[df['grupo'] == 'A']
+print(grupo_a[['nome', 'pontos', 'saldo_gols']])
 ```
 
-**Salve como:** `SENAC-TecIA/Aula-35/ex01_leitura.py`
-
-<AdminOnly>
-
-**Gabarito:**
-
-```
-{'Franca', 'Japao'}
-<class 'set'>
-```
-
-O set contem as duas selecoes do grupo A com 7 pontos ou mais. A ordem pode variar porque set nao tem ordem garantida.
-
-</AdminOnly>
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 13 -->
-<!-- objetivo: aluno escreve um dict com os dados da selecao do time e usa uma chave para consultar -->
-
-# Exercicio 2 - Nivel 2: Monte a ficha da sua selecao
-
-<!-- professor: exercicio de escrita guiada - aluno usa o dataset como referencia -->
-
-**Usando os dados do `copa2026_stats.csv`, monte o dict da sua selecao-alvo:**
-
-```python
-# Starter code - substitua os valores pelos dados reais do CSV
-minha_selecao = {
-    'nome': '___',
-    'pontos': ___,
-    'gols_pro': ___,
-    'saldo_gols': ___,
-    'posse_media': ___
-}
-
-# Imprima o pontos e o saldo
-print(f"Pontos: {minha_selecao['pontos']}")
-print(f"Saldo: {minha_selecao['saldo_gols']}")
-```
-
-**Salve como:** `SENAC-TecIA/Aula-35/ex02_ficha_selecao.py`
-
-<AdminOnly>
-
-**Gabarito (exemplo com Brasil - valores do CSV):**
-
-```python
-minha_selecao = {
-    'nome': 'Brasil',
-    'pontos': 1,
-    'gols_pro': 1,
-    'saldo_gols': 0,
-    'posse_media': 62
-}
-
-print(f"Pontos: {minha_selecao['pontos']}")   # Pontos: 1
-print(f"Saldo: {minha_selecao['saldo_gols']}") # Saldo: 0
-```
-
-</AdminOnly>
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 14 -->
-<!-- objetivo: aluno escreve a funcao melhor_selecao e testa com assert (peer review entre times) -->
-
-# Exercicio 3 - Nivel 3: Funcao do time + Peer Review
-
-**Parte A - Analista de Dados escreve a funcao:**
-
-```python
-# Starter code
-stats_mini = {
-    'Argentina': {'pontos': 7, 'saldo_gols': 5},
-    'EUA':       {'pontos': 6, 'saldo_gols': 3},
-    'Brasil':    {'pontos': 1, 'saldo_gols': 0}
-}
-
-def melhor_selecao(stats, criterio):
-    # Complete aqui
-    pass
-
-resultado = melhor_selecao(stats_mini, 'pontos')
-print(resultado)  # deve ser ('Argentina', 7)
-```
-
-**Parte B - Time vizinho testa com:**
-```python
-assert melhor_selecao(stats_mini, 'pontos') == ('Argentina', 7)
-assert melhor_selecao(stats_mini, 'saldo_gols') == ('Argentina', 5)
-print("Passou nos testes!")
-```
-
-**Salve como:** `SENAC-TecIA/Aula-35/ex03_funcao_time.py`
-
-<AdminOnly>
-
-**Gabarito:**
-
-```python
-def melhor_selecao(stats, criterio):
-    melhor_nome = max(stats, key=lambda s: stats[s][criterio])
-    melhor_valor = stats[melhor_nome][criterio]
-    return (melhor_nome, melhor_valor)
-```
-
-O `max()` com `key=lambda` percorre o dict e retorna a chave com maior valor no criterio escolhido. O retorno e um tuple imutavel.
-
-</AdminOnly>
-
----
-layout: brainstorm
-card: true
-bgPreset: palette
-pulse: true
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 15 -->
-
-# Debate: dict, set ou tuple?
-
-**Discussao coletiva: 5 minutos**
-
-- Se voce fosse guardar o historico de todas as copas de uma selecao, qual estrutura usaria? Por que?
-- Por que `set` nao serve para guardar resultados ordenados (1o lugar, 2o lugar)?
-- Quando e perigoso usar uma `list` onde deveria ser um `tuple`?
-
-> **Conexao com o Bloco 2:** agora que voces sabem representar os dados, vamos calcular estatisticas reais sobre o historico de 3 Copas.
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 16 -->
-<!-- tarefa de casa: aula 35 UC05 -->
-
-# Tarefa de Casa - UC05
-
-> **Prazo: proxima aula (A36)**
-
-**Desafio: expanda a funcao do time**
-
-Abra `SENAC-TecIA/Aula-35/ex03_funcao_time.py` e adicione:
-
-1. Uma funcao `pior_selecao(stats, criterio)` que retorna a selecao com o MENOR valor no criterio
-2. Teste com `assert pior_selecao(stats_mini, 'pontos') == ('Brasil', 1)`
-3. Crie um `set` com todas as selecoes que tem saldo negativo no seu `stats_mini`
-
-**Salve o arquivo atualizado em:** `SENAC-TecIA/Aula-35/tarefa_uc05.py`
+**Salve como:** `SENAC-TecIA/Aula-35/tarefa_uc05.py`
 
 ---
 layout: center
@@ -465,34 +209,158 @@ pulse: true
 pulseDuration: 8
 ---
 
-<!-- SLIDE 17 -->
+<!-- SLIDE 11 -->
 
 # BLOCO 2
-## UC09 Estatistica Aplicada
-### Historico de 3 Copas - media, mediana e a resposta final
+## UC09 Estatística Aplicada
+### Sala de Aula Reversa
 
 ---
-layout: brainstorm
+layout: default
 card: true
-bgPreset: palette
-pulse: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 12 -->
+<!-- objetivo: explicar o formato sala de aula reversa para alunos que nunca viram esse modelo -->
+
+# Como funciona hoje
+
+Normalmente o professor explica e vocês praticam. **Hoje é diferente.**
+
+Vocês vão **pesquisar, descobrir e trazer as respostas.** O professor não vai explicar os conceitos antes -- vai circular e ajudar quem travar.
+
+**No final da aula:**
+- Cada time apresenta o que entendeu sobre os 3 conceitos
+- Usa esse entendimento para melhorar a hipótese da Copa Analytics
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 13 -->
+<!-- objetivo: mostrar o mapa das 4 missões -->
+
+# As 4 missões de hoje
+
+<SlideTable>
+
+| Missão | O que descobrir |
+|---|---|
+| 1 | O que é **média** e quando usar |
+| 2 | O que é **mediana** e quando ela é mais justa que a média |
+| 3 | O que é **desvio padrão** e o que ele diz sobre consistência |
+| 4 | Como usar esses números para **validar ou recusar a hipótese** do time |
+
+</SlideTable>
+
+> Anotem tudo em palavras próprias. Copiar e colar não conta.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 14 -->
+<!-- objetivo: guiar a pesquisa sobre média com perguntas concretas -->
+
+# Missão 1: Média
+
+**O que vocês precisam descobrir:**
+
+- Como se calcula a média de uma lista de números?
+- O que a média representa sobre um conjunto de dados?
+- Quando a média pode dar uma ideia errada da realidade?
+
+**Onde pesquisar:** Khan Academy PT -- busque "média aritmética" | YouTube: "Me Salva média"
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 15 -->
+<!-- objetivo: teste de entendimento da missão 1 -->
+
+# Missão 1: teste seu entendimento
+
+Um atacante marcou esses gols nas últimas 5 temporadas:
+
+`3, 2, 1, 4, 20`
+
+- Qual é a média?
+- Esse número representa bem o atacante? Por quê?
+
+> Se você consegue responder isso com suas palavras, entendeu a missão.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 16 -->
+<!-- objetivo: guiar a pesquisa sobre mediana -->
+
+# Missão 2: Mediana
+
+**O que vocês precisam descobrir:**
+
+- Como se encontra a mediana de uma lista?
+- Por que a mediana não é afetada por valores extremos?
+- Em que situação você escolheria a mediana em vez da média?
+
+**Onde pesquisar:** Khan Academy PT -- busque "mediana" | YouTube: "o que é mediana simples"
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 17 -->
+<!-- objetivo: teste de entendimento da missão 2 -->
+
+# Missão 2: teste seu entendimento
+
+Salários mensais de 5 pessoas:
+
+`R$ 1.500 | R$ 1.800 | R$ 2.000 | R$ 1.600 | R$ 50.000`
+
+- Qual é a média? Qual é a mediana?
+- Se você fosse descrever o salário típico desse grupo, qual usaria?
+
+> Se os dois números são muito diferentes, existe um valor distorcendo a média.
+
+---
+layout: default
+card: true
+bgPreset: default
 aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 18 -->
-<!-- objetivo: ativar o conceito de media e mediana com analogia concreta antes de introduzir pandas -->
+<!-- objetivo: guiar a pesquisa sobre desvio padrão -->
 
-# Pergunta de ativacao
+# Missão 3: Desvio Padrão
 
-**Antes de abrir o codigo, pense:**
+**O que vocês precisam descobrir:**
 
-Uma selecao marcou esses gols nas ultimas 3 Copas:
+- O que o desvio padrão mede (em palavras simples, sem fórmula)?
+- O que significa desvio padrão alto? E baixo?
+- Qual time é mais confiável: média alta com desvio alto, ou média menor com desvio baixo?
 
-**Copa 2014: 1 gol | Copa 2018: 6 gols | Copa 2022: 5 gols**
-
-- Qual e a media de gols?
-- Se a Copa 2014 foi um desastre (o time tomou 7), a media ainda representa bem o time?
-- O que seria mais justo usar para comparar com outros times?
+**Onde pesquisar:** YouTube: "desvio padrão para iniciantes" | Khan Academy PT: "desvio padrão"
 
 ---
 layout: default
@@ -502,25 +370,18 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 19 -->
-<!-- objetivo: aluno carrega copa2026_historico.csv e entende a estrutura das 72 linhas (24 selecoes x 3 copas) -->
+<!-- objetivo: teste de entendimento da missão 3 -->
 
-# Carregando o historico de 3 Copas
+# Missão 3: teste seu entendimento
 
-```python {1-3|4-6|7}
-import pandas as pd
+**Time A** marcou: `5, 5, 5, 5, 5` gols nas últimas 5 copas
 
-historico = pd.read_csv('copa2026_historico.csv')
-print(historico.head(6))   # primeiras linhas
+**Time B** marcou: `1, 2, 10, 8, 4` gols nas últimas 5 copas
 
-print(historico.shape)     # (72, 7) - 72 linhas, 7 colunas
-print(historico.columns.tolist())
-```
+- Qual tem desvio padrão maior? Por quê?
+- Qual você escalaria para uma final importante?
 
-**Colunas:** `selecao, copa, fase_eliminada, jogos, gols_pro, gols_contra, amarelos`
-
-**72 linhas =** 24 selecoes x 3 Copas (2014, 2018, 2022)
-
-> Selecoes que nao participaram de uma Copa aparecem com `NaN` (dados ausentes).
+> Desvio padrão alto significa: você não sabe o que esperar do time.
 
 ---
 layout: default
@@ -530,24 +391,16 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 20 -->
-<!-- objetivo: aluno filtra o DataFrame por selecao e calcula media, mediana e desvio padrao com pandas -->
+<!-- objetivo: ensinar o conceito de hipótese de forma concreta -->
 
-# Media, mediana e desvio padrao com pandas
+# Missão 4: o que é uma hipótese?
 
-```python {1-3|4-6|7-9}
-brasil_hist = historico[historico['selecao'] == 'Brasil']
+Uma hipótese é uma **afirmação que pode ser verdadeira ou falsa.** Você a escreve antes de ver os dados, e os dados confirmam ou derrubam.
 
-# Media: soma dividida pela quantidade
-print(brasil_hist['gols_pro'].mean())    # media de gols por Copa
+**Exemplo:**
+> "A Argentina é a favorita porque tem o melhor ataque histórico."
 
-# Mediana: valor do meio quando ordenado
-print(brasil_hist['gols_pro'].median())  # mediana de gols por Copa
-
-# Desvio padrao: o quanto os valores variam em relacao a media
-print(brasil_hist['gols_pro'].std())     # desvio padrao
-```
-
-**Por que tres calculos?** Cada um conta uma historia diferente sobre o mesmo dado.
+Essa afirmação é a hipótese. Agora você precisa de números para provar ou derrubar ela.
 
 ---
 layout: default
@@ -557,26 +410,18 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 21 -->
-<!-- objetivo: aluno entende por que a mediana e mais robusta que a media quando ha outliers (Mineirazo) -->
+<!-- objetivo: mostrar como os três conceitos validam ou derrubam uma hipótese -->
 
-# Media vs Mediana: o caso do Mineirazo
+# Missão 4: como os dados validam a hipótese
 
-**Brasil nas ultimas 3 Copas (gols marcados por Copa):**
+Para validar o exemplo anterior, você precisaria mostrar:
 
-<SlideTable>
+- A **média** de gols da Argentina é maior que a dos concorrentes?
+- Essa média é real ou tem uma Copa boa distorcendo? (use a **mediana**)
+- O time repete bons resultados ou varia muito? (use o **desvio padrão**)
 
-| Copa | Gols marcados | Observacao |
-|---|---|---|
-| 2014 | 11 | Mineirazo: tomou 7 na semi, saiu na 3o lugar |
-| 2018 | 8 | Saiu nas quartas contra Belgica |
-| 2022 | 8 | Saiu nas quartas contra Croacia |
-
-</SlideTable>
-
-- **Media:** (11 + 8 + 8) / 3 = **9,0 gols**
-- **Mediana:** ordena [8, 8, 11], pega o meio = **8,0 gols**
-
-> O Mineirazo nao foi um desastre em gols marcados - foi em gols tomados. Mas o conceito e o mesmo: **um valor extremo puxa a media para longe da realidade tipica**.
+**Se os três apontam na mesma direção, a hipótese é sólida.**
+Se um contradiz, você revisa ou limita a afirmação.
 
 ---
 layout: default
@@ -586,24 +431,17 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 22 -->
-<!-- objetivo: aluno entende o conceito de outlier e como ele afeta a media usando um exemplo mais dramatico -->
+<!-- objetivo: centralizar fontes recomendadas -->
 
-# Quando a media mente
+# Fontes recomendadas
 
-**Exemplo dramatico: gols sofridos pelo Brasil em 2014**
+**Khan Academy PT** -- khanacademy.org/pt
+Busque: "medidas de tendência central"
 
-```python
-gols_sofridos = [2, 3, 1, 7, 0]
-# 2 (Mexico), 3 (Camerun), 1 (Chile), 7 (Alemanha), 0 (Holanda)
+**Brasil Escola** -- brasilescola.uol.com.br
+Busque: "média aritmética" ou "desvio padrão"
 
-import statistics
-print(statistics.mean(gols_sofridos))    # 2.6 - parece normal
-print(statistics.median(gols_sofridos))  # 2.0 - mais representativo
-```
-
-**O 7 do Mineirazo e um outlier** (valor fora do padrao). Ele puxa a media para cima e da uma impressao errada de que o Brasil sempre toma muitos gols.
-
-> **Regra para analistas:** sempre compare media e mediana. Se forem muito diferentes, existe um outlier no dataset.
+> Não precisa assistir o vídeo completo. Pause quando achar a resposta e anote.
 
 ---
 layout: default
@@ -613,24 +451,18 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 23 -->
-<!-- objetivo: aluno usa desvio padrao para medir consistencia de uma selecao ao longo das Copas -->
+<!-- objetivo: deixar cristalino o que é esperado ao final da aula -->
 
-# Desvio padrao: quem e mais consistente?
+# O que é esperado de vocês
 
-**Desvio padrao (std):** o quanto os valores se afastam da media. Quanto menor, mais consistente o time.
+**Ao final desta aula, cada time precisa ter:**
 
-<SlideTable>
+**1. Definições em palavras próprias** (não copiadas)
+- Média, mediana e desvio padrão -- cada um em uma frase
+- Um exemplo de cada que **não** seja de futebol
 
-| Selecao | Media gols/Copa | Desvio Padrao | Leitura |
-|---|---|---|---|
-| Argentina | 9,3 | 2,1 | Consistente e forte |
-| Marrocos | 5,0 | 3,6 | Crescendo muito |
-| Coreia do Sul | 4,0 | 1,0 | Consistente, volume baixo |
-| Brasil | 9,0 | 1,7 | Consistente, volume alto |
-
-</SlideTable>
-
-> **Insight para o time:** um time com media alta E desvio padrao baixo e o candidato mais confiavel ao titulo.
+**2. Resposta para esta pergunta:**
+> "Quando você usaria a mediana em vez da média? Cite um caso real."
 
 ---
 layout: default
@@ -640,29 +472,21 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 24 -->
-<!-- objetivo: aluno identifica padroes de ascensao e queda usando dados historicos de fase_eliminada -->
+<!-- objetivo: hipótese revisada como entrega final -->
 
-# Padroes historicos: ascensao e queda
+# O que é esperado (cont.)
 
-<SlideTable>
+**3. Hipótese revisada do time**
 
-| Selecao | 2014 | 2018 | 2022 | Tendencia |
-|---|---|---|---|---|
-| Argentina | Vice | Oitavas | Campea | Subida forte |
-| Marrocos | n/a | Grupo | Semifinal | Ascensao rapida |
-| Coreia do Sul | Grupo | Grupo | Oitavas | Crescimento lento |
-| Brasil | Semifinal | Quartas | Quartas | Estagnacao |
+- A hipótese original ainda é válida?
+- Qual métrica mais apoia a hipótese?
+- Qual métrica coloca ela em dúvida?
 
-</SlideTable>
+<AdminOnly>
 
-**Como calcular isso com pandas:**
+**O que observar:** se o time consegue explicar com exemplo próprio, entendeu. Se só repete a definição decorada, faça outra pergunta: "e se todos os valores fossem iguais, a média e a mediana seriam iguais?"
 
-```python
-arg = historico[historico['selecao'] == 'Argentina']
-print(arg[['copa', 'fase_eliminada', 'gols_pro']])
-```
-
-> Esses padroes sao a base para a justificativa final do time.
+</AdminOnly>
 
 ---
 layout: default
@@ -672,42 +496,17 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 25 -->
-<!-- objetivo: aluno pratica leitura de codigo pandas com filtro e calculo de media (nivel N0) -->
+<!-- objetivo: template para reescrever a hipótese com os três conceitos -->
 
-# Exercicio 4 - Nivel 1: O que esse codigo produz?
+# Melhore a hipótese do time
 
-```python
-import pandas as pd
+**Estrategista + Analista -- reescrevam a hipótese original:**
 
-historico = pd.read_csv('copa2026_historico.csv')
+> "Nossa hipótese era que ___ porque ___."
 
-argentina = historico[historico['selecao'] == 'Argentina']
+> "A **média** de ___ confirma / não confirma isso porque ___."
 
-print(argentina['gols_pro'].mean())
-print(argentina['gols_pro'].median())
-print(len(argentina))
-```
-
-**Sabendo que Argentina marcou: 2014: 8 gols, 2018: 10 gols, 2022: 11 gols**
-
-- O que cada linha imprime?
-- A media e maior ou menor que a mediana? Por que?
-
-**Salve como:** `SENAC-TecIA/Aula-35/ex04_leitura_pandas.py`
-
-<AdminOnly>
-
-**Gabarito:**
-
-```
-9.666666666666666   # (8 + 10 + 11) / 3
-10.0                # valor do meio quando ordenado: [8, 10, 11]
-3                   # 3 linhas (uma por Copa)
-```
-
-A media (9,67) e menor que a mediana (10,0) porque a Copa 2014 com 8 gols puxa a media levemente para baixo. A diferenca e pequena, o que indica que nao ha outlier drastico.
-
-</AdminOnly>
+> "A **mediana** mostra que ___, o que significa que ___."
 
 ---
 layout: default
@@ -717,111 +516,20 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 26 -->
-<!-- objetivo: aluno calcula media, mediana e std para a selecao do time e interpreta os resultados -->
 
-# Exercicio 5 - Nivel 2: Analise a sua selecao
+# Melhore a hipótese (cont.)
 
-**Usando o `copa2026_historico.csv`, complete o codigo:**
+> "O **desvio padrão** indica que ___, então o time é / não é consistente."
 
-```python
-import pandas as pd
+> "Com isso, nossa hipótese **se mantém / precisa ser revisada** porque ___."
 
-historico = pd.read_csv('copa2026_historico.csv')
-
-# Substitua 'Brasil' pela selecao do seu time
-minha = historico[historico['selecao'] == 'Brasil']
-
-media  = minha['gols_pro'].mean()
-median = minha['gols_pro'].median()
-std    = minha['gols_pro'].std()
-
-print(f"Media:   {media:.2f}")
-print(f"Mediana: {median:.2f}")
-print(f"Desvio:  {std:.2f}")
-
-# Complete: a media e maior ou menor que a mediana?
-# O que isso indica sobre o historico da selecao?
-```
-
-**Salve como:** `SENAC-TecIA/Aula-35/ex05_analise_selecao.py`
+**Salve em:** `SENAC-TecIA/Aula-35/hipotese_revisada.txt`
 
 <AdminOnly>
 
-**Gabarito (exemplo com Brasil):**
-
-```
-Media:   9.00
-Mediana: 8.00
-Desvio:  1.73
-```
-
-A media (9,0) e maior que a mediana (8,0) porque a Copa 2014 teve mais gols marcados (11). O desvio de 1,73 e baixo - o Brasil e consistente na quantidade de gols marcados por Copa.
+**O que avaliar:** o time consegue usar os três conceitos para qualificar a afirmação? Consegue dizer "nossa hipótese se mantém, mas com ressalva X"? Isso é pensamento analítico.
 
 </AdminOnly>
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 27 -->
-<!-- objetivo: aluno integra dados de 2026 e historicos para atualizar a justificativa da pergunta-guia do time -->
-
-# Exercicio 6 - Nivel 3: Atualize a justificativa do time
-
-**Estrategista + Analista juntos:**
-
-```python
-# Combine os dois datasets para a sua selecao
-atual = df[df['nome'] == 'NOME_DA_SELECAO']         # copa2026_stats.csv
-hist  = historico[historico['selecao'] == 'NOME']   # copa2026_historico.csv
-
-# Calcule:
-print("Pontos 2026:", atual['pontos'].values[0])
-print("Media gols historico:", hist['gols_pro'].mean())
-print("Tendencia fase:", hist['fase_eliminada'].tolist())
-```
-
-**Responda em 3 linhas (para o pitch de 20 min):**
-
-1. Qual a resposta da pergunta-guia segundo os dados de 2026?
-2. O historico confirma ou contradiz essa resposta?
-3. Qual o argumento mais forte que os dados dao ao time?
-
-**Salve como:** `SENAC-TecIA/Aula-35/ex06_justificativa_final.py`
-
-<AdminOnly>
-
-**Gabarito (estrutura esperada - valores variam por time):**
-
-O exercicio nao tem resposta unica. Avaliar se o aluno:
-- Usou dados de 2026 (pontos, saldo, posse) como evidencia primaria
-- Cruzou com historico (media gols, fase_eliminada das 3 copas)
-- Formulou uma resposta clara e justificada com numeros
-
-</AdminOnly>
-
----
-layout: brainstorm
-card: true
-bgPreset: palette
-pulse: true
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 28 -->
-
-# Debate: media, mediana ou padrao?
-
-**Discussao coletiva: 5 minutos**
-
-- Se voce fosse contratar um atacante para a selecao, qual metrica usaria: media de gols, mediana ou desvio padrao? Por que?
-- Um time com media alta mas desvio padrao alto e confiavel? Qual o risco?
-- Por que um analista de dados sempre calcula os tres antes de tomar uma decisao?
-
-> **Conexao futura:** nas proximas aulas, vamos usar essas mesmas metricas para avaliar modelos de machine learning - nao selecoes, mas algoritmos.
 
 ---
 layout: center
@@ -832,9 +540,9 @@ pulseDuration: 6
 aulaNum: "Aula 35"
 ---
 
-<!-- SLIDE 29 -->
+<!-- SLIDE 27 -->
 
-# Apresentacao Final
+# Apresentação Final
 ## Copa Analytics - Pitch de 2 minutos
 
 **Cada time tem exatamente 2 minutos para apresentar.**
@@ -846,12 +554,10 @@ bgPreset: default
 aulaNum: "Aula 35"
 ---
 
-<!-- SLIDE 30 -->
-<!-- objetivo: orientar os alunos sobre a estrutura do pitch de 2 minutos com dados -->
+<!-- SLIDE 28 -->
+<!-- objetivo: estrutura do pitch de 2 minutos -->
 
-# Estrutura do Pitch - 2 minutos
-
-**Cada time apresenta seguindo esta estrutura:**
+# Estrutura do Pitch
 
 **0:00 - 0:20 | A pergunta-guia**
 > "Nossa pergunta era: ___"
@@ -859,14 +565,45 @@ aulaNum: "Aula 35"
 **0:20 - 0:50 | Os dados de 2026**
 > "Segundo o `copa2026_stats.csv`, encontramos que ___"
 
-**0:50 - 1:20 | O historico confirma**
-> "No historico das ultimas 3 Copas, a media de ___ e ___. A mediana e ___."
+**0:50 - 1:20 | A hipótese revisada**
+> "Antes achávamos que ___. Agora, com média ___ e desvio ___, sabemos que ___."
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 29 -->
+
+# Estrutura do Pitch (cont.)
 
 **1:20 - 1:50 | A resposta final**
-> "Com base nos dados, nossa resposta e ___"
+> "Com base nos dados, nossa resposta é ___"
 
-**1:50 - 2:00 | Um numero para convencer**
-> "O numero que mais nos convence e ___"
+**1:50 - 2:00 | Um número para convencer**
+> "O número que mais nos convence é ___"
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 35"
+---
+
+<!-- SLIDE 30 -->
+<!-- objetivo: checklist para o apresentador -->
+
+# Checklist antes de apresentar
+
+**Apresentador - confirme com o time:**
+
+- [ ] A pergunta-guia está em uma frase clara
+- [ ] Temos pelo menos 2 números dos dados de 2026
+- [ ] Sabemos explicar média e mediana em palavras próprias
+- [ ] A hipótese foi revisada com base nos conceitos pesquisados
+- [ ] A resposta final cabe em uma frase direta
 
 ---
 layout: default
@@ -876,49 +613,14 @@ aulaNum: "Aula 35"
 ---
 
 <!-- SLIDE 31 -->
-<!-- objetivo: guia de preparacao para o apresentador do time nos ultimos minutos antes do pitch -->
 
-# Checklist antes de apresentar
-
-**Apresentador - confirme com o time:**
-
-- [ ] A pergunta-guia esta em uma frase clara
-- [ ] Temos pelo menos 2 numeros dos dados de 2026
-- [ ] Temos media ou mediana do historico calculada com pandas
-- [ ] Sabemos dizer por que escolhemos media OU mediana para esse caso
-- [ ] A resposta final cabe em uma frase direta
+# Checklist (cont.)
 
 **Analista de Dados - confirme:**
 
-- [ ] O codigo roda sem erros no Colab
-- [ ] Os prints mostram os numeros certos
-- [ ] A funcao `melhor_selecao()` passa no `assert` do time vizinho
-
----
-layout: default
-card: true
-bgPreset: default
-aulaNum: "Aula 35"
----
-
-<!-- SLIDE 32 -->
-<!-- tarefa de casa: aula 35 UC09 -->
-
-# Tarefa de Casa - UC09
-
-> **Prazo: proxima aula (A36)**
-
-**Analise de consistencia: qual selecao e mais confiavel?**
-
-Usando `copa2026_historico.csv`, escreva um script que:
-
-1. Calcule a **media** e o **desvio padrao** de `gols_pro` para **5 selecoes** da Copa 2026
-2. Imprima uma tabela mostrando: nome, media, desvio padrao
-3. Responda em comentario no codigo: qual das 5 e mais consistente e por que?
-
-**Salve como:** `SENAC-TecIA/Aula-35/tarefa_uc09.py`
-
-> Dica: use `historico[historico['selecao'].isin(['Brasil', 'Argentina', ...])]` para filtrar varias selecoes de uma vez.
+- [ ] O código de carregamento do CSV roda sem erros
+- [ ] Os prints mostram os números certos
+- [ ] A hipótese revisada está salva em `hipotese_revisada.txt`
 
 ---
 layout: end
@@ -927,16 +629,16 @@ github: LeoZanini
 aulaNum: "Aula 35"
 ---
 
-<!-- SLIDE 33 -->
+<!-- SLIDE 32 -->
 
 # Copa Analytics - Fim do Dia 2
 
-**Voces fizeram hoje:**
+**Vocês fizeram hoje:**
 
-- Carregaram um CSV real com pandas
-- Representaram dados com `dict`, `set` e `tuple`
-- Calcularam `mean()`, `median()` e `std()` com pandas
-- Entenderam por que a mediana e mais robusta que a media
-- Apresentaram uma analise com dados reais
+- Instalaram o pandas e carregaram um CSV real
+- Exploraram dados com `.head()` e `.describe()`
+- Pesquisaram média, mediana e desvio padrão por conta própria
+- Revisaram a hipótese do time usando esses conceitos
+- Apresentaram uma análise com dados reais
 
-**Proxima aula:** UC05 - funcoes avancadas e listas por compreensao | UC09 - visualizacao com matplotlib
+**Próxima aula:** calculamos média, mediana e desvio padrão com Python usando os dados da Copa

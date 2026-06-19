@@ -729,20 +729,18 @@ aulaNum: "Aula 34"
 
 | Selecao | Saldo | Grupo |
 |---|---|---|
-| Argentina | +3 | J |
-| EUA | +3 | D |
-| Noruega | +3 | I |
-| Franca | +2 | I |
-| Austria | +2 | J |
 | Mexico | +2 | A |
-| Australia | +2 | D |
 | Coreia do Sul | +1 | A |
-| Escocia | +1 | C |
-| Brasil | 0 | C |
+| Africa do Sul | -2 | A |
+| Tchequia | -1 | A |
 | Canada | 0 | B |
 | Suica | 0 | B |
-| Catar | 0 | B |
-| Tchequia | -1 | A |
+| EUA | +3 | D |
+| Argentina | +3 | J |
+| Franca | +2 | I |
+| Turquia | -2 | D |
+| Senegal | -2 | I |
+| Brasil | 0 | C |
 
 </SlideTable>
 
