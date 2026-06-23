@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC09
 disciplina: Estatística Aplicada e Lógica Matemática em IA
 ha-total: 40
-ha-dado: 12
-ha-restante: 28
+ha-dado: 15
+ha-restante: 25
 trimestre-atual: T2
 ---
 
@@ -16,9 +16,10 @@ trimestre-atual: T2
 |---|---|---|---|---|
 | T1 | 1 | Função linear: y=ax+b · coeficientes · Python def f(x) | 1 | ✅ A05 |
 | T1 | 2 | Funções polinomial · exponencial · logarítmica · Kahoot | 3 | ✅ A06 |
-| T2 | 3 | pandas: read_csv · .head() · .describe() | 1 | ⏳ A27 |
-| T2 | 4 | Média vs mediana: robustez a outlier · mean() vs median() em Python | 1 | ⏳ A27 |
-| T2 | 5 | Exercício guiado: modelos_ia.csv completo | 1 | ⏳ A27 |
+| T2 | 3 | pandas: read_csv · .head() · .describe() | 1 | ⏳ A35 (parcial — explorados em dinâmica, sem consolidação formal) |
+| T2 | 4 | Média vs mediana: robustez a outlier · mean() vs median() em Python | 1 | ⏳ A35 (mencionado em pesquisa autônoma, conceito compreendido em nível básico, sem código Python) |
+| T2 | 5 | Desvio padrão: consistência · variação em torno da média | 1 | ⏳ A35 (mencionado mas muito abstrato, não materializado — turma não conseguiu consolidar) |
+| T2 | 5b | Exercício guiado: modelos_ia.csv completo | 1 | ⬜ |
 | T2 | 6 | Variáveis: qualitativas vs quantitativas · discretas vs contínuas | 1 | ⬜ |
 | T2 | 7 | Probabilidades básicas: espaço amostral · P(A) · P(A∩B) | 2 | ⬜ |
 | T2 | 8 | matplotlib: scatter · hist · personalização de eixos | 2 | ⬜ |
@@ -38,7 +39,7 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 13 | 9 | 0 (T1 encerrado, 4 HA de déficit absorvidos) |
-| T2 | 14 | 3 | 11 |
+| T2 | 14 | 6 | 8 |
 | T3 | 13 | 0 | 13 |
 
 > T1 encerrado com déficit de 7 HA — conteúdo de pandas/matplotlib/estatística descritiva migrado para T2.
@@ -47,7 +48,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A25 · 16/05 · sem UC09 (Shark Tank Tech + Relatório de Visita Técnica)
+A35 · 19/06 · média · mediana (robustez a outlier) · desvio padrão (consistência) em pesquisa autônoma com teste de compreensão. Conceitos introduzidos mas não consolidados — desvio padrão muito abstrato.
 
 ---
 

@@ -131,6 +131,18 @@
 
 ---
 
+## A35 — 19/06/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC05 | Python para IA | pandas: `pd.read_csv()` · `.head()` · `.describe()` com dataset real (`copa2026_stats.csv`) · carregamento e exploração de CSV · coluna numérica em pandas | ~3 |
+| UC09 | Estatística Aplicada | Pesquisa autônoma em sala reversa: média · mediana (robustez a outlier) · desvio padrão (consistência) — testes de compreensão com exemplos práticos · conceito de hipótese · revisão de hipótese com 3 métricas | ~3 |
+| | **Total** | | **~3** |
+
+**Feedback:** pandas não consolidado — dinâmica focou em exploração visual de dataset com .head() e .describe(), mas não houve tempo para aprofundar métodos pandas. Desvio padrão ainda muito abstrato para os alunos — conceito foi mencionado e contextuado, mas não materializado em cálculo ou código. Turma não conseguiu fazer pandas. Média e mediana foram trabalhadas como conceitos através de pesquisa autônoma e exemplos, sem formalização em pandas ainda.
+
+---
+
 <!-- TEMPLATE PARA NOVAS ENTRADAS — copie e preencha:
 
 ## A{NN} — {DD/MM/AAAA}

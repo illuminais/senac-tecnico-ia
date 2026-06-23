@@ -1,0 +1,39 @@
+selecao,copa,fase_eliminada,jogos,gols_pro,gols_contra,chutes,finalizacoes,faltas,posse_media,amarelos
+Brasil,2014,semi,7,11,14,90,38,77,58,11
+Brasil,2018,quartas,5,8,3,68,28,60,57,6
+Brasil,2022,quartas,5,8,3,70,30,58,58,5
+Marrocos,2014,nao_classificou,0,0,0,0,0,0,0,0
+Marrocos,2018,grupo,3,2,4,27,9,54,37,4
+Marrocos,2022,semi,7,6,5,61,17,98,37,9
+Mexico,2014,oitavas,4,5,4,52,20,60,52,7
+Mexico,2018,oitavas,4,3,6,48,18,58,50,8
+Mexico,2022,grupo,3,2,3,32,12,40,49,4
+Coreia do Sul,2014,grupo,3,2,4,30,10,35,47,5
+Coreia do Sul,2018,grupo,3,3,3,31,11,38,48,4
+Coreia do Sul,2022,oitavas,4,5,6,42,16,46,48,6
+Canada,2014,nao_classificou,0,0,0,0,0,0,0,0
+Canada,2018,nao_classificou,0,0,0,0,0,0,0,0
+Canada,2022,grupo,3,2,4,28,10,38,50,5
+Suica,2014,oitavas,4,7,6,48,19,52,52,7
+Suica,2018,oitavas,4,6,3,50,20,54,52,6
+Suica,2022,oitavas,4,5,9,46,18,52,52,6
+EUA,2014,oitavas,4,5,6,44,18,56,50,6
+EUA,2018,nao_classificou,0,0,0,0,0,0,0,0
+EUA,2022,oitavas,4,3,4,40,15,50,52,5
+Australia,2014,grupo,3,3,6,28,9,38,46,5
+Australia,2018,grupo,3,2,5,26,8,36,45,3
+Australia,2022,oitavas,4,7,6,42,17,48,49,5
+Franca,2014,quartas,5,10,3,70,28,70,55,8
+Franca,2018,campeao,7,12,6,90,38,81,55,9
+Franca,2022,vice,7,16,8,92,40,84,56,7
+Senegal,2018,grupo,3,4,4,32,12,42,48,6
+Senegal,2022,oitavas,4,4,3,38,15,48,47,7
+Argentina,2014,vice,7,8,4,85,32,70,55,9
+Argentina,2018,oitavas,4,6,9,47,18,56,48,6
+Argentina,2022,campeao,7,15,8,76,38,91,53,7
+Argelia,2014,oitavas,4,7,6,45,18,55,49,7
+Bosnia-Herzegovina,2014,grupo,3,4,4,34,13,38,50,3
+Catar,2022,grupo,3,1,7,24,7,36,43,3
+Japao,2014,grupo,3,2,6,28,9,35,50,6
+Japao,2018,oitavas,4,6,7,42,14,26,46,4
+Japao,2022,oitavas,4,5,4,34,13,28,37,5

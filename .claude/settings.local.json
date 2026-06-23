@@ -16,7 +16,16 @@
       "Bash(awk '/^---$/{if\\(prev_dash\\){print NR\": double dash detectado\"}; prev_dash=1; next} /[^\\\\s]/{prev_dash=0} /^$/{next}' /home/leo-zanini/Documents/senac-tecnico-ia/aulas/05mai/A25_UC04+09_16mai/slides.md)",
       "Bash(gh api *)",
       "Bash(npx slidev *)",
-      "Bash(echo \"STARTED: $!\")"
+      "Bash(echo \"STARTED: $!\")",
+      "WebSearch",
+      "WebFetch(domain:fbref.com)",
+      "WebFetch(domain:www.thesoccerworldcups.com)",
+      "WebFetch(domain:football.fandom.com)",
+      "WebFetch(domain:playerstats.football)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:footystats.org)",
+      "Bash(python criar_banco.py)",
+      "Bash(python *)"
     ]
   }
 }

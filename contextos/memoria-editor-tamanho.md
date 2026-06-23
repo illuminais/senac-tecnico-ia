@@ -1,6 +1,6 @@
 # Memoria Viva — EDITOR-TAMANHO
 
-Atualizado em: 2026-06-17
+Atualizado em: 2026-06-23
 
 ## Layout: default
 
@@ -44,6 +44,11 @@ Atualizado em: 2026-06-17
 | A34 | 24 | EX6 — Diagrama de Venn | Enunciado + AdminOnly gabarito | AdminOnly movido para slide filho (SLIDE 24b); enunciado so no pai |
 | A34 | 25 | EX7 — Tabela verdade 3 variaveis | Enunciado + bloco SQL + tabela + AdminOnly | AdminOnly movido para slide filho (SLIDE 25b) |
 | A34 | 27 | Funcao linear y=ax+b | Dois conceitos: definicao parametros + calculo de inclinacao | Cada conceito em slide proprio: SLIDE 27 (definicao) + 27b (calculo) |
+| A36 | 5 | Desvio Padrao: o que e consistencia? | Tabela comparativa + 2 v-clicks (conclusao textual + formula LaTeX) | Formula LaTeX separada em slide filho (SLIDE 5b); intuicao estabelecida antes da formula |
+| A36 | 8 | Atividade Individual - Papel e Caneta | Tabela de dados do Japao + lista de 4 calculos + nota do professor | Tabela no pai (SLIDE 8); lista de calculos + nota no filho (SLIDE 8b) |
+| A36 | 9 | Passo a Passo: Desvio Padrao do Japao | Dados + Passo 1 (media) + v-click Passo 2 (tabela diferencas) + v-click Passos 3 e 4 | Passos 1 e 2 no pai (SLIDE 9); Passos 3 e 4 no filho (SLIDE 9b) |
+| A36 | 12 | O que os dados provaram | Hipotese + tabela fases por media + 2 v-clicks (conclusao Marrocos + transicao sexta) | Tabela no pai (SLIDE 12); ambos v-clicks no filho (SLIDE 12b) — v-clicks sem conteudo no pai eliminam overflow |
+| A36 | 16 | Revisao: SELECT do zero | Bloco SQL comentado + 2 v-clicks (leitura linha por linha + analogia) | Bloco SQL no pai (SLIDE 16); leitura + analogia no filho (SLIDE 16b) |
 
 ## Layout: two-cols-text
 

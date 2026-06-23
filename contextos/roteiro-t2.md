@@ -20,8 +20,8 @@ fim: 2026-07-XX
 | 04 | A32 | 12/06 | Sem1-Sex | UC08·UC06 | — | — |
 | 05 | A33 | 18/06 | Sem2-Qui | UC07·UC01 | — | — |
 | 05 | A34 | 19/06 | Sem2-Sex | UC05·UC03 | — | — |
-| 06 | A35 | 25/06 | Sem3-Qui | UC08·UC09 | — | — |
-| 06 | A36 | 26/06 | Sem3-Sex | UC07·UC04 | — | — |
+| 06 | A36 | 25/06 | Sem3-Qui | UC09·UC08 | pbl·live-coding | [S06](semanas/semana06.md) |
+| 06 | A37 | 26/06 | Sem3-Sex | UC07·UC04 | abc·simulacao | [S06](semanas/semana06.md) |
 | 07 | A37 | 02/07 | Sem1-Qui | UC05·UC02 | — | — |
 | 07 | A38 | 03/07 | Sem1-Sex | UC08·UC06 | — | — |
 | 08 | A39 | 09/07 | Sem2-Qui | UC07·UC01 | — | — |

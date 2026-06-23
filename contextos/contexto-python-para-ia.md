@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC05
 disciplina: Python para IA
 ha-total: 80
-ha-dado: 24
-ha-restante: 56
+ha-dado: 27
+ha-restante: 53
 trimestre-atual: T2
 ---
 
@@ -28,7 +28,7 @@ trimestre-atual: T2
 | T2 | 11 | arquivos: open() · read() · write() · CSV | 2 | ⬜ |
 | T2 | 12 | try/except: exceções comuns · ZeroDivision · ValueError | 1 | ⬜ |
 | T2 | 13 | NumPy: arrays · operações vetorizadas · reshape | 3 | ⬜ |
-| T2 | 14 | pandas: read_csv · .head() · .describe() · filter · groupby | 4 | ⬜ |
+| T2 | 14 | pandas: read_csv · .head() · .describe() · filter · groupby | 4 | ⏳ A35 (parcial — read_csv, .head(), .describe() explorados em dinâmica mas não consolidados) |
 | T3 | 15 | matplotlib: plot · histogram · scatter | 2 | ⬜ |
 | T3 | 16 | sklearn: fit · predict · train_test_split | 3 | ⬜ |
 | T3 | 17 | projeto final: dataset real end-to-end | 4 | ⬜ |
@@ -42,14 +42,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 26 | 24 | 0 (T1 encerrado, 2 HA de déficit absorvidos) |
-| T2 | 27 | 0 | 27 |
+| T2 | 27 | 3 | 24 |
 | T3 | 13 | 0 | 13 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A26 · 21/05 · tipos compostos — apenas dict coberto (chave:valor, .get, .items, .keys, .values, atualização); tuple e set não alcançados. Turma com grande dificuldade em absorver dict.
+A35 · 19/06 · pandas: read_csv, .head(), .describe() com dataset real (copa2026_stats.csv). Instalação, carregamento, exploração de CSV. Dinâmica Copa Analytics — não consolidado.
 
 ---
 
@@ -69,6 +69,7 @@ A26 · 21/05 · tipos compostos — apenas dict coberto (chave:valor, .get, .ite
 
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
+| A35 | 19/06 | ~3 | pandas: read_csv · .head() · .describe() com dataset real (copa2026_stats.csv) | pandas não consolidado — dinâmica focou em exploração visual; sem tempo para aprofundar métodos pandas |
 | A26 | 21/05 | ~3 | tipos compostos: apenas dict (chave:valor, .get, .items, .keys, .values, atualização); tuple e set não alcançados | aula muito difícil; exercício dado era complexo demais (exigia 4 conceitos simultâneos); dict mal absorvido; tuple/set ficaram para próxima |
 | A02 | 27/02 | ~0,5 | Reconhecimento de ambiente: VS Code, GitHub, Jupyter, onde rodar Python | introdutório, ok |
 | A04 | 06/03 | ~2 | vars, tipos, print, input, aritmética, if/elif/else (intro), def/return (intro) | ritmo lento, turma sem experiência prévia |
@@ -83,6 +84,7 @@ A26 · 21/05 · tipos compostos — apenas dict coberto (chave:valor, .get, .ite
 
 | Data | Observação | Ação tomada |
 |---|---|---|
+| 2026-06-19 | Turma não conseguiu fazer pandas — dinâmica de sala reversa sem consolidação real de métodos | A36 deve reexplicar read_csv, .head(), .describe() passo a passo, com exercício simples (sem filtros) |
 | 2026-03-05 | Alunos sem nenhuma experiência prévia em programação | Introdução ao Python iniciada com ritmo bem lento |
 | 2026-03-05 | Dinâmicas em dupla funcionam melhor do que exercícios individuais | Estrutura de pares adotada como padrão para exercícios de código |
 | 2026-03-12 | Turma absorveu apenas ~20 slides em 3 HA | Densidade reduzida; planejar com 50% da densidade original |
