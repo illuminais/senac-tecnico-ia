@@ -156,9 +156,13 @@ Após receber as respostas do Round 2:
    - Decisões tomadas nos rounds 1 e 2 (resumo por item)
    - Alertas de pré-requisitos (se houver)
    - Lista numerada de slides com título, tag pedagógica e 1 linha de resumo
-4. **Apresente ao professor** o conteúdo de `plano-aula.md` como mensagem
-5. Termine com:
-   > 🛑 **Plano gravado em `plano-aula.md`. Digite "Implementar" para gerar os arquivos, ou faça ajustes.**
+4. **Atualize `meta.yaml`** da aula com:
+   - `title`: título descritivo da aula em português (ex: "Copa Analytics Dia 1 — Banco de Dados e Matemática"). Use o fio condutor da semana e os temas principais do dia. **Nunca deixe vazio.**
+   - `date`: data em formato ISO `YYYY-MM-DD` (ex: `"2026-06-25"`). **Nunca use DD/MM/YYYY.**
+   - `disciplines`: array de UCs do dia (já preenchido pelo criar-nova-aula — confirme que está correto)
+5. **Apresente ao professor** o conteúdo de `plano-aula.md` como mensagem
+6. Termine com:
+   > 🛑 **Plano gravado em `plano-aula.md`. `meta.yaml` atualizado com título e data. Digite "Implementar" para gerar os arquivos, ou faça ajustes.**
 
 ---
 

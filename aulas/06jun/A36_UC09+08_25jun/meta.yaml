@@ -2,7 +2,7 @@
 
 aula: "36"
 slug: "a36-uc09-08-25jun"
-title: ""
+title: "Estatística Descritiva e SQL Copa 2026"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
@@ -12,7 +12,7 @@ disciplines: ["UC09", "UC08"]
 date: "2026-06-25"
 
 # em-planejamento | ready | published
-status: em-planejamento
+status: published
 
 deployUrl: ""
 

@@ -28,7 +28,7 @@ function ucLabel(uc: string) {
 
 function formatData(data: string) {
   if (!data) return ''
-  const [day, month] = data.split('/')
+  const [, month, day] = data.split('-')
   const months = ['', 'jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
   return `${day}/${months[Number(month)] ?? month}`
 }
