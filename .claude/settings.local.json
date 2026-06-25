@@ -25,7 +25,11 @@
       "WebFetch(domain:en.wikipedia.org)",
       "WebFetch(domain:footystats.org)",
       "Bash(python criar_banco.py)",
-      "Bash(python *)"
+      "Bash(python *)",
+      "Bash(sqlite3 /home/leo-zanini/Documents/senac-tecnico-ia/aulas/06jun/A36_UC09+08_25jun/dados/copa2026.db \".schema\")",
+      "Bash(sqlite3 /home/leo-zanini/Documents/senac-tecnico-ia/aulas/06jun/A36_UC09+08_25jun/dados/copa2026.db 'SELECT * FROM selecoes;' 'SELECT * FROM partidas;' 'SELECT * FROM stats;' 'SELECT * FROM historico;' 'SELECT * FROM analise_estatistica;')",
+      "Bash(sqlite3 /tmp/teste-copa.db)",
+      "Bash(sqlite3 /tmp/teste-copa.db \"SELECT COUNT\\(*\\) FROM selecoes; SELECT COUNT\\(*\\) FROM partidas; SELECT COUNT\\(*\\) FROM stats; SELECT COUNT\\(*\\) FROM historico; SELECT COUNT\\(*\\) FROM analise_estatistica;\")"
     ]
   }
 }
