@@ -143,7 +143,16 @@ Cada grupo cria sua propria planilha com os times do trabalho de A36.
 
 </SlideTable>
 
-**Regras:**
+---
+layout: default
+card: true
+bgPreset: default
+pulse: false
+---
+
+# Criar a Planilha no Excel - Regras (cont.)
+
+**Regras obrigatorias:**
 - Minimo 4 linhas de dados (4 times diferentes)
 - Fase eliminada: usar sempre o mesmo padrao - ex: `grupo`, `oitavas`, `quartas`, `semi`, `campeao`
 - Sem espacos no cabecalho: use underline - `gols_pro`, nao `gols pro`
@@ -240,6 +249,15 @@ import pandas as pd
 - `pandas` - o nome da biblioteca
 - `as pd` - apelido (alias) - convencao universal em Python
 
+---
+layout: default
+card: true
+bgPreset: animate
+pulse: false
+---
+
+# import pandas as pd - Analogia (cont.)
+
 **Analogia:** e como clicar no icone do Excel para abrir o programa. Voce faz isso uma vez, no comeco do arquivo.
 
 `pd` e o apelido que toda a comunidade Python usa. Funciona com qualquer nome, mas `pd` e o padrao que todos esperam.
@@ -262,6 +280,15 @@ df = pd.read_csv("copa_meu_grupo.csv")
 
 print(df)
 ```
+
+---
+layout: default
+card: true
+bgPreset: palette
+pulse: false
+---
+
+# pd.read_csv() - O que Cada Linha Faz (cont.)
 
 **O que cada linha faz:**
 - Linha 1: abre a caixa de ferramentas (pandas)
@@ -576,7 +603,7 @@ bgPreset: animate
 Em palavras: quao longe cada valor esta da media, em media.
 
 ---
-layout: default
+layout: two-cols-text
 card: true
 bgPreset: animate
 pulse: false
@@ -584,11 +611,16 @@ pulse: false
 
 # A Formula do Desvio Padrao - Passo a Passo (cont.)
 
-**Passo a passo:**
+**Passos 1-3:**
 
 1. Calcule a media de todos os valores
 2. Subtraia a media de cada valor (diferencas)
 3. Eleve cada diferenca ao quadrado
+
+::right::
+
+**Passos 4-6:**
+
 4. Some todos os quadrados
 5. Divida pelo numero de valores (n)
 6. Tire a raiz quadrada do resultado
@@ -615,6 +647,22 @@ Valores de chutes por jogo: **12, 8, 6, 8**
 | Media | (12+8+6+8) / 4 | 8.5 |
 | Diferencas | 12-8.5, 8-8.5, 6-8.5, 8-8.5 | 3.5, -0.5, -2.5, -0.5 |
 | Quadrados | 3.5^2, 0.5^2, 2.5^2, 0.5^2 | 12.25, 0.25, 6.25, 0.25 |
+
+</SlideTable>
+
+---
+layout: default
+card: true
+bgPreset: default
+pulse: false
+---
+
+# Calculando no Braco - Japao 2022 (cont.)
+
+<SlideTable>
+
+| Passo | Calculo | Resultado |
+|---|---|---|
 | Soma dos quadrados | 12.25+0.25+6.25+0.25 | 19.0 |
 | Variancia | 19.0 / 4 | 4.75 |
 | Desvio Padrao | raiz(4.75) | aprox. 2.18 |
