@@ -1,0 +1,21 @@
+# Metadados da Aula — Neural Slides
+
+aula: "37"
+slug: "a37-uc05-09-26jun"
+title: "Copa Analytics Dia 2 — Pandas e Desvio Padrão"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines:
+  - "UC05"
+  - "UC09"
+
+# formato ISO: YYYY-MM-DD
+date: "2026-06-26"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []
