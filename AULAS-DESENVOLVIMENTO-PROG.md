@@ -37,4 +37,6 @@
 | A15 | UC08 | Banco de Dados | 2 | 17/04 | 7 |
 | A15 | UC06 | Arquitetura e GPU | 2 | 17/04 | 6 |
 | A27 | UC04+07 | Shark Tank Apresent. Finais + Mesa Redonda | 6 | 22/05 | — |
+| A37 | UC05 | Python para IA — pandas do zero | 3 | 26/06 | 21 |
+| A37 | UC09 | Estatistica Aplicada — desvio padrao + sistema de consulta | 3 | 26/06 | 18 |
 ---

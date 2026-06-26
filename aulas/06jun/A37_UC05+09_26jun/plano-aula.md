@@ -94,7 +94,9 @@
 
 ## Status de Geracao
 
-| Bloco | UC | Status |
-|---|---|---|
-| Bloco 1 | UC05 | pendente |
-| Bloco 2 | UC09 | pendente |
+| Bloco | UC | Status | Slides |
+|---|---|---|---|
+| Bloco 1 | UC05 | gerado | slides 2-17 (16 slides) |
+| Bloco 2 | UC09 | gerado | slides 18-32 (15 slides) |
+
+**Total: 32 slides (1 capa + 16 UC05 + 15 UC09)**

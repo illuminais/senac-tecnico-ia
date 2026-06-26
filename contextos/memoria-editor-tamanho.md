@@ -1,6 +1,6 @@
 # Memoria Viva — EDITOR-TAMANHO
 
-Atualizado em: 2026-06-23
+Atualizado em: 2026-06-25
 
 ## Layout: default
 
@@ -49,6 +49,13 @@ Atualizado em: 2026-06-23
 | A36 | 9 | Passo a Passo: Desvio Padrao do Japao | Dados + Passo 1 (media) + v-click Passo 2 (tabela diferencas) + v-click Passos 3 e 4 | Passos 1 e 2 no pai (SLIDE 9); Passos 3 e 4 no filho (SLIDE 9b) |
 | A36 | 12 | O que os dados provaram | Hipotese + tabela fases por media + 2 v-clicks (conclusao Marrocos + transicao sexta) | Tabela no pai (SLIDE 12); ambos v-clicks no filho (SLIDE 12b) — v-clicks sem conteudo no pai eliminam overflow |
 | A36 | 16 | Revisao: SELECT do zero | Bloco SQL comentado + 2 v-clicks (leitura linha por linha + analogia) | Bloco SQL no pai (SLIDE 16); leitura + analogia no filho (SLIDE 16b) |
+| A37 | 5 | Instalacao ao Vivo | 2 blocos (bash + python) | Passo 1 instalar (bash + v-click erro) no pai; Passo 2 testar (python + v-click Colab) no filho |
+| A37 | 7 | Salvar como CSV | 6 passos + bloco de nome de arquivo = ~12 linhas | Passos 1-6 no pai; nome do arquivo + bloco + explicacao CSV no filho |
+| A37 | 11 | Explorar os Dados | 2 blocos (head + describe) | head() no pai com explicacao; describe() no filho com explicacao |
+| A37 | 13 | df["chutes"] | 2 blocos (coluna unica + multiplas colunas) | Acesso a coluna unica no pai; multiplas colunas no filho |
+| A37 | 14 | .mean() e .median() | 2 blocos (mean + median) | .mean() no pai com definicao; .median() no filho com contexto |
+| A37 | 17 | Tarefa de Casa | Lista de 3 itens + bloco CSV + bonus + texto = ~13 linhas | Instrucoes da tarefa no pai; estrutura esperada (bloco) + proxima aula no filho |
+| A37 | 19 | A Formula do Desvio Padrao | Formula + "em palavras" + 6 passos + v-click = ~12 linhas | Formula + definicao no pai; passo a passo 6 etapas + v-click no filho |
 
 ## Layout: two-cols-text
 
@@ -61,6 +68,12 @@ Atualizado em: 2026-06-23
 
 | Aula | Slide | Conceito | Qtd blocos | Resultado |
 |---|---|---|---|---|
+
+### Conversao de default para two-cols-text
+
+| Aula | Slide | Conceito | Descricao | Decisao tomada |
+|---|---|---|---|---|
+| A37 | 4 | Pandas: Excel no Python | 3 secoes distintas (definicao + para que serve + vs Excel) + v-click | Convertido para two-cols-text: esquerda = definicao + para que serve; direita = comparacao + v-click |
 
 ## Layout: brainstorm / center / cover / end
 
