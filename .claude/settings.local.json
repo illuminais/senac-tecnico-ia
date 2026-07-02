@@ -29,7 +29,15 @@
       "Bash(sqlite3 /home/leo-zanini/Documents/senac-tecnico-ia/aulas/06jun/A36_UC09+08_25jun/dados/copa2026.db \".schema\")",
       "Bash(sqlite3 /home/leo-zanini/Documents/senac-tecnico-ia/aulas/06jun/A36_UC09+08_25jun/dados/copa2026.db 'SELECT * FROM selecoes;' 'SELECT * FROM partidas;' 'SELECT * FROM stats;' 'SELECT * FROM historico;' 'SELECT * FROM analise_estatistica;')",
       "Bash(sqlite3 /tmp/teste-copa.db)",
-      "Bash(sqlite3 /tmp/teste-copa.db \"SELECT COUNT\\(*\\) FROM selecoes; SELECT COUNT\\(*\\) FROM partidas; SELECT COUNT\\(*\\) FROM stats; SELECT COUNT\\(*\\) FROM historico; SELECT COUNT\\(*\\) FROM analise_estatistica;\")"
+      "Bash(sqlite3 /tmp/teste-copa.db \"SELECT COUNT\\(*\\) FROM selecoes; SELECT COUNT\\(*\\) FROM partidas; SELECT COUNT\\(*\\) FROM stats; SELECT COUNT\\(*\\) FROM historico; SELECT COUNT\\(*\\) FROM analise_estatistica;\")",
+      "Bash(awk '/## A03/,/## A05/' /home/leo-zanini/Documents/senac-tecnico-ia/AULAS-DADAS.md)",
+      "Bash(awk '/## A06/,/## A08/' /home/leo-zanini/Documents/senac-tecnico-ia/AULAS-DADAS.md)",
+      "Bash(awk '/## A08/,/## A11/' /home/leo-zanini/Documents/senac-tecnico-ia/AULAS-DADAS.md)",
+      "Bash(awk '/## A14/,/## A15/' /home/leo-zanini/Documents/senac-tecnico-ia/AULAS-DADAS.md)",
+      "Bash(awk '/## A30/,/## A31/' /home/leo-zanini/Documents/senac-tecnico-ia/AULAS-DADAS.md)",
+      "Bash(chromium --headless --disable-gpu --print-to-pdf=\"/home/leo-zanini/Downloads/fichas-world-cafe-a38.pdf\" --print-to-pdf-no-header --no-margins \"file:///tmp/claude-1000/-home-leo-zanini-Documents-senac-tecnico-ia/3d1cb6b8-e212-49a9-be60-d1e58b3ed9af/scratchpad/fichas-world-cafe.html\")",
+      "Bash(chromium --headless --disable-gpu --print-to-pdf=/home/leo-zanini/Downloads/fichas-world-cafe-a38.pdf --print-to-pdf-no-header --no-margins file:///tmp/claude-1000/-home-leo-zanini-Documents-senac-tecnico-ia/3d1cb6b8-e212-49a9-be60-d1e58b3ed9af/scratchpad/fichas-world-cafe.html)",
+      "Bash(chromium --headless --disable-gpu --print-to-pdf=/home/leo-zanini/Downloads/cartoes-world-cafe-a38.pdf --print-to-pdf-no-header --no-margins file:///tmp/claude-1000/-home-leo-zanini-Documents-senac-tecnico-ia/3d1cb6b8-e212-49a9-be60-d1e58b3ed9af/scratchpad/cartoes-world-cafe.html)"
     ]
   }
 }

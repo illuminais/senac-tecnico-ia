@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC06
 disciplina: Arquitetura de Computadores e GPU
 ha-total: 40
-ha-dado: 1
-ha-restante: 39
+ha-dado: 3
+ha-restante: 37
 trimestre-atual: T2
 ---
 
@@ -23,7 +23,7 @@ trimestre-atual: T2
 | T2 | 7 | Processos e threads: concorrência · GIL Python · multiprocessing | 3 | ⬜ |
 | T2 | 8 | Cloud computing: GPU na nuvem — Google Colab · AWS · Azure · custo estimado | 2 | ⬜ |
 | T2 | 9 | Redes de computadores: protocolos básicos · TCP/IP · DNS · HTTP/HTTPS | 3 | ⬜ |
-| T2 | 10 | Desmontagem prática: identificar componentes em hardware real | 2 | ⬜ |
+| T2 | 10 | Desmontagem prática: identificar componentes em hardware real | 2 | ✅ A30 |
 | T2 | 11 | Benchmark: medir performance CPU vs GPU com Python (timeit · torch.cuda) | 2 | ⬜ |
 | T2 | 12 | Protocolos e serviços de rede: FTP · SSH · SMTP · portas padrão | 2 | ⬜ |
 | T3 | 13 | Endereçamento IPv4: classes · máscara de sub-rede · CIDR | 3 | ⬜ |
@@ -41,14 +41,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 11 (ajustado) | 1 | 10 |
-| T2 | 14 | 0 | 14 |
+| T2 | 14 | ~2 | ~12 |
 | T3 | 13 | 0 | 13 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A03 · 05/03 · CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · periféricos · comparativo funcional (nível introdutório)
+A30 · 30/05 · Desmontagem de PC ao vivo · identificação física de CPU, GPU, RAM, SSD, placa-mãe · vocabulário técnico PT/EN · apresentação criativa por grupos
 
 ---
 
@@ -70,18 +70,20 @@ A03 · 05/03 · CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · pe
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
 | A03 | 05/03 | ~1 | CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | Apenas comparativo visual/funcional — arquitetura interna não coberta |
+| A30 | 30/05 | ~2 | Desmontagem de PC ao vivo · identificação física de CPU, GPU, RAM, SSD, placa-mãe · vocabulário técnico PT/EN · apresentação criativa por grupos | — |
 
 ---
 
-## Conteúdo Coberto (Ind. 1 — parcial)
+## Conteúdo Coberto
 
 - **CPU vs GPU:** CPU = poucas cores poderosas (sequencial) · GPU = milhares de cores simples (paralelo)
 - Analogia: CPU é chef experiente · GPU é batalhão de cozinheiros — analogia já usada, não repetir
 - **RAM:** memória volátil · velocidade de acesso vs capacidade
 - **HD vs SSD vs NVMe:** velocidade × custo × durabilidade
 - **Periféricos:** I/O básico mencionado no modelo E-P-S de UC01
+- **Desmontagem prática (A30):** identificação física dos componentes reais (CPU, GPU, RAM, SSD, placa-mãe) · vocabulário técnico bilíngue PT/EN · apresentação criativa por grupos
 
-**Não reintroduzir:** analogia chef/batalhão · comparativo funcional CPU/GPU básico
+**Não reintroduzir:** analogia chef/batalhão · comparativo funcional CPU/GPU básico · identificação visual de componentes (já feita fisicamente)
 
 ---
 

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; }
+
+  .ficha {
+    width: 210mm;
+    height: 297mm;
+    padding: 4mm 5mm;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .ficha:last-child { page-break-after: auto; }
+
+  .header {
+    border: 2px solid #111;
+    border-radius: 4px;
+    padding: 4px 8px;
+    flex-shrink: 0;
+  }
+  .mesa-label {
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 1px;
+  }
+  .mesa-titulo {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  .mesa-pergunta {
+    font-size: 10.5px;
+    line-height: 1.35;
+    font-style: italic;
+    border-left: 3px solid #111;
+    padding-left: 6px;
+  }
+
+  .instrucao {
+    border: 2px solid #111;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 8.5px;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+  .instrucao strong { font-size: 9px; }
+
+  /* Bloco de rodada — flex-grow para preencher espaço disponível */
+  .rodada {
+    border: 2px solid #111;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .rodada-header {
+    background: #fff;
+    border-bottom: 2px solid #111;
+    padding: 2px 8px;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  /* Zona de cartões — ocupa todo o espaço restante do bloco */
+  .cartao-zone {
+    flex: 1;
+    border-bottom: 2px dashed #666;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #f0f0f0 0px, #f0f0f0 1px,
+      transparent 1px, transparent 9px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+  }
+
+  .zone-hint {
+    font-size: 8.5px;
+    color: #aaa;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .sintese-zone {
+    padding: 2px 8px 3px;
+    flex-shrink: 0;
+  }
+  .sintese-label {
+    font-size: 7.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+    margin-bottom: 1px;
+  }
+  .linha { border-bottom: 1px solid #999; height: 13px; margin-bottom: 1px; }
+
+  .footer {
+    border: 2px solid #111;
+    border-radius: 4px;
+    padding: 4px 8px;
+    flex-shrink: 0;
+  }
+  .footer-title {
+    font-size: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .checkboxes {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 5px;
+  }
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+  }
+  .box {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #111;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .frase-label {
+    font-size: 7.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+    margin-bottom: 2px;
+  }
+  .linha-larga { border-bottom: 1px solid #999; height: 14px; margin-bottom: 2px; }
+
+  @page { size: A4; margin: 0; }
+  @media print { body { margin: 0; } }
+</style>
+</head>
+<body>
+
+<!-- MESA 1 -->
+<div class="ficha">
+  <div class="header">
+    <div class="mesa-label">Mesa 1 de 4 &nbsp;·&nbsp; Transformacao Digital &nbsp;·&nbsp; A38 &nbsp;·&nbsp; 02/jul</div>
+    <div class="mesa-titulo">Pre-crime e IA</div>
+    <div class="mesa-pergunta">"Se uma IA pode prever com 80% de precisao que alguem vai cometer um crime nos proximos 6 meses — o Estado deveria agir antes que o crime aconteca?"</div>
+  </div>
+
+  <div class="instrucao">
+    <strong>Secretario(a):</strong> voce nao anota tudo — voce guarda o fio. Quando o grupo novo chegar, leia os cartoes em voz alta e explique em 2 min o que foi discutido. Ao final de cada rodada, escreva 1 frase resumindo onde o grupo chegou.
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 1 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — em 1 frase, o grupo chegou em:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 2 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — o que mudou em relacao a rodada anterior?</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 3 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — posicao final da mesa:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-title">Resultado final da mesa</div>
+    <div class="checkboxes">
+      <div class="checkbox-item"><div class="box"></div> Consenso</div>
+      <div class="checkbox-item"><div class="box"></div> Dividida</div>
+      <div class="checkbox-item"><div class="box"></div> Surgiu uma terceira posicao</div>
+    </div>
+    <div class="frase-label">Frase para a plenaria (apresentar para a turma toda):</div>
+    <div class="linha-larga"></div><div class="linha-larga"></div>
+  </div>
+</div>
+
+<!-- MESA 2 -->
+<div class="ficha">
+  <div class="header">
+    <div class="mesa-label">Mesa 2 de 4 &nbsp;·&nbsp; Transformacao Digital &nbsp;·&nbsp; A38 &nbsp;·&nbsp; 02/jul</div>
+    <div class="mesa-titulo">Vida, erro e responsabilidade</div>
+    <div class="mesa-pergunta">"Uma IA diagnostica cancer com 94% de acerto — o medico humano acerta 78%. Se a IA erra e o paciente morre, quem e responsavel? E se fosse o medico — mudaria sua resposta?"</div>
+  </div>
+
+  <div class="instrucao">
+    <strong>Secretario(a):</strong> voce nao anota tudo — voce guarda o fio. Quando o grupo novo chegar, leia os cartoes em voz alta e explique em 2 min o que foi discutido. Ao final de cada rodada, escreva 1 frase resumindo onde o grupo chegou.
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 1 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — em 1 frase, o grupo chegou em:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 2 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — o que mudou em relacao a rodada anterior?</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 3 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — posicao final da mesa:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-title">Resultado final da mesa</div>
+    <div class="checkboxes">
+      <div class="checkbox-item"><div class="box"></div> Consenso</div>
+      <div class="checkbox-item"><div class="box"></div> Dividida</div>
+      <div class="checkbox-item"><div class="box"></div> Surgiu uma terceira posicao</div>
+    </div>
+    <div class="frase-label">Frase para a plenaria (apresentar para a turma toda):</div>
+    <div class="linha-larga"></div><div class="linha-larga"></div>
+  </div>
+</div>
+
+<!-- MESA 3 -->
+<div class="ficha">
+  <div class="header">
+    <div class="mesa-label">Mesa 3 de 4 &nbsp;·&nbsp; Transformacao Digital &nbsp;·&nbsp; A38 &nbsp;·&nbsp; 02/jul</div>
+    <div class="mesa-titulo">Privacidade ou seguranca</div>
+    <div class="mesa-pergunta">"Cameras com reconhecimento facial em toda Pato Branco reduziriam o crime em 60%. Em troca, voce seria monitorado 24h em qualquer espaco publico. Voce aceita? E se sua familia dissesse nao — voce aceitaria por eles?"</div>
+  </div>
+
+  <div class="instrucao">
+    <strong>Secretario(a):</strong> voce nao anota tudo — voce guarda o fio. Quando o grupo novo chegar, leia os cartoes em voz alta e explique em 2 min o que foi discutido. Ao final de cada rodada, escreva 1 frase resumindo onde o grupo chegou.
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 1 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — em 1 frase, o grupo chegou em:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 2 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — o que mudou em relacao a rodada anterior?</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 3 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — posicao final da mesa:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-title">Resultado final da mesa</div>
+    <div class="checkboxes">
+      <div class="checkbox-item"><div class="box"></div> Consenso</div>
+      <div class="checkbox-item"><div class="box"></div> Dividida</div>
+      <div class="checkbox-item"><div class="box"></div> Surgiu uma terceira posicao</div>
+    </div>
+    <div class="frase-label">Frase para a plenaria (apresentar para a turma toda):</div>
+    <div class="linha-larga"></div><div class="linha-larga"></div>
+  </div>
+</div>
+
+<!-- MESA 4 -->
+<div class="ficha">
+  <div class="header">
+    <div class="mesa-label">Mesa 4 de 4 &nbsp;·&nbsp; Transformacao Digital &nbsp;·&nbsp; A38 &nbsp;·&nbsp; 02/jul</div>
+    <div class="mesa-titulo">Criatividade, morte e direito</div>
+    <div class="mesa-pergunta">"Uma IA treinou com toda a obra de um artista que morreu. Criou uma musica nova no estilo dele. A familia quer os direitos. A empresa que treinou a IA quer os direitos. O artista morto tem algum direito? Quem tem razao?"</div>
+  </div>
+
+  <div class="instrucao">
+    <strong>Secretario(a):</strong> voce nao anota tudo — voce guarda o fio. Quando o grupo novo chegar, leia os cartoes em voz alta e explique em 2 min o que foi discutido. Ao final de cada rodada, escreva 1 frase resumindo onde o grupo chegou.
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 1 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — em 1 frase, o grupo chegou em:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 2 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — o que mudou em relacao a rodada anterior?</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="rodada">
+    <div class="rodada-header">Rodada 3 &mdash; cada participante cola seu cartao aqui</div>
+    <div class="cartao-zone"><span class="zone-hint">cole os cartoes com fita crepe</span></div>
+    <div class="sintese-zone">
+      <div class="sintese-label">Secretario(a) — posicao final da mesa:</div>
+      <div class="linha"></div><div class="linha"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-title">Resultado final da mesa</div>
+    <div class="checkboxes">
+      <div class="checkbox-item"><div class="box"></div> Consenso</div>
+      <div class="checkbox-item"><div class="box"></div> Dividida</div>
+      <div class="checkbox-item"><div class="box"></div> Surgiu uma terceira posicao</div>
+    </div>
+    <div class="frase-label">Frase para a plenaria (apresentar para a turma toda):</div>
+    <div class="linha-larga"></div><div class="linha-larga"></div>
+  </div>
+</div>
+
+</body>
+</html>

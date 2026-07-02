@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC07
 disciplina: Transformação Digital e Estratégias de Informação para IA
 ha-total: 80
-ha-dado: 10
-ha-restante: 70
+ha-dado: 14
+ha-restante: 66
 trimestre-atual: T2
 ---
 
@@ -17,8 +17,8 @@ trimestre-atual: T2
 | T1 | 1 | 4ª Revolução Industrial · Big Data (5Vs) · IA em setores · mercado de trabalho · cases ML | 2 | ✅ A01/A02 |
 | T1 | 2 | Debate: "IA é trapaça ou ferramenta?" · 4 famílias de ferramentas de IA · prompt engineering básico | 5 | ✅ A07 |
 | T1 | 3 | Prompt engineering aprofundado: exercícios escritos (melhorar prompt ruim · criar do zero) | 1 | ⬜ |
-| T1 | 4 | LGPD na prática: consentimento · finalidade · casos de vazamento · multas | 2 | ⬜ |
-| T1 | 5 | Segurança digital: senhas fortes · phishing · 2FA · backup · ransomware | 2 | ⬜ |
+| T1 | 4 | LGPD na prática: consentimento · finalidade · casos de vazamento · multas | 2 | ✅ A14 |
+| T1 | 5 | Segurança digital: senhas fortes · phishing · 2FA · backup · ransomware | 2 | ✅ A14 |
 | T1 | 6 | Tecnologias emergentes: IoT · edge computing · computação quântica (visão geral) | 2 | ⬜ |
 | T1 | 7 | IA como serviço (AIaaS): AWS · Azure · Google Cloud — APIs de IA | 2 | ⬜ |
 | T2 | 8 | Custo-benefício de implementar IA: custo de infra · preço de mercado · risco de não fazer | 2 | ✅ A27 |
@@ -44,7 +44,7 @@ trimestre-atual: T2
 
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 20 (ajustado) | 7,5 | 12,5 |
+| T1 | 20 (ajustado) | ~11,5 | ~8,5 |
 | T2 | 27 | ~2,5 (A27) | ~24,5 |
 | T3 | 27 | 0 | 27 |
 
@@ -81,6 +81,7 @@ A27 · 22/05 · UC07 estreia T2: custo-benefício de implementar IA (custo de in
 | A01 | 26/02 | ~2 | 4ª Revolução · Big Data 5Vs · IA em setores · mercado de trabalho · apresentação do curso | — |
 | A02 | 27/02 | ~0,5 | Trajetória de carreira em IA · case Mercado Livre · Alibaba · NVIDIA DRIVE | — |
 | A07 | 19/03 | ~5 | Debate "IA: trapaça ou ferramenta?" (3 fases) · 4 famílias de ferramentas · geração de imagem no Gemini · prompt engineering (Papel·Contexto·Tarefa·Formato) | Debate tomou quase toda a manhã — engajamento alto |
+| A14 | 16/04 | ~4 | LGPD na prática (titular, controlador, operador, ANPD) · direitos do titular · Caso Serasa 2021 (debate) · phishing na prática (exercício de classificação de e-mails) | Debate fortíssimo com case Serasa — engajamento alto |
 | A27 | 22/05 | ~2,5 | Custo-benefício de implementar IA (custo infra · preço mercado · risco) · mini-análise financeira solução Shark Tank | — |
 
 ---
@@ -93,6 +94,8 @@ A27 · 22/05 · UC07 estreia T2: custo-benefício de implementar IA (custo de in
 - **Debate ético:** IA como amplificação vs desvantagem — turma chegou a posição matizada
 - **4 Famílias:** Texto (ChatGPT/Claude/Gemini) · Imagem (Midjourney/DALL-E) · Código (Copilot/Cursor) · Voz (ElevenLabs/Suno/Whisper)
 - **Prompt básico:** Papel · Contexto · Tarefa · Formato — já introduzido, aprofundar com exercícios
+- **LGPD (A14):** titular · controlador · operador · ANPD · direitos do titular (acesso, correção, exclusão, portabilidade) · Caso Serasa 2021 como case real · phishing (classificação de e-mails suspeitos)
+- **Segurança digital (A14):** phishing coberto com exercício prático — senhas/2FA/backup/ransomware não aprofundados
 
 ## Conexões com Outras Disciplinas
 

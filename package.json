@@ -145,7 +145,10 @@
     "export:a36-uc09-08-25jun": "npm run export --workspace=a36-uc09-08-25jun",
     "dev:a37-uc05-09-26jun": "npm run dev --workspace=a37-uc05-09-26jun",
     "build:a37-uc05-09-26jun": "npm run build --workspace=a37-uc05-09-26jun",
-    "export:a37-uc05-09-26jun": "npm run export --workspace=a37-uc05-09-26jun"
+    "export:a37-uc05-09-26jun": "npm run export --workspace=a37-uc05-09-26jun",
+    "dev:a38-uc07+06-02jul": "npm run dev --workspace=a38-uc07+06-02jul",
+    "build:a38-uc07+06-02jul": "npm run build --workspace=a38-uc07+06-02jul",
+    "export:a38-uc07+06-02jul": "npm run export --workspace=a38-uc07+06-02jul"
   },
   "devDependencies": {
     "@slidev/cli": "^0.49.0",

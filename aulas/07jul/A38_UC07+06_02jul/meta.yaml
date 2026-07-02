@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "38"
+slug: "a38-uc07+06-02jul"
+title: "Von Neumann, Harvard e o que a IA não deveria decidir sozinha"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC07", "UC06"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-07-02"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: []
