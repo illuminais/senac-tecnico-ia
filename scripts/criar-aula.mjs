@@ -2,8 +2,9 @@
 /**
  * criar-aula.mjs — Cria uma nova pasta de aula no monorepo senac-tecnico-ia
  *
- * Uso standalone:  node scripts/criar-aula.mjs
- * Via menu:        node scripts/senac.mjs  →  opção 1
+ * Uso standalone (interativo):  node scripts/criar-aula.mjs
+ * Uso não-interativo (agentes): node scripts/criar-aula.mjs --num=39 --data=03jul --ucs=UC04+05 --titulo="Título"
+ * Via menu:                     node scripts/senac.mjs  →  opção 1
  *
  * Cross-platform: Linux + Windows (Node.js 18+)
  */
@@ -28,6 +29,19 @@ const c = {
   red:    '\x1b[31m',
   gray:   '\x1b[90m',
 }
+
+// ---------------------------------------------------------------------------
+// CLI não-interativo — usado por agentes:
+//   node scripts/criar-aula.mjs --num=39 --data=03jul --ucs=UC04+05 --titulo="Título"
+// ---------------------------------------------------------------------------
+const CLI_ARGS = Object.fromEntries(
+  process.argv.slice(2)
+    .filter(a => a.startsWith('--'))
+    .map(a => { const [k, v] = a.slice(2).split('='); return [k, v ?? true] })
+)
+const CLI_MODE = 'num' in CLI_ARGS && 'data' in CLI_ARGS
+
+// ---------------------------------------------------------------------------
 
 const MES_FOLDER = {
   jan: '01jan', fev: '02fev', mar: '03mar', abr: '04abr',
@@ -85,39 +99,54 @@ function step(n, msg) { console.log(`\n${c.yellow}[${n}] ${msg}${c.reset}`) }
 async function main() {
   console.log(`\n${c.cyan}${c.bold}╔══════════════════════════════════════════╗`)
   console.log(`║   SENAC — Criar Nova Aula                ║`)
+  if (CLI_MODE) console.log(`║   Modo não-interativo (CLI)               ║`)
   console.log(`╚══════════════════════════════════════════╝${c.reset}\n`)
 
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+  let numAula, dia, mesAbrev, ucsInput, titleInput
 
-  // ---------- Coleta interativa ----------
+  if (CLI_MODE) {
+    // ---------- Modo não-interativo ----------
+    numAula = String(CLI_ARGS.num).padStart(2, '0')
 
-  // 1. Número da aula
-  let numAula
-  while (true) {
-    const raw = (await ask(rl, `${c.yellow}Número da aula${c.reset} (ex: 21): `)).trim()
-    if (/^\d{1,2}$/.test(raw)) {
-      numAula = raw.padStart(2, '0')
-      break
+    const dataMatch = String(CLI_ARGS.data).toLowerCase().match(/^(\d{2})([a-z]{3})$/)
+    if (!dataMatch || !MES_FOLDER[dataMatch[2]]) {
+      console.error(`${c.red}✗ --data inválido. Use DDmmm (ex: 02jul). Meses válidos: ${Object.keys(MES_FOLDER).join(' ')}${c.reset}`)
+      process.exit(1)
     }
-    console.log(`${c.red}  ✗ Digite apenas o número (ex: 21 ou 7)${c.reset}`)
-  }
+    dia      = dataMatch[1]
+    mesAbrev = dataMatch[2]
+    ucsInput  = CLI_ARGS.ucs    ? String(CLI_ARGS.ucs)    : ''
+    titleInput = CLI_ARGS.titulo ? String(CLI_ARGS.titulo) : ''
 
-  // 2. Data
-  let dia, mesAbrev
-  while (true) {
-    const raw = (await ask(rl, `${c.yellow}Data da aula${c.reset} (ex: 07mai): `)).trim().toLowerCase()
-    const m   = raw.match(/^(\d{2})([a-z]{3})$/)
-    if (m && MES_FOLDER[m[2]]) {
-      dia      = m[1]
-      mesAbrev = m[2]
-      break
+  } else {
+    // ---------- Modo interativo ----------
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+
+    // 1. Número da aula
+    while (true) {
+      const raw = (await ask(rl, `${c.yellow}Número da aula${c.reset} (ex: 21): `)).trim()
+      if (/^\d{1,2}$/.test(raw)) {
+        numAula = raw.padStart(2, '0')
+        break
+      }
+      console.log(`${c.red}  ✗ Digite apenas o número (ex: 21 ou 7)${c.reset}`)
     }
-    const validos = Object.keys(MES_FOLDER).join(' ')
-    console.log(`${c.red}  ✗ Formato inválido. Use DDmmm (ex: 07mai). Meses: ${validos}${c.reset}`)
-  }
 
-  // 3. UCs
-  console.log(`
+    // 2. Data
+    while (true) {
+      const raw = (await ask(rl, `${c.yellow}Data da aula${c.reset} (ex: 07mai): `)).trim().toLowerCase()
+      const m   = raw.match(/^(\d{2})([a-z]{3})$/)
+      if (m && MES_FOLDER[m[2]]) {
+        dia      = m[1]
+        mesAbrev = m[2]
+        break
+      }
+      const validos = Object.keys(MES_FOLDER).join(' ')
+      console.log(`${c.red}  ✗ Formato inválido. Use DDmmm (ex: 07mai). Meses: ${validos}${c.reset}`)
+    }
+
+    // 3. UCs
+    console.log(`
 ${c.cyan}  ┌─ UCs disponíveis ──────────────────────────────────┐
   │  01  Fundamentos de Computacao                     │
   │  02  Ingles Instrumental                           │
@@ -130,10 +159,39 @@ ${c.cyan}  ┌─ UCs disponíveis ───────────────
   │  09  Estatistica Aplicada e Logica Matematica em IA│
   └────────────────────────────────────────────────────┘${c.reset}
 ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.reset}`)
-  const ucsInput = (await ask(rl, `${c.yellow}UCs do dia${c.reset} (ex: 05+01+02, Enter para UCXX): `)).trim()
+    ucsInput = (await ask(rl, `${c.yellow}UCs do dia${c.reset} (ex: 05+01+02, Enter para UCXX): `)).trim()
 
-  // 4. Título (opcional)
-  const titleInput = (await ask(rl, `${c.yellow}Título da aula${c.reset} (opcional, Enter para deixar em branco): `)).trim()
+    // 4. Título (opcional)
+    titleInput = (await ask(rl, `${c.yellow}Título da aula${c.reset} (opcional, Enter para deixar em branco): `)).trim()
+
+    // Confirmação
+    let ucPart
+    if (!ucsInput) {
+      ucPart = 'UCXX'
+    } else {
+      const ucs = ucsInput.replace(/^UC/i, '').split(/[\s+,]+/).filter(Boolean).map(u => u.padStart(2, '0'))
+      ucPart = 'UC' + ucs.join('+')
+    }
+    const dirNamePreview = `A${numAula}_${ucPart}_${dia}${mesAbrev}`
+    const slugPreview    = toSlug(dirNamePreview)
+    const mesPastaPreview = MES_FOLDER[mesAbrev]
+
+    console.log(`\n${c.cyan}  ┌──────────────────────────────────────────┐`)
+    console.log(`  │  Diretório:  ${c.bold}${dirNamePreview}${c.reset}${c.cyan}`)
+    console.log(`  │  Slug:       ${slugPreview}`)
+    console.log(`  │  Destino:    aulas/${mesPastaPreview}/${dirNamePreview}`)
+    console.log(`  └──────────────────────────────────────────┘${c.reset}\n`)
+
+    const confirm = (await ask(rl, `Confirmar criação? [S/n]: `)).trim().toLowerCase()
+    rl.close()
+
+    if (confirm === 'n' || confirm === 'nao' || confirm === 'não') {
+      console.log(`\n${c.gray}  Cancelado.${c.reset}\n`)
+      return
+    }
+  }
+
+  // ---------- Derivar nomes (comum a ambos os modos) ----------
 
   let ucPart
   if (!ucsInput) {
@@ -147,36 +205,17 @@ ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.re
     ucPart = 'UC' + ucs.join('+')
   }
 
-  // ---------- Derivar nomes ----------
-
   const dirName  = `A${numAula}_${ucPart}_${dia}${mesAbrev}`
   const slug     = toSlug(dirName)
   const mesPasta = MES_FOLDER[mesAbrev]
   const destDir  = path.join(AULAS_BASE, mesPasta, dirName)
 
-  // Date ISO: derivar o ano atual do sistema
   const MES_NUM = {
     jan:'01', fev:'02', mar:'03', abr:'04', mai:'05', jun:'06',
     jul:'07', ago:'08', set:'09', out:'10', nov:'11', dez:'12'
   }
   const ano = new Date().getFullYear()
   const dateISO = `${ano}-${MES_NUM[mesAbrev]}-${dia}`
-
-  // ---------- Confirmação ----------
-
-  console.log(`\n${c.cyan}  ┌──────────────────────────────────────────┐`)
-  console.log(`  │  Diretório:  ${c.bold}${dirName}${c.reset}${c.cyan}`)
-  console.log(`  │  Slug:       ${slug}`)
-  console.log(`  │  Destino:    aulas/${mesPasta}/${dirName}`)
-  console.log(`  └──────────────────────────────────────────┘${c.reset}\n`)
-
-  const confirm = (await ask(rl, `Confirmar criação? [S/n]: `)).trim().toLowerCase()
-  rl.close()
-
-  if (confirm === 'n' || confirm === 'nao' || confirm === 'não') {
-    console.log(`\n${c.gray}  Cancelado.${c.reset}\n`)
-    return
-  }
 
   // ---------- Validações pré-criação ----------
 
@@ -191,18 +230,18 @@ ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.re
 
   // ---------- Execução ----------
 
-  step('1/6', 'Copiando neural-slides-template...')
+  step('1/5', 'Copiando neural-slides-template (excluindo components, layouts, styles, public, types)...')
   fs.mkdirSync(destDir, { recursive: true })
   copyDir(TEMPLATE, destDir)
   // public/ vazia — assets compartilhados ficam em neural-slides-template/public/
-  // e são servidos pelo vite.config.ts gerado abaixo; coloque aqui só imagens desta aula
+  // e são servidos automaticamente pelo Slidev via tema; coloque aqui só imagens desta aula
   fs.mkdirSync(path.join(destDir, 'public'), { recursive: true })
   const count = countFiles(destDir)
   ok(`${count} arquivos copiados → aulas/${mesPasta}/${dirName}`)
 
   // ---------- package.json da aula ----------
 
-  step('2/6', 'Configurando package.json da aula...')
+  step('2/5', 'Configurando package.json da aula...')
   const aulaPkgPath = path.join(destDir, 'package.json')
   if (fs.existsSync(aulaPkgPath)) {
     const pkg = JSON.parse(fs.readFileSync(aulaPkgPath, 'utf8'))
@@ -253,9 +292,12 @@ theme: ../../../neural-slides-template
 colorSchema: dark
 title: "Técnico em IA — ${aulaLabel}"
 author: Leonardo Zanini
+github: LeoZanini
 courseTitle: Técnico em Inteligência Artificial
 aulaNum: "${aulaLabel}"
+footerLogo: /assets/senac-logo.png
 bgPreset: palette
+aulaDate: "${dateISO}"
 layout: cover
 ---
 
