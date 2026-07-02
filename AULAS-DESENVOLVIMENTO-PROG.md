@@ -39,4 +39,5 @@
 | A27 | UC04+07 | Shark Tank Apresent. Finais + Mesa Redonda | 6 | 22/05 | — |
 | A37 | UC05 | Python para IA — pandas do zero | 3 | 26/06 | 21 |
 | A37 | UC09 | Estatistica Aplicada — desvio padrao + sistema de consulta | 3 | 26/06 | 18 |
+| A39 | UC04 | Fundamentos e Conceitos de IA — KNN/Árvore de Decisão/K-Means (pesquisa em grupo + viés + reveal) | 3 | 03/07 | 29 |
 ---

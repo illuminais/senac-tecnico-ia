@@ -38,7 +38,15 @@
       "Bash(chromium --headless --disable-gpu --print-to-pdf=\"/home/leo-zanini/Downloads/fichas-world-cafe-a38.pdf\" --print-to-pdf-no-header --no-margins \"file:///tmp/claude-1000/-home-leo-zanini-Documents-senac-tecnico-ia/3d1cb6b8-e212-49a9-be60-d1e58b3ed9af/scratchpad/fichas-world-cafe.html\")",
       "Bash(chromium --headless --disable-gpu --print-to-pdf=/home/leo-zanini/Downloads/fichas-world-cafe-a38.pdf --print-to-pdf-no-header --no-margins file:///tmp/claude-1000/-home-leo-zanini-Documents-senac-tecnico-ia/3d1cb6b8-e212-49a9-be60-d1e58b3ed9af/scratchpad/fichas-world-cafe.html)",
       "Bash(chromium --headless --disable-gpu --print-to-pdf=/home/leo-zanini/Downloads/cartoes-world-cafe-a38.pdf --print-to-pdf-no-header --no-margins file:///tmp/claude-1000/-home-leo-zanini-Documents-senac-tecnico-ia/3d1cb6b8-e212-49a9-be60-d1e58b3ed9af/scratchpad/cartoes-world-cafe.html)",
-      "Bash(npm i *)"
+      "Bash(npm i *)",
+      "Read(//home/leo-zanini/Downloads/**)",
+      "Read(//home/leo-zanini/**)",
+      "Bash(node scripts/lint-slides.mjs aulas/07jul/A39_UC04+UC05_03jul/slides.md)",
+      "Bash(echo \"EXIT:$?\")",
+      "Read(//tmp/**)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; grep -c \"SlideTable\" {}')",
+      "Bash(xxd)",
+      "Bash(awk '/^```/{c++; if\\(c%2==1\\){start=NR} else {print \"block from \"start\" to \"NR\" = \"\\(NR-start-1\\)\" lines\"}}' slides.md)"
     ]
   }
 }

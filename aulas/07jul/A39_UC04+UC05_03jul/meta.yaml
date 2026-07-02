@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "39"
+slug: "a39-uc04-uc05-03jul"
+title: "A39 — 3 Algoritmos, 10 Grupos e uma Surpresa em Python"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC04", "UC05"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-07-03"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: ["produtor-aula", "criar-nova-aula", "uc04-fundamentos-e-conceitos-de-ia", "uc05-python-para-ia", "autor-slides", "editor-slides"]
