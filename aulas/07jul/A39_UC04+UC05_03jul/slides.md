@@ -109,7 +109,7 @@ bgPreset: default
 ---
 
 <!-- SLIDE 7 -->
-<!-- objetivo: aluno reconhece o K-Means como algoritmo não supervisionado que agrupa dados por semelhança sem rótulos (MacQueen, 1967) -->
+<!-- objetivo: aluno reconhece o K-Means como algoritmo não supervisionado que agrupa dados por semelhança sem rótulos -->
 
 # K-Means: agrupar sem saber os rótulos antes
 
@@ -117,6 +117,18 @@ bgPreset: default
 - K-Means faz isso com números: junta itens parecidos em K grupos, sem saber de antemão o rótulo de nenhum deles
 - O algoritmo repete o agrupamento várias vezes até os grupos ficarem estáveis
 - Exemplo: juntar títulos do catálogo por duração e nota, sem informar o gênero, e ver se os grupos batem com Ação, Comédia e Terror
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 7b -->
+<!-- objetivo: aluno reconhece a origem histórica e a classificação formal do K-Means como algoritmo não supervisionado (MacQueen, 1967) -->
+
+# K-Means: agrupar sem saber os rótulos antes (cont.)
+
 - O nome K-Means foi definido por James MacQueen em 1967
 - Tipo: aprendizado não supervisionado (não usa respostas prontas, só encontra padrões nos dados)
 
