@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC08
 disciplina: Banco de Dados
 ha-total: 80
-ha-dado: 21
-ha-restante: 59
+ha-dado: 24
+ha-restante: 56
 trimestre-atual: T2
 ---
 
@@ -20,11 +20,11 @@ trimestre-atual: T2
 | T1 | 4 | CREATE TABLE · INSERT INTO · PK (intro) | 1 | ✅ A08 |
 | T1 | 5 | 4 Ds (DDL/DML/DQL/DCL) · ALTER TABLE · constraints (PK/NOT NULL/UNIQUE/DEFAULT) | 2 | ✅ A10 |
 | T1 | 6 | UPDATE · DELETE · TRUNCATE vs DROP · SELECT++ (LIMIT/DISTINCT/AS) | 1 | ✅ A10 |
-| T2 | 7 | FK (chave estrangeira) · INNER JOIN | 2 | ⏳ A27 |
+| T2 | 7 | FK (chave estrangeira) · INNER JOIN | 2 | ✅ A36 (INNER JOIN) · ⏳ A37 (FK) |
 | T2 | 8 | Mini-projeto: BD notas com SQLite | 2 | ⬜ |
 | T2 | 9 | Python + SQLite: sqlite3 · cursor.execute() · fetchall() | 2 | ⬜ |
 | T2 | 10 | SQL-DCL: USER · GRANT · REVOKE · perfis de acesso | 2 | ⬜ |
-| T2 | 11 | SQL-DQL avançado: GROUP BY · HAVING · subqueries | 3 | ⬜ |
+| T2 | 11 | SQL-DQL avançado: GROUP BY · HAVING · subqueries | 3 | ✅ A36 (GROUP BY + funções agregação) · ⏳ A37 (HAVING + subqueries) |
 | T2 | 12 | Transações: BEGIN · COMMIT · ROLLBACK | 1 | ⬜ |
 | T2 | 13 | Normalização: 1NF · 2NF · 3NF | 3 | ⬜ |
 | T2 | 14 | Views e índices: CREATE VIEW · CREATE INDEX | 2 | ⬜ |
@@ -54,14 +54,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 26 | 21 | 0 (T1 encerrado, 5 HA de déficit absorvidos) |
-| T2 | 27 | 0 | 27 |
+| T2 | 27 | 3 | 24 |
 | T3 | 27 | 0 | 27 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A25 · 16/05 · sem BD (Shark Tank Tech + Relatório de Visita Técnica)
+A36 · 25/06 · GROUP BY (separar em pilhas e agregar) · funções de agregação (AVG, COUNT, SUM, MAX, MIN, ROUND) · INNER JOIN (juntar tabelas) · atividade em grupos testando hipóteses da Copa
 
 ---
 
@@ -90,6 +90,7 @@ A25 · 16/05 · sem BD (Shark Tank Tech + Relatório de Visita Técnica)
 | A?? | 17/04 | 2 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
 | A?? | 24/04 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
 | A?? | 08/05 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A36 | 25/06 | ~3 | Revisão SELECT/WHERE/ORDER BY · GROUP BY (separar em pilhas, agregar) · funções de agregação (AVG, COUNT, SUM, MAX, MIN, ROUND) · INNER JOIN (live coding, alias) · atividade em grupos (5 hipóteses da Copa) | Turma com dificuldade em escrever SQL manualmente sem modelo pronto |
 
 ---
 
@@ -100,6 +101,7 @@ A25 · 16/05 · sem BD (Shark Tank Tech + Relatório de Visita Técnica)
 | 2026-03-12 | Decidido usar Excel como andaime antes de qualquer SQL | Diretriz permanente da disciplina |
 | 2026-03-20 | Constraints PK e NOT NULL vistas por cima — sem aprofundamento | Reforçar constraints antes de avançar para FK |
 | 2026-03-27 | Turma relembrou bem via revisão; ritmo lento mas progresso | Próximo passo: FK + JOIN |
+| 2026-06-25 | Turma com dificuldade em escrever SQL manualmente — reconhecem estrutura mas hesitam sem modelo pronto | Reforçar: sempre começar escrevendo no papel antes de digitar · praticar variações de queries com mudanças mínimas · criar templates reutilizáveis |
 
 ---
 

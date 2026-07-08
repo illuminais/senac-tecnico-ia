@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC07
 disciplina: Transformação Digital e Estratégias de Informação para IA
 ha-total: 80
-ha-dado: 14
-ha-restante: 66
+ha-dado: 16
+ha-restante: 64
 trimestre-atual: T2
 ---
 
@@ -52,7 +52,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A27 · 22/05 · UC07 estreia T2: custo-benefício de implementar IA (custo de infra, preço de mercado, risco de não fazer) · mini-análise financeira da solução do Shark Tank (planilha: custo fixo × receita × margem)
+A38 · 02/07 · Dilemas éticos da IA: o que a IA não deveria decidir sozinha · World Café com rotações de debate e cartões estruturados
 
 ---
 
@@ -83,6 +83,7 @@ A27 · 22/05 · UC07 estreia T2: custo-benefício de implementar IA (custo de in
 | A07 | 19/03 | ~5 | Debate "IA: trapaça ou ferramenta?" (3 fases) · 4 famílias de ferramentas · geração de imagem no Gemini · prompt engineering (Papel·Contexto·Tarefa·Formato) | Debate tomou quase toda a manhã — engajamento alto |
 | A14 | 16/04 | ~4 | LGPD na prática (titular, controlador, operador, ANPD) · direitos do titular · Caso Serasa 2021 (debate) · phishing na prática (exercício de classificação de e-mails) | Debate fortíssimo com case Serasa — engajamento alto |
 | A27 | 22/05 | ~2,5 | Custo-benefício de implementar IA (custo infra · preço mercado · risco) · mini-análise financeira solução Shark Tank | — |
+| A38 | 02/07 | ~1,5 | Dilemas éticos da IA · o que a IA não deveria decidir sozinha · World Café com rotação de grupos e cartões de debate estruturados | Engajamento extraordinário — World Café provou formato altamente motivador para turma |
 
 ---
 
@@ -96,6 +97,17 @@ A27 · 22/05 · UC07 estreia T2: custo-benefício de implementar IA (custo de in
 - **Prompt básico:** Papel · Contexto · Tarefa · Formato — já introduzido, aprofundar com exercícios
 - **LGPD (A14):** titular · controlador · operador · ANPD · direitos do titular (acesso, correção, exclusão, portabilidade) · Caso Serasa 2021 como case real · phishing (classificação de e-mails suspeitos)
 - **Segurança digital (A14):** phishing coberto com exercício prático — senhas/2FA/backup/ransomware não aprofundados
+- **Dilemas éticos aprofundados (A38):** World Café como estratégia de debate estruturado funcionou muito bem — dinâmica em rotações engajou turma inteira
+
+---
+
+## Feedback de Campo
+
+| Data | Observação | Ação |
+|---|---|---|
+| 2026-07-02 | Novo conteúdo não previsto no Plano Anual: "Dilemas éticos da IA — o que a IA não deveria decidir sozinha" implementado com sucesso via World Café (dinâmica de rotação com cartões de debate) | Validar formato para futuras aulas; considerar integrar dilemas éticos em Tópico 2 revisado ou criar novo tópico em T3 sobre governance e ética avançada |
+
+---
 
 ## Conexões com Outras Disciplinas
 

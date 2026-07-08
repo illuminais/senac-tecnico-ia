@@ -148,7 +148,9 @@ function lintSlide(slide) {
   // ── Text overflow (excluding code, tables, frontmatter, directives) ──
   const bodyNoCode = body.replace(/```[\s\S]*?```/g, '')
   const bodyNoTable = bodyNoCode.replace(/\|.*\|/g, '')
-  const bodyNoDirective = bodyNoTable.replace(/<v-click[\s\S]*?<\/v-click>/g, '')
+  const bodyNoDirective = bodyNoTable
+    .replace(/<v-click[\s\S]*?<\/v-click>/g, '')
+    .replace(/<AdminOnly[\s\S]*?<\/AdminOnly>/g, '')
   const textLines = bodyNoDirective.split('\n')
     .filter(l => l.trim() && !l.startsWith('#') && !l.startsWith('<!--') && !l.startsWith('::'))
   if (textLines.length > LIMITS.textLines) {

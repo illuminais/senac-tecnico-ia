@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC06
 disciplina: Arquitetura de Computadores e GPU
 ha-total: 40
-ha-dado: 3
-ha-restante: 37
+ha-dado: 5
+ha-restante: 35
 trimestre-atual: T2
 ---
 
@@ -15,7 +15,7 @@ trimestre-atual: T2
 | T | # | Tópico | HA | Status |
 |---|---|---|---|---|
 | T1 | 1 | CPU vs GPU: paralelismo vs IA · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | 1 | ✅ A03 |
-| T1 | 2 | Arquitetura CPU: ALU · CU · registradores · barramento · ciclo fetch-decode-execute | 2 | ⬜ |
+| T1 | 2 | Arquitetura CPU: ALU · CU · registradores · barramento · ciclo fetch-decode-execute · Von Neumann vs. Harvard (modelos de arquitetura) | 2 | ✅ A38 |
 | T1 | 3 | Arquitetura GPU: CUDA cores · VRAM · tensor cores · SIMD | 2 | ⬜ |
 | T1 | 4 | Pipeline GPU: como um modelo ML usa a GPU (batch processing · CUDA stream) | 2 | ⬜ |
 | T1 | 5 | Comparativo CPU vs GPU em inferência vs treino · escolha de hardware | 2 | ⬜ |
@@ -48,7 +48,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A30 · 30/05 · Desmontagem de PC ao vivo · identificação física de CPU, GPU, RAM, SSD, placa-mãe · vocabulário técnico PT/EN · apresentação criativa por grupos
+A38 · 02/07 · Von Neumann vs. Harvard: atividade comparativa em papel · fluxo de dados e componentes · World Café (dinâmica leve integrada com UC07 ética)
 
 ---
 
@@ -71,6 +71,7 @@ A30 · 30/05 · Desmontagem de PC ao vivo · identificação física de CPU, GPU
 |---|---|---|---|---|
 | A03 | 05/03 | ~1 | CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | Apenas comparativo visual/funcional — arquitetura interna não coberta |
 | A30 | 30/05 | ~2 | Desmontagem de PC ao vivo · identificação física de CPU, GPU, RAM, SSD, placa-mãe · vocabulário técnico PT/EN · apresentação criativa por grupos | — |
+| A38 | 02/07 | ~1,5 | Von Neumann vs. Harvard · modelos de arquitetura · atividade comparativa em papel · fluxo de dados · componentes | Dinâmica World Café integrada (UC07) engajou muito; estratégia de rotação provou efetiva |
 
 ---
 
@@ -84,6 +85,14 @@ A30 · 30/05 · Desmontagem de PC ao vivo · identificação física de CPU, GPU
 - **Desmontagem prática (A30):** identificação física dos componentes reais (CPU, GPU, RAM, SSD, placa-mãe) · vocabulário técnico bilíngue PT/EN · apresentação criativa por grupos
 
 **Não reintroduzir:** analogia chef/batalhão · comparativo funcional CPU/GPU básico · identificação visual de componentes (já feita fisicamente)
+
+---
+
+## Feedback de Campo
+
+| Data | Observação | Ação |
+|---|---|---|
+| 2026-07-02 | Dinâmica World Café (integrada com UC07) gerou engajamento extraordinário — estratégia de rotação em pequenos grupos com cartões de debate funcionou muito bem para turma | Manter formato para próximas aulas de ética/arquitetura |
 
 ---
 

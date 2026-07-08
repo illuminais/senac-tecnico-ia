@@ -12,8 +12,8 @@ disciplines: ["UC05", "UCUC02"]
 date: "2026-07-09"
 
 # em-planejamento | ready | published
-status: em-planejamento
+status: ready
 
 deployUrl: ""
 
-agentsUsed: []
+agentsUsed: ["produtor-aula", "editor-slides"]
