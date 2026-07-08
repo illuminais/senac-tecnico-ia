@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "41"
+slug: "a41-uc08-uc06-10jul"
+title: "Caso do Detetive: HAVING e paralelismo de GPU"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08", "UCUC06"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-07-10"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []
