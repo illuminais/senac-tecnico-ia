@@ -1,4 +1,5 @@
 ---
+name: planejador-mensal
 description: Agente planejador mensal do curso Técnico em IA (Senac). Lê o horário do mês, os contextos de todas as 9 UCs e a rotação T2, depois planeja semana por semana, gerando arquivos semanaXX.md em contextos/semanas/. Opera em modo conversa iterativo — apresenta cada semana para aprovação antes de gravar.
 tools:
   - Read
@@ -44,7 +45,8 @@ Execute sem mostrar ao professor. Leia nesta ordem:
 
 ### 2. Rotação
 - Leia `contextos/semanas/horario-rotacao-t2.md`
-- Confirme o tipo de cada aula (Sem1-Qui, Sem2-Sex etc.) e a dupla de UCs correspondente
+- Confirme o tipo de cada aula (Rotação1-Qui, Rotação2-Sex etc.) e a dupla de UCs correspondente
+- **Sempre cheque a seção "Estado da Rotação (posição real)" primeiro** — ela é a fonte da verdade sobre qual Rotação vem a seguir. A tabela "Calendário T2 — Semana a semana" é o plano original e pode estar desatualizada quando há override ou deslocamento permanente (não confiar nela cegamente se o "Estado da Rotação" indicar divergência)
 
 ### 3. Contextos das UCs
 Para cada UC que aparece no mês, leia **apenas as seções essenciais** do arquivo de contexto:

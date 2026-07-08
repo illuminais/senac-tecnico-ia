@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "40"
+slug: "a40-uc05-uc02-09jul"
+title: "Caso do Detetive: import, library e groupby"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC05", "UCUC02"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-07-09"
+
+# em-planejamento | ready | published
+status: ready
+
+deployUrl: ""
+
+agentsUsed: ["produtor-aula", "editor-slides"]

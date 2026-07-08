@@ -17,15 +17,29 @@ gap: -20
 
 ---
 
-## Ciclo 3 semanas (fixo)
+## Ciclo 3 rotações (fixo)
+
+> **Nomenclatura:** "Rotação 1/2/3" é a posição no ciclo fixo de 3 (este bloco). Não confundir com o número de `semanaXX.md` em `contextos/semanas/` — esse é sequencial e cronológico (semana01, semana02, …), nunca se repete, e pode divergir da rotação quando há override.
 
 | | Quinta (3h + 3h) | Sexta (3h + 3h) |
 |---|---|---|
-| **Sem 1** | UC05 · UC02 | UC08 · UC06 |
-| **Sem 2** | UC07 · UC01 | UC05 · UC03 |
-| **Sem 3** | UC08 · UC09 | UC07 · UC04 |
+| **Rotação 1** | UC05 Python · UC02 Inglês | UC08 Banco de Dados · UC06 Arquitetura de Computadores e GPU |
+| **Rotação 2** | UC07 Transformação Digital · UC01 Fund. Computação | UC05 Python · UC03 Fund. Matemáticos |
+| **Rotação 3** | UC08 Banco de Dados · UC09 Estatística Aplicada | UC07 Transformação Digital · UC04 Fund. e Conceitos de IA |
 
-**Regra de substituição:** quando UC04 encerrar conteúdo T2 (~sessão 3), redirecionar Sem3-Sex para UC08 ou UC09.
+**Regra de substituição:** quando UC04 encerrar conteúdo T2 (~sessão 3), redirecionar Rotação 3-Sex para UC08 ou UC09.
+
+---
+
+## Estado da Rotação (posição real)
+
+> Atualizar sempre que uma aula acontecer — é este bloco que diz qual Rotação vem a seguir, não a tabela "Calendário T2" abaixo (que assume adesão estrita e fica desatualizada quando há override).
+
+- **Última rotação seguida com fidelidade:** Rotação 3-Qui via A36 (25/06 — UC08+UC09).
+- **A37–A39 foram overrides ad hoc** (não seguiram nenhuma rotação do ciclo): A37 = UC05+UC09, A38 = UC07+UC06, A39 = UC04+UC05.
+- **Decisão do professor (08/07):** retomar o ciclo a partir da **Rotação 1** em A40/A41, em vez de seguir "Sem 2" como a tabela "Calendário T2" previa para essas datas.
+- **Rotação em curso:** Rotação 1 → **A40** (09/07, Qui) = UC05 Python + UC02 Inglês · **A41** (10/07, Sex) = UC08 Banco de Dados + UC06 Arquitetura de Computadores e GPU.
+- **Próxima rotação a aplicar (depois de A40/A41):** Rotação 2.
 
 ---
 
@@ -45,25 +59,35 @@ gap: -20
 
 ---
 
-## Calendário T2 — Semana a semana
+## Calendário T2 — Semana a semana (rotação PLANEJADA)
 
-| Sem | Tipo | Quinta | Sexta | Obs |
+> Esta tabela é o plano original de adesão estrita ao ciclo. Quando há override (ver histórico em `semanaXX.md` e no bloco "Estado da Rotação" acima), a rotação real diverge da coluna "Rotação" aqui — o bloco acima é a fonte da verdade para "o que vem a seguir".
+
+| Sem | Rotação | Quinta | Sexta | Obs |
 |---|---|---|---|---|
-| 01 | Sem 1 | 21/05 — UC05+UC02 | 22/05 — UC08+UC06 | |
-| 02 | Sem 2 | 28/05 — UC07+UC01 | 29/05 — UC05+UC03 | +30/05 Sab — Reposição (A30, UC a definir) |
-| 03 | Sem 3 | ~~04/06~~ ← Corpus Christi | ~~05/06~~ ← recesso | **sem aula** |
-| 04 | Sem 1 | 11/06 — UC05+UC02 | 12/06 — UC08+UC06 | |
-| 05 | Sem 2 | 18/06 — UC07+UC01 | 19/06 — UC05+UC03 | |
-| 06 | Sem 3 | 25/06 — UC08+UC09 | 26/06 — UC07+UC04 | |
-| 07 | Sem 1 | 02/07 — UC05+UC02 | 03/07 — UC08+UC06 | |
-| 08 | Sem 2 | 09/07 — UC07+UC01 | 10/07 — UC05+UC03 | |
+| 01 | Rotação 1 | 21/05 — UC05+UC02 | 22/05 — UC08+UC06 | |
+| 02 | Rotação 2 | 28/05 — UC07+UC01 | 29/05 — UC05+UC03 | +30/05 Sab — Reposição (A30, UC a definir) |
+| 03 | Rotação 3 | ~~04/06~~ ← Corpus Christi | ~~05/06~~ ← recesso | **sem aula** |
+| 04 | Rotação 1 | 11/06 — UC05+UC02 | 12/06 — UC08+UC06 | |
+| 05 | Rotação 2 | 18/06 — UC07+UC01 | 19/06 — UC05+UC03 | |
+| 06 | Rotação 3 | 25/06 — UC08+UC09 | 26/06 — UC07+UC04 | |
+| 07 | Rotação 1 | 02/07 — UC05+UC02 | 03/07 — UC08+UC06 | override real: ver `semana07.md` (A38=UC07+UC06, A39=UC04+UC05) |
+| 08 | ~~Rotação 2~~ → **Rotação 1** | 09/07 — UC05+UC02 | 10/07 — UC08+UC06 | override decidido 08/07: retomar em Rotação 1 (ver "Estado da Rotação") |
 | — | RECESSO | 13/07 – 25/07 | | recesso de julho |
-| 09 | Sem 3 | 30/07 — UC08+UC09 | 31/07 — UC07+UC04 | |
-| 10 | Sem 1 | 06/08 — UC05+UC02 | 07/08 — UC08+UC06 | |
-| 11 | Sem 2 | 13/08 — UC07+UC01 | 14/08 — UC05+UC03 | |
-| 12 | Sem 3 | 20/08 — UC08+UC09 | 21/08 — UC07+UC04* | *UC04 encerra → UC08 ou UC09 |
-| 13 | Sem 1 | 27/08 — UC05+UC02 | 28/08 — UC08+UC06 | |
-| 14 | Sem 2 | 03/09 — UC07+UC01 | 04/09 — UC05+UC03 | último dia T2 |
+| 09 | Rotação 2 | 30/07 — UC07+UC01 | 31/07 — UC05+UC03 | deslocamento permanente a partir daqui (decisão 08/07) |
+| 10 | Rotação 3 | 06/08 — UC08+UC09 | 07/08 — UC07+UC04* | *1ª ocasião de avaliar encerramento de UC04 |
+| 11 | Rotação 1 | 13/08 — UC05+UC02 | 14/08 — UC08+UC06 | |
+| 12 | Rotação 2 | 20/08 — UC07+UC01 | 21/08 — UC05+UC03 | |
+| 13 | Rotação 3 | 27/08 — UC08+UC09 | 28/08 — UC07+UC04* | *2ª ocasião — reavaliar se UC04 já encerrou |
+| 14 | Rotação 1 | 03/09 — UC05+UC02 | 04/09 — UC08+UC06 | último dia T2 |
+
+**T3 continua o mesmo ciclo sem reiniciar** (T2 termina em Rotação 1 → T3 começa em Rotação 2):
+
+| Sem T3 | Rotação | Quinta | Sexta | Obs |
+|---|---|---|---|---|
+| 1 | Rotação 2 | 10/09 — UC07+UC01 | 11/09 — UC05+UC03 | |
+| 2 | Rotação 3 | 17/09 — UC08+UC09 | 18/09 — UC07+UC04* | *3ª ocasião — provável substituição por UC08/UC09 |
+| 3 | Rotação 1 | 24/09 — UC05+UC02 | 25/09 — UC08+UC06 | |
 
 ---
 

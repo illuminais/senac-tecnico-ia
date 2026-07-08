@@ -143,6 +143,54 @@
 
 ---
 
+## A36 — 25/06/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC09 | Estatística Aplicada | Média e mediana (robustez a outlier) · desvio padrão: conceito e fórmula · análise de dados reais da Copa 2022 · Argentina vs Marrocos 2022: comparação de consistência · atividade prática: cálculo manual passo a passo de média, mediana e DP com dados do Japão 2022 · debate: quantidade de chutes vs consistência defensiva | ~3 |
+| UC08 | Banco de Dados | Revisão: SELECT/FROM/WHERE/ORDER BY · GROUP BY: separar dados em pilhas e agregar · funções de agregação SQL: AVG, COUNT, SUM, MAX, MIN, ROUND · INNER JOIN: juntar tabelas pelo campo comum (alias s. e h.) · atividade em grupos: teste de 5 hipóteses com dados da Copa usando GROUP BY e JOIN · SQL vs Planilha: quando usar cada ferramenta | ~3 |
+| | **Total** | | **~6** |
+
+**Feedback:** Turma com dificuldade em escrever SQL manualmente — reconhecem a estrutura mas hesitam ao aplicar sem modelo pronto. Necessário reforço em SQL essencial antes de avançar para HAVING e subqueries.
+
+---
+
+## A37 — 26/06/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC05 | Python para IA | pandas: introdução e diferença vs Excel · pip install pandas · import pandas as pd e alias pd · pd.read_csv() carregamento de CSV · df.head() e df.head(N) exploração de linhas · df.describe() estatísticas automáticas (mean, std, min, max, quartis) · df["coluna"] acesso a coluna específica · .mean() cálculo de média em pandas · .median() cálculo de mediana em pandas · filtragem com df[df["coluna"] == valor] · criação de CSV no Excel com 5 colunas estruturadas (seleção, copa, chutes, gols_pro, fase_eliminada) · EX01–EX03 (criar planilha, carregar CSV, calcular média/mediana) | ~3 |
+| UC09 | Estatística Aplicada | Fórmula do desvio padrão: DP = raiz(soma((xi − média)²) / n) · cálculo passo a passo (6 passos) · cálculo manual com dados reais (Japão 2022: 12, 8, 6, 8 chutes) · .std() em pandas verificação do desvio padrão calculado · interpretação prática: DP baixo = consistência, DP alto = irregularidade · comparação de estilos de jogo pela DP (Japão 2022 ~2.18 vs time hipotético ~8.0) · brainstorm sobre DP e análise tática · visão geral do sistema de consulta com filtro · EX04 (calcular média, mediana e DP no papel com dados do Japão) | ~3 |
+| | **Total** | | **~6** |
+
+**Feedback:** Turma adorou pandas e engajou alto — contexto Copa Analytics motivador. Dificuldade: não entendem por que importar bibliotecas, como instalar, e sintaxe básica de import/alias apesar de exemplos mostrados. Comparação SQL vs pandas vs Excel para confirmar hipótese não foi bem absorvida — necessário reforço em conceitos fundamentais de manipulação de dados.
+
+---
+
+## A38 — 02/07/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC06 | Arquitetura de Computadores e GPU | Von Neumann vs. Harvard: modelos de arquitetura de computadores · atividade comparativa em papel (esquema von Neumann sequencial vs harvard paralelo) · componentes, fluxo de dados | ~1,5 |
+| UC07 | Transformação Digital | Dilemas éticos da IA: o que a IA não deveria decidir sozinha · World Café (dinâmica com cartões e fichas de debate) · debate estruturado em rotações | ~1,5 |
+| | **Total** | | **~3** |
+
+**Feedback:** Engajamento extraordinário — professor adorou a dinâmica World Café; estratégia de debate em rotações provou-se altamente motivadora para turma.
+
+---
+
+## A39 — 03/07/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC04 | Fundamentos e Conceitos de IA | Pesquisa conceitual em grupo (10 grupos, 29 alunos): 3 algoritmos de IA — KNN (k-nearest neighbors) · Árvore de Decisão · K-Means (clustering) — apresentação conceitual respondendo "que viés esse algoritmo pode ter?" | ~3 |
+| UC05 | Python para IA | Instalação e configuração de scikit-learn · preparação de ambiente para implementação futura com dataset "CatálogoStream" (tema Netflix/streaming) | ~2 |
+| | **Total** | | **~5** |
+
+**Feedback:** Instalação de scikit-learn consumiu o tempo planejado para aula; implementação real com fit/predict ficou pendente para aulas futuras.
+
+---
+
 <!-- TEMPLATE PARA NOVAS ENTRADAS — copie e preencha:
 
 ## A{NN} — {DD/MM/AAAA}

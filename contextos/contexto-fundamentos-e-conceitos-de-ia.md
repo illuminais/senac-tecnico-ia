@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC04
 disciplina: Fundamentos e Conceitos de IA
 ha-total: 41
-ha-dado: 9
-ha-restante: 32
+ha-dado: 12
+ha-restante: 29
 trimestre-atual: T2
 ---
 
@@ -16,8 +16,8 @@ trimestre-atual: T2
 |---|---|---|---|---|
 | T1 | 1 | Definição IA · história (1943→2024) · tipos ANI/AGI/ASI · ML/DL/NLP/ética/LGPD | 5 | ✅ A01/A03 |
 | T1 | 2 | Vocabulário avançado: Token · LLM · Backpropagation · Epoch · Embedding | 1 | ✅ A04 |
-| T1 | 3 | Decision Trees · Random Forest · SVM · comparação | 2 | ⬜ |
-| T1 | 4 | Clustering: K-Means · DBSCAN · exemplos práticos | 1 | ⬜ |
+| T1 | 3 | Decision Trees · Random Forest · SVM · comparação | 2 | ✅ A39 |
+| T1 | 4 | Clustering: K-Means · DBSCAN · exemplos práticos | 1 | ✅ A39 |
 | T1 | 5 | Bias · fairness · impacto social — aprofundamento com debate | 1 | ⬜ |
 | T2 | 6 | Shark Tank Tech — arquitetura de solução IA (entrada→IA→saída→GPU→custo) | 3 | ✅ A26/A27 |
 | T2 | 7 | Métricas de avaliação: acurácia · precisão · recall · F1 | 2 | ⬜ |
@@ -47,7 +47,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A27 · 22/05 · Pitch Final Shark Tank (4 min/grupo + 2 perguntas do Shark) · veredicto · encerramento da dinâmica
+A39 · 03/07 · Pesquisa conceitual de 3 algoritmos IA: KNN, Árvore de Decisão, K-Means + análise de viés
 
 ---
 
@@ -72,6 +72,7 @@ A27 · 22/05 · Pitch Final Shark Tank (4 min/grupo + 2 perguntas do Shark) · v
 | A04 | 06/03 | ~1 | Vocabulário avançado: NLP · Token · LLM · Backpropagation · Epoch · Embedding | — |
 | A26 | 21/05 | ~2 | Shark Tank Rodadas 2+3: arquitetura da solução (entrada→IA→saída→GPU) · modelo de negócio | — |
 | A27 | 22/05 | ~1 | Ensaio final · Pitch Final (4 min + 2 perguntas) · veredicto e encerramento | — |
+| A39 | 03/07 | ~3 | KNN (k-nearest neighbors) · Árvore de Decisão · K-Means (clustering) — análise de viés em cada algoritmo | — |
 
 ---
 
