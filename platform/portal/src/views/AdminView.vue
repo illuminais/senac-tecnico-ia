@@ -92,7 +92,7 @@ function logout() {
 </script>
 
 <template>
-  <div class="min-h-dvh bg-neural-900 px-4 py-8 sm:px-6">
+  <div class="min-h-dvh px-4 py-8 sm:px-6">
     <header class="max-w-2xl mx-auto mb-8 flex items-center justify-between">
       <div>
         <p class="text-neural-accent text-sm font-mono mb-1">Senac · Admin</p>

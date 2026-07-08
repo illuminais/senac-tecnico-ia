@@ -24,7 +24,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-dvh bg-neural-900 px-4 py-8 sm:px-6">
+  <div class="min-h-dvh px-4 py-8 sm:px-6">
     <div class="max-w-3xl mx-auto">
       <button
         @click="router.push('/avaliacoes')"

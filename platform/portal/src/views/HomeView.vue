@@ -34,6 +34,7 @@ onMounted(async () => {
 
 <template>
   <div class="max-w-4xl mx-auto">
+    
     <div v-if="!loading && ucsDisponiveis.length" class="mb-4 flex flex-wrap gap-2">
       <button
         @click="ucAtiva = null"

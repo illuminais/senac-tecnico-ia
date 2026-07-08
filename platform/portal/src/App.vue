@@ -21,7 +21,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-dvh bg-neural-900">
+  <div class="min-h-dvh bg-black">
     <header
       v-if="!isAulaPage"
       class="sticky top-0 z-20 bg-neural-900/95 backdrop-blur-sm border-b border-neural-700 px-4 pt-5 pb-0 sm:px-6"
@@ -54,7 +54,23 @@ onMounted(async () => {
       </div>
     </header>
 
-    <div :class="isAulaPage ? '' : 'px-4 py-6 sm:px-6'">
+    <div class="relative" :class="isAulaPage ? '' : 'px-4 py-6 sm:px-6'">
+      <div
+        class="fixed inset-0 bg-left bg-repeat-y pointer-events-none w-[23%]"
+        style="
+          background-image: url('/u9263854985_an_infinite_artificial_intelligence_neural_networ_ac553fdb-db8e-41ed-8dc5-d293f29f1ff6_0.png');
+          -webkit-mask-image: linear-gradient(to right, black 0%, black 20%, transparent 100%);
+          mask-image: linear-gradient(to right, black 0%, black 20%, transparent 100%);
+        "
+      />
+          <div
+        class="absolute inset-0  bg-right bg-repeat-y pointer-events-none w-[23%]"
+        style="
+          background-image: url('/u9263854985_an_infinite_artificial_intelligence_neural_networ_ac553fdb-db8e-41ed-8dc5-d293f29f1ff6_0.png');
+          -webkit-mask-image: linear-gradient(to right, black 0%, black 10%, transparent 100%);
+          mask-image: linear-gradient(to right, black 0%, black 10%, transparent 100%);
+        "
+      />
       <RouterView />
     </div>
   </div>
