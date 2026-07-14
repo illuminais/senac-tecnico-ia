@@ -1,0 +1,1014 @@
+{
+  "days": [
+    {
+      "id": "A01",
+      "numero": "A01",
+      "data": "2026-02-26",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Conceitos de IA",
+          "conteudo": "Demo ML (pixels→modelo), Parts 4 completa (Turing, história, ML, DL, NLP, robôs, carros, ética, LGPD)",
+          "ha": 2
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "4ª Revolução, Big Data, IA em setores (saúde, varejo, indústria, agro), mercado de trabalho, curso",
+          "ha": 2
+        },
+        {
+          "uc": "UC01",
+          "disciplina": "Fund. Computação",
+          "conteudo": "E→P→S, hardware vs. software, CPU/GPU/RAM/SSD/SO, Windows, arquivos, atalhos, EX01–10, Calc 01–06",
+          "ha": 1.5
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "Vocabulário técnico (keyboard, file, save, folder…), ING 01–06, oral com objetos reais",
+          "ha": 0.5
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "numero": "A02",
+      "data": "2026-02-27",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC01",
+          "disciplina": "Fund. Computação",
+          "conteudo": "Organização de arquivos, nomenclatura profissional, método 4 passos, pesquisa técnica, troubleshooting real, Calc (validação, formato condicional, planilha coletiva)",
+          "ha": 3
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "ING 07–10 (completar comandos, quiz velocidade, nomear pastas, glossário funcional em inglês), vocab Aula 02 (10 termos novos)",
+          "ha": 2
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python",
+          "conteudo": "Menção às ferramentas (VS Code, Colab, GitHub, Jupyter) como ambiente de trabalho do curso",
+          "ha": 0.5
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "Slides de trajetória de carreira, caso Mercado Livre logística, Alibaba warehouse, NVIDIA DRIVE",
+          "ha": 0.5
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "numero": "A03",
+      "data": "2026-03-05",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Conceitos de IA",
+          "conteudo": "Definição de IA, história (1943–hoje), ML (3 tipos), redes neurais, Deep Learning, NLP, robôs, carros autônomos, ética, LGPD",
+          "ha": 3
+        },
+        {
+          "uc": "UC01",
+          "disciplina": "Fund. Computação",
+          "conteudo": "Hardware vs software, SO, organização de arquivos, extensões, atalhos, ferramentas do curso, Windows profissional",
+          "ha": 2
+        },
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura e GPU",
+          "conteudo": "CPU, GPU (paralelismo vs IA), RAM, HD vs SSD, periféricos, comparativo de componentes",
+          "ha": 1
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "numero": "A04",
+      "data": "2026-03-06",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python",
+          "conteudo": "Variáveis, tipos (str/int/float/bool), `print()`, `input()`, operadores aritméticos, `if/elif/else`, `def/return`, ecossistema Python",
+          "ha": 2
+        },
+        {
+          "uc": "UC01",
+          "disciplina": "Fund. Computação",
+          "conteudo": "Terminal básico + continuação Windows profissional",
+          "ha": 1.5
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "Vocabulário técnico aplicado, exercícios em contexto computacional",
+          "ha": 1.5
+        },
+        {
+          "uc": "UC04",
+          "disciplina": "Conceitos de IA",
+          "conteudo": "Continuação e reforço de conceitos",
+          "ha": 1
+        }
+      ]
+    },
+    {
+      "id": "A05",
+      "numero": "A05",
+      "data": "2026-03-12",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python",
+          "conteudo": "`print()` aprofundado (f-string, `sep`, `end`), `type()` para diagnóstico, conversão `float()`/`int()`/`str()`, `float(input())`/`int(input())` como padrão de leitura numérica, exercício: 3 notas via input + cálculo de média com f-string — Diário Orion: Python, operadores aritiméticos, operadores lógicos, input, coversão de tipos de dados, string, float, int",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A06",
+      "numero": "A06",
+      "data": "2026-03-13",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "Dados no cotidiano (Waze, Instagram), Excel→tabela→BD (analogia), anatomia de tabela (campo, registro, PK), SGBD (conceito, limitações do Excel), SQL: SELECT/FROM/WHERE/ORDER BY, operadores, funções de agregação COUNT/SUM/MAX/MIN/AVG, exercícios práticos, dinâmica Verdade ou Mito — Diário Orion: Introdução a banco de dados, excel, bancos relacionais, SELECT, FROM, WHERE, ORDER BY, operadores lógicos, consultas e filtragem de dados",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "Conceito de função (entrada/regra/saída), função linear f(x)=ax+b (Uber, salário, água), polinomial ax²+bx+c (frenagem, parábola), exponencial a·bˣ (post viral, juros), logarítmica log_b(x) (Richter, dB), exercício: identificar tipo de função, Kahoot final",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A07",
+      "numero": "A07",
+      "data": "2026-03-19",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "Debate estruturado \"IA é trapaça ou ferramenta?\" (dinâmica em 3 fases: duplas → times → porta-vozes), 4 famílias de ferramentas de IA (Texto/Imagem/Código/Voz-Áudio), geração de imagem no Gemini, prompt engineering básico (anatomia: Papel·Contexto·Tarefa·Formato) — Diário Orion: Debate sobre inteligência artificial é uma ferramenta fundamental no dia dia de agora, e do futuro de instituições de ensino e trabalho ou é uma trapaça e não deveria ter acesso?",
+          "ha": 5
+        },
+        {
+          "uc": "UC01",
+          "disciplina": "Fundamentos de Computação",
+          "conteudo": "[Orion] Reprise e enfatização em diretórios e sua manipulação via terminal mk dir, dir, cd.",
+          "ha": 2
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "[Orion] Termos iniciais, TOKENS, embbed, prompt, input. output, version, update, e etc",
+          "ha": 1
+        }
+      ]
+    },
+    {
+      "id": "A08",
+      "numero": "A08",
+      "data": "2026-03-20",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python",
+          "conteudo": "`if`/`else` (introdução básica), tabela verdade (`and`, `or`, `not`) — Diário Orion: / A08 / 20032026 / ~2 / ifelse (introdução e reforço), operadores lógicos `and`, `or`, `not`, tabela verdade / Ministrada /",
+          "ha": 2
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "Tipos de dados (INTEGER, VARCHAR, FLOAT, BOOLEAN), DML e DDL (conceitos), CREATE TABLE, INSERT INTO, constraints (PRIMARY KEY, NOT NULL — visão geral); 3 aulas seguidas de BD — Diário Orion: **Tópicos cobertos:** - Tipos de dados: `INTEGER`, `VARCHAR` (com tamanho), `FLOAT`, `BOOLEAN` - DDL vs DML: DDL modifica estrutura (CREATE, ALTER, DROP); DML manipula dados (INSERT, UPDATE, DELETE) - `CREATE TABLE`: sintaxe completa com tipos de dados e constraints - `INSERT INTO`: inserção de registros na tabela - Constraints: `PRIMARY KEY` e `NOT NULL` - vistos por cima, sem aprofundamento",
+          "ha": 3
+        },
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "[Orion] CPU vs GPU (paralelismo vs IA), RAM, HD vs SSD vs NVMe, periféricos, comparativo de componentes /",
+          "ha": 2
+        }
+      ]
+    },
+    {
+      "id": "A09",
+      "numero": "A09",
+      "data": "2026-03-26",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python",
+          "conteudo": "Anatomia de variável (nome/=/valor), tipos + `type()`, `input()`, conversão de tipos, operadores lógicos (`and`, `or`, `not`) — teoria coberta; apenas 2 exercícios concluídos na aula inteira — Diário Orion: Compilador, sintaxe de atribuição de variáveis, reforço de utilização e anatomia de funções embutidas do código, input, float, int, type, conversões de tipos de dados para operações, operadores lógicos elif de múltiplas condições",
+          "ha": 4
+        },
+        {
+          "uc": "UC03",
+          "disciplina": "Fund. Matemáticos",
+          "conteudo": "Operadores de comparação revisados, 1 exercício de elif com múltiplos condicionais: Alerta de Reator (capacidade >=90% CRÍTICO / >=80% ALTO / >=70% MODERADO / <70% NORMAL) — Diário Orion: Operações matématicas basicas, aritimética, intervalos e utilização desses intervalos dentro da linguagem de python",
+          "ha": 1
+        },
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] Fundamentos e conceitos de etica da IA",
+          "ha": 1
+        }
+      ]
+    },
+    {
+      "id": "A10",
+      "numero": "A10",
+      "data": "2026-03-27",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python",
+          "conteudo": "Gincana de Python em times: questões de código e leitura de output (\"o que é impresso\")",
+          "ha": 2
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "Os 4 D's do SQL (DDL/DML/DQL/DCL), tipos de dados, constraints, UPDATE, CREATE TABLE, INSERT INTO — revisão e consolidação — Diário Orion: Banco de dados todos os Ds da linguagem, DML, DQL DDL, e etc, operações mais avançadas de edições e delete de dados nas tabelas, e na estrutura das tabelas, com querys mais avançadas, explicação sobre constrains e tipos de dados no sql. Gincana Dado Kahoot.",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "[Orion] Gincana Dado Kahoot. Operações dentro do python",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A11",
+      "numero": "A11",
+      "data": "2026-04-09",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "Dinâmica em times: pesquisa autônoma de empresa real que usa IA (canvas de diagnóstico + canvas de protótipo de solução IA), apresentações dos times — Diário Orion: - Aplicar de forma assertiva os conceitos de transformação digital. - Utilizar ferramentas de IA no auxílio da transformação digital. - Compreender como a Inteligência Artificial (IA) pode apoiar diferentes formas de estratégia de negócio. - Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Estratégia e cultura organizacional: alinhamento estratégico; a importância do alinhamento com os objetivos de negócio; estratégias para integração de TI e negócios; cultura organizacional; transformação cultural como base para a transformação digital. — Observações: Pesquisar, diagnosticar e prototipar uma solução real de IA em times",
+          "ha": 3
+        },
+        {
+          "uc": "UC01",
+          "disciplina": "Fund. Computação",
+          "conteudo": "Word (pós-recreio): margens ABNT (3cm sup/esq · 2cm inf/dir), fonte Calibri 12/espaçamento 1,5, estilos H1 e H2, inserção e formatação de tabela (3 colunas), exportar em PDF — Diário Orion: - Conceitos fundamentais: hardware, software, periféricos e sistemas operacionais. - Produzir e revisar documentos no Word com formatação adequada ao propósito. - Colaboração no desenvolvimento do trabalho em equipe. — Observações: Configurar margens ABNT no Word Conigurar fonte do arquivo abrir arquivo em branco, salvar do formato correto, exportar em pdf, navegar no inserir tabelas dentro do word, fonte, paragrafo, espacamento de linhas",
+          "ha": 2
+        }
+      ]
+    },
+    {
+      "id": "A12",
+      "numero": "A12",
+      "data": "2026-04-10",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.",
+          "ha": 2
+        },
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "[Orion] - Introdução às GPUs e papel das GPUs na IA: papel das GPUs na computação moderna, diferenças entre CPU e GPU. Modelo de programação CUDA: kernels, threads, blocos e grades. Memória na GPU: hierarquia de memória em GPUs, incluindo registradores, memória compartilhada e memória global. conceitos básicos de pipelining e estágios do Pipeline.",
+          "ha": 2
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "[Orion] - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DQL: select. Regras de normalização de banco de dados; performance de consultas: índices, views, join",
+          "ha": 2
+        }
+      ]
+    },
+    {
+      "id": "A13",
+      "numero": "A13",
+      "data": "2026-04-11",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion] - Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório).",
+          "ha": 3
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Reconhecer códigos em Python para resolução de problemas. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A14",
+      "numero": "A14",
+      "data": "2026-04-16",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC01",
+          "disciplina": "Fundamentos de Computação",
+          "conteudo": "[Orion] - Produzir e revisar documentos no - Internet: conceito de navegador, tipos, características da web (endereços, domínio, URL), downloads e uploads, plug-ins de navegação, motores de busca, redes sociais, armazenamento em nuvem, boas práticas de comportamento virtual e conceito de LGPD, plataformas de comunicação: tipos, estrutura, ferramentas e configurações.Word com formatação adequada ao propósito.",
+          "ha": 2
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "[Orion] - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware.",
+          "ha": 1
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] - Tecnologias-chave na transformação digital: Internet das Coisas (IoT); Inteligência Artificial (IA); ferramentas digitais para Inteligência Artificial (chatbots, assistentes virtuais, assistentes de produção de texto, imagem, vídeos); Big Data e Analytics (processamento e análise de grandes conjuntos de dados, tomada de decisão baseada em dados); computação em nuvem e governança em nuvem; segurança digital na transformação: desafios de segurança na era digital; ameaças e vulnerabilidades; proteção de dados e privacidade; estratégias de segurança digital; conformidade com regulamentações (GDPR, LGPD).",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A15",
+      "numero": "A15",
+      "data": "2026-04-17",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários.",
+          "ha": 2
+        },
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "[Orion] cpu z",
+          "ha": 2
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "[Orion] - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico. - Análise de requisitos funcionais e não funcionais do banco de dados. - Dados e domínios: tipos, conceito e aplicabilidade. - Níveis de restrição de integridade dos dados: tabela, atributos e relacionamento.",
+          "ha": 2
+        }
+      ]
+    },
+    {
+      "id": "A16",
+      "numero": "A16",
+      "data": "2026-04-20",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Aplicar Inteligência Artificial em cenários reais: Aplicar as técnicas e métodos estudados para resolver problemas práticos, desenvolvendo soluções em cenários reais.",
+          "ha": 3
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] - Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Análise de cultura informacional: identificar tipos de cultura informacional e sua influência nas estratégias de informação e conhecimento.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A17",
+      "numero": "A17",
+      "data": "2026-04-23",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion] - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. avaliacao 3",
+          "ha": 2
+        },
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] Conhecimentos: - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. avaliacao 3",
+          "ha": 1
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. avaliacao 3",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A18",
+      "numero": "A18",
+      "data": "2026-04-24",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "[Orion] - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional).",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "[Orion] - Funções: linear, polinomial, logarítmica, exponencial. - Probabilidade básica: espaço amostral e eventos; probabilidade de um evento; regra da adição; probabilidade condicional; regra da multiplicação; variáveis aleatórias.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A19",
+      "numero": "A19",
+      "data": "2026-04-30",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC01",
+          "disciplina": "Fundamentos de Computação",
+          "conteudo": "[Orion] - Conceitos fundamentais: hardware, software, periféricos e sistemas operacionais. - Sistema operacional: área de trabalho, barra de tarefas, menu iniciar, criação e manipulação de arquivos e pastas, ferramentas administrativas, acessórios, painel de controle, área de transferências, atalhos de teclado e boas práticas de digitação.",
+          "ha": 2
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "[Orion] - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware.",
+          "ha": 1
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] Habilidades: - Aplicar de forma assertiva os conceitos de transformação digital. - Utilizar ferramentas de IA no auxílio da transformação digital. - Aplicar a gestão estratégica para as mudanças da cultura organizacional dentro da transformação digital. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "D2026-05-02",
+      "numero": null,
+      "data": "2026-05-02",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion, não confirmado] - Frameworks e bibliotecas de Inteligência Artificial: Familiaridade com ferramentas, frameworks e bibliotecas comuns usadas para desenvolvimento em Inteligência Artificial, como TensorFlow, Scikit-Learn e outras.",
+          "ha": 3
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion, não confirmado] - Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A20",
+      "numero": "A20",
+      "data": "2026-05-07",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion] Conhecimentos: - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos). - Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório). — Observações: av 05 e av 06",
+          "ha": 2
+        },
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] - Identificar e classificar técnicas de Inteligência Artificial: Habilidade de classificar os diferentes métodos e técnicas de IA em categorias apropriadas, de acordo com suas características e aplicações. — Observações: av 05 e av 06",
+          "ha": 1
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. — Observações: av 05 av 06",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A21",
+      "numero": "A21",
+      "data": "2026-05-08",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "[Orion] - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. — Observações: av06",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "[Orion] - Funções: linear, polinomial, logarítmica, exponencial. - Dados discretos: valores separados e contáveis. - Dados contínuos: podem assumir qualquer valor em um intervalo. Frequência absoluta: número de vezes que um valor ocorre. — Observações: av06",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A22",
+      "numero": "A22",
+      "data": "2026-05-14",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC01",
+          "disciplina": "Fundamentos de Computação",
+          "conteudo": "[Orion] 1 Indicador: Diferencia conceitos de hardware e software, operando o sistema operacional Windows para organizar arquivos, pastas e configurações básicas. 2 Indicador: Cria, edita, formata e imprime documentos digitais no Word, utilizando recursos de texto, tabelas, símbolos, figuras e layout de página.",
+          "ha": 2
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "[Orion] 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.",
+          "ha": 1
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] 1 Indicador: Compreende as aplicações dos fundamentos em transformação digital, demonstrado em práticas pedagógicas. 2 Indicador: Utiliza as ferramentas digitais de Inteligência Artificial, conforme boas práticas de mercado alinhadas à transformação digital.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A24",
+      "numero": "A24",
+      "data": "2026-05-15",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. — Observações: visita tec parq tec",
+          "ha": 3
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] 1 Indicador: Compreende as aplicações dos fundamentos em transformação digital, demonstrado em práticas pedagógicas. 2 Indicador: Utiliza as ferramentas digitais de Inteligência Artificial, conforme boas práticas de mercado alinhadas à transformação digital. — Observações: visita parq tec",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A25",
+      "numero": "A25",
+      "data": "2026-05-16",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "[Orion] 1 Indicador: Compreende e aplica funções matemáticas lineares. 2 Indicador: Compreende e aplica funções matemáticas polinomiais.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A26",
+      "numero": "A26",
+      "data": "2026-05-21",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] NSeq. CompetênciaIndicador 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. Conhecimentos: - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. - História da Inteligência Artificial e teste de Turing: Compreensão da evolução histórica da inteligência artificial, incluindo marcos importantes como o teste de Turing e suas implicações.",
+          "ha": 3
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] NSeq. CompetênciaIndicador 1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. Conhecimentos: - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A27",
+      "numero": "A27",
+      "data": "2026-05-22",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "[Orion] 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. - História da Inteligência Artificial e teste de Turing: Compreensão da evolução histórica da inteligência artificial, incluindo marcos importantes como o teste de Turing e suas implicações.",
+          "ha": 3
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] 3 Indicador: Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala. 4 Indicador: Compreende as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital. - Análise estratégica para Inteligência Artificial (IA): avaliação e planejamento da implementação de soluções de IA alinhadas aos objetivos estratégicos. - Gestão de informação e conhecimento: ciclo de vida da informação e do conhecimento para uso da Inteligência Artificial. Cultura organizacional e aprendizagem voltada à exploração de informações.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A28",
+      "numero": "A28",
+      "data": "2026-05-28",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC01",
+          "disciplina": "Fundamentos de Computação",
+          "conteudo": "[Orion] - Internet: conceito de navegador, tipos, características da web (endereços, domínio, URL), downloads e uploads, plug-ins de navegação, motores de busca, redes sociais, armazenamento em nuvem, boas práticas de comportamento virtual e conceito de LGPD, plataformas de comunicação: tipos, estrutura, ferramentas e configurações. - Operar recursos do Windows e organizar informações.",
+          "ha": 3
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "[Orion] 2 Indicador: Utiliza as ferramentas digitais de Inteligência Artificial, conforme boas práticas de mercado alinhadas à transformação digital. 3 Indicador: Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem. - Estratégia e cultura organizacional: alinhamento estratégico; a importância do alinhamento com os objetivos de negócio; estratégias para integração de TI e negócios; cultura organizacional; transformação cultural como base para a transformação digital.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A29",
+      "numero": "A29",
+      "data": "2026-05-29",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion] - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. 4 Indicador: Reconhece padrões e sequências numéricas para apoiar a construção de algoritmos básicos.",
+          "ha": 3
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion] NSeq. CompetênciaIndicador 1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A30",
+      "numero": "A30",
+      "data": "2026-05-30",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "[Orion] 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.",
+          "ha": 3
+        },
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "[Orion] 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU. 3 Indicador: Interpreta processos e threads em arquitetura de computadores e GPU.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "D2026-06-11",
+      "numero": null,
+      "data": "2026-06-11",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC01",
+          "disciplina": "Fundamentos de Computação",
+          "conteudo": "[Orion, não confirmado] 1 Indicador: Diferencia conceitos de hardware e software, operando o sistema operacional Windows para organizar arquivos, pastas e configurações básicas. 2 Indicador: Cria, edita, formata e imprime documentos digitais no Word, utilizando recursos de texto, tabelas, símbolos, figuras e layout de página. Conhecimentos: - Conceitos fundamentais: hardware, software, periféricos e sistemas operacionais. - Sistema operacional: área de trabalho, barra de tarefas, menu iniciar, criação e manipulação de arquivos e pastas, ferramentas administrativas, acessórios, painel de controle, área de transferências, atalhos de teclado e boas práticas de digitação. - Windows: área de trabalho, janelas, ícones, menus e aplicativos básicos.",
+          "ha": 3
+        },
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "[Orion, não confirmado] 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. Conhecimentos: - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware. - Estratégias de leitura instrumental: identificação de palavras-chave, reconhecimento de cognatos, falsos cognatos, scanning e skimming.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "D2026-06-12",
+      "numero": null,
+      "data": "2026-06-12",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "[Orion, não confirmado] 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU. Conhecimentos: - Introdução à arquitetura de computadores: modelos de Von Neumann e Harvard; registradores e memória principal; barramentos de dados, endereços e controle; arquiteturas RISC, CISC, SIMD e MIMD. - Processos e threads: conceito de processos e threads; estados de um processo.",
+          "ha": 3
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "[Orion, não confirmado] 1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico. - Análise de requisitos funcionais e não funcionais do banco de dados. - Dados e domínios: tipos, conceito e aplicabilidade.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "D2026-06-13",
+      "numero": null,
+      "data": "2026-06-13",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion, não confirmado] - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. 3 Indicador: Emprega noções de conjuntos, funções e matrizes na organização e representação de informações.",
+          "ha": 3
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "[Orion, não confirmado] 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "D2026-06-18",
+      "numero": null,
+      "data": "2026-06-18",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion, não confirmado] 1 Indicador: Aplica operações fundamentais da aritmética e da álgebra em problemas relacionados à computação. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos). - Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório).",
+          "ha": 3
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "[Orion, não confirmado] 1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. - Níveis de restrição de integridade dos dados: tabela, atributos e relacionamento. - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A35",
+      "numero": "A35",
+      "data": "2026-06-19",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "pandas: `pd.read_csv()` · `.head()` · `.describe()` com dataset real (`copa2026_stats.csv`) · carregamento e exploração de CSV · coluna numérica em pandas — Diário Orion: - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. 4 Indicador: Utiliza bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "Pesquisa autônoma em sala reversa: média · mediana (robustez a outlier) · desvio padrão (consistência) — testes de compreensão com exemplos práticos · conceito de hipótese · revisão de hipótese com 3 métricas — Diário Orion: 1 Indicador: Compreende e aplica funções matemáticas lineares. 2 Indicador: Compreende e aplica funções matemáticas polinomiais. 3 Indicador: Compreende e aplica funções matemáticas logarítmicas. 4 Indicador: Compreende e aplica funções matemáticas exponenciais. 5 Indicador: Interpreta e aplica probabilidades básicas. 6 Indicador: Compreende variável qualitativa e quantitativa. 7 Indicador: Aplica dados discretos e contínuos. - Frequência relativa: proporção de vezes que um valor ocorre em relação ao total. Distribuição de frequência: tabela que mostra a frequência de cada valor. - Média: soma dos valores dividida pelo número de observações. Mediana: valor que divide a amostra em duas partes iguais. - Moda: valor que ocorre com maior frequência.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A36",
+      "numero": "A36",
+      "data": "2026-06-25",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "Média e mediana (robustez a outlier) · desvio padrão: conceito e fórmula · análise de dados reais da Copa 2022 · Argentina vs Marrocos 2022: comparação de consistência · atividade prática: cálculo manual passo a passo de média, mediana e DP com dados do Japão 2022 · debate: quantidade de chutes vs consistência defensiva — Diário Orion: 1 Indicador: Compreende e aplica funções matemáticas lineares. 2 Indicador: Compreende e aplica funções matemáticas polinomiais. 3 Indicador: Compreende e aplica funções matemáticas logarítmicas. - Funções: linear, polinomial, logarítmica, exponencial. - Probabilidade básica: espaço amostral e eventos; probabilidade de um evento; regra da adição; probabilidade condicional; regra da multiplicação; variáveis aleatórias. - Variável qualitativa: representa características não numéricas (categóricas). Variável quantitativa: representa quantidades numéricas. - Dados discretos: valores separados e contáveis.",
+          "ha": 3
+        },
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "Revisão: SELECT/FROM/WHERE/ORDER BY · GROUP BY: separar dados em pilhas e agregar · funções de agregação SQL: AVG, COUNT, SUM, MAX, MIN, ROUND · INNER JOIN: juntar tabelas pelo campo comum (alias s. e h.) · atividade em grupos: teste de 5 hipóteses com dados da Copa usando GROUP BY e JOIN · SQL vs Planilha: quando usar cada ferramenta — Diário Orion: 1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. 3 Indicador: Cria a estrutura física de banco de dados, de acordo com os requisitos da aplicação e da modelagem de dados. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico.",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A37",
+      "numero": "A37",
+      "data": "2026-06-26",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "pandas: introdução e diferença vs Excel · pip install pandas · import pandas as pd e alias pd · pd.read_csv() carregamento de CSV · df.head() e df.head(N) exploração de linhas · df.describe() estatísticas automáticas (mean, std, min, max, quartis) · df[\"coluna\"] acesso a coluna específica · .mean() cálculo de média em pandas · .median() cálculo de mediana em pandas · filtragem com df[df[\"coluna\"] == valor] · criação de CSV no Excel com 5 colunas estruturadas (seleção, copa, chutes, gols_pro, fase_eliminada) · EX01–EX03 (criar planilha, carregar CSV, calcular média/mediana) — Diário Orion: 1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. Conhecimentos: - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.",
+          "ha": 3
+        },
+        {
+          "uc": "UC09",
+          "disciplina": "Estatística Aplicada",
+          "conteudo": "Fórmula do desvio padrão: DP = raiz(soma((xi − média)²) / n) · cálculo passo a passo (6 passos) · cálculo manual com dados reais (Japão 2022: 12, 8, 6, 8 chutes) · .std() em pandas verificação do desvio padrão calculado · interpretação prática: DP baixo = consistência, DP alto = irregularidade · comparação de estilos de jogo pela DP (Japão 2022 ~2.18 vs time hipotético ~8.0) · brainstorm sobre DP e análise tática · visão geral do sistema de consulta com filtro · EX04 (calcular média, mediana e DP no papel com dados do Japão)",
+          "ha": 3
+        },
+        {
+          "uc": "UC03",
+          "disciplina": "Fundamentos Matemáticos",
+          "conteudo": "[Orion] 1 Indicador: Aplica operações fundamentais da aritmética e da álgebra em problemas relacionados à computação. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. 3 Indicador: Emprega noções de conjuntos, funções e matrizes na organização e representação de informações. - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos).",
+          "ha": 3
+        }
+      ]
+    },
+    {
+      "id": "A38",
+      "numero": "A38",
+      "data": "2026-07-02",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "Von Neumann vs. Harvard: modelos de arquitetura de computadores · atividade comparativa em papel (esquema von Neumann sequencial vs harvard paralelo) · componentes, fluxo de dados — Diário Orion: Introdução à arquitetura de computadores: modelos de Von Neumann e Harvard; registradores e memória principal; barramentos de dados, endereços e controle; arquiteturas RISC, CISC, SIMD e MIMD. 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU.",
+          "ha": 1.5
+        },
+        {
+          "uc": "UC07",
+          "disciplina": "Transformação Digital",
+          "conteudo": "Dilemas éticos da IA: o que a IA não deveria decidir sozinha · World Café (dinâmica com cartões e fichas de debate) · debate estruturado em rotações — Diário Orion: - Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem. - Estratégia e cultura organizacional: alinhamento estratégico; a importância do alinhamento com os objetivos de negócio; estratégias para integração de TI e negócios; cultura organizacional; transformação cultural como base para a transformação digital. 3 Indicador: Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala. 4 Indicador: Compreende as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital.",
+          "ha": 1.5
+        }
+      ]
+    },
+    {
+      "id": "A39",
+      "numero": "A39",
+      "data": "2026-07-03",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC04",
+          "disciplina": "Fundamentos e Conceitos de IA",
+          "conteudo": "Pesquisa conceitual em grupo (10 grupos, 29 alunos): 3 algoritmos de IA — KNN (k-nearest neighbors) · Árvore de Decisão · K-Means (clustering) — apresentação conceitual respondendo \"que viés esse algoritmo pode ter?\" — Diário Orion: - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.",
+          "ha": 3
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "Instalação e configuração de scikit-learn · preparação de ambiente para implementação futura com dataset \"CatálogoStream\" (tema Netflix/streaming) — Diário Orion: Biblioteca de manipulação de dados: Pandas, Numpy, Matplotlib. 4 Indicador: Utiliza bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.",
+          "ha": 2
+        }
+      ]
+    },
+    {
+      "id": "A40",
+      "numero": "A40",
+      "data": "2026-07-09",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC02",
+          "disciplina": "Inglês Instrumental",
+          "conteudo": "Dinâmica com cartõezinhos (Case File + Schema Card) · atividade de tradução de termos técnicos · vocabulário de tipos de dados para SQL e Python (int, string, float, boolean etc.) — Diário Orion: Leitura de interfaces, menus e instruções de softwares em inglês. 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. — Diário Orion: - Leitura de interfaces, menus e instruções de softwares em inglês. 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.",
+          "ha": 2
+        },
+        {
+          "uc": "UC05",
+          "disciplina": "Python para IA",
+          "conteudo": "pandas: groupby consolidado · queries fluidas (\"lisinhas\") · aprofundamento de métodos pandas — Diário Orion: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. - Biblioteca de manipulação de dados: Pandas, Numpy, Matplotlib. — Diário Orion: 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. - Biblioteca de manipulação de dados: Pandas, Numpy, Matplotlib.",
+          "ha": 2
+        }
+      ]
+    },
+    {
+      "id": "A41",
+      "numero": "A41",
+      "data": "2026-07-10",
+      "tipo": "aula",
+      "status": "dada",
+      "observacao": null,
+      "blocos": [
+        {
+          "uc": "UC08",
+          "disciplina": "Banco de Dados",
+          "conteudo": "SQL: WHERE (reforço), GROUP BY, HAVING (novo) · atividade: transcrição das queries-resposta do exercício (cópia guiada para fixação) — Diário Orion: Cria e manipula consultas SQL de forma adequada para resolução de problemas. - Instruções da linguagem SQL-DQL: select. — Diário Orion: 5 Indicador: Cria e manipula consultas SQL de forma adequada para resolução de problemas. - Instruções da linguagem SQL-DQL: select.",
+          "ha": 2
+        },
+        {
+          "uc": "UC06",
+          "disciplina": "Arquitetura de Computadores e GPU",
+          "conteudo": "Taxonomia de Flynn: SISD · SIMD · MISD · MIMD · exercício prático — Diário Orion: SIMD e MIMD. Reconhece modelos aplicados em arquitetura de computadores e GPU. Reconhece e aplica conceitos de Pipeline para GPU. — Diário Orion: SIMD e MIMD. 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU.",
+          "ha": 2
+        }
+      ]
+    }
+  ]
+}

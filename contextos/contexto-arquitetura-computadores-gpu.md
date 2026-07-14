@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC06
 disciplina: Arquitetura de Computadores e GPU
 ha-total: 40
-ha-dado: 5
-ha-restante: 35
+ha-dado: 7
+ha-restante: 33
 trimestre-atual: T2
 ---
 
@@ -16,7 +16,7 @@ trimestre-atual: T2
 |---|---|---|---|---|
 | T1 | 1 | CPU vs GPU: paralelismo vs IA · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | 1 | ✅ A03 |
 | T1 | 2 | Arquitetura CPU: ALU · CU · registradores · barramento · ciclo fetch-decode-execute · Von Neumann vs. Harvard (modelos de arquitetura) | 2 | ✅ A38 |
-| T1 | 3 | Arquitetura GPU: CUDA cores · VRAM · tensor cores · SIMD | 2 | ⬜ |
+| T1 | 3 | Arquitetura GPU: CUDA cores · VRAM · tensor cores · SIMD | 2 | ✅ A41 (Taxonomia de Flynn: SISD/SIMD/MISD/MIMD — CUDA cores/VRAM/tensor cores pendentes) |
 | T1 | 4 | Pipeline GPU: como um modelo ML usa a GPU (batch processing · CUDA stream) | 2 | ⬜ |
 | T1 | 5 | Comparativo CPU vs GPU em inferência vs treino · escolha de hardware | 2 | ⬜ |
 | T1 | 6 | Exercício: configurar servidor de treino ML (qual GPU, quanta VRAM, qual CPU?) | 2 | ⬜ |
@@ -41,14 +41,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 11 (ajustado) | 1 | 10 |
-| T2 | 14 | ~2 | ~12 |
+| T2 | 14 | ~4 | ~10 |
 | T3 | 13 | 0 | 13 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A38 · 02/07 · Von Neumann vs. Harvard: atividade comparativa em papel · fluxo de dados e componentes · World Café (dinâmica leve integrada com UC07 ética)
+A41 · 10/07 · Taxonomia de Flynn: SISD · SIMD · MISD · MIMD · exercício prático
 
 ---
 
@@ -69,6 +69,11 @@ A38 · 02/07 · Von Neumann vs. Harvard: atividade comparativa em papel · fluxo
 
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
+| A41 | 10/07 | ~2 | Taxonomia de Flynn: SISD · SIMD · MISD · MIMD · exercício prático — Diário Orion: SIMD e MIMD. Reconhece modelos aplicados em arquitetura de computadores e GPU. Reconhece e aplica conceitos de Pipeline para GPU. | Exercício "top" — engajamento alto |
+| A?? | 12/06 | ~3 | 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU. Conhecimentos: - Introdução à arquitetura de computadores: modelos de Von Neumann e Harvard; registradores e memória principal; barramentos de dados, endereços e controle; arquiteturas RISC, CISC, SIMD e MIMD. - Processos e threads: conceito de processos e threads; estados de um processo. | OrionWeb, não confirmado — só p/ contagem de HA |
+| A15 | 17/04 | ~2 | cpu z | Reconstruído via diário OrionWeb |
+| A12 | 10/04 | ~2 | - Introdução às GPUs e papel das GPUs na IA: papel das GPUs na computação moderna, diferenças entre CPU e GPU. Modelo de programação CUDA: kernels, threads, blocos e grades. Memória na GPU: hierarquia de memória em GPUs, incluindo registradores, memória compartilhada e memória global. conceitos básicos de pipelining e estágios do Pipeline. | Reconstruído via diário OrionWeb |
+| A08 | 20/03 | ~2 | CPU vs GPU (paralelismo vs IA), RAM, HD vs SSD vs NVMe, periféricos, comparativo de componentes / | Reconstruído via diário OrionWeb |
 | A03 | 05/03 | ~1 | CPU vs GPU (paralelismo vs IA) · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | Apenas comparativo visual/funcional — arquitetura interna não coberta |
 | A30 | 30/05 | ~2 | Desmontagem de PC ao vivo · identificação física de CPU, GPU, RAM, SSD, placa-mãe · vocabulário técnico PT/EN · apresentação criativa por grupos | — |
 | A38 | 02/07 | ~1,5 | Von Neumann vs. Harvard · modelos de arquitetura · atividade comparativa em papel · fluxo de dados · componentes | Dinâmica World Café integrada (UC07) engajou muito; estratégia de rotação provou efetiva |

@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC05
 disciplina: Python para IA
 ha-total: 80
-ha-dado: 32
-ha-restante: 48
+ha-dado: 34
+ha-restante: 46
 trimestre-atual: T2
 ---
 
@@ -28,7 +28,7 @@ trimestre-atual: T2
 | T2 | 11 | arquivos: open() · read() · write() · CSV | 2 | ⬜ |
 | T2 | 12 | try/except: exceções comuns · ZeroDivision · ValueError | 1 | ⬜ |
 | T2 | 13 | NumPy: arrays · operações vetorizadas · reshape | 3 | ⬜ |
-| T2 | 14 | pandas: read_csv · .head() · .describe() · filter · groupby | 4 | ✅ A37 (read_csv, .head(), .describe(), .mean(), .median(), filtragem cobertos; groupby pendente para próxima) |
+| T2 | 14 | pandas: read_csv · .head() · .describe() · filter · groupby | 4 | ✅ A37/A40 (read_csv, .head(), .describe(), .mean(), .median(), filtragem, groupby cobertos) |
 | T3 | 15 | matplotlib: plot · histogram · scatter | 2 | ⬜ |
 | T3 | 16 | sklearn: fit · predict · train_test_split | 3 | ⬜ |
 | T3 | 17 | projeto final: dataset real end-to-end | 4 | ⬜ |
@@ -42,14 +42,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 26 | 24 | 0 (T1 encerrado, 2 HA de déficit absorvidos) |
-| T2 | 27 | 6 | 21 |
+| T2 | 27 | 8 | 19 |
 | T3 | 13 | 0 | 13 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A39 · 03/07 · pip install scikit-learn · configuração de ambiente para implementação futura com fit/predict
+A40 · 09/07 · pandas: groupby consolidado · queries fluidas · aprofundamento de métodos pandas
 
 ---
 
@@ -69,6 +69,14 @@ A39 · 03/07 · pip install scikit-learn · configuração de ambiente para impl
 
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
+| A40 | 09/07 | ~2 | pandas: groupby consolidado · queries fluidas ("lisinhas") · aprofundamento de métodos pandas — Diário Orion: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. Biblioteca de manipulação de dados: Pandas, Numpy, Matplotlib. | Aula completa, bom ritmo |
+| A?? | 13/06 | ~3 | 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. | OrionWeb, não confirmado — só p/ contagem de HA |
+| A29 | 29/05 | ~3 | NSeq. CompetênciaIndicador 1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. | Reconstruído via diário OrionWeb |
+| A20 | 07/05 | ~3 | - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. — Observações: av 05 av 06 | Reconstruído via diário OrionWeb |
+| A17 | 23/04 | ~3 | - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. avaliacao 3 | Reconstruído via diário OrionWeb |
+| A15 | 17/04 | ~2 | - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. | Reconstruído via diário OrionWeb |
+| A13 | 11/04 | ~3 | - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Reconhecer códigos em Python para resolução de problemas. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. | Reconstruído via diário OrionWeb |
+| A12 | 10/04 | ~2 | - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. | Reconstruído via diário OrionWeb |
 | A39 | 03/07 | ~2 | pip install scikit-learn · configuração de ambiente de desenvolvimento para sklearn | Instalação consumiu tempo planejado; implementação real com fit/predict pendente |
 | A37 | 26/06 | ~3 | pandas: import · read_csv · .head() · .describe() · .mean() · .median() · filtragem com df["col"] == val | Engajamento alto; dificuldade com import/instalação/sintaxe básica de biblioteca |
 | A35 | 19/06 | ~3 | pandas: read_csv · .head() · .describe() com dataset real (copa2026_stats.csv) | pandas não consolidado — dinâmica focou em exploração visual; sem tempo para aprofundar métodos pandas |

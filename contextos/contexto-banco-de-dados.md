@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC08
 disciplina: Banco de Dados
 ha-total: 80
-ha-dado: 24
-ha-restante: 56
+ha-dado: 26
+ha-restante: 54
 trimestre-atual: T2
 ---
 
@@ -24,7 +24,7 @@ trimestre-atual: T2
 | T2 | 8 | Mini-projeto: BD notas com SQLite | 2 | ⬜ |
 | T2 | 9 | Python + SQLite: sqlite3 · cursor.execute() · fetchall() | 2 | ⬜ |
 | T2 | 10 | SQL-DCL: USER · GRANT · REVOKE · perfis de acesso | 2 | ⬜ |
-| T2 | 11 | SQL-DQL avançado: GROUP BY · HAVING · subqueries | 3 | ✅ A36 (GROUP BY + funções agregação) · ⏳ A37 (HAVING + subqueries) |
+| T2 | 11 | SQL-DQL avançado: GROUP BY · HAVING · subqueries | 3 | ✅ A36 (GROUP BY + funções agregação) · ✅ A41 (HAVING) · ⏳ subqueries |
 | T2 | 12 | Transações: BEGIN · COMMIT · ROLLBACK | 1 | ⬜ |
 | T2 | 13 | Normalização: 1NF · 2NF · 3NF | 3 | ⬜ |
 | T2 | 14 | Views e índices: CREATE VIEW · CREATE INDEX | 2 | ⬜ |
@@ -54,14 +54,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 26 | 21 | 0 (T1 encerrado, 5 HA de déficit absorvidos) |
-| T2 | 27 | 3 | 24 |
+| T2 | 27 | 5 | 22 |
 | T3 | 27 | 0 | 27 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A36 · 25/06 · GROUP BY (separar em pilhas e agregar) · funções de agregação (AVG, COUNT, SUM, MAX, MIN, ROUND) · INNER JOIN (juntar tabelas) · atividade em grupos testando hipóteses da Copa
+A41 · 10/07 · WHERE (reforço) · GROUP BY · HAVING (novo) · atividade de transcrição guiada de queries-resposta
 
 ---
 
@@ -83,13 +83,16 @@ A36 · 25/06 · GROUP BY (separar em pilhas e agregar) · funções de agregaç�
 
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
+| A41 | 10/07 | ~2 | SQL: WHERE (reforço), GROUP BY, HAVING (novo) · atividade: transcrição das queries-resposta do exercício (cópia guiada para fixação) — Diário Orion: Cria e manipula consultas SQL de forma adequada para resolução de problemas. Instruções da linguagem SQL-DQL: select. | Bem proveitoso — engajamento positivo |
+| A?? | 18/06 | ~3 | 1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. - Níveis de restrição de integridade dos dados: tabela, atributos e relacionamento. - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. | OrionWeb, não confirmado — só p/ contagem de HA |
+| A?? | 12/06 | ~3 | 1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico. - Análise de requisitos funcionais e não funcionais do banco de dados. - Dados e domínios: tipos, conceito e aplicabilidade. | OrionWeb, não confirmado — só p/ contagem de HA |
 | A06 | 13/03 | 6 | Dados no cotidiano · tabela · SGBD · Excel vs BD · SELECT/FROM/WHERE/ORDER BY · operadores · COUNT/SUM/MAX/MIN/AVG | 6h registradas no sistema (bloco duplo); hook "iFood" gerou engajamento alto |
 | A08 | 20/03 | 2 | Tipos SQL (INTEGER/VARCHAR/FLOAT/BOOLEAN) · DDL vs DML · CREATE TABLE · INSERT INTO · PK e NOT NULL (intro rápida) | constraints vistas por cima, sem aprofundamento |
 | A10 | 27/03 | 3 | 4 Ds (DDL/DML/DQL/DCL) · ALTER TABLE · constraints completas (PK/NOT NULL/UNIQUE/DEFAULT) · UPDATE · DELETE · TRUNCATE vs DROP · LIMIT/DISTINCT/AS | DCL apresentado no mapa, aprofundar T2 |
-| A?? | 10/04 | 2 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
-| A?? | 17/04 | 2 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
-| A?? | 24/04 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
-| A?? | 08/05 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A12 | 10/04 | 2 | - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DQL: select. Regras de normalização de banco de dados; performance de consultas: índices, views, join | (enriquecido via diário OrionWeb) |
+| A15 | 17/04 | 2 | - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico. - Análise de requisitos funcionais e não funcionais do banco de dados. - Dados e domínios: tipos, conceito e aplicabilidade. - Níveis de restrição de integridade dos dados: tabela, atributos e relacionamento. | (enriquecido via diário OrionWeb) |
+| A18 | 24/04 | 3 | - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). | (enriquecido via diário OrionWeb) |
+| A21 | 08/05 | 3 | - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. — Observações: av06 | (enriquecido via diário OrionWeb) |
 | A36 | 25/06 | ~3 | Revisão SELECT/WHERE/ORDER BY · GROUP BY (separar em pilhas, agregar) · funções de agregação (AVG, COUNT, SUM, MAX, MIN, ROUND) · INNER JOIN (live coding, alias) · atividade em grupos (5 hipóteses da Copa) | Turma com dificuldade em escrever SQL manualmente sem modelo pronto |
 
 ---
@@ -102,6 +105,7 @@ A36 · 25/06 · GROUP BY (separar em pilhas e agregar) · funções de agregaç�
 | 2026-03-20 | Constraints PK e NOT NULL vistas por cima — sem aprofundamento | Reforçar constraints antes de avançar para FK |
 | 2026-03-27 | Turma relembrou bem via revisão; ritmo lento mas progresso | Próximo passo: FK + JOIN |
 | 2026-06-25 | Turma com dificuldade em escrever SQL manualmente — reconhecem estrutura mas hesitam sem modelo pronto | Reforçar: sempre começar escrevendo no papel antes de digitar · praticar variações de queries com mudanças mínimas · criar templates reutilizáveis |
+| 2026-07-10 | Estratégia de cópia guiada (transcrever as queries-resposta do exercício) funcionou bem como resposta à dificuldade relatada em A36 | Manter cópia guiada como passo intermediário antes de pedir SQL do zero |
 
 ---
 

@@ -50,6 +50,11 @@ onMounted(async () => {
             class="px-4 py-2 text-sm font-medium transition border-b-2"
             :class="route.path === '/avaliacoes' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
           >Avaliações</RouterLink>
+          <RouterLink
+            to="/calendario"
+            class="px-4 py-2 text-sm font-medium transition border-b-2"
+            :class="route.path === '/calendario' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
+          >Calendário</RouterLink>
         </nav>
       </div>
     </header>

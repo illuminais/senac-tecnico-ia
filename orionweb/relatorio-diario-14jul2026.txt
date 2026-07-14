@@ -1,0 +1,749 @@
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17525 - Fundamentos de computação - CH: 34
+ Período: 19/03/2026 - 18/12/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    19/03-2h    09/04-2h    16/04-2h    30/04-2h    14/05-2h    28/05-3h    11/06-3h    30/07-3h    21/08-6h    27/08-6h    04/09-6h    10/09-6h    18/09-6h    24/09-6h    02/10-6h    08/10-6h    16/10-6h    22/10-6h    30/10-6h    05/11-6h    09/11-6h    10/11-6h    11/11-6h    13/11-6h    19/11-6h    27/11-6h    03/12-6h    11/12-6h    17/12-6h    18/12-6h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C C    F F    C C    C C    C C    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    5
+2    ANA CLARA PIRES LOPES    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+3    ANA JULIA FONTANA BROL    F F    C C    C C    C C    F C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+4    ANDERSON NUNES MARQUEZ    C C    C C    C C    C C    F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+6    ARTHUR HAACKE    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+7    BIANCA PEREIRA GOMES    C C    C C    F F    C C    C C    F F F    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    8
+8    EDSON MACIEL FALCÃO    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+9    GABRIEL ANTUNES CARDOSO    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C    C C    F F    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+11    GRAZIELY SIQUEIRA RODRIGUES    C C    F F    C C    C C    C C    F F F    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    8
+12    GUSTAVO CORREIA FERREIRA    C C    C C    F F    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+13    IGOR RAVANELI    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+14    ISABELLA TROJAN ELIAS    C C    C C    C C    C C    F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+15    JOÃO LUCAS CADENA    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+16    JOÃO VITOR GODOY VIEIRA    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C C    F F    C C    C C    C C    F F F    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    8
+18    JULLYA EDUARDA ALBANI DA SILVA    C C    C C    F F    F F    F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    6
+19    KALIEL PAGNONCELI    --    C C    C C    C C    F F    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    5
+20    LIVIA HOFMANN DE MELLO COSTA    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+21    LUCAS DE JESUS MIRANDA    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C    C C    C C    F F    C C    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    5
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C    F F    C C    C C    F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    4
+26    RAUL CEZAR SOUZA BOFF    C C    C C    C C    F F    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+27    SAMUEL PRESTES DE OLIVEIRA    C C    C C    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+28    STHEFANY MARTINS DE JESUS    C C    C C    F F    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+29    VALENTINA FAGUNDES CALDART    C C    F F    C C    C C    C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+30    VITÓRIA HENNIG BESSA    F F    C C    C C    C C    C C    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    5
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17525 - Fundamentos de computação - CH: 34
+ Período: 19/03/2026 - 18/12/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+19/03/2026    BASE TECNOLÓGICA:
+Reprise e enfatização em diretórios e sua manipulação via terminal mk dir, dir, cd.
+09/04/2026    BASE TECNOLÓGICA:
+- Conceitos fundamentais: hardware, software, periféricos e sistemas operacionais. - Produzir e revisar documentos no Word com formatação adequada ao propósito. - Colaboração no desenvolvimento do trabalho em equipe.
+OBSERVAÇÕES:
+Configurar margens ABNT no Word Conigurar fonte do arquivo abrir arquivo em branco, salvar do formato correto, exportar em pdf, navegar no inserir tabelas dentro do word, fonte, paragrafo, espacamento de linhas
+16/04/2026    BASE TECNOLÓGICA:
+- Produzir e revisar documentos no - Internet: conceito de navegador, tipos, características da web (endereços, domínio, URL), downloads e uploads, plug-ins de navegação, motores de busca, redes sociais, armazenamento em nuvem, boas práticas de comportamento virtual e conceito de LGPD, plataformas de comunicação: tipos, estrutura, ferramentas e configurações.Word com formatação adequada ao propósito.
+30/04/2026    BASE TECNOLÓGICA:
+- Conceitos fundamentais: hardware, software, periféricos e sistemas operacionais. - Sistema operacional: área de trabalho, barra de tarefas, menu iniciar, criação e manipulação de arquivos e pastas, ferramentas administrativas, acessórios, painel de controle, área de transferências, atalhos de teclado e boas práticas de digitação.
+14/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Diferencia conceitos de hardware e software, operando o sistema operacional Windows para organizar arquivos, pastas e configurações básicas. 2 Indicador: Cria, edita, formata e imprime documentos digitais no Word, utilizando recursos de texto, tabelas, símbolos, figuras e layout de página.
+28/05/2026    BASE TECNOLÓGICA:
+- Internet: conceito de navegador, tipos, características da web (endereços, domínio, URL), downloads e uploads, plug-ins de navegação, motores de busca, redes sociais, armazenamento em nuvem, boas práticas de comportamento virtual e conceito de LGPD, plataformas de comunicação: tipos, estrutura, ferramentas e configurações. - Operar recursos do Windows e organizar informações.
+11/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Diferencia conceitos de hardware e software, operando o sistema operacional Windows para organizar arquivos, pastas e configurações básicas. 2 Indicador: Cria, edita, formata e imprime documentos digitais no Word, utilizando recursos de texto, tabelas, símbolos, figuras e layout de página. Conhecimentos: - Conceitos fundamentais: hardware, software, periféricos e sistemas operacionais. - Sistema operacional: área de trabalho, barra de tarefas, menu iniciar, criação e manipulação de arquivos e pastas, ferramentas administrativas, acessórios, painel de controle, área de transferências, atalhos de teclado e boas práticas de digitação. - Windows: área de trabalho, janelas, ícones, menus e aplicativos básicos.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17526 - Inglês Instrumental aplicado à computação - CH: 33
+ Período: 19/03/2026 - 13/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    19/03-1h    09/04-1h    16/04-1h    30/04-1h    14/05-1h    30/05-3h    11/06-3h    09/07-3h    13/08-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C    F    C    C    C    C C C    F F F    C C C    --    4
+2    ANA CLARA PIRES LOPES    C    C    C    C    C    C C C    C C C    C C C    --    0
+3    ANA JULIA FONTANA BROL    F    C    C    C    C    C C C    C C C    C C C    --    1
+4    ANDERSON NUNES MARQUEZ    C    C    C    C    F    C C C    C C C    F F F    --    4
+5    ANTONELLA SOPHIA MATA VASQUEZ    C    C    C    C    C    C C C    C C C    C C C    --    0
+6    ARTHUR HAACKE    C    C    C    C    C    C C C    C C C    C C C    --    0
+7    BIANCA PEREIRA GOMES    C    C    F    C    C    F F F    F F F    F F F    --    10
+8    EDSON MACIEL FALCÃO    C    C    C    C    C    C C C    C C C    C C C    --    0
+9    GABRIEL ANTUNES CARDOSO    C    C    C    C    C    C C C    C C C    C C C    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C    C    F    C    C    F F F    C C C    C C C    --    4
+11    GRAZIELY SIQUEIRA RODRIGUES    C    F    C    C    C    F F F    F F F    F F F    --    10
+12    GUSTAVO CORREIA FERREIRA    C    C    F    C    C    F F F    C C C    C C C    --    4
+13    IGOR RAVANELI    C    C    C    C    C    F F F    C C C    C C C    --    3
+14    ISABELLA TROJAN ELIAS    C    C    C    C    F    C C C    C C C    C C C    --    1
+15    JOÃO LUCAS CADENA    C    C    C    C    C    F F F    C C C    C C C    --    3
+16    JOÃO VITOR GODOY VIEIRA    C    C    C    C    C    C C C    C C C    C C C    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C    F    C    C    C    C C C    F F F    C C C    --    4
+18    JULLYA EDUARDA ALBANI DA SILVA    C    C    F    F    F    F F F    C C C    F F F    --    9
+19    KALIEL PAGNONCELI    --    C    C    C    F    C C C    F F F    C C C    --    4
+20    LIVIA HOFMANN DE MELLO COSTA    C    C    C    C    C    F F F    C C C    C C C    --    3
+21    LUCAS DE JESUS MIRANDA    C    C    C    C    C    C C C    C C C    C C C    --    0
+22    LUDMYLA DUARTE PORFIRIO SILVA    C    C    C    F    C    F F F    F F F    F F F    --    10
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C    C    C    C    C    C C C    C C C    C C C    --    0
+24    PEDRO RICARDO DALMAGRO GHIGGI    C    C    C    C    C    F F F    C C C    C C C    --    3
+25    PEDRO SILVA MATHIASS FEDERIGHI    C    F    C    C    F    F F F    C C C    F F F    --    8
+26    RAUL CEZAR SOUZA BOFF    C    C    C    F    C    C C C    C C C    C C C    --    1
+27    SAMUEL PRESTES DE OLIVEIRA    C    C    C    C    C    C C C    C C C    C C C    --    0
+28    STHEFANY MARTINS DE JESUS    C    C    C    C    C    C C C    C C C    C C C    --    0
+29    VALENTINA FAGUNDES CALDART    C    F    C    C    C    C C C    C C C    C C C    --    1
+30    VITÓRIA HENNIG BESSA    F    C    C    C    C    C C C    F F F    C C C    --    4
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17526 - Inglês Instrumental aplicado à computação - CH: 33
+ Período: 19/03/2026 - 13/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+19/03/2026    BASE TECNOLÓGICA:
+Termos iniciais, TOKENS, embbed, prompt, input. output, version, update, e etc
+09/04/2026    BASE TECNOLÓGICA:
+- Anglicismos no cotidiano digital: login, backup, browser, software, hardware. Focados em termos técnicos de inglês
+OBSERVAÇÕES:
+Desenvolver os termos tecnicos em ingles de ia, e absorver com o entendimento proprio esse conceito no cotidiano de ia
+16/04/2026    BASE TECNOLÓGICA:
+- Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware.
+30/04/2026    BASE TECNOLÓGICA:
+- Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware.
+14/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.
+30/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.
+11/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. Conhecimentos: - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware. - Estratégias de leitura instrumental: identificação de palavras-chave, reconhecimento de cognatos, falsos cognatos, scanning e skimming.
+09/07/2026    BASE TECNOLÓGICA:
+- Leitura de interfaces, menus e instruções de softwares em inglês. 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17527 - Fundamentos matemáticos para computação e Inteligência Artificial - CH: 33
+ Período: 26/03/2026 - 31/07/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    26/03-2h    11/04-3h    23/04-2h    07/05-2h    29/05-3h    13/06-3h    18/06-3h    26/06-3h    31/07-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+2    ANA CLARA PIRES LOPES    C C    C C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+3    ANA JULIA FONTANA BROL    C C    F F F    F F    C C    C C C    C C C    C C C    C C C    --    5
+4    ANDERSON NUNES MARQUEZ    C C    C C C    F F    C C    C C C    F F F    F F F    C C C    --    8
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C    C C C    C C    C C    C C C    C C C    C C C    F F F    --    3
+6    ARTHUR HAACKE    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+7    BIANCA PEREIRA GOMES    C C    C C C    C C    C C    C C C    F F F    C C C    C C C    --    3
+8    EDSON MACIEL FALCÃO    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+9    GABRIEL ANTUNES CARDOSO    C C    C C C    C C    C C    C C C    F F F    C C C    C C C    --    3
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C    F F F    C C    C C    C C C    F F F    F F F    C C C    --    9
+11    GRAZIELY SIQUEIRA RODRIGUES    C C    F F F    C C    F F    F F F    F F F    C C C    C C C    --    11
+12    GUSTAVO CORREIA FERREIRA    C C    F F F    C C    F F    C C C    F F F    C C C    F F F    --    11
+13    IGOR RAVANELI    C C    C C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+14    ISABELLA TROJAN ELIAS    C C    C C C    C C    C C    C C C    C C C    F F F    C C C    --    3
+15    JOÃO LUCAS CADENA    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+16    JOÃO VITOR GODOY VIEIRA    C C    C C C    C C    C C    C C C    C C C    C C C    F F F    --    3
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C C    C C C    C C    F F    C C C    F F F    C C C    F F F    --    8
+18    JULLYA EDUARDA ALBANI DA SILVA    C C    F F F    C C    C C    C C C    F F F    F F F    F F F    --    12
+19    KALIEL PAGNONCELI    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    --    3
+20    LIVIA HOFMANN DE MELLO COSTA    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+21    LUCAS DE JESUS MIRANDA    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C    C C C    C C    C C    F F F    F F F    F F F    F F F    --    12
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C    C C C    F F    C C    C C C    C C C    C C C    C C C    --    2
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C    F F F    C C    C C    C C C    F F F    C C C    C C C    --    6
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C    F F F    C C    C C    C C C    C C C    C C C    F F F    --    6
+26    RAUL CEZAR SOUZA BOFF    C C    C C C    C C    C C    C C C    F F F    C C C    C C C    --    3
+27    SAMUEL PRESTES DE OLIVEIRA    C C    C C C    C C    C C    C C C    C C C    C C C    F F F    --    3
+28    STHEFANY MARTINS DE JESUS    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    --    3
+29    VALENTINA FAGUNDES CALDART    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    --    3
+30    VITÓRIA HENNIG BESSA    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    --    3
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17527 - Fundamentos matemáticos para computação e Inteligência Artificial - CH: 33
+ Período: 26/03/2026 - 31/07/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+26/03/2026    BASE TECNOLÓGICA:
+Operações matématicas basicas, aritimética, intervalos e utilização desses intervalos dentro da linguagem de python
+11/04/2026    BASE TECNOLÓGICA:
+- Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório).
+23/04/2026    BASE TECNOLÓGICA:
+- Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. avaliacao 3
+07/05/2026    BASE TECNOLÓGICA:
+Conhecimentos: - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos). - Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório).
+OBSERVAÇÕES:
+av 05 e av 06
+29/05/2026    BASE TECNOLÓGICA:
+- Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. 4 Indicador: Reconhece padrões e sequências numéricas para apoiar a construção de algoritmos básicos.
+13/06/2026    BASE TECNOLÓGICA:
+- Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. 3 Indicador: Emprega noções de conjuntos, funções e matrizes na organização e representação de informações.
+18/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Aplica operações fundamentais da aritmética e da álgebra em problemas relacionados à computação. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos). - Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório).
+26/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Aplica operações fundamentais da aritmética e da álgebra em problemas relacionados à computação. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. 3 Indicador: Emprega noções de conjuntos, funções e matrizes na organização e representação de informações. - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos).
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17528 - Fundamentos e conceitos de Inteligência Artificial - CH: 33
+ Período: 26/03/2026 - 07/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    26/03-1h    20/04-3h    23/04-1h    02/05-3h    07/05-1h    15/05-3h    16/05-3h    21/05-3h    22/05-3h    03/07-3h    07/08-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    0
+2    ANA CLARA PIRES LOPES    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    0
+3    ANA JULIA FONTANA BROL    C    F F F    F    F F F    C    C C C    F F F    C C C    C C C    C C C    --    10
+4    ANDERSON NUNES MARQUEZ    C    C C C    F    F F F    C    F C C    F F F    C C C    C C C    C C C    --    8
+5    ANTONELLA SOPHIA MATA VASQUEZ    C    C C C    C    C C C    C    C C C    F F F    C C C    C C C    C C C    --    3
+6    ARTHUR HAACKE    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    0
+7    BIANCA PEREIRA GOMES    C    F F F    C    F F F    C    C C C    F F F    F F F    C C C    F F F    --    15
+8    EDSON MACIEL FALCÃO    C    C C C    C    F F F    C    C C C    C C C    C C C    C C C    C C C    --    3
+9    GABRIEL ANTUNES CARDOSO    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C    F F F    C    F F F    C    C C C    C C C    C C C    C C C    F F F    --    9
+11    GRAZIELY SIQUEIRA RODRIGUES    C    C C C    C    F F F    F    C C C    F F F    C C C    F F F    C C C    --    10
+12    GUSTAVO CORREIA FERREIRA    C    F F F    C    C C C    F    F F F    F F F    C C C    C C C    C C C    --    10
+13    IGOR RAVANELI    C    C C C    C    F F F    C    C C C    F F F    C C C    C C C    C C C    --    6
+14    ISABELLA TROJAN ELIAS    C    C C C    C    C C C    C    F F F    F F F    C C C    C C C    C C C    --    6
+15    JOÃO LUCAS CADENA    C    C C C    C    F F F    C    C C C    F F F    C C C    C C C    C C C    --    6
+16    JOÃO VITOR GODOY VIEIRA    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C    C C C    C    F F F    F    C C C    C C C    C C C    C C C    C C C    --    4
+18    JULLYA EDUARDA ALBANI DA SILVA    C    F F F    C    F F F    C    F F F    F F F    F F F    F F F    F F F    --    21
+19    KALIEL PAGNONCELI    C    F F F    C    F F F    C    C C C    F F F    C C C    C C C    F F F    --    12
+20    LIVIA HOFMANN DE MELLO COSTA    C    C C C    C    F F F    C    C C C    F F F    C C C    C C C    C C C    --    6
+21    LUCAS DE JESUS MIRANDA    C    F F F    C    C C C    C    C C C    F F F    C C C    C C C    C C C    --    6
+22    LUDMYLA DUARTE PORFIRIO SILVA    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    F F F    --    3
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C    C C C    F    C C C    C    C C C    C C C    C C C    C C C    C C C    --    1
+24    PEDRO RICARDO DALMAGRO GHIGGI    C    C C C    C    F F F    C    C C C    F F F    F F F    C C C    C C C    --    9
+25    PEDRO SILVA MATHIASS FEDERIGHI    C    F F F    C    F F F    C    F F F    F F F    C C C    F F F    C C C    --    15
+26    RAUL CEZAR SOUZA BOFF    C    C C C    C    F F F    C    C C C    F F F    C C C    C C C    C C C    --    6
+27    SAMUEL PRESTES DE OLIVEIRA    C    F F F    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    3
+28    STHEFANY MARTINS DE JESUS    C    C C C    C    F F F    C    C C C    F F F    C C C    F F F    C C C    --    9
+29    VALENTINA FAGUNDES CALDART    C    F F F    C    F F F    C    C C C    F F F    C C C    C C C    C C C    --    9
+30    VITÓRIA HENNIG BESSA    C    C C C    C    C C C    C    C C C    C C C    C C C    C C C    C C C    --    0
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17528 - Fundamentos e conceitos de Inteligência Artificial - CH: 33
+ Período: 26/03/2026 - 07/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+26/03/2026    BASE TECNOLÓGICA:
+Fundamentos e conceitos de etica da IA
+20/04/2026    BASE TECNOLÓGICA:
+- Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Aplicar Inteligência Artificial em cenários reais: Aplicar as técnicas e métodos estudados para resolver problemas práticos, desenvolvendo soluções em cenários reais.
+23/04/2026    BASE TECNOLÓGICA:
+Conhecimentos: - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. avaliacao 3
+02/05/2026    BASE TECNOLÓGICA:
+- Frameworks e bibliotecas de Inteligência Artificial: Familiaridade com ferramentas, frameworks e bibliotecas comuns usadas para desenvolvimento em Inteligência Artificial, como TensorFlow, Scikit-Learn e outras.
+07/05/2026    BASE TECNOLÓGICA:
+- Identificar e classificar técnicas de Inteligência Artificial: Habilidade de classificar os diferentes métodos e técnicas de IA em categorias apropriadas, de acordo com suas características e aplicações.
+OBSERVAÇÕES:
+av 05 e av 06
+15/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.
+OBSERVAÇÕES:
+visita tec parq tec
+16/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.
+21/05/2026    BASE TECNOLÓGICA:
+NSeq. CompetênciaIndicador 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. Conhecimentos: - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. - História da Inteligência Artificial e teste de Turing: Compreensão da evolução histórica da inteligência artificial, incluindo marcos importantes como o teste de Turing e suas implicações.
+22/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. - História da Inteligência Artificial e teste de Turing: Compreensão da evolução histórica da inteligência artificial, incluindo marcos importantes como o teste de Turing e suas implicações.
+03/07/2026    BASE TECNOLÓGICA:
+- Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17529 - Desenvolvimento de linguagem de programação Python - CH: 67
+ Período: 12/03/2026 - 10/12/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    12/03-6h    20/03-2h    26/03-3h    10/04-2h    11/04-3h    17/04-2h    23/04-3h    07/05-3h    21/05-3h    29/05-3h    13/06-3h    19/06-3h    26/06-3h    03/07-3h    09/07-3h    31/07-3h    13/08-3h    20/08-3h    28/08-2h    03/09-3h    11/09-2h    17/09-3h    25/09-2h    01/10-3h    09/10-2h    15/10-3h    23/10-2h    29/10-3h    06/11-2h    12/11-3h    26/11-3h    04/12-2h    10/12-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C C C C C C    F F    C C C    F F    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    4
+2    ANA CLARA PIRES LOPES    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+3    ANA JULIA FONTANA BROL    C C C C C C    C C    C C C    F F    F F F    C C    F F F    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    8
+4    ANDERSON NUNES MARQUEZ    C C C C C C    C C    C C C    C C    F F F    C C    F F F    C C C    C C C    C C C    F F F    C C C    C C C    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    12
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+6    ARTHUR HAACKE    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+7    BIANCA PEREIRA GOMES    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    F F F    C C C    F F F    C C C    C C C    F F F    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    12
+8    EDSON MACIEL FALCÃO    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+9    GABRIEL ANTUNES CARDOSO    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C C C C C    C C    C C C    C C    F F F    F F    C C C    C C C    C C C    C C C    F F F    C C C    C C C    F F F    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    11
+11    GRAZIELY SIQUEIRA RODRIGUES    C C C C C C    C C    C C C    F F    F F F    C C    C C C    F F F    C C C    F F F    F F F    C C C    C C C    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    17
+12    GUSTAVO CORREIA FERREIRA    C C C C C C    C C    C C C    C C    F F F    C C    C C C    F F F    C C C    C C C    F F F    F F F    F F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    15
+13    IGOR RAVANELI    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+14    ISABELLA TROJAN ELIAS    C C C C C C    C C    C C C    F F    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    2
+15    JOÃO LUCAS CADENA    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+16    JOÃO VITOR GODOY VIEIRA    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C C C C C C    F F    C C C    F F    C C C    C C    C C C    F F F    C C C    C C C    F F F    C C C    F F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    13
+18    JULLYA EDUARDA ALBANI DA SILVA    C C C C C C    C C    C C C    F F    F F F    C C    C C C    C C C    F F F    C C C    F F F    F F F    F F F    F F F    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    23
+19    KALIEL PAGNONCELI    --    F F    C C C    C C    F F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    F F F    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    8
+20    LIVIA HOFMANN DE MELLO COSTA    C C C C C C    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    0
+21    LUCAS DE JESUS MIRANDA    F F F F F F    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    6
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C C C C C    C C    C C C    F F    C C C    C C    C C C    C C C    C C C    F F F    F F F    F F F    F F F    F F F    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    20
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C C C C C    C C    C C C    C C    C C C    F F    F F F    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    5
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C C C C C    C C    C C C    C C    F F F    C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    6
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C C C C C    C C    C C C    F F    F F F    C C    C C C    C C C    C C C    C C C    C C C    F F F    F F F    C C C    F F F    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    14
+26    RAUL CEZAR SOUZA BOFF    F F F F F F    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    9
+27    SAMUEL PRESTES DE OLIVEIRA    F F F F F F    C C    C C C    C C    C C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    9
+28    STHEFANY MARTINS DE JESUS    C C C C C C    C C    C C C    C C    F F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+29    VALENTINA FAGUNDES CALDART    C C C C C C    C C    C C C    F F    F F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    5
+30    VITÓRIA HENNIG BESSA    C C C C C C    C C    C C C    C C    F F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    --    3
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17529 - Desenvolvimento de linguagem de programação Python - CH: 67
+ Período: 12/03/2026 - 10/12/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+12/03/2026    BASE TECNOLÓGICA:
+Python, operadores aritiméticos, operadores lógicos, input, coversão de tipos de dados, string, float, int
+20/03/2026    BASE TECNOLÓGICA:
+| A08 | 20032026 | ~2 | ifelse (introdução e reforço), operadores lógicos `and`, `or`, `not`, tabela verdade | Ministrada |
+26/03/2026    BASE TECNOLÓGICA:
+Compilador, sintaxe de atribuição de variáveis, reforço de utilização e anatomia de funções embutidas do código, input, float, int, type, conversões de tipos de dados para operações, operadores lógicos elif de múltiplas condições
+10/04/2026    BASE TECNOLÓGICA:
+- Estruturas de dados: criação e utilização de listas, tuplas e dicionários. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.
+11/04/2026    BASE TECNOLÓGICA:
+- Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Reconhecer códigos em Python para resolução de problemas. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.
+17/04/2026    BASE TECNOLÓGICA:
+- Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários.
+23/04/2026    BASE TECNOLÓGICA:
+- Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. avaliacao 3
+07/05/2026    BASE TECNOLÓGICA:
+- Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores.
+OBSERVAÇÕES:
+av 05 av 06
+21/05/2026    BASE TECNOLÓGICA:
+NSeq. CompetênciaIndicador 1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. Conhecimentos: - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores.
+29/05/2026    BASE TECNOLÓGICA:
+NSeq. CompetênciaIndicador 1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.
+13/06/2026    BASE TECNOLÓGICA:
+2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores.
+19/06/2026    BASE TECNOLÓGICA:
+- Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range. - Estruturas de dados: criação e utilização de listas, tuplas e dicionários. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. 4 Indicador: Utiliza bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.
+26/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Elabora código, conforme as funcionalidades e as características do aplicativo computacional a ser desenvolvido na linguagem Python. 2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. 3 Indicador: Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica. Conhecimentos: - Ambiente de desenvolvimento Python: ambiente integrador de desenvolvimento de aprendizado (integrated development and learning environment- IDLE), instalação, configuração e utilização. - Lógica de programação em Python: comandos de entrada, processamento e saída de dados; tipos de dados dinâmicos e sua utilização; variáveis e constantes; expressões e operadores. - Controle de fluxo: estrutura condicional simples e composta; estrutura de repetição, cláusulas break, continue e pass; função range.
+03/07/2026    BASE TECNOLÓGICA:
+Biblioteca de manipulação de dados: Pandas, Numpy, Matplotlib. 4 Indicador: Utiliza bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.
+09/07/2026    BASE TECNOLÓGICA:
+2 Indicador: Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada. - Biblioteca de manipulação de dados: Pandas, Numpy, Matplotlib.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17530 - Reconhecimento de modelos de arquitetura de computadores e GPU - CH: 33
+ Período: 20/03/2026 - 14/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    20/03-2h    10/04-2h    17/04-2h    30/05-3h    12/06-3h    02/07-3h    10/07-3h    14/08-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    F F    F F    C C    C C C    C C C    C C C    C C C    --    4
+2    ANA CLARA PIRES LOPES    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+3    ANA JULIA FONTANA BROL    C C    F F    C C    C C C    C C C    C C C    C C C    --    2
+4    ANDERSON NUNES MARQUEZ    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+6    ARTHUR HAACKE    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+7    BIANCA PEREIRA GOMES    C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+8    EDSON MACIEL FALCÃO    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+9    GABRIEL ANTUNES CARDOSO    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C    C C    F F    F F F    C C C    C C C    C C C    --    5
+11    GRAZIELY SIQUEIRA RODRIGUES    C C    F F    C C    F F F    C C C    C C C    C C C    --    5
+12    GUSTAVO CORREIA FERREIRA    C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+13    IGOR RAVANELI    C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+14    ISABELLA TROJAN ELIAS    C C    F F    C C    C C C    C C C    C C C    C C C    --    2
+15    JOÃO LUCAS CADENA    C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+16    JOÃO VITOR GODOY VIEIRA    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    F F    F F    C C    C C C    C C C    C C C    F F F    --    7
+18    JULLYA EDUARDA ALBANI DA SILVA    C C    F F    C C    F F F    C C C    F F F    F F F    --    11
+19    KALIEL PAGNONCELI    --    C C    C C    C C C    C C C    F F F    F F F    --    6
+20    LIVIA HOFMANN DE MELLO COSTA    C C    C C    C C    F F F    C C C    C C C    C C C    --    3
+21    LUCAS DE JESUS MIRANDA    C C    C C    C C    C C C    C C C    C C C    C C C    --    0
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C    C C    C C    F F F    F F F    C C C    F F F    --    9
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C    C C    F F    C C C    C C C    C C C    C C C    --    2
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C    C C    C C    F F F    F F F    C C C    C C C    --    6
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C    F F    C C    F F F    C C C    C C C    C C C    --    5
+26    RAUL CEZAR SOUZA BOFF    C C    C C    C C    C C C    C C C    C C C    F F F    --    3
+27    SAMUEL PRESTES DE OLIVEIRA    C C    C C    C C    C C C    F F F    C C C    C C C    --    3
+28    STHEFANY MARTINS DE JESUS    C C    C C    C C    C C C    C C C    F F F    F F F    --    6
+29    VALENTINA FAGUNDES CALDART    C C    F F    C C    C C C    C C C    C C C    C C C    --    2
+30    VITÓRIA HENNIG BESSA    C C    C C    C C    C C C    C C C    C C C    F F F    --    3
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17530 - Reconhecimento de modelos de arquitetura de computadores e GPU - CH: 33
+ Período: 20/03/2026 - 14/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+20/03/2026    BASE TECNOLÓGICA:
+CPU vs GPU (paralelismo vs IA), RAM, HD vs SSD vs NVMe, periféricos, comparativo de componentes |
+10/04/2026    BASE TECNOLÓGICA:
+- Introdução às GPUs e papel das GPUs na IA: papel das GPUs na computação moderna, diferenças entre CPU e GPU. Modelo de programação CUDA: kernels, threads, blocos e grades. Memória na GPU: hierarquia de memória em GPUs, incluindo registradores, memória compartilhada e memória global. conceitos básicos de pipelining e estágios do Pipeline.
+17/04/2026    BASE TECNOLÓGICA:
+cpu z
+30/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU. 3 Indicador: Interpreta processos e threads em arquitetura de computadores e GPU.
+12/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU. Conhecimentos: - Introdução à arquitetura de computadores: modelos de Von Neumann e Harvard; registradores e memória principal; barramentos de dados, endereços e controle; arquiteturas RISC, CISC, SIMD e MIMD. - Processos e threads: conceito de processos e threads; estados de um processo.
+02/07/2026    BASE TECNOLÓGICA:
+Introdução à arquitetura de computadores: modelos de Von Neumann e Harvard; registradores e memória principal; barramentos de dados, endereços e controle; arquiteturas RISC, CISC, SIMD e MIMD. 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU.
+10/07/2026    BASE TECNOLÓGICA:
+SIMD e MIMD. 1 Indicador: Reconhece modelos aplicados em arquitetura de computadores e GPU. 2 Indicador: Reconhece e aplica conceitos de Pipeline para GPU.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17531 - Compreensão sobre a transformação digital e análise sobre estratégias de informação para solução de Inteligência Artificial - CH: 67
+ Período: 19/03/2026 - 07/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    19/03-3h    09/04-3h    16/04-3h    20/04-3h    30/04-3h    02/05-3h    14/05-3h    15/05-3h    22/05-3h    28/05-3h    02/07-3h    30/07-3h    07/08-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C C C    F F F    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    3
+2    ANA CLARA PIRES LOPES    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+3    ANA JULIA FONTANA BROL    F F F    C C C    C C C    F F F    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    9
+4    ANDERSON NUNES MARQUEZ    C C C    C C C    F F C    C C C    C C C    F F F    F F F    F F F    C C C    C C C    C C C    --    --    11
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+6    ARTHUR HAACKE    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+7    BIANCA PEREIRA GOMES    C C C    C C C    F F F    F F F    C C C    F F F    C C C    C C C    C C C    F F F    C C C    --    --    12
+8    EDSON MACIEL FALCÃO    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    3
+9    GABRIEL ANTUNES CARDOSO    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C C    C C C    F F F    F F F    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    9
+11    GRAZIELY SIQUEIRA RODRIGUES    C C C    F F F    C C C    C C C    C C C    F F F    C C C    C C C    F F F    F F F    C C C    --    --    12
+12    GUSTAVO CORREIA FERREIRA    C C C    C C C    F F F    F F F    C C C    C C C    C C C    F F F    C C C    C C C    C C C    --    --    9
+13    IGOR RAVANELI    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    3
+14    ISABELLA TROJAN ELIAS    C C C    C C C    C C C    C C C    C C C    C C C    F F F    F F F    C C C    C C C    C C C    --    --    6
+15    JOÃO LUCAS CADENA    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    3
+16    JOÃO VITOR GODOY VIEIRA    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C C C    F F F    C C C    C C C    C C C    F F F    C C C    C C C    C C C    F F F    C C C    --    --    9
+18    JULLYA EDUARDA ALBANI DA SILVA    C C C    C C C    F F F    F F F    F F F    F F F    F F F    F F F    F F F    C C C    F F F    --    --    24
+19    KALIEL PAGNONCELI    --    C C C    C C C    F F F    C C C    F F F    F F F    C C C    C C C    C C C    F F F    --    --    12
+20    LIVIA HOFMANN DE MELLO COSTA    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    3
+21    LUCAS DE JESUS MIRANDA    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    3
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    C C C    --    --    3
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C C    C C C    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    3
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C C    C C C    C C C    F F F    C C C    F F F    F F F    F F F    F F F    C C C    C C C    --    --    15
+26    RAUL CEZAR SOUZA BOFF    C C C    C C C    C C C    C C C    F F F    F F F    C C C    C C C    C C C    C C C    C C C    --    --    6
+27    SAMUEL PRESTES DE OLIVEIRA    C C C    C C C    C C C    F F F    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    3
+28    STHEFANY MARTINS DE JESUS    C C C    C C C    F F F    C C C    C C C    F F F    C C C    C C C    F F F    C C C    F F F    --    --    12
+29    VALENTINA FAGUNDES CALDART    C C C    F F F    C C C    F F F    C C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    9
+30    VITÓRIA HENNIG BESSA    F F F    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    3
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17531 - Compreensão sobre a transformação digital e análise sobre estratégias de informação para solução de Inteligência Artificial - CH: 67
+ Período: 19/03/2026 - 07/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+19/03/2026    BASE TECNOLÓGICA:
+Debate sobre inteligência artificial é uma ferramenta fundamental no dia dia de agora, e do futuro de instituições de ensino e trabalho ou é uma trapaça e não deveria ter acesso?
+09/04/2026    BASE TECNOLÓGICA:
+- Aplicar de forma assertiva os conceitos de transformação digital. - Utilizar ferramentas de IA no auxílio da transformação digital. - Compreender como a Inteligência Artificial (IA) pode apoiar diferentes formas de estratégia de negócio. - Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Estratégia e cultura organizacional: alinhamento estratégico; a importância do alinhamento com os objetivos de negócio; estratégias para integração de TI e negócios; cultura organizacional; transformação cultural como base para a transformação digital.
+OBSERVAÇÕES:
+Pesquisar, diagnosticar e prototipar uma solução real de IA em times
+16/04/2026    BASE TECNOLÓGICA:
+- Tecnologias-chave na transformação digital: Internet das Coisas (IoT); Inteligência Artificial (IA); ferramentas digitais para Inteligência Artificial (chatbots, assistentes virtuais, assistentes de produção de texto, imagem, vídeos); Big Data e Analytics (processamento e análise de grandes conjuntos de dados, tomada de decisão baseada em dados); computação em nuvem e governança em nuvem; segurança digital na transformação: desafios de segurança na era digital; ameaças e vulnerabilidades; proteção de dados e privacidade; estratégias de segurança digital; conformidade com regulamentações (GDPR, LGPD).
+20/04/2026    BASE TECNOLÓGICA:
+- Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Análise de cultura informacional: identificar tipos de cultura informacional e sua influência nas estratégias de informação e conhecimento.
+30/04/2026    BASE TECNOLÓGICA:
+Habilidades: - Aplicar de forma assertiva os conceitos de transformação digital. - Utilizar ferramentas de IA no auxílio da transformação digital. - Aplicar a gestão estratégica para as mudanças da cultura organizacional dentro da transformação digital. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem.
+02/05/2026    BASE TECNOLÓGICA:
+- Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem.
+14/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Compreende as aplicações dos fundamentos em transformação digital, demonstrado em práticas pedagógicas. 2 Indicador: Utiliza as ferramentas digitais de Inteligência Artificial, conforme boas práticas de mercado alinhadas à transformação digital.
+15/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Compreende as aplicações dos fundamentos em transformação digital, demonstrado em práticas pedagógicas. 2 Indicador: Utiliza as ferramentas digitais de Inteligência Artificial, conforme boas práticas de mercado alinhadas à transformação digital.
+OBSERVAÇÕES:
+visita parq tec
+22/05/2026    BASE TECNOLÓGICA:
+3 Indicador: Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala. 4 Indicador: Compreende as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital. - Análise estratégica para Inteligência Artificial (IA): avaliação e planejamento da implementação de soluções de IA alinhadas aos objetivos estratégicos. - Gestão de informação e conhecimento: ciclo de vida da informação e do conhecimento para uso da Inteligência Artificial. Cultura organizacional e aprendizagem voltada à exploração de informações.
+28/05/2026    BASE TECNOLÓGICA:
+2 Indicador: Utiliza as ferramentas digitais de Inteligência Artificial, conforme boas práticas de mercado alinhadas à transformação digital. 3 Indicador: Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem. - Estratégia e cultura organizacional: alinhamento estratégico; a importância do alinhamento com os objetivos de negócio; estratégias para integração de TI e negócios; cultura organizacional; transformação cultural como base para a transformação digital.
+02/07/2026    BASE TECNOLÓGICA:
+- Introdução à transformação digital: definição e conceitos básicos; impactos e desafios no mundo dos negócios e na sociedade. - Principais tecnologias habilitadoras: Internet das Coisas (IoT); Inteligência Artificial (IA); Big Data e Analytics; computação em nuvem. - Estratégia e cultura organizacional: alinhamento estratégico; a importância do alinhamento com os objetivos de negócio; estratégias para integração de TI e negócios; cultura organizacional; transformação cultural como base para a transformação digital. 3 Indicador: Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala. 4 Indicador: Compreende as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+
+Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17532 - Desenvolvimento de banco de dados - CH: 67
+ Período: 13/03/2026 - 14/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    13/03-6h    20/03-2h    27/03-3h    10/04-2h    17/04-2h    24/04-3h    08/05-3h    12/06-3h    18/06-3h    25/06-3h    10/07-3h    06/08-3h    14/08-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C C C C C C    F F    C C C    F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    4
+2    ANA CLARA PIRES LOPES    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+3    ANA JULIA FONTANA BROL    F F F F F F    C C    C C C    F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    8
+4    ANDERSON NUNES MARQUEZ    F F F F F F    C C    C C C    C C    C C    C C C    C C C    C C C    F F F    C C C    C C C    --    --    9
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C C C C C    C C    C C C    F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    2
+6    ARTHUR HAACKE    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+7    BIANCA PEREIRA GOMES    C C C C C C    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    F F F    C C C    --    --    6
+8    EDSON MACIEL FALCÃO    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+9    GABRIEL ANTUNES CARDOSO    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C C C C C    C C    C C C    C C    F F    C C C    C C C    C C C    F F F    C C C    C C C    --    --    5
+11    GRAZIELY SIQUEIRA RODRIGUES    C C C C C C    C C    C C C    F F    C C    C C C    C C C    C C C    C C C    F F F    C C C    --    --    5
+12    GUSTAVO CORREIA FERREIRA    C C C C C C    C C    C C C    C C    C C    C C C    F F F    C C C    C C C    C C C    C C C    --    --    3
+13    IGOR RAVANELI    C C C C C C    C C    C C C    C C    C C    F C C    C C C    C C C    C C C    F F F    C C C    --    --    4
+14    ISABELLA TROJAN ELIAS    C C C C C C    C C    C C C    F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    2
+15    JOÃO LUCAS CADENA    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    F F F    C C C    --    --    3
+16    JOÃO VITOR GODOY VIEIRA    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    C C C C C C    F F    F F F    F F    C C    F F F    C C C    C C C    C C C    F F F    F F F    --    --    16
+18    JULLYA EDUARDA ALBANI DA SILVA    C C C C C C    C C    F F F    F F    C C    C C C    F F F    F F F    F F F    F F F    F F F    --    --    20
+19    KALIEL PAGNONCELI    --    --    C C C    C C    C C    C C C    C C C    C C C    C C C    F F F    F F F    --    --    6
+20    LIVIA HOFMANN DE MELLO COSTA    C C C C C C    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    F F F    C C C    --    --    6
+21    LUCAS DE JESUS MIRANDA    C C C C C C    C C    C C C    C C    C C    C C C    F F F    C C C    C C C    F F F    C C C    --    --    6
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C C C C C    C C    C C C    F F    C C    C C C    F F F    F F F    F F F    C C C    F F F    --    --    14
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C C C C C    C C    C C C    C C    F F    C C C    C C C    C C C    C C C    C C C    C C C    --    --    2
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C C C C C    C C    C C C    C C    C C    F F F    C C C    F F F    C C C    F F F    C C C    --    --    9
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C C C C C    C C    C C C    F F    C C    F F F    C C C    C C C    C C C    C C C    C C C    --    --    5
+26    RAUL CEZAR SOUZA BOFF    F F F F F F    C C    F F F    C C    C C    C C C    C C C    C C C    C C C    C C C    F F F    --    --    12
+27    SAMUEL PRESTES DE OLIVEIRA    C C C C C C    C C    C C C    C C    C C    C C C    C C C    F F F    C C C    F F F    C C C    --    --    6
+28    STHEFANY MARTINS DE JESUS    C C C C C C    C C    C C C    C C    C C    C C C    F F F    C C C    C C C    C C C    F F F    --    --    6
+29    VALENTINA FAGUNDES CALDART    C C C C C C    C C    C C C    F F    C C    C C C    C C C    C C C    C C C    C C C    C C C    --    --    2
+30    VITÓRIA HENNIG BESSA    C C C C C C    C C    C C C    C C    C C    C C C    C C C    C C C    C C C    C C C    F F F    --    --    3
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17532 - Desenvolvimento de banco de dados - CH: 67
+ Período: 13/03/2026 - 14/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+13/03/2026    BASE TECNOLÓGICA:
+Introdução a banco de dados, excel, bancos relacionais, SELECT, FROM, WHERE, ORDER BY, operadores lógicos, consultas e filtragem de dados
+20/03/2026    BASE TECNOLÓGICA:
+**Tópicos cobertos:** - Tipos de dados: `INTEGER`, `VARCHAR` (com tamanho), `FLOAT`, `BOOLEAN` - DDL vs DML: DDL modifica estrutura (CREATE, ALTER, DROP); DML manipula dados (INSERT, UPDATE, DELETE) - `CREATE TABLE`: sintaxe completa com tipos de dados e constraints - `INSERT INTO`: inserção de registros na tabela - Constraints: `PRIMARY KEY` e `NOT NULL` - vistos por cima, sem aprofundamento
+27/03/2026    BASE TECNOLÓGICA:
+Banco de dados todos os Ds da linguagem, DML, DQL DDL, e etc, operações mais avançadas de edições e delete de dados nas tabelas, e na estrutura das tabelas, com querys mais avançadas, explicação sobre constrains e tipos de dados no sql. Gincana Dado Kahoot.
+10/04/2026    BASE TECNOLÓGICA:
+- Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DQL: select. Regras de normalização de banco de dados; performance de consultas: índices, views, join
+17/04/2026    BASE TECNOLÓGICA:
+- Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico. - Análise de requisitos funcionais e não funcionais do banco de dados. - Dados e domínios: tipos, conceito e aplicabilidade. - Níveis de restrição de integridade dos dados: tabela, atributos e relacionamento.
+24/04/2026    BASE TECNOLÓGICA:
+- Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional).
+08/05/2026    BASE TECNOLÓGICA:
+- Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select.
+OBSERVAÇÕES:
+av06
+12/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico. - Análise de requisitos funcionais e não funcionais do banco de dados. - Dados e domínios: tipos, conceito e aplicabilidade.
+18/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. - Níveis de restrição de integridade dos dados: tabela, atributos e relacionamento. - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select.
+25/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Propõe alteração no acesso aos dados, de acordo com os relacionamentos físicos e estrutura. 2 Indicador: Seleciona o Sistema de Gerenciamento de Banco de Dados (SGBD), de acordo com as necessidades da aplicação. 3 Indicador: Cria a estrutura física de banco de dados, de acordo com os requisitos da aplicação e da modelagem de dados. - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). - Modelos de banco de dados: definição e seus tipos - conceitual, lógico e físico.
+10/07/2026    BASE TECNOLÓGICA:
+5 Indicador: Cria e manipula consultas SQL de forma adequada para resolução de problemas. - Instruções da linguagem SQL-DQL: select.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17533 - Utilização da estatística aplicada e lógica matemática em aplicações de Inteligência Artificial - CH: 33
+ Período: 27/03/2026 - 06/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+#    Nome
+#    Dia/Mes
+CH    27/03-3h    24/04-3h    08/05-3h    16/05-3h    19/06-3h    25/06-3h    06/08-3h    Faltas    Resultado
+1    AGATHA SEIBEL SOUZA    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+2    ANA CLARA PIRES LOPES    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+3    ANA JULIA FONTANA BROL    C C C    C C C    C C C    F F F    C C C    C C C    --    3
+4    ANDERSON NUNES MARQUEZ    C C C    C C C    C C C    F F F    C C C    C C C    --    3
+5    ANTONELLA SOPHIA MATA VASQUEZ    C C C    C C C    C C C    F F F    C C C    C C C    --    3
+6    ARTHUR HAACKE    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+7    BIANCA PEREIRA GOMES    F F F    C C C    C C C    F F F    C C C    F F F    --    9
+8    EDSON MACIEL FALCÃO    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+9    GABRIEL ANTUNES CARDOSO    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+10    GABRIELLA JAIANY DE OLIVEIRA ALBRECH    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+11    GRAZIELY SIQUEIRA RODRIGUES    C C C    C C C    C C C    F F F    C C C    F F F    --    6
+12    GUSTAVO CORREIA FERREIRA    C C C    C C C    F F F    F F F    F F F    C C C    --    9
+13    IGOR RAVANELI    C C C    C C C    C C C    F F F    C C C    F F F    --    6
+14    ISABELLA TROJAN ELIAS    C C C    C C C    C C C    F F F    C C C    C C C    --    3
+15    JOÃO LUCAS CADENA    C C C    C C C    C C C    F F F    C C C    F F F    --    6
+16    JOÃO VITOR GODOY VIEIRA    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+17    JULIA GABRIELA GLOVACKI RODRIGUES    F F F    F F F    C C C    C C C    C C C    F F F    --    9
+18    JULLYA EDUARDA ALBANI DA SILVA    F F F    C C C    F F F    F F F    F F F    F F F    --    15
+19    KALIEL PAGNONCELI    C C C    C C C    C C C    F F F    C C C    F F F    --    6
+20    LIVIA HOFMANN DE MELLO COSTA    F F F    C C C    C C C    F F F    C C C    F F F    --    9
+21    LUCAS DE JESUS MIRANDA    C C C    C C C    F F F    F F F    C C C    F F F    --    9
+22    LUDMYLA DUARTE PORFIRIO SILVA    C C C    C C C    F F F    C C C    F F F    C C C    --    6
+23    MARIANYELI ALEXANDRA ESPINOZA BALZA    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+24    PEDRO RICARDO DALMAGRO GHIGGI    C C C    F F F    C C C    F F F    C C C    C C C    --    6
+25    PEDRO SILVA MATHIASS FEDERIGHI    C C C    F F F    C C C    F F F    F F F    F F F    --    12
+26    RAUL CEZAR SOUZA BOFF    F F F    C C C    C C C    F F F    C C C    C C C    --    6
+27    SAMUEL PRESTES DE OLIVEIRA    C C C    C C C    C C C    C C C    C C C    F F F    --    3
+28    STHEFANY MARTINS DE JESUS    C C C    C C C    F F F    F F F    C C C    C C C    --    6
+29    VALENTINA FAGUNDES CALDART    C C C    C C C    C C C    F F F    C C C    C C C    --    3
+30    VITÓRIA HENNIG BESSA    C C C    C C C    C C C    C C C    C C C    C C C    --    0
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)
+
+ Turma: 9-202600029 - TÉCNICO EM INTELIGÊNCIA ARTIFICIAL
+ Disciplina: 17533 - Utilização da estatística aplicada e lógica matemática em aplicações de Inteligência Artificial - CH: 33
+ Período: 27/03/2026 - 06/08/2026
+ Instrutor: 6802935902 - LEONARDO ZANINI NICLOTE
+ Horas-aula com duração de: 50 minutos
+Data
+27/03/2026    BASE TECNOLÓGICA:
+Gincana Dado Kahoot. Operações dentro do python
+24/04/2026    BASE TECNOLÓGICA:
+- Funções: linear, polinomial, logarítmica, exponencial. - Probabilidade básica: espaço amostral e eventos; probabilidade de um evento; regra da adição; probabilidade condicional; regra da multiplicação; variáveis aleatórias.
+08/05/2026    BASE TECNOLÓGICA:
+- Funções: linear, polinomial, logarítmica, exponencial. - Dados discretos: valores separados e contáveis. - Dados contínuos: podem assumir qualquer valor em um intervalo. Frequência absoluta: número de vezes que um valor ocorre.
+OBSERVAÇÕES:
+av06
+16/05/2026    BASE TECNOLÓGICA:
+1 Indicador: Compreende e aplica funções matemáticas lineares. 2 Indicador: Compreende e aplica funções matemáticas polinomiais.
+19/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Compreende e aplica funções matemáticas lineares. 2 Indicador: Compreende e aplica funções matemáticas polinomiais. 3 Indicador: Compreende e aplica funções matemáticas logarítmicas. 4 Indicador: Compreende e aplica funções matemáticas exponenciais. 5 Indicador: Interpreta e aplica probabilidades básicas. 6 Indicador: Compreende variável qualitativa e quantitativa. 7 Indicador: Aplica dados discretos e contínuos. - Frequência relativa: proporção de vezes que um valor ocorre em relação ao total. Distribuição de frequência: tabela que mostra a frequência de cada valor. - Média: soma dos valores dividida pelo número de observações. Mediana: valor que divide a amostra em duas partes iguais. - Moda: valor que ocorre com maior frequência.
+25/06/2026    BASE TECNOLÓGICA:
+1 Indicador: Compreende e aplica funções matemáticas lineares. 2 Indicador: Compreende e aplica funções matemáticas polinomiais. 3 Indicador: Compreende e aplica funções matemáticas logarítmicas. - Funções: linear, polinomial, logarítmica, exponencial. - Probabilidade básica: espaço amostral e eventos; probabilidade de um evento; regra da adição; probabilidade condicional; regra da multiplicação; variáveis aleatórias. - Variável qualitativa: representa características não numéricas (categóricas). Variável quantitativa: representa quantidades numéricas. - Dados discretos: valores separados e contáveis.
+
+_____________________________________________
+ LEONARDO ZANINI NICLOTE
+Instrutor(a)
+
+_____________________________________________
+ CYNTHIA JAEL PEREIRA RAYMOND
+Coordenador(a)

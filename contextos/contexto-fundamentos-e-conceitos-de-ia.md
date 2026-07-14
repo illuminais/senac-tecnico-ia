@@ -67,6 +67,13 @@ A39 · 03/07 · Pesquisa conceitual de 3 algoritmos IA: KNN, Árvore de Decisão
 
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
+| A25 | 16/05 | ~3 | 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. | Reconstruído via diário OrionWeb |
+| A24 | 15/05 | ~3 | 1 Indicador: Identifica conceitos e fundamentos de Inteligência Artificial. 2 Indicador: Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial. — Observações: visita tec parq tec | Reconstruído via diário OrionWeb |
+| A20 | 07/05 | ~1 | - Identificar e classificar técnicas de Inteligência Artificial: Habilidade de classificar os diferentes métodos e técnicas de IA em categorias apropriadas, de acordo com suas características e aplicações. — Observações: av 05 e av 06 | Reconstruído via diário OrionWeb |
+| A?? | 02/05 | ~3 | - Frameworks e bibliotecas de Inteligência Artificial: Familiaridade com ferramentas, frameworks e bibliotecas comuns usadas para desenvolvimento em Inteligência Artificial, como TensorFlow, Scikit-Learn e outras. | OrionWeb, não confirmado — só p/ contagem de HA |
+| A17 | 23/04 | ~1 | Conhecimentos: - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Taxonomia e técnicas de Inteligência Artificial: Conhecimento sobre a classificação de diferentes métodos e algoritmos de Inteligência Artificial, como aprendizado supervisionado, não supervisionado e técnicas de busca. avaliacao 3 | Reconstruído via diário OrionWeb |
+| A16 | 20/04 | ~3 | - Conceitos e fundamentos de inteligência artificial: Entendimento dos principais conceitos e definições da inteligência artificial, incluindo o que é Inteligência Artificial, quais são seus objetivos, limitações e aplicações. - Aplicar Inteligência Artificial em cenários reais: Aplicar as técnicas e métodos estudados para resolver problemas práticos, desenvolvendo soluções em cenários reais. | Reconstruído via diário OrionWeb |
+| A09 | 26/03 | ~1 | Fundamentos e conceitos de etica da IA | Reconstruído via diário OrionWeb |
 | A01 | 26/02 | ~2 | Demo ML pixels→modelo · ML · DL · NLP · robôs · carros · ética · LGPD | — |
 | A03 | 05/03 | ~3 | Definição formal · história (1943→2024) · ML 3 tipos · redes neurais · DL · NLP · ética | — |
 | A04 | 06/03 | ~1 | Vocabulário avançado: NLP · Token · LLM · Backpropagation · Epoch · Embedding | — |

@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC02
 disciplina: Inglês Instrumental
 ha-total: 40
-ha-dado: 5
-ha-restante: 35
+ha-dado: 7
+ha-restante: 33
 trimestre-atual: T2
 ---
 
@@ -20,7 +20,7 @@ trimestre-atual: T2
 | T1 | 4 | Bloco 4 — Programação (Python keywords): variable · function · loop · list · dictionary · string · integer · return · import · library | 2 | ⬜ |
 | T1 | 5 | Bloco 5 — Erros e Debug: SyntaxError · TypeError · NameError · IndentationError · IndexError | 1 | ⬜ |
 | T1 | 6 | AV01: glossário de 10 termos IA em inglês (machine learning · dataset · model · training · inference · bias · token · embedding · epoch · GPU) | 1 | ✅ A11 |
-| T2 | 7 | Bloco 6 — Banco de Dados / SQL: table · query · field · record · index · primary key · foreign key · constraint · join · select | 2 | ⬜ |
+| T2 | 7 | Bloco 6 — Banco de Dados / SQL: table · query · field · record · index · primary key · foreign key · constraint · join · select | 2 | ⏳ A40 (parcial — tipos de dados p/ SQL e Python) |
 | T2 | 8 | Leitura de README do GitHub: estrutura · seções · como seguir instruções | 2 | ⬜ |
 | T2 | 9 | Interpretação de docstring Python e comentários de código | 1 | ⬜ |
 | T2 | 10 | Mensagens de erro em inglês: traceback · how to read and understand | 1 | ⬜ |
@@ -42,14 +42,14 @@ trimestre-atual: T2
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 13 | 5 | 8 |
-| T2 | 14 | 0 | 14 |
+| T2 | 14 | 2 | 12 |
 | T3 | 13 | 0 | 13 |
 
 ---
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A11 · 09/04 · AV01: glossário de 10 termos de IA em inglês (machine learning · dataset · model · training · inference · bias · token · embedding · epoch · GPU) com tradução e significado
+A40 · 09/07 · Dinâmica com cartõezinhos (Case File + Schema Card) · tradução de termos técnicos · vocabulário de tipos de dados para SQL e Python
 
 ---
 
@@ -69,6 +69,13 @@ A11 · 09/04 · AV01: glossário de 10 termos de IA em inglês (machine learning
 
 | Aula | Data | HA | Tópicos | Feedback |
 |---|---|---|---|---|
+| A40 | 09/07 | ~2 | Dinâmica com cartõezinhos (Case File + Schema Card) · tradução de termos técnicos · vocabulário de tipos de dados para SQL e Python (int, string, float, boolean etc.) — Diário Orion: Leitura de interfaces, menus e instruções de softwares em inglês. Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. | Aula completa, bom ritmo |
+| A?? | 11/06 | ~3 | 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. Conhecimentos: - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware. - Estratégias de leitura instrumental: identificação de palavras-chave, reconhecimento de cognatos, falsos cognatos, scanning e skimming. | OrionWeb, não confirmado — só p/ contagem de HA |
+| A30 | 30/05 | ~3 | 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. | Reconstruído via diário OrionWeb |
+| A22 | 14/05 | ~1 | 1 Indicador: Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação. 2 Indicador: Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia. | Reconstruído via diário OrionWeb |
+| A19 | 30/04 | ~1 | - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware. | Reconstruído via diário OrionWeb |
+| A14 | 16/04 | ~1 | - Vocabulário essencial de computação: file, folder, save, copy, paste, delete, download, upload, settings. - Anglicismos no cotidiano digital: login, backup, browser, software, hardware. | Reconstruído via diário OrionWeb |
+| A07 | 19/03 | ~1 | Termos iniciais, TOKENS, embbed, prompt, input. output, version, update, e etc | Reconstruído via diário OrionWeb |
 | A01 | 26/02 | ~1 | Bloco 1: hardware e interface (10 termos) + exercícios orais com objetos reais | — |
 | A02 | 27/02 | ~1 | Bloco 2: organização e internet (10 termos) + ING 07-10 + nomear pastas em inglês | — |
 | A04 | 06/03 | ~1 | Bloco 3: vocabulário IA avançado (10 termos introduzidos — consolidação pendente) | — |

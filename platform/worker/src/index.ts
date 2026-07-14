@@ -1,16 +1,25 @@
 /**
  * Cloudflare Worker — API LMS
- * POST /api/sync           — persiste progresso (público)
- * POST /api/auth/login     — autentica admin, retorna JWT
- * GET  /api/message        — busca mensagem do professor (público)
- * PUT  /api/message        — atualiza mensagem (requer JWT admin)
+ * POST /api/sync                  — persiste progresso (público)
+ * POST /api/auth/login             — autentica admin (usuário/senha), retorna JWT
+ * POST /api/auth/forgot-password   — envia email de reset (Resend), com rate limit por email
+ * POST /api/auth/reset-password    — troca senha via token do email
+ * POST /api/auth/google/callback   — troca code OAuth por sessão (JWT)
+ * GET  /api/message                — busca mensagem do professor (público)
+ * PUT  /api/message                — atualiza mensagem (requer JWT admin)
+ * GET  /api/calendar               — calendário condensado de aulas (público)
+ * POST /api/calendar/import        — upsert em lote de dias/blocos (requer JWT admin)
+ * GET  /api/calendar/resumo-ha     — soma de HA dada por UC, bucketizado em T1/T2/T3 (público)
  */
 
 interface Env {
   DB: D1Database
-  ADMIN_USERNAME: string   // wrangler secret
-  ADMIN_PASSWORD: string   // wrangler secret
-  JWT_SECRET: string       // wrangler secret
+  JWT_SECRET: string          // wrangler secret
+  RESEND_API_KEY: string      // wrangler secret — https://resend.com
+  RESEND_FROM: string         // var — ex: 'LMS Senac <onboarding@resend.dev>' (domínio verificado em produção)
+  GOOGLE_CLIENT_ID: string    // var — não é segredo, usado também no portal
+  GOOGLE_CLIENT_SECRET: string // wrangler secret
+  ALLOWED_ORIGINS: string     // var — CSV de origens permitidas p/ link de reset (evita open-redirect no email)
 }
 
 interface SyncPayload {
@@ -18,6 +27,23 @@ interface SyncPayload {
   aulaId: string
   progresso: number
   respostas: Record<string, string>
+}
+
+interface CalendarBlocoPayload {
+  uc: string
+  disciplina?: string
+  conteudo?: string
+  ha?: number
+}
+
+interface CalendarDayPayload {
+  id: string
+  numero?: string
+  data: string
+  tipo?: string
+  status?: string
+  observacao?: string
+  blocos?: CalendarBlocoPayload[]
 }
 
 // ---------------------------------------------------------------------------
@@ -85,11 +111,83 @@ async function safeEqual(a: string, b: string): Promise<boolean> {
 }
 
 // ---------------------------------------------------------------------------
+// Senha (PBKDF2-HMAC-SHA256 via Web Crypto — sem deps externas)
+// Formato armazenado: pbkdf2$<iteracoes>$<saltHex>$<hashHex>
+// Compatível byte-a-byte com platform/scripts/create-admin.mjs (Node crypto.pbkdf2Sync)
+// ---------------------------------------------------------------------------
+
+const PBKDF2_ITERATIONS = 100_000
+
+function toHex(buf: ArrayBuffer | Uint8Array): string {
+  const bytes = buf instanceof Uint8Array ? buf : new Uint8Array(buf)
+  return [...bytes].map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
+function fromHex(hex: string): Uint8Array {
+  const bytes = new Uint8Array(hex.length / 2)
+  for (let i = 0; i < bytes.length; i++) bytes[i] = parseInt(hex.substr(i * 2, 2), 16)
+  return bytes
+}
+
+async function pbkdf2(password: string, salt: Uint8Array, iterations: number): Promise<string> {
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits'])
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt, iterations, hash: 'SHA-256' },
+    key,
+    256,
+  )
+  return toHex(bits)
+}
+
+async function hashPassword(password: string): Promise<string> {
+  const salt = crypto.getRandomValues(new Uint8Array(16))
+  const hash = await pbkdf2(password, salt, PBKDF2_ITERATIONS)
+  return `pbkdf2$${PBKDF2_ITERATIONS}$${toHex(salt)}$${hash}`
+}
+
+async function verifyPassword(password: string, stored: string | null): Promise<boolean> {
+  if (!stored) return false
+  const parts = stored.split('$')
+  if (parts.length !== 4 || parts[0] !== 'pbkdf2') return false
+  const iterations = parseInt(parts[1], 10)
+  const salt = fromHex(parts[2])
+  const expected = parts[3]
+  const actual = await pbkdf2(password, salt, iterations)
+  return safeEqual(actual, expected)
+}
+
+async function sha256Hex(input: string): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input))
+  return toHex(digest)
+}
+
+function randomToken(): string {
+  return toHex(crypto.getRandomValues(new Uint8Array(32)))
+}
+
+// ---------------------------------------------------------------------------
+// Email (Resend — https://resend.com/docs/api-reference/emails/send-email)
+// ---------------------------------------------------------------------------
+
+async function sendEmail(env: Env, to: string, subject: string, html: string): Promise<boolean> {
+  if (!env.RESEND_API_KEY) return false
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ from: env.RESEND_FROM || 'onboarding@resend.dev', to: [to], subject, html }),
+  })
+  return res.ok
+}
+
+// ---------------------------------------------------------------------------
 // Router
 // ---------------------------------------------------------------------------
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url)
 
     if (request.method === 'OPTIONS') {
@@ -104,12 +202,36 @@ export default {
       return handleLogin(request, env)
     }
 
+    if (request.method === 'POST' && url.pathname === '/api/auth/forgot-password') {
+      return handleForgotPassword(request, env, ctx)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/api/auth/reset-password') {
+      return handleResetPassword(request, env)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/api/auth/google/callback') {
+      return handleGoogleCallback(request, env)
+    }
+
     if (request.method === 'GET' && url.pathname === '/api/message') {
       return handleGetMessage(env)
     }
 
     if (request.method === 'PUT' && url.pathname === '/api/message') {
       return handlePutMessage(request, env)
+    }
+
+    if (request.method === 'GET' && url.pathname === '/api/calendar') {
+      return handleGetCalendar(env)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/api/calendar/import') {
+      return handleImportCalendar(request, env)
+    }
+
+    if (request.method === 'GET' && url.pathname === '/api/calendar/resumo-ha') {
+      return handleGetResumoHa(env)
     }
 
     return new Response('Not found', { status: 404 })
@@ -120,6 +242,21 @@ export default {
 // Handlers
 // ---------------------------------------------------------------------------
 
+interface AdminUserRow {
+  id: string
+  username: string
+  email: string
+  password_hash: string | null
+  google_sub: string | null
+}
+
+function adminJwt(adminId: string, username: string, secret: string): Promise<string> {
+  return signJwt(
+    { sub: adminId, username, role: 'admin', exp: Math.floor(Date.now() / 1000) + 86400 },
+    secret,
+  )
+}
+
 async function handleLogin(request: Request, env: Env): Promise<Response> {
   let body: { username?: string; password?: string }
   try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
@@ -127,18 +264,202 @@ async function handleLogin(request: Request, env: Env): Promise<Response> {
   const { username, password } = body
   if (!username || !password) return jsonResponse({ error: 'Missing credentials' }, 400)
 
-  const userOk = await safeEqual(username, env.ADMIN_USERNAME ?? '')
-  const passOk = await safeEqual(password, env.ADMIN_PASSWORD ?? '')
+  const admin = await env.DB.prepare(
+    `SELECT id, username, email, password_hash, google_sub FROM admin_users WHERE username = ? OR email = ?`
+  ).bind(username, username).first<AdminUserRow>()
 
-  if (!userOk || !passOk) {
+  if (!admin || !(await verifyPassword(password, admin.password_hash))) {
     return jsonResponse({ error: 'Invalid credentials' }, 401)
   }
 
-  const token = await signJwt(
-    { sub: username, role: 'admin', exp: Math.floor(Date.now() / 1000) + 86400 },
-    env.JWT_SECRET ?? '',
-  )
+  const token = await adminJwt(admin.id, admin.username, env.JWT_SECRET ?? '')
+  return jsonResponse({ token })
+}
 
+function requireAdmin(request: Request, env: Env): Promise<Record<string, unknown> | null> {
+  const authHeader = request.headers.get('Authorization') ?? ''
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
+  return verifyJwt(token, env.JWT_SECRET ?? '')
+}
+
+// Origem do link de reset precisa bater com uma origem conhecida — evita que o
+// endpoint seja usado para mandar emails "oficiais" com link para site de terceiro.
+function isAllowedOrigin(origin: string, env: Env): boolean {
+  const allowed = (env.ALLOWED_ORIGINS ?? '').split(',').map(s => s.trim()).filter(Boolean)
+  return allowed.includes(origin)
+}
+
+// Rate limit de POST /api/auth/forgot-password: no máximo 3 envios por hora,
+// por email, com backoff progressivo entre eles (1min antes do 2º, 2min antes
+// do 3º). A janela é sempre "últimos 60min" (sent_at > now - 3600), não o
+// histórico inteiro do email — assim, conforme os envios de uma rajada
+// completam 1h de idade, eles saem da contagem e a cota volta a liberar uma
+// rajada rápida de novo (em vez de travar para sempre em 1 email/hora depois
+// da primeira rajada de 3). Cada linha de password_reset_attempts representa
+// um envio que realmente aconteceu; uma tentativa negada por este rate limit
+// não grava nada (ver handleForgotPassword).
+async function isForgotPasswordAllowed(email: string, env: Env): Promise<boolean> {
+  const rows = await env.DB.prepare(
+    `SELECT sent_at FROM password_reset_attempts WHERE email = ? AND sent_at > (unixepoch() - 3600) ORDER BY sent_at DESC LIMIT 3`
+  ).bind(email).all<{ sent_at: number }>()
+  const attempts = rows.results ?? []
+  const now = Math.floor(Date.now() / 1000)
+
+  if (attempts.length === 0) return true
+  if (attempts.length === 1) return now - attempts[0].sent_at >= 60
+  if (attempts.length === 2) return now - attempts[0].sent_at >= 120
+  return now - attempts[0].sent_at >= 3600
+}
+
+async function handleForgotPassword(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+  let body: { email?: string; resetUrlBase?: string }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const { email, resetUrlBase } = body
+  if (!email || !resetUrlBase) return jsonResponse({ error: 'Missing email or resetUrlBase' }, 400)
+
+  let origin: string
+  try { origin = new URL(resetUrlBase).origin } catch { return jsonResponse({ error: 'Invalid resetUrlBase' }, 400) }
+  if (!isAllowedOrigin(origin, env)) return jsonResponse({ error: 'Origin not allowed' }, 400)
+
+  const admin = await env.DB.prepare(
+    `SELECT id, username, email FROM admin_users WHERE email = ?`
+  ).bind(email).first<AdminUserRow>()
+
+  // Roda mesmo quando o email não existe, para não criar uma checagem extra que
+  // só acontece se a conta existir (evitaria virar mais um sinal de timing).
+  const allowed = await isForgotPasswordAllowed(email, env)
+
+  // A "reserva" da tentativa (INSERT em password_reset_attempts) precisa
+  // acontecer aqui, síncrona e com await, ANTES do return — simétrica entre
+  // email existente/inexistente (depende só do histórico de tentativas do
+  // endereço, não de o admin existir). Se isso fosse adiado para dentro do
+  // ctx.waitUntil (depois da resposta já enviada), requisições concorrentes
+  // pro mesmo email todas leriam o mesmo estado "nenhuma tentativa ainda" em
+  // isForgotPasswordAllowed e todas passariam no rate limit — o limite ficaria
+  // trivialmente burlável com concorrência. Gravando aqui, a janela de corrida
+  // cai de "duração de uma chamada de rede externa" (fetch pro Resend) para
+  // "duração de um INSERT local no D1".
+  if (allowed) {
+    await env.DB.prepare(`
+      INSERT INTO password_reset_attempts (id, email)
+      VALUES (?, ?)
+    `).bind(crypto.randomUUID(), email).run()
+  }
+
+  // Sempre responde ok imediatamente, sem esperar o envio de fato — não revela se
+  // o email existe (evita enumeração de contas) nem se a tentativa foi barrada
+  // pelo rate limit (mesma resposta e mesma latência nos dois casos). Só o que é
+  // lento e só faz sentido quando a conta existe de fato (gerar token, gravar em
+  // password_reset_tokens, e o fetch pro Resend) roda em background via
+  // ctx.waitUntil, para que ele NUNCA atrase a resposta ao client — do contrário,
+  // o branch "email existe" ficaria mensuravelmente mais lento que "não
+  // existe/rate limited", vazando a existência da conta por timing.
+  if (admin && allowed) {
+    ctx.waitUntil(sendPasswordResetEmail(env, admin, resetUrlBase))
+  }
+
+  return jsonResponse({ ok: true })
+}
+
+// Disparada via ctx.waitUntil a partir de handleForgotPassword — nunca deve ser
+// awaited ali, senão volta a vazar timing entre os branches do forgot-password.
+// Só cuida do que depende de rede externa (Resend); o registro da tentativa em
+// password_reset_attempts já aconteceu no caminho síncrono, antes da resposta.
+async function sendPasswordResetEmail(
+  env: Env,
+  admin: AdminUserRow,
+  resetUrlBase: string,
+): Promise<void> {
+  const rawToken = randomToken()
+  const tokenHash = await sha256Hex(rawToken)
+  const expiresAt = Math.floor(Date.now() / 1000) + 3600 // 1h
+
+  await env.DB.prepare(`
+    INSERT INTO password_reset_tokens (token_hash, admin_user_id, expires_at)
+    VALUES (?, ?, ?)
+  `).bind(tokenHash, admin.id, expiresAt).run()
+
+  const link = `${resetUrlBase}?token=${rawToken}`
+  await sendEmail(env, admin.email, 'Redefinir senha — Portal Técnico em IA', `
+    <p>Foi solicitada a redefinição da sua senha do painel do professor.</p>
+    <p><a href="${link}">Clique aqui para criar uma nova senha</a> (expira em 1 hora).</p>
+    <p>Se você não pediu isso, ignore este email.</p>
+  `)
+}
+
+async function handleResetPassword(request: Request, env: Env): Promise<Response> {
+  let body: { token?: string; newPassword?: string }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const { token, newPassword } = body
+  if (!token || !newPassword) return jsonResponse({ error: 'Missing token or newPassword' }, 400)
+  if (newPassword.length < 8) return jsonResponse({ error: 'Senha precisa ter ao menos 8 caracteres' }, 422)
+
+  const tokenHash = await sha256Hex(token)
+  const row = await env.DB.prepare(
+    `SELECT admin_user_id, expires_at, used FROM password_reset_tokens WHERE token_hash = ?`
+  ).bind(tokenHash).first<{ admin_user_id: string; expires_at: number; used: number }>()
+
+  if (!row || row.used || row.expires_at < Math.floor(Date.now() / 1000)) {
+    return jsonResponse({ error: 'Token inválido ou expirado' }, 401)
+  }
+
+  const passwordHash = await hashPassword(newPassword)
+  await env.DB.batch([
+    env.DB.prepare(`UPDATE admin_users SET password_hash = ? WHERE id = ?`).bind(passwordHash, row.admin_user_id),
+    // Invalida TODOS os tokens pendentes desse admin, não só o usado agora — evita que um
+    // link de reset antigo (ex: esquecido numa caixa de email) ainda funcione após a troca.
+    env.DB.prepare(`UPDATE password_reset_tokens SET used = 1 WHERE admin_user_id = ? AND used = 0`).bind(row.admin_user_id),
+  ])
+
+  return jsonResponse({ ok: true })
+}
+
+async function handleGoogleCallback(request: Request, env: Env): Promise<Response> {
+  let body: { code?: string; redirectUri?: string }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const { code, redirectUri } = body
+  if (!code || !redirectUri) return jsonResponse({ error: 'Missing code or redirectUri' }, 400)
+
+  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      code,
+      client_id: env.GOOGLE_CLIENT_ID ?? '',
+      client_secret: env.GOOGLE_CLIENT_SECRET ?? '',
+      redirect_uri: redirectUri,
+      grant_type: 'authorization_code',
+    }),
+  })
+  if (!tokenRes.ok) return jsonResponse({ error: 'Google token exchange failed' }, 401)
+  const tokenData = await tokenRes.json() as { access_token?: string }
+  if (!tokenData.access_token) return jsonResponse({ error: 'Google token exchange failed' }, 401)
+
+  const userRes = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+    headers: { Authorization: `Bearer ${tokenData.access_token}` },
+  })
+  if (!userRes.ok) return jsonResponse({ error: 'Google userinfo failed' }, 401)
+  const profile = await userRes.json() as { sub: string; email: string; email_verified: boolean }
+
+  if (!profile.email || !profile.email_verified) {
+    return jsonResponse({ error: 'Email do Google não verificado' }, 403)
+  }
+
+  // Só loga quem já é admin cadastrado — login com Google nunca cria conta nova
+  const admin = await env.DB.prepare(
+    `SELECT id, username, email, google_sub FROM admin_users WHERE email = ?`
+  ).bind(profile.email).first<AdminUserRow>()
+
+  if (!admin) return jsonResponse({ error: 'Email não autorizado para acesso admin' }, 403)
+
+  if (admin.google_sub !== profile.sub) {
+    await env.DB.prepare(`UPDATE admin_users SET google_sub = ? WHERE id = ?`).bind(profile.sub, admin.id).run()
+  }
+
+  const token = await adminJwt(admin.id, admin.username, env.JWT_SECRET ?? '')
   return jsonResponse({ token })
 }
 
@@ -150,9 +471,7 @@ async function handleGetMessage(env: Env): Promise<Response> {
 }
 
 async function handlePutMessage(request: Request, env: Env): Promise<Response> {
-  const authHeader = request.headers.get('Authorization') ?? ''
-  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
-  const payload = await verifyJwt(token, env.JWT_SECRET ?? '')
+  const payload = await requireAdmin(request, env)
   if (!payload || payload.role !== 'admin') {
     return jsonResponse({ error: 'Unauthorized' }, 401)
   }
@@ -202,6 +521,87 @@ async function handleSync(request: Request, env: Env): Promise<Response> {
   }
 
   return jsonResponse({ ok: true })
+}
+
+async function handleGetCalendar(env: Env): Promise<Response> {
+  const days = await env.DB.prepare(
+    `SELECT id, numero, data, tipo, status, observacao FROM calendar_days ORDER BY data ASC`
+  ).all<{ id: string; numero: string | null; data: string; tipo: string; status: string; observacao: string | null }>()
+
+  const blocos = await env.DB.prepare(
+    `SELECT calendar_day_id, uc, disciplina, conteudo, ha, ordem FROM calendar_blocos ORDER BY calendar_day_id, ordem ASC`
+  ).all<{ calendar_day_id: string; uc: string; disciplina: string | null; conteudo: string | null; ha: number | null; ordem: number }>()
+
+  const blocosByDay = new Map<string, unknown[]>()
+  for (const b of blocos.results ?? []) {
+    const list = blocosByDay.get(b.calendar_day_id) ?? []
+    list.push({ uc: b.uc, disciplina: b.disciplina, conteudo: b.conteudo, ha: b.ha })
+    blocosByDay.set(b.calendar_day_id, list)
+  }
+
+  const result = (days.results ?? []).map(d => ({
+    ...d,
+    blocos: blocosByDay.get(d.id) ?? [],
+  }))
+
+  return jsonResponse({ days: result })
+}
+
+async function handleGetResumoHa(env: Env): Promise<Response> {
+  const rows = await env.DB.prepare(
+    `SELECT b.uc,
+      SUM(CASE WHEN d.data <= '2026-05-14' THEN b.ha ELSE 0 END) AS t1,
+      SUM(CASE WHEN d.data > '2026-05-14' AND d.data <= '2026-09-04' THEN b.ha ELSE 0 END) AS t2,
+      SUM(CASE WHEN d.data > '2026-09-04' THEN b.ha ELSE 0 END) AS t3
+    FROM calendar_blocos b
+    JOIN calendar_days d ON d.id = b.calendar_day_id
+    WHERE d.status = 'dada'
+    GROUP BY b.uc
+    ORDER BY b.uc`
+  ).all<{ uc: string; t1: number; t2: number; t3: number }>()
+
+  return jsonResponse({ ucs: rows.results ?? [] })
+}
+
+async function handleImportCalendar(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAdmin(request, env)
+  if (!payload || payload.role !== 'admin') return jsonResponse({ error: 'Unauthorized' }, 401)
+
+  let body: { days?: CalendarDayPayload[] }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  if (!Array.isArray(body.days) || body.days.length === 0) {
+    return jsonResponse({ error: 'Missing days array' }, 422)
+  }
+
+  const statements: D1PreparedStatement[] = []
+
+  for (const day of body.days) {
+    if (!day.id || !day.data) continue
+
+    statements.push(env.DB.prepare(`
+      INSERT INTO calendar_days (id, numero, data, tipo, status, observacao, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, unixepoch())
+      ON CONFLICT (id) DO UPDATE SET
+        numero = excluded.numero, data = excluded.data, tipo = excluded.tipo,
+        status = excluded.status, observacao = excluded.observacao, updated_at = excluded.updated_at
+    `).bind(day.id, day.numero ?? null, day.data, day.tipo ?? 'aula', day.status ?? 'planejada', day.observacao ?? null))
+
+    statements.push(env.DB.prepare(`DELETE FROM calendar_blocos WHERE calendar_day_id = ?`).bind(day.id))
+
+    ;(day.blocos ?? []).forEach((bloco, i) => {
+      if (!bloco.uc) return
+      statements.push(env.DB.prepare(`
+        INSERT INTO calendar_blocos (id, calendar_day_id, uc, disciplina, conteudo, ha, ordem)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `).bind(`${day.id}-${bloco.uc}`, day.id, bloco.uc, bloco.disciplina ?? null, bloco.conteudo ?? null, bloco.ha ?? null, i))
+    })
+  }
+
+  if (statements.length === 0) return jsonResponse({ error: 'Nothing to import' }, 422)
+
+  await env.DB.batch(statements)
+  return jsonResponse({ ok: true, dias: body.days.length })
 }
 
 // ---------------------------------------------------------------------------

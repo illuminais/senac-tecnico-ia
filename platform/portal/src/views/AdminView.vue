@@ -2,32 +2,17 @@
 import { ref, onMounted } from 'vue'
 import { marked } from 'marked'
 import { useRouter } from 'vue-router'
-
-const WORKER = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev'
-const TOKEN_KEY = 'lms_admin_jwt'
-const TOKEN_MAX_AGE = 86400 // 24h — mesmo TTL do JWT
-
-// Cookie helpers (SameSite=Strict + Secure previne CSRF; sem HttpOnly pois o JS precisa ler para o header Bearer)
-function getCookie(name: string): string {
-  const match = document.cookie.split('; ').find(r => r.startsWith(name + '='))
-  return match ? decodeURIComponent(match.split('=')[1]) : ''
-}
-function setCookie(name: string, value: string, maxAge: number) {
-  const secure = location.protocol === 'https:' ? '; Secure' : ''
-  document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; SameSite=Strict; Path=/${secure}`
-}
-function deleteCookie(name: string) {
-  document.cookie = `${name}=; Max-Age=0; SameSite=Strict; Path=/`
-}
+import { useAdminAuth, WORKER } from '@/composables/useAdminAuth'
+import { googleLoginUrl } from '@/composables/useGoogleAuth'
 
 const router = useRouter()
+const { token, setToken, logout } = useAdminAuth()
 
 const username = ref('')
 const password = ref('')
 const loginError = ref('')
 const loggingIn = ref(false)
 
-const token = ref(getCookie(TOKEN_KEY))
 const message = ref('')
 const saving = ref(false)
 const saveStatus = ref<'idle' | 'ok' | 'error'>('idle')
@@ -48,14 +33,17 @@ async function login() {
     })
     if (!res.ok) { loginError.value = 'Usuario ou senha incorretos.'; return }
     const data = await res.json()
-    token.value = data.token
-    setCookie(TOKEN_KEY, data.token, TOKEN_MAX_AGE)
+    setToken(data.token)
     await loadMessage()
   } catch {
     loginError.value = 'Erro de conexao com o servidor.'
   } finally {
     loggingIn.value = false
   }
+}
+
+function loginWithGoogle() {
+  location.href = googleLoginUrl()
 }
 
 async function loadMessage() {
@@ -83,11 +71,6 @@ async function save() {
     saving.value = false
     setTimeout(() => { saveStatus.value = 'idle' }, 3000)
   }
-}
-
-function logout() {
-  token.value = ''
-  deleteCookie(TOKEN_KEY)
 }
 </script>
 
@@ -131,12 +114,32 @@ function logout() {
           >
             {{ loggingIn ? 'Entrando...' : 'Entrar' }}
           </button>
+          <RouterLink to="/admin/esqueci-senha" class="text-xs text-gray-400 hover:text-white text-center transition">
+            Esqueci minha senha
+          </RouterLink>
         </form>
+
+        <div class="flex items-center gap-3 my-4">
+          <div class="h-px bg-neural-700 flex-1" />
+          <span class="text-xs text-gray-500">ou</span>
+          <div class="h-px bg-neural-700 flex-1" />
+        </div>
+
+        <button
+          @click="loginWithGoogle"
+          class="w-full flex items-center justify-center gap-2 bg-white text-neural-900 font-medium rounded-lg px-4 py-2 hover:opacity-90 transition"
+        >
+          Entrar com Google
+        </button>
       </div>
     </div>
 
     <!-- Editor -->
     <div v-else class="max-w-2xl mx-auto flex flex-col gap-4">
+      <RouterLink to="/admin/calendario" class="text-sm text-neural-accent hover:underline self-start">
+        → Importar calendário (Orion)
+      </RouterLink>
+
       <div class="bg-neural-800 rounded-2xl p-6 border border-neural-700">
         <div class="flex items-center justify-between mb-3">
           <h2 class="text-white font-semibold">Mensagem para os alunos</h2>

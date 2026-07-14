@@ -76,9 +76,9 @@ A37 · 26/06 · Fórmula do desvio padrão (6 passos) · cálculo manual (Japão
 |---|---|---|---|---|
 | A37 | 26/06 | ~3 | Fórmula do desvio padrão (6 passos) · cálculo manual passo a passo (Japão 2022: 12, 8, 6, 8) · .std() em pandas · interpretação prática (DP baixo = consistência) · comparação estilos de jogo | Conceitos de DP consolidados; dificuldade na comparação SQL vs pandas vs Excel — necessário reforço em como ferramentas diferentes resolvem mesmo problema |
 | A05/A06 | 12–13/03 | ~4 | Função linear (y=ax+b, coef. angular/linear, Python def f_linear) · f. polinomial · f. exponencial · f. logarítmica · Kahoot | Registros informais — sistema não registrou essas datas como UC09 |
-| A?? | 27/03 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
-| A?? | 24/04 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
-| A?? | 08/05 | 3 | tópicos não registrados no contexto — ver AULAS-DADAS.md | — |
+| A10 | 27/03 | 3 | Gincana Dado Kahoot. Operações dentro do python | (enriquecido via diário OrionWeb) |
+| A18 | 24/04 | 3 | - Funções: linear, polinomial, logarítmica, exponencial. - Probabilidade básica: espaço amostral e eventos; probabilidade de um evento; regra da adição; probabilidade condicional; regra da multiplicação; variáveis aleatórias. | (enriquecido via diário OrionWeb) |
+| A21 | 08/05 | 3 | - Funções: linear, polinomial, logarítmica, exponencial. - Dados discretos: valores separados e contáveis. - Dados contínuos: podem assumir qualquer valor em um intervalo. Frequência absoluta: número de vezes que um valor ocorre. — Observações: av06 | (enriquecido via diário OrionWeb) |
 | A25 | 16/05 | 3 | T2 — tópicos não registrados no contexto | — |
 | A36 | 25/06 | ~3 | Média · mediana (robustez a outlier) · desvio padrão (conceito, fórmula, cálculo passo a passo) · análise Copa 2022 · comparação Argentina vs Marrocos 2022 | Conceitos consolidados através de cálculo manual com dados reais |
 
