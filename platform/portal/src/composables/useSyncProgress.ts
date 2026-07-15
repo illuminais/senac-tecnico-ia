@@ -2,7 +2,7 @@ import { onMounted, onUnmounted } from 'vue'
 import { useStudentAuth } from './useStudentAuth'
 
 const SYNC_INTERVAL_MS = 30_000
-const API_URL = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev/api/sync'
+const API_URL = 'https://lms-senac-tecnico-ia.dev-leozanini.workers.dev/api/sync'
 
 /**
  * Envia o estado completo de progresso de uma aula para o Worker (idempotente).

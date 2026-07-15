@@ -6,6 +6,11 @@
  * Filtro de release: só builda aulas com status: published
  * Use --all para incluir todas (modo dev/preview local)
  *
+ * Incremental por HASH DE CONTEÚDO (platform/dist/.build-cache.json), não por
+ * mtime — sobrevive a checkout/sandbox novo/qualquer coisa que reescreva
+ * arquivos sem mudar o conteúdo. Só rebuilda a aula se slides.md/meta.yaml/etc
+ * realmente mudaram desde o último build bem-sucedido.
+ *
  * Uso:
  *   node platform/scripts/build-all.mjs          ← só published (incremental)
  *   node platform/scripts/build-all.mjs --all    ← todas (dev local, incremental)
@@ -15,12 +20,14 @@
 
 import fs from 'fs'
 import path from 'path'
+import crypto from 'crypto'
 import { execSync } from 'child_process'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT  = path.resolve(__dirname, '../..')
 const DIST  = path.resolve(__dirname, '../dist')
+const CACHE_FILE = path.join(DIST, '.build-cache.json')
 
 const includeAll    = process.argv.includes('--all')
 const forceRebuild  = process.argv.includes('--force')
@@ -61,15 +68,17 @@ function log(msg, color = '') {
 }
 
 /**
- * Retorna true se o dist já existe e é mais recente que qualquer arquivo fonte.
- * Rastreia: slides.md, meta.yaml e todos os .vue/.ts/.js/.css da pasta.
+ * Hash de conteúdo (não mtime) dos fontes de uma aula: slides.md, meta.yaml e
+ * todos os .vue/.ts/.js/.css/.json da pasta. Baseado em conteúdo (não em
+ * timestamp) porque mtime não é confiável entre ambientes — um `git
+ * checkout`, um sandbox recém-criado, ou qualquer operação que reescreva os
+ * arquivos pode "tocar" o mtime sem o conteúdo ter mudado, forçando rebuild
+ * de tudo à toa (foi exatamente o que aconteceu — build de 39 aulas do zero
+ * mesmo sem nenhuma ter sido editada).
  */
-function isUpToDate(aulaDir, aulaDistDir) {
-  const indexHtml = path.join(aulaDistDir, 'index.html')
-  if (!fs.existsSync(indexHtml)) return false
-  const distMtime = fs.statSync(indexHtml).mtimeMs
-
+function contentHash(aulaDir) {
   const TRACK_EXT = /\.(md|yaml|vue|ts|js|css|json)$/
+  const files = []
   const stack = [aulaDir]
   while (stack.length) {
     const dir = stack.pop()
@@ -78,10 +87,26 @@ function isUpToDate(aulaDir, aulaDistDir) {
       const full = path.join(dir, entry.name)
       if (entry.isDirectory()) { stack.push(full); continue }
       if (!TRACK_EXT.test(entry.name)) continue
-      if (fs.statSync(full).mtimeMs > distMtime) return false
+      files.push(full)
     }
   }
-  return true
+  files.sort() // ordem estável independente da ordem de leitura do FS
+
+  const hash = crypto.createHash('sha256')
+  for (const f of files) {
+    hash.update(path.relative(aulaDir, f))
+    hash.update(fs.readFileSync(f))
+  }
+  return hash.digest('hex')
+}
+
+function loadCache() {
+  if (!fs.existsSync(CACHE_FILE)) return {}
+  try { return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8')) } catch { return {} }
+}
+
+function saveCache(cache) {
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8')
 }
 
 // ---------------------------------------------------------------------------
@@ -175,20 +200,29 @@ if (!fs.existsSync(DIST)) {
 // ---------------------------------------------------------------------------
 
 const results = []
+const cache = loadCache()
+const newCache = {}
 
 for (const { dirName, aulaDir, slug, meta } of aulasMeta) {
-  log(`\n─────────────────────────────────────────`, 'cyan')
-  log(`  Buildando: ${dirName}`, 'cyan')
-  log(`  Slug: /${slug}/`, 'cyan')
-
   const aulaDistDir = path.join(DIST, slug)
+  const hash = contentHash(aulaDir)
+  newCache[slug] = hash
 
-  // Build incremental: pular se dist for mais recente que os fontes
-  if (!forceRebuild && isUpToDate(aulaDir, aulaDistDir)) {
+  // Build incremental: pular se o hash de conteúdo bate com o último build
+  // bem-sucedido E o dist ainda existe (não confia só no hash se o dist sumiu).
+  const upToDate = !forceRebuild
+    && cache[slug] === hash
+    && fs.existsSync(path.join(aulaDistDir, 'index.html'))
+
+  if (upToDate) {
     log(`  ⏩ ${dirName} — sem alterações, pulando`, 'yellow')
     results.push({ dirName, slug, status: 'skipped', meta })
     continue
   }
+
+  log(`\n─────────────────────────────────────────`, 'cyan')
+  log(`  Buildando: ${dirName}`, 'cyan')
+  log(`  Slug: /${slug}/`, 'cyan')
 
   // Limpar dist anterior desta aula
   if (fs.existsSync(aulaDistDir)) {
@@ -207,8 +241,12 @@ for (const { dirName, aulaDir, slug, meta } of aulasMeta) {
   } catch (err) {
     log(`  ❌ Erro ao buildar ${dirName}: ${err.message}`, 'red')
     results.push({ dirName, slug, status: 'error', meta, error: err.message })
+    delete newCache[slug] // não cacheia build que falhou — próxima rodada tenta de novo
   }
 }
+
+// Persiste o cache (só aulas que buildaram OK ou já estavam em dia entram aqui)
+saveCache(newCache)
 
 // ---------------------------------------------------------------------------
 // 5. Gerar aulas.json

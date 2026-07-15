@@ -2,7 +2,7 @@
 import { ref, onMounted, computed } from 'vue'
 import type { CalendarDay, ResumoHaUc } from '@/types/calendar'
 
-const WORKER = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev'
+const WORKER = 'https://lms-senac-tecnico-ia.dev-leozanini.workers.dev'
 
 const days = ref<CalendarDay[]>([])
 const loading = ref(true)

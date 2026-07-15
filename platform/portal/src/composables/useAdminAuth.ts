@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export const WORKER = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev'
+export const WORKER = 'https://lms-senac-tecnico-ia.dev-leozanini.workers.dev'
 
 const TOKEN_KEY = 'lms_admin_jwt'
 const TOKEN_MAX_AGE = 86400 // 24h — mesmo TTL do JWT

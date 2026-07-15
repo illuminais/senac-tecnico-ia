@@ -4,7 +4,7 @@ import { marked } from 'marked'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import { useStudentAuth } from '@/composables/useStudentAuth'
 
-const WORKER = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev'
+const WORKER = 'https://lms-senac-tecnico-ia.dev-leozanini.workers.dev'
 const route = useRoute()
 const professorMessage = ref('')
 const { token: studentToken, user: studentUser, logout: studentLogout } = useStudentAuth()
