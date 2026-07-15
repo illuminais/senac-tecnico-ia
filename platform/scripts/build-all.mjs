@@ -255,10 +255,14 @@ saveCache(newCache)
 const aulasJson = results
   .filter(r => r.status === 'ok' || r.status === 'skipped')
   .map(({ dirName, slug, meta }) => {
-    // Extrair UCs do nome do dir (ex: A11_UC07+01+02_09abr → ['07','01','02'])
+    // Extrair UCs do nome do dir. Padrão certo: A11_UC07+01+02_09abr → ['7','1','2']
+    // (só o primeiro segmento leva "UC" — os seguintes são número puro). Mas
+    // algumas pastas (A39-A41) foram criadas fora do padrão, tipo
+    // A39_UC04+UC05_03jul (com "UC" repetido em cada segmento) — o
+    // .replace(/^UC/i, '') tolera os dois formatos sem precisar renomear pasta.
     const ucMatch = dirName.match(/_UC([^_]+)_/)
     const ucs = ucMatch
-      ? ucMatch[1].split('+').map(uc => uc.replace(/^0+/, '')).filter(Boolean)
+      ? ucMatch[1].split('+').map(uc => uc.replace(/^UC/i, '').replace(/^0+/, '')).filter(Boolean)
       : []
 
     return {

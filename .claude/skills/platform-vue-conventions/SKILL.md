@@ -24,6 +24,10 @@ Convenções observadas e a seguir em `platform/portal/src/`. O objetivo é mant
 - **Composable**: quando o que se repete é **estado ou lógica** sem markup (ex.: `useAdminAuth` — cookie de JWT usado por `AdminView`, `AdminCalendarioView`, `GoogleCallbackView`).
 - Se as duas views/components que compartilham lógica só existem uma vez cada (sem uma terceira ocorrência à vista), **não extraia ainda** — três repetições reais é o gatilho, não hipóteses de reuso futuro.
 
+## `App.vue` fica enxuto — sempre componentize, mesmo o que é só decorativo
+
+`App.vue` é o shell da aplicação: só orquestra componentes (`<AppSidebar />`, `<ProfessorMessageBanner />`, `<NeuralBackground />`, `<RouterView />`), nunca contém bloco de `<template>` grande inline — **isso vale mesmo pra markup puramente decorativo/estrutural sem dado nenhum** (ex.: o fundo de rede neural nas bordas virou `NeuralBackground.vue` mesmo sem props/lógica, só pra tirar HTML/CSS repetitivo do shell). A regra de "três repetições" acima é sobre reuso — isso aqui é sobre **legibilidade do shell**: qualquer `<div>`/bloco com mais de ~5-10 linhas de classes/estilo dentro de `App.vue` vira componente próprio, ainda que seja usado uma vez só. Views grandes (`AvaliacaoView.vue`, etc.) seguem a mesma lógica quando um trecho do template cresce a ponto de atrapalhar a leitura da página.
+
 ## Composables — padrão de estado compartilhado
 
 Quando o estado precisa ser o mesmo em várias instâncias de componente (ex.: "estou logado?" refletido simultaneamente em `App.vue` e `AdminView.vue`), declare o `ref` **fora** da função exportada (nível de módulo), não dentro:

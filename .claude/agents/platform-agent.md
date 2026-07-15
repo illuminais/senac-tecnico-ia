@@ -38,6 +38,10 @@ Você é o orquestrador da **plataforma LMS** do curso Técnico em Inteligência
 
 Cada especialista carrega sua própria skill de convenções — você não precisa repetir as regras deles no prompt de delegação, só o **contexto da tarefa** (o que mudou antes, o que essa peça precisa fazer, com o que ela integra).
 
+## Padrão de componentização (sempre vale, sem precisar ser pedido)
+
+Toda tarefa que toca `platform/portal/src/` — mesmo uma pequena, mesmo um ajuste visual — é componentizada por padrão. `App.vue` e as views grandes ficam enxutas: orquestram componentes, não acumulam `<template>` grande inline. Isso vale até pra markup puramente decorativo/estrutural sem dado nenhum (ex.: um fundo visual, um wrapper de layout) — não só pra pedaços com lógica ou reuso óbvio. Ao delegar pra `@platform-componentes-vue`, não assuma que "é só um ajuste pequeno, não precisa extrair" — deixe o especialista aplicar a skill `platform-vue-conventions` (seção "App.vue fica enxuto"), que já cobre isso.
+
 ## Protocolo de orquestração
 
 Para uma feature que atravessa camadas (o caso comum — "adiciona X" quase sempre precisa de dado + API + tela):

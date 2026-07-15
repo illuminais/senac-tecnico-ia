@@ -519,7 +519,7 @@ async function handleStudentGoogleCallback(request: Request, env: Env): Promise<
     headers: { Authorization: `Bearer ${tokenData.access_token}` },
   })
   if (!userRes.ok) return jsonResponse({ error: 'Google userinfo failed' }, 401)
-  const profile = await userRes.json() as { sub: string; email: string; email_verified: boolean; name?: string }
+  const profile = await userRes.json() as { sub: string; email: string; email_verified: boolean; name?: string; picture?: string }
 
   if (!profile.email || !profile.email_verified) {
     return jsonResponse({ error: 'Email do Google não verificado' }, 403)
@@ -537,8 +537,10 @@ async function handleStudentGoogleCallback(request: Request, env: Env): Promise<
     ON CONFLICT (id) DO UPDATE SET nome = excluded.nome, email = excluded.email
   `).bind(profile.sub, profile.name ?? null, profile.email).run()
 
+  // picture não é persistida em D1 — repassada direto do userinfo do Google
+  // a cada login, igual name, só pra exibir avatar no portal.
   const token = await signJwt(
-    { sub: profile.sub, email: profile.email, name: profile.name ?? null, role: 'student', exp: Math.floor(Date.now() / 1000) + 30 * 86400 },
+    { sub: profile.sub, email: profile.email, name: profile.name ?? null, picture: profile.picture ?? null, role: 'student', exp: Math.floor(Date.now() / 1000) + 30 * 86400 },
     env.JWT_SECRET ?? '',
   )
   return jsonResponse({ token })

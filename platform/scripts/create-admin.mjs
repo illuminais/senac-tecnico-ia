@@ -13,7 +13,7 @@
  * Sem --execute, só imprime o SQL e o comando wrangler para você rodar manualmente.
  */
 
-import { execSync } from 'child_process'
+import { execFileSync } from 'child_process'
 import { randomUUID } from 'crypto'
 import { hashPassword } from './lib/password-hash.mjs'
 
@@ -51,7 +51,11 @@ console.log(sql)
 if (opts.execute) {
   const flag = opts.remote ? '--remote' : '--local'
   console.log(`\nExecutando via wrangler d1 execute (${flag})...\n`)
-  execSync(`npx wrangler d1 execute lms-progress ${flag} --command "${sql.replace(/"/g, '\\"')}"`, {
+  // execFileSync (sem shell) — o SQL tem `$` (formato pbkdf2$iter$salt$hash), que
+  // um shell interpretaria como expansão de variável se isso passasse por
+  // execSync com uma string ("pbkdf2$100000$..." vira "pbkdf2000000..." — foi
+  // exatamente esse bug que corrompeu o hash gravado em produção antes.
+  execFileSync('npx', ['wrangler', 'd1', 'execute', 'lms-progress', flag, '--command', sql], {
     cwd: new URL('..', import.meta.url).pathname,
     stdio: 'inherit',
   })

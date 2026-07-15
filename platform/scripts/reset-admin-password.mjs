@@ -18,7 +18,7 @@
  * antigo ainda válido depois do reset manual.
  */
 
-import { execSync } from 'child_process'
+import { execFileSync } from 'child_process'
 import { hashPassword } from './lib/password-hash.mjs'
 
 function parseArgs() {
@@ -57,8 +57,12 @@ statements.forEach(s => console.log(s))
 if (opts.execute) {
   const flag = opts.remote ? '--remote' : '--local'
   console.log(`\nExecutando via wrangler d1 execute (${flag})...\n`)
+  // execFileSync (sem shell) — o hash tem `$` (pbkdf2$iter$salt$hash), que um
+  // shell expandiria como variável dentro de aspas duplas (foi esse bug que
+  // corrompeu a senha em produção da primeira vez — "$100000$..." virava
+  // "000000..." silenciosamente, sem erro nenhum).
   for (const sql of statements) {
-    execSync(`npx wrangler d1 execute lms-progress ${flag} --command "${sql.replace(/"/g, '\\"')}"`, {
+    execFileSync('npx', ['wrangler', 'd1', 'execute', 'lms-progress', flag, '--command', sql], {
       cwd: new URL('..', import.meta.url).pathname,
       stdio: 'inherit',
     })

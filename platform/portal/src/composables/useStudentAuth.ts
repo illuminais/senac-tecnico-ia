@@ -22,6 +22,7 @@ interface StudentJwtPayload {
   sub: string
   email: string | null
   name: string | null
+  picture: string | null
   role: string
   exp: number
 }

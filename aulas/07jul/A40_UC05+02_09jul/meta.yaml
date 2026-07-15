@@ -1,15 +1,15 @@
 # Metadados da Aula — Neural Slides
 
-aula: "41"
-slug: "a41-uc08-uc06-10jul"
-title: "Caso do Detetive: HAVING e paralelismo de GPU"
+aula: "40"
+slug: "a40-uc05-uc02-09jul"
+title: "Caso do Detetive: import, library e groupby"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
-disciplines: ["UC08", "UCUC06"]
+disciplines: ["UC05", "UC02"]
 
 # formato ISO: YYYY-MM-DD
-date: "2026-07-10"
+date: "2026-07-09"
 
 # em-planejamento | ready | published
 status: published
