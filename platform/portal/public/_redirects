@@ -1,0 +1,16 @@
+# Cloudflare Pages — SPA routing
+# Serve o portal (index.html) para qualquer rota não mapeada para arquivo estático.
+# As pastas das aulas (/a11-ucxx-09abr/, etc.) têm seus próprios index.html
+# e são servidas diretamente pelo Cloudflare Pages antes desta regra ser avaliada.
+#
+# Este arquivo é copiado pro platform/dist/_redirects pelo build do portal
+# (vite copia o conteúdo de public/). Fonte da verdade fica aqui, versionada —
+# não edite platform/dist/_redirects diretamente, é gerado/sobrescrito.
+
+# A39/A40/A41 renomeadas em 15/07 (nome de pasta tinha "UC" duplicado, corrigido)
+# — mantém link antigo funcionando pra quem já acessou/salvou a URL anterior.
+/a39-uc04-uc05-03jul/* /a39-uc04-05-03jul/:splat 301
+/a40-uc05-uc02-09jul/* /a40-uc05-02-09jul/:splat 301
+/a41-uc08-uc06-10jul/* /a41-uc08-06-10jul/:splat 301
+
+/* /index.html 200
