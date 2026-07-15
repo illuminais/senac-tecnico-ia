@@ -11,6 +11,8 @@ import AdminCalendarioView from './views/AdminCalendarioView.vue'
 import ForgotPasswordView from './views/ForgotPasswordView.vue'
 import ResetPasswordView from './views/ResetPasswordView.vue'
 import GoogleCallbackView from './views/GoogleCallbackView.vue'
+import EntrarView from './views/EntrarView.vue'
+import StudentGoogleCallbackView from './views/StudentGoogleCallbackView.vue'
 import './style.css'
 
 const router = createRouter({
@@ -26,6 +28,8 @@ const router = createRouter({
     { path: '/admin/esqueci-senha', component: ForgotPasswordView },
     { path: '/admin/reset-senha', component: ResetPasswordView },
     { path: '/admin/google-callback', component: GoogleCallbackView },
+    { path: '/entrar', component: EntrarView },
+    { path: '/entrar/google-callback', component: StudentGoogleCallbackView },
   ],
 })
 

@@ -2,12 +2,20 @@
 import { ref, onMounted } from 'vue'
 import { marked } from 'marked'
 import { useRoute, useRouter } from 'vue-router'
+import { useStudentAuth } from '@/composables/useStudentAuth'
+import { WORKER } from '@/composables/useAdminAuth'
 
 const route = useRoute()
 const router = useRouter()
 const content = ref('')
 const loading = ref(true)
 const notFound = ref(false)
+
+const { token } = useStudentAuth()
+const link = ref('')
+const sending = ref(false)
+const sendStatus = ref<'idle' | 'ok' | 'error'>('idle')
+const sendError = ref('')
 
 onMounted(async () => {
   const id = route.params.id as string
@@ -21,6 +29,34 @@ onMounted(async () => {
     loading.value = false
   }
 })
+
+async function enviarEntrega() {
+  sending.value = true
+  sendStatus.value = 'idle'
+  sendError.value = ''
+  try {
+    const res = await fetch(`${WORKER}/api/entregas`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token.value}`,
+      },
+      body: JSON.stringify({ avaliacaoId: route.params.id, link: link.value }),
+    })
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      sendError.value = data.error === 'link inválido' ? 'Link inválido — cole uma URL completa.' : 'Não foi possível enviar sua resposta.'
+      sendStatus.value = 'error'
+      return
+    }
+    sendStatus.value = 'ok'
+  } catch {
+    sendError.value = 'Erro de conexão com o servidor.'
+    sendStatus.value = 'error'
+  } finally {
+    sending.value = false
+  }
+}
 </script>
 
 <template>
@@ -47,6 +83,38 @@ onMounted(async () => {
       </div>
 
       <article v-else class="md-content" v-html="marked.parse(content)" />
+
+      <div v-if="!loading && !notFound" class="mt-8 rounded-2xl border border-neural-600 bg-neural-900/10 p-6">
+        <h2 class="text-white font-semibold mb-3">Enviar resposta</h2>
+
+        <template v-if="token">
+          <form @submit.prevent="enviarEntrega" class="flex flex-col gap-3">
+            <input
+              v-model="link"
+              type="url"
+              required
+              placeholder="Cole aqui o link da sua resposta (Drive, GitHub, etc.)"
+              class="bg-neural-900 border border-neural-700 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-neural-accent"
+            />
+            <p v-if="sendStatus === 'error'" class="text-red-400 text-sm">{{ sendError }}</p>
+            <p v-if="sendStatus === 'ok'" class="text-green-400 text-sm">Resposta enviada!</p>
+            <button
+              type="submit"
+              :disabled="sending"
+              class="self-start bg-neural-accent text-neural-900 font-semibold rounded-lg px-4 py-2 hover:opacity-90 disabled:opacity-50 transition"
+            >
+              {{ sending ? 'Enviando...' : 'Enviar' }}
+            </button>
+          </form>
+        </template>
+
+        <template v-else>
+          <p class="text-gray-400 text-sm">
+            Entre com sua conta para enviar sua resposta.
+            <RouterLink to="/entrar" class="text-neural-accent hover:underline">Entrar</RouterLink>
+          </p>
+        </template>
+      </div>
     </div>
   </div>
 </template>

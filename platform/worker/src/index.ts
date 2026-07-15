@@ -1,15 +1,17 @@
 /**
  * Cloudflare Worker — API LMS
- * POST /api/sync                  — persiste progresso (público)
- * POST /api/auth/login             — autentica admin (usuário/senha), retorna JWT
- * POST /api/auth/forgot-password   — envia email de reset (Resend), com rate limit por email
- * POST /api/auth/reset-password    — troca senha via token do email
- * POST /api/auth/google/callback   — troca code OAuth por sessão (JWT)
- * GET  /api/message                — busca mensagem do professor (público)
- * PUT  /api/message                — atualiza mensagem (requer JWT admin)
- * GET  /api/calendar               — calendário condensado de aulas (público)
- * POST /api/calendar/import        — upsert em lote de dias/blocos (requer JWT admin)
- * GET  /api/calendar/resumo-ha     — soma de HA dada por UC, bucketizado em T1/T2/T3 (público)
+ * POST /api/sync                       — persiste progresso (requer JWT — aluno ou admin)
+ * POST /api/auth/login                  — autentica admin (usuário/senha), retorna JWT
+ * POST /api/auth/forgot-password        — envia email de reset (Resend), com rate limit por email
+ * POST /api/auth/reset-password         — troca senha via token do email
+ * POST /api/auth/google/callback        — troca code OAuth por sessão (JWT), só admin já cadastrado
+ * POST /api/auth/student/google/callback — troca code OAuth por sessão (JWT) de aluno; cria conta no primeiro login se o email bater com STUDENT_EMAIL_DOMAINS
+ * POST /api/entregas                    — grava/atualiza link de entrega de avaliação (requer JWT aluno)
+ * GET  /api/message                     — busca mensagem do professor (público)
+ * PUT  /api/message                     — atualiza mensagem (requer JWT admin)
+ * GET  /api/calendar                    — calendário condensado de aulas (público)
+ * POST /api/calendar/import             — upsert em lote de dias/blocos (requer JWT admin)
+ * GET  /api/calendar/resumo-ha          — soma de HA dada por UC, bucketizado em T1/T2/T3 (público)
  */
 
 interface Env {
@@ -20,10 +22,10 @@ interface Env {
   GOOGLE_CLIENT_ID: string    // var — não é segredo, usado também no portal
   GOOGLE_CLIENT_SECRET: string // wrangler secret
   ALLOWED_ORIGINS: string     // var — CSV de origens permitidas p/ link de reset (evita open-redirect no email)
+  STUDENT_EMAIL_DOMAINS: string // var — CSV de domínios de email autorizados a criar conta de aluno
 }
 
 interface SyncPayload {
-  userId: string
   aulaId: string
   progresso: number
   respostas: Record<string, string>
@@ -214,6 +216,14 @@ export default {
       return handleGoogleCallback(request, env)
     }
 
+    if (request.method === 'POST' && url.pathname === '/api/auth/student/google/callback') {
+      return handleStudentGoogleCallback(request, env)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/api/entregas') {
+      return handleCreateEntrega(request, env)
+    }
+
     if (request.method === 'GET' && url.pathname === '/api/message') {
       return handleGetMessage(env)
     }
@@ -276,10 +286,19 @@ async function handleLogin(request: Request, env: Env): Promise<Response> {
   return jsonResponse({ token })
 }
 
-function requireAdmin(request: Request, env: Env): Promise<Record<string, unknown> | null> {
+// Extrai e valida o JWT do header Authorization — genérico, não checa role.
+// Cada handler decide o que fazer com payload.role (ou se nem liga pra role).
+function requireAuth(request: Request, env: Env): Promise<Record<string, unknown> | null> {
   const authHeader = request.headers.get('Authorization') ?? ''
   const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
   return verifyJwt(token, env.JWT_SECRET ?? '')
+}
+
+// Mantido como alias específico de admin — os handlers admin-only já chamam
+// `requireAdmin` e checam `role === 'admin'`; não duplicar essa checagem aqui
+// para não mudar o contrato existente (retorna o payload cru, igual antes).
+function requireAdmin(request: Request, env: Env): Promise<Record<string, unknown> | null> {
+  return requireAuth(request, env)
 }
 
 // Origem do link de reset precisa bater com uma origem conhecida — evita que o
@@ -463,6 +482,68 @@ async function handleGoogleCallback(request: Request, env: Env): Promise<Respons
   return jsonResponse({ token })
 }
 
+// Comparação de sufixo exata (nunca includes()) — evita bypass tipo
+// "fake@aluno.pr.senac.br.evil.com". Se STUDENT_EMAIL_DOMAINS estiver vazia
+// (erro de config), NINGUÉM deve conseguir logar — lista vazia nunca é
+// tratada como "permite tudo".
+function isAllowedStudentEmail(email: string, env: Env): boolean {
+  const domains = (env.STUDENT_EMAIL_DOMAINS ?? '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
+  if (domains.length === 0) return false
+  const lower = email.toLowerCase()
+  return domains.some(domain => lower.endsWith('@' + domain))
+}
+
+async function handleStudentGoogleCallback(request: Request, env: Env): Promise<Response> {
+  let body: { code?: string; redirectUri?: string }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const { code, redirectUri } = body
+  if (!code || !redirectUri) return jsonResponse({ error: 'Missing code or redirectUri' }, 400)
+
+  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      code,
+      client_id: env.GOOGLE_CLIENT_ID ?? '',
+      client_secret: env.GOOGLE_CLIENT_SECRET ?? '',
+      redirect_uri: redirectUri,
+      grant_type: 'authorization_code',
+    }),
+  })
+  if (!tokenRes.ok) return jsonResponse({ error: 'Google token exchange failed' }, 401)
+  const tokenData = await tokenRes.json() as { access_token?: string }
+  if (!tokenData.access_token) return jsonResponse({ error: 'Google token exchange failed' }, 401)
+
+  const userRes = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+    headers: { Authorization: `Bearer ${tokenData.access_token}` },
+  })
+  if (!userRes.ok) return jsonResponse({ error: 'Google userinfo failed' }, 401)
+  const profile = await userRes.json() as { sub: string; email: string; email_verified: boolean; name?: string }
+
+  if (!profile.email || !profile.email_verified) {
+    return jsonResponse({ error: 'Email do Google não verificado' }, 403)
+  }
+
+  if (!isAllowedStudentEmail(profile.email, env)) {
+    return jsonResponse({ error: 'Email não autorizado para acesso de aluno' }, 403)
+  }
+
+  // Login de aluno CRIA conta automaticamente no primeiro acesso (diferente do
+  // fluxo admin, que nunca cria conta) — upsert em users por id (sub do Google).
+  await env.DB.prepare(`
+    INSERT INTO users (id, nome, email)
+    VALUES (?, ?, ?)
+    ON CONFLICT (id) DO UPDATE SET nome = excluded.nome, email = excluded.email
+  `).bind(profile.sub, profile.name ?? null, profile.email).run()
+
+  const token = await signJwt(
+    { sub: profile.sub, email: profile.email, name: profile.name ?? null, role: 'student', exp: Math.floor(Date.now() / 1000) + 30 * 86400 },
+    env.JWT_SECRET ?? '',
+  )
+  return jsonResponse({ token })
+}
+
 async function handleGetMessage(env: Env): Promise<Response> {
   const row = await env.DB.prepare(
     `SELECT value FROM site_config WHERE key = 'professor_message'`
@@ -494,12 +575,16 @@ async function handlePutMessage(request: Request, env: Env): Promise<Response> {
 }
 
 async function handleSync(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload || typeof payload.sub !== 'string') return jsonResponse({ error: 'Unauthorized' }, 401)
+  const userId = payload.sub
+
   let body: SyncPayload
   try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
 
-  const { userId, aulaId, progresso, respostas } = body
-  if (!userId || !aulaId || typeof progresso !== 'number') {
-    return jsonResponse({ error: 'Missing required fields: userId, aulaId, progresso' }, 422)
+  const { aulaId, progresso, respostas } = body
+  if (!aulaId || typeof progresso !== 'number') {
+    return jsonResponse({ error: 'Missing required fields: aulaId, progresso' }, 422)
   }
 
   await env.DB.prepare(`
@@ -519,6 +604,36 @@ async function handleSync(request: Request, env: Env): Promise<Response> {
       `).bind(userId, aulaId, questaoId, resposta).run()
     }
   }
+
+  return jsonResponse({ ok: true })
+}
+
+async function handleCreateEntrega(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload || typeof payload.sub !== 'string') return jsonResponse({ error: 'Unauthorized' }, 401)
+  if (payload.role !== 'student') return jsonResponse({ error: 'Forbidden' }, 403)
+
+  let body: { avaliacaoId?: string; link?: string }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const { avaliacaoId, link } = body
+  if (!avaliacaoId || !link) return jsonResponse({ error: 'Missing required fields: avaliacaoId, link' }, 422)
+
+  // Só http(s) — evita gravar javascript:/data: URIs que um dia podem virar <a href> no painel do professor
+  let parsedLink: URL
+  try { parsedLink = new URL(link) } catch { return jsonResponse({ error: 'link inválido' }, 422) }
+  if (!['http:', 'https:'].includes(parsedLink.protocol)) {
+    return jsonResponse({ error: 'link precisa ser http:// ou https://' }, 422)
+  }
+
+  const userId = payload.sub
+
+  await env.DB.prepare(`
+    INSERT INTO entregas (user_id, avaliacao_slug, link, updated_at)
+    VALUES (?, ?, ?, unixepoch())
+    ON CONFLICT (user_id, avaliacao_slug)
+    DO UPDATE SET link = excluded.link, updated_at = excluded.updated_at
+  `).bind(userId, avaliacaoId, link.slice(0, 2000)).run()
 
   return jsonResponse({ ok: true })
 }

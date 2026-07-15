@@ -43,7 +43,7 @@ async function login() {
 }
 
 function loginWithGoogle() {
-  location.href = googleLoginUrl()
+  location.href = googleLoginUrl('/admin/google-callback')
 }
 
 async function loadMessage() {

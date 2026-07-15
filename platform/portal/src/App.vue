@@ -2,10 +2,12 @@
 import { ref, onMounted, computed } from 'vue'
 import { marked } from 'marked'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { useStudentAuth } from '@/composables/useStudentAuth'
 
 const WORKER = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev'
 const route = useRoute()
 const professorMessage = ref('')
+const { token: studentToken, user: studentUser, logout: studentLogout } = useStudentAuth()
 
 const isAulaPage = computed(() => route.name === 'aula' || route.path.startsWith('/aula/'))
 
@@ -39,23 +41,39 @@ onMounted(async () => {
         </div>
       </div>
 
-        <nav class="flex gap-1">
-          <RouterLink
-            to="/"
-            class="px-4 py-2 text-sm font-medium transition border-b-2"
-            :class="route.path === '/' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
-          >Aulas</RouterLink>
-          <RouterLink
-            to="/avaliacoes"
-            class="px-4 py-2 text-sm font-medium transition border-b-2"
-            :class="route.path === '/avaliacoes' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
-          >Avaliações</RouterLink>
-          <RouterLink
-            to="/calendario"
-            class="px-4 py-2 text-sm font-medium transition border-b-2"
-            :class="route.path === '/calendario' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
-          >Calendário</RouterLink>
-        </nav>
+        <div class="flex items-center justify-between">
+          <nav class="flex gap-1">
+            <RouterLink
+              to="/"
+              class="px-4 py-2 text-sm font-medium transition border-b-2"
+              :class="route.path === '/' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
+            >Aulas</RouterLink>
+            <RouterLink
+              to="/avaliacoes"
+              class="px-4 py-2 text-sm font-medium transition border-b-2"
+              :class="route.path === '/avaliacoes' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
+            >Avaliações</RouterLink>
+            <RouterLink
+              to="/calendario"
+              class="px-4 py-2 text-sm font-medium transition border-b-2"
+              :class="route.path === '/calendario' ? 'text-white border-neural-accent' : 'text-gray-400 hover:text-white border-transparent'"
+            >Calendário</RouterLink>
+          </nav>
+
+          <div class="flex items-center gap-2 pr-1">
+            <template v-if="studentToken">
+              <span class="hidden sm:inline text-xs text-gray-400 truncate max-w-[10rem]">
+                {{ studentUser?.name ?? studentUser?.email ?? 'Aluno' }}
+              </span>
+              <button @click="studentLogout" class="text-xs text-gray-400 hover:text-white transition">Sair</button>
+            </template>
+            <RouterLink
+              v-else
+              to="/entrar"
+              class="text-xs text-gray-400 hover:text-white transition"
+            >Entrar</RouterLink>
+          </div>
+        </div>
       </div>
     </header>
 

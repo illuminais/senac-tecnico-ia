@@ -1,11 +1,12 @@
 const STATE_KEY = 'lms_google_oauth_state'
 
-export function googleRedirectUri(): string {
-  return `${location.origin}/admin/google-callback`
+/** `redirectPath` é o path (ex: `/admin/google-callback` ou `/entrar/google-callback`) que recebe o `code` do Google. */
+export function googleRedirectUri(redirectPath: string): string {
+  return `${location.origin}${redirectPath}`
 }
 
 /** Monta a URL de consentimento do Google e guarda um `state` aleatório para validar no callback (CSRF). */
-export function googleLoginUrl(): string {
+export function googleLoginUrl(redirectPath: string): string {
   const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined
   if (!clientId) throw new Error('VITE_GOOGLE_CLIENT_ID não configurado (ver platform/portal/.env.example)')
 
@@ -14,7 +15,7 @@ export function googleLoginUrl(): string {
 
   const params = new URLSearchParams({
     client_id: clientId,
-    redirect_uri: googleRedirectUri(),
+    redirect_uri: googleRedirectUri(redirectPath),
     response_type: 'code',
     scope: 'openid email profile',
     prompt: 'select_account',

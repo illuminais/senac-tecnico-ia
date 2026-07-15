@@ -2,11 +2,13 @@
 -- Rode com: wrangler d1 execute lms-progress --file=worker/schema.sql
 
 CREATE TABLE IF NOT EXISTS users (
-  id         TEXT PRIMARY KEY,       -- gerado pelo cliente (UUID v4 no localStorage)
+  id         TEXT PRIMARY KEY,       -- claim "sub" da conta Google do aluno (login OAuth)
   nome       TEXT,
   email      TEXT,
   created_at INTEGER NOT NULL DEFAULT (unixepoch())
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users (email);
 
 CREATE TABLE IF NOT EXISTS progress (
   user_id    TEXT    NOT NULL,
@@ -105,3 +107,19 @@ CREATE TABLE IF NOT EXISTS calendar_blocos (
 );
 
 CREATE INDEX IF NOT EXISTS idx_calendar_blocos_day ON calendar_blocos (calendar_day_id);
+
+-- ---------------------------------------------------------------------------
+-- Entregas: link enviado pelo aluno como resposta de uma avaliacao. Um aluno
+-- so tem uma entrega ativa por avaliacao — reenviar substitui (upsert na PK).
+-- ---------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS entregas (
+  user_id        TEXT    NOT NULL,  -- referencia users.id (sub da conta Google)
+  avaliacao_slug TEXT    NOT NULL,
+  link           TEXT    NOT NULL,
+  updated_at     INTEGER NOT NULL DEFAULT (unixepoch()),
+  PRIMARY KEY (user_id, avaliacao_slug),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_entregas_avaliacao ON entregas (avaliacao_slug);

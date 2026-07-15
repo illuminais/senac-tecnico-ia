@@ -50,13 +50,13 @@ platform/
 | API | Cloudflare Workers — um único arquivo, sem framework, sem dependências externas |
 | Banco | Cloudflare D1 (SQLite distribuído), um `schema.sql` idempotente aplicado via `wrangler d1 execute` |
 | Deploy | Cloudflare Pages (`platform/dist/`, CI só builda/deploya o Pages — o Worker é deploy manual via `wrangler deploy`) |
-| Auth | JWT HS256 via Web Crypto (sem libs) + PBKDF2 para senha + OAuth Google (login-only, nunca cria conta) |
+| Auth | JWT HS256 via Web Crypto (sem libs) + PBKDF2 para senha + OAuth Google — dois fluxos distintos: admin é login-only (nunca cria conta), aluno cria conta automaticamente no primeiro login se o email bater com `STUDENT_EMAIL_DOMAINS` |
 | Email | Resend (link de reset de senha) |
 
 ### Usuários
 
 - **Admin (professor)** — login por usuário/senha (`admin_users`, hash PBKDF2) ou Google OAuth (só loga email já cadastrado). Acesso a `/admin` (mensagem do dia) e `/admin/calendario` (import do calendário).
-- **Aluno** — sem login. Identificado por um UUID v4 gerado no client e persistido em `localStorage['lms_user_id']` (`useProgress.ts`). Progresso e respostas sincronizam via `POST /api/sync`. A tabela `users` no D1 existe para isso mas hoje não tem endpoint próprio de cadastro.
+- **Aluno** — login via Google OAuth (`POST /api/auth/student/google/callback`), diferente do fluxo admin: qualquer email de domínio permitido (`STUDENT_EMAIL_DOMAINS`) cria conta automaticamente no primeiro login (upsert em `users`, `id` = `sub` do Google). JWT de aluno tem `role: 'student'` e validade de 30 dias. `POST /api/sync` (progresso/respostas) e `POST /api/entregas` (link de entrega de avaliação) agora exigem esse JWT — `userId` vem de `payload.sub`, não é mais enviado pelo client. **Nota**: o worker já implementa esse fluxo; o portal (`useProgress.ts`, que hoje ainda usa um UUID em `localStorage['lms_user_id']`) pode não ter sido migrado ainda para o login real — checar antes de assumir que o frontend já usa JWT.
 
 ### Rotas do portal
 
@@ -70,16 +70,20 @@ platform/
 | `/admin/calendario` | `AdminCalendarioView.vue` — import de dados do calendário | JWT |
 | `/admin/esqueci-senha`, `/admin/reset-senha` | fluxo de reset de senha | pública (token no link) |
 | `/admin/google-callback` | troca `code` OAuth por JWT | pública (fluxo OAuth) |
+| `/entrar` | `EntrarView.vue` — login de aluno (Google, domínio restrito) | pública |
+| `/entrar/google-callback` | troca `code` OAuth por JWT de aluno | pública (fluxo OAuth) |
 
 ### Endpoints do Worker (`platform/worker/src/index.ts`)
 
 | Rota | Método | Auth | Função |
 |---|---|---|---|
-| `/api/sync` | POST | pública | grava progresso/respostas do aluno |
+| `/api/sync` | POST | JWT (aluno ou admin) | grava progresso/respostas; `userId` vem de `payload.sub`, não do body |
 | `/api/auth/login` | POST | pública | login usuário/senha → JWT |
 | `/api/auth/forgot-password` | POST | pública | gera token, envia email via Resend; rate limit por email (`password_reset_attempts`) — máx. 3 envios/hora com backoff progressivo (1min, 2min, depois 1h) |
 | `/api/auth/reset-password` | POST | pública (token) | troca senha |
-| `/api/auth/google/callback` | POST | pública (code OAuth) | troca `code` por JWT, só para email já em `admin_users` |
+| `/api/auth/google/callback` | POST | pública (code OAuth) | troca `code` por JWT, só para email já em `admin_users` — login-only, nunca cria conta |
+| `/api/auth/student/google/callback` | POST | pública (code OAuth) | troca `code` por JWT de aluno (role `student`, exp 30 dias); email precisa bater com `STUDENT_EMAIL_DOMAINS`, cria/atualiza conta em `users` no primeiro login (upsert) |
+| `/api/entregas` | POST | JWT (role `student`) | upsert em `entregas` (PK `user_id`+`avaliacao_slug`) — aluno envia link de resposta de uma avaliação |
 | `/api/message` | GET/PUT | GET pública, PUT JWT | mensagem do professor pro banner |
 | `/api/calendar` | GET | pública | calendário condensado |
 | `/api/calendar/import` | POST | JWT | upsert em lote de `calendar_days`/`calendar_blocos` |

@@ -1,21 +1,30 @@
 import { onMounted, onUnmounted } from 'vue'
-import { getUserId } from './useProgress'
+import { useStudentAuth } from './useStudentAuth'
 
 const SYNC_INTERVAL_MS = 30_000
 const API_URL = 'https://lms-senac-tecnico-ia.leo-zn-97.workers.dev/api/sync'
 
-/** Envia o estado completo de progresso de uma aula para o Worker (idempotente) */
+/**
+ * Envia o estado completo de progresso de uma aula para o Worker (idempotente).
+ * Exige aluno logado — sem JWT o sync remoto é pulado silenciosamente,
+ * o localStorage continua sendo a fonte de verdade local.
+ */
 async function syncPayload(payload: {
   aulaId: string
   progresso: number
   respostas: Record<string, string>
 }) {
+  const { token } = useStudentAuth()
+  if (!token.value) return
+
   try {
     await fetch(API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token.value}`,
+      },
       body: JSON.stringify({
-        userId: getUserId(),
         aulaId: payload.aulaId,
         progresso: payload.progresso,
         respostas: payload.respostas,
