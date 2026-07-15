@@ -13,11 +13,9 @@
  * Sem --execute, só imprime o SQL e o comando wrangler para você rodar manualmente.
  */
 
-import crypto from 'crypto'
 import { execSync } from 'child_process'
 import { randomUUID } from 'crypto'
-
-const PBKDF2_ITERATIONS = 100_000
+import { hashPassword } from './lib/password-hash.mjs'
 
 function parseArgs() {
   const args = process.argv.slice(2)
@@ -28,12 +26,6 @@ function parseArgs() {
     if (args[i] === '--password') opts.password = args[++i]
   }
   return opts
-}
-
-function hashPassword(password) {
-  const salt = crypto.randomBytes(16)
-  const hash = crypto.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, 32, 'sha256')
-  return `pbkdf2$${PBKDF2_ITERATIONS}$${salt.toString('hex')}$${hash.toString('hex')}`
 }
 
 const opts = parseArgs()
