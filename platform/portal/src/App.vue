@@ -16,7 +16,6 @@ const sidebarMarginClass = computed(() => (sidebarCollapsed.value ? 'sm:mr-16' :
 <template>
   <div class="min-h-dvh bg-black">
     <Header />
-
     <AppSidebar v-if="!isAulaPage" />
 
     <div

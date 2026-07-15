@@ -19,7 +19,7 @@ onMounted(async () => {
 <template>
   <div
     v-if="professorMessage"
-    class="mt-3 rounded-xl max-w-xl border border-neural-accent/30 bg-neural-800/60 px-4 py-3"
+    class="rounded-xl border border-neural-accent/30 bg-neural-800/60 px-4 py-3"
   >
     <p class="text-neural-accent text-xs font-mono uppercase tracking-widest mb-1">Mensagem do professor</p>
     <div class="text-sm text-gray-200 leading-relaxed" v-html="marked.parse(professorMessage)" />

@@ -1,29 +1,13 @@
 <script setup lang="ts">
 import type { AulaMeta } from '@/types/aulas'
 import { useRouter } from 'vue-router'
+import { ucFullLabel, ucShortLabel } from '@/composables/useUcLabels'
 
 const props = defineProps<{ aula: AulaMeta; ucAtiva?: string | null }>()
 const router = useRouter()
 
-
-const ucLabels: Record<string, string> = {
-  '1': 'UC01 Computação', '2': 'UC02 Inglês', '3': 'UC03 Matemática',
-  '4': 'UC04 Conceitos IA', '5': 'UC05 Python', '6': 'UC06 GPU e CPU',
-  '7': 'UC07 Trans. Digital', '8': 'UC08 Banco de Dados', '9': 'UC09 Estatística',
-}
-
-const minimizedUcLabels: Record<string, string> = {
-  '1': 'UC01', '2': 'UC02', '3': 'UC03',
-  '4': 'UC04', '5': 'UC05', '6': 'UC06',
-  '7': 'UC07', '8': 'UC08', '9': 'UC09',
-}
-
 function ucLabel(uc: string) {
-  if (props.ucAtiva === uc) {
-    return ucLabels[uc] ?? `UC${uc.padStart(2, '0')}`
-  } else {
-    return minimizedUcLabels[uc] ?? `UC${uc.padStart(2, '0')}`
-  }
+  return props.ucAtiva === uc ? ucFullLabel(uc) : ucShortLabel(uc)
 }
 
 function formatData(data: string) {

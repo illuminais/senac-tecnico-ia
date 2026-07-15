@@ -33,7 +33,7 @@ function handleClick(av: AvaliacaoMeta) {
           :key="av.id"
           @click="handleClick(av)"
           :class="[
-            'flex items-center justify-between rounded-2xl border px-5 py-4 transition',
+            'flex items-center justify-between rounded-2xl border p-5 transition',
             av.status === 'published'
               ? 'bg-neural-800 border-neural-700 hover:border-neural-accent/50 cursor-pointer'
               : 'bg-neural-800/40 border-neural-700/40 cursor-default opacity-60',

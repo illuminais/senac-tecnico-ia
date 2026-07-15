@@ -34,6 +34,10 @@ function linkClass(to: string) {
            sm:px-3 sm:py-6 sm:gap-1 sm:transition-[width]"
     :class="collapsed ? 'sm:w-16' : 'sm:w-56'"
   >
+    <RouterLink to="/" title="Início" class="hidden sm:flex justify-center mb-4">
+      <img src="/assets/senac-logo.png" alt="SENAC" class="w-10 h-auto object-contain" />
+    </RouterLink>
+
     <button
       type="button"
       @click="toggle"

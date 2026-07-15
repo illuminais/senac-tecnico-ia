@@ -26,6 +26,16 @@ O portal é **dark-only** (sem toggle de tema), mobile-first (375px), tema "neur
 
 Fontes: `font-sans` (Inter) para texto, `font-mono` (JetBrains Mono) para código, badges numéricos, labels técnicas.
 
+## Convenção de espaçamento (padding/gap)
+
+| Classe | Uso |
+|---|---|
+| `p-6` | cards de grid (ex. `AulaCard`) |
+| `p-5` | linhas de lista densa (ex. Avaliações, Calendário "já dadas") |
+| `gap-8` | entre seções de uma página |
+| `gap-4` | gutter de grid de cards |
+| `gap-3` | entre itens de uma lista |
+
 ## Padrões de componente
 
 **Card:**

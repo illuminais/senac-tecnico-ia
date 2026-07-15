@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
-import type { CalendarDay, ResumoHaUc } from '@/types/calendar'
+import { ref, onMounted } from 'vue'
+import type { ResumoHaUc } from '@/types/calendar'
+import { useCalendarStats, formatDataCurta } from '@/composables/useCalendarStats'
 
 const WORKER = 'https://lms-senac-tecnico-ia.dev-leozanini.workers.dev'
 
-const days = ref<CalendarDay[]>([])
-const loading = ref(true)
-const error = ref('')
+const { days, loading, error, dadas, planejadas, recessos, totalHA } = useCalendarStats()
 
 const resumoHa = ref<ResumoHaUc[]>([])
 const resumoHaLoading = ref(true)
@@ -18,33 +17,9 @@ const ucLabels: Record<string, string> = {
   UC07: 'UC07 Trans. Digital', UC08: 'UC08 Banco de Dados', UC09: 'UC09 Estatística',
 }
 
-const dadas = computed(() => days.value.filter(d => d.status === 'dada' && d.tipo !== 'recesso'))
-const planejadas = computed(() => days.value.filter(d => d.status === 'planejada'))
-const recessos = computed(() => days.value.filter(d => d.tipo === 'recesso'))
-
-const totalHA = computed(() =>
-  dadas.value.reduce((sum, d) => sum + d.blocos.reduce((s, b) => s + (b.ha ?? 0), 0), 0)
-)
-
-function formatData(data: string) {
-  const [, month, day] = data.split('-')
-  const months = ['', 'jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
-  return `${day}/${months[Number(month)] ?? month}`
-}
+const formatData = formatDataCurta
 
 onMounted(async () => {
-  try {
-    const res = await fetch(`${WORKER}/api/calendar`)
-    if (!res.ok) throw new Error('Falha ao carregar calendário')
-    const data = await res.json()
-    days.value = data.days ?? []
-  } catch (e) {
-    error.value = 'Não foi possível carregar o calendário.'
-    console.error(e)
-  } finally {
-    loading.value = false
-  }
-
   try {
     const res = await fetch(`${WORKER}/api/calendar/resumo-ha`)
     if (!res.ok) throw new Error('Falha ao carregar resumo de HA')
@@ -60,7 +35,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-4xl mx-auto">
     <div v-if="loading" class="grid gap-4">
       <div v-for="n in 4" :key="n" class="h-24 rounded-2xl bg-neural-800 animate-pulse" />
     </div>
