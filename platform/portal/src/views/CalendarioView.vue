@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import type { ResumoHaUc } from '@/types/calendar'
-import { useCalendarStats, formatDataCurta } from '@/composables/useCalendarStats'
+import type { CalendarDay, ResumoHaUc } from '@/types/calendar'
+import { useCalendarStats } from '@/composables/useCalendarStats'
+import { calendarUcLabels } from '@/composables/useCalendarGrid'
+import CalendarYearGrid from '@/components/CalendarYearGrid.vue'
+import CalendarDayModal from '@/components/CalendarDayModal.vue'
 
 const WORKER = 'https://lms-senac-tecnico-ia.dev-leozanini.workers.dev'
 
@@ -11,13 +14,13 @@ const resumoHa = ref<ResumoHaUc[]>([])
 const resumoHaLoading = ref(true)
 const resumoHaError = ref('')
 
-const ucLabels: Record<string, string> = {
-  UC01: 'UC01 Computação', UC02: 'UC02 Inglês', UC03: 'UC03 Matemática',
-  UC04: 'UC04 Conceitos IA', UC05: 'UC05 Python', UC06: 'UC06 GPU e CPU',
-  UC07: 'UC07 Trans. Digital', UC08: 'UC08 Banco de Dados', UC09: 'UC09 Estatística',
-}
+const ucLabels = calendarUcLabels
 
-const formatData = formatDataCurta
+const selectedDay = ref<CalendarDay | null>(null)
+
+function onSelectDay(day: CalendarDay) {
+  selectedDay.value = day
+}
 
 onMounted(async () => {
   try {
@@ -35,9 +38,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto">
-    <div v-if="loading" class="grid gap-4">
-      <div v-for="n in 4" :key="n" class="h-24 rounded-2xl bg-neural-800 animate-pulse" />
+  <div class="max-w-6xl mx-auto">
+    <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div v-for="n in 12" :key="n" class="h-48 rounded-2xl bg-neural-800 animate-pulse" />
     </div>
 
     <div v-else-if="error" class="text-center py-16">
@@ -55,32 +58,15 @@ onMounted(async () => {
         <span class="text-white font-semibold">{{ planejadas.length }}</span> aulas planejadas pela frente
       </div>
 
-      <section>
-        <h2 class="text-xs font-mono uppercase tracking-widest text-neural-accent mb-3">Já dadas</h2>
-        <div class="flex flex-col gap-3">
-          <div
-            v-for="day in dadas" :key="day.id"
-            class="rounded-2xl border border-neural-600 bg-neural-900/10 p-5"
-          >
-            <div class="flex items-center justify-between gap-3 mb-3">
-              <span class="text-xs font-mono font-semibold text-neural-accent bg-neural-900 px-2 py-0.5 rounded-full border border-neural-accent/30">
-                Aula {{ day.numero ?? day.id }}
-              </span>
-              <span class="text-xs text-gray-400">{{ formatData(day.data) }}</span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div v-for="bloco in day.blocos" :key="bloco.uc" class="text-sm">
-                <span class="text-xs px-2 py-0.5 rounded-full bg-neural-600 text-gray-200 mr-2">
-                  {{ ucLabels[bloco.uc] ?? bloco.uc }}
-                </span>
-                <span v-if="bloco.ha" class="text-xs text-gray-500">~{{ bloco.ha }}HA</span>
-                <p v-if="bloco.conteudo" class="text-gray-400 mt-1">{{ bloco.conteudo }}</p>
-              </div>
-              <p v-if="day.observacao" class="text-xs text-yellow-400/80">{{ day.observacao }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-gray-500 font-mono">
+        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded border border-neural-600 bg-neural-800"></span> dada</span>
+        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded border border-dashed border-neural-700"></span> planejada</span>
+        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-neural-accent"></span> marco (passe o mouse)</span>
+        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded ring-2 ring-white"></span> hoje</span>
+        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded border border-dashed border-yellow-400/40"></span> reposição fora de Qui/Sex/Sáb</span>
+      </div>
+
+      <CalendarYearGrid :days="days" :year="2026" @select-day="onSelectDay" />
 
       <section>
         <h2 class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3">HA por UC / trimestre</h2>
@@ -122,25 +108,8 @@ onMounted(async () => {
           {{ r.observacao ?? 'Recesso' }}
         </div>
       </section>
-
-      <section v-if="planejadas.length">
-        <h2 class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3">Pela frente</h2>
-        <div class="flex flex-col gap-2">
-          <div
-            v-for="day in planejadas" :key="day.id"
-            class="rounded-xl border border-neural-700 px-4 py-3 flex items-center justify-between gap-3"
-          >
-            <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-xs font-mono text-gray-500">{{ day.numero ?? day.id }}</span>
-              <span v-for="bloco in day.blocos" :key="bloco.uc" class="text-xs px-2 py-0.5 rounded-full bg-neural-800 text-gray-400">
-                {{ ucLabels[bloco.uc] ?? bloco.uc }}
-              </span>
-              <span v-if="day.observacao" class="text-xs text-yellow-400/80">{{ day.observacao }}</span>
-            </div>
-            <span class="text-xs text-gray-500">{{ formatData(day.data) }}</span>
-          </div>
-        </div>
-      </section>
     </div>
+
+    <CalendarDayModal v-if="selectedDay" :day="selectedDay" @close="selectedDay = null" />
   </div>
 </template>
