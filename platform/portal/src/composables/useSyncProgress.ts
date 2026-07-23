@@ -14,8 +14,8 @@ async function syncPayload(payload: {
   progresso: number
   respostas: Record<string, string>
 }) {
-  const { token } = useStudentAuth()
-  if (!token.value) return
+  const { token, isLoggedIn } = useStudentAuth()
+  if (!isLoggedIn.value) return
 
   try {
     await fetch(API_URL, {

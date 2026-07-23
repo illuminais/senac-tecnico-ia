@@ -26,6 +26,7 @@
     "theme:build": "npm run build --workspace=slidev-theme-neural",
     "validate:ha": "node scripts/validate-ha.mjs",
     "lint:slides": "node scripts/lint-slides.mjs",
+    "validate:graph": "node platform/scripts/validate-graph.mjs",
     "setup:hooks": "bash scripts/setup-hooks.sh",
     "check:overflow": "node scripts/check-overflow.mjs",
     "dashboard": "node scripts/generate-dashboard.mjs",

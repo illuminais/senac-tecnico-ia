@@ -14,6 +14,8 @@
  * GET  /api/calendar/resumo-ha          — soma de HA dada por UC, bucketizado em T1/T2/T3 (público)
  */
 
+import { b64url, decodeB64url, toHex, fromHex, isAllowedStudentEmail as isAllowedStudentEmailPure } from '../../shared/pure'
+
 interface Env {
   DB: D1Database
   JWT_SECRET: string          // wrangler secret
@@ -60,16 +62,6 @@ async function importKey(secret: string): Promise<CryptoKey> {
     false,
     ['sign', 'verify'],
   )
-}
-
-function b64url(buf: ArrayBuffer): string {
-  return btoa(String.fromCharCode(...new Uint8Array(buf)))
-    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
-}
-
-function decodeB64url(str: string): Uint8Array {
-  const b64 = str.replace(/-/g, '+').replace(/_/g, '/')
-  return Uint8Array.from(atob(b64), c => c.charCodeAt(0))
 }
 
 async function signJwt(payload: Record<string, unknown>, secret: string): Promise<string> {
@@ -119,17 +111,6 @@ async function safeEqual(a: string, b: string): Promise<boolean> {
 // ---------------------------------------------------------------------------
 
 const PBKDF2_ITERATIONS = 100_000
-
-function toHex(buf: ArrayBuffer | Uint8Array): string {
-  const bytes = buf instanceof Uint8Array ? buf : new Uint8Array(buf)
-  return [...bytes].map(b => b.toString(16).padStart(2, '0')).join('')
-}
-
-function fromHex(hex: string): Uint8Array {
-  const bytes = new Uint8Array(hex.length / 2)
-  for (let i = 0; i < bytes.length; i++) bytes[i] = parseInt(hex.substr(i * 2, 2), 16)
-  return bytes
-}
 
 async function pbkdf2(password: string, salt: Uint8Array, iterations: number): Promise<string> {
   const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits'])
@@ -482,15 +463,12 @@ async function handleGoogleCallback(request: Request, env: Env): Promise<Respons
   return jsonResponse({ token })
 }
 
-// Comparação de sufixo exata (nunca includes()) — evita bypass tipo
-// "fake@aluno.pr.senac.br.evil.com". Se STUDENT_EMAIL_DOMAINS estiver vazia
-// (erro de config), NINGUÉM deve conseguir logar — lista vazia nunca é
-// tratada como "permite tudo".
+// Parseia o CSV de STUDENT_EMAIL_DOMAINS e delega a checagem de sufixo pra
+// versão pura em shared/pure.ts (testada via Vitest no portal). Mantém a
+// assinatura local `(email, env)` pra não mudar nenhum call-site aqui.
 function isAllowedStudentEmail(email: string, env: Env): boolean {
   const domains = (env.STUDENT_EMAIL_DOMAINS ?? '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
-  if (domains.length === 0) return false
-  const lower = email.toLowerCase()
-  return domains.some(domain => lower.endsWith('@' + domain))
+  return isAllowedStudentEmailPure(email, domains)
 }
 
 async function handleStudentGoogleCallback(request: Request, env: Env): Promise<Response> {

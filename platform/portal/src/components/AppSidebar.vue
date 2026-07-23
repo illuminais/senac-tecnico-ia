@@ -5,7 +5,7 @@ import { useStudentAuth } from '@/composables/useStudentAuth'
 import { useSidebar } from '@/composables/useSidebar'
 
 const route = useRoute()
-const { token: studentToken, user: studentUser, logout: studentLogout } = useStudentAuth()
+const { user: studentUser, logout: studentLogout, isLoggedIn } = useStudentAuth()
 const { collapsed, toggle } = useSidebar()
 
 const navItems = [
@@ -68,7 +68,7 @@ function linkClass(to: string) {
              sm:mt-auto sm:pt-4 sm:border-t sm:border-neural-700"
       :class="collapsed ? 'sm:justify-center' : ''"
     >
-      <template v-if="studentToken">
+      <template v-if="isLoggedIn">
         <img
           v-if="studentUser?.picture"
           :src="studentUser.picture"

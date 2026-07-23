@@ -147,7 +147,7 @@ onMounted(async () => {
 
         <template v-else>
           <main class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <AulaCard v-for="aula in aulasPaginadas" :key="aula.slug" :aula="aula" :ucAtiva="ucAtiva" />
+            <AulaCard v-for="aula in aulasPaginadas" :key="aula.slug" :aula="aula" :ucAtiva="ucAtiva" @select-uc="ucAtiva = $event" />
           </main>
 
           <div v-if="totalPages > 1" class="flex items-center justify-center gap-4 mt-2">

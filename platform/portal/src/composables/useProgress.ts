@@ -1,17 +1,5 @@
 import { ref } from 'vue'
 
-const USER_ID_KEY = 'lms_user_id'
-
-/** Retorna (ou cria) o UUID persistente do aluno no localStorage */
-export function getUserId(): string {
-  let id = localStorage.getItem(USER_ID_KEY)
-  if (!id) {
-    id = crypto.randomUUID()
-    localStorage.setItem(USER_ID_KEY, id)
-  }
-  return id
-}
-
 export interface AulaProgress {
   aulaId: string
   progresso: number      // 0.0 a 1.0

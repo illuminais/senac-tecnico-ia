@@ -29,7 +29,10 @@ export default defineConfig({
     },
   ],
   resolve: {
-    alias: { '@': path.resolve(__dirname, 'src') },
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@shared': path.resolve(__dirname, '../shared'),
+    },
   },
   build: {
     // Output vai para platform/dist/ (um nível acima de platform/portal/)

@@ -8,26 +8,28 @@ HOOK="$ROOT/.git/hooks/pre-commit"
 cat > "$HOOK" << 'EOF'
 #!/usr/bin/env bash
 ROOT="$(git rev-parse --show-toplevel)"
+FAILED=0
+
+# 1) Lint determinístico de slides.md staged
 LINT="$ROOT/scripts/lint-slides.mjs"
 STAGED_SLIDES=$(git diff --cached --name-only --diff-filter=ACM | grep 'slides\.md$')
-
-if [ -z "$STAGED_SLIDES" ]; then
-  exit 0
+if [ -n "$STAGED_SLIDES" ]; then
+  echo "🔍 Lint de slides staged..."
+  for file in $STAGED_SLIDES; do
+    node "$LINT" "$file" || FAILED=1
+  done
 fi
 
-echo "🔍 Lint de slides staged..."
-
-FAILED=0
-for file in $STAGED_SLIDES; do
-  node "$LINT" "$file"
-  if [ $? -ne 0 ]; then
-    FAILED=1
-  fi
-done
+# 2) Validação do grafo de estado quando platform/specs/ é tocado
+STAGED_SPECS=$(git diff --cached --name-only --diff-filter=ACM | grep '^platform/specs/.*\.md$')
+if [ -n "$STAGED_SPECS" ]; then
+  echo "🔍 Validando grafo de estado (platform/specs/)..."
+  node "$ROOT/platform/scripts/validate-graph.mjs" || FAILED=1
+fi
 
 if [ $FAILED -ne 0 ]; then
   echo ""
-  echo "❌ Lint falhou — corrigir os erros acima antes de commitar."
+  echo "❌ Pre-commit falhou — corrigir os erros acima antes de commitar."
   echo "   Para pular (não recomendado): git commit --no-verify"
   exit 1
 fi

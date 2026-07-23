@@ -4,26 +4,25 @@ import { RouterView, useRoute } from 'vue-router'
 import Header from '@/components/Header.vue'
 import AppSidebar from '@/components/AppSidebar.vue'
 import NeuralBackground from '@/components/NeuralBackground.vue'
-import { useSidebar } from '@/composables/useSidebar'
 
 const route = useRoute()
-const { collapsed: sidebarCollapsed } = useSidebar()
 
 const isAulaPage = computed(() => route.name === 'aula' || route.path.startsWith('/aula/'))
-const sidebarMarginClass = computed(() => (sidebarCollapsed.value ? 'sm:mr-16' : 'sm:mr-56'))
 </script>
 
 <template>
-  <div class="min-h-dvh bg-black">
+  <div class="min-h-dvh bg-black isolate relative">
+    <NeuralBackground />
     <Header />
     <AppSidebar v-if="!isAulaPage" />
 
     <div
-      class="relative transition-[margin]"
-      :class="isAulaPage ? '' : ['px-4 pt-6 pb-24 sm:px-6 sm:pt-6 sm:pb-6', sidebarMarginClass]"
+      class="relative"
+      :class="isAulaPage ? '' : 'px-4 pt-6 pb-24 sm:px-6 sm:pt-6 sm:pb-6'"
     >
-      <NeuralBackground />
-      <RouterView />
+      <div :class="isAulaPage ? '' : 'relative mx-auto w-full max-w-4xl bg-black/40 rounded-md'">
+        <RouterView />
+      </div>
     </div>
   </div>
 </template>
