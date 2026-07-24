@@ -1,9 +1,9 @@
 ---
 type: feature
-status: planned
+status: shipped
 title: Entregas de avaliação
 tags: [aluno, avaliacoes, entregas]
-updated: 2026-07-21
+updated: 2026-07-24
 sprint: "[[02-entregas-avaliacao]]"
 part_of: "[[rumo-experiencia-aluno]]"
 depends_on: ["[[mod-api-entregas]]", "[[login-aluno]]"]

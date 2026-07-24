@@ -8,6 +8,7 @@ import {
   isAllowedStudentEmail,
   decodeJwtPayload,
   isTokenExpired,
+  isValidEntregaUrl,
 } from '@shared/pure'
 
 // Property-based tests (fast-check) para platform/shared/pure.ts.
@@ -192,5 +193,77 @@ describe('isTokenExpired', () => {
       }),
       { numRuns: NUM_RUNS },
     )
+  })
+})
+
+describe('isValidEntregaUrl', () => {
+  // Reimplementação de referência do CONTRATO documentado na função (não
+  // copiada do corpo de `isValidEntregaUrl` em shared/pure.ts): "tenta
+  // `new URL(s)`; se não lançar, checa protocol === 'http:' || 'https:'; se
+  // lançar, é `false`". Escrita a partir da descrição do contrato, não lida
+  // do código-fonte da implementação. É uma reimplementação válida porque
+  // exercita o mesmo comportamento documentado de forma independente — se a
+  // implementação real divergir do contrato (ex.: esquecer o `try/catch`,
+  // aceitar `ftp:` por engano, ou trocar a ordem das checagens), a
+  // comparação abaixo detecta a divergência em vez de só re-confirmar "o
+  // código faz o que o código faz".
+  function referenceIsValidEntregaUrl(s: string): boolean {
+    let parsed: URL
+    try {
+      parsed = new URL(s)
+    } catch {
+      return false
+    }
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:'
+  }
+
+  it('bate com a reimplementação de referência para qualquer string', () => {
+    fc.assert(
+      fc.property(
+        // Mistura três fontes pra não deixar a propriedade "fácil demais":
+        // (1) strings arbitrárias — a maioria cai no catch (não parseia como
+        // URL), útil para provar que "nunca lança" e que lixo é rejeitado;
+        // (2) fc.webUrl() — gera URLs http/https válidas de verdade, cobre o
+        // caminho "aceita" que fc.string() sozinho quase nunca alcançaria;
+        // (3) strings com esquemas conhecidos não-http (javascript:, data:,
+        // ftp:, mailto:, file:) — parseiam como URL válida (não lançam), mas
+        // com protocolo diferente de http/https, exercitando exatamente o
+        // ramo "parseou mas não é http(s)" da função.
+        fc.oneof(
+          fc.string(),
+          fc.webUrl(),
+          fc
+            .tuple(fc.constantFrom('javascript', 'data', 'ftp', 'mailto', 'file'), fc.string())
+            .map(([scheme, rest]) => `${scheme}:${rest}`),
+        ),
+        s => {
+          expect(isValidEntregaUrl(s)).toBe(referenceIsValidEntregaUrl(s))
+        },
+      ),
+      { numRuns: NUM_RUNS },
+    )
+  })
+
+  it('nunca lança, para qualquer string', () => {
+    fc.assert(
+      fc.property(fc.string(), s => {
+        expect(() => isValidEntregaUrl(s)).not.toThrow()
+      }),
+      { numRuns: NUM_RUNS },
+    )
+  })
+
+  // Casos pontuais explicitamente listados na spec como devendo ser
+  // rejeitados, além da propriedade geral acima.
+  it('rejeita os casos que a spec lista explicitamente', () => {
+    expect(isValidEntregaUrl('exemplo.com')).toBe(false) // sem esquema
+    expect(isValidEntregaUrl('javascript:alert(1)')).toBe(false)
+    expect(isValidEntregaUrl('data:text/html,<script>alert(1)</script>')).toBe(false)
+    expect(isValidEntregaUrl('')).toBe(false) // string vazia
+  })
+
+  it('aceita URLs http/https válidas (casos fixos de controle)', () => {
+    expect(isValidEntregaUrl('https://exemplo.com')).toBe(true)
+    expect(isValidEntregaUrl('http://exemplo.com/caminho?x=1')).toBe(true)
   })
 })

@@ -91,3 +91,22 @@ export function isTokenExpired(payload: { exp?: number } | null): boolean {
   if (!payload.exp) return true
   return Date.now() / 1000 > payload.exp
 }
+
+// ---------------------------------------------------------------------------
+// Link de entrega de avaliação
+// ---------------------------------------------------------------------------
+
+// `true` ⇔ `s` parseia como URL válida com protocolo http/https. Usada tanto
+// pelo Worker (fonte da verdade, valida antes de gravar) quanto pelo portal
+// (feedback imediato antes do POST) — mesma função dos dois lados garante que
+// aceitam exatamente o mesmo conjunto de strings. Nunca lança: `new URL()`
+// lança para string sem esquema (`exemplo.com`) ou malformada — captura e
+// retorna `false`, igual ao padrão de `decodeJwtPayload` acima.
+export function isValidEntregaUrl(s: string): boolean {
+  try {
+    const url = new URL(s)
+    return url.protocol === 'http:' || url.protocol === 'https:'
+  } catch {
+    return false
+  }
+}

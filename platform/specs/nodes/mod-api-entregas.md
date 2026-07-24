@@ -1,9 +1,9 @@
 ---
 type: modulo
-status: planned
+status: shipped
 title: API /api/entregas (Worker)
 tags: [worker, entregas, api]
-updated: 2026-07-21
+updated: 2026-07-24
 sprint: "[[02-entregas-avaliacao]]"
 issue:
 ---

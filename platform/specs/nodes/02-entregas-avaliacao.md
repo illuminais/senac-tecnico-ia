@@ -1,9 +1,9 @@
 ---
 type: sprint
-status: planned
+status: shipped
 title: Sprint 02 — Entregas de avaliação
 tags: [aluno, entregas]
-updated: 2026-07-21
+updated: 2026-07-24
 issue:
 ---
 

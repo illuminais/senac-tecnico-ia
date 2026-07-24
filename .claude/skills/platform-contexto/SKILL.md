@@ -83,7 +83,8 @@ platform/
 | `/api/auth/reset-password` | POST | pública (token) | troca senha |
 | `/api/auth/google/callback` | POST | pública (code OAuth) | troca `code` por JWT, só para email já em `admin_users` — login-only, nunca cria conta |
 | `/api/auth/student/google/callback` | POST | pública (code OAuth) | troca `code` por JWT de aluno (role `student`, exp 30 dias); email precisa bater com `STUDENT_EMAIL_DOMAINS`, cria/atualiza conta em `users` no primeiro login (upsert) |
-| `/api/entregas` | POST | JWT (role `student`) | upsert em `entregas` (PK `user_id`+`avaliacao_slug`) — aluno envia link de resposta de uma avaliação |
+| `/api/entregas` | POST | JWT (role `student`) | upsert em `entregas` (PK `user_id`+`avaliacao_slug`) — aluno envia link de resposta de uma avaliação; URL validada por `isValidEntregaUrl` (`platform/shared/pure.ts`, mesma função usada pelo client) |
+| `/api/entregas` | GET | JWT (role `student`) | devolve `{ [avaliacaoSlug]: {link, updatedAt} }` só das entregas do caller (`userId` de `payload.sub`) |
 | `/api/message` | GET/PUT | GET pública, PUT JWT | mensagem do professor pro banner |
 | `/api/calendar` | GET | pública | calendário condensado |
 | `/api/calendar/import` | POST | JWT | upsert em lote de `calendar_days`/`calendar_blocos` |

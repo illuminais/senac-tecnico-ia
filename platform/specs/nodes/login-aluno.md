@@ -1,9 +1,9 @@
 ---
 type: feature
-status: building
+status: shipped
 title: Login real do aluno (Google OAuth)
 tags: [auth, aluno, oauth]
-updated: 2026-07-23
+updated: 2026-07-24
 sprint: "[[01-login-aluno-real]]"
 part_of: "[[rumo-experiencia-aluno]]"
 depends_on: ["[[mod-use-student-auth]]"]

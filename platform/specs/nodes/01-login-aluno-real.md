@@ -1,9 +1,9 @@
 ---
 type: sprint
-status: planned
+status: shipped
 title: Sprint 01 — Login real do aluno
 tags: [auth, aluno]
-updated: 2026-07-21
+updated: 2026-07-24
 issue:
 ---
 

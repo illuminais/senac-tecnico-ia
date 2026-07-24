@@ -7,6 +7,7 @@
  * POST /api/auth/google/callback        — troca code OAuth por sessão (JWT), só admin já cadastrado
  * POST /api/auth/student/google/callback — troca code OAuth por sessão (JWT) de aluno; cria conta no primeiro login se o email bater com STUDENT_EMAIL_DOMAINS
  * POST /api/entregas                    — grava/atualiza link de entrega de avaliação (requer JWT aluno)
+ * GET  /api/entregas                    — mapa das entregas do caller { [avaliacaoSlug]: {link, updatedAt} } (requer JWT aluno)
  * GET  /api/message                     — busca mensagem do professor (público)
  * PUT  /api/message                     — atualiza mensagem (requer JWT admin)
  * GET  /api/calendar                    — calendário condensado de aulas (público)
@@ -14,7 +15,7 @@
  * GET  /api/calendar/resumo-ha          — soma de HA dada por UC, bucketizado em T1/T2/T3 (público)
  */
 
-import { b64url, decodeB64url, toHex, fromHex, isAllowedStudentEmail as isAllowedStudentEmailPure } from '../../shared/pure'
+import { b64url, decodeB64url, toHex, fromHex, isAllowedStudentEmail as isAllowedStudentEmailPure, isValidEntregaUrl } from '../../shared/pure'
 
 interface Env {
   DB: D1Database
@@ -203,6 +204,10 @@ export default {
 
     if (request.method === 'POST' && url.pathname === '/api/entregas') {
       return handleCreateEntrega(request, env)
+    }
+
+    if (request.method === 'GET' && url.pathname === '/api/entregas') {
+      return handleGetEntregas(request, env)
     }
 
     if (request.method === 'GET' && url.pathname === '/api/message') {
@@ -599,12 +604,10 @@ async function handleCreateEntrega(request: Request, env: Env): Promise<Response
   const { avaliacaoId, link } = body
   if (!avaliacaoId || !link) return jsonResponse({ error: 'Missing required fields: avaliacaoId, link' }, 422)
 
-  // Só http(s) — evita gravar javascript:/data: URIs que um dia podem virar <a href> no painel do professor
-  let parsedLink: URL
-  try { parsedLink = new URL(link) } catch { return jsonResponse({ error: 'link inválido' }, 422) }
-  if (!['http:', 'https:'].includes(parsedLink.protocol)) {
-    return jsonResponse({ error: 'link precisa ser http:// ou https://' }, 422)
-  }
+  // Só http(s) — evita gravar javascript:/data: URIs que um dia podem virar
+  // <a href> no painel do professor. Mesma função (`isValidEntregaUrl`) usada
+  // pelo portal, garantindo que os dois lados aceitam o mesmo conjunto.
+  if (!isValidEntregaUrl(link)) return jsonResponse({ error: 'link inválido' }, 422)
 
   const userId = payload.sub
 
@@ -616,6 +619,27 @@ async function handleCreateEntrega(request: Request, env: Env): Promise<Response
   `).bind(userId, avaliacaoId, link.slice(0, 2000)).run()
 
   return jsonResponse({ ok: true })
+}
+
+// Devolve só as entregas do próprio caller — nunca de outros alunos
+// (`WHERE user_id = ?` vem do JWT, nunca de um parâmetro do client).
+async function handleGetEntregas(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload || typeof payload.sub !== 'string') return jsonResponse({ error: 'Unauthorized' }, 401)
+  if (payload.role !== 'student') return jsonResponse({ error: 'Forbidden' }, 403)
+
+  const userId = payload.sub
+
+  const rows = await env.DB.prepare(
+    `SELECT avaliacao_slug, link, updated_at FROM entregas WHERE user_id = ?`
+  ).bind(userId).all<{ avaliacao_slug: string; link: string; updated_at: number }>()
+
+  const result: Record<string, { link: string; updatedAt: number }> = {}
+  for (const row of rows.results ?? []) {
+    result[row.avaliacao_slug] = { link: row.link, updatedAt: row.updated_at }
+  }
+
+  return jsonResponse(result)
 }
 
 async function handleGetCalendar(env: Env): Promise<Response> {
