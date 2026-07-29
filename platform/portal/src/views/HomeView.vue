@@ -4,6 +4,7 @@ import type { AulaMeta } from '@/types/aulas'
 import AulaCard from '@/components/AulaCard.vue'
 import { useCalendarStats, formatDataCurta } from '@/composables/useCalendarStats'
 import { ucFullLabel } from '@/composables/useUcLabels'
+import { TRIMESTRES } from '@/utils/trimestres'
 
 const PAGE_SIZE = 9
 
@@ -13,6 +14,9 @@ const error = ref('')
 const ucAtiva = ref<string | null>(null)
 const searchTerm = ref('')
 const page = ref(1)
+const hoje = new Date().toISOString().slice(0, 10)
+const [, fimT2Mes, fimT2Dia] = TRIMESTRES.find(t => t.id === 'T2')!.fim.split('-')
+const fimT2 = `${fimT2Dia}/${fimT2Mes}`
 
 // Stats bar — fetch independente do /aulas.json acima, nunca bloqueia a grid.
 const { loading: statsLoading, error: statsError, dadas, proximaAula } = useCalendarStats()
@@ -64,7 +68,10 @@ onMounted(async () => {
   try {
     const res = await fetch('/aulas.json')
     if (!res.ok) throw new Error('aulas.json nao encontrado')
-    aulas.value = await res.json()
+    const data: AulaMeta[] = await res.json()
+    // aulas.json vem ordenado da mais antiga pra mais nova (build-all.mjs) —
+    // aqui invertemos pra mostrar a aula mais recente primeiro.
+    aulas.value = data.sort((a, b) => Number(b.numero) - Number(a.numero))
   } catch (e) {
     error.value = 'Nao foi possivel carregar as aulas.'
     console.error(e)
@@ -135,7 +142,7 @@ onMounted(async () => {
               Próxima aula: <span class="text-white font-semibold">{{ formatDataCurta(proximaAula.data) }}</span><template v-if="proximaAulaUcs"> — {{ proximaAulaUcs }}</template>
             </template>
             <template v-else>Próxima aula: nenhuma aula planejada</template>
-            · Final do 2º trimestre: <span class="text-white font-semibold">14/09</span>
+            · Final do 2º trimestre: <span class="text-white font-semibold">{{ fimT2 }}</span>
           </p>
         </div>
 
@@ -147,7 +154,7 @@ onMounted(async () => {
 
         <template v-else>
           <main class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <AulaCard v-for="aula in aulasPaginadas" :key="aula.slug" :aula="aula" :ucAtiva="ucAtiva" @select-uc="ucAtiva = $event" />
+            <AulaCard v-for="aula in aulasPaginadas" :key="aula.slug" :aula="aula" :ucAtiva="ucAtiva" :isToday="aula.data === hoje" @select-uc="ucAtiva = $event" />
           </main>
 
           <div v-if="totalPages > 1" class="flex items-center justify-center gap-4 mt-2">

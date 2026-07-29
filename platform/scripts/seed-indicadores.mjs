@@ -16,6 +16,10 @@
  *   node platform/scripts/seed-indicadores.mjs > /tmp/seed-indicadores.json
  *   node platform/scripts/seed-indicadores.mjs --post <WORKER_URL> --token <JWT admin>
  *
+ *   # ou, sem colar token: preencha platform/scripts/.env (copie de .env.example)
+ *   # com ADMIN_USERNAME/ADMIN_PASSWORD e rode com --env-file:
+ *   node --env-file=platform/scripts/.env platform/scripts/seed-indicadores.mjs --post <WORKER_URL>
+ *
  * Só processa o Ano 1 (única fonte com código oficial de UC hoje — ver
  * plan.md da spec 03-avaliacoes-por-indicador, seção "De onde vêm ucs,
  * indicadores.trimestres e turmas"). Quando Ano 2/3 ganharem código oficial
@@ -25,6 +29,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { getAdminToken } from './lib/admin-auth.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '../..')
@@ -341,7 +346,7 @@ export function buildSeedPayload({
   return { ucs, indicadores, avaliacoes, avaliacaoIndicadores, turmas, avaliacoesTurma }
 }
 
-function main() {
+async function main() {
   const payload = buildSeedPayload()
 
   const args = process.argv.slice(2)
@@ -354,26 +359,41 @@ function main() {
   }
 
   const workerUrl = args[postIdx + 1]
-  const token = tokenIdx !== -1 ? args[tokenIdx + 1] : null
-  if (!workerUrl || !token) {
-    console.error('Uso: node platform/scripts/seed-indicadores.mjs --post <WORKER_URL> --token <JWT admin>')
+  if (!workerUrl) {
+    console.error('Uso: node platform/scripts/seed-indicadores.mjs --post <WORKER_URL> [--token <JWT admin>]')
     process.exit(1)
   }
 
-  fetch(`${workerUrl}/api/admin/seed`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify(payload),
-  })
-    .then(async (res) => {
-      const data = await res.json()
-      if (!res.ok) throw new Error(JSON.stringify(data))
-      console.log('Seed aplicado:', JSON.stringify(data))
-    })
-    .catch((err) => {
-      console.error('Falha ao aplicar seed:', err.message)
+  let token = tokenIdx !== -1 ? args[tokenIdx + 1] : null
+  if (!token) {
+    try {
+      token = await getAdminToken(workerUrl)
+    } catch (err) {
+      console.error(err.message)
       process.exit(1)
+    }
+  }
+  if (!token) {
+    console.error(
+      'Sem token. Passe --token <JWT admin>, ou preencha ADMIN_USERNAME/ADMIN_PASSWORD em platform/scripts/.env ' +
+        '(copie de .env.example) e rode com: node --env-file=platform/scripts/.env platform/scripts/seed-indicadores.mjs --post <WORKER_URL>'
+    )
+    process.exit(1)
+  }
+
+  try {
+    const res = await fetch(`${workerUrl}/api/admin/seed`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify(payload),
     })
+    const data = await res.json()
+    if (!res.ok) throw new Error(JSON.stringify(data))
+    console.log('Seed aplicado:', JSON.stringify(data))
+  } catch (err) {
+    console.error('Falha ao aplicar seed:', err.message)
+    process.exit(1)
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main()

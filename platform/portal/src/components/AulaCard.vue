@@ -2,7 +2,7 @@
 import type { AulaMeta } from '@/types/aulas'
 import { ucFullLabel } from '@/composables/useUcLabels'
 
-defineProps<{ aula: AulaMeta; ucAtiva?: string | null }>()
+defineProps<{ aula: AulaMeta; ucAtiva?: string | null; isToday?: boolean }>()
 const emit = defineEmits<{ (e: 'select-uc', uc: string): void }>()
 
 function formatData(data: string) {
@@ -20,8 +20,9 @@ function formatData(data: string) {
        o conteúdo é pointer-events-none pra deixar o clique passar pra ele, e só
        os pills de UC reativam o clique (que filtra, sem abrir a aula). -->
   <article
-    class="group relative flex flex-col h-52 rounded-2xl border border-neural-600 bg-neural-900/10
+    class="group relative flex flex-col h-52 rounded-2xl border bg-neural-900/10
            overflow-hidden transition-colors duration-200 hover:border-neural-accent"
+    :class="isToday ? 'border-green-400/70' : 'border-neural-600'"
   >
     <RouterLink
       :to="`/aula/${aula.slug}`"
@@ -41,6 +42,12 @@ function formatData(data: string) {
           class="text-xs text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded-full border border-yellow-400/30 whitespace-nowrap"
         >
           Reposição
+        </span>
+        <span
+          v-if="isToday"
+          class="text-xs text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full border border-green-400/30 whitespace-nowrap"
+        >
+          Aula de Hoje
         </span>
       </div>
       <span v-if="aula.data" class="text-xs font-mono text-gray-400 whitespace-nowrap">{{ formatData(aula.data) }}</span>

@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS avaliacoes (
   titulo      TEXT NOT NULL,
   tipo        TEXT,
   trimestre   TEXT NOT NULL,            -- 'T1' | 'T2' | 'T3'
-  status      TEXT NOT NULL,            -- status do CONTEÚDO: em-planejamento | draft | published
+  status      TEXT NOT NULL,            -- status do CONTEÚDO: em-planejamento | draft | published | concluida
   updated_at  INTEGER NOT NULL DEFAULT (unixepoch())
 );
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS avaliacoes_turma (
   avaliacao_slug TEXT NOT NULL,
   prazo          TEXT,
   prazo_label    TEXT,
-  status         TEXT NOT NULL,
+  status         TEXT NOT NULL,          -- espelha avaliacoes.status (broadcast do seed): em-planejamento | draft | published | concluida
   updated_at     INTEGER NOT NULL DEFAULT (unixepoch()),
   PRIMARY KEY (turma_id, avaliacao_slug),
   FOREIGN KEY (turma_id)       REFERENCES turmas(id),

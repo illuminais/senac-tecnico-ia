@@ -5,7 +5,7 @@
   prazo: string
   prazoLabel: string
   ucs: string[]
-  status: 'published' | 'em-planejamento'
+  status: 'published' | 'em-planejamento' | 'concluida'
 }
 
 /** Um indicador coberto por uma avaliação, como devolvido por `GET /api/avaliacoes`

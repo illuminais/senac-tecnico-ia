@@ -4,12 +4,14 @@ import { WORKER } from '@/composables/useAdminAuth'
 import { useStudentAuth } from '@/composables/useStudentAuth'
 import type { AvaliacaoApi } from '@/types/avaliacoes'
 import AvaliacaoCard from '@/components/AvaliacaoCard.vue'
+import { TRIMESTRES, trimestreAtual } from '@/utils/trimestres'
 
 const { token } = useStudentAuth()
 
 const avaliacoes = ref<AvaliacaoApi[]>([])
 const loading = ref(true)
 const error = ref('')
+const abaAtiva = ref(trimestreAtual())
 
 const TRIMESTRE_LABELS: Record<string, string> = {
   T1: 'Trimestre 1',
@@ -17,19 +19,16 @@ const TRIMESTRE_LABELS: Record<string, string> = {
   T3: 'Trimestre 3',
 }
 
-// Agrupa por trimestre (RF7) preservando a ordem T1 → T2 → T3 mesmo se a API
-// não vier ordenada (hoje vem, mas não vale confiar nisso no client).
-const porTrimestre = computed(() => {
-  const grupos = new Map<string, AvaliacaoApi[]>()
-  for (const av of avaliacoes.value) {
-    const lista = grupos.get(av.trimestre) ?? []
-    lista.push(av)
-    grupos.set(av.trimestre, lista)
-  }
-  return [...grupos.entries()]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([trimestre, itens]) => ({ trimestre, itens }))
-})
+// Sempre as 3 abas (mesmo sem avaliação cadastrada ainda, ex: T3), na ordem
+// fixa T1 → T2 → T3 — não depende do que a API devolveu.
+const porTrimestre = computed(() =>
+  TRIMESTRES.map(t => ({
+    trimestre: t.id,
+    itens: avaliacoes.value.filter(av => av.trimestre === t.id),
+  }))
+)
+
+const grupoAtivo = computed(() => porTrimestre.value.find(g => g.trimestre === abaAtiva.value)?.itens ?? [])
 
 onMounted(async () => {
   try {
@@ -57,17 +56,22 @@ onMounted(async () => {
 
     <p v-else-if="error" class="text-red-400 text-center py-16">{{ error }}</p>
 
-    <p v-else-if="!avaliacoes.length" class="text-gray-500 text-center py-16">
-      Nenhuma avaliação cadastrada ainda.
-    </p>
-
     <template v-else>
-      <section v-for="grupo in porTrimestre" :key="grupo.trimestre" class="flex flex-col gap-3">
-        <h2 class="text-white font-semibold text-lg">
-          {{ TRIMESTRE_LABELS[grupo.trimestre] ?? grupo.trimestre }}
-        </h2>
-        <div class="flex flex-col gap-3">
-          <AvaliacaoCard v-for="av in grupo.itens" :key="av.slug" :avaliacao="av" />
+      <div class="flex flex-wrap gap-2">
+        <button
+          v-for="t in porTrimestre" :key="t.trimestre"
+          @click="abaAtiva = t.trimestre"
+          :class="abaAtiva === t.trimestre ? 'bg-neural-accent text-neural-900 font-semibold' : 'bg-neural-800 text-gray-400 hover:text-white hover:bg-neural-700'"
+          class="px-3 py-1 rounded-full text-xs transition"
+        >{{ TRIMESTRE_LABELS[t.trimestre] ?? t.trimestre }}</button>
+      </div>
+
+      <section class="flex flex-col gap-3">
+        <p v-if="!grupoAtivo.length" class="text-gray-500 text-center py-16">
+          Nenhuma avaliação cadastrada ainda.
+        </p>
+        <div v-else class="flex flex-col gap-3">
+          <AvaliacaoCard v-for="av in grupoAtivo" :key="av.slug" :avaliacao="av" />
         </div>
       </section>
     </template>
