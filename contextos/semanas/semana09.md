@@ -15,9 +15,9 @@ Retomada pós-recesso de julho. Início do bloco de avaliações T2 (Rotação 2
 | # | UC | HA | Método | Tópicos | Ind. |
 |---|---|---|---|---|---|
 | 1 | UC07 | 3h | — | conteúdo a definir | — |
-| 2 | UC01 | 3h | avaliacao | **Av01-T2** — avaliação de Ind.4 (navegadores/pesquisa segura) | UC01-4 |
+| 2 | UC01 | 3h | — | conteúdo/preparação para Ind.4 (navegação segura/critérios de confiabilidade) — sem avaliação formal nesta aula | UC01-4 |
 
-**Prep:** — (planejamento fino pendente; ver Av01-T2 em [ATIVIDADES_AVALIATIVAS](../ATIVIDADES_AVALIATIVAS.md))
+**Prep:** — (planejamento fino pendente. ⚠️ Atualizado em 29/07/2026: Av01-T2 foi fundida em Av07-T2 (20/08, A48) — ver [ATIVIDADES_AVALIATIVAS](../ATIVIDADES_AVALIATIVAS.md). Esta aula é só ensino, preparando terreno para a avaliação combinada de 20/08)
 
 ## A43 — 31/07 · Sex · Sem2
 

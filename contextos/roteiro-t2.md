@@ -27,7 +27,7 @@ fim: 2026-09-04
 | 08 | A39 | 09/07 | Sem2-Qui | UC07·UC01 | — | — |
 | 08 | A40 | 10/07 | Sem2-Sex | UC05·UC03 | — | — |
 | — | — | 13–25/07 | — | **recesso julho** | — | — |
-| 09 | A42 | 30/07 | Sem2-Qui | UC07·UC01 | avaliacao | [S09](semanas/semana09.md) |
+| 09 | A42 | 30/07 | Sem2-Qui | UC07·UC01 | — | [S09](semanas/semana09.md) |
 | 09 | A43 | 31/07 | Sem2-Sex | UC05·UC03 | avaliacao | [S09](semanas/semana09.md) |
 | 10 | A44 | 06/08 | Sem3-Qui | UC08·UC09 | avaliacao | [S10](semanas/semana10.md) |
 | 10 | A45 | 07/08 | Sem3-Sex | UC07·UC04⚠️ | avaliacao | [S10](semanas/semana10.md) |
@@ -43,3 +43,4 @@ fim: 2026-09-04
 > Rotação fixa T2 (ciclo 3 semanas · qui+sex · 12 HA/semana): [horario-rotacao-t2](semanas/horario-rotacao-t2.md)
 > ⚠️ A26/A27 transitórias (UC04 pendente do T1). Ciclo Sem1/Sem2/Sem3 começa limpo em A28.
 > ⚠️ Renumerado em 29/07/2026: A41 já foi dado em 10/07 (ver `AULAS-DADAS.md`/`semana08.md`) — a partir daqui a numeração segue A42→A53, sem reuso de código. A45 e A51 são a 1ª e 2ª (última) janela de encerramento de UC04. Ver plano de avaliações em [ATIVIDADES_AVALIATIVAS](ATIVIDADES_AVALIATIVAS.md).
+> ⚠️ Atualizado em 29/07/2026: Av01-T2 (UC01, 30/07/A42) fundida em Av07-T2 (UC01, 20/08/A48) — A42 passa a ser só aula de conteúdo, sem avaliação formal.

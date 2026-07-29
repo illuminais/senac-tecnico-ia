@@ -196,6 +196,7 @@ Dia reservado para **ensino**, não avaliação:
 | 01/05/2026 | Av.5 redesenhada — Python N2 DataList → SQL+Python sem def | Alunos não dominam def/return; TriaBot não foi aplicado. Av.5 passa a integrar SQL+Python: duas tabelas SQLite, INSERT, SELECT, UPDATE, SELECT, Pandas stats. Cobre UC08 Ind.2+3 + UC05 Ind.1+2 + UC03 Ind.3. Av.6 perde UC08 Ind.2+3. |
 | 29/07/2026 | T1 confirmado como pedagogicamente fechado pelo professor (Av.01–Av.06 aplicadas com nota lançada, arquivos `contextos/aval/av0X-*.md` com `status: detalhada` estavam apenas desatualizados) | Escopo do agente migra para o T2. Ver seção "Plano de Avaliações — T2" abaixo |
 | 29/07/2026 | Plano de avaliações T2 aprovado e gravado — Av01-T2 a Av11-T2 | Cobre os 13 indicadores T2 sem cobertura prévia (de 29 totais em `indicadores-t2.md`); os demais têm evidência informal de atividades já aplicadas (Shark Tank, Doc Hunter/Error Detective, Dicionário Pessoal, Python no Papel, Copa Analytics SQL/pandas/estatística) a confirmar depois pelo professor. `roteiro-t2.md` corrigido: renumerado A42→A53 (A41 já tinha sido dado em 10/07 e não pode ser reusado). UC04 tem janela rígida de só 2 encontros (A45 e A51) antes de encerrar no T2. |
+| 29/07/2026 | Av01-T2 (30/07, UC01 Ind.4) fundida em Av07-T2 (20/08, UC01 Ind.5) | Decisão do professor: A42 (30/07) vira só aula de ensino/preparação, sem avaliação formal — UC01 só tem duas datas no T2 inteiro (30/07 e 20/08), então os dois indicadores (navegação segura + organização digital) passam a ser avaliados juntos numa entrega única em 20/08 (ex: pesquisar/classificar fontes confiáveis + organizar o material numa estrutura de pastas/arquivos lógica). Av01-T2 marcada como cancelada/fundida; Av07-T2 passa a cobrir Ind.4+Ind.5. |
 
 ---
 
@@ -207,19 +208,20 @@ Dia reservado para **ensino**, não avaliação:
 
 | Av. | Data | Aula | UCs | Indicador(es) | Status |
 |---|---|---|---|---|---|
-| Av01-T2 | 30/07 | A42 | UC01 | Ind.4 | ⏳ Pendente |
+| ~~Av01-T2~~ | ~~30/07~~ | ~~A42~~ | UC01 | ~~Ind.4~~ — **fundida em Av07-T2 (20/08)**, ver decisão de 29/07/2026 | ❌ Cancelada (fundida) |
 | Av02-T2 | 31/07 | A43 | UC03 | Ind.6 | ⏳ Pendente |
 | Av03-T2 | 06/08 | A44 | UC09 | Ind.5+6 (parte 1/2 do mini-projeto) | ⏳ Pendente |
 | Av04-T2 | 07/08 | A45 | UC04 | Ind.2+3 | ⏳ Pendente |
 | Av05-T2 | 13/08 | A46 | UC02 | Ind.1+2+3 (checagem leve) | ⏳ Pendente |
 | Av06-T2 | 14/08 | A47 | UC06 · UC08 | UC06 Ind.3 · UC08 Ind.4 | ⏳ Pendente |
-| Av07-T2 | 20/08 | A48 | UC01 | Ind.5 (fecha UC01) | ⏳ Pendente |
+| Av07-T2 | 20/08 | A48 | UC01 | **Fontes Confiáveis + Organização Digital** — Ind.4 (navegação segura/critérios de confiabilidade) + Ind.5 (organiza/armazena informações digitais) — fecha UC01 no T2 com avaliação combinada | ⏳ Pendente |
 | Av08-T2 | 21/08 | A49 | UC03 | Ind.4 (fecha UC03) | ⏳ Pendente |
 | Av09-T2 | 27/08 | A50 | UC09 | Ind.3+4 (parte 2/entrega do mini-projeto) | ⏳ Pendente |
 | Av10-T2 | 28/08 | A51 | UC04 · UC07 | UC04 recuperação · UC07 Ind.4+7 (fecha) | ⏳ Pendente |
 | Av11-T2 | 04/09 | A53 | UC06 | Ind.4 (se não coube em A47) | ⏳ Pendente |
 
-**Cobertura:** 13/13 indicadores T2 "sólidos pendentes" endereçados por uma avaliação dedicada. UC02 (Av05-T2) e UC04 (Av04-T2) também têm avaliação dedicada mesmo com evidência informal prévia, como reforço/formalização — a confirmar se ainda é necessária depois que o professor revisar o que já está coberto.
+**Cobertura:** 13/13 indicadores T2 "sólidos pendentes" endereçados por uma avaliação dedicada (Av01-T2 e Av07-T2 fundidas em 29/07/2026 — ver Histórico — não altera a contagem, só reduz de 11 para 10 o número de avaliações formais). UC02 (Av05-T2) e UC04 (Av04-T2) também têm avaliação dedicada mesmo com evidência informal prévia, como reforço/formalização — a confirmar se ainda é necessária depois que o professor revisar o que já está coberto.
+> ⚠️ A42 (30/07) passa a ser só aula de conteúdo/preparação para UC01, sem avaliação formal aplicada nesse dia.
 
 **Maiores riscos do cronograma:**
 - **UC09** (Av03-T2 + Av09-T2): 4 indicadores em só 2 encontros — desenhado como mini-projeto de 2 atos.

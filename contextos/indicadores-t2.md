@@ -90,7 +90,7 @@ trimestre: T2
 | Ind. | Descrição | Trim. | Status | Avaliação |
 |---|---|---|---|---|
 | 3 | Aplica estratégias de edição e revisão para solucionar problemas de digitação e estrutura em documentos | T1🔄→**T2**→T3🔄 | ⬜ pendente | — |
-| 4 | Acessa e utiliza navegadores de internet com segurança, por palavras-chave e critérios de confiabilidade | **T2**→T3🔄 | ⬜ pendente | Av01-T2 |
+| 4 | Acessa e utiliza navegadores de internet com segurança, por palavras-chave e critérios de confiabilidade | **T2**→T3🔄 | ⬜ pendente | Av07-T2 |
 | 5 | Organiza e armazena informações digitais de forma lógica e coerente, com autonomia e criticidade | **T2**→T3🔄 | ⬜ pendente | Av07-T2 |
 
 → [contexto-uc01](contexto-fundamentos-de-computacao.md)
