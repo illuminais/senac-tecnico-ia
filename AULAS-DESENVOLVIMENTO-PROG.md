@@ -40,4 +40,6 @@
 | A37 | UC05 | Python para IA — pandas do zero | 3 | 26/06 | 21 |
 | A37 | UC09 | Estatistica Aplicada — desvio padrao + sistema de consulta | 3 | 26/06 | 18 |
 | A39 | UC04 | Fundamentos e Conceitos de IA — KNN/Árvore de Decisão/K-Means (pesquisa em grupo + viés + reveal) | 3 | 03/07 | 29 |
+| A42 | UC07 | Transformação Digital — Segurança digital organizacional (case JBS ransomware + case Samsung uso indevido de IA + compliance/LGPD) | ~1,5-1,7 | 30/07 | — |
+| A42 | UC01 | Fundamentos de Computação — Pesquisa crítica: fontes confiáveis, busca por palavras-chave, fact-checking (sem avaliação; Av01-T2 remarcada p/ 20/08 A48) | 2 | 30/07 | — |
 ---
