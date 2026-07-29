@@ -1,4 +1,4 @@
-﻿id: av06
+id: av06
 titulo: "Projeto Integrado — SQL + Python + Pandas + Matplotlib"
 tipo: MP
 prazo: 08/05/2026
@@ -8,10 +8,11 @@ ucs:
   - UC08
   - UC09
   - UC03
+trimestre: T1
+indicadores:
+  - UC08.5
+  - UC05.4
+  - UC09.9
+  - UC09.10
+  - UC03.5
 status: em-planejamento
-titulo: "Avaliação 06"
-tipo: TC
-prazo: "08/05/2026"
-prazoLabel: "08/05"
-ucs: []
-status: published

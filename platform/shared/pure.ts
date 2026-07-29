@@ -110,3 +110,68 @@ export function isValidEntregaUrl(s: string): boolean {
     return false
   }
 }
+
+// ---------------------------------------------------------------------------
+// Consolidação de nota (D3/D4)
+// ---------------------------------------------------------------------------
+
+// D4 do spec: a consolidação do boletim é `max(A > PA > NA)` — o indicador foi
+// atendido em algum momento ⇒ está atendido, premiando recuperação em vez de
+// penalizar uma tentativa ruim anterior. Ordem-invariante (não importa em que
+// ordem os lançamentos aparecem no array) e idempotente (`consolidar([x,x])
+// === x`). `[]` não tem nenhum lançamento — não é o mesmo que NA, então
+// devolve `null` (célula vazia, RF12), nunca um valor "pior" inventado.
+const ORDEM_NOTA: Record<'A' | 'PA' | 'NA', number> = { A: 3, PA: 2, NA: 1 }
+
+export function consolidarNota(valores: Array<'A' | 'PA' | 'NA'>): 'A' | 'PA' | 'NA' | null {
+  if (valores.length === 0) return null
+  return valores.reduce((melhor, atual) =>
+    ORDEM_NOTA[atual] > ORDEM_NOTA[melhor] ? atual : melhor
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Código de indicador (ex.: 'UC05.2')
+// ---------------------------------------------------------------------------
+
+// Parseia o código canônico `UCxx.N` usado em todo o domínio (seed, D1,
+// grade do professor). Estrito de propósito — rejeita minúsculo, sem ponto,
+// número não inteiro etc. devolvendo `null` em vez de lançar, porque quem
+// chama normalmente está validando entrada externa (linha de markdown, CSV,
+// query param) e precisa de um jeito seguro de descartar lixo. Forma o
+// roundtrip com `formatIndicadorCodigo` abaixo (spec.md, Invariantes).
+export function parseIndicadorCodigo(codigo: string): { uc: string; numero: number } | null {
+  const match = /^(UC\d+)\.(\d+)$/.exec(codigo)
+  if (!match) return null
+  return { uc: match[1], numero: Number(match[2]) }
+}
+
+// Inverso de `parseIndicadorCodigo` — sempre produz o formato canônico
+// `UCxx.N`. Não valida `uc`/`numero` (quem monta o objeto já veio de uma
+// fonte confiável, tipicamente o resultado de `parseIndicadorCodigo` ou uma
+// linha de `ucs`/`indicadores` do D1); a validação de entrada malformada
+// vive do lado do parse, não do format.
+export function formatIndicadorCodigo(parts: { uc: string; numero: number }): string {
+  return `${parts.uc}.${parts.numero}`
+}
+
+// ---------------------------------------------------------------------------
+// CSV (RFC4180) — export do boletim (RF13)
+// ---------------------------------------------------------------------------
+
+// Serializa UMA linha de CSV. Regra RFC4180 padrão: um campo só precisa de
+// aspas quando contém vírgula, aspas ou quebra de linha; aspas internas viram
+// `""`. Sem isso, um nome de aluno com vírgula (CA7) desalinha as colunas do
+// boletim exportado. Quem monta o CSV completo junta as linhas com `\n` —
+// não é responsabilidade desta função (ela só sabe serializar um array de
+// campos).
+export function toCsvRow(campos: string[]): string {
+  return campos
+    .map(campo => {
+      if (/[",\n]/.test(campo)) {
+        return `"${campo.replace(/"/g, '""')}"`
+      }
+      return campo
+    })
+    .join(',')
+}

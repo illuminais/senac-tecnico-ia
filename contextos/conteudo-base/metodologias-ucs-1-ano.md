@@ -1,23 +1,87 @@
-Fundamentos e Conceitos de Inteligência Artificial Para o desenvolvimento desta competência, recomenda-se a utilização de metodologias ativas, como a realização de simulações e a exibição de vídeos, seguidas de discussões aprofundadas sobre o uso responsável e ético da Inteligência Artificial. A abordagem deve ser essencialmente prática e conceitual, utilizando estudos de caso reais para análise dos impactos sociais e éticos da IA e seus diversos campos de aplicação.
+# Orientações Metodológicas — Ano 1 (Curso Técnico em IA, Senac)
 
+> Documento oficial do curso (Plano de Curso). Orientações metodológicas específicas
+> por UC do 1º ano.
+> Elementos da competência → [ucs-elementos-da-competencia.md](ucs-elementos-da-competencia.md)
+> Ano 2 → [metodologias-ucs-2-ano.md](metodologias-ucs-2-ano.md) · Ano 3 → [metodologias-ucs-3-ano.md](metodologias-ucs-3-ano.md)
 
-Desenvolvimento de Linguagem de Programação Python A metodologia deve ser focada na prática deliberada e na construção progressiva do código. Recomenda-se a realização de oficinas de codificação incremental, com a proposta de desafios curtos e o desenvolvimento de mini aplicações que simulem situações reais do mercado. Incentive a prática de pair programming (programação em dupla) e outras simulações que aproximem o estudante da prática profissional em Inteligência Artificial.
+## Fundamentos e Conceitos de Inteligência Artificial
+Recomenda-se a utilização de metodologias ativas, como a realização de simulações e
+a exibição de vídeos, seguidas de discussões aprofundadas sobre o uso responsável e
+ético da Inteligência Artificial. A abordagem deve ser essencialmente prática e
+conceitual, utilizando estudos de caso reais para análise dos impactos sociais e éticos
+da IA e seus diversos campos de aplicação.
 
+## Desenvolvimento de Linguagem de Programação Python
+A metodologia deve ser focada na prática deliberada e na construção progressiva do
+código. Recomenda-se a realização de oficinas de codificação incremental, com a
+proposta de desafios curtos e o desenvolvimento de mini aplicações que simulem
+situações reais do mercado. Incentive a prática de pair programming (programação
+em dupla) e outras simulações que aproximem o estudante da prática profissional em
+Inteligência Artificial.
 
-Reconhecimento de Modelos de Arquitetura de Computadores e GPU Indica-se a realização de aulas demonstrativas práticas, incluindo a simulação em software como CPU-Z, VMware, GPUSim, ou até mesmo a desmontagem de hardware. (componentes de computadores), sempre que possível. O foco principal da discussão deve ser a eficiência, o paralelismo e o processamento gráfico, explicando a importância da GPU (Graphics Processing Unit) nos projetos de Inteligência Artificial.   
-  
-Compreensão sobre Transformação Digital e Estratégias de Informação Esta Unidade Curricular deve focar na visão sistêmica e estratégica, essencial para diagnosticar a maturidade digital das empresas. Recomenda-se a aplicação de metodologias ativas baseadas em problemas reais, como a análise e visualização de estudos de caso empresariais em grupos. A prática deve incluir o diagnóstico de maturidade digital, a análise de estratégias de informação e a prototipagem inicial de soluções digitais orientadas por Inteligência Artificia
+## Reconhecimento de Modelos de Arquitetura de Computadores e GPU
+Indica-se a realização de aulas demonstrativas práticas, incluindo a simulação em
+software como CPU-Z, VMware, GPUSim, ou até mesmo a desmontagem de hardware
+(componentes de computadores), sempre que possível. O foco principal da discussão
+deve ser a eficiência, o paralelismo e o processamento gráfico, explicando a
+importância da GPU (Graphics Processing Unit) nos projetos de Inteligência Artificial.
 
+## Compreensão sobre Transformação Digital e Estratégias de Informação
+Esta Unidade Curricular deve focar na visão sistêmica e estratégica, essencial para
+diagnosticar a maturidade digital das empresas. Recomenda-se a aplicação de
+metodologias ativas baseadas em problemas reais, como a análise e visualização de
+estudos de caso empresariais em grupos. A prática deve incluir o diagnóstico de
+maturidade digital, a análise de estratégias de informação e a prototipagem inicial de
+soluções digitais orientadas por Inteligência Artificial.
 
-Desenvolvimento de Banco de Dados A metodologia deve se concentrar na aplicação prática, utilizando projetos que envolvam a modelagem de entidade e relacionamentos (MER) aplicados a conjuntos de dados (datasets) reais e volumosos, adequados ao contexto de IA. Enfatizar exercícios práticos de consultas SQL complexas, gerenciamento de performance e ferramentas de visualização de dados para extração de insights que servirão de base para modelos de Inteligência Artificial.
+## Desenvolvimento de Banco de Dados
+A metodologia deve se concentrar na aplicação prática, utilizando projetos que
+envolvam a modelagem de entidade e relacionamentos (MER) aplicados a conjuntos
+de dados (datasets) reais e volumosos, adequados ao contexto de IA. Enfatizar
+exercícios práticos de consultas SQL complexas, gerenciamento de performance e
+ferramentas de visualização de dados para extração de insights que servirão de base
+para modelos de Inteligência Artificial.
 
+## Utilização da Estatística Aplicada e Lógica Matemática em Aplicações de Inteligência Artificial
+A prática deve ser realizada em laboratório de dados, utilizando a linguagem Python e
+suas principais bibliotecas (como NumPy e Pandas). O aprendizado deve ser
+contextualizado por meio de estudos de caso e a manipulação de datasets de fontes
+abertas para que o aluno modele padrões, realize análises de probabilidade e tome
+decisões baseadas em dados.
 
-Utilização da estatística aplicada e lógica matemática em aplicações de Inteligência Artificial
-A prática deve ser realizada em laboratório de dados, utilizando a linguagem Python e suas principais bibliotecas (como NumPy e Pandas). O aprendizado deve ser contextualizado por meio de estudos de caso e a manipulação de datasets de fontes abertas para que o aluno modele padrões, realize análises de probabilidade e tome decisões baseadas em dados.
+## Fundamentos de Computação
+**Articulação com a Formação Geral Básica:** Matemática, Física e Sociologia.
+Com a Matemática, promove o desenvolvimento do raciocínio lógico, análise de
+padrões, sequenciação de tarefas, fundamentais para a construção de algoritmos, e
+utilização de planilhas eletrônicas para organização e interpretação de dados. Com a
+Física, permite a compreensão da estrutura e o funcionamento básico de hardware,
+periféricos e sistemas digitais, explorando conceitos de energia, eletricidade e o
+desempenho dos mecanismos tecnológicos que sustentam a computação. Com a
+Sociologia, aborda a interação humana com a tecnologia, a ética digital, segurança da
+informação e impactos sociais, estimulando o uso consciente e crítico das
+ferramentas digitais. Inclui reflexões sobre inclusão digital e a proteção de dados
+pessoais, em conformidade com a LGPD.
 
+## Inglês Instrumental Aplicado à Computação
+**Articulação com a Formação Geral Básica:** Língua Inglesa.
+Amplia vocabulário técnico e familiaridade com termos e anglicismos essenciais
+usados em Tecnologia da Informação, permitindo o acesso a documentações,
+tutoriais e manuais de softwares e hardware.
 
-Fundamentos de Computação Aprofundamento das Áreas do Conhecimento — Matemática, Física e Sociologia — da Formação Geral Básica articulados com o Componente Curricular da Formação Técnica. Com a Matemática, promove o desenvolvimento do raciocínio lógico, análise de padrões, sequenciação de tarefas, fundamentais para a construção de algoritmos, e utilização de planilhas eletrônicas para organização e interpretação de dados. Com a Física, permite a compreensão da estrutura e o funcionamento básico de hardware, periféricos e sistemas digitais, explorando conceitos de energia, eletricidade e o desempenho dos mecanismos tecnológicos que sustentam a computação. Com a Sociologia, aborda a interação humana com a tecnologia, a ética digital, segurança da informação e impactos sociais, estimulando o uso consciente e crítico das ferramentas digitais. Inclui reflexões sobre inclusão digital e a proteção de dados pessoais, em conformidade com a LGPD (Lei Geral de Proteção de Dados).   
-  
-Inglês Instrumental Aplicado à Computação Aprofundamento das Áreas do Conhecimento — Língua Inglesa — da Formação Geral Básica articulados com o Componente Curricular da Formação Técnica. Com a Língua Inglesa, amplia vocabulário técnico e familiaridade com termos e anglicismos essenciais usados em Tecnologia da Informação, permitindo o acesso a documentações, tutoriais e manuais de softwares e hardware.   
-  
-Fundamentos matemáticos para computação e Inteligência Artificial. Aprofundamento das Áreas do Conhecimento — Matemática e Filosofia — da Formação Geral Básica articulados com o Componente Curricular da Formação Técnica. Com a Matemática, desenvolve habilidades em funções (linear, quadrática, logarítmica e exponencial), álgebra, noções de estatística (média, mediana, moda) e probabilidade aplicadas diretamente a problemas computacionais e de Inteligência Artificial. Aprende a modelar padrões, analisa dados digitais e comunica resultados matemáticos de forma clara e estruturada, essencial para o entendimento dos algoritmos de Inteligência Artificial. Com a Física, estabelece a conexão entre os modelos matemáticos e os fenômenos do mundo real relevantes para a computação e a IA. Aplica conceitos de física para a análise da complexidade de algoritmos (eficiência e consumo de recursos), compreensão de processamento de sinais digitais, e fundamentação de modelos de otimização e aprendizado que mimetizam processos físicos (como em Simulated Annealing ou a lógica de energia/informação em redes neurais). O foco é na quantificação e na modelagem de sistemas, utilizando o instrumental matemático para descrever e prever o comportamento de sistemas computacionais. 
+## Fundamentos Matemáticos para Computação e Inteligência Artificial
+**Articulação com a Formação Geral Básica:** Matemática e Filosofia.
+Com a Matemática, desenvolve habilidades em funções (linear, quadrática,
+logarítmica e exponencial), álgebra, noções de estatística (média, mediana, moda) e
+probabilidade aplicadas diretamente a problemas computacionais e de Inteligência
+Artificial. Aprende a modelar padrões, analisa dados digitais e comunica resultados
+matemáticos de forma clara e estruturada, essencial para o entendimento dos
+algoritmos de Inteligência Artificial. Com a Física, estabelece a conexão entre os
+modelos matemáticos e os fenômenos do mundo real relevantes para a computação
+e a IA. Aplica conceitos de física para a análise da complexidade de algoritmos
+(eficiência e consumo de recursos), compreensão de processamento de sinais
+digitais, e fundamentação de modelos de otimização e aprendizado que mimetizam
+processos físicos (como em Simulated Annealing ou a lógica de energia/informação
+em redes neurais). O foco é na quantificação e na modelagem de sistemas, utilizando
+o instrumental matemático para descrever e prever o comportamento de sistemas
+computacionais.

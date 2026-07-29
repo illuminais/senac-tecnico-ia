@@ -1,4 +1,4 @@
-﻿id: av05
+id: av05
 titulo: "Python N2 — DataList"
 tipo: AS
 prazo: 07/05/2026
@@ -6,10 +6,10 @@ prazo-label: "07/05 — durante a aula, dupla"
 ucs:
   - UC05
   - UC03
+trimestre: T1
+indicadores:
+  - UC05.1
+  - UC05.2
+  - UC05.3
+  - UC03.3
 status: em-planejamento
-titulo: "Avaliação 05"
-tipo: TC
-prazo: "TBD"
-prazoLabel: "Até 07/05"
-ucs: []
-status: published

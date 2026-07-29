@@ -38,10 +38,11 @@ Você desenha e altera `platform/worker/schema.sql`. Não existe pasta `migratio
 
 ## Regras
 
-- Nunca `DROP TABLE` ou `ALTER TABLE ... DROP COLUMN` sem confirmação explícita — isso é destrutivo e o arquivo roda em produção via `wrangler d1 execute --remote`.
 - Nunca proponha `AUTOINCREMENT`/`INTEGER PRIMARY KEY` para novas tabelas — D1 é distribuído, prefira chave natural TEXT ou UUID gerado na aplicação.
-- Se a mudança precisa rodar contra o banco de produção, você **não roda isso** — apenas entrega o SQL/comando pronto (`wrangler d1 execute lms-progress --remote --file=worker/schema.sql`) para o professor executar.
+- **Local (`--local`)**: pode rodar `wrangler d1 execute lms-progress --local --file=worker/schema.sql` você mesmo para aplicar e validar em dev. É reversível (banco local) e o próprio harness já pede confirmação da ferramenta antes de executar.
+- **Produção (`--remote`)**: você PODE rodar, mas só depois de uma confirmação explícita e específica — mostre o SQL exato que vai rodar (não só "vou aplicar o schema"), diga o que muda (tabela/coluna nova, ou `DROP`/`ALTER...DROP COLUMN` se for o caso) e espere um "sim"/"pode rodar" textual do professor antes de disparar o comando. Isso é além do prompt de permissão da ferramenta — é uma segunda confirmação sua, em texto, específica da mudança.
+- `DROP TABLE` ou `ALTER TABLE ... DROP COLUMN` são destrutivos: nunca rode isso, nem local nem remoto, sem descrever explicitamente o que será perdido e receber confirmação separada pra essa ação especificamente (não vale a confirmação genérica de "pode aplicar o schema").
 
 ## Ao finalizar
 
-Reporte: tabela(s)/coluna(s) adicionadas, se `sqlite3 :memory:` validou limpo, o type TS criado/atualizado, e o comando exato que o professor precisa rodar para aplicar em produção.
+Reporte: tabela(s)/coluna(s) adicionadas, se `sqlite3 :memory:` validou limpo, o type TS criado/atualizado, se rodou local (e o resultado), e — se ainda não rodou remoto — o comando exato pendente de confirmação para produção.

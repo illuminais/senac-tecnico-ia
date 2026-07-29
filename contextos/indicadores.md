@@ -7,6 +7,9 @@ schema: indicadores-anuais
 > Visão completa dos indicadores de todas as UCs ao longo do ano.
 > Coluna **Foco** mostra em qual trimestre o indicador é trabalhado com profundidade.
 > `T1🔄` = iniciado no T1 mas de forma fraca, continuado no T2.
+> Este arquivo rastreia o que **de fato** foi coberto em sala. Para o **plano oficial**
+> do Senac (quais indicadores cada UC deveria trabalhar por trimestre e HA alocada),
+> veja [conteudo-base/distribuicao-trimestral-ano1.md](conteudo-base/distribuicao-trimestral-ano1.md).
 > Para rastreamento de avaliações por indicador, veja os arquivos de trimestre:
 > → **T2:** [indicadores-t2.md](indicadores-t2.md)
 

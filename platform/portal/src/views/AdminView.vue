@@ -140,6 +140,10 @@ async function save() {
         → Importar calendário (Orion)
       </RouterLink>
 
+      <RouterLink to="/admin/avaliacoes" class="text-sm text-neural-accent hover:underline self-start">
+        → Painel de avaliações
+      </RouterLink>
+
       <div class="bg-neural-800 rounded-2xl p-6 border border-neural-700">
         <div class="flex items-center justify-between mb-3">
           <h2 class="text-white font-semibold">Mensagem para os alunos</h2>

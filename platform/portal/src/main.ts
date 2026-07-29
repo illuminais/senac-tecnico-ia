@@ -8,6 +8,8 @@ import AvaliacoesView from './views/AvaliacoesView.vue'
 import AvaliacaoView from './views/AvaliacaoView.vue'
 import CalendarioView from './views/CalendarioView.vue'
 import AdminCalendarioView from './views/AdminCalendarioView.vue'
+import AdminPainelView from './views/AdminPainelView.vue'
+import AdminGradeView from './views/AdminGradeView.vue'
 import ForgotPasswordView from './views/ForgotPasswordView.vue'
 import ResetPasswordView from './views/ResetPasswordView.vue'
 import GoogleCallbackView from './views/GoogleCallbackView.vue'
@@ -25,6 +27,8 @@ const router = createRouter({
     { path: '/calendario', component: CalendarioView },
     { path: '/admin', component: AdminView },
     { path: '/admin/calendario', component: AdminCalendarioView },
+    { path: '/admin/avaliacoes', component: AdminPainelView },
+    { path: '/admin/avaliacoes/:slug', component: AdminGradeView },
     { path: '/admin/esqueci-senha', component: ForgotPasswordView },
     { path: '/admin/reset-senha', component: ResetPasswordView },
     { path: '/admin/google-callback', component: GoogleCallbackView },

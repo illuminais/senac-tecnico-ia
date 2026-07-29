@@ -81,12 +81,19 @@ Ler quando: gerar slides de uma UC · atualizar pós-aula · verificar o que já
 
 | Arquivo | O que é | Quando ler |
 |---|---|---|
-| `indicadores.md` | Mapa anual de indicadores por UC (T1·T2·T3) | Alinhar conteúdo com indicadores curriculares |
-| `indicadores-t2.md` | Indicadores focados no T2 | Planejar avaliações e slides do T2 |
-| `conteudo-base/ucs-elementos-da-competencia.md` | Elementos de competência oficiais das 9 UCs | Referência curricular profunda |
-| `conteudo-base/metodologias-ativas-senac.md` | Resumo das metodologias Senac por UC | Escolher método para uma aula |
+| `conteudo-base/plano-curso-geral.md` | Plano de Curso oficial: justificativa, objetivos, perfil profissional, organização curricular (3 anos), sistema de avaliação (menções A/PA/NA, D/ND, AP/RP) | Contexto geral do curso, avaliações, modelagem da plataforma |
+| `indicadores.md` | Mapa anual de indicadores do Ano 1 por UC (T1·T2·T3) — cobertura real | Alinhar conteúdo com indicadores curriculares |
+| `conteudo-base/distribuicao-trimestral-ano1.md` | Plano oficial Senac: indicadores + HA por trimestre, Ano 1 (Ano 2/3 não têm este detalhamento) | Conferir o que o Senac prevê vs. o que foi de fato dado |
+| `indicadores-t2.md` | Indicadores focados no T2 (Ano 1) | Planejar avaliações e slides do T2 |
+| `conteudo-base/ucs-elementos-da-competencia.md` | Elementos de competência oficiais das 9 UCs do Ano 1 (indicadores, conhecimentos, habilidades, atitudes) | Referência curricular profunda — Ano 1 |
+| `conteudo-base/ucs-elementos-da-competencia-ano2.md` | Elementos de competência oficiais das 7 UCs do Ano 2 | Referência curricular profunda — Ano 2 |
+| `conteudo-base/ucs-elementos-da-competencia-ano3.md` | Elementos de competência oficiais das 7 UCs do Ano 3 (incl. Projeto Integrador) | Referência curricular profunda — Ano 3 |
+| `conteudo-base/bibliografia-ucs.md` | Bibliografia básica e complementar por UC (3 anos) | Montar referências de aula ou material de apoio |
+| `conteudo-base/metodologias-ativas-senac.md` | Resumo das metodologias ativas Senac (transversal) | Escolher método para uma aula |
 | `conteudo-base/metodologias-ativas-senac-completo.md` | Versão completa com exemplos e detalhes | Aprofundar uma metodologia específica |
-| `conteudo-base/metodologias-ucs-1-ano.md` | Metodologia recomendada por UC no 1° ano | Planejar sequência pedagógica |
+| `conteudo-base/metodologias-ucs-1-ano.md` | Metodologia recomendada por UC no Ano 1 | Planejar sequência pedagógica — Ano 1 |
+| `conteudo-base/metodologias-ucs-2-ano.md` | Metodologia recomendada por UC no Ano 2 | Planejar sequência pedagógica — Ano 2 |
+| `conteudo-base/metodologias-ucs-3-ano.md` | Metodologia recomendada por UC no Ano 3 | Planejar sequência pedagógica — Ano 3 |
 
 ---
 

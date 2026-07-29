@@ -41,17 +41,63 @@ function toSlug(dirName) {
   return dirName.toLowerCase().replace(/_/g, '-').replace(/\+/g, '-')
 }
 
-/** Parse simples de YAML linha a linha (sem dep externa) */
+/**
+ * Parse simples de YAML linha a linha (sem dep externa). Entende chave: valor
+ * escalar (com unwrap de aspas) e os dois formatos de lista usados nos
+ * meta.yaml deste repo:
+ *   - inline:     ucs: [UC01, UC02, UC04]
+ *   - multilinha: ucs:
+ *                   - UC01
+ *                   - UC02
+ * Não é um parser YAML genérico — só o suficiente pra esses dois formatos.
+ */
 function parseYaml(content) {
   const result = {}
-  for (const line of content.split('\n')) {
-    const trimmed = line.trim()
-    if (!trimmed || trimmed.startsWith('#')) continue
+  const lines = content.split('\n')
+  const unwrapQuotes = (s) => s.trim().replace(/^["']|["']$/g, '')
+
+  let i = 0
+  while (i < lines.length) {
+    const trimmed = lines[i].trim()
+    if (!trimmed || trimmed.startsWith('#')) { i++; continue }
+
     const colonIdx = trimmed.indexOf(':')
-    if (colonIdx === -1) continue
+    if (colonIdx === -1) { i++; continue }
+
     const key = trimmed.slice(0, colonIdx).trim()
-    const value = trimmed.slice(colonIdx + 1).trim().replace(/^["']|["']$/g, '')
+    const valuePart = trimmed.slice(colonIdx + 1).trim()
+
+    // Lista multilinha: "chave:" sozinho na linha, seguido de "  - item"
+    if (valuePart === '') {
+      const items = []
+      let j = i + 1
+      while (j < lines.length && lines[j].trim().startsWith('- ')) {
+        items.push(unwrapQuotes(lines[j].trim().slice(2)))
+        j++
+      }
+      if (items.length > 0 && key) {
+        result[key] = items
+        i = j
+        continue
+      }
+      i++
+      continue
+    }
+
+    // Lista inline: "chave: [A, B, C]"
+    if (valuePart.startsWith('[') && valuePart.endsWith(']')) {
+      const inner = valuePart.slice(1, -1).trim()
+      if (key) {
+        result[key] = inner === '' ? [] : inner.split(',').map(unwrapQuotes)
+      }
+      i++
+      continue
+    }
+
+    // Escalar simples
+    const value = unwrapQuotes(valuePart)
     if (key && value) result[key] = value
+    i++
   }
   return result
 }

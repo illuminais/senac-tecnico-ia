@@ -1,4 +1,4 @@
-﻿id: av04
+id: av04
 titulo: "Quiz GPU + Arquitetura + IA"
 tipo: PQ
 prazo: 30/04/2026
@@ -8,10 +8,13 @@ ucs:
   - UC04
   - UC01
   - UC02
+trimestre: T1
+indicadores:
+  - UC06.1
+  - UC06.2
+  - UC06.3
+  - UC04.1
+  - UC04.2
+  - UC01.1
+  - UC02.1
 status: em-planejamento
-titulo: "Avaliação 04"
-tipo: TC
-prazo: "TBD"
-prazoLabel: "30/04"
-ucs: []
-status: published

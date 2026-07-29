@@ -49,7 +49,15 @@
       "Bash(awk '/^```/{c++; if\\(c%2==1\\){start=NR} else {print \"block from \"start\" to \"NR\" = \"\\(NR-start-1\\)\" lines\"}}' slides.md)",
       "Bash(curl -s -D - -o /dev/null \"http://localhost:5173/u9263854985_an_infinite_artificial_intelligence_neural_networ_ac553fdb-db8e-41ed-8dc5-d293f29f1ff6_0.png\" --max-time 3)",
       "Bash(git -C /home/leo-zanini/Documents/senac-tecnico-ia log --oneline -15)",
-      "Bash(git -C /home/leo-zanini/Documents/senac-tecnico-ia show --stat HEAD)"
+      "Bash(git -C /home/leo-zanini/Documents/senac-tecnico-ia show --stat HEAD)",
+      "Bash(echo *)",
+      "Bash(sed -n '/CREATE TABLE IF NOT EXISTS entregas/,/\\);/p' platform/worker/schema.sql)",
+      "Bash(sed -n '/CREATE TABLE IF NOT EXISTS users/,/\\);/p' platform/worker/schema.sql)",
+      "Bash(git -C /home/leo-zanini/Documents/senac-tecnico-ia status --short platform/specs)",
+      "Bash(node *)",
+      "Bash(npx vue-tsc *)",
+      "Bash(npx wrangler *)",
+      "Bash(xxd avaliacoes/av01/meta.yaml)"
     ]
   }
 }
