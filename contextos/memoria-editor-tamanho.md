@@ -1,6 +1,6 @@
 # Memoria Viva — EDITOR-TAMANHO
 
-Atualizado em: 2026-06-25
+Atualizado em: 2026-07-29
 
 ## Layout: default
 
@@ -24,6 +24,7 @@ Atualizado em: 2026-06-25
 | A12 | 9 | Loop Infinito e break | 2 | Loop infinito no pai; break + dica Colab no filho (SLIDE 13) |
 | A34 | 8 | WHERE com AND/OR/NOT | 3 queries em 1 bloco | Cada operador ganhou slide proprio: SLIDE 8 (AND), 8b (OR), 8c (NOT) |
 | A34 | 21 | NOT — invertendo a condicao | tabela + 2 blocos SQL | Tabela no pai (SLIDE 21); blocos SQL equivalentes no filho (SLIDE 21b) |
+| A43 | 12 | Tarefa de Casa — funcoes.py | 2 (starter + AdminOnly gabarito) | Texto/instrucoes no pai (sem codigo); starter code em filho 1; AdminOnly gabarito em filho 2 — precisou de 2 filhos pq so texto+1 bloco ja estourava (deficit 95px em 552px de altura util) |
 
 ### Itens de lista
 
@@ -44,11 +45,15 @@ Atualizado em: 2026-06-25
 | A34 | 24 | EX6 — Diagrama de Venn | Enunciado + AdminOnly gabarito | AdminOnly movido para slide filho (SLIDE 24b); enunciado so no pai |
 | A34 | 25 | EX7 — Tabela verdade 3 variaveis | Enunciado + bloco SQL + tabela + AdminOnly | AdminOnly movido para slide filho (SLIDE 25b) |
 | A34 | 27 | Funcao linear y=ax+b | Dois conceitos: definicao parametros + calculo de inclinacao | Cada conceito em slide proprio: SLIDE 27 (definicao) + 27b (calculo) |
+| A43 | — | METODO de deteccao de overflow | scripts/check-overflow.mjs navega via ArrowRight (SPA) e escuta console.warn do OverflowGuard — em teste real (viewport 1280x720), esse metodo teve falso-negativo em 1 de 4 slides realmente estourados (slide com SlideTable + AdminOnly gated), e um teste alternativo via ArrowRight+polling do badge `.overflow-badge` deu resultados diferentes a cada rodada (state bug no useOverflowStore ao navegar client-side sem reload) | Ground truth confiavel = `page.goto()` isolado por slide (reload completo, sem navegacao client-side) + checar `document.querySelector('.overflow-badge')` no DOM apos `networkidle` + wait >= 700ms. Rodar 2x pra confirmar estabilidade antes de aceitar como definitivo. Recomendado documentar isso no proprio check-overflow.mjs futuramente. |
 | A36 | 5 | Desvio Padrao: o que e consistencia? | Tabela comparativa + 2 v-clicks (conclusao textual + formula LaTeX) | Formula LaTeX separada em slide filho (SLIDE 5b); intuicao estabelecida antes da formula |
 | A36 | 8 | Atividade Individual - Papel e Caneta | Tabela de dados do Japao + lista de 4 calculos + nota do professor | Tabela no pai (SLIDE 8); lista de calculos + nota no filho (SLIDE 8b) |
 | A36 | 9 | Passo a Passo: Desvio Padrao do Japao | Dados + Passo 1 (media) + v-click Passo 2 (tabela diferencas) + v-click Passos 3 e 4 | Passos 1 e 2 no pai (SLIDE 9); Passos 3 e 4 no filho (SLIDE 9b) |
 | A36 | 12 | O que os dados provaram | Hipotese + tabela fases por media + 2 v-clicks (conclusao Marrocos + transicao sexta) | Tabela no pai (SLIDE 12); ambos v-clicks no filho (SLIDE 12b) — v-clicks sem conteudo no pai eliminam overflow |
 | A36 | 16 | Revisao: SELECT do zero | Bloco SQL comentado + 2 v-clicks (leitura linha por linha + analogia) | Bloco SQL no pai (SLIDE 16); leitura + analogia no filho (SLIDE 16b) |
+| A43 | 4 | Funcao = receita reutilizavel | Texto + 3 bullets + codigo + v-click (citacao doc oficial Python) | v-click introduzia conceito de fechamento (citacao) — virou slide filho sem o wrapper (SLIDE 5), texto puro |
+| A43 | 9 | Extensao: escopo local vs global | 2 paragrafos + codigo (9 linhas) + v-click (fechamento) | v-click de fechamento virou slide filho sem o wrapper (SLIDE 11) |
+| A43 | 18 | Av02-T2 — Situacao-problema | Contexto + tabela + perguntas a/b/c + AdminOnly gabarito | Tabela+contexto no pai (SLIDE 22); perguntas + AdminOnly gabarito no filho (SLIDE 23) — overflow de so 25px ja existia sem o gabarito renderizado (AdminOnly gated por unlockHour, so conta layout quando visivel) |
 | A37 | 5 | Instalacao ao Vivo | 2 blocos (bash + python) | Passo 1 instalar (bash + v-click erro) no pai; Passo 2 testar (python + v-click Colab) no filho |
 | A37 | 7 | Salvar como CSV | 6 passos + bloco de nome de arquivo = ~12 linhas | Passos 1-6 no pai; nome do arquivo + bloco + explicacao CSV no filho |
 | A37 | 11 | Explorar os Dados | 2 blocos (head + describe) | head() no pai com explicacao; describe() no filho com explicacao |

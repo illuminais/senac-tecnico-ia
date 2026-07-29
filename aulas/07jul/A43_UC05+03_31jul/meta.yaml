@@ -1,15 +1,15 @@
 # Metadados da Aula — Neural Slides
 
-aula: "42"
-slug: "a42-uc07-01-30jul"
-title: "Segurança Digital: da Organização ao Navegador"
+aula: "43"
+slug: "a43-uc05-03-31jul"
+title: "Funções em Python e Situações-Problema Matemáticas (Av02-T2)"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
-disciplines: ["UC07", "UC01"]
+disciplines: ["UC05", "UC03"]
 
 # formato ISO: YYYY-MM-DD
-date: "2026-07-30"
+date: "2026-07-31"
 
 # em-planejamento | ready | published
 status: published

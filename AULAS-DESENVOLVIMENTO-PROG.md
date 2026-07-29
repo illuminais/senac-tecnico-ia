@@ -42,4 +42,6 @@
 | A39 | UC04 | Fundamentos e Conceitos de IA — KNN/Árvore de Decisão/K-Means (pesquisa em grupo + viés + reveal) | 3 | 03/07 | 29 |
 | A42 | UC07 | Transformação Digital — Segurança digital organizacional (case JBS ransomware + case Samsung uso indevido de IA + compliance/LGPD) | ~1,5-1,7 | 30/07 | — |
 | A42 | UC01 | Fundamentos de Computação — Pesquisa crítica: fontes confiáveis, busca por palavras-chave, fact-checking (sem avaliação; Av01-T2 remarcada p/ 20/08 A48) | 2 | 30/07 | — |
+| A43 | UC05 | Python para IA — `def`/`return` (definição de funções) + escopo local/global (extensão) | 3 | 31/07 | 16 |
+| A43 | UC03 | Fundamentos Matemáticos — Av02-T2: situação-problema aplicada combinando aritmética + álgebra + conjuntos (indicador "resolve situações-problema...") | 3 | 31/07 | 11 |
 ---
