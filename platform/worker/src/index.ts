@@ -335,6 +335,21 @@ export default {
       return handleAdminGrade(request, env, gradeMatch[1])
     }
 
+    // Sprint 04 — histórico de envios de UM aluno numa avaliação (painel de
+    // detalhe do professor, sob demanda, não vem de brinde no handleAdminGrade).
+    const historicoMatch = url.pathname.match(/^\/api\/admin\/entregas-historico\/([^/]+)\/([^/]+)$/)
+    if (request.method === 'GET' && historicoMatch) {
+      return handleAdminEntregasHistorico(request, env, historicoMatch[1], historicoMatch[2])
+    }
+
+    if (request.method === 'GET' && url.pathname === '/api/avaliacoes/novidade') {
+      return handleAvaliacoesNovidade(request, env)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/api/avaliacoes/marcar-vistas') {
+      return handleMarcarAvaliacoesVistas(request, env)
+    }
+
     return new Response('Not found', { status: 404 })
   },
 }
@@ -716,12 +731,32 @@ async function handleCreateEntrega(request: Request, env: Env): Promise<Response
 
   const userId = payload.sub
 
+  // Trava (sprint 04): assim que existe QUALQUER nota lançada pra esse
+  // aluno+avaliação, a entrega é considerada corrigida — reenviar por cima
+  // apagaria o lastro que a nota se baseou. "Reabrir" é o professor apagar as
+  // notas (PUT /api/admin/notas com valor:null), não um endpoint novo.
+  const notaExistente = await env.DB.prepare(
+    `SELECT 1 FROM notas WHERE user_id = ? AND avaliacao_slug = ? LIMIT 1`
+  ).bind(userId, avaliacaoId).first()
+  if (notaExistente) {
+    return jsonResponse({ error: 'Entrega já corrigida — peça ao professor pra reabrir.' }, 403)
+  }
+
+  const linkTruncado = link.slice(0, 2000)
+
   await env.DB.prepare(`
     INSERT INTO entregas (user_id, avaliacao_slug, link, updated_at)
     VALUES (?, ?, ?, unixepoch())
     ON CONFLICT (user_id, avaliacao_slug)
     DO UPDATE SET link = excluded.link, updated_at = excluded.updated_at
-  `).bind(userId, avaliacaoId, link.slice(0, 2000)).run()
+  `).bind(userId, avaliacaoId, linkTruncado).run()
+
+  // Histórico append-only (sprint 04) — nunca atualizado nem deletado, só
+  // acumula uma linha por envio, pra auditoria de qual link existia quando.
+  await env.DB.prepare(`
+    INSERT INTO entregas_historico (user_id, avaliacao_slug, link, enviado_at)
+    VALUES (?, ?, ?, unixepoch())
+  `).bind(userId, avaliacaoId, linkTruncado).run()
 
   return jsonResponse({ ok: true })
 }
@@ -739,9 +774,21 @@ async function handleGetEntregas(request: Request, env: Env): Promise<Response> 
     `SELECT avaliacao_slug, link, updated_at FROM entregas WHERE user_id = ?`
   ).bind(userId).all<{ avaliacao_slug: string; link: string; updated_at: number }>()
 
-  const result: Record<string, { link: string; updatedAt: number }> = {}
+  // `corrigida` (sprint 04) — mesma regra de trava do handleCreateEntrega:
+  // existe nota lançada pra essa avaliação? Portal usa isso pra travar o
+  // formulário no client também (defesa em profundidade, não só o 403 do POST).
+  const notasRows = await env.DB.prepare(
+    `SELECT DISTINCT avaliacao_slug FROM notas WHERE user_id = ?`
+  ).bind(userId).all<{ avaliacao_slug: string }>()
+  const corrigidas = new Set((notasRows.results ?? []).map(r => r.avaliacao_slug))
+
+  const result: Record<string, { link: string; updatedAt: number; corrigida: boolean }> = {}
   for (const row of rows.results ?? []) {
-    result[row.avaliacao_slug] = { link: row.link, updatedAt: row.updated_at }
+    result[row.avaliacao_slug] = {
+      link: row.link,
+      updatedAt: row.updated_at,
+      corrigida: corrigidas.has(row.avaliacao_slug),
+    }
   }
 
   return jsonResponse(result)
@@ -977,8 +1024,18 @@ async function resolveAvaliacoesTurmaId(request: Request, env: Env): Promise<str
 // Pública — nunca retorna 401/403 por falta de JWT (RF6). O `status` no
 // retorno é o de APLICAÇÃO (avaliacoes_turma.status), não o de conteúdo
 // (avaliacoes.status) — cuidado para não confundir os dois na leitura.
+//
+// Sprint 04: quando há JWT de aluno, também resolve `entregou` (existe linha
+// em `entregas`) e, por indicador, a própria nota/comentário já lançados —
+// mesma resposta alimenta tanto o card da listagem quanto a tela de detalhe,
+// sem endpoint separado só pra isso.
 async function handleGetAvaliacoes(request: Request, env: Env): Promise<Response> {
   const turmaId = await resolveAvaliacoesTurmaId(request, env)
+
+  const authPayload = await requireAuth(request, env)
+  const userId = authPayload && authPayload.role === 'student' && typeof authPayload.sub === 'string'
+    ? authPayload.sub
+    : null
 
   const avaliacoesRows = await env.DB.prepare(
     `SELECT slug, titulo, tipo, trimestre FROM avaliacoes ORDER BY trimestre, slug`
@@ -986,13 +1043,13 @@ async function handleGetAvaliacoes(request: Request, env: Env): Promise<Response
 
   const avaliacaoTurmaRows = turmaId
     ? await env.DB.prepare(
-        `SELECT avaliacao_slug, prazo_label, status FROM avaliacoes_turma WHERE turma_id = ?`
-      ).bind(turmaId).all<{ avaliacao_slug: string; prazo_label: string | null; status: string }>()
+        `SELECT avaliacao_slug, prazo, prazo_label, status FROM avaliacoes_turma WHERE turma_id = ?`
+      ).bind(turmaId).all<{ avaliacao_slug: string; prazo: string | null; prazo_label: string | null; status: string }>()
     : null
 
-  const turmaBySlug = new Map<string, { prazoLabel: string | null; status: string }>()
+  const turmaBySlug = new Map<string, { prazo: string | null; prazoLabel: string | null; status: string }>()
   for (const row of avaliacaoTurmaRows?.results ?? []) {
-    turmaBySlug.set(row.avaliacao_slug, { prazoLabel: row.prazo_label, status: row.status })
+    turmaBySlug.set(row.avaliacao_slug, { prazo: row.prazo, prazoLabel: row.prazo_label, status: row.status })
   }
 
   const indicadorRows = await env.DB.prepare(`
@@ -1009,20 +1066,97 @@ async function handleGetAvaliacoes(request: Request, env: Env): Promise<Response
     indicadoresBySlug.set(row.avaliacao_slug, list)
   }
 
+  const entregaSlugs = new Set<string>()
+  const notasByAvaliacao = new Map<string, Map<string, { valor: string; comentario: string | null }>>()
+  if (userId) {
+    const entregaRows = await env.DB.prepare(
+      `SELECT avaliacao_slug FROM entregas WHERE user_id = ?`
+    ).bind(userId).all<{ avaliacao_slug: string }>()
+    for (const row of entregaRows.results ?? []) entregaSlugs.add(row.avaliacao_slug)
+
+    const notaRows = await env.DB.prepare(
+      `SELECT avaliacao_slug, indicador_codigo, valor, comentario FROM notas WHERE user_id = ?`
+    ).bind(userId).all<{ avaliacao_slug: string; indicador_codigo: string; valor: string; comentario: string | null }>()
+    for (const row of notaRows.results ?? []) {
+      const map = notasByAvaliacao.get(row.avaliacao_slug) ?? new Map()
+      map.set(row.indicador_codigo, { valor: row.valor, comentario: row.comentario })
+      notasByAvaliacao.set(row.avaliacao_slug, map)
+    }
+  }
+
   const result = (avaliacoesRows.results ?? []).map((av) => {
     const turma = turmaBySlug.get(av.slug)
+    const notasIndicador = notasByAvaliacao.get(av.slug)
     return {
       slug: av.slug,
       titulo: av.titulo,
       tipo: av.tipo,
       trimestre: av.trimestre,
+      prazo: turma?.prazo ?? null,
       prazoLabel: turma?.prazoLabel ?? null,
       status: turma?.status ?? null,
-      indicadores: indicadoresBySlug.get(av.slug) ?? [],
+      entregou: userId ? entregaSlugs.has(av.slug) : null,
+      indicadores: (indicadoresBySlug.get(av.slug) ?? []).map(ind => ({
+        ...ind,
+        notaValor: notasIndicador?.get(ind.codigo)?.valor ?? null,
+        comentario: notasIndicador?.get(ind.codigo)?.comentario ?? null,
+      })),
     }
   })
 
   return jsonResponse(result)
+}
+
+// Sprint 04 — badge de notificação da sidebar (aluno): existe avaliação
+// visível pra turma do aluno que ele ainda não "viu" (sem linha em
+// `avaliacoes_vistas`)? Resposta leve, de propósito — não carrega a lista
+// inteira só pra acender um pontinho.
+async function handleAvaliacoesNovidade(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload || payload.role !== 'student' || typeof payload.sub !== 'string') {
+    return jsonResponse({ error: 'Unauthorized' }, 401)
+  }
+  const userId = payload.sub
+
+  const turmaId = await resolveAvaliacoesTurmaId(request, env)
+  if (!turmaId) return jsonResponse({ hasNovidade: false })
+
+  const row = await env.DB.prepare(`
+    SELECT 1
+    FROM avaliacoes_turma at
+    WHERE at.turma_id = ? AND at.status IN ('published', 'concluida')
+      AND at.avaliacao_slug NOT IN (
+        SELECT avaliacao_slug FROM avaliacoes_vistas WHERE user_id = ?
+      )
+    LIMIT 1
+  `).bind(turmaId, userId).first()
+
+  return jsonResponse({ hasNovidade: !!row })
+}
+
+// Sprint 04 — marca avaliações como vistas (some o badge). Upsert idempotente:
+// chamar de novo com o mesmo slug só atualiza `visto_at`, nunca duplica.
+async function handleMarcarAvaliacoesVistas(request: Request, env: Env): Promise<Response> {
+  const payload = await requireAuth(request, env)
+  if (!payload || payload.role !== 'student' || typeof payload.sub !== 'string') {
+    return jsonResponse({ error: 'Unauthorized' }, 401)
+  }
+  const userId = payload.sub
+
+  let body: { slugs?: string[] }
+  try { body = await request.json() } catch { return jsonResponse({ error: 'Invalid JSON' }, 400) }
+
+  const slugs = (body.slugs ?? []).filter((s): s is string => typeof s === 'string' && s.length > 0)
+  if (slugs.length === 0) return jsonResponse({ ok: true })
+
+  const statements = slugs.map(slug => env.DB.prepare(`
+    INSERT INTO avaliacoes_vistas (user_id, avaliacao_slug, visto_at)
+    VALUES (?, ?, unixepoch())
+    ON CONFLICT (user_id, avaliacao_slug) DO UPDATE SET visto_at = excluded.visto_at
+  `).bind(userId, slug))
+
+  await env.DB.batch(statements)
+  return jsonResponse({ ok: true })
 }
 
 // ---------------------------------------------------------------------------
@@ -1217,28 +1351,39 @@ async function handleAdminGrade(request: Request, env: Env, slug: string): Promi
   const alunos = alunosRows.results ?? []
 
   const entregasRows = await env.DB.prepare(
-    `SELECT user_id FROM entregas WHERE avaliacao_slug = ? AND user_id IN (SELECT id FROM users WHERE turma_id = ?)`
-  ).bind(slug, turmaId).all<{ user_id: string }>()
-  const entregaUserIds = new Set((entregasRows.results ?? []).map(r => r.user_id))
+    `SELECT user_id, link, updated_at FROM entregas WHERE avaliacao_slug = ? AND user_id IN (SELECT id FROM users WHERE turma_id = ?)`
+  ).bind(slug, turmaId).all<{ user_id: string; link: string; updated_at: number }>()
+  const entregaByUser = new Map(entregasRows.results?.map(r => [r.user_id, r]) ?? [])
 
   const notasRows = await env.DB.prepare(
-    `SELECT user_id, indicador_codigo, valor FROM notas WHERE avaliacao_slug = ? AND user_id IN (SELECT id FROM users WHERE turma_id = ?)`
-  ).bind(slug, turmaId).all<{ user_id: string; indicador_codigo: string; valor: string }>()
+    `SELECT user_id, indicador_codigo, valor, comentario FROM notas WHERE avaliacao_slug = ? AND user_id IN (SELECT id FROM users WHERE turma_id = ?)`
+  ).bind(slug, turmaId).all<{ user_id: string; indicador_codigo: string; valor: string; comentario: string | null }>()
 
   const notasByUser = new Map<string, Record<string, string>>()
+  const comentariosByUser = new Map<string, Record<string, string | null>>()
   for (const row of notasRows.results ?? []) {
     const map = notasByUser.get(row.user_id) ?? {}
     map[row.indicador_codigo] = row.valor
     notasByUser.set(row.user_id, map)
+
+    const comentarioMap = comentariosByUser.get(row.user_id) ?? {}
+    comentarioMap[row.indicador_codigo] = row.comentario
+    comentariosByUser.set(row.user_id, comentarioMap)
   }
 
-  const alunosResult = alunos.map(a => ({
-    id: a.id,
-    nome: a.nome,
-    email: a.email,
-    entregou: entregaUserIds.has(a.id),
-    notas: notasByUser.get(a.id) ?? {},
-  }))
+  const alunosResult = alunos.map(a => {
+    const entrega = entregaByUser.get(a.id)
+    return {
+      id: a.id,
+      nome: a.nome,
+      email: a.email,
+      entregou: !!entrega,
+      entregaLink: entrega?.link ?? null,
+      entregaEm: entrega?.updated_at ?? null,
+      notas: notasByUser.get(a.id) ?? {},
+      comentarios: comentariosByUser.get(a.id) ?? {},
+    }
+  })
 
   return jsonResponse({
     avaliacao,
@@ -1250,11 +1395,30 @@ async function handleAdminGrade(request: Request, env: Env, slug: string): Promi
   })
 }
 
+// Sprint 04 — histórico completo de envios de UM aluno numa avaliação
+// (`entregas_historico`, append-only). Só chamado sob demanda quando o
+// professor abre o painel de detalhe de um aluno — não vem de brinde no
+// handleAdminGrade pra não inflar o payload da lista inteira.
+async function handleAdminEntregasHistorico(
+  request: Request, env: Env, avaliacaoSlug: string, userId: string,
+): Promise<Response> {
+  const payload = await requireAdmin(request, env)
+  if (!payload || payload.role !== 'admin') return jsonResponse({ error: 'Unauthorized' }, 401)
+
+  const rows = await env.DB.prepare(
+    `SELECT link, enviado_at FROM entregas_historico WHERE user_id = ? AND avaliacao_slug = ? ORDER BY enviado_at DESC`
+  ).bind(userId, avaliacaoSlug).all<{ link: string; enviado_at: number }>()
+
+  const result = (rows.results ?? []).map(r => ({ link: r.link, enviadoAt: r.enviado_at }))
+  return jsonResponse(result)
+}
+
 interface NotaUpdatePayload {
   userId?: string
   avaliacaoSlug?: string
   indicadorCodigo?: string
   valor?: 'A' | 'PA' | 'NA' | null
+  comentario?: string | null
 }
 
 // Batch upsert/delete de notas (RF12, CA4). `valor: null` DELETA a linha —
@@ -1262,6 +1426,11 @@ interface NotaUpdatePayload {
 // preparadas e rodadas via `env.DB.batch` (mesmo padrão do resto do arquivo);
 // entradas malformadas (faltando algum campo) são ignoradas silenciosamente,
 // mas contam para `aplicadas` só as que de fato viraram uma statement.
+//
+// Sprint 04: `valor` PA/NA exige `comentario` não-vazio — justificativa de
+// por que a nota não foi A. Entrada rejeitada por isso conta em `rejeitadas`,
+// separado de `aplicadas`, pro portal avisar o professor em vez de salvar
+// silenciosamente incompleto.
 async function handleAdminNotasUpdate(request: Request, env: Env): Promise<Response> {
   const payload = await requireAdmin(request, env)
   if (!payload || payload.role !== 'admin') return jsonResponse({ error: 'Unauthorized' }, 401)
@@ -1273,6 +1442,7 @@ async function handleAdminNotasUpdate(request: Request, env: Env): Promise<Respo
   if (!Array.isArray(notas) || notas.length === 0) return jsonResponse({ error: 'Missing notas array' }, 422)
 
   const statements: D1PreparedStatement[] = []
+  let rejeitadas = 0
   for (const n of notas) {
     if (!n.userId || !n.avaliacaoSlug || !n.indicadorCodigo) continue
 
@@ -1281,21 +1451,26 @@ async function handleAdminNotasUpdate(request: Request, env: Env): Promise<Respo
         `DELETE FROM notas WHERE user_id = ? AND avaliacao_slug = ? AND indicador_codigo = ?`
       ).bind(n.userId, n.avaliacaoSlug, n.indicadorCodigo))
     } else if (n.valor === 'A' || n.valor === 'PA' || n.valor === 'NA') {
+      const comentario = n.comentario?.trim() || null
+      if (n.valor !== 'A' && !comentario) {
+        rejeitadas++
+        continue
+      }
       statements.push(env.DB.prepare(`
-        INSERT INTO notas (user_id, avaliacao_slug, indicador_codigo, valor, updated_at)
-        VALUES (?, ?, ?, ?, unixepoch())
+        INSERT INTO notas (user_id, avaliacao_slug, indicador_codigo, valor, comentario, updated_at)
+        VALUES (?, ?, ?, ?, ?, unixepoch())
         ON CONFLICT (user_id, avaliacao_slug, indicador_codigo) DO UPDATE SET
-          valor = excluded.valor, updated_at = excluded.updated_at
-      `).bind(n.userId, n.avaliacaoSlug, n.indicadorCodigo, n.valor))
+          valor = excluded.valor, comentario = excluded.comentario, updated_at = excluded.updated_at
+      `).bind(n.userId, n.avaliacaoSlug, n.indicadorCodigo, n.valor, comentario))
     }
     // valor com qualquer outro valor (string inválida) é silenciosamente
     // ignorado — mesmo tratamento das outras entradas malformadas acima.
   }
 
-  if (statements.length === 0) return jsonResponse({ ok: true, aplicadas: 0 })
+  if (statements.length === 0) return jsonResponse({ ok: true, aplicadas: 0, rejeitadas })
 
   await env.DB.batch(statements)
-  return jsonResponse({ ok: true, aplicadas: statements.length })
+  return jsonResponse({ ok: true, aplicadas: statements.length, rejeitadas })
 }
 
 // Boletim consolidado de um trimestre, para uma turma (RF13, CA3). Junta

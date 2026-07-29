@@ -4,6 +4,8 @@
 export interface Entrega {
   link: string
   updatedAt: number
+  /** (sprint 04) existe nota lançada pra essa avaliação — trava reenvio. */
+  corrigida: boolean
 }
 
 /** Mapa das entregas do aluno logado, indexado por `avaliacaoSlug`

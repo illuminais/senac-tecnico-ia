@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import { useAdminAuth, WORKER } from '@/composables/useAdminAuth'
 import type { CalendarDay } from '@/types/calendar'
 
-const router = useRouter()
 const { token } = useAdminAuth()
 
 const days = ref<CalendarDay[]>([])
@@ -93,7 +91,6 @@ async function importar() {
         <p class="text-neural-accent text-sm font-mono mb-1">Senac · Admin</p>
         <h1 class="text-2xl font-bold text-white">Importar calendário</h1>
       </div>
-      <button @click="router.push('/admin')" class="text-sm text-gray-400 hover:text-white transition">← Admin</button>
     </header>
 
     <div v-if="!token" class="max-w-sm mx-auto text-center text-sm text-gray-400">

@@ -14,6 +14,17 @@ const concluida = computed(() => props.avaliacao.status === 'concluida')
 // concluída também abre o card — o aluno deve poder ver o que já entregou.
 const acessivel = computed(() => disponivel.value || concluida.value)
 
+// Pior nota entre os indicadores já corrigidos (sprint 04) — NA > PA > A em
+// gravidade. `null` quando nenhum indicador tem nota lançada ainda.
+const ORDEM_GRAVIDADE = { NA: 2, PA: 1, A: 0 } as const
+const piorNota = computed(() => {
+  const valores = props.avaliacao.indicadores
+    .map(ind => ind.notaValor)
+    .filter((v): v is 'A' | 'PA' | 'NA' => v !== null)
+  if (!valores.length) return null
+  return valores.reduce((pior, atual) => (ORDEM_GRAVIDADE[atual] > ORDEM_GRAVIDADE[pior] ? atual : pior))
+})
+
 function handleClick() {
   if (acessivel.value) router.push(`/avaliacao/${props.avaliacao.slug}`)
 }
@@ -47,6 +58,15 @@ function handleClick() {
         </div>
       </div>
       <div class="flex items-center gap-2 shrink-0">
+        <span
+          v-if="piorNota"
+          class="text-xs px-2 py-0.5 rounded-full border font-semibold"
+          :class="{
+            'border-green-400/40 text-green-400': piorNota === 'A',
+            'border-yellow-400/40 text-yellow-400': piorNota === 'PA',
+            'border-red-400/40 text-red-400': piorNota === 'NA',
+          }"
+        >Sua nota: {{ piorNota }}</span>
         <span
           v-if="concluida"
           class="text-xs px-2 py-0.5 rounded-full border border-green-400/40 text-green-400"

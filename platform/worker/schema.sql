@@ -7,6 +7,10 @@
 -- "no such column: turma_id" e NENHUMA tabela nova deste arquivo é criada
 -- (schema.sql inteiro aborta na primeira falha — turmas, ucs, indicadores,
 -- avaliacoes, avaliacao_indicadores, avaliacoes_turma e notas incluídos).
+--
+-- ATENÇÃO produção (sprint 04 — notas já existe sem comentario): mesmo
+-- problema, mesma solução — rode o ALTER TABLE documentado perto de `notas`
+-- ANTES de reaplicar este arquivo.
 
 -- NOTA (sprint 03, avaliações por indicador): `users` já existe em produção
 -- desde a sprint 01 (login de aluno), então `CREATE TABLE IF NOT EXISTS` abaixo
@@ -145,6 +149,31 @@ CREATE TABLE IF NOT EXISTS entregas (
 
 CREATE INDEX IF NOT EXISTS idx_entregas_avaliacao ON entregas (avaliacao_slug);
 
+-- Log append-only de cada envio (sprint 04, D8/T9): nunca deletado, nunca
+-- atualizado — a linha "atual" continua em `entregas`, esta tabela é só o
+-- histórico pra auditoria (o link de um Drive pode mudar depois do envio).
+CREATE TABLE IF NOT EXISTS entregas_historico (
+  id             INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id        TEXT    NOT NULL,
+  avaliacao_slug TEXT    NOT NULL,
+  link           TEXT    NOT NULL,
+  enviado_at     INTEGER NOT NULL DEFAULT (unixepoch()),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_entregas_historico_aluno_av ON entregas_historico (user_id, avaliacao_slug);
+
+-- Rastreio de "avaliação já vista" pelo aluno (sprint 04): alimenta o badge de
+-- notificação da sidebar. Uma linha = aluno já abriu /avaliacoes depois que
+-- essa avaliação apareceu — ausência de linha = ainda não viu.
+CREATE TABLE IF NOT EXISTS avaliacoes_vistas (
+  user_id        TEXT    NOT NULL,
+  avaliacao_slug TEXT    NOT NULL,
+  visto_at       INTEGER NOT NULL DEFAULT (unixepoch()),
+  PRIMARY KEY (user_id, avaliacao_slug),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 -- ---------------------------------------------------------------------------
 -- Avaliações por trimestre e indicador (sprint 03): turmas, mapa curricular
 -- (ucs/indicadores), avaliações como template de currículo + instância por
@@ -237,11 +266,20 @@ CREATE INDEX IF NOT EXISTS idx_av_turma_slug ON avaliacoes_turma (avaliacao_slug
 -- aceito: se um dia o seed passar a deletar, sobram notas órfãs em silêncio
 -- (achado 🟡 do analyze.md desta sprint) — aceito conscientemente, mantendo o
 -- seed sempre upsert-only.
+-- NOTA (sprint 04, painel do professor): `notas` já existe em produção desde a
+-- sprint 03, então o `comentario` abaixo não é adicionado à tabela existente
+-- pelo CREATE TABLE — precisa do ALTER TABLE manual, uma vez, fora deste
+-- arquivo idempotente (mesmo caso de `users.turma_id` acima):
+--
+--   ALTER TABLE notas ADD COLUMN comentario TEXT;
+--
+-- Deploy do zero já cria a tabela com a coluna direto no CREATE TABLE abaixo.
 CREATE TABLE IF NOT EXISTS notas (
   user_id          TEXT NOT NULL,
   avaliacao_slug   TEXT NOT NULL,
   indicador_codigo TEXT NOT NULL,
   valor            TEXT NOT NULL CHECK (valor IN ('A','PA','NA')),
+  comentario       TEXT,            -- obrigatório (validado no worker, não aqui) quando valor != 'A' (sprint 04)
   updated_at       INTEGER NOT NULL DEFAULT (unixepoch()),
   PRIMARY KEY (user_id, avaliacao_slug, indicador_codigo),
   FOREIGN KEY (user_id) REFERENCES users(id)

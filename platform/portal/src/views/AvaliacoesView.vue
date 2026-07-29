@@ -40,6 +40,16 @@ onMounted(async () => {
     const res = await fetch(`${WORKER}/api/avaliacoes`, { headers })
     if (!res.ok) throw new Error(`status ${res.status}`)
     avaliacoes.value = await res.json()
+
+    // Marca como vistas (sprint 04) — some o badge da sidebar na próxima vez
+    // que ela perguntar. Silencioso: se falhar, o badge só continua aceso.
+    if (token.value && avaliacoes.value.length) {
+      fetch(`${WORKER}/api/avaliacoes/marcar-vistas`, {
+        method: 'POST',
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slugs: avaliacoes.value.map(av => av.slug) }),
+      }).catch(() => {})
+    }
   } catch {
     error.value = 'Não foi possível carregar as avaliações agora. Tente novamente mais tarde.'
   } finally {

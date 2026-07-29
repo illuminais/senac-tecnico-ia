@@ -9,6 +9,7 @@ import { useAdminAuth, WORKER } from '@/composables/useAdminAuth'
 import SeletorTurma from '@/components/SeletorTurma.vue'
 import IndicadorPainelRow from '@/components/IndicadorPainelRow.vue'
 import type { TurmaApi, UcApi, PainelIndicador } from '@/types/admin-painel'
+import type { AvaliacaoApi } from '@/types/avaliacoes'
 
 const router = useRouter()
 const { token } = useAdminAuth()
@@ -26,6 +27,25 @@ const ucsByCodigo = ref(new Map<string, UcApi>())
 const indicadores = ref<PainelIndicador[]>([])
 const loading = ref(true)
 const error = ref('')
+
+// Abas de avaliação do trimestre selecionado (sprint 04) — fecha o buraco de
+// navegação que antes só existia digitando /admin/avaliacoes/:slug na mão.
+const todasAvaliacoes = ref<AvaliacaoApi[]>([])
+const avaliacoesDoTrimestre = computed(() => todasAvaliacoes.value.filter(av => av.trimestre === trimestre.value))
+
+async function loadAvaliacoes() {
+  try {
+    const res = await fetch(`${WORKER}/api/avaliacoes`)
+    if (res.ok) todasAvaliacoes.value = await res.json()
+  } catch {
+    // silencioso — só afeta a tira de abas, o painel de cobertura abaixo segue funcionando
+  }
+}
+
+function abrirGrade(slug: string) {
+  const query = turmaId.value ? { turma: turmaId.value } : {}
+  router.push({ path: `/admin/avaliacoes/${slug}`, query })
+}
 
 // Agrupa por UC (RF9) preservando ordem alfabética de código.
 const porUc = computed(() => {
@@ -80,6 +100,7 @@ async function loadPainel() {
 
 onMounted(() => {
   if (token.value) loadTurmasEUcs()
+  loadAvaliacoes()
 })
 
 watch([trimestre, turmaId], () => {
@@ -94,7 +115,6 @@ watch([trimestre, turmaId], () => {
         <p class="text-neural-accent text-sm font-mono mb-1">Senac · Admin</p>
         <h1 class="text-2xl font-bold text-white">Painel de Avaliações</h1>
       </div>
-      <button @click="router.push('/admin')" class="text-sm text-gray-400 hover:text-white transition">← Admin</button>
     </header>
 
     <div v-if="!token" class="max-w-sm mx-auto text-center text-sm text-gray-400">
@@ -126,6 +146,17 @@ watch([trimestre, turmaId], () => {
             </button>
           </div>
           <SeletorTurma v-model="turmaId" :turmas="turmas" />
+        </div>
+
+        <div v-if="avaliacoesDoTrimestre.length" class="flex flex-wrap gap-1.5">
+          <button
+            v-for="av in avaliacoesDoTrimestre"
+            :key="av.slug"
+            @click="abrirGrade(av.slug)"
+            class="text-xs px-3 py-1.5 rounded-full bg-neural-600 text-gray-200 hover:bg-neural-accent hover:text-neural-900 hover:font-semibold transition"
+          >
+            {{ av.slug.toUpperCase() }} — {{ av.titulo }}
+          </button>
         </div>
 
         <div v-if="loading" class="flex flex-col gap-3">

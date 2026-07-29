@@ -38,8 +38,20 @@ export interface GradeAluno {
   nome: string | null
   email: string | null
   entregou: boolean
+  /** (sprint 04) link/timestamp da entrega ATUAL — `null` quando `entregou` é false. */
+  entregaLink: string | null
+  entregaEm: number | null
   /** Só traz indicador com nota lançada — ausência de chave = não avaliado (RF12). */
   notas: Record<string, NotaValor>
+  /** (sprint 04) comentário por indicador — mesma chave de `notas`, obrigatório quando o valor não é 'A'. */
+  comentarios: Record<string, string | null>
+}
+
+/** Uma linha de `GET /api/admin/entregas-historico/:slug/:userId` (sprint 04) —
+ *  log append-only, mais recente primeiro. */
+export interface EntregaHistoricoItem {
+  link: string
+  enviadoAt: number
 }
 
 /** `GET /api/admin/grade/:slug?turma=...` */
@@ -57,4 +69,6 @@ export interface NotaUpdate {
   avaliacaoSlug: string
   indicadorCodigo: string
   valor: NotaCelula
+  /** (sprint 04) obrigatório quando `valor` não é 'A' — validado no worker. */
+  comentario?: string | null
 }

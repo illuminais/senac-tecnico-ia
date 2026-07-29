@@ -4,6 +4,7 @@ import App from './App.vue'
 import HomeView from './views/HomeView.vue'
 import AulaView from './views/AulaView.vue'
 import AdminView from './views/AdminView.vue'
+import AdminMensagemView from './views/AdminMensagemView.vue'
 import AvaliacoesView from './views/AvaliacoesView.vue'
 import AvaliacaoView from './views/AvaliacaoView.vue'
 import CalendarioView from './views/CalendarioView.vue'
@@ -26,6 +27,7 @@ const router = createRouter({
     { path: '/avaliacao/:id', component: AvaliacaoView },
     { path: '/calendario', component: CalendarioView },
     { path: '/admin', component: AdminView },
+    { path: '/admin/mensagem', component: AdminMensagemView },
     { path: '/admin/calendario', component: AdminCalendarioView },
     { path: '/admin/avaliacoes', component: AdminPainelView },
     { path: '/admin/avaliacoes/:slug', component: AdminGradeView },

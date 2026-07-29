@@ -1,21 +1,37 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { marked } from 'marked'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import EntregaForm from '@/components/EntregaForm.vue'
+import { useStudentAuth } from '@/composables/useStudentAuth'
+import { WORKER } from '@/composables/useAdminAuth'
+import type { AvaliacaoApi } from '@/types/avaliacoes'
 
 const route = useRoute()
-const router = useRouter()
+const { token } = useStudentAuth()
+const slug = route.params.id as string
+
 const content = ref('')
 const loading = ref(true)
 const notFound = ref(false)
+const avaliacao = ref<AvaliacaoApi | null>(null)
+const aba = ref<'enunciado' | 'entrega'>('enunciado')
 
 onMounted(async () => {
-  const id = route.params.id as string
   try {
-    const res = await fetch(`/avaliacoes/${id}/content.md`)
-    if (!res.ok) { notFound.value = true; return }
-    content.value = await res.text()
+    const [contentRes, avaliacoesRes] = await Promise.all([
+      fetch(`/avaliacoes/${slug}/content.md`),
+      fetch(`${WORKER}/api/avaliacoes`, {
+        headers: token.value ? { Authorization: `Bearer ${token.value}` } : {},
+      }),
+    ])
+    if (!contentRes.ok) { notFound.value = true; return }
+    content.value = await contentRes.text()
+
+    if (avaliacoesRes.ok) {
+      const lista: AvaliacaoApi[] = await avaliacoesRes.json()
+      avaliacao.value = lista.find(av => av.slug === slug) ?? null
+    }
   } catch {
     notFound.value = true
   } finally {
@@ -26,17 +42,7 @@ onMounted(async () => {
 
 <template>
   <div class="min-h-dvh px-4 py-8 sm:px-6">
-    <div class="max-w-3xl mx-auto">
-      <button
-        @click="router.push('/avaliacoes')"
-        class="text-sm text-gray-400 hover:text-white transition mb-6 flex items-center gap-1"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-        </svg>
-        Avaliações
-      </button>
-
+    <div class="max-w-3xl mx-auto flex flex-col gap-6">
       <div v-if="loading" class="space-y-4">
         <div class="h-8 w-2/3 bg-neural-800 rounded animate-pulse" />
         <div class="h-4 w-full bg-neural-800 rounded animate-pulse" />
@@ -47,9 +53,57 @@ onMounted(async () => {
         <p class="text-gray-500">Avaliação não encontrada.</p>
       </div>
 
-      <article v-else class="md-content" v-html="marked.parse(content)" />
+      <template v-else>
+        <div class="flex gap-2">
+          <button
+            @click="aba = 'enunciado'"
+            :class="aba === 'enunciado' ? 'bg-neural-accent text-neural-900 font-semibold' : 'bg-neural-800 text-gray-400 hover:text-white hover:bg-neural-700'"
+            class="px-3 py-1 rounded-full text-xs transition"
+          >Enunciado</button>
+          <button
+            @click="aba = 'entrega'"
+            :class="aba === 'entrega' ? 'bg-neural-accent text-neural-900 font-semibold' : 'bg-neural-800 text-gray-400 hover:text-white hover:bg-neural-700'"
+            class="px-3 py-1 rounded-full text-xs transition"
+          >Entrega</button>
+        </div>
 
-      <EntregaForm v-if="!loading && !notFound" :avaliacao-id="route.params.id as string" />
+        <article v-if="aba === 'enunciado'" class="md-content" v-html="marked.parse(content)" />
+
+        <div v-else class="flex flex-col gap-4">
+          <EntregaForm
+            :avaliacao-id="slug"
+            :prazo="avaliacao?.prazo ?? null"
+            :prazo-label="avaliacao?.prazoLabel ?? null"
+            :tem-nota="avaliacao?.indicadores.some(ind => ind.notaValor !== null) ?? false"
+          />
+
+          <div
+            v-if="avaliacao?.indicadores.some(ind => ind.notaValor)"
+            class="rounded-2xl border border-neural-600 bg-neural-900/10 p-6 flex flex-col gap-3"
+          >
+            <h2 class="text-white font-semibold">Sua correção</h2>
+            <div
+              v-for="ind in avaliacao!.indicadores.filter(i => i.notaValor)"
+              :key="ind.codigo"
+              class="flex flex-col gap-1 border-t border-neural-700 pt-3 first:border-t-0 first:pt-0"
+            >
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs text-neural-accent">{{ ind.codigo }}</span>
+                <span
+                  class="text-xs px-2 py-0.5 rounded-full border font-semibold"
+                  :class="{
+                    'border-green-400/40 text-green-400': ind.notaValor === 'A',
+                    'border-yellow-400/40 text-yellow-400': ind.notaValor === 'PA',
+                    'border-red-400/40 text-red-400': ind.notaValor === 'NA',
+                  }"
+                >{{ ind.notaValor }}</span>
+              </div>
+              <p class="text-gray-400 text-xs">{{ ind.descricao }}</p>
+              <p v-if="ind.comentario" class="text-gray-300 text-sm mt-1">{{ ind.comentario }}</p>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
   </div>
 </template>

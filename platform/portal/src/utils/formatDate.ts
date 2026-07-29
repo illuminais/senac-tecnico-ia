@@ -10,3 +10,15 @@ export function formatEntregaDate(epochSeconds: number): string {
   const hora = date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
   return `${data} às ${hora}`
 }
+
+/** `prazo` como gravado no meta.yaml/D1 (`avaliacoes_turma.prazo`), formato
+ *  'DD/MM/YYYY' — compara com hoje (sprint 04, estado "prazo encerrado" do
+ *  formulário de entrega). `null`/formato inesperado nunca é tratado como
+ *  encerrado (evita travar o form por um dado mal formatado). */
+export function prazoEncerrado(prazo: string | null): boolean {
+  if (!prazo) return false
+  const [dia, mes, ano] = prazo.split('/').map(Number)
+  if (!dia || !mes || !ano) return false
+  const fimDoDia = new Date(ano, mes - 1, dia, 23, 59, 59)
+  return Date.now() > fimDoDia.getTime()
+}

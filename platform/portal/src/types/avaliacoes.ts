@@ -9,11 +9,15 @@
 }
 
 /** Um indicador coberto por uma avaliação, como devolvido por `GET /api/avaliacoes`
- *  (sprint 03 — avaliações por trimestre e indicador). */
+ *  (sprint 03 — avaliações por trimestre e indicador). `notaValor`/`comentario`
+ *  (sprint 04) são a nota/justificativa do PRÓPRIO aluno (JWT), sempre `null`
+ *  sem sessão de aluno ou antes de corrigido. */
 export interface IndicadorRef {
   codigo: string // 'UC05.2'
   uc: string // 'UC05'
   descricao: string
+  notaValor: 'A' | 'PA' | 'NA' | null
+  comentario: string | null
 }
 
 /** Shape real de `GET /api/avaliacoes` (`handleGetAvaliacoes` em
@@ -30,7 +34,13 @@ export interface AvaliacaoApi {
   titulo: string
   tipo: string | null
   trimestre: 'T1' | 'T2' | 'T3'
+  /** (sprint 04) data crua do prazo, formato 'DD/MM/YYYY' (como escrito no
+   *  meta.yaml) — usada só pra comparar com hoje (prazo encerrado ou não);
+   *  `prazoLabel` é o texto amigável de exibição. */
+  prazo: string | null
   prazoLabel: string | null
   status: string | null
+  /** (sprint 04) `null` sem sessão de aluno; senão, existe linha em `entregas`. */
+  entregou: boolean | null
   indicadores: IndicadorRef[]
 }

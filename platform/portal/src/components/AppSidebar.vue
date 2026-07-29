@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { BookOpen, ClipboardCheck, Calendar, ChevronLeft, ChevronRight, LogIn, LogOut } from 'lucide-vue-next'
+import { BookOpen, ClipboardCheck, Calendar, MessageSquare, ChevronLeft, ChevronRight, LogIn, LogOut } from 'lucide-vue-next'
 import { useStudentAuth } from '@/composables/useStudentAuth'
+import { useAdminAuth, WORKER } from '@/composables/useAdminAuth'
 import { useSidebar } from '@/composables/useSidebar'
 
 const route = useRoute()
-const { user: studentUser, logout: studentLogout, isLoggedIn } = useStudentAuth()
+const { token: studentToken, user: studentUser, logout: studentLogout, isLoggedIn } = useStudentAuth()
+const { token: adminToken } = useAdminAuth()
 const { collapsed, toggle } = useSidebar()
 
 const navItems = [
@@ -14,10 +17,42 @@ const navItems = [
   { to: '/calendario', label: 'Calendário', icon: Calendar },
 ]
 
+// Badge de "avaliação nova" (sprint 04) — só pergunta ao servidor se logado,
+// resposta leve (não carrega a lista inteira só pra acender o pontinho).
+// Some quando o aluno abre /avaliacoes (AvaliacoesView chama marcar-vistas).
+const hasNovidade = ref(false)
+
+onMounted(async () => {
+  if (!isLoggedIn.value) return
+  try {
+    const res = await fetch(`${WORKER}/api/avaliacoes/novidade`, {
+      headers: { Authorization: `Bearer ${studentToken.value}` },
+    })
+    if (res.ok) hasNovidade.value = (await res.json()).hasNovidade
+  } catch {
+    // silencioso — badge só não acende, não trava a sidebar
+  }
+})
+
+// Só aparecem com sessão de admin ativa (`useAdminAuth` — cookie separado do
+// aluno). Verde (não neural-accent) de propósito, pra marcar visualmente que
+// é uma rota de professor, mesma cor do destaque "Aula de Hoje".
+const adminNavItems = [
+  { to: '/admin/avaliacoes', label: 'Avaliações (Admin)', icon: ClipboardCheck },
+  { to: '/admin/calendario', label: 'Calendário (Admin)', icon: Calendar },
+  { to: '/admin/mensagem', label: 'Mensagem', icon: MessageSquare },
+]
+
 function linkClass(to: string) {
   return route.path === to
     ? 'text-neural-accent sm:bg-neural-800'
     : 'text-gray-400 hover:text-white'
+}
+
+function adminLinkClass(to: string) {
+  return route.path === to
+    ? 'text-green-400 sm:bg-neural-800'
+    : 'text-green-400/70 hover:text-green-400'
 }
 </script>
 
@@ -54,13 +89,36 @@ function linkClass(to: string) {
       :key="item.to"
       :to="item.to"
       :title="item.label"
-      class="flex flex-1 flex-col items-center justify-center gap-0.5 px-2 py-1.5 text-xs font-medium transition rounded-lg
+      class="relative flex flex-1 flex-col items-center justify-center gap-0.5 px-2 py-1.5 text-xs font-medium transition rounded-lg
              sm:flex-none sm:flex-row sm:justify-start sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
       :class="[linkClass(item.to), collapsed ? 'sm:justify-center' : '']"
     >
-      <component :is="item.icon" :size="18" class="shrink-0" />
+      <span class="relative shrink-0">
+        <component :is="item.icon" :size="18" />
+        <span
+          v-if="item.to === '/avaliacoes' && hasNovidade"
+          class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-green-400"
+          title="Avaliação nova"
+        />
+      </span>
       <span :class="collapsed ? 'sm:hidden' : ''">{{ item.label }}</span>
     </RouterLink>
+
+    <template v-if="adminToken">
+      <div class="hidden sm:block h-px bg-neural-700 my-2" />
+      <RouterLink
+        v-for="item in adminNavItems"
+        :key="item.to"
+        :to="item.to"
+        :title="item.label"
+        class="flex flex-1 flex-col items-center justify-center gap-0.5 px-2 py-1.5 text-xs font-medium transition rounded-lg
+               sm:flex-none sm:flex-row sm:justify-start sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
+        :class="[adminLinkClass(item.to), collapsed ? 'sm:justify-center' : '']"
+      >
+        <component :is="item.icon" :size="18" class="shrink-0" />
+        <span :class="collapsed ? 'sm:hidden' : ''">{{ item.label }}</span>
+      </RouterLink>
+    </template>
 
     <div
       class="flex flex-1 flex-col items-center justify-center gap-0.5 px-2 py-1.5
