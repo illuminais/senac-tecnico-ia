@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Volta às Aulas — Jogo da Bola SQL (29 perguntas)</title>
+<style>
+  * { box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Courier New", monospace;
+    background: #fff;
+    color: #111;
+  }
+  h1, h2 {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin: 6px 8px;
+  }
+  h2 { page-break-before: always; }
+  p.sub {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #555;
+    margin: 0 8px 6px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .card {
+    border: 1px dashed #999;
+    padding: 6px 7px;
+    min-height: 108px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 10.5px;
+    line-height: 1.32;
+    page-break-inside: avoid;
+  }
+  .card .num {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    color: #666;
+    margin-bottom: 3px;
+  }
+  .gabarito-list {
+    columns: 2;
+    column-gap: 16px;
+    padding: 0 8px 8px;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .gabarito-list li {
+    break-inside: avoid;
+    margin-bottom: 6px;
+  }
+  @media print {
+    body { padding: 0; }
+    .card { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>VOLTA ÀS AULAS — JOGO DA BOLA (SQL) — 29 perguntas</h1>
+<p class="sub">Recorte cada card pela linha tracejada. Regra: passa a bola, quem pega tira um card, lê em voz alta, responde; acertou, sai da roda.</p>
+
+<div class="grid">
+
+<div class="card"><div class="num">01</div>O que a função COUNT faz numa query SQL?</div>
+<div class="card"><div class="num">02</div>Para que serve a cláusula FROM?</div>
+<div class="card"><div class="num">03</div>Qual comando eu uso pra criar uma tabela nova?</div>
+<div class="card"><div class="num">04</div>Verdadeiro ou falso: o DISTINCT deixa o resultado em ordem alfabética.</div>
+<div class="card"><div class="num">05</div>Verdadeiro ou falso: SELECT * retorna todas as colunas da tabela.</div>
+<div class="card"><div class="num">06</div>Para que serve o GROUP BY?</div>
+<div class="card"><div class="num">07</div>O que a função AVG faz?</div>
+<div class="card"><div class="num">08</div>Qual tipo de dado SQL eu uso pra guardar texto, tipo um nome?</div>
+<div class="card"><div class="num">09</div>O que a cláusula SELECT faz numa query?</div>
+<div class="card"><div class="num">10</div>Para que serve o INNER JOIN?</div>
+<div class="card"><div class="num">11</div>O que a constraint PRIMARY KEY (PK) garante?</div>
+<div class="card"><div class="num">12</div>Para que serve o ORDER BY?</div>
+<div class="card"><div class="num">13</div>O que a função MIN faz?</div>
+<div class="card"><div class="num">14</div>Verdadeiro ou falso: numa query SELECT, a cláusula WHERE é escrita antes da cláusula FROM.</div>
+<div class="card"><div class="num">15</div>Qual comando eu uso pra adicionar uma coluna numa tabela que já existe?</div>
+<div class="card"><div class="num">16</div>Verdadeiro ou falso: o GROUP BY costuma ser usado junto com funções de agregação, como COUNT ou SUM.</div>
+<div class="card"><div class="num">17</div>O que a função SUM faz?</div>
+<div class="card"><div class="num">18</div>O que a cláusula WHERE faz numa query?</div>
+<div class="card"><div class="num">19</div>Verdadeiro ou falso: o LIMIT filtra linhas com base numa condição, igual o WHERE.</div>
+<div class="card"><div class="num">20</div>O que a constraint NOT NULL garante?</div>
+<div class="card"><div class="num">21</div>Verdadeiro ou falso: o INNER JOIN só traz as linhas que têm correspondência nas duas tabelas.</div>
+<div class="card"><div class="num">22</div>O que a função MAX faz?</div>
+<div class="card"><div class="num">23</div>Qual tipo de dado SQL eu uso pra guardar verdadeiro ou falso?</div>
+<div class="card"><div class="num">24</div>Se eu quiser trazer só os alunos com idade maior que 18, qual cláusula da query eu uso pra isso?</div>
+<div class="card"><div class="num">25</div>Verdadeiro ou falso: o GROUP BY vem escrito antes do WHERE numa query.</div>
+<div class="card"><div class="num">26</div>Verdadeiro ou falso: DROP e TRUNCATE fazem exatamente a mesma coisa.</div>
+<div class="card"><div class="num">27</div>O que a palavra AS faz numa query?</div>
+<div class="card"><div class="num">28</div>Para que serve a função ROUND?</div>
+<div class="card"><div class="num">29</div>Qual a diferença entre WHERE e HAVING?</div>
+
+</div>
+
+<h2>GABARITO — não recortar, só pro professor conferir</h2>
+<ol class="gabarito-list">
+<li><b>01.</b> Conta quantas linhas (registros) o resultado tem.</li>
+<li><b>02.</b> Indica de qual tabela os dados vão ser buscados.</li>
+<li><b>03.</b> CREATE TABLE</li>
+<li><b>04.</b> Falso — o DISTINCT remove valores duplicados, quem ordena é o ORDER BY.</li>
+<li><b>05.</b> Verdadeiro.</li>
+<li><b>06.</b> Agrupa linhas que têm o mesmo valor numa coluna, geralmente pra usar com uma função de agregação.</li>
+<li><b>07.</b> Calcula a média dos valores de uma coluna.</li>
+<li><b>08.</b> VARCHAR</li>
+<li><b>09.</b> Escolhe quais colunas vão aparecer no resultado.</li>
+<li><b>10.</b> Junta dados de duas tabelas usando um campo em comum.</li>
+<li><b>11.</b> Que cada linha da tabela tem um identificador único.</li>
+<li><b>12.</b> Ordena o resultado, crescente ou decrescente.</li>
+<li><b>13.</b> Retorna o menor valor de uma coluna.</li>
+<li><b>14.</b> Falso — o FROM vem antes do WHERE.</li>
+<li><b>15.</b> ALTER TABLE</li>
+<li><b>16.</b> Verdadeiro.</li>
+<li><b>17.</b> Soma os valores de uma coluna numérica.</li>
+<li><b>18.</b> Filtra as linhas, deixando só as que atendem a uma condição.</li>
+<li><b>19.</b> Falso — o LIMIT só limita a quantidade de linhas, quem filtra por condição é o WHERE.</li>
+<li><b>20.</b> Que aquela coluna nunca pode ficar vazia (sem valor).</li>
+<li><b>21.</b> Verdadeiro.</li>
+<li><b>22.</b> Retorna o maior valor de uma coluna.</li>
+<li><b>23.</b> BOOLEAN</li>
+<li><b>24.</b> WHERE</li>
+<li><b>25.</b> Falso — o WHERE vem antes do GROUP BY.</li>
+<li><b>26.</b> Falso — DROP apaga a tabela inteira (estrutura + dados); TRUNCATE só apaga os dados, mantém a estrutura.</li>
+<li><b>27.</b> Cria um apelido (alias) pra uma coluna ou tabela.</li>
+<li><b>28.</b> Arredonda um número pra uma quantidade de casas decimais.</li>
+<li><b>29.</b> WHERE filtra linhas antes de agrupar; HAVING filtra depois do GROUP BY (filtra os grupos).</li>
+</ol>
+
+</body>
+</html>
