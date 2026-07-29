@@ -1,0 +1,9 @@
+id: av07
+titulo: "Av02-T2 — Situação-Problema: Recomendador de Playlists"
+tipo: AS individual
+prazo: "2026-07-31"
+prazoLabel: "31/07 (A43, mesma aula)"
+ucs: [UC03]
+trimestre: T2
+indicadores: [UC03.6]
+status: published
