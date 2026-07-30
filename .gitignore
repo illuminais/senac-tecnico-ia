@@ -16,6 +16,9 @@ out/
 .vite/
 *.local
 
+# Estado local do Cloudflare Workers (D1 simulado, etc.)
+.wrangler/
+
 # OS
 .DS_Store
 Thumbs.db
