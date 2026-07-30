@@ -1,7 +1,7 @@
 ---
 type: meta
 title: Map of Content — Estado da Plataforma LMS
-updated: 2026-07-28
+updated: 2026-07-29
 ---
 
 # Estado da Plataforma LMS — índice do vault
@@ -12,6 +12,7 @@ Nó-raiz. Abra `platform/specs/` no Obsidian → *Graph View*. Schema: [[SCHEMA]
 
 ## Sprint ativa
 - [[03-avaliacoes-por-indicador]] — fase: **Analyze** → Implement.
+- [[04-worker-arquitetura-modular]] — fase: Analyze concluído → **Implement**.
 
 ## Features
 [[login-aluno]] · [[entregas]] · [[calendario]] · [[auth-professor]] · [[indicadores]] · [[notas-senac]]
