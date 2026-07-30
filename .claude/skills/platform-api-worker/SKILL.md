@@ -1,22 +1,25 @@
 ---
 name: platform-api-worker
-description: Convenções do Cloudflare Worker da plataforma LMS — roteamento, auth JWT/PBKDF2, padrões de query D1, segurança. Use ao criar ou editar qualquer rota em platform/worker/src/index.ts.
+description: Convenções do Cloudflare Worker da plataforma LMS — roteamento, auth JWT/PBKDF2, padrões de query D1, segurança. Use ao criar ou editar qualquer rota em platform/worker/src/.
 ---
 
 # Skill: Convenções da API — Cloudflare Worker
 
-`platform/worker/src/index.ts` é **um único arquivo**, sem framework de roteamento, sem dependências externas (só Web Crypto e `fetch`). Mantenha assim — não introduza Hono/itty-router/etc. sem necessidade concreta (o Worker hoje tem ~15 rotas; não justifica um framework).
+`platform/worker/src/` não tem framework de roteamento nem dependências externas (só Web Crypto e `fetch`) — isso não muda. O que mudou (constituição §7-9, sprint `04-worker-arquitetura-modular`): o Worker é **modular por entidade**, não um arquivo único. `index.ts` é só o dispatcher; handlers vivem em `routes/<entidade>.ts` (um arquivo por entidade — hoje 24 rotas agrupadas em ~13 arquivos); helpers genéricos (JWT, hash, CORS, email, auth, contexto de turma) vivem em `lib/`; tipos em `types.ts`. Não introduza Hono/itty-router/etc. sem necessidade concreta — a divisão em arquivos já resolve o problema de "arquivo grande demais" sem precisar de framework.
 
 ---
 
 ## Roteamento
 
-Padrão: cadeia de `if (request.method === X && url.pathname === Y) return handleZzz(...)` dentro de `fetch()`. Cada rota tem um handler nomeado `handleXxx` declarado depois do router. Ao adicionar uma rota:
+Padrão em `index.ts`: cadeia de `if (request.method === X && url.pathname === Y) return handleZzz(request, env)` dentro de `fetch()`, importando `handleZzz` de `routes/<entidade>.ts`. Ao adicionar uma rota:
 
-1. Adicione a linha no `export default { async fetch(...) }`
-2. Escreva `handleNomeDaRota(request, env)` retornando sempre `Response` via `jsonResponse(...)`
-3. Atualize o comentário de rotas no topo do arquivo (a lista `POST /api/...` logo abaixo do `/**`)
-4. Atualize a tabela de endpoints na skill `platform-contexto`
+1. Se a entidade já tem arquivo em `routes/`, adicione o handler lá. Se é uma entidade nova, crie `routes/<entidade-nova>.ts`.
+2. Escreva `handleNomeDaRota(request, env)` retornando sempre `Response` via `jsonResponse(...)` (importado de `lib/http.ts`).
+3. Adicione a linha de import + branch no `index.ts` (só isso muda lá — nenhuma lógica).
+4. Atualize o comentário de rotas no topo do `index.ts` (a lista `POST /api/...`)
+5. Atualize a tabela de endpoints na skill `platform-contexto`
+
+**Nunca** crie um endpoint que decide o que fazer pelo formato do payload (uma tabela/operação por parâmetro) — isso é exatamente o padrão que motivou a modularização. Exceção única e documentada: `routes/seed.ts` (`/api/admin/seed`), resync em lote do currículo, que já é atômico por seção.
 
 ## Auth
 
@@ -62,4 +65,4 @@ await env.DB.batch([stmt1, stmt2, ...])  // executa em ordem, transação implí
 
 ## `Env` interface
 
-Todo novo secret/var precisa de uma linha na interface `Env` do topo do arquivo, com comentário dizendo se é `wrangler secret put` (nunca commitado) ou `[vars]` do `wrangler.toml` (público, pode commitar). Mantenha essa interface como a lista canônica — não deixe um `env.ALGO_NOVO` sem entrada lá.
+Todo novo secret/var precisa de uma linha na interface `Env` em `platform/worker/src/types.ts`, com comentário dizendo se é `wrangler secret put` (nunca commitado) ou `[vars]` do `wrangler.toml` (público, pode commitar). Mantenha essa interface como a lista canônica — não deixe um `env.ALGO_NOVO` sem entrada lá, e não declare `Env` em nenhum outro arquivo.

@@ -36,7 +36,11 @@ platform/
 │   │   └── types/           ← interfaces TS espelhando o schema D1 / payloads da API
 │   └── vite.config.ts       ← `emptyOutDir: false` — NUNCA remover (preserva builds Slidev)
 ├── worker/
-│   ├── src/index.ts         ← Cloudflare Worker: toda a API em um arquivo só
+│   ├── src/
+│   │   ├── index.ts         ← Cloudflare Worker: SÓ o dispatcher (roteamento path→handler)
+│   │   ├── types.ts         ← Env + payload interfaces
+│   │   ├── lib/             ← helpers genéricos: jwt, crypto, http, email, auth, turma-context
+│   │   └── routes/          ← um arquivo por entidade: auth, entregas, avaliacoes, notas, etc.
 │   └── schema.sql           ← schema D1 completo, idempotente (sem migrations)
 ├── dist/                    ← output do build: portal + cada aula em subpasta
 └── wrangler.toml            ← binding D1, vars públicas, comentário dos secrets exigidos
@@ -73,7 +77,7 @@ platform/
 | `/entrar` | `EntrarView.vue` — login de aluno (Google, domínio restrito) | pública |
 | `/entrar/google-callback` | troca `code` OAuth por JWT de aluno | pública (fluxo OAuth) |
 
-### Endpoints do Worker (`platform/worker/src/index.ts`)
+### Endpoints do Worker (`platform/worker/src/routes/`, dispatcher em `index.ts`)
 
 | Rota | Método | Auth | Função |
 |---|---|---|---|
@@ -89,7 +93,7 @@ platform/
 | `/api/calendar` | GET | pública | calendário condensado |
 | `/api/calendar/import` | POST | JWT | upsert em lote de `calendar_days`/`calendar_blocos` |
 | `/api/calendar/resumo-ha` | GET | pública | soma `calendar_blocos.ha` por UC, bucketizado em T1/T2/T3 (cutoffs 2026-05-14 e 2026-09-04) considerando só dias com `status = 'dada'` |
-| `/api/admin/seed` | POST | JWT admin | upsert em lote de `ucs`/`indicadores`/`avaliacoes`/`avaliacao_indicadores`/`turmas`/`avaliacoes_turma` a partir do payload de `platform/scripts/seed-indicadores.mjs`; `avaliacao_indicadores` é delete-por-slug + reinsert (mesmo padrão de `calendar_blocos`); idempotente, nunca toca `notas` nem `users.turma_id` (sprint 03, avaliações por indicador) |
+| `/api/admin/seed` | POST | JWT admin | upsert em lote de `ucs`/`indicadores`/`avaliacoes`/`avaliacao_indicadores`/`turmas`/`avaliacoes_turma`, atômico por seção (cada campo do payload é opcional — só mexe no que foi enviado); alimentado por `platform/scripts/seed-indicadores.mjs` (resync completo do currículo) ou `platform/scripts/publish-avaliacao.mjs <slug>` (uma avaliação só); `avaliacao_indicadores` é delete-por-slug + reinsert (mesmo padrão de `calendar_blocos`); idempotente, nunca toca `notas` nem `users.turma_id` (sprint 03, avaliações por indicador). **Exceção documentada** à regra de "um endpoint por entidade" (constituição §9) — não é modelo a copiar para leitura/escrita normal de uma entidade |
 | `/api/avaliacoes` | GET | pública, JWT de aluno opcional | `[{slug, titulo, tipo, trimestre, prazoLabel, status, indicadores:[{codigo, uc, descricao}]}]` — `status` aqui é o de aplicação (`avaliacoes_turma.status`), não o de conteúdo (`avaliacoes.status`); com JWT de aluno válido e `users.turma_id` não nulo resolve pela turma do aluno, senão cai na turma `status='ativa'` mais recente por `ano_ingresso` (sprint 03, avaliações por indicador) |
 | `/api/admin/turmas` | GET | JWT admin | `[{id, anoIngresso, status}]` — todas as turmas, pro seletor `SeletorTurma.vue` (sprint 03) |
 | `/api/admin/ucs` | GET | JWT admin | `[{codigo, nome, anoCurso, conhecimentos, habilidades}]` — referência estática (todas as UCs), buscada uma vez pelo client pra resolver conhecimentos/habilidades de qualquer indicador exibido (RF19/CA10, sprint 03) |

@@ -56,15 +56,23 @@ Reporte falhas aqui primeiro — são bloqueantes, não "sugestões".
 
 ### 3. Revisão de correção e segurança (Worker)
 
-Para qualquer mudança em `platform/worker/src/index.ts`, verifique especificamente:
+Para qualquer mudança em `platform/worker/src/`, verifique especificamente:
 
 - [ ] Toda query D1 usa `.bind()` parametrizado — grep por concatenação de string em SQL (`SELECT.*\$\{`, `+ request` etc.) é sinal de injeção
 - [ ] Rota que deveria exigir admin realmente chama `requireAdmin()`/checa `role`
 - [ ] Senha/token comparados via hash ou `safeEqual()`, nunca `===` direto
 - [ ] `request.json()` sempre em `try/catch`
 - [ ] Mensagens de erro de auth não revelam se uma conta existe
-- [ ] Novo secret está na interface `Env` com comentário correto (secret vs var pública) e em `wrangler.toml`
+- [ ] Novo secret está na interface `Env` (em `types.ts`) com comentário correto (secret vs var pública) e em `wrangler.toml`
 - [ ] Se a rota aceita uma URL do client pra usar num redirect/link de email: origem validada contra allowlist
+
+### 3b. Saúde estrutural do Worker (constituição §7-9)
+
+- [ ] Rota nova está em `routes/<entidade>.ts` — não foi encaixada num arquivo de entidade diferente, nem adicionada direto em `index.ts`
+- [ ] `index.ts` continua só dispatcher — nenhuma lógica de negócio/query D1 voltou pra lá
+- [ ] Nenhum arquivo de `routes/` ou `lib/` passou de ~200 linhas (sinal de que a entidade precisa ser subdividida)
+- [ ] Endpoint novo tem responsabilidade fixa — não decide comportamento pelo formato do payload (única exceção sancionada: `/api/admin/seed`)
+- [ ] Helper reutilizável (JWT, hash, CORS, email, auth) está em `lib/`, não declarado inline no arquivo que o usa
 
 ### 4. Revisão de correção (Vue)
 
@@ -89,6 +97,7 @@ Para mudanças em `schema.sql`:
 
 - A tabela de endpoints na skill `platform-contexto` ainda reflete a realidade após a mudança?
 - Uma coluna nova no schema tem handler no Worker E type no portal (as três camadas seguem juntas)?
+- Se `.claude/agents/`/`.claude/skills/` mudaram (ex.: novo padrão de arquitetura), `.github/agents/` equivalente foi sincronizado? (fonte da verdade declarada no `CLAUDE.md` raiz)
 
 ---
 

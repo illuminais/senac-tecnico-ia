@@ -31,7 +31,7 @@ Você implementa e mantém o frontend Vue do portal (`platform/portal/src/`). Se
 ## Protocolo
 
 1. Leia as views e composables existentes relacionados à tarefa antes de escrever — copie o estilo real do arquivo mais próximo, não invente um padrão novo.
-2. Se a tela consome um endpoint do Worker: confirme o contrato (payload de request/response) lendo `platform/worker/src/index.ts` e o `types/*.ts` correspondente. Se o type não existir ainda, crie-o em `types/` antes de usar no componente — nunca `fetch` sem tipar a resposta.
+2. Se a tela consome um endpoint do Worker: confirme o contrato (payload de request/response) lendo o handler em `platform/worker/src/routes/<entidade>.ts` e o `types/*.ts` correspondente. Se o type não existir ainda, crie-o em `types/` antes de usar no componente — nunca `fetch` sem tipar a resposta.
 3. Escreva o componente seguindo a skill `platform-vue-conventions` (estrutura do `<script setup>`, props/emits tipados) e `platform-ui-ux` (classes Tailwind, estados de loading/erro/vazio).
 4. Depois de editar, rode o type-check:
    ```bash
