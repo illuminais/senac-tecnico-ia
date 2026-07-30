@@ -1,16 +1,15 @@
 {
-  // tsconfig mínimo só para type-check manual/ad-hoc (ex.: `tsc --noEmit`).
-  // O Worker NÃO tem package.json (constituição §3) — este arquivo não é
-  // consumido por nenhum build real; `wrangler deploy`/`--dry-run` (esbuild)
-  // é a validação que de fato roda em CI/deploy e não faz checagem de tipos.
+  // tsconfig só para type-check (`tsc --noEmit`) — rode via `npm run
+  // typecheck:worker` na raiz do monorepo (já incluso em `npm run
+  // build:platform` via `check:platform`). O Worker continua SEM
+  // package.json (constituição §3): este arquivo não é consumido por
+  // nenhum build/bundle real — `wrangler deploy`/`--dry-run` (esbuild) é
+  // quem de fato gera o artefato, e não faz checagem de tipos sozinho.
   //
   // `@cloudflare/workers-types` (tipos de D1Database/ExecutionContext/etc.)
-  // não está instalado em lugar nenhum do monorepo — para rodar este
-  // tsconfig localmente, instale-o num diretório à parte (nunca como
-  // dependência do Worker) e aponte `typeRoots`/`NODE_PATH` para lá, ex.:
-  //   npm install --no-save --prefix /tmp/wtypes @cloudflare/workers-types
-  //   tsc --noEmit -p platform/worker/tsconfig.json \
-  //     --typeRoots /tmp/wtypes/node_modules/@types,/tmp/wtypes/node_modules
+  // e `typescript` são devDependencies da RAIZ do monorepo (não do Worker
+  // — são type-only, não entram no bundle), por isso `tsc` resolve os
+  // tipos automaticamente rodando a partir da raiz.
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",

@@ -26,7 +26,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { parseOrionDump } from './parse-orion-diario.mjs'
-import { parseAulasDadas, UC_NOMES, toIsoDate } from './seed-calendar.mjs'
+import { parseAulasDadas, UC_NOMES } from './seed-calendar.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '../..')
@@ -157,10 +157,9 @@ for (const entry of orionEntries) {
     continue
   }
 
-  // checa rows "opacas" (ex: "UC02+UC04") já existentes em AULAS-DADAS.md pra essa UC nesse dia
-  const rawSection = !day.isNewDay ? null : null // placeholder — checagem de opacidade é feita abaixo via existingDays original
-  const originalDay = existingDays.find(d => d.id === day.id)
-  const coveredByCombinedRow = originalDay?.blocos?.some(b => false) // parseAulasDadas já ignora rows combinadas — ver checagem textual abaixo
+  // checagem de rows "opacas" (ex: "UC02+UC04") já existentes em AULAS-DADAS.md
+  // pra essa UC nesse dia é feita via texto bruto na seção "guarda de
+  // segurança" abaixo (sectionRawText) — nada a checar aqui.
 
   const prefix = isNewDay
     ? (numero ? '[Orion]' : '[Orion, não confirmado]')
@@ -200,7 +199,7 @@ function sectionRawText(day) {
   return m ? m[1] : null
 }
 
-for (const [id, day] of daysState) {
+for (const day of daysState.values()) {
   if (day.isNewDay || !day.numero) continue // dias sintéticos (Dia não numerado) não têm rows combinadas "UC+UC" pra checar
   const raw = sectionRawText(day)
   if (!raw) continue
@@ -264,7 +263,7 @@ function buildNewSection(day) {
 
 let newAulasDadas = aulasDadasRaw
 
-for (const [id, day] of daysState) {
+for (const day of daysState.values()) {
   if (day.isNewDay) continue
   const hasChange = [...day.blocks.values()].some(b => b.isNewBlock)
   if (!hasChange) continue
@@ -333,7 +332,7 @@ function patchContexto(uc, fn) {
   contextoPatches.set(uc, fn(current))
 }
 
-for (const [id, day] of daysState) {
+for (const day of daysState.values()) {
   for (const [uc, block] of day.blocks) {
     if (!block.isNewBlock) continue
     const dataBr = isoToBr(day.data).slice(0, 5) // DD/MM

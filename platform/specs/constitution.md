@@ -13,7 +13,7 @@ Princípios **não-negociáveis** que toda spec, plan, task e implementação de
 2. Toda credencial real (Cloudflare, Resend, Google OAuth) é só do professor. Specs assumem os secrets já configurados; nunca inventam contas.
 
 ## II. Restrições de arquitetura
-3. O Worker (`platform/worker/`) **não tem `package.json`** e nunca terá dependência npm adicionada sem aprovação. Bundling é transpile-only (esbuild via wrangler) — escreva tipos corretos mesmo sem enforcement.
+3. O Worker (`platform/worker/`) **não tem `package.json`** e nunca terá dependência npm adicionada sem aprovação. Bundling é transpile-only (esbuild via wrangler) — escreva tipos corretos mesmo sem enforcement. Exceção que não viola a regra: tooling type-only de desenvolvimento (`@cloudflare/workers-types`, `typescript`, ESLint) vive como devDependency da **raiz** do monorepo, usado só por `npm run typecheck:worker`/`lint:platform` — nada disso entra no bundle real (`wrangler deploy`).
 4. `platform/portal/vite.config.ts` mantém `emptyOutDir: false` — **nunca remover** (preserva os builds Slidev).
 5. Sem migrations: `schema.sql` é um único arquivo idempotente (`CREATE TABLE IF NOT EXISTS`). Mudança de schema = editar e reaplicar.
 6. Auth é sem libs externas: JWT HS256 via Web Crypto, PBKDF2 pra senha, OAuth Google. `userId` sempre vem de `payload.sub` do JWT, **nunca** do body do request.

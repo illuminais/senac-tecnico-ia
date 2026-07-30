@@ -12,7 +12,9 @@ onMounted(async () => {
       const data = await res.json()
       professorMessage.value = data.message ?? ''
     }
-  } catch {}
+  } catch {
+    // Banner não-crítico — falha de rede não deve quebrar a tela, só fica sem mensagem
+  }
 })
 </script>
 

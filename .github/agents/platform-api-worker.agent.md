@@ -33,6 +33,7 @@ platform/worker/src/
    cd platform && npx wrangler deploy --dry-run --outdir=/tmp/wrangler-dryrun worker/src/index.ts
    ```
    Confirme que lista os bindings esperados e termina em `--dry-run: exiting now.` sem erro.
+7. Rode também o type-check real (pega erro que o bundle não pega): `npm run typecheck:worker`.
 
 ## Convenções de auth
 

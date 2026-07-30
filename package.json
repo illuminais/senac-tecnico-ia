@@ -26,6 +26,9 @@
     "theme:build": "npm run build --workspace=slidev-theme-neural",
     "validate:ha": "node scripts/validate-ha.mjs",
     "lint:slides": "node scripts/lint-slides.mjs",
+    "lint:platform": "eslint platform/worker/src platform/shared platform/scripts platform/portal/src",
+    "typecheck:worker": "tsc --noEmit -p platform/worker/tsconfig.json",
+    "check:platform": "npm run lint:platform && npm run typecheck:worker",
     "validate:graph": "node platform/scripts/validate-graph.mjs",
     "setup:hooks": "bash scripts/setup-hooks.sh",
     "check:overflow": "node scripts/check-overflow.mjs",
@@ -43,8 +46,8 @@
     "build:aulas": "node platform/scripts/build-all.mjs",
     "build:aulas:all": "node platform/scripts/build-all.mjs --all",
     "build:portal": "npm run build --workspace=portal",
-    "build:platform": "npm run build:aulas && npm run build:portal",
-    "build:platform:all": "npm run build:aulas:all && npm run build:portal",
+    "build:platform": "npm run check:platform && npm run build:aulas && npm run build:portal",
+    "build:platform:all": "npm run check:platform && npm run build:aulas:all && npm run build:portal",
     "preview:platform": "npm run build:platform:all && npm run preview --workspace=portal",
     "deploy:pages": "npm run build:platform && npx wrangler pages deploy platform/dist --project-name=senac-lms --commit-dirty=true",
     "dev:portal": "npm run dev --workspace=portal",
@@ -167,9 +170,15 @@
     "export:a43-uc05-03-31jul": "npm run export --workspace=a43-uc05-03-31jul"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260730.1",
+    "@eslint/js": "^10.0.1",
     "@slidev/cli": "^0.49.0",
+    "eslint": "^10.8.0",
+    "eslint-plugin-vue": "^10.10.0",
     "playwright": "^1.59.1",
-    "shiki": "^1.29.2"
+    "shiki": "^1.29.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.65.0"
   },
   "dependencies": {
     "@slidev/theme-seriph": "^0.25.0"

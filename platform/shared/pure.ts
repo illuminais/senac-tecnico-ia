@@ -8,16 +8,19 @@
  * Não importe nada daqui que dependa de `crypto.subtle` (Web Crypto) — isso
  * existe no Worker e em runtimes Node modernos/browser, mas mantenha esse
  * limite explícito: qualquer coisa que precise assinar/verificar (JWT de
- * verdade, PBKDF2) continua em `worker/src/index.ts`. Este módulo só faz
- * codificação/decodificação e checagens síncronas puras.
+ * verdade, PBKDF2) continua em `worker/src/lib/jwt.ts` e `lib/crypto.ts`.
+ * Este módulo só faz codificação/decodificação e checagens síncronas puras.
  */
 
 // ---------------------------------------------------------------------------
 // Base64url
 // ---------------------------------------------------------------------------
 
-export function b64url(buf: ArrayBuffer): string {
-  return btoa(String.fromCharCode(...new Uint8Array(buf)))
+// Aceita ArrayBuffer (retorno de crypto.subtle.sign) ou Uint8Array (retorno
+// de TextEncoder().encode()) — os dois chamadores reais deste módulo.
+export function b64url(buf: ArrayBuffer | Uint8Array): string {
+  const bytes = buf instanceof Uint8Array ? buf : new Uint8Array(buf)
+  return btoa(String.fromCharCode(...bytes))
     .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
 }
 

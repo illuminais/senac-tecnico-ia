@@ -26,16 +26,19 @@ Se for staged: `git diff --cached -- platform/`.
 ### 2. Validações mecânicas (rode antes de ler código)
 
 ```bash
+# Lint (ESLint, escopo platform/) + type-check do Worker (tsc) — os dois num comando
+npm run check:platform
+
 # Portal: type-check real
 cd platform/portal && npx vue-tsc --noEmit
 
-# Worker: bundling real (não passa por tsc, isso é o check que existe)
+# Worker: bundling real (não passa por tsc puro, isso é o check de bundle que existe)
 cd platform && npx wrangler deploy --dry-run --outdir=/tmp/wrangler-dryrun-qa worker/src/index.ts
 
 # Schema: sintaxe SQL válida
 sqlite3 :memory: < platform/worker/schema.sql && echo "schema OK"
 ```
-Reporte falhas aqui primeiro — são bloqueantes, não sugestões.
+Reporte falhas aqui primeiro — são bloqueantes, não sugestões. `npm run check:platform` roda o mesmo lint+type-check que `npm run build:platform` — reproduz localmente o que quebraria o build real.
 
 ### 3. Revisão de correção e segurança (Worker)
 

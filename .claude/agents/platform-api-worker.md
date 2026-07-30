@@ -47,7 +47,11 @@ platform/worker/src/
    cd platform && npx wrangler deploy --dry-run --outdir=/tmp/wrangler-dryrun worker/src/index.ts
    ```
    Não precisa de login Cloudflare (`--dry-run` só bundla localmente). Confirme que lista os bindings esperados e termina em `--dry-run: exiting now.` sem erro.
-7. Atualize a tabela de endpoints na skill `platform-contexto` se a rota é nova ou mudou de contrato.
+7. Rode também o type-check real (pega erro que o bundle não pega):
+   ```bash
+   npm run typecheck:worker
+   ```
+8. Atualize a tabela de endpoints na skill `platform-contexto` se a rota é nova ou mudou de contrato.
 
 ## Segurança — checklist antes de finalizar qualquer rota nova
 

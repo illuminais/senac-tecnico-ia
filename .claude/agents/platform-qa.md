@@ -43,16 +43,19 @@ Se for staged: `git diff --cached -- platform/`. Se o pedido apontar arquivos es
 ### 2. Validações mecânicas (rode antes de ler código — pega erro óbvio rápido)
 
 ```bash
-# Portal: type-check real (quebra build se falhar)
+# Lint (ESLint, escopo platform/) + type-check do Worker (tsc) — os dois num comando
+npm run check:platform
+
+# Portal: type-check real (quebra build se falhar) — já incluso em npm run build --workspace=portal
 cd platform/portal && npx vue-tsc --noEmit
 
-# Worker: bundling real (não passa por tsc, isso é o check que existe)
+# Worker: bundling real (não passa por tsc puro, isso é o check de bundle que existe)
 cd platform && npx wrangler deploy --dry-run --outdir=/tmp/wrangler-dryrun-qa worker/src/index.ts
 
 # Schema: sintaxe SQL válida
 sqlite3 :memory: < platform/worker/schema.sql && echo "schema OK"
 ```
-Reporte falhas aqui primeiro — são bloqueantes, não "sugestões".
+Reporte falhas aqui primeiro — são bloqueantes, não "sugestões". `npm run check:platform` roda `lint:platform` (ESLint em `worker/src`, `shared/`, `scripts/`, `portal/src`) + `typecheck:worker` (`tsc --noEmit` real no Worker, usando `platform/worker/tsconfig.json` e `@cloudflare/workers-types`) — é a mesma checagem que roda em `npm run build:platform`, então rodar aqui reproduz localmente o que vai falhar (ou não) no build real.
 
 ### 3. Revisão de correção e segurança (Worker)
 
