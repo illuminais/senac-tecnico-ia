@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Av03-T2 — Mini-projeto de Estatística</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 12px; color: #444; margin-bottom: 10px; }
+  .nome-linha { margin: 10px 0 16px; font-size: 13px; }
+  .nome-linha span { display: inline-block; border-bottom: 1px solid #000; min-width: 260px; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 14px; }
+  th, td { border: 1px solid #999; padding: 3px 6px; text-align: center; font-size: 11px; }
+  th { background: #eee; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 18px; }
+  .item { margin: 10px 0; }
+  .opcoes { font-size: 11px; margin: 3px 0; }
+  .opcoes span { margin-right: 10px; }
+  .justif { border-bottom: 1px solid #999; display: block; height: 16px; margin-top: 4px; }
+  .calc { border-bottom: 1px solid #999; display: block; height: 34px; margin-top: 4px; }
+  .rodape { font-size: 10px; color: #555; margin-top: 16px; border-top: 1px solid #ccc; padding-top: 6px; }
+  .page-break { page-break-before: always; }
+  @media print {
+    .no-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Av03-T2 — Mini-projeto de Estatística (Ato 1/2)</h1>
+<div class="sub">UC09 — Estatística Aplicada · A44 · 06/08/2026</div>
+
+<div class="nome-linha">Nome: <span>&nbsp;</span> &nbsp;&nbsp; Turma: <span style="min-width:100px;">&nbsp;</span></div>
+
+<h2>Tabela do abrigo de adoção</h2>
+<table>
+<tr><th>nome_animal</th><th>especie</th><th>porte</th><th>idade_meses</th><th>dias_no_abrigo</th><th>adotado</th></tr>
+<tr><td>Rex</td><td>cão</td><td>grande</td><td>3</td><td>10</td><td>não</td></tr>
+<tr><td>Mel</td><td>gata</td><td>pequeno</td><td>48</td><td>210</td><td>não</td></tr>
+<tr><td>Nina</td><td>gata</td><td>médio</td><td>6</td><td>22</td><td>sim</td></tr>
+<tr><td>Thor</td><td>cão</td><td>grande</td><td>60</td><td>5</td><td>não</td></tr>
+<tr><td>Luna</td><td>gata</td><td>pequeno</td><td>2</td><td>8</td><td>não</td></tr>
+<tr><td>Bento</td><td>cão</td><td>médio</td><td>84</td><td>180</td><td>sim</td></tr>
+<tr><td>Fred</td><td>cão</td><td>pequeno</td><td>12</td><td>45</td><td>não</td></tr>
+<tr><td>Amora</td><td>gata</td><td>grande</td><td>36</td><td>130</td><td>não</td></tr>
+<tr><td>Duke</td><td>cão</td><td>grande</td><td>18</td><td>60</td><td>não</td></tr>
+<tr><td>Mia</td><td>gata</td><td>pequeno</td><td>4</td><td>15</td><td>sim</td></tr>
+<tr><td>Zeus</td><td>cão</td><td>médio</td><td>30</td><td>95</td><td>não</td></tr>
+<tr><td>Lola</td><td>gata</td><td>grande</td><td>54</td><td>250</td><td>não</td></tr>
+<tr><td>Simba</td><td>cão</td><td>pequeno</td><td>8</td><td>33</td><td>sim</td></tr>
+<tr><td>Bela</td><td>gata</td><td>médio</td><td>42</td><td>70</td><td>não</td></tr>
+<tr><td>Max</td><td>cão</td><td>grande</td><td>72</td><td>300</td><td>não</td></tr>
+<tr><td>Chica</td><td>gata</td><td>pequeno</td><td>5</td><td>12</td><td>sim</td></tr>
+<tr><td>Toby</td><td>cão</td><td>médio</td><td>20</td><td>55</td><td>não</td></tr>
+<tr><td>Sol</td><td>gata</td><td>grande</td><td>60</td><td>190</td><td>não</td></tr>
+<tr><td>Pingo</td><td>cão</td><td>pequeno</td><td>3</td><td>9</td><td>sim</td></tr>
+<tr><td>Nala</td><td>gata</td><td>médio</td><td>15</td><td>40</td><td>não</td></tr>
+<tr><td>Bidu</td><td>cão</td><td>grande</td><td>96</td><td>320</td><td>não</td></tr>
+<tr><td>Frida</td><td>gata</td><td>pequeno</td><td>7</td><td>18</td><td>não</td></tr>
+<tr><td>Bob</td><td>cão</td><td>médio</td><td>48</td><td>110</td><td>sim</td></tr>
+<tr><td>Estrela</td><td>gata</td><td>grande</td><td>30</td><td>85</td><td>não</td></tr>
+<tr><td>Salsicha</td><td>cão</td><td>pequeno</td><td>10</td><td>25</td><td>não</td></tr>
+<tr><td>Mimosa</td><td>gata</td><td>médio</td><td>66</td><td>275</td><td>não</td></tr>
+<tr><td>Trovão</td><td>cão</td><td>grande</td><td>24</td><td>65</td><td>sim</td></tr>
+</table>
+
+<h2>Questão 1 — Classificação de variáveis (Ind.6)</h2>
+<p style="font-size:11px;">Marque UMA opção por coluna e justifique em 1 frase.</p>
+
+<div class="item"><b>a) especie</b>
+<div class="opcoes"><span>☐ Nominal</span><span>☐ Ordinal</span><span>☐ Binária</span><span>☐ Quanti. discreta</span><span>☐ Quanti. contínua</span></div>
+<span class="justif"></span></div>
+
+<div class="item"><b>b) porte</b>
+<div class="opcoes"><span>☐ Nominal</span><span>☐ Ordinal</span><span>☐ Binária</span><span>☐ Quanti. discreta</span><span>☐ Quanti. contínua</span></div>
+<span class="justif"></span></div>
+
+<div class="item"><b>c) adotado</b>
+<div class="opcoes"><span>☐ Nominal</span><span>☐ Ordinal</span><span>☐ Binária</span><span>☐ Quanti. discreta</span><span>☐ Quanti. contínua</span></div>
+<span class="justif"></span></div>
+
+<div class="item"><b>d) idade_meses</b>
+<div class="opcoes"><span>☐ Nominal</span><span>☐ Ordinal</span><span>☐ Binária</span><span>☐ Quanti. discreta</span><span>☐ Quanti. contínua</span></div>
+<span class="justif"></span></div>
+
+<div class="item"><b>e) dias_no_abrigo</b>
+<div class="opcoes"><span>☐ Nominal</span><span>☐ Ordinal</span><span>☐ Binária</span><span>☐ Quanti. discreta</span><span>☐ Quanti. contínua</span></div>
+<span class="justif"></span></div>
+
+<div class="item"><b>f) nome_animal</b>
+<div class="opcoes"><span>☐ Nominal</span><span>☐ Ordinal</span><span>☐ Binária</span><span>☐ Quanti. discreta</span><span>☐ Quanti. contínua</span></div>
+<span class="justif"></span></div>
+
+<div class="page-break"></div>
+
+<h2>Questão 2 — Probabilidade (Ind.5)</h2>
+<p style="font-size:11px;">Use a tabela completa (27 animais) como espaço amostral. Mostre o cálculo completo.</p>
+
+<div class="item"><b>a) P(cão)</b> — probabilidade de escolher um cão ao acaso
+<span class="calc"></span></div>
+
+<div class="item"><b>b) P(adotado)</b> — probabilidade de escolher um animal já adotado
+<span class="calc"></span></div>
+
+<div class="item"><b>c) P(cão ∩ adotado)</b> — probabilidade de escolher um cão já adotado
+<span class="calc"></span></div>
+
+<div class="item"><b>d) Bônus — P(adotado | porte grande)</b> — dentre os de porte grande, qual fração já foi adotada
+<span class="calc"></span></div>
+
+<div class="rodape">Justifique cada resposta por escrito. Resultado sem cálculo mostrado não pontua. Este é o Ato 1 do mini-projeto — o Ato 2 acontece na Av09-T2 (27/08).</div>
+
+</body>
+</html>

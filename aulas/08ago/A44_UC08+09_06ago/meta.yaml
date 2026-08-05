@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "44"
+slug: "a44-uc08-09-06ago"
+title: "Copa Analytics: Abrigo de Adoção - SQL em Trilhas e Estatistica Aplicada"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08", "UC09"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-08-06"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []
