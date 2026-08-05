@@ -123,7 +123,7 @@ function log(msg, color = '') {
  * mesmo sem nenhuma ter sido editada).
  */
 function contentHash(aulaDir) {
-  const TRACK_EXT = /\.(md|yaml|vue|ts|js|css|json)$/
+  const TRACK_EXT = /\.(md|yaml|vue|ts|js|css|json|png|jpg|jpeg|svg|gif|ico)$/
   const files = []
   const stack = [aulaDir]
   while (stack.length) {
