@@ -61,6 +61,8 @@ Cada grupo de slides de uma aula DEVE ter:
 
 ### Slide de Debate (quando ausente)
 
+**Regra (feedback do professor — perguntas abertas genéricas viram silêncio ou são puladas):** nunca usar pergunta aberta de reflexão ("o que vocês acham de X?"). Sempre montar como **dilema de escolha forçada**: duas posições concretas e opostas, ligadas ao dado/caso real da aula (dataset, case, exercício que acabaram de fazer), cada aluno/grupo precisa escolher um lado e justificar com algo concreto (um dado, uma linha da tabela, um trecho do case). Perguntas técnicas soltas sem posição pra defender voltam a ser genéricas — evitar.
+
 ```markdown
 ---
 layout: brainstorm
@@ -74,11 +76,13 @@ aulaNum: "Aula NN"
 
 # Debate: [Tema Principal da Aula]
 
-**Discussão coletiva: 5 minutos**
+**Escolham um lado — 5 minutos**
 
-- [Pergunta técnica 1]
-- [Pergunta técnica 2]
-- [Pergunta técnica 3]
+**[Dilema concreto ligado ao dado/caso da aula, com duas posições opostas nomeadas, ex: "Time A defende ___ · Time B defende ___"]**
+
+- Time A: [posição 1, ligada a um dado/linha/trecho concreto]
+- Time B: [posição 2, ligada a um dado/linha/trecho concreto]
+- Cada grupo justifica com um exemplo real do material da aula (não vale opinião solta)
 
 > **Conexão futura:** [como conecta com próximo tópico]
 ```

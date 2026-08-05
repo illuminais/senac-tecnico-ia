@@ -242,6 +242,15 @@ Após completar o ciclo de todas as UCs:
 
 > Não há etapa de "merge" — os slides já foram gerados via append incremental diretamente em `slides.md`.
 
+#### Etapa obrigatória — Revisão de conteúdo (`@revisor-aula`)
+
+**Rode esta etapa ANTES do check de overflow**, nunca depois — se o revisor-aula encontrar um problema de conteúdo e você corrigir os slides (via `editor-slides --mode=edit`), a correção pode alterar densidade e reintroduzir overflow. Rodar overflow antes faria você repetir o check duas vezes.
+
+1. Invoque `@revisor-aula` sobre o `slides.md` completo (todas as UCs já geradas), passando `plano-aula.md` + `contexto-{uc}.md` de cada UC envolvida + `ATIVIDADES_AVALIATIVAS.md` se houver avaliação formal na aula.
+2. Se houver achados: apresente ao professor (achado + trecho citado + por que é problema + sugestão), e peça decisão sobre como corrigir — o revisor-aula nunca edita sozinho.
+3. Aplique a correção aprovada via `editor-slides --mode=edit`.
+4. **Só depois de aplicadas as correções de conteúdo, siga para o check de overflow abaixo.**
+
 #### Etapa obrigatória — Check de overflow
 
 Antes de invocar o auditor, rode o check de overflow via `scripts/check-overflow.mjs`:
