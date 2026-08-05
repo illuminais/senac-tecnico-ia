@@ -44,4 +44,6 @@
 | A42 | UC01 | Fundamentos de Computação — Pesquisa crítica: fontes confiáveis, busca por palavras-chave, fact-checking (sem avaliação; Av01-T2 remarcada p/ 20/08 A48) | 2 | 30/07 | — |
 | A43 | UC05 | Python para IA — `def`/`return` (definição de funções) + escopo local/global (extensão) | 3 | 31/07 | 16 |
 | A43 | UC03 | Fundamentos Matemáticos — Av02-T2: situação-problema aplicada combinando aritmética + álgebra + conjuntos (indicador "resolve situações-problema...") | 3 | 31/07 | 11 |
+| A44 | UC08 | Banco de Dados — trilhas diferenciadas sobre `abrigo_adocao.csv` (Trilha A: revisão SELECT/WHERE/ORDER BY/GROUP BY · Trilha B: subquery "acima da média", novo) + regra papel antes do PC | 3 | 06/08 | 19 |
+| A44 | UC09 | Estatística Aplicada — Av03-T2 Ato 1: variável qualitativa (nominal/ordinal/binária) vs. quantitativa discreta + probabilidade básica (P(A), P(A∩B), condicional bônus), instrumento separado sobre `abrigo_adocao.csv` | 3 | 06/08 | — |
 ---

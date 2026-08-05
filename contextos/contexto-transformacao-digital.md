@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC07
 disciplina: Transformação Digital e Estratégias de Informação para IA
 ha-total: 80
-ha-dado: 16
-ha-restante: 64
+ha-dado: 18
+ha-restante: 62
 trimestre-atual: T2
 ---
 
@@ -24,7 +24,7 @@ trimestre-atual: T2
 | T2 | 8 | Custo-benefício de implementar IA: custo de infra · preço de mercado · risco de não fazer | 2 | ✅ A27 |
 | T2 | 9 | Análise estratégica de empresa: canvas de diagnóstico + protótipo de solução IA | 3 | ⬜ |
 | T2 | 10 | Planejamento de implementação IA: roadmap · stakeholders · KPIs | 3 | ⬜ |
-| T2 | 11 | Segurança organizacional: vazamento de dados · políticas de uso de IA · compliance | 2 | ⬜ |
+| T2 | 11 | Segurança organizacional: vazamento de dados · políticas de uso de IA · compliance | 2 | ✅ A42 |
 | T2 | 12 | Cases brasileiros: Nubank · iFood · Embrapa · análise crítica | 2 | ⬜ |
 | T2 | 13 | BI básico: dashboards · métricas de negócio · apresentação de dados | 3 | ⬜ |
 | T2 | 14 | Simulação: proposta completa de TD para empresa real | 4 | ⬜ |
@@ -52,7 +52,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A38 · 02/07 · Dilemas éticos da IA: o que a IA não deveria decidir sozinha · World Café com rotações de debate e cartões estruturados
+A42 · 30/07 · Segurança digital nas organizações: vazamento de dados · políticas de IA · compliance · debate em duplas
 
 ---
 
@@ -90,6 +90,7 @@ A38 · 02/07 · Dilemas éticos da IA: o que a IA não deveria decidir sozinha �
 | A14 | 16/04 | ~4 | LGPD na prática (titular, controlador, operador, ANPD) · direitos do titular · Caso Serasa 2021 (debate) · phishing na prática (exercício de classificação de e-mails) | Debate fortíssimo com case Serasa — engajamento alto |
 | A27 | 22/05 | ~2,5 | Custo-benefício de implementar IA (custo infra · preço mercado · risco) · mini-análise financeira solução Shark Tank | — |
 | A38 | 02/07 | ~1,5 | Dilemas éticos da IA · o que a IA não deveria decidir sozinha · World Café com rotação de grupos e cartões de debate estruturados | Engajamento extraordinário — World Café provou formato altamente motivador para turma |
+| A42 | 30/07 | ~2 | Segurança digital nas organizações · vazamento de dados · políticas de uso de IA · compliance · debate em duplas/trios | Atividades genéricas — integrar caderno como validação/visto para reforço de engajamento |
 
 ---
 
@@ -112,6 +113,7 @@ A38 · 02/07 · Dilemas éticos da IA: o que a IA não deveria decidir sozinha �
 | Data | Observação | Ação |
 |---|---|---|
 | 2026-07-02 | Novo conteúdo não previsto no Plano Anual: "Dilemas éticos da IA — o que a IA não deveria decidir sozinha" implementado com sucesso via World Café (dinâmica de rotação com cartões de debate) | Validar formato para futuras aulas; considerar integrar dilemas éticos em Tópico 2 revisado ou criar novo tópico em T3 sobre governance e ética avançada |
+| 2026-07-30 | Atividades de LGPD e segurança organizacional foram genéricas — faltou especificidade e relevância contextual para engajamento | Próximas atividades de TC devem ter contexto real/prático; usar casos de vazamento reais conhecidos pela turma |
 
 ---
 

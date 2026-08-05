@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC01
 disciplina: Fundamentos de Computação
 ha-total: 41
-ha-dado: 8
-ha-restante: 33
+ha-dado: 10
+ha-restante: 31
 trimestre-atual: T2
 ---
 
@@ -20,7 +20,7 @@ trimestre-atual: T2
 | T1 | 4 | Terminal básico: cd · dir · mkdir · cls | 1,5 | ✅ A04 |
 | T1 | 5 | Word: criar documento · margens ABNT · fonte · espaçamento · estilos H1/H2 · tabela · PDF | 2 | ✅ A11 |
 | T1 | 6 | Word avançado: localizar/substituir · corretor · imagem · símbolo · número de página | 2 | ⬜ |
-| T2 | 7 | Internet com segurança: pesquisa crítica · fontes confiáveis · fact-checking | 2 | ⬜ |
+| T2 | 7 | Internet com segurança: pesquisa crítica · fontes confiáveis · fact-checking | 2 | ✅ A42 |
 | T2 | 8 | Organização e armazenamento digital: nuvem · backup · estrutura de projeto profissional | 2 | ⬜ |
 | T2 | 9 | Excel/Sheets: fórmulas · PROCV · tabelas dinâmicas · gráficos básicos | 3 | ⬜ |
 | T2 | 10 | Apresentações profissionais: slides · design · storytelling de dados | 2 | ⬜ |
@@ -47,7 +47,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A11 · 09/04 · Word: margens ABNT (3cm sup/esq · 2cm inf/dir) · fonte Calibri 12/espaçamento 1,5 · estilos H1/H2 · tabela (3 colunas) · exportar PDF
+A42 · 30/07 · Navegação segura: fontes confiáveis · busca por palavras-chave · fact-checking · ferramentas de verificação
 
 ---
 
@@ -80,6 +80,7 @@ A11 · 09/04 · Word: margens ABNT (3cm sup/esq · 2cm inf/dir) · fonte Calibri
 | A03 | 05/03 | ~2 | Hardware/software aprofundado · extensões (.docx · .pdf · .csv · .py) · ferramentas do curso · Windows profissional | — |
 | A04 | 06/03 | ~1,5 | Continuação Windows profissional · terminal básico (cd · dir · mkdir · cls) | — |
 | A11 | 09/04 | ~2 | Word: margens ABNT · fonte Calibri 12 · espaçamento 1,5 · estilos H1/H2 · tabela 3 colunas · exportar PDF | Aula top — engajamento alto |
+| A42 | 30/07 | ~2 | Navegação segura · fontes confiáveis vs duvidosas · busca por palavras-chave · fact-checking · ferramentas de verificação (Aos Fatos, Lupa) · classificação de fontes | Exercícios precisam passo a passo explícito; alguns alunos dispersam após exercício 1 |
 
 ---
 
@@ -104,6 +105,7 @@ A11 · 09/04 · Word: margens ABNT (3cm sup/esq · 2cm inf/dir) · fonte Calibri
 |---|---|---|
 | 2026-03-05 | Blocos longos de teoria causaram dispersão | Regra max 2 slides teoria consecutivos |
 | 2026-03-05 | Debates abertos não funcionaram bem | Substituir por perguntas técnicas dirigidas ou dinâmicas em dupla |
+| 2026-07-30 | Exercícios de pesquisa crítica/fact-checking precisam de instruções passo a passo; engajamento cai após exercício 1 quando há apenas 2 exercícios | Próximas aulas: quebrar exercícios em mínimo 3–4 passos menores; incluir checklist visual no caderno para visto do professor |
 
 ---
 

@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC05
 disciplina: Python para IA
 ha-total: 80
-ha-dado: 34
-ha-restante: 46
+ha-dado: 36
+ha-restante: 44
 trimestre-atual: T2
 ---
 
@@ -49,7 +49,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A40 · 09/07 · pandas: groupby consolidado · queries fluidas · aprofundamento de métodos pandas
+A43 · 31/07 · funções: def, return como keywords; 7 perguntas teóricas · codificação manual (exercícios fracos)
 
 ---
 
@@ -82,6 +82,7 @@ A40 · 09/07 · pandas: groupby consolidado · queries fluidas · aprofundamento
 | A35 | 19/06 | ~3 | pandas: read_csv · .head() · .describe() com dataset real (copa2026_stats.csv) | pandas não consolidado — dinâmica focou em exploração visual; sem tempo para aprofundar métodos pandas |
 | A26 | 21/05 | ~3 | tipos compostos: apenas dict (chave:valor, .get, .items, .keys, .values, atualização); tuple e set não alcançados | aula muito difícil; exercício dado era complexo demais (exigia 4 conceitos simultâneos); dict mal absorvido; tuple/set ficaram para próxima |
 | A02 | 27/02 | ~0,5 | Reconhecimento de ambiente: VS Code, GitHub, Jupyter, onde rodar Python | introdutório, ok |
+| A43 | 31/07 | ~2 | funções: def, return keywords · 7 perguntas teóricas sobre concepts · codificação manual na mão | Cobertura rasa (apenas teoria); exercícios e exemplos de codificação foram fracos |
 | A04 | 06/03 | ~2 | vars, tipos, print, input, aritmética, if/elif/else (intro), def/return (intro) | ritmo lento, turma sem experiência prévia |
 | A05 | 12/03 | ~2 | f-string, sep, end; type(), conversão: float(), int(), str(); float(input()) como padrão | turma absorveu ~20 slides em 3 HA — densidade real muito abaixo do planejado |
 | A08 | 20/03 | ~2 | if/else, operadores lógicos and/or/not, tabela verdade | muita dificuldade, demorou muito para exercícios |
@@ -94,6 +95,7 @@ A40 · 09/07 · pandas: groupby consolidado · queries fluidas · aprofundamento
 
 | Data | Observação | Ação tomada |
 |---|---|---|
+| 2026-07-31 | Funções (def, return): cobertura apenas teórica (7 perguntas teóricas); exercícios e exemplos de codificação manual fracos | Reforçar: exercícios de def/return precisam ser refeitos/fortalecidos antes de avançar para próximos conceitos; praticar com 3–5 funções simples com analogias |
 | 2026-07-03 | Instalação de scikit-learn consumiu o tempo planejado para implementação com fit/predict | Retomar implementação em aula futura com A40 ou A41 — dedicar bloco só para sklearn fit/predict, sem competir com outro conteúdo |
 | 2026-06-26 | Turma não compreende por que importar bibliotecas, como instalar (pip), e sintaxe correta de import/alias apesar de exemplos mostrados — dificuldade fundamental em conceitos de ecossistema Python | Reforçar import como "abrir ferramentas" antes de usar; estruturar exercício isolado apenas de import (sem código após) |
 | 2026-06-19 | Turma não conseguiu fazer pandas — dinâmica de sala reversa sem consolidação real de métodos | A36 deve reexplicar read_csv, .head(), .describe() passo a passo, com exercício simples (sem filtros) |

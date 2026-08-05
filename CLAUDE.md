@@ -86,13 +86,13 @@ Use o agente `criar-nova-aula` para criar a próxima pasta de aula. O agente cop
 
 ## Contexto Atual do Curso
 
-- **Última aula ministrada**: A41 (10/07/2026) — UC08 Banco de Dados (WHERE, GROUP BY, HAVING + atividade transcrição de queries) + UC06 Arquitetura e GPU (Taxonomia de Flynn: SISD, SIMD, MISD, MIMD)
-- **Próxima aula**: A42 — [conforme rotação Sem2]
+- **Última aula ministrada**: A43 (31/07/2026) — UC03 Fundamentos Matemáticos (atividade matemática + entrevistas individuais) + UC05 Python para IA (funções: def, return; teoria; exercícios fracos)
+- **Próxima aula**: A44 — [conforme rotação T2]
 - **Avaliações aplicadas**: Av.01 (concluída), Av.03 (23/04 — TriaBot TokenLab)
 - **Avaliações pendentes**: Av.02 (30/04 Limber), Av.04 (30/04 Quiz GPU), Av.05 (07/05), Av.06 (08/05)
 - **Histórico completo**: ver `AULAS-DADAS.md`
-- **Calendário e composição de UCs**: ver `contextos/contexto-calendario.md`
-- **Plano de avaliações T1**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
+- **Calendário e composição de UCs**: ver `contextos/horarios/07-julho.md`
+- **Plano de avaliações T2**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
 
 > ⚠️ **Manter esta seção atualizada** após cada uso de `atualizador-pos-aula`.
 

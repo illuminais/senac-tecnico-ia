@@ -3,8 +3,8 @@ schema: contexto-uc
 uc: UC03
 disciplina: Fundamentos Matemáticos para Computação e IA
 ha-total: 40
-ha-dado: 3
-ha-restante: 37
+ha-dado: 5
+ha-restante: 35
 trimestre-atual: T2
 ---
 
@@ -46,7 +46,7 @@ trimestre-atual: T2
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A09 · 26/03 · potências e raízes (`**`, `**0.5`) · expressões algébricas (x como ingrediente) · equações simples via trial&error com `==` em Python
+A43 · 31/07 · atividade matemática · entrevistas individuais para validação de compreensão
 
 ---
 
@@ -78,7 +78,16 @@ A09 · 26/03 · potências e raízes (`**`, `**0.5`) · expressões algébricas 
 | A13 | 11/04 | ~3 | - Funções básicas e representações gráficas (lineares e quadráticas em nível introdutório). | Reconstruído via diário OrionWeb |
 | A37 | 26/06 | ~3 | 1 Indicador: Aplica operações fundamentais da aritmética e da álgebra em problemas relacionados à computação. 2 Indicador: Utiliza conceitos de lógica matemática para estruturar raciocínios e algoritmos simples. 3 Indicador: Emprega noções de conjuntos, funções e matrizes na organização e representação de informações. - Operações aritméticas fundamentais aplicadas à computação (adição, subtração, multiplicação, divisão, potências e raízes). - Noções de álgebra elementar: equações simples e expressões algébricas. - Fundamentos de lógica matemática: proposições, conectivos, tabelas-verdade, implicações e equivalências. - Conjuntos e operações (união, interseção, complemento, subconjuntos). | Reconstruído via diário OrionWeb |
 | A05 | 12/03 | ~2 | Aritmética computacional (int, float, //, %, **, PEMDAS) · álgebra: variável vs incógnita · eq. linear y=ax+b | — |
+| A43 | 31/07 | ~2 | Atividade matemática · entrevistas individuais para validação de compreensão | Entrevistas ajudam a identificar cópia; profundidade pode aprofundar; banco de perguntas mais incisivo necessário |
 | A09 | 26/03 | ~1 | Potências/raízes (`**`, `**0.5`) · expressões algébricas · equações trial&error | — |
+
+---
+
+## Feedback de Campo
+
+| Data | Observação | Ação tomada |
+|---|---|---|
+| 2026-07-31 | Atividade matemática e entrevistas individuais funcionaram bem para identificar quem copia vs compreensão real, mas profundidade pode aumentar. Sugestão: modelo em duas etapas (papel primeiro, depois PC). Banco de perguntas mais incisivo necessário para entrevistas verbais | Gerar banco de perguntas incisivas; estruturar atividade em duas etapas; aumentar profundidade das entrevistas |
 
 ---
 

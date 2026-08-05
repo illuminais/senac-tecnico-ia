@@ -468,6 +468,30 @@
 
 ---
 
+## A42 — 30/07/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC07 | Transformação Digital | Segurança digital nas organizações: vazamento de dados, políticas de uso de IA, compliance · debate direcionado em duplas/trios | ~2 |
+| UC01 | Fundamentos de Computação | Navegação segura e pesquisa confiável: fontes confiáveis vs duvidosas, técnicas de busca por palavras-chave, fact-checking, ferramentas de fact-checking, classificação de fontes | ~2 |
+| | **Total** | | **~4** |
+
+**Feedback:** Atividades de LGPD e pesquisa foram genéricas — necessário maior especificidade e relevância contextual. Turma precisa de passo a passo explícito em exercícios; alguns alunos perdem engajamento após exercício 1 quando há apenas 2 exercícios. Integrar caderno como validação/visto para aumento de engajamento.
+
+---
+
+## A43 — 31/07/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC03 | Fundamentos Matemáticos | Atividade matemática com entrevistas individuais: tempo adequado, eficácia parcial, profundidade pode aprofundar | ~2 |
+| UC05 | Python para IA | Funções: def, return, keywords — 7 perguntas teóricas sobre concepts; codificação manual na mão; exercícios e exemplos fracos | ~2 |
+| | **Total** | | **~4** |
+
+**Feedback:** Atividade matemática e entrevistas individuais ajudam a identificar cópia e engajamento real, mas poderiam ser mais profundas. Sugestão: modelo em duas etapas (papel primeiro, depois PC). Precisa de banco de perguntas mais incisivas para entrevistas verbais. Python coberto de forma muito rasa (só teoria de functions); exercícios e exemplos de codificação manual foram fracos e precisam ser refeitos/fortalecidos antes de avançar.
+
+---
+
 <!-- TEMPLATE PARA NOVAS ENTRADAS — copie e preencha:
 
 ## A{NN} — {DD/MM/AAAA}

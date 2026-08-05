@@ -106,6 +106,7 @@ A41 · 10/07 · WHERE (reforço) · GROUP BY · HAVING (novo) · atividade de tr
 | 2026-03-27 | Turma relembrou bem via revisão; ritmo lento mas progresso | Próximo passo: FK + JOIN |
 | 2026-06-25 | Turma com dificuldade em escrever SQL manualmente — reconhecem estrutura mas hesitam sem modelo pronto | Reforçar: sempre começar escrevendo no papel antes de digitar · praticar variações de queries com mudanças mínimas · criar templates reutilizáveis |
 | 2026-07-10 | Estratégia de cópia guiada (transcrever as queries-resposta do exercício) funcionou bem como resposta à dificuldade relatada em A36 | Manter cópia guiada como passo intermediário antes de pedir SQL do zero |
+| 2026-07-30 | Turma muito divergente em SQL — alguns lembram maioria dos conceitos, outros não lembram do básico; há gap significativo de compreensão | Necessário reforço seletivo: alguns alunos prontos para FK/subqueries, outros precisam revisão de SELECT/WHERE básico; considerar pequenos grupos para nivelamento |
 
 ---
 
