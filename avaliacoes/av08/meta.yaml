@@ -1,0 +1,12 @@
+id: av08
+titulo: "Av03-T2 — Mini-projeto de Estatística (Ato 1/2): Classificação de Variáveis e Probabilidade"
+tipo: MP
+prazo: "06/08/2026"
+prazo-label: "06/08 (A44) — durante a aula, papel, individual/dupla, ~2h"
+ucs:
+  - UC09
+trimestre: T2
+indicadores:
+  - UC09.5
+  - UC09.6
+status: published
