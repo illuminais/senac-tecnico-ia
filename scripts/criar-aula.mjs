@@ -51,11 +51,14 @@ const MES_FOLDER = {
 
 // Exclui da cópia do template
 // Pastas que vivem no neural-slides-template (tema compartilhado) — não copiar por aula.
-// Slidev serve automaticamente o public/ do tema, então assets compartilhados
-// (senac-logo, icons, etc.) ficam apenas em neural-slides-template/public/.
+// EXCEÇÃO: public/ PRECISA ser copiada fisicamente para cada aula. Testado em 05/08/2026:
+// no `slidev dev`, o tema serve /assets/* auto (o teste engana), mas no `slidev build`
+// (o que roda build-all.mjs → platform/dist → deploy real), o public/ do tema vai
+// parar em /theme/assets/*, não em /assets/*. O footerLogo do frontmatter aponta pra
+// /assets/senac-logo.png fixo, então sem a cópia física o ícone do rodapé quebra em
+// produção (404) em toda aula criada sem essa cópia — ver aulas A38-A44.
 const EXCLUIR_DIRS  = new Set(['.github', '.git', 'node_modules', 'dist', '.slidev',
   'components', 'composables', 'layouts', 'styles',
-  'public',  // assets compartilhados → neural-slides-template/public/ (tema auto-serve)
   'types',   // tipos idênticos em todo aula → vivem no tema
 ])
 const EXCLUIR_FILES = new Set(['AULAS-DADAS.md', 'package-lock.json', 'README.md',
@@ -230,12 +233,9 @@ ${c.gray}  Separe por + ou espaco (ex: 05+01+02). Enter = UCXX (a definir)${c.re
 
   // ---------- Execução ----------
 
-  step('1/5', 'Copiando neural-slides-template (excluindo components, layouts, styles, public, types)...')
+  step('1/5', 'Copiando neural-slides-template (excluindo components, layouts, styles, types)...')
   fs.mkdirSync(destDir, { recursive: true })
   copyDir(TEMPLATE, destDir)
-  // public/ vazia — assets compartilhados ficam em neural-slides-template/public/
-  // e são servidos automaticamente pelo Slidev via tema; coloque aqui só imagens desta aula
-  fs.mkdirSync(path.join(destDir, 'public'), { recursive: true })
   const count = countFiles(destDir)
   ok(`${count} arquivos copiados → aulas/${mesPasta}/${dirName}`)
 
