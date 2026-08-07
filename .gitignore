@@ -10,6 +10,10 @@ dist-ssr/
 build/
 out/
 
+# Entry temporario que o slidev escreve na raiz da aula durante o build.
+# Ele mesmo apaga no fim, mas sobra se o build for interrompido (Ctrl+C).
+aulas/*/*/index.html
+
 # Cache e temp
 .cache/
 .temp/
