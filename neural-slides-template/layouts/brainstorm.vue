@@ -60,7 +60,8 @@ const props = withDefaults(
 }
 
 .slidev-layout.brainstorm :deep(h1 + p > strong:only-child) {
-  @apply text-2xl font-extrabold text-white;
+  @apply text-2xl font-extrabold;
+  color: var(--theme-text-strong);
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
@@ -69,10 +70,11 @@ const props = withDefaults(
 }
 
 .slidev-layout.brainstorm :deep(ul) {
-  @apply text-left text-3xl text-white/90 list-disc list-inside space-y-3;
+  @apply text-left text-3xl list-disc list-inside space-y-3;
+  color: var(--theme-text);
 }
 
 .slidev-layout.brainstorm :deep(li)::marker {
-  color: rgb(255 255 255 / 0.55);
+  color: var(--theme-text-muted);
 }
 </style>

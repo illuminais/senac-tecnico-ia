@@ -46,4 +46,6 @@
 | A43 | UC03 | Fundamentos Matemáticos — Av02-T2: situação-problema aplicada combinando aritmética + álgebra + conjuntos (indicador "resolve situações-problema...") | 3 | 31/07 | 11 |
 | A44 | UC08 | Banco de Dados — trilhas diferenciadas sobre `abrigo_adocao.csv` (Trilha A: revisão SELECT/WHERE/ORDER BY/GROUP BY · Trilha B: subquery "acima da média", novo) + regra papel antes do PC | 3 | 06/08 | 19 |
 | A44 | UC09 | Estatística Aplicada — Av03-T2 Ato 1: variável qualitativa (nominal/ordinal/binária) vs. quantitativa discreta + probabilidade básica (P(A), P(A∩B), condicional bônus), instrumento separado sobre `abrigo_adocao.csv` | 3 | 06/08 | — |
+| A45 | UC07 | Transformação Digital — cases brasileiros Nubank (nuFormer)/iFood (recomendação+logística)/Embrapa (visão computacional agro), estrutura pesquisa→entendimento→conclusão + pergunta fixa de LGPD, 2 debates de escolha forçada, mesa-redonda em grupos | 3 | 07/08 | — |
+| A45 | UC04 | Fundamentos e Conceitos de IA — revisão rápida KNN/Árvore de Decisão/K-Means (já vistos em A39) + aprendizado por reforço (novo, introdução leve) + ponte conceitual supervisionado/não supervisionado ancorada em `abrigo_adocao.csv` + Av04-T2 (prova individual, encerra Ind.2+3) | 3 | 07/08 | — |
 ---

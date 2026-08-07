@@ -131,8 +131,10 @@ Redes neurais convolucionais (CNNs, o mesmo tipo de rede usada em reconhecimento
 
 | Bloco | Status |
 |---|---|
-| UC07 Transformação Digital | ⏳ Pendente |
-| UC04 Fundamentos e Conceitos de IA | ⏳ Pendente |
+| UC07 Transformação Digital | ✅ Gerado e revisado (slides 1-22, após inserção do slide de UC07-7 e correções do revisor-aula) - lint 0 erros |
+| UC04 Fundamentos e Conceitos de IA | ✅ Gerado e revisado (slides 23-37) - lint 0 erros, avisos consecutive-teoria são artefato conhecido do script (frontmatter por slide), verificado manualmente sem violação real |
+
+**Total: 37 slides.** Correções aplicadas em 08/08 após achados do `@revisor-aula`: slide novo de UC07-7 (fluxo do dado + mudança no trabalho, sem LGPD nova), rubrica da Av04-T2 e da ficha de análise convertidas de pontuação numérica para A/PA/NA, definição de "token" tornada visível, debate de fechamento expandido para 3 posições (Nubank/iFood/Embrapa), callback entre Bloco 1 e Bloco 2, e reordenação do slide de RL (analogia antes do jargão). Posição do slide novo de UC07-7 foi ajustada de 18 para 20 durante verificação para não violar o limite de 2 `[TEORIA]` consecutivos.
 
 ---
 

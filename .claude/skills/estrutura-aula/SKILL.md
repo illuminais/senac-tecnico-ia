@@ -22,6 +22,7 @@ Cada bloco de aula (`aulaNum`) deve seguir esta ordem:
 | `[DINAMICA]` | Atividade interativa: jogo, roleplay, votação, game | brainstorm com mecânica de jogo, contagem de pontos |
 | `[DEBATE]` | Pergunta aberta para reflexão coletiva | brainstorm sem mecânica de jogo, perguntas técnicas |
 | `[TAREFA DE CASA]` | Atividade para entregar na próxima aula | slide layout default com prazo e instruções |
+| `[ATIV AVALIATIVA]` | Avaliação formal (prova, instrumento com nota) — **não é `[TEORIA]`**, conta como quebra estrutural igual `[EXERCICIO]` | comentário HTML `<!-- [ATIV AVALIATIVA] ... -->`, instruções de prova, questões numeradas com gabarito/rubrica A/PA/NA |
 
 ---
 
@@ -30,7 +31,7 @@ Cada bloco de aula (`aulaNum`) deve seguir esta ordem:
 - `[EXERCICIO]` após `[DINAMICA]` (exceto warm-up no início do grupo)
 - `[TEORIA]` após `[DINAMICA]` (teoria fora de ordem)
 - `[TEORIA]` após `[TAREFA DE CASA]`
-- Mais de 2 `[TEORIA]` consecutivos sem `[EXERCICIO]` ou `[DINAMICA]` entre eles
+- Mais de 2 `[TEORIA]` consecutivos sem `[EXERCICIO]`, `[DINAMICA]` ou `[ATIV AVALIATIVA]` entre eles
 
 ---
 
@@ -43,6 +44,7 @@ Cada bloco de aula (`aulaNum`) deve seguir esta ordem:
 | Menciona "exercício", "nível N", caminho de arquivo, "Salve como" | `[EXERCICIO]` |
 | `layout: cover`, `layout: end`, `layout: center` com texto divisor | `[TEORIA]` |
 | Menciona "Tarefa de Casa" ou "Atividade para Casa" | `[TAREFA DE CASA]` |
+| Comentário HTML `[ATIV AVALIATIVA]`, ou menciona "prova", "avaliação individual", "questão N" com gabarito/rubrica A/PA/NA | `[ATIV AVALIATIVA]` (não é `[TEORIA]` — conta como quebra estrutural) |
 
 ---
 
@@ -61,7 +63,16 @@ Cada grupo de slides de uma aula DEVE ter:
 
 ### Slide de Debate (quando ausente)
 
-**Regra (feedback do professor — perguntas abertas genéricas viram silêncio ou são puladas):** nunca usar pergunta aberta de reflexão ("o que vocês acham de X?"). Sempre montar como **dilema de escolha forçada**: duas posições concretas e opostas, ligadas ao dado/caso real da aula (dataset, case, exercício que acabaram de fazer), cada aluno/grupo precisa escolher um lado e justificar com algo concreto (um dado, uma linha da tabela, um trecho do case). Perguntas técnicas soltas sem posição pra defender voltam a ser genéricas — evitar.
+**Regra 1 — dilema de escolha forçada (feedback do professor — perguntas abertas genéricas viram silêncio ou são puladas):** nunca usar pergunta aberta de reflexão ("o que vocês acham de X?"). Sempre montar como **dilema de escolha forçada**: duas posições concretas e opostas, ligadas ao dado/caso real da aula (dataset, case, exercício que acabaram de fazer), cada aluno/grupo precisa escolher um lado e justificar com algo concreto (um dado, uma linha da tabela, um trecho do case). Perguntas técnicas soltas sem posição pra defender voltam a ser genéricas — evitar.
+
+**Regra 2 — estrutura obrigatória (feedback do professor, 06/08/2026: "não vou fazer debate lendo um slide e esperando eles discutir entre eles"):** todo `[DEBATE]` (Time A x Time B, ou variações) precisa deixar explícito no(s) slide(s):
+
+- **Como a turma se divide e quantas pessoas debatem entre si** — nunca implícito. Ex: "turma dividida ao meio" ou "grupos de N alunos, C grupos por lado" (usar o tamanho real da turma e o agrupamento já usado na aula, quando existir).
+- **Papel de cada um dentro do grupo** — quem argumenta em voz alta, quem cronometra, quem escreve/anota. Ninguém fica de fora do processo assistindo.
+- **Começo, meio e fim com tempo definido por etapa** — nunca só "escolham um lado, 5 minutos" sem dizer o que acontece dentro desses 5 minutos. Etapas típicas: preparar (grupo monta o argumento) → apresentar (cada lado fala, tempo cronometrado) → réplica → síntese.
+- **Entrega parcial concreta em cada etapa** — ex: o grupo escreve o argumento no papel antes de falar, escolhe o representante antes da etapa de apresentação. Isso é sobre manter todo mundo engajado durante a etapa, não sobre nota/pontuação (rubricas de avaliação seguem critério A/PA/NA, nunca ponto numérico — ver skill `revisao-conteudo`).
+
+Isso normalmente exige **2 slides** (setup + papéis, depois confronto + fechamento) em vez de 1 slide estático de leitura.
 
 ```markdown
 ---
@@ -72,17 +83,31 @@ pulse: true
 aulaNum: "Aula NN"
 ---
 
-<!-- debate: [aula NN] -->
+<!-- debate: [aula NN] — setup -->
 
 # Debate: [Tema Principal da Aula]
 
-**Escolham um lado — 5 minutos**
-
 **[Dilema concreto ligado ao dado/caso da aula, com duas posições opostas nomeadas, ex: "Time A defende ___ · Time B defende ___"]**
 
-- Time A: [posição 1, ligada a um dado/linha/trecho concreto]
-- Time B: [posição 2, ligada a um dado/linha/trecho concreto]
-- Cada grupo justifica com um exemplo real do material da aula (não vale opinião solta)
+- [Como a turma se divide: "turma dividida ao meio" ou "N grupos de M, metade defende Time A, metade Time B"]
+- Dentro do grupo: 1 pessoa argumenta em voz alta, 1 cronometra, o resto ajuda a montar o argumento
+- **[X] min:** cada grupo escreve o argumento mais forte, ligado a um dado/linha/trecho concreto do material da aula
+
+---
+layout: brainstorm
+card: true
+bgPreset: palette
+pulse: false
+---
+
+<!-- debate: [aula NN] — confronto e fechamento -->
+
+# Debate: [Tema Principal da Aula] (cont.)
+
+- **[X] min:** Time A apresenta o argumento
+- **[X] min:** Time B apresenta o argumento
+- **[X] min:** réplica livre (qualquer um dos dois lados)
+- **[X] min:** professor sintetiza e conecta com o próximo tópico
 
 > **Conexão futura:** [como conecta com próximo tópico]
 ```
@@ -111,7 +136,7 @@ Especifique: o que criar, onde salvar (caminho SENAC-TecIA/Aula-NN/...), formato
 
 ## Máximo de `[TEORIA]` consecutivos
 
-Máximo 2 slides `[TEORIA]` consecutivos sem um `[EXERCICIO]` ou `[DINAMICA]` no meio.
+Máximo 2 slides `[TEORIA]` consecutivos sem um `[EXERCICIO]`, `[DINAMICA]` ou `[ATIV AVALIATIVA]` no meio.
 
 **Nota:** Slides divisores (`layout: center` com "AULA NN") são `[TEORIA]` estrutural — não contam para a regra de consecutivos.
 
