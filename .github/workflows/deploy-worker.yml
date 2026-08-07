@@ -1,0 +1,65 @@
+name: Deploy Worker (API)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'platform/worker/**'
+      - 'platform/shared/**'      # pure.ts é consumido pelo worker E pelo portal
+      - 'platform/wrangler.toml'
+      - '.github/workflows/deploy-worker.yml'
+  workflow_dispatch:
+
+concurrency:
+  # Diferente do Pages: um wrangler deploy cortado no meio é pior que fila, e
+  # deploy de worker leva segundos. Enfileira em vez de cancelar.
+  group: deploy-worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint:worker
+
+      - name: Typecheck
+        run: npm run typecheck:worker
+
+      # ─────────────────────────────────────────────────────────────────────
+      # DESABILITADO DE PROPÓSITO. Este workflow entra primeiro só com
+      # lint+typecheck, pra validar que os path filters roteiam certo sem
+      # arriscar a API. Antes de descomentar, conferir os 4 pré-requisitos:
+      #
+      #  1. CLOUDFLARE_API_TOKEN hoje só precisa de "Pages: Edit". Deploy de
+      #     worker exige "Workers Scripts: Edit" + "D1: Edit" (binding DB).
+      #  2. NÃO existe diretório de migrations — platform/worker/schema.sql é
+      #     aplicado na mão. Um commit que muda schema + código deploya código
+      #     contra D1 não migrado. Aplicar schema ANTES de mergear, e NUNCA
+      #     adicionar `wrangler d1 execute` aqui.
+      #  3. Confirmar que master bate com o que está em produção hoje (o worker
+      #     é deployado manualmente): `npx wrangler deploy --dry-run` e comparar.
+      #     O primeiro deploy automatizado sobrescreve qualquer hot-patch.
+      #  4. Secrets (JWT_SECRET, RESEND_API_KEY, GOOGLE_CLIENT_SECRET) já estão
+      #     no script deployado e NÃO são tocados por `wrangler deploy`. Nada a
+      #     fazer — e não adicionar `wrangler secret put` aqui.
+      # ─────────────────────────────────────────────────────────────────────
+      # - name: Deploy to Cloudflare Workers
+      #   uses: cloudflare/wrangler-action@v4
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #     workingDirectory: platform
+      #     command: deploy
