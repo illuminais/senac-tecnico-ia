@@ -4,8 +4,6 @@
   "private": true,
   "description": "Monorepo de apresentações Slidev para o curso Técnico em IA — SENAC",
   "workspaces": [
-    "slidev-theme-neural",
-    "aula-*",
     "aulas/*/*",
     "platform/portal"
   ],
