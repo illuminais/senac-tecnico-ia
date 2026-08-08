@@ -38,28 +38,28 @@ jobs:
       - name: Typecheck
         run: npm run typecheck:worker
 
-      # ─────────────────────────────────────────────────────────────────────
-      # DESABILITADO DE PROPÓSITO. Este workflow entra primeiro só com
-      # lint+typecheck, pra validar que os path filters roteiam certo sem
-      # arriscar a API. Antes de descomentar, conferir os 4 pré-requisitos:
+      # Pré-requisitos conferidos em 2026-08-08, antes de ligar este step:
       #
-      #  1. CLOUDFLARE_API_TOKEN hoje só precisa de "Pages: Edit". Deploy de
-      #     worker exige "Workers Scripts: Edit" + "D1: Edit" (binding DB).
-      #  2. NÃO existe diretório de migrations — platform/worker/schema.sql é
-      #     aplicado na mão. Um commit que muda schema + código deploya código
-      #     contra D1 não migrado. Aplicar schema ANTES de mergear, e NUNCA
-      #     adicionar `wrangler d1 execute` aqui.
-      #  3. Confirmar que master bate com o que está em produção hoje (o worker
-      #     é deployado manualmente): `npx wrangler deploy --dry-run` e comparar.
-      #     O primeiro deploy automatizado sobrescreve qualquer hot-patch.
-      #  4. Secrets (JWT_SECRET, RESEND_API_KEY, GOOGLE_CLIENT_SECRET) já estão
-      #     no script deployado e NÃO são tocados por `wrangler deploy`. Nada a
-      #     fazer — e não adicionar `wrangler secret put` aqui.
-      # ─────────────────────────────────────────────────────────────────────
-      # - name: Deploy to Cloudflare Workers
-      #   uses: cloudflare/wrangler-action@v4
-      #   with:
-      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      #     workingDirectory: platform
-      #     command: deploy
+      #  [ok] Schema D1: as 19 tabelas do schema.sql existem em produção, e os
+      #       dois ALTER TABLE manuais documentados já estão aplicados
+      #       (users.turma_id e notas.comentario). Continua valendo a regra:
+      #       schema.sql é aplicado À MÃO antes de mergear. NÃO adicionar
+      #       `wrangler d1 execute` aqui — não existe diretório de migrations.
+      #  [ok] Paridade master vs produção: produção estava 3 commits atrás
+      #       (último deploy 2026-07-29T15:45Z, sem o refactor de routes/+lib/).
+      #       Resolvido com deploy manual a partir de master + smoke test das
+      #       rotas, então o primeiro deploy automático daqui é um no-op.
+      #  [ok] Secrets (JWT_SECRET, RESEND_API_KEY, GOOGLE_CLIENT_SECRET) já
+      #       estão no script e NÃO são tocados por `wrangler deploy`. Não
+      #       adicionar `wrangler secret put` aqui.
+      #  [!!] CLOUDFLARE_API_TOKEN: o token do repositório precisa de
+      #       "Workers Scripts: Edit" + "D1: Edit" além do "Pages: Edit" que já
+      #       tinha. Se este step falhar com 403 / código 10000, é isso —
+      #       atualizar em dash.cloudflare.com > My Profile > API Tokens.
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: platform
+          command: deploy
