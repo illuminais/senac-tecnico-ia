@@ -1,0 +1,108 @@
+name: Deploy Pages (portal + aulas)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'aulas/**'
+      - 'avaliacoes/**'              # gera avaliacoes.json + copia content.md
+      - 'neural-slides-template/**'  # tema compartilhado por 43 das 44 aulas
+      - 'platform/portal/**'
+      - 'platform/scripts/**'
+      - 'platform/shared/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: 'Ignorar o cache e rebuildar todas as aulas'
+        type: boolean
+        default: false
+
+concurrency:
+  # Matar um deploy do Pages pela metade é seguro: o deployment só é promovido
+  # quando o upload termina, então o anterior continua no ar.
+  group: deploy-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ANTES do npm ci: o npm workspaces cria árvores de symlink em
+      # aulas/*/*/node_modules, e uma delas (node_modules/neural-slides-template)
+      # aponta de volta pra dentro de aulas/ — o hashFiles andaria em círculo.
+      # Os padrões "!" são defesa redundante; a ordem é a proteção real.
+      - name: Restaurar cache de build das aulas
+        id: dist-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: platform/dist
+          key: aulas-dist-v1-${{ hashFiles('aulas/**', '!aulas/**/node_modules/**', 'neural-slides-template/**', '!neural-slides-template/node_modules/**', 'platform/scripts/build-all.mjs', 'package-lock.json') }}
+          restore-keys: |
+            aulas-dist-v1-
+
+      - name: Status do cache
+        run: |
+          echo "primary : ${{ steps.dist-cache.outputs.cache-primary-key }}"
+          echo "matched : ${{ steps.dist-cache.outputs.cache-matched-key }}"
+          echo "exato   : ${{ steps.dist-cache.outputs.cache-hit }}"
+          if [ -d platform/dist ]; then
+            echo "restaurado: $(du -sh platform/dist | cut -f1), $(find platform/dist -mindepth 1 -maxdepth 1 -type d -name 'a*-*' | wc -l) aula(s)"
+          else
+            echo "restaurado: nada (build frio)"
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build aulas (incremental) + portal
+        id: build
+        run: npm run build:pages
+        env:
+          NODE_ENV: production
+          VITE_GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+          FORCE_REBUILD: ${{ (github.event_name == 'workflow_dispatch' && inputs.force_rebuild) && '1' || '' }}
+
+      # Contagem tem que ficar estável entre runs. Crescimento monotônico é a
+      # assinatura do prune não dando conta do emptyOutDir:false do portal — o
+      # único modo de falha deste desenho que fica invisível até bater no teto
+      # de 20.000 arquivos por deployment do Pages.
+      - name: Inventário do dist
+        run: |
+          du -sh platform/dist
+          echo "arquivos: $(find platform/dist -type f | wc -l)"
+          echo "aulas:    $(find platform/dist -mindepth 1 -maxdepth 1 -type d -name 'a*-*' | wc -l)"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy platform/dist --project-name=senac-lms --commit-dirty=true
+
+      # Depois do deploy: upload de cache não pode ficar no caminho crítico.
+      #  - cache-hit != 'true': entrada de cache é imutável, e em hit exato nada
+      #    foi buildado — re-salvar só gera warning e queima ~45s por nada.
+      #  - !cancelled() e não always(): salva em FALHA (um lint quebrado não deve
+      #    jogar fora 40 aulas buildadas — o build-all faz delete do hash da aula
+      #    que errou, então o artefato continua consistente), mas não em
+      #    cancelamento, senão cada run superada por cancel-in-progress gasta 45s.
+      #  - build.outcome: se o lint falhou antes do build, o dist restaurado está
+      #    intacto e não há nada novo pra salvar.
+      - name: Salvar cache de build das aulas
+        if: ${{ !cancelled() && steps.dist-cache.outputs.cache-hit != 'true' && steps.build.outcome != 'skipped' }}
+        uses: actions/cache/save@v4
+        with:
+          path: platform/dist
+          key: ${{ steps.dist-cache.outputs.cache-primary-key }}

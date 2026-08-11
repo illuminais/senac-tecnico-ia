@@ -4,8 +4,6 @@
   "private": true,
   "description": "Monorepo de apresentações Slidev para o curso Técnico em IA — SENAC",
   "workspaces": [
-    "slidev-theme-neural",
-    "aula-*",
     "aulas/*/*",
     "platform/portal"
   ],
@@ -27,6 +25,8 @@
     "validate:ha": "node scripts/validate-ha.mjs",
     "lint:slides": "node scripts/lint-slides.mjs",
     "lint:platform": "eslint platform/worker/src platform/shared platform/scripts platform/portal/src",
+    "lint:pages": "eslint platform/portal/src platform/scripts platform/shared",
+    "lint:worker": "eslint platform/worker/src platform/shared",
     "typecheck:worker": "tsc --noEmit -p platform/worker/tsconfig.json",
     "check:platform": "npm run lint:platform && npm run typecheck:worker",
     "validate:graph": "node platform/scripts/validate-graph.mjs",
@@ -45,8 +45,10 @@
     "export:a13-ucxx-11abr": "npm run export --workspace=a13-ucxx-11abr",
     "build:aulas": "node platform/scripts/build-all.mjs",
     "build:aulas:all": "node platform/scripts/build-all.mjs --all",
+    "build:aulas:force": "node platform/scripts/build-all.mjs --force",
     "build:portal": "npm run build --workspace=portal",
     "build:platform": "npm run check:platform && npm run build:aulas && npm run build:portal",
+    "build:pages": "npm run lint:pages && npm run build:aulas && npm run build:portal",
     "build:platform:all": "npm run check:platform && npm run build:aulas:all && npm run build:portal",
     "preview:platform": "npm run build:platform:all && npm run preview --workspace=portal",
     "deploy:pages": "npm run build:platform && npx wrangler pages deploy platform/dist --project-name=senac-lms --commit-dirty=true",

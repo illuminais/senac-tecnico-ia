@@ -1,8 +1,10 @@
 {
-  "name": "neural-slides-template",
+  "name": "a20-uc07-04-02mai",
   "version": "1.0.0",
   "description": "Template oficial do Neural Slides para o Técnico em Inteligência Artificial — Senac",
-  "keywords": ["slidev-theme"],
+  "keywords": [
+    "slidev-theme"
+  ],
   "private": true,
   "scripts": {
     "dev": "slidev slides.md --open",

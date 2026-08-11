@@ -11,17 +11,34 @@
  * arquivos sem mudar o conteúdo. Só rebuilda a aula se slides.md/meta.yaml/etc
  * realmente mudaram desde o último build bem-sucedido.
  *
+ * O hash de cada aula inclui um GLOBAL_HASH (tema + lockfile + versão do
+ * slidev + bytes deste script), então editar o tema compartilhado invalida
+ * todas as aulas em vez de gerar deploy silenciosamente desatualizado.
+ *
+ * ⚠️  Este script faz PRUNE do platform/dist: tudo que não é slug válido nem
+ * artefato conhecido é apagado, INCLUSIVE o output do portal (que o
+ * `build:portal` regenera logo em seguida, já que o vite roda com
+ * emptyOutDir:false pra não apagar as aulas). Isso é o que torna o dist uma
+ * função pura da árvore atual — pré-requisito pra confiar num cache
+ * persistido no CI. Consequência: rodar SÓ `build:aulas` e servir o dist
+ * deixa sem portal até rodar `build:portal`.
+ *
  * Uso:
  *   node platform/scripts/build-all.mjs          ← só published (incremental)
  *   node platform/scripts/build-all.mjs --all    ← todas (dev local, incremental)
  *   node platform/scripts/build-all.mjs --force  ← rebuilda tudo do zero
  *   node platform/scripts/build-all.mjs --all --force
+ *
+ * Env:
+ *   FORCE_REBUILD=1        ← equivalente a --force (usado pelo workflow_dispatch)
+ *   BUILD_CONCURRENCY=N    ← builds simultâneos (default: min(4, cpus, mem/2GB))
  */
 
 import fs from 'fs'
+import os from 'os'
 import path from 'path'
 import crypto from 'crypto'
-import { execSync } from 'child_process'
+import { spawn } from 'child_process'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -29,8 +46,29 @@ const ROOT  = path.resolve(__dirname, '../..')
 const DIST  = path.resolve(__dirname, '../dist')
 const CACHE_FILE = path.join(DIST, '.build-cache.json')
 
-const includeAll    = process.argv.includes('--all')
-const forceRebuild  = process.argv.includes('--force')
+const SELF       = fileURLToPath(import.meta.url)
+const THEME_DIR  = path.join(ROOT, 'neural-slides-template')
+const SLIDEV_BIN = path.join(ROOT, 'node_modules/@slidev/cli/bin/slidev.mjs')
+
+/** Bump manual: invalida TODAS as aulas na próxima rodada. Use quando mudar a
+ *  lógica de build de um jeito que muda o output sem mudar bytes de fonte. */
+const SCRIPT_VERSION = '1'
+
+const includeAll = process.argv.includes('--all')
+
+// A env var existe porque `npm run build:pages -- --force` anexa o flag ao
+// ÚLTIMO comando do `&&` (o build:portal), que ignora em silêncio. O
+// workflow_dispatch usa FORCE_REBUILD=1.
+const forceRebuild = process.argv.includes('--force') || process.env.FORCE_REBUILD === '1'
+
+// Runner do GitHub é 4 vCPU / 16 GB. O teto por memória existe porque cada
+// build vite/rollup come ~1-1.5 GB — numa máquina de 7 GB, 4 simultâneos
+// derrubam a build por OOM.
+const CONCURRENCY = Number(process.env.BUILD_CONCURRENCY) || Math.max(1, Math.min(
+  4,
+  os.cpus().length,
+  Math.floor(os.totalmem() / (2 * 1024 ** 3)),
+))
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -113,37 +151,172 @@ function log(msg, color = '') {
   console.log(`${colors[color] || ''}${msg}${colors.reset}`)
 }
 
-/**
- * Hash de conteúdo (não mtime) dos fontes de uma aula: slides.md, meta.yaml e
- * todos os .vue/.ts/.js/.css/.json da pasta. Baseado em conteúdo (não em
- * timestamp) porque mtime não é confiável entre ambientes — um `git
- * checkout`, um sandbox recém-criado, ou qualquer operação que reescreva os
- * arquivos pode "tocar" o mtime sem o conteúdo ter mudado, forçando rebuild
- * de tudo à toa (foi exatamente o que aconteceu — build de 39 aulas do zero
- * mesmo sem nenhuma ter sido editada).
- */
-function contentHash(aulaDir) {
-  const TRACK_EXT = /\.(md|yaml|vue|ts|js|css|json|png|jpg|jpeg|svg|gif|ico)$/
+// Deny-list de diretórios derivados. Era um allow-list de extensões, que
+// perdia .csv/.html/.webp/.db/.sql — a deny-list erra pro lado de
+// over-invalidar, e rebuildar à toa custa 12s enquanto NÃO rebuildar quando
+// devia entrega slide errado em produção.
+const IGNORE_DIRS  = new Set(['node_modules', '.slidev', 'dist', '.git', '.vite', '.cache', '.temp'])
+// Metadados de VCS/SO: não são lidos por vite nem slidev, então não podem
+// mudar o output. Ficam de fora pra que editar o .gitignore do tema não
+// custe um rebuild das 43 aulas.
+const IGNORE_FILES = new Set(['.DS_Store', 'Thumbs.db', 'desktop.ini', '.gitignore', '.gitattributes'])
+
+// O slidev escreve <aulaDir>/index.html como entry do vite durante o build e
+// apaga no fim — mas o arquivo SOBREVIVE se o build for interrompido (Ctrl+C,
+// ou o cancel-in-progress do CI). Sem essa exclusão, o resto de um build morto
+// muda o hash da aula e força rebuild na rodada seguinte.
+const AULA_IGNORE_REL = new Set(['index.html'])
+
+function collectFiles(root, ignoreRel = new Set()) {
   const files = []
-  const stack = [aulaDir]
+  const stack = [root]
   while (stack.length) {
     const dir = stack.pop()
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (entry.name === 'node_modules' || entry.name === '.slidev' || entry.name === 'dist') continue
+    let entries
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }) } catch { continue }
+    for (const entry of entries) {
+      // Nunca seguir symlink: o package.json da A20_UC07+04_02mai ainda se
+      // chama "neural-slides-template", então o npm workspaces planta
+      // node_modules/neural-slides-template → aquela pasta de aula. Seguir o
+      // link faria o walk andar em círculo.
+      if (entry.isSymbolicLink()) continue
       const full = path.join(dir, entry.name)
-      if (entry.isDirectory()) { stack.push(full); continue }
-      if (!TRACK_EXT.test(entry.name)) continue
+      if (entry.isDirectory()) {
+        if (!IGNORE_DIRS.has(entry.name)) stack.push(full)
+        continue
+      }
+      if (!entry.isFile() || IGNORE_FILES.has(entry.name)) continue
+      if (ignoreRel.has(path.relative(root, full).split(path.sep).join('/'))) continue
       files.push(full)
     }
   }
-  files.sort() // ordem estável independente da ordem de leitura do FS
+  return files.sort() // ordem estável independente da ordem de leitura do FS
+}
 
+/**
+ * Hash de conteúdo (não mtime) de uma árvore. Baseado em conteúdo porque mtime
+ * não é confiável entre ambientes — um `git checkout`, um sandbox recém-criado,
+ * ou qualquer operação que reescreva os arquivos pode "tocar" o mtime sem o
+ * conteúdo ter mudado, forçando rebuild de tudo à toa (foi exatamente o que
+ * aconteceu — build de 39 aulas do zero sem nenhuma ter sido editada).
+ */
+function hashTree(root, ignoreRel) {
   const hash = crypto.createHash('sha256')
-  for (const f of files) {
-    hash.update(path.relative(aulaDir, f))
-    hash.update(fs.readFileSync(f))
+  for (const f of collectFiles(root, ignoreRel)) {
+    // Separador \0 entre path e conteúdo: sem ele "ab"+"c" e "a"+"bc" colidem.
+    // path.sep normalizado pra "/": a criação de aula tem variante PowerShell,
+    // e sem isso o mesmo commit hasheia diferente no Windows e no Linux.
+    hash.update(path.relative(root, f).split(path.sep).join('/'))
+    hash.update('\0')
+    hash.update(crypto.createHash('sha256').update(fs.readFileSync(f)).digest())
   }
   return hash.digest('hex')
+}
+
+function hashFile(file) {
+  if (!fs.existsSync(file)) return 'missing'
+  return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
+}
+
+function installedSlidevVersion() {
+  try {
+    const pkg = path.join(ROOT, 'node_modules/@slidev/cli/package.json')
+    return JSON.parse(fs.readFileSync(pkg, 'utf8')).version
+  } catch { return 'unknown' }
+}
+
+/**
+ * Tudo que afeta o output de QUALQUER aula, computado uma vez. O tema é o item
+ * central: neural-slides-template/ é usado por 43 das 44 aulas e ficava de fora
+ * do hash, então editar o tema gerava deploy silenciosamente desatualizado.
+ *
+ * Hashear os bytes deste próprio script faz uma edição de comentário rebuildar
+ * tudo. É de propósito: a alternativa (confiar na disciplina de bumpar
+ * SCRIPT_VERSION) falha em silêncio e pra sempre na primeira vez que alguém
+ * esquecer, e um rebuild completo em paralelo é ~3 min.
+ */
+const GLOBAL_HASH = (() => {
+  const h = crypto.createHash('sha256')
+  h.update(`v=${SCRIPT_VERSION}\0`)
+  h.update(`slidev=${installedSlidevVersion()}\0`)
+  h.update(`script=${hashFile(SELF)}\0`)
+  h.update(`lock=${hashFile(path.join(ROOT, 'package-lock.json'))}\0`)
+  h.update(`theme=${fs.existsSync(THEME_DIR) ? hashTree(THEME_DIR) : 'missing'}\0`)
+  return h.digest('hex')
+})()
+
+function aulaHash(aulaDir) {
+  return crypto.createHash('sha256')
+    .update(GLOBAL_HASH).update('\0').update(hashTree(aulaDir, AULA_IGNORE_REL))
+    .digest('hex')
+}
+
+/**
+ * Builda uma aula em processo separado. Chama o bin do slidev direto via
+ * process.execPath (sem shell, args em array) — nomes de pasta têm "+"
+ * (A44_UC08+09_06ago) e isso evita tanto quoting quanto o overhead do npx.
+ */
+function buildAula({ dirName, aulaDir, slug, meta }) {
+  return new Promise((resolve) => {
+    const aulaDistDir = path.join(DIST, slug)
+    // Limpar dist anterior desta aula
+    fs.rmSync(aulaDistDir, { recursive: true, force: true })
+
+    const child = spawn(
+      process.execPath,
+      [SLIDEV_BIN, 'build', '--base', `/${slug}/`, '--out', aulaDistDir],
+      { cwd: aulaDir, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, FORCE_COLOR: '1' } },
+    )
+
+    // Buffer do output em vez de stdio:'inherit': com N builds simultâneos as
+    // linhas de 4 aulas se embaralham e o log de CI vira ilegível.
+    const chunks = []
+    child.stdout.on('data', c => chunks.push(c))
+    child.stderr.on('data', c => chunks.push(c))
+    child.on('error', (err) => chunks.push(Buffer.from(`spawn error: ${err.message}\n`)))
+    child.on('close', (code) => {
+      const ok = code === 0
+      const grouped = process.env.GITHUB_ACTIONS === 'true'
+      if (grouped) console.log(`::group::${ok ? '✅' : '❌'} ${dirName} → /${slug}/`)
+      else log(`\n─── ${ok ? '✅' : '❌'} ${dirName} → /${slug}/`, ok ? 'green' : 'red')
+      process.stdout.write(Buffer.concat(chunks).toString())
+      if (grouped) console.log('::endgroup::')
+      resolve({ dirName, slug, meta, ok, error: ok ? null : `slidev build saiu com código ${code}` })
+    })
+  })
+}
+
+/** Pool com limite fixo: N workers puxando da mesma fila, resultado na ordem de entrada. */
+async function runPool(items, limit, fn) {
+  const out = []
+  let next = 0
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => {
+    for (let i = next++; i < items.length; i = next++) out[i] = await fn(items[i])
+  }))
+  return out
+}
+
+const KEEP_FILES = new Set(['aulas.json', 'avaliacoes.json', '.build-cache.json'])
+const KEEP_DIRS  = new Set(['avaliacoes'])
+
+/**
+ * Torna platform/dist uma função pura da árvore atual: o que não é slug válido
+ * nem artefato conhecido é lixo — slug renomeado/despublicado, ou output antigo
+ * do portal que o vite não apaga porque roda com emptyOutDir:false.
+ *
+ * Sem isso o cache de CI transforma lixo em lixo IMORTAL. E é pior que
+ * desperdício: o _redirects tem 301 das aulas A39-A41 renomeadas, e no Pages
+ * arquivo estático ganha de regra de redirect — uma pasta órfã
+ * a39-uc04-uc05-03jul/ mascararia o próprio 301 pra sempre.
+ */
+function pruneDist(validSlugs) {
+  for (const entry of fs.readdirSync(DIST, { withFileTypes: true })) {
+    const name = entry.name
+    if (validSlugs.has(name)) continue
+    if (entry.isDirectory() ? KEEP_DIRS.has(name) : KEEP_FILES.has(name)) continue
+    fs.rmSync(path.join(DIST, name), { recursive: true, force: true })
+    log(`  🧹 dist/${name} removido (órfão ou output do portal)`, 'yellow')
+  }
 }
 
 function loadCache() {
@@ -184,7 +357,8 @@ aulaDirs.sort((a, b) => {
 
 log(`\n📚 Plataforma LMS — Build das Aulas`, 'cyan')
 log(`   Root: ${ROOT}`, 'cyan')
-log(`   Modo: ${includeAll ? 'ALL (dev)' : 'published only'}`, 'cyan')
+log(`   Modo: ${includeAll ? 'ALL (dev)' : 'published only'}${forceRebuild ? ' + FORCE' : ''}`, 'cyan')
+log(`   Hash global: ${GLOBAL_HASH.slice(0, 12)} (tema + lockfile + slidev ${installedSlidevVersion()})`, 'cyan')
 log(`   Aulas encontradas: ${aulaDirs.length}\n`, 'cyan')
 
 // ---------------------------------------------------------------------------
@@ -241,24 +415,32 @@ if (!fs.existsSync(DIST)) {
   fs.mkdirSync(DIST, { recursive: true })
 }
 
+pruneDist(new Set(aulasMeta.map(a => a.slug)))
+
 // ---------------------------------------------------------------------------
 // 4. Buildar cada aula
 // ---------------------------------------------------------------------------
 
 const results = []
 const cache = loadCache()
-const newCache = {}
+
+// Carry-forward em vez de {}: uma rodada published-only não pode apagar a
+// entrada de uma aula draft. Era isso que fazia alternar entre `build:aulas` e
+// `build:aulas:all` rebuildar tudo à toa.
+const newCache = { ...cache }
+
+// Fase 1 (serial, barata): hashear e particionar em pular/buildar.
+const toBuild = []
 
 for (const { dirName, aulaDir, slug, meta } of aulasMeta) {
-  const aulaDistDir = path.join(DIST, slug)
-  const hash = contentHash(aulaDir)
+  const hash = aulaHash(aulaDir)
   newCache[slug] = hash
 
   // Build incremental: pular se o hash de conteúdo bate com o último build
   // bem-sucedido E o dist ainda existe (não confia só no hash se o dist sumiu).
   const upToDate = !forceRebuild
     && cache[slug] === hash
-    && fs.existsSync(path.join(aulaDistDir, 'index.html'))
+    && fs.existsSync(path.join(DIST, slug, 'index.html'))
 
   if (upToDate) {
     log(`  ⏩ ${dirName} — sem alterações, pulando`, 'yellow')
@@ -266,32 +448,37 @@ for (const { dirName, aulaDir, slug, meta } of aulasMeta) {
     continue
   }
 
+  toBuild.push({ dirName, aulaDir, slug, meta })
+}
+
+// Fase 2 (paralela): builds isolados — cada aula é workspace própria, com seu
+// node_modules/.vite e seu .slidev/, sem estado mutável compartilhado.
+if (toBuild.length > 0) {
   log(`\n─────────────────────────────────────────`, 'cyan')
-  log(`  Buildando: ${dirName}`, 'cyan')
-  log(`  Slug: /${slug}/`, 'cyan')
+  log(`  Buildando ${toBuild.length} aula(s) — concorrência: ${CONCURRENCY}`, 'cyan')
+  log(`─────────────────────────────────────────`, 'cyan')
 
-  // Limpar dist anterior desta aula
-  if (fs.existsSync(aulaDistDir)) {
-    fs.rmSync(aulaDistDir, { recursive: true })
-  }
+  const built = await runPool(toBuild, CONCURRENCY, buildAula)
 
-  try {
-    // O Slidev usa --base para definir o subpath e --out para o output
-    execSync(
-      `npx slidev build --base "/${slug}/" --out "${aulaDistDir}"`,
-      { cwd: aulaDir, stdio: 'inherit' }
-    )
-
-    results.push({ dirName, slug, status: 'ok', meta })
-    log(`  ✅ ${dirName} buildado com sucesso`, 'green')
-  } catch (err) {
-    log(`  ❌ Erro ao buildar ${dirName}: ${err.message}`, 'red')
-    results.push({ dirName, slug, status: 'error', meta, error: err.message })
-    delete newCache[slug] // não cacheia build que falhou — próxima rodada tenta de novo
+  for (const { dirName, slug, meta, ok, error } of built) {
+    if (ok) {
+      results.push({ dirName, slug, status: 'ok', meta })
+    } else {
+      log(`  ❌ Erro ao buildar ${dirName}: ${error}`, 'red')
+      results.push({ dirName, slug, status: 'error', meta, error })
+      delete newCache[slug] // não cacheia build que falhou — próxima rodada tenta de novo
+    }
   }
 }
 
-// Persiste o cache (só aulas que buildaram OK ou já estavam em dia entram aqui)
+// Descarta entradas de slug que sumiu do disco (aula renomeada/deletada), senão
+// o manifesto cresce pra sempre. Usa aulaDirs (todas as pastas) e não
+// aulasMeta (só as filtradas), pra não anular o carry-forward acima.
+const knownSlugs = new Set(aulaDirs.map(a => toSlug(a.dirName)))
+for (const slug of Object.keys(newCache)) {
+  if (!knownSlugs.has(slug)) delete newCache[slug]
+}
+
 saveCache(newCache)
 
 // ---------------------------------------------------------------------------
