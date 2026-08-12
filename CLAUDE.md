@@ -86,13 +86,13 @@ Use o agente `criar-nova-aula` para criar a próxima pasta de aula. O agente cop
 
 ## Contexto Atual do Curso
 
-- **Última aula ministrada**: A43 (31/07/2026) — UC03 Fundamentos Matemáticos (atividade matemática + entrevistas individuais) + UC05 Python para IA (funções: def, return; teoria; exercícios fracos)
-- **Próxima aula**: A44 — [conforme rotação T2]
-- **Avaliações aplicadas**: Av.01 (concluída), Av.03 (23/04 — TriaBot TokenLab)
-- **Avaliações pendentes**: Av.02 (30/04 Limber), Av.04 (30/04 Quiz GPU), Av.05 (07/05), Av.06 (08/05)
+- **Última aula ministrada**: A45 (07/08/2026) — UC07 Transformação Digital (cases brasileiros) + UC04 Fundamentos e Conceitos de IA (Av04-T2, encerra UC04 no T2). ⚠️ A44 e A45 ainda não foram registradas em `AULAS-DADAS.md` — rodar `atualizador-pos-aula` com o relato
+- **Próxima aula**: A46 (13/08) — UC05 Python para IA (funções na prática) + UC02 Inglês Instrumental (Av05-T2 Error Report) · plano em `contextos/semanas/semana11.md`
+- **Avaliações T2 aplicadas**: Av02-T2 (31/07 UC03), Av03-T2 (06/08 UC09), Av04-T2 (07/08 UC04)
+- **Próximas avaliações**: Av05-T2 (13/08 UC02) · Av06-T2 (14/08 + 27/08, UC08 + UC06, dois atos) · Av07-T2 (20/08 UC01) · Av08-T2 e Av12-T2 (21/08, UC03 e UC05) · Av09-T2 (27/08 UC09) · Av10-T2 (20/08 + 28/08, UC07, dois atos) · Av11-T2 (04/09 UC06)
 - **Histórico completo**: ver `AULAS-DADAS.md`
-- **Calendário e composição de UCs**: ver `contextos/horarios/07-julho.md`
-- **Plano de avaliações T2**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
+- **Calendário e composição de UCs**: ver `contextos/horarios/08-agosto.md`
+- **Plano de avaliações T2 e conta de fechamento**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
 
 > ⚠️ **Manter esta seção atualizada** após cada uso de `atualizador-pos-aula`.
 

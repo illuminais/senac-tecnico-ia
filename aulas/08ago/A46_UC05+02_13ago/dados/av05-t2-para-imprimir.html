@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Av05-T2 — Error Report</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.35; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 8px; }
+  .nome-linha { margin: 8px 0 12px; font-size: 13px; }
+  .nome-linha span { display: inline-block; border-bottom: 1px solid #000; min-width: 250px; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 16px; }
+  h3 { font-size: 12px; margin: 12px 0 4px; }
+  pre { font-family: 'Consolas', 'Courier New', monospace; font-size: 10px; background: #f5f5f5;
+        border: 1px solid #bbb; padding: 5px 7px; margin: 4px 0; white-space: pre; }
+  pre.tb { background: #fff; border-left: 3px solid #333; }
+  .caixa { border: 1px solid #666; padding: 6px 9px; margin: 8px 0; font-size: 11px; background: #fafafa; }
+  .caixa b { font-size: 11px; }
+  .item { margin: 8px 0; page-break-inside: avoid; }
+  .alt { display: block; margin: 1px 0 1px 12px; font-size: 11px; }
+  .linha { border-bottom: 1px solid #999; display: block; height: 15px; margin-top: 3px; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eee; padding: 0 3px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { border: 1px solid #999; padding: 4px 6px; font-size: 11px; vertical-align: top; }
+  th { background: #eee; }
+  .rodape { font-size: 10px; color: #555; margin-top: 14px; border-top: 1px solid #ccc; padding-top: 5px; }
+  .page-break { page-break-before: always; }
+  .tag { font-size: 10px; color: #666; font-weight: normal; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Av05-T2 — Error Report: lendo o que a máquina responde</h1>
+<div class="sub">UC02 Inglês Instrumental · A46 · 13/08/2026 · individual · sem computador · sem celular</div>
+
+<div class="nome-linha">Nome: <span>&nbsp;</span> &nbsp; Turma: <span style="min-width:90px;">&nbsp;</span></div>
+
+<div class="caixa">
+<b>Como funciona esta avaliação — duas fases</b><br>
+<b>Fase 1 (agora):</b> você responde sozinho, sem consulta e sem ajuda. Vale o que você consegue ler <i>hoje</i>.<br>
+<b>Fase 2 (depois):</b> o professor projeta o gabarito, a turma corrige junto, e você escreve <b>o que errou e por quê</b>
+na última folha. A fase 2 é obrigatória — a prova só está entregue quando estiver corrigida por você.
+</div>
+
+<div class="caixa">
+<b>Método de leitura de uma mensagem de erro — 3 passos</b><br>
+<b>1. ONDE?</b> procure <span class="cod">File "...", line N</span> &nbsp;·&nbsp;
+<b>2. O QUÊ?</b> o nome do tipo, antes dos dois-pontos &nbsp;·&nbsp;
+<b>3. POR QUÊ?</b> a mensagem depois dos dois-pontos<br>
+Quando aparecer <span class="cod">Traceback (most recent call last)</span>, leia <b>de baixo para cima</b>.
+</div>
+
+<h2>Bloco de código — leia antes de responder</h2>
+<p style="font-size:11px;margin:4px 0;">Sete programas foram executados. Abaixo está o código de cada um e a mensagem
+que apareceu na tela. <b>As questões das Partes 1, 2A e 3 se referem a estes códigos.</b><br>
+<span style="font-size:10px;color:#555;">Os números à esquerda (1, 2, 3...) são a contagem das linhas — não fazem parte do código.</span></p>
+
+<h3>C1</h3>
+<pre>1  def ficha(nome_animal)
+2      return f"Ficha de {nome_animal}"
+3
+4  print(ficha("Rex"))</pre>
+<pre class="tb">  File "c1.py", line 1
+    def ficha(nome_animal)
+                          ^
+SyntaxError: expected ':'</pre>
+
+<h3>C2</h3>
+<pre>1  def idade_em_anos(idade_meses):
+2  return idade_meses / 12
+3
+4  print(idade_em_anos(30))</pre>
+<pre class="tb">  File "c2.py", line 2
+    return idade_meses / 12
+    ^^^^^^
+IndentationError: expected an indented block after function definition on line 1</pre>
+
+<h3>C3</h3>
+<pre>1  def classifica_espera(dias_no_abrigo):
+2      if dias_no_abrigo &gt; 60:
+3          return "longa"
+4      return "recente"
+5
+6  print(classifica_espera())</pre>
+<pre class="tb">Traceback (most recent call last):
+  File "c3.py", line 6, in &lt;module&gt;
+    print(classifica_espera())
+          ~~~~~~~~~~~~~~~~~^^
+TypeError: classifica_espera() missing 1 required positional argument: 'dias_no_abrigo'</pre>
+
+<h3>C4</h3>
+<pre>1  def ficha(nome_animal):
+2      return f"Ficha de {nome_animal}"
+3
+4  print(ficha(nome_do_animal))</pre>
+<pre class="tb">Traceback (most recent call last):
+  File "c4.py", line 4, in &lt;module&gt;
+    print(ficha(nome_do_animal))
+                ^^^^^^^^^^^^^^
+NameError: name 'nome_do_animal' is not defined</pre>
+
+<div class="page-break"></div>
+
+<h3>C5</h3>
+<pre>1  idade_meses = input("Idade em meses: ")
+2  total = idade_meses + 12
+3  print(total)</pre>
+<pre class="tb">Traceback (most recent call last):
+  File "c5.py", line 2, in &lt;module&gt;
+    total = idade_meses + 12
+            ~~~~~~~~~~~~^~~~
+TypeError: can only concatenate str (not "int") to str</pre>
+
+<h3>C6</h3>
+<pre>1  dias = [10, 210, 22, 5]
+2  print(dias[4])</pre>
+<pre class="tb">Traceback (most recent call last):
+  File "c6.py", line 2, in &lt;module&gt;
+    print(dias[4])
+          ~~~~^^^
+IndexError: list index out of range</pre>
+
+<h3>C7</h3>
+<pre>1  def media_dias(lista):
+2      soma = 0
+3      for d in lista:
+4          soma = soma + d
+5      return soma / len(lista)
+6
+7  print(media_dias([10, 210, 22]))
+8  print(media_dias([]))</pre>
+<pre class="tb">80.66666666666667
+Traceback (most recent call last):
+  File "c7.py", line 8, in &lt;module&gt;
+    print(media_dias([]))
+          ~~~~~~~~~~^^^^
+  File "c7.py", line 5, in media_dias
+    return soma / len(lista)
+           ~~~~~^~~~~~~~~~~~
+ZeroDivisionError: division by zero</pre>
+
+<h2>Parte 1 — O que a palavra em inglês está dizendo <span class="tag">(marque UMA opção por item)</span></h2>
+
+<div class="item"><b>1.1</b> Em C1: <span class="cod">expected ':'</span> — a palavra <b>expected</b> significa:
+<span class="alt">☐ a) o símbolo apareceu vezes demais no código</span>
+<span class="alt">☐ b) o programa esperou tempo demais e desistiu</span>
+<span class="alt">☐ c) era esperado, estava faltando</span>
+<span class="alt">☐ d) o símbolo foi usado no lugar certo</span></div>
+
+<div class="item"><b>1.2</b> Em C2: <span class="cod">an indented block</span> — <b>indented block</b> significa:
+<span class="alt">☐ a) um bloco recuado para dentro</span>
+<span class="alt">☐ b) um bloco identificado com nome</span>
+<span class="alt">☐ c) um bloco independente do resto</span>
+<span class="alt">☐ d) um bloco que foi apagado antes</span></div>
+
+<div class="item"><b>1.3</b> Em C3: <span class="cod">required</span> significa:
+<span class="alt">☐ a) repetido duas vezes seguidas</span>
+<span class="alt">☐ b) recomendado, mas opcional</span>
+<span class="alt">☐ c) requisitado por outro programa</span>
+<span class="alt">☐ d) obrigatório, sem ele não roda</span></div>
+
+<div class="item"><b>1.4</b> Em C3: <span class="cod">argument</span> significa:
+<span class="alt">☐ a) o valor que se passa para a função</span>
+<span class="alt">☐ b) uma discussão dentro do código</span>
+<span class="alt">☐ c) o nome que a função recebeu</span>
+<span class="alt">☐ d) uma mensagem de aviso do sistema</span></div>
+
+<div class="item"><b>1.5</b> Em C4: <span class="cod">is not defined</span> significa:
+<span class="alt">☐ a) não é definitivo e pode mudar</span>
+<span class="alt">☐ b) não foi criado em lugar nenhum</span>
+<span class="alt">☐ c) não tem um tipo declarado</span>
+<span class="alt">☐ d) não pode ser apagado depois</span></div>
+
+<div class="item"><b>1.6</b> Em C5: <span class="cod">can only concatenate</span> — <b>concatenate</b> significa:
+<span class="alt">☐ a) comparar dois valores</span>
+<span class="alt">☐ b) converter para outro tipo</span>
+<span class="alt">☐ c) juntar, emendar um no outro</span>
+<span class="alt">☐ d) calcular o resultado da conta</span></div>
+
+<div class="item"><b>1.7</b> Em C6: <span class="cod">out of range</span> significa:
+<span class="alt">☐ a) a lista está fora de ordem</span>
+<span class="alt">☐ b) o valor é grande demais para caber</span>
+<span class="alt">☐ c) a lista está vazia neste momento</span>
+<span class="alt">☐ d) a posição pedida não existe na lista</span></div>
+
+<div class="item"><b>1.8</b> Em C7: <span class="cod">Traceback (most recent call last)</span> — esta linha avisa que:
+<span class="alt">☐ a) as chamadas aparecem em ordem alfabética de nome</span>
+<span class="alt">☐ b) o programa vai tentar rodar tudo de novo sozinho</span>
+<span class="alt">☐ c) a mais recente vem por último, leia de baixo pra cima</span>
+<span class="alt">☐ d) só a última linha do arquivo foi lida pelo Python</span></div>
+
+<h2>Parte 2A — O que a mensagem está mandando fazer <span class="tag">(marque UMA opção por item)</span></h2>
+
+<div class="item"><b>2.1</b> Para consertar <b>C2</b>, é preciso:
+<span class="alt">☐ a) apagar a linha 2 do programa</span>
+<span class="alt">☐ b) mover o <span class="cod">def</span> da linha 1 para a linha 2</span>
+<span class="alt">☐ c) colocar dois-pontos no fim da linha 2</span>
+<span class="alt">☐ d) recuar a linha 2 para dentro da função</span></div>
+
+<div class="item"><b>2.2</b> Para consertar <b>C3</b>, é preciso:
+<span class="alt">☐ a) passar um valor nos parênteses da linha 6</span>
+<span class="alt">☐ b) criar uma variável <span class="cod">dias_no_abrigo</span> antes da linha 6</span>
+<span class="alt">☐ c) apagar o parâmetro que está na linha 1</span>
+<span class="alt">☐ d) trocar <span class="cod">return</span> por <span class="cod">print</span> na linha 3</span></div>
+
+<div class="item"><b>2.3</b> Para consertar <b>C5</b>, é preciso:
+<span class="alt">☐ a) trocar o sinal de <span class="cod">+</span> por <span class="cod">-</span> na linha 2</span>
+<span class="alt">☐ b) converter a resposta do <span class="cod">input()</span> para número</span>
+<span class="alt">☐ c) colocar aspas em volta do <span class="cod">12</span> na linha 2</span>
+<span class="alt">☐ d) apagar o <span class="cod">print</span> que está na linha 3</span></div>
+
+<div class="item"><b>2.4</b> Para consertar <b>C6</b>, é preciso:
+<span class="alt">☐ a) pedir uma posição que exista dentro da lista</span>
+<span class="alt">☐ b) trocar os colchetes por parênteses na linha 2</span>
+<span class="alt">☐ c) colocar a lista dentro de uma função primeiro</span>
+<span class="alt">☐ d) converter a lista para número antes de usar</span></div>
+
+<h2>Parte 2B — Só a mensagem, sem o código <span class="tag">(marque UMA opção por item)</span></h2>
+<p style="font-size:11px;margin:4px 0;"><b>Aqui você não tem o código.</b> Só a mensagem que apareceu na tela.
+É ela que precisa te dizer o que fazer.</p>
+
+<div class="item"><b>2.5</b> <pre class="tb" style="margin:3px 0;">ModuleNotFoundError: No module named 'pandas'</pre>
+<span class="alt">☐ a) criar um arquivo chamado <span class="cod">pandas.py</span> na pasta</span>
+<span class="alt">☐ b) rodar o programa como administrador da máquina</span>
+<span class="alt">☐ c) instalar ou importar a biblioteca que falta</span>
+<span class="alt">☐ d) trocar o nome de uma variável do programa</span></div>
+
+<div class="item"><b>2.6</b> <pre class="tb" style="margin:3px 0;">FileNotFoundError: [Errno 2] No such file or directory: 'abrigo.csv'</pre>
+<span class="alt">☐ a) o arquivo está corrompido e precisa ser refeito</span>
+<span class="alt">☐ b) o arquivo não está onde o programa foi procurar</span>
+<span class="alt">☐ c) o arquivo é grande demais para ser aberto</span>
+<span class="alt">☐ d) o programa não tem permissão para ler o arquivo</span></div>
+
+<div class="item"><b>2.7</b> <pre class="tb" style="margin:3px 0;">ValueError: invalid literal for int() with base 10: 'doze'</pre>
+<span class="alt">☐ a) está faltando o ponto decimal do número</span>
+<span class="alt">☐ b) a variável não foi criada antes de ser usada</span>
+<span class="alt">☐ c) o número 10 é grande demais para a variável</span>
+<span class="alt">☐ d) o texto <span class="cod">'doze'</span> não pode virar número</span></div>
+
+<div class="item"><b>2.8</b> <pre class="tb" style="margin:3px 0;">AttributeError: 'list' object has no attribute 'append_item'</pre>
+<span class="alt">☐ a) listas não têm nenhum comando com esse nome</span>
+<span class="alt">☐ b) a lista está vazia e por isso não aceita</span>
+<span class="alt">☐ c) a lista tem itens demais para esse comando</span>
+<span class="alt">☐ d) o item que se quer guardar é de tipo errado</span></div>
+
+<h2>Parte 3 — Descreva o erro com suas palavras</h2>
+
+<div class="item"><b>3.1</b> Em <b>C2</b>, a mensagem cita <b>duas linhas diferentes</b>: aparece <span class="cod">line 2</span> em cima
+e <span class="cod">on line 1</span> no fim. Explique por que ela cita duas linhas.
+<span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="item"><b>3.2</b> O traceback de <b>C7</b> tem <b>duas</b> linhas começando com <span class="cod">File</span>. Responda:
+<div style="margin-left:12px;">
+a) Em que linha o programa estava quando quebrou? <span class="linha"></span>
+b) Que linha do código chamou essa parte? <span class="linha"></span>
+c) O que a última linha da mensagem está dizendo, em português? <span class="linha"></span>
+d) Por que isso aconteceu na linha 8 e não na linha 7? <span class="linha"></span><span class="linha"></span>
+</div></div>
+
+<div class="page-break"></div>
+
+<h2>Parte 4 — Ler um texto técnico em inglês</h2>
+
+<p style="font-size:11px;margin:4px 0;">Leia o texto abaixo. <b>Não é preciso traduzir tudo</b> — procure só a informação que cada pergunta pede.</p>
+
+<div class="caixa" style="font-size:11.5px;line-height:1.5;">
+The parser repeats the offending line and displays little arrows pointing at the place where the error was detected.
+Note that this is not always the place that needs to be fixed. In the example, the error is detected at the function
+<span class="cod">print()</span>, since a colon (<span class="cod">':'</span>) is missing just before it.
+<br><br>
+The file name and line number are printed so you know where to look in case the input came from a file.
+<br><br>
+The last line of the error message indicates what happened. Exceptions come in different types, and the type is
+printed as part of the message. The string printed as the exception type is the name of the built-in exception that occurred.
+<div style="font-size:9.5px;color:#555;margin-top:8px;">Fonte: The Python Tutorial, seções 8.1 "Syntax Errors" e 8.2 "Exceptions" — docs.python.org/3/tutorial/errors.html</div>
+</div>
+
+<div class="item"><b>4.1</b> Segundo o texto, as setinhas (<span class="cod">^</span>) apontam:
+<span class="alt">☐ a) o lugar exato onde o conserto precisa ser feito, sempre</span>
+<span class="alt">☐ b) o lugar onde o erro foi detectado, que nem sempre é o do conserto</span>
+<span class="alt">☐ c) a linha que o programa não conseguiu ler por causa do idioma</span>
+<span class="alt">☐ d) o tipo do erro que aconteceu e o nome do arquivo que quebrou</span></div>
+
+<div class="item"><b>4.2</b> Segundo o texto, a <b>última linha</b> da mensagem mostra:
+<span class="alt">☐ a) o nome do arquivo onde o erro aconteceu</span>
+<span class="alt">☐ b) em que lugar do código você deve procurar</span>
+<span class="alt">☐ c) o que aconteceu e qual é o tipo da exceção</span>
+<span class="alt">☐ d) quantos erros foram encontrados no total</span></div>
+
+<div class="item"><b>4.3</b> Copie do texto, <b>em inglês</b>, o trecho que prova a sua resposta da 4.1.
+<span class="linha"></span><span class="linha"></span></div>
+
+<div class="item"><b>4.4</b> Ache no texto a expressão em inglês que significa:
+<div style="margin-left:12px;">
+a) "onde procurar" &nbsp;→&nbsp; <span class="linha" style="width:200px;display:inline-block;"></span><br>
+b) "o que aconteceu" &nbsp;→&nbsp; <span class="linha" style="width:200px;display:inline-block;"></span>
+</div></div>
+
+<div class="rodape">Fim da Fase 1. Entregue esta folha ao professor e receba o gabarito para a Fase 2.</div>
+
+<div class="page-break"></div>
+
+<h1>Fase 2 — Correção da própria prova</h1>
+<div class="sub">Use caneta de <b>outra cor</b>. Preencha só as questões que você errou. Se faltar espaço, continue no verso.</div>
+
+<div class="nome-linha">Nome: <span>&nbsp;</span></div>
+
+<table>
+<tr><th style="width:12%;">Questão</th><th style="width:16%;">Eu respondi</th><th style="width:16%;">Resposta certa</th><th>Por que eu errei (1 frase)</th></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>O que eu não tinha entendido antes desta prova</h2>
+<p style="font-size:11px;margin:2px 0;">Escreva com suas palavras. Não vale "não estudei".</p>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span>
+
+<h2>Se eu visse esta mensagem de novo, meu primeiro passo seria</h2>
+<span class="linha"></span><span class="linha"></span>
+
+<div style="border:1px solid #000;padding:10px;margin-top:20px;width:200px;">
+<div style="font-size:11px;">Visto do professor</div>
+<div style="height:38px;"></div>
+<div style="font-size:10px;color:#555;">Data: ____/____/______</div>
+</div>
+
+</body>
+</html>

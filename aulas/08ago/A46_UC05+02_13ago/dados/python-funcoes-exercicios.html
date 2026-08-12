@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Funções em Python — exercícios</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.4; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 8px; }
+  .cabecalho { border: 2px solid #000; padding: 8px 10px; margin: 10px 0 14px; }
+  .cabecalho table { border: none; margin: 0; }
+  .cabecalho td { border: none; padding: 3px 6px; font-size: 12px; }
+  .cabecalho .campo { border-bottom: 1px solid #000; display: inline-block; min-width: 150px; }
+  .caixa-nota { border: 1px solid #000; padding: 5px 8px; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 14px; }
+  .ex { margin: 12px 0; page-break-inside: avoid; }
+  .ex b { font-size: 12.5px; }
+  .linha { border-bottom: 1px solid #bbb; display: block; height: 17px; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eee; padding: 0 3px; }
+  pre { font-family: 'Consolas','Courier New',monospace; font-size: 11px; background: #f5f5f5;
+        border: 1px solid #bbb; padding: 5px 7px; margin: 4px 0; white-space: pre; }
+  .aviso { font-size: 11px; background: #fafafa; border: 1px solid #666; padding: 6px 9px; margin: 8px 0; }
+  .page-break { page-break-before: always; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Funções em Python — exercícios</h1>
+<div class="sub">UC05 Python para IA · A46 · 13/08/2026 · escrito à mão, com a folha de consulta ao lado</div>
+
+<div class="cabecalho">
+<table style="width:100%;">
+<tr>
+  <td style="width:52%;">Nome: <span class="campo">&nbsp;</span></td>
+  <td>Entrega até: <span class="campo" style="min-width:110px;">&nbsp;</span></td>
+</tr>
+<tr>
+  <td colspan="2" style="padding-top:6px;">
+    <div class="caixa-nota">
+      <b>Conceito:</b> &nbsp; ☐ Atendido &nbsp;&nbsp; ☐ Parcialmente Atendido &nbsp;&nbsp; ☐ Não Atendido
+      <div style="margin-top:6px;"><b>Feedback do professor:</b></div>
+      <div style="height:15px;border-bottom:1px solid #999;"></div>
+      <div style="height:15px;border-bottom:1px solid #999;margin-top:3px;"></div>
+    </div>
+  </td>
+</tr>
+</table>
+</div>
+
+<div class="aviso">
+Escreva o código <b>à mão</b>, com o recuo certinho. O que não der tempo aqui, você termina e traz na data de entrega.
+Vale a lógica: se faltar um dois-pontos, isso é anotado no feedback, mas não derruba a questão.
+</div>
+
+<div class="ex"><b>1.</b> Escreva <span class="cod">def saudacao(nome)</span> que devolva <span class="cod">"Olá, Rex"</span> quando receber <span class="cod">"Rex"</span>.
+<span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>2.</b> Escreva <span class="cod">def dobro(numero)</span> que devolva o número multiplicado por 2. Depois escreva, embaixo, a linha que chama a função com o valor 7 e guarda o resultado.
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>3.</b> Escreva <span class="cod">def media(a, b)</span> que devolva a média dos dois números recebidos.
+<span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>4.</b> Escreva <span class="cod">def passou_do_prazo(dias_no_abrigo, limite)</span> que devolva <span class="cod">True</span> quando <span class="cod">dias_no_abrigo</span> for maior que <span class="cod">limite</span>, e <span class="cod">False</span> quando não for.
+<br><span style="font-size:11px;color:#555;">Atenção: aqui o número de comparação não é fixo — ele chega junto, como segundo parâmetro.</span>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="page-break"></div>
+
+<div class="ex"><b>5.</b> Escreva <span class="cod">def levar_guarda_chuva(chance_de_chuva, vai_de_carro)</span>, onde <span class="cod">chance_de_chuva</span> é um número de 0 a 100 e <span class="cod">vai_de_carro</span> é o texto <span class="cod">"sim"</span> ou <span class="cod">"não"</span>. A função devolve:
+<div style="margin:4px 0 4px 14px;font-size:11.5px;">
+<span class="cod">True</span> se a chance for 90 ou mais — nesse caso vai chover forte, carro ou não;<br>
+<span class="cod">True</span> se a chance for 60 ou mais <b>e</b> a pessoa <b>não</b> for de carro;<br>
+<span class="cod">False</span> em qualquer outro caso.
+</div>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>6.</b> Escreva, embaixo da função do exercício 5, as linhas que: perguntam ao usuário a chance de chuva, perguntam se ele vai de carro, chamam a função e mostram a resposta na tela.
+<br><span style="font-size:11px;color:#555;">Cuidado com o tipo do que vem do <span class="cod">input</span>.</span>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>7.</b> Escreva <span class="cod">def taxa_de_adocao(adotados, total)</span> que devolva a porcentagem de adotados. Se <span class="cod">total</span> for zero, a função deve devolver zero em vez de tentar a conta.
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>8.</b> Escreva <span class="cod">def soma_dias(lista_de_dias)</span> que receba uma lista de números e devolva a soma de todos eles.
+<pre>Exemplo: soma_dias([10, 210, 22])  devolve  242</pre>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="page-break"></div>
+
+<div class="ex"><b>9.</b> Escreva <span class="cod">def contar_grandes(portes)</span> que receba uma lista de textos e devolva quantos deles são <span class="cod">"grande"</span>.
+<pre>Exemplo: contar_grandes(["grande", "pequeno", "grande"])  devolve  2</pre>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>10.</b> Escreva <span class="cod">def ficha(animal)</span> que receba um dicionário e devolva o texto no formato <span class="cod">"Rex — porte grande"</span>.
+<pre>Exemplo: ficha({"nome": "Rex", "porte": "grande"})</pre>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="ex"><b>11.</b> Escreva <span class="cod">def contar_por_porte(animais, porte_procurado)</span> que receba uma lista de dicionários e devolva quantos animais têm o porte procurado.
+<pre>animais = [{"nome": "Rex", "porte": "grande"},
+           {"nome": "Mel", "porte": "pequeno"},
+           {"nome": "Max", "porte": "grande"}]
+
+contar_por_porte(animais, "grande")  devolve  2</pre>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+</body>
+</html>

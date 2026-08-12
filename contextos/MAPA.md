@@ -58,13 +58,15 @@ Ler quando: gerar slides de uma UC · atualizar pós-aula · verificar o que já
 
 | Arquivo | O que é | Quando ler |
 |---|---|---|
-| `ATIVIDADES_AVALIATIVAS.md` | Plano completo T1: av01–av06, status, datas, critérios | Verificar avaliações pendentes ou planejar nova av |
+| `ATIVIDADES_AVALIATIVAS.md` | Plano T1 (av01–av06) + plano T2 (Av01-T2 a Av12-T2) + conta de fechamento de indicadores | Verificar avaliações pendentes, planejar nova av, ou saber quantos indicadores ainda faltam fechar |
 | `aval/av01-glossario-ia.md` | AV01 — Glossário IA em inglês (concluída) | Referência de estrutura |
 | `aval/av02-pq-gpu-td.md` | AV02 — Por que GPU? + Transformação Digital | Detalhes da av |
 | `aval/av03-tokenlab.md` | AV03 — TriaBot TokenLab (aplicada 23/04) | Referência pós-aplicação |
 | `aval/av04-python-n2.md` | AV04 — Python N2 | Detalhes da av |
 | `aval/av05-sql-pratica.md` | AV05 — SQL prática | Detalhes da av |
-| `aval/av06-mini-projeto.md` | AV06 — Mini-projeto final | Detalhes da av |
+| `aval/av06-mini-projeto.md` | AV06 — Mini-projeto final (T1) | Detalhes da av |
+| `aval/av05-t2-error-report.md` | **Av05-T2** — Error Report: decodificar traceback em inglês (13/08, UC02) | Detalhes da av |
+| `aval/av06-t2-acesso-e-threads.md` | **Av06-T2** — Quem pode o quê: permissões de acesso (UC08) + processos/threads e pipeline de GPU (UC06) · dois atos, 14/08 e 27/08 | Detalhes da av |
 
 ---
 

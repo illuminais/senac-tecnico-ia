@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Funções em Python — documentação</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.4; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 10px; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 14px; }
+  pre { font-family: 'Consolas','Courier New',monospace; font-size: 11px; background: #f5f5f5;
+        border: 1px solid #bbb; padding: 6px 8px; margin: 5px 0; white-space: pre; }
+  table { border-collapse: collapse; width: 100%; margin: 6px 0; }
+  th, td { border: 1px solid #999; padding: 4px 7px; font-size: 11px; vertical-align: top; }
+  th { background: #eee; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eee; padding: 0 3px; }
+  .destaque { border: 1px solid #666; padding: 7px 10px; margin: 8px 0; background: #fafafa; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Funções em Python — folha de consulta</h1>
+<div class="sub">UC05 Python para IA · A46 · 13/08/2026 · pode consultar durante os exercícios</div>
+
+<h2>O que é uma função</h2>
+<p>Um pedaço de código com nome, que você escreve uma vez e usa quantas vezes quiser. Como uma receita: você guarda
+a receita e depois só diz o nome dela.</p>
+
+<h2>Anatomia</h2>
+<pre>def nome_da_funcao(parametro):
+    ...corpo, sempre recuado...
+    return resultado</pre>
+
+<table>
+<tr><th style="width:26%;">Peça</th><th>Para que serve</th></tr>
+<tr><td><span class="cod">def</span></td><td>avisa que começa uma função</td></tr>
+<tr><td><span class="cod">nome_da_funcao</span></td><td>como você vai chamar ela depois</td></tr>
+<tr><td><span class="cod">(parametro)</span></td><td>o espaço em branco que quem chamar vai preencher</td></tr>
+<tr><td><span class="cod">:</span></td><td>obrigatório no fim da linha do <span class="cod">def</span></td></tr>
+<tr><td>recuo</td><td>tudo que é da função fica recuado para dentro</td></tr>
+<tr><td><span class="cod">return</span></td><td>o valor que a função devolve para quem chamou</td></tr>
+</table>
+
+<h2>Chamar a função</h2>
+<pre>resultado = nome_da_funcao(valor)</pre>
+
+<div class="destaque">
+<b>Parâmetro e argumento não são a mesma coisa</b><br><br>
+<b>Parâmetro</b> é o que está entre parênteses <b>na hora de definir</b> a função. Ele cria um pedacinho de memória
+que nasce quando a função é definida e só existe <b>dentro</b> da função. Fora dela, esse nome não vale nada.
+<br><br>
+<b>Argumento</b> é o valor de verdade que você coloca entre parênteses <b>na hora de chamar</b> a função.
+<br><br>
+<pre style="margin:6px 0;">def dobro(numero):      <b>numero</b> é o PARÂMETRO — só existe aqui dentro
+    return numero * 2
+
+dobro(7)                <b>7</b> é o ARGUMENTO — é o que entra no lugar</pre>
+</div>
+
+<h2><span class="cod">return</span> não é <span class="cod">print</span></h2>
+<table>
+<tr><th style="width:50%;"><span class="cod">return</span></th><th><span class="cod">print</span></th></tr>
+<tr><td>devolve o valor para quem chamou</td><td>só mostra na tela</td></tr>
+<tr><td>o valor pode ser guardado e reusado</td><td>não dá para guardar</td></tr>
+<tr><td>a função termina ali</td><td>o programa continua</td></tr>
+</table>
+
+<h2>Função que devolve verdadeiro ou falso</h2>
+<p>Uma função pode devolver <span class="cod">True</span> ou <span class="cod">False</span>. Serve para responder
+pergunta de sim ou não.</p>
+<pre>def alguma_pergunta(valor):
+    if valor > 10:
+        return True
+    return False</pre>
+
+<h2>Decidir entre vários casos</h2>
+<pre>if condicao_1:
+    ...
+elif condicao_2:
+    ...
+else:
+    ...</pre>
+<p>As condições são testadas <b>de cima para baixo</b>. A primeira que der certo é a que vale, e o resto nem é olhado.</p>
+
+<h2>Juntar condições</h2>
+<pre>if a &gt;= 60 and b == "não":     as duas precisam ser verdadeiras
+if a &gt;= 60 or b == "não":      basta uma ser verdadeira</pre>
+
+<h2>Passar por todos os itens de uma lista</h2>
+<pre>soma = 0
+for item in lista:
+    soma = soma + item</pre>
+<p>O acumulador (<span class="cod">soma</span>) é criado <b>antes</b> do <span class="cod">for</span>, nunca dentro.</p>
+
+<h2>Ler o que o usuário digita</h2>
+<pre>resposta = input("Pergunta: ")
+numero   = int(input("Pergunta: "))</pre>
+<p><span class="cod">input</span> sempre devolve <b>texto</b>. Para fazer conta, converta com <span class="cod">int()</span>.</p>
+
+<h2>Dicionário: guardar por etiqueta</h2>
+<pre>animal = {"nome": "Rex", "porte": "grande"}
+animal["nome"]     devolve "Rex"</pre>
+
+</body>
+</html>

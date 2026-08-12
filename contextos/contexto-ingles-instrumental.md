@@ -23,7 +23,7 @@ trimestre-atual: T2
 | T2 | 7 | Bloco 6 — Banco de Dados / SQL: table · query · field · record · index · primary key · foreign key · constraint · join · select | 2 | ⏳ A40 (parcial — tipos de dados p/ SQL e Python) |
 | T2 | 8 | Leitura de README do GitHub: estrutura · seções · como seguir instruções | 2 | ⬜ |
 | T2 | 9 | Interpretação de docstring Python e comentários de código | 1 | ⬜ |
-| T2 | 10 | Mensagens de erro em inglês: traceback · how to read and understand | 1 | ⬜ |
+| T2 | 10 | Mensagens de erro em inglês: traceback · how to read and understand | 1 | ⏳ A46 (13/08 — Av05-T2 Error Report) |
 | T2 | 11 | Bloco 7 — Machine Learning: dataset · training · validation · test · overfitting · underfitting · hyperparameter · batch · accuracy · loss | 2 | ⬜ |
 | T2 | 12 | Instrução técnica: seguir tutorial em inglês passo a passo | 2 | ⬜ |
 | T2 | 13 | Escrita técnica básica: comment de código em inglês · commit message · docstring | 2 | ⬜ |

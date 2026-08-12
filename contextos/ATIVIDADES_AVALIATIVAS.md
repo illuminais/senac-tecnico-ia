@@ -197,6 +197,13 @@ Dia reservado para **ensino**, não avaliação:
 | 29/07/2026 | T1 confirmado como pedagogicamente fechado pelo professor (Av.01–Av.06 aplicadas com nota lançada, arquivos `contextos/aval/av0X-*.md` com `status: detalhada` estavam apenas desatualizados) | Escopo do agente migra para o T2. Ver seção "Plano de Avaliações — T2" abaixo |
 | 29/07/2026 | Plano de avaliações T2 aprovado e gravado — Av01-T2 a Av11-T2 | Cobre os 13 indicadores T2 sem cobertura prévia (de 29 totais em `indicadores-t2.md`); os demais têm evidência informal de atividades já aplicadas (Shark Tank, Doc Hunter/Error Detective, Dicionário Pessoal, Python no Papel, Copa Analytics SQL/pandas/estatística) a confirmar depois pelo professor. `roteiro-t2.md` corrigido: renumerado A42→A53 (A41 já tinha sido dado em 10/07 e não pode ser reusado). UC04 tem janela rígida de só 2 encontros (A45 e A51) antes de encerrar no T2. |
 | 29/07/2026 | Av01-T2 (30/07, UC01 Ind.4) fundida em Av07-T2 (20/08, UC01 Ind.5) | Decisão do professor: A42 (30/07) vira só aula de ensino/preparação, sem avaliação formal — UC01 só tem duas datas no T2 inteiro (30/07 e 20/08), então os dois indicadores (navegação segura + organização digital) passam a ser avaliados juntos numa entrega única em 20/08 (ex: pesquisar/classificar fontes confiáveis + organizar o material numa estrutura de pastas/arquivos lógica). Av01-T2 marcada como cancelada/fundida; Av07-T2 passa a cobrir Ind.4+Ind.5. |
+| 11/08/2026 | Av02-T2, Av03-T2 e Av04-T2 confirmadas como aplicadas pelo professor | "as avaliações ocorreram tudo certo". A44 e A45 ainda não estão registradas em `AULAS-DADAS.md` — pendente rodar `atualizador-pos-aula` com o relato de conteúdo e feedback. |
+| 11/08/2026 | **Modelo A+1 aprovado** — avaliação distribuída em dois atos (aula de hoje + a próxima da mesma UC) | Proposto pelo professor para reduzir o número de instrumentos sem perder cobertura de indicador. Vale só quando a UC tem 2+ slots e o último ato cai até 28/08. Aplicado em Av06-T2 (UC08) e Av10-T2 (UC07). |
+| 11/08/2026 | Av06-T2 redesenhada: UC08 Ind.4 vira ato 1 (14/08) e UC08 Ind.3+5 viram ato 2 (27/08); UC06 Ind.2 entra junto com Ind.3 em 14/08 | UC08 fecha os 3 indicadores em um instrumento só, liberando 04/09 para recuperação. UC06 não podia ser dividido: o outro slot é 04/09, depois do fechamento, e Ind.2 não continua no T3. |
+| 11/08/2026 | **Gap descoberto:** UC05 Python não tinha nenhuma avaliação no plano T2, com Ind.2 morrendo no trimestre | Criada Av12-T2 (21/08, A49). Desenho a aprovar no planejamento da semana 12. |
+| 11/08/2026 | Av08-T2 passa a cobrir UC03 Ind.4 **+ Ind.5** | 21/08 é o único slot restante de UC03 no T2 e Ind.5 não tem continuação no T3. |
+| 11/08/2026 | UC08 Ind.4 será avaliado em papel, sem execução | SQLite (sqliteonline.com, ferramenta padrão da turma) não tem GRANT/REVOKE nem gestão de usuários. O "por que não roda aqui" foi convertido em conteúdo de escolha de SGBD. Decisão do professor entre 3 alternativas apresentadas. |
+| 11/08/2026 | Bloco de UC08 de 14/08 **não** revisa escrita de query | "eles já sabem queries, só preciso introduzir algo extra se for algo que eles realmente não sabem". DCL é inédito e nivela a turma bimodal. |
 
 ---
 
@@ -209,21 +216,60 @@ Dia reservado para **ensino**, não avaliação:
 | Av. | Data | Aula | UCs | Indicador(es) | Status |
 |---|---|---|---|---|---|
 | ~~Av01-T2~~ | ~~30/07~~ | ~~A42~~ | UC01 | ~~Ind.4~~ — **fundida em Av07-T2 (20/08)**, ver decisão de 29/07/2026 | ❌ Cancelada (fundida) |
-| Av02-T2 | 31/07 | A43 | UC03 | Ind.6 | ⏳ Pendente |
-| Av03-T2 | 06/08 | A44 | UC09 | Ind.5+6 (parte 1/2 do mini-projeto) | ⏳ Pendente |
-| Av04-T2 | 07/08 | A45 | UC04 | Ind.2+3 | ⏳ Pendente |
-| Av05-T2 | 13/08 | A46 | UC02 | Ind.1+2+3 (checagem leve) | ⏳ Pendente |
-| Av06-T2 | 14/08 | A47 | UC06 · UC08 | UC06 Ind.3 · UC08 Ind.4 | ⏳ Pendente |
-| Av07-T2 | 20/08 | A48 | UC01 | **Fontes Confiáveis + Organização Digital** — Ind.4 (navegação segura/critérios de confiabilidade) + Ind.5 (organiza/armazena informações digitais) — fecha UC01 no T2 com avaliação combinada | ⏳ Pendente |
-| Av08-T2 | 21/08 | A49 | UC03 | Ind.4 (fecha UC03) | ⏳ Pendente |
-| Av09-T2 | 27/08 | A50 | UC09 | Ind.3+4 (parte 2/entrega do mini-projeto) | ⏳ Pendente |
-| Av10-T2 | 28/08 | A51 | UC04 · UC07 | UC04 recuperação · UC07 Ind.4+7 (fecha) | ⏳ Pendente |
-| Av11-T2 | 04/09 | A53 | UC06 | Ind.4 (se não coube em A47) | ⏳ Pendente |
+| Av02-T2 | 31/07 | A43 | UC03 | Ind.6 | ✅ Aplicada (confirmado pelo professor em 11/08) |
+| Av03-T2 | 06/08 | A44 | UC09 | Ind.5+6 (ato 1 do mini-projeto) | ✅ Aplicada (confirmado pelo professor em 11/08) |
+| Av04-T2 | 07/08 | A45 | UC04 | Ind.2+3 — encerra UC04 no T2 | ✅ Aplicada (confirmado pelo professor em 11/08) |
+| Av05-T2 | 13/08 | A46 | UC02 | Ind.1+2+3 — **Error Report: Decode the Traceback** · [detalhamento](aval/av05-t2-error-report.md) | ✅ Detalhada |
+| Av06-T2 | 14/08 + 27/08 | A47 · A50 | UC08 · UC06 | **Quem pode o quê** — 2 atos · [detalhamento](aval/av06-t2-acesso-e-threads.md) · ato 1 (14/08): UC08 Ind.4 + UC06 Ind.2+3 · ato 2 (27/08): UC08 Ind.3+5 | ✅ Detalhada |
+| Av07-T2 | 20/08 | A48 | UC01 | **Fontes Confiáveis + Organização Digital** — Ind.4 + Ind.5 — fecha UC01 no T2 | ⏳ Pendente |
+| Av08-T2 | 21/08 | A49 | UC03 | Ind.4 **+ Ind.5** — Ind.5 morre no T2 e 21/08 é o único slot restante de UC03, então tem que sair no mesmo instrumento | ⏳ Pendente |
+| Av09-T2 | 27/08 | A50 | UC09 | Ind.3+4 (ato 2 do mini-projeto) | ⏳ Pendente |
+| Av10-T2 | 20/08 + 28/08 | A48 · A51 | UC07 | **2 atos, obrigatório** — 5 indicadores pendentes para 2 slots · ato 1 (20/08): Ind.3+5+6 · ato 2 (28/08): Ind.4+7 (fecha UC07) | ⏳ Pendente — desenho a aprovar na semana 12 |
+| Av11-T2 | 04/09 | A53 | UC06 | Ind.4 (redes) — Ind.4 continua no T3, pode fechar depois do prazo de nota | ⏳ Pendente |
+| **Av12-T2** | 21/08 | A49 | UC05 | Ind.2+3 — **gap descoberto em 11/08:** UC05 não tinha nenhuma avaliação no plano T2 | ⏳ Pendente — desenho a aprovar na semana 12 |
 
-**Cobertura:** 13/13 indicadores T2 "sólidos pendentes" endereçados por uma avaliação dedicada (Av01-T2 e Av07-T2 fundidas em 29/07/2026 — ver Histórico — não altera a contagem, só reduz de 11 para 10 o número de avaliações formais). UC02 (Av05-T2) e UC04 (Av04-T2) também têm avaliação dedicada mesmo com evidência informal prévia, como reforço/formalização — a confirmar se ainda é necessária depois que o professor revisar o que já está coberto.
-> ⚠️ A42 (30/07) passa a ser só aula de conteúdo/preparação para UC01, sem avaliação formal aplicada nesse dia.
+## Conta de fechamento T2 — recalculada em 11/08/2026
+
+> Motivada por pergunta do professor: "quantas avaliações de banco de dados ainda vão ter que ter? em questão de indicadores, a mesma coisa para as outras disciplinas". Recalculado a partir de `indicadores-t2.md` e da rotação real.
+
+**Aplicadas até aqui:** Av02-T2, Av03-T2, Av04-T2 — 5 indicadores fechados (UC03 Ind.6 · UC09 Ind.5+6 · UC04 Ind.2+3). Restam **24 indicadores pendentes em 8 aulas** (13/08 a 04/09).
+
+| UC | Inds. pendentes | Slots restantes | Instrumentos previstos |
+|---|---|---|---|
+| UC07 Transformação Digital | 5 (3,4,5,6,7) | 2 — 20/08, 28/08 | Av10-T2 em 2 atos (obrigatório) |
+| UC06 Arquitetura e GPU | 3 (2,3,4) | 2 — 14/08, 04/09 | Av06-T2 parte UC06 (Ind.2+3 juntos) + Av11-T2 (Ind.4) |
+| UC08 Banco de Dados | 3 (3,4,5) | 3 — 14/08, 27/08, 04/09 | **Av06-T2 em 2 atos, e só isso** — 04/09 fica livre para recuperação |
+| UC05 Python | 2 (2,3) | 3 — 13/08, 21/08, 03/09 | Av12-T2 em 21/08 (03/09 = recuperação) |
+| UC03 Fund. Matemáticos | 2 (4,5) | 1 — 21/08 | Av08-T2 cobrindo Ind.4+5 |
+| UC02 Inglês Instrumental | 3 (1,2,3) | 2 — 13/08, 03/09 | Av05-T2 em 13/08 (03/09 = recuperação) |
+| UC01 Fund. Computação | 3 (3,4,5) | 1 — 20/08 | Av07-T2 (Ind.4+5); Ind.3 escorre para o T3 |
+| UC09 Estatística Aplicada | 3 (3,4,7) | 1 — 27/08 | Av09-T2 (Ind.3+4); Ind.7 escorre para o T3 |
+
+**Total: 7 instrumentos restantes** (Av05, Av06, Av07, Av08, Av09, Av10, Av11, Av12 — sendo Av06 e Av10 de dois atos cada). Sem o modelo A+1 seriam 11.
+
+### Indicadores que morrem no T2
+
+> Não têm continuação no T3 (`indicadores-t2.md`, coluna Trim.). Ou fecham até 28/08, ou ficam NA.
+
+| UC | Ind. | Onde fecha |
+|---|---|---|
+| UC03 | 5 — interpreta e representa dados em tabelas e gráficos | Av08-T2, 21/08 (único slot) |
+| UC05 | 2 — comandos de integração em Python | Av12-T2, 21/08 |
+| UC06 | 2 — pipeline para GPU | Av06-T2 parte UC06, 14/08 |
+| UC07 | 3 — segurança digital na transformação digital | Av10-T2 ato 1, 20/08 |
+| UC07 | 5 — objetivos estratégicos e plano de implementação | Av10-T2 ato 1, 20/08 |
+| UC07 | 6 — análise de custo-benefício | Av10-T2 ato 1, 20/08 |
+| UC08 | 3 — cria a estrutura física do banco | Av06-T2 ato 2, 27/08 |
+
+### Regra do modelo A+1
+
+Instrumento de dois atos só vale quando a UC tem 2 ou mais slots restantes **e o último ato cai até 28/08**, deixando 03 e 04/09 para recuperação dentro da janela de fechamento de notas. Por isso:
+- UC08 e UC07 entram no modelo (atos em 14/08+27/08 e 20/08+28/08);
+- UC06 **não** entra — o segundo slot é 04/09, depois do fechamento;
+- UC05 **não** entra — o segundo slot é 03/09, mesmo problema.
 
 **Maiores riscos do cronograma:**
-- **UC09** (Av03-T2 + Av09-T2): 4 indicadores em só 2 encontros — desenhado como mini-projeto de 2 atos.
-- **UC06** (Av06-T2 + Av11-T2): 2 indicadores em 1-2 encontros — Av11-T2 em 04/09 depende de confirmação de que UC06 realmente cai nesse dia.
-- **UC04** (Av04-T2): janela rígida — A45 é a única aplicação nova; A51 é só recuperação, não pode virar 3ª tentativa.
+- **UC07:** 5 indicadores para 2 encontros. É o gargalo real do T2. Se o ato 1 de 20/08 não cobrir Ind.3+5+6, três indicadores morrem sem janela.
+- **UC03 e UC09:** 1 slot cada, sem margem para remarcação. Qualquer falta de aula em 21/08 ou 27/08 derruba o indicador.
+- **UC06 Ind.4:** Av11-T2 em 04/09 depende de confirmação de que UC06 realmente cai nesse dia; como Ind.4 continua no T3, o risco é absorvível.
+- **Turma bimodal em SQL** (relatado em 11/08, pós-A44): parte da turma foi longe, parte não entregou nada. Av06-T2 abre com conteúdo inédito (DCL) justamente para zerar a largada, e reserva a tarefa desafio como teto para quem já está adiantado.

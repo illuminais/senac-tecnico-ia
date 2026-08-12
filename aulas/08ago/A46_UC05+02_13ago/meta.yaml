@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "46"
+slug: "a46-uc05-02-13ago"
+title: "Ler o erro, escrever a função"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC02", "UC05"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-08-13"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: []

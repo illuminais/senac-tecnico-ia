@@ -1,0 +1,9 @@
+id: av09
+titulo: "Av05-T2 — Error Report: lendo o que a máquina responde"
+tipo: PE
+prazo: "2026-08-13"
+prazoLabel: "13/08 (A46) — em sala, papel, individual"
+ucs: [UC02]
+trimestre: T2
+indicadores: [UC02.1, UC02.2, UC02.3]
+status: published

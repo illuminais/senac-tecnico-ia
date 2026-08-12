@@ -17,10 +17,10 @@ trimestre-atual: T2
 | T1 | 1 | CPU vs GPU: paralelismo vs IA · RAM · HD vs SSD vs NVMe · periféricos (comparativo funcional) | 1 | ✅ A03 |
 | T1 | 2 | Arquitetura CPU: ALU · CU · registradores · barramento · ciclo fetch-decode-execute · Von Neumann vs. Harvard (modelos de arquitetura) | 2 | ✅ A38 |
 | T1 | 3 | Arquitetura GPU: CUDA cores · VRAM · tensor cores · SIMD | 2 | ✅ A41 (Taxonomia de Flynn: SISD/SIMD/MISD/MIMD — CUDA cores/VRAM/tensor cores pendentes) |
-| T1 | 4 | Pipeline GPU: como um modelo ML usa a GPU (batch processing · CUDA stream) | 2 | ⬜ |
+| T1 | 4 | Pipeline GPU: como um modelo ML usa a GPU (batch processing · CUDA stream) | 2 | ⏳ A47 (14/08 — parte C da Av06-T2, fecha Ind.2) |
 | T1 | 5 | Comparativo CPU vs GPU em inferência vs treino · escolha de hardware | 2 | ⬜ |
 | T1 | 6 | Exercício: configurar servidor de treino ML (qual GPU, quanta VRAM, qual CPU?) | 2 | ⬜ |
-| T2 | 7 | Processos e threads: concorrência · GIL Python · multiprocessing | 3 | ⬜ |
+| T2 | 7 | Processos e threads: concorrência · GIL Python · multiprocessing | 3 | ⏳ A47 (14/08 — Av06-T2, junto do pipeline de GPU) |
 | T2 | 8 | Cloud computing: GPU na nuvem — Google Colab · AWS · Azure · custo estimado | 2 | ⬜ |
 | T2 | 9 | Redes de computadores: protocolos básicos · TCP/IP · DNS · HTTP/HTTPS | 3 | ⬜ |
 | T2 | 10 | Desmontagem prática: identificar componentes em hardware real | 2 | ✅ A30 |

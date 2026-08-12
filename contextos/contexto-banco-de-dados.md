@@ -23,7 +23,7 @@ trimestre-atual: T2
 | T2 | 7 | FK (chave estrangeira) · INNER JOIN | 2 | ✅ A36 (INNER JOIN) · ⏳ A37 (FK) |
 | T2 | 8 | Mini-projeto: BD notas com SQLite | 2 | ⬜ |
 | T2 | 9 | Python + SQLite: sqlite3 · cursor.execute() · fetchall() | 2 | ⬜ |
-| T2 | 10 | SQL-DCL: USER · GRANT · REVOKE · perfis de acesso | 2 | ⬜ |
+| T2 | 10 | SQL-DCL: USER · GRANT · REVOKE · perfis de acesso | 2 | ⏳ A47 (14/08 — Av06-T2 ato 1, em papel: SQLite não tem DCL) |
 | T2 | 11 | SQL-DQL avançado: GROUP BY · HAVING · subqueries | 3 | ✅ A36 (GROUP BY + funções agregação) · ✅ A41 (HAVING) · ⏳ subqueries |
 | T2 | 12 | Transações: BEGIN · COMMIT · ROLLBACK | 1 | ⬜ |
 | T2 | 13 | Normalização: 1NF · 2NF · 3NF | 3 | ⬜ |
@@ -107,6 +107,7 @@ A41 · 10/07 · WHERE (reforço) · GROUP BY · HAVING (novo) · atividade de tr
 | 2026-06-25 | Turma com dificuldade em escrever SQL manualmente — reconhecem estrutura mas hesitam sem modelo pronto | Reforçar: sempre começar escrevendo no papel antes de digitar · praticar variações de queries com mudanças mínimas · criar templates reutilizáveis |
 | 2026-07-10 | Estratégia de cópia guiada (transcrever as queries-resposta do exercício) funcionou bem como resposta à dificuldade relatada em A36 | Manter cópia guiada como passo intermediário antes de pedir SQL do zero |
 | 2026-07-30 | Turma muito divergente em SQL — alguns lembram maioria dos conceitos, outros não lembram do básico; há gap significativo de compreensão | Necessário reforço seletivo: alguns alunos prontos para FK/subqueries, outros precisam revisão de SELECT/WHERE básico; considerar pequenos grupos para nivelamento |
+| 2026-08-11 | Pós-A44: trilhas diferenciadas não fecharam o gap — parte da turma foi longe, parte praticamente não entregou nada (bimodal). Professor decidiu **não** gastar o slot de 14/08 reensinando query: "eles já sabem queries, só preciso introduzir algo extra se for algo que eles realmente não sabem" | A47 (14/08) abre com SQL-DCL, conteúdo inédito que zera a largada de todos, com tarefa desafio (VIEW + GRANT) como teto para quem já está adiantado. Reforço de escrita de query volta no ato 2 (27/08), agora com propósito novo: a permissão define o que a query pode tocar |
 
 ---
 
