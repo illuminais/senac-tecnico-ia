@@ -20,8 +20,8 @@ const ROOT = join(import.meta.dirname, '..')
 
 const VALID_LAYOUTS = [
   'cover', 'default', 'center', 'end', 'brainstorm',
-  'two-cols', 'two-cols-text', 'two-cols-img', 'two-cols-img-and-text',
-  'three-cols-img', 'big-img-text', 'social'
+  'two-cols', 'two-cols-text', 'two-cols-code', 'two-cols-img', 'two-cols-img-and-text',
+  'three-cols-img', 'big-img-text', 'social', 'code-output'
 ]
 
 const LIMITS = {
@@ -30,7 +30,7 @@ const LIMITS = {
   listItems: 6,
   codeBlocksDefault: 1,
   tablesPerSlide: 1,
-  consecutiveTeoria: 2
+  consecutiveTeoria: 4
 }
 
 function parseSlides(content) {

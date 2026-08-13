@@ -110,6 +110,8 @@ Each slide starts with `---` and can have its own properties.
 
 ### When to use each layout
 
+> **`code-output`** (novo, 12/08/2026): código em cima e a saída embaixo (erro, traceback, resultado). Slots `::output::` e `::note::`, props `outputLabel` e `outputTone` (`error` | `neutral`). Use no lugar de `two-cols-text` sempre que o slide for código mais o que ele devolveu.
+
 | Layout | Use when... | Energy |
 |---|---|---|
 | **cover** | Lesson cover slide, block opening | High |
@@ -278,8 +280,11 @@ Every class must contain these slide sections in order:
 
 ### Brainstorming / Debate rules
 
+> **Nunca gere debate por conta própria** (decisão do professor, 12/08/2026). Separar a turma, distribuir papéis e rodar as etapas custa cerca de 1 hora de aula e não compensa. Só inclua `[DEBATE]` ou `layout: brainstorm` se o professor pedir explicitamente para aquela aula. Quando faltar engajamento, acrescente **teoria que complemente** o conteúdo seguinte.
+
+Quando o professor pedir um debate:
 - Use `layout: brainstorm` with `pulse: true`.
-- The central question must be **open-ended** — no single correct answer.
+- Monte como dilema de escolha forçada ancorado em dado real da aula, nunca pergunta aberta genérica.
 - Include a future connection: how this debate relates to the next class or UC.
 
 ### Block separator slide

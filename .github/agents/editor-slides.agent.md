@@ -169,7 +169,7 @@ Para cada slide:
      - `Manter como está`
      - `Simplificar linguagem` (description: `"Reduzir para nível ~14 anos"`)
      - `Aprofundar teoria` (description: `"Adicionar exemplo, citação ou analogia"`)
-     - `Converter para [DEBATE]` (description: `"Reformular como pergunta aberta"`)
+     - `Converter para [TEORIA]` (description: `"Transformar em conteúdo que prepare o exercício seguinte"`) — debate só a pedido explícito do professor
      - `Inserir scaffold antes` (description: `"Slide intermediário para reduzir curva"`)
      - `Expandir em múltiplos slides` (description: `"Aciona Protocolo de Expansão — somente se sobrecarregado"`)
    - Se houver opção customizada relevante para o slide específico, substituir a menos adequada das fixas por ela.

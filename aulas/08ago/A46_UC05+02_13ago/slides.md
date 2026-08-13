@@ -39,46 +39,43 @@ aulaNum: "Aula 46"
 Hoje a gente aprende a ler o que a máquina responde quando o código quebra.
 
 ---
-layout: brainstorm
+layout: default
 card: true
-bgPreset: palette
-pulse: true
+bgPreset: default
 aulaNum: "Aula 46"
 ---
 
 <!-- SLIDE 3 -->
-<!-- debate: aula 46, setup -->
+<!-- objetivo: aluno entende por que as mensagens de erro estao em ingles e por que isso e conteudo de UC02 -->
 
-# Debate: a setinha aponta o conserto?
+# Por que tudo quebra em inglês
 
-Este programa quebrou. A mensagem diz `line 2` em cima e `on line 1` no fim.
+O Python foi escrito em inglês, e as mensagens de erro nunca foram traduzidas. Isso não é um detalhe: é assim em toda linguagem de programação, em toda biblioteca, em toda documentação.
 
-**Time A:** a setinha aponta exatamente a linha que precisa ser consertada.
-**Time B:** a setinha aponta onde o Python travou, e o conserto pode estar em outra linha.
+Quem lê a mensagem resolve sozinho. Quem não lê fica travado esperando alguém ajudar.
 
-- Turma dividida ao meio: metade defende A, metade defende B, em grupos de 4
-- No grupo: 1 argumenta em voz alta, 1 cronometra, o resto monta o argumento
-- **5 min:** cada grupo escreve no papel o argumento mais forte, apontando uma linha concreta da mensagem
+> A boa notícia: as mensagens usam sempre as **mesmas poucas palavras**. Hoje você vai aprender essas palavras, e elas servem para o resto do curso.
 
 ---
-layout: brainstorm
+layout: default
 card: true
-bgPreset: palette
-pulse: false
+bgPreset: default
 aulaNum: "Aula 46"
 ---
 
 <!-- SLIDE 4 -->
-<!-- debate: aula 46, confronto e fechamento -->
+<!-- objetivo: aluno distingue erro de sintaxe de erro de execucao pelo formato da mensagem na tela -->
 
-# Debate: a setinha aponta o conserto? (cont.)
+# Duas famílias de erro
 
-- **3 min:** Time A apresenta
-- **3 min:** Time B apresenta
-- **3 min:** réplica livre
-- **3 min:** o professor fecha
+Existem dois momentos em que um programa pode quebrar, e eles aparecem **diferentes** na tela.
 
-> **Conexão:** a resposta está escrita na documentação oficial do Python, em inglês, e vocês vão encontrar ela sozinhos na prova de hoje.
+| Família | Quando quebra | Como aparece |
+|---|---|---|
+| Erro de sintaxe | antes de rodar, o Python nem começou | direto o `File` e o tipo, **sem** `Traceback` |
+| Erro de execução | no meio da execução, já rodou um pedaço | começa com `Traceback (most recent call last)` |
+
+Repare nisso nos sete códigos a seguir: os dois primeiros são de uma família, os cinco últimos são da outra.
 
 ---
 layout: default
@@ -126,9 +123,11 @@ ZeroDivisionError: division by zero
 Ou seja: quando aparece `Traceback`, você lê **de baixo para cima**. A última linha é a que diz o que aconteceu.
 
 ---
-layout: two-cols-text
+layout: code-output
 card: true
 bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
 aulaNum: "Aula 46"
 ---
 
@@ -146,9 +145,7 @@ print(ficha("Rex"))
 
 Aplique os 3 passos: onde, o quê, por quê.
 
-::right::
-
-# A mensagem
+::output::
 
 ```text
   File "c1.py", line 1
@@ -157,6 +154,8 @@ Aplique os 3 passos: onde, o quê, por quê.
 SyntaxError: expected ':'
 ```
 
+::note::
+
 <AdminOnly>
 
 Linha 1. `SyntaxError`. `expected` quer dizer "era esperado, estava faltando": falta o dois-pontos no fim da linha do `def`.
@@ -164,9 +163,11 @@ Linha 1. `SyntaxError`. `expected` quer dizer "era esperado, estava faltando": f
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: code-output
 card: true
 bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
 aulaNum: "Aula 46"
 ---
 
@@ -184,9 +185,7 @@ print(idade_em_anos(30))
 
 Este é o código do debate. Duas linhas são citadas.
 
-::right::
-
-# A mensagem
+::output::
 
 ```text
   File "c2.py", line 2
@@ -196,6 +195,8 @@ IndentationError: expected an indented
 block after function definition on line 1
 ```
 
+::note::
+
 <AdminOnly>
 
 Detectado na linha 2, mas o bloco pertence ao `def` da linha 1. `indented` significa recuado, e não identificado.
@@ -203,9 +204,11 @@ Detectado na linha 2, mas o bloco pertence ao `def` da linha 1. `indented` signi
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: code-output
 card: true
 bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
 aulaNum: "Aula 46"
 ---
 
@@ -223,15 +226,15 @@ def classifica_espera(dias_no_abrigo):
 print(classifica_espera())
 ```
 
-::right::
-
-# A mensagem
+::output::
 
 ```text
 TypeError: classifica_espera() missing
 1 required positional argument:
 'dias_no_abrigo'
 ```
+
+::note::
 
 <AdminOnly>
 
@@ -240,9 +243,11 @@ TypeError: classifica_espera() missing
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: code-output
 card: true
 bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
 aulaNum: "Aula 46"
 ---
 
@@ -258,14 +263,14 @@ def ficha(nome_animal):
 print(ficha(nome_do_animal))
 ```
 
-::right::
-
-# A mensagem
+::output::
 
 ```text
 NameError: name 'nome_do_animal'
 is not defined
 ```
+
+::note::
 
 <AdminOnly>
 
@@ -274,9 +279,11 @@ is not defined
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: code-output
 card: true
 bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
 aulaNum: "Aula 46"
 ---
 
@@ -291,14 +298,14 @@ total = idade_meses + 12
 print(total)
 ```
 
-::right::
-
-# A mensagem
+::output::
 
 ```text
 TypeError: can only concatenate str
 (not "int") to str
 ```
+
+::note::
 
 <AdminOnly>
 
@@ -307,9 +314,11 @@ TypeError: can only concatenate str
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: code-output
 card: true
 bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
 aulaNum: "Aula 46"
 ---
 
@@ -325,13 +334,13 @@ print(dias[4])
 
 Quantos itens tem a lista? Quais posições existem?
 
-::right::
-
-# A mensagem
+::output::
 
 ```text
 IndexError: list index out of range
 ```
+
+::note::
 
 <AdminOnly>
 
@@ -340,14 +349,14 @@ IndexError: list index out of range
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: default
 card: true
 bgPreset: default
 aulaNum: "Aula 46"
 ---
 
 <!-- SLIDE 13 -->
-<!-- objetivo: aluno le um traceback de dois niveis aplicando a regra de baixo para cima -->
+<!-- objetivo: aluno le o codigo inteiro e antecipa qual das duas chamadas vai quebrar -->
 
 # C7
 
@@ -362,9 +371,28 @@ print(media_dias([10, 210, 22]))
 print(media_dias([]))
 ```
 
-::right::
+Duas chamadas da mesma função. **Uma funciona e a outra quebra.** Qual das duas quebra, e por quê?
 
-# A mensagem
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "A mensagem que apareceu"
+outputTone: error
+aulaNum: "Aula 46"
+---
+
+<!-- SLIDE 14 -->
+<!-- objetivo: aluno le um traceback de dois niveis aplicando a regra de baixo para cima -->
+
+# C7: o que apareceu na tela
+
+```python
+print(media_dias([10, 210, 22]))
+print(media_dias([]))
+```
+
+::output::
 
 ```text
 80.66666666666667
@@ -375,6 +403,8 @@ Traceback (most recent call last):
     return soma / len(lista)
 ZeroDivisionError: division by zero
 ```
+
+::note::
 
 <AdminOnly>
 
@@ -389,7 +419,7 @@ bgPreset: palette
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 14 -->
+<!-- SLIDE 15 -->
 <!-- [ATIV AVALIATIVA] objetivo: aluno entende o formato e as regras da prova antes de comecar -->
 
 # Avaliação de hoje: Error Report
@@ -411,7 +441,7 @@ bgPreset: palette
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 15 -->
+<!-- SLIDE 16 -->
 <!-- [ATIV AVALIATIVA] objetivo: aluno entende que a correcao faz parte da avaliacao -->
 
 # A prova tem duas fases
@@ -431,7 +461,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 16 -->
+<!-- SLIDE 17 -->
 <!-- [ATIV AVALIATIVA] objetivo: correcao conjunta da Parte 1 -->
 
 # Correção: Parte 1
@@ -458,7 +488,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 17 -->
+<!-- SLIDE 18 -->
 <!-- [ATIV AVALIATIVA] objetivo: correcao conjunta das Partes 2A e 2B -->
 
 # Correção: Partes 2A e 2B
@@ -483,7 +513,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 18 -->
+<!-- SLIDE 19 -->
 <!-- [ATIV AVALIATIVA] objetivo: correcao das tres armadilhas que mais derrubam -->
 
 # As três que mais derrubam
@@ -505,7 +535,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 19 -->
+<!-- SLIDE 20 -->
 <!-- [ATIV AVALIATIVA] objetivo: correcao conjunta das Partes 3 e 4 -->
 
 # Correção: Partes 3 e 4
@@ -528,7 +558,7 @@ bgPreset: palette
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 20 -->
+<!-- SLIDE 21 -->
 <!-- objetivo: divisor de bloco -->
 
 # Bloco 2
@@ -544,7 +574,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 21 -->
+<!-- SLIDE 22 -->
 <!-- objetivo: aluno reconhece as pecas de uma funcao -->
 
 # O que é uma função
@@ -562,39 +592,27 @@ Depois, para usar:
 `resultado = nome_da_funcao(valor)`
 
 ---
-layout: two-cols-text
+layout: default
 card: true
 bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 22 -->
-<!-- objetivo: aluno separa parametro de argumento, o erro do codigo C3 -->
+<!-- SLIDE 23 -->
+<!-- objetivo: aluno separa parametro de argumento, que e exatamente o erro do codigo C3 -->
 
-# Parâmetro
-
-O que está entre parênteses **na hora de definir** a função.
-
-Ele cria um pedacinho de memória que só existe **dentro** da função. Fora dela, esse nome não vale nada.
+# Parâmetro e argumento não são a mesma coisa
 
 ```python
-def dobro(numero):
-    return numero * 2
+def dobro(numero):      # numero e o PARAMETRO
+    return numero * 2   # so existe aqui dentro
+
+dobro(7)                # 7 e o ARGUMENTO
 ```
 
-`numero` é o parâmetro.
+**Parâmetro** é o que está entre parênteses **na hora de definir**. Ele cria um pedacinho de memória que só existe dentro da função. Fora dela, esse nome não vale nada.
 
-::right::
-
-# Argumento
-
-O valor de verdade que você coloca entre parênteses **na hora de chamar**.
-
-```python
-dobro(7)
-```
-
-`7` é o argumento. É ele que entra no lugar do parâmetro.
+**Argumento** é o valor de verdade que você coloca entre parênteses **na hora de chamar**.
 
 > Foi exatamente isso que quebrou no código C3.
 
@@ -605,7 +623,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 23 -->
+<!-- SLIDE 24 -->
 <!-- objetivo: aluno escreve as duas primeiras funcoes a mao -->
 
 # Exercícios 1 e 2
@@ -629,42 +647,30 @@ resultado = dobro(7)
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: default
 card: true
 bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 24 -->
-<!-- objetivo: aluno entende por que return nao e print antes de usar o valor devolvido -->
+<!-- SLIDE 25 -->
+<!-- objetivo: aluno entende que print nao devolve valor e por isso nao pode ser guardado -->
 
-# return
-
-Devolve o valor para quem chamou. O valor pode ser guardado e reusado. A função termina ali.
+# `return` não é `print`
 
 ```python
-def dobro(n):
-    return n * 2
+def dobro_a(n):
+    return n * 2        # devolve o valor
 
-x = dobro(5)
-print(x + 1)
+def dobro_b(n):
+    print(n * 2)        # so mostra na tela
+
+x = dobro_a(5)          # x vale 10
+y = dobro_b(5)          # y nao recebeu nada
+print(y + 1)            # quebra aqui
 ```
 
-::right::
-
-# print
-
-Só mostra na tela. Não dá para guardar nada. O programa continua.
-
-```python
-def dobro(n):
-    print(n * 2)
-
-x = dobro(5)
-print(x + 1)
-```
-
-> O segundo quebra: `x` não recebeu valor nenhum.
+`return` devolve para quem chamou, e o valor pode ser guardado e reusado. `print` só mostra e some.
 
 ---
 layout: default
@@ -673,7 +679,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 25 -->
+<!-- SLIDE 26 -->
 <!-- objetivo: aluno compara dois parametros entre si, sem numero fixo -->
 
 # Exercício 4
@@ -700,7 +706,7 @@ bgPreset: palette
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 26 -->
+<!-- SLIDE 27 -->
 <!-- objetivo: aluno monta uma decisao com and e descobre que a ordem do if importa -->
 
 # Exercício 5: o guarda-chuva
@@ -733,7 +739,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 27 -->
+<!-- SLIDE 28 -->
 <!-- objetivo: aluno converte a entrada do usuario, o erro do codigo C5 -->
 
 # Exercício 6
@@ -759,7 +765,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 28 -->
+<!-- SLIDE 29 -->
 <!-- objetivo: aluno protege a divisao por zero, o erro do codigo C7 -->
 
 # Exercício 7
@@ -786,7 +792,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 29 -->
+<!-- SLIDE 30 -->
 <!-- objetivo: aluno percorre uma lista com for e acumulador -->
 
 # Exercícios 8 e 9
@@ -823,7 +829,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 30 -->
+<!-- SLIDE 31 -->
 <!-- objetivo: aluno acessa dicionario dentro de funcao -->
 
 # Exercícios 10 e 11
@@ -855,7 +861,7 @@ bgPreset: default
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 31 -->
+<!-- SLIDE 32 -->
 <!-- tarefa de casa: aula 46 -->
 
 # Tarefa de Casa: Aula 46
@@ -875,7 +881,7 @@ bgPreset: palette
 aulaNum: "Aula 46"
 ---
 
-<!-- SLIDE 32 -->
+<!-- SLIDE 33 -->
 
 # Até a próxima
 

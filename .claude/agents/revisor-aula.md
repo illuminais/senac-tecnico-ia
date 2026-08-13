@@ -64,7 +64,7 @@ Para cada eixo, produza evidência (cite o slide e o trecho exato) — nunca ava
 
 Sinais de genericidade (marcar como problema):
 - Exemplo abstrato (`soma = a + b`, "Fulano e Beltrano", tabela `aluno`/`nota` genérica) quando a aula tem um dataset/contexto próprio disponível
-- Pergunta de debate do tipo "o que vocês acham de X?" sem ancoragem em dado real (violação já coberta parcialmente pelo template de dilema forçado, mas cheque se o dilema É realmente concreto ou só tem a forma "Time A vs Time B" com posições vagas)
+- **Debate presente sem o professor ter pedido** (desde 12/08/2026 debate não é gerado por padrão) — reportar como conteúdo a remover, substituindo por teoria que prepare o exercício seguinte. Se o professor pediu o debate, aí sim cheque se o dilema é concreto e ancorado em dado real da aula, e não só a forma "Time A vs Time B" com posições vagas
 - Exercício que voltaria idêntico se você trocasse o nome do dataset inteiro
 - Texto que poderia ter sido escrito antes de qualquer decisão pedagógica desta aula específica ter sido tomada
 

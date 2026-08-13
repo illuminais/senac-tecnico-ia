@@ -101,7 +101,7 @@ Em seguida, perguntar interativamente ao usuário o que fazer, com as opções:
 - `Manter como está`
 - `Simplificar linguagem` — reduzir para nível ~14 anos
 - `Aprofundar teoria` — adicionar exemplo, citação ou analogia
-- `Converter para [DEBATE]` — reformular como pergunta aberta
+- `Converter para [TEORIA]` — transformar em conteúdo que prepare o exercício seguinte (debate só a pedido do professor, ver skill estrutura-aula)
 - `Inserir scaffold antes` — slide intermediário para reduzir curva
 - `Expandir em múltiplos slides` — aciona Protocolo de Expansão (somente se sobrecarregado)
 
@@ -326,7 +326,7 @@ V2 — **Validação de ordem T→E→D→TC:**
 
 V3 — **Progressão de dificuldade:** exercícios devem progredir nível 1→N; flag se nível 3+ aparece antes de nível 1 no mesmo grupo.
 
-V4 — **Blocos obrigatórios:** cada grupo (exceto carryover) deve ter pelo menos 1× `[DINAMICA]` ou `[DEBATE]`, e 1× `[TAREFA DE CASA]`. Marcar ausências como `MISSING`.
+V4 — **Blocos obrigatórios:** cada grupo (exceto carryover) deve ter pelo menos 1× `[EXERCICIO]` ou `[ATIV AVALIATIVA]`, e 1× `[TAREFA DE CASA]`. Marcar ausências como `MISSING`. **Não** cobrar `[DEBATE]` nem `[DINAMICA]`: desde 12/08/2026 eles só existem quando o professor pede.
 
 V5 — **Consistência de ranges:** ler `## SECAO N` headers em `estrutura-aula.md`, extrair ranges declarados (ex: "Slides: 6 a 27"), verificar que não há sobreposição e que o range declarado bate com a contagem real.
 

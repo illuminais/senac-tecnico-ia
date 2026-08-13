@@ -193,7 +193,8 @@ Corrija antes de continuar para a próxima UC. Sugestões:
 
 ### Ordem e densidade
 
-- Máximo **2 slides `[TEORIA]` consecutivos** sem um `[DEBATE]` ou `[DINAMICA]` no meio
+- Máximo **4 slides `[TEORIA]` consecutivos** sem um `[EXERCICIO]` ou `[ATIV AVALIATIVA]` no meio
+- **Nunca gere `[DEBATE]` por conta própria** (decisão do professor, 12/08/2026) — só se pedido explicitamente. Sem debate, complete com teoria que prepare o exercício seguinte
 - Cada aula (aulaNum) deve ter: pelo menos 1 `[DEBATE]` e pelo menos 1 `[TEORIA]`
 - A abertura de cada aula é sempre um slide de engajamento (`[DEBATE]` ou `brainstorm`)
 

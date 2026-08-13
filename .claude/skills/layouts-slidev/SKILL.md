@@ -17,6 +17,7 @@ Use esta skill ao escrever ou editar qualquer slide do curso.
 |---|---|
 | `cover` | Capa da aula, abertura de bloco temático |
 | `default` | Qualquer slide de conteúdo: lista, código, parágrafo |
+| `code-output` | Código em cima e a saída dele embaixo: erro, traceback, resultado no terminal |
 | `center` | Frase de impacto, pergunta única, definição curta |
 | `center` + `wide: true` | Texto corrido longo: citação, contextualização |
 | `brainstorm` | Pergunta aberta para a turma, ativação inicial, debate |
@@ -91,6 +92,50 @@ aulaNum: "Aula NN"
 ```
 
 Só aparece após `unlockHour` da `aulaDate` ou para professor logado. **Nunca coloque gabaritos em `<v-click>`** — v-click é visível ao projetar.
+
+### Layout `code-output` — código em cima, saída embaixo
+
+Para slides que mostram um trecho de código **e** o que ele devolveu (mensagem de erro, traceback, resultado).
+Substitui o uso de `two-cols-text` para esse caso: o código fica maior e a saída fica embaixo, num painel próprio.
+
+```markdown
+---
+layout: code-output
+outputLabel: "A mensagem que apareceu"
+outputTone: error
+---
+
+# C1
+
+```python
+def ficha(nome_animal)
+    return f"Ficha de {nome_animal}"
+```
+
+::output::
+
+```text
+SyntaxError: expected ':'
+```
+
+::note::
+
+<AdminOnly>
+
+Falta o dois-pontos no fim da linha do `def`.
+
+</AdminOnly>
+```
+
+| Prop | Valores | Padrão |
+|---|---|---|
+| `outputLabel` | qualquer texto, vira o rótulo do painel | `"Saída"` |
+| `outputTone` | `error` (borda vermelha) ou `neutral` (borda cinza) | `error` |
+
+Slots: conteúdo principal (título e código), `::output::` (a saída) e `::note::` (gabarito, opcional).
+
+Cada região declara o próprio tamanho de fonte, sem herdar do card. Isso é intencional: foi a herança do pai
+que desalinhou os layouts `two-cols`.
 
 ### `MLToast` — Aviso com clique
 
