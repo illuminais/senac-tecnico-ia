@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Av06-T2 UC08 — Quem pode ver o quê</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.4; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 8px; }
+  .cabecalho { border: 2px solid #000; padding: 8px 10px; margin: 10px 0 12px; }
+  .cabecalho td { border: none; padding: 3px 6px; font-size: 12px; }
+  .campo { border-bottom: 1px solid #000; display: inline-block; min-width: 150px; }
+  .caixa-nota { border: 1px solid #000; padding: 5px 8px; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 15px; }
+  .item { margin: 9px 0; page-break-inside: avoid; }
+  .alt { display: block; margin: 1px 0 1px 12px; font-size: 11px; }
+  .linha { border-bottom: 1px solid #999; display: block; height: 16px; margin-top: 3px; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eee; padding: 0 3px; }
+  pre { font-family: 'Consolas','Courier New',monospace; font-size: 10.5px; background: #f5f5f5;
+        border: 1px solid #bbb; padding: 5px 7px; margin: 4px 0; white-space: pre; }
+  table { border-collapse: collapse; width: 100%; margin: 7px 0; }
+  th, td { border: 1px solid #999; padding: 4px 6px; font-size: 11px; vertical-align: top; }
+  th { background: #eee; }
+  .ajuda { font-size: 11px; background: #fafafa; border: 1px solid #666; padding: 6px 9px; margin: 8px 0; }
+  .resolvido { border: 2px solid #444; background: #f7f7f7; padding: 8px 11px; margin: 10px 0; }
+  .resolvido h3 { margin: 0 0 5px; font-size: 12.5px; }
+  .page-break { page-break-before: always; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Av06-T2 — Quem pode ver o quê</h1>
+<div class="sub">UC08 Banco de Dados · A47 · 14/08/2026 · individual · em papel · sem computador e sem celular</div>
+
+<div class="cabecalho">
+<table style="width:100%;">
+<tr>
+  <td style="width:52%;">Nome: <span class="campo">&nbsp;</span></td>
+  <td>Entrega: <span class="campo" style="min-width:110px;">hoje, fim do bloco</span></td>
+</tr>
+<tr><td colspan="2" style="padding-top:6px;">
+  <div class="caixa-nota">
+    <b>Conceito:</b> &nbsp; ☐ Atendido &nbsp;&nbsp; ☐ Parcialmente Atendido &nbsp;&nbsp; ☐ Não Atendido
+    <div style="margin-top:6px;"><b>Feedback do professor:</b></div>
+    <div style="height:15px;border-bottom:1px solid #999;"></div>
+    <div style="height:15px;border-bottom:1px solid #999;margin-top:3px;"></div>
+  </div>
+</td></tr>
+</table>
+</div>
+
+<div class="ajuda">
+<b>Duas fases.</b> Agora você responde sozinho. Depois a gente corrige junto e você escreve, com caneta de outra cor,
+o que errou e por quê. <b>Parcialmente Atendido vira Atendido</b> se a sua correção mostrar que você entendeu.
+</div>
+
+<div class="ajuda">
+<b>Ajuda de sintaxe</b> (é só o esqueleto, você preenche):
+<pre>CREATE USER '____'@'localhost' IDENTIFIED BY '____';
+GRANT ____ ON ____.____ TO '____'@'localhost';
+REVOKE ____ ON ____.____ FROM '____'@'localhost';</pre>
+Privilégios possíveis: <span class="cod">SELECT</span> · <span class="cod">INSERT</span> · <span class="cod">UPDATE</span> · <span class="cod">DELETE</span> · <span class="cod">ALL PRIVILEGES</span>
+</div>
+
+<h2>O banco do abrigo</h2>
+
+<table>
+<tr><th style="width:22%;">Tabela</th><th>Colunas</th><th style="width:18%;">Dado sensível?</th></tr>
+<tr><td><span class="cod">animais</span></td><td>id, nome_animal, especie, porte, idade_meses, dias_no_abrigo, adotado</td><td>não</td></tr>
+<tr><td><span class="cod">adotantes</span></td><td>id, nome, <b>cpf</b>, <b>telefone</b>, <b>endereco</b></td><td><b>sim</b></td></tr>
+<tr><td><span class="cod">adocoes</span></td><td>id, id_animal, id_adotante, data_adocao</td><td>em parte</td></tr>
+</table>
+
+<p style="font-size:11.5px;margin:6px 0;">Quatro pessoas trabalham no abrigo:</p>
+<table>
+<tr><th style="width:26%;">Perfil</th><th>O que faz no dia a dia</th></tr>
+<tr><td><b>recepcionista</b></td><td>cadastra o animal que chega e registra quando uma adoção acontece</td></tr>
+<tr><td><b>veterinária</b></td><td>acompanha a saúde dos animais e atualiza a ficha deles</td></tr>
+<tr><td><b>coordenadora</b></td><td>responde pelo abrigo inteiro, inclusive pelos contratos de adoção</td></tr>
+<tr><td><b>estagiário de dados</b></td><td>faz relatórios e gráficos sobre quanto tempo os animais esperam</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Parte 1 — Conceitos <span style="font-weight:normal;font-size:11px;">(marque UMA opção por item)</span></h2>
+
+<div class="item"><b>1.1</b> No banco de dados, um <b>usuário</b> é:
+<span class="alt">☐ a) uma conta criada dentro do banco, com permissões próprias</span>
+<span class="alt">☐ b) a pessoa física que senta na frente do computador</span>
+<span class="alt">☐ c) o programa que abre a conexão com o banco</span>
+<span class="alt">☐ d) o dono da empresa que pagou pelo sistema</span></div>
+
+<div class="item"><b>1.2</b> O <b>princípio do menor privilégio</b> diz que:
+<span class="alt">☐ a) o banco deve ter o menor número possível de contas criadas</span>
+<span class="alt">☐ b) quem tem menos tempo de casa deve receber menos acesso</span>
+<span class="alt">☐ c) cada conta recebe só o que precisa para o próprio trabalho</span>
+<span class="alt">☐ d) as permissões devem ser revisadas pelo menos uma vez por ano</span></div>
+
+<div class="item"><b>1.3</b> <span class="cod">GRANT SELECT ON abrigo.animais TO 'ana'@'localhost';</span> permite que a Ana:
+<span class="alt">☐ a) apague linhas da tabela animais</span>
+<span class="alt">☐ b) crie a estrutura da tabela animais</span>
+<span class="alt">☐ c) dê permissão de leitura para outras contas</span>
+<span class="alt">☐ d) leia as linhas da tabela animais</span></div>
+
+<div class="item"><b>1.4</b> Para <b>tirar</b> uma permissão que já tinha sido dada, usa-se:
+<span class="alt">☐ a) DELETE</span>
+<span class="alt">☐ b) REVOKE</span>
+<span class="alt">☐ c) DROP USER</span>
+<span class="alt">☐ d) ALTER USER</span></div>
+
+<div class="item"><b>1.5</b> O sqliteonline.com não tem GRANT nem REVOKE porque:
+<span class="alt">☐ a) é a versão gratuita, e esses comandos são só da versão paga</span>
+<span class="alt">☐ b) esses comandos saíram das versões mais novas da linguagem SQL</span>
+<span class="alt">☐ c) o SQLite é um banco de arquivo único, sem servidor e sem contas</span>
+<span class="alt">☐ d) só o administrador do site tem autorização para usar esses comandos</span></div>
+
+<div class="item"><b>1.6</b> A tabela <span class="cod">adotantes</span> guarda CPF e endereço. O acesso a ela deve ser:
+<span class="alt">☐ a) liberado para todos, afinal é tudo a mesma instituição</span>
+<span class="alt">☐ b) bloqueado para todo mundo, inclusive para a coordenação</span>
+<span class="alt">☐ c) liberado apenas para quem souber escrever SQL direito</span>
+<span class="alt">☐ d) restrito a quem precisa desses dados para trabalhar</span></div>
+
+<div class="page-break"></div>
+
+<div class="resolvido">
+<h3>Parte 2 — Exemplo resolvido: a recepcionista</h3>
+<p style="font-size:11.5px;margin:4px 0;"><b>Leia com atenção.</b> A Parte 3 pede exatamente isso, para os outros perfis.</p>
+
+<p style="font-size:11.5px;margin:6px 0 3px;"><b>Passo 1 - o que ela precisa fazer?</b> Cadastrar animal que chega e registrar adoção.</p>
+<p style="font-size:11.5px;margin:3px 0;"><b>Passo 2 - que tabela cada tarefa toca?</b> Cadastrar animal toca <span class="cod">animais</span>. Registrar adoção toca <span class="cod">adocoes</span>, e precisa saber quem é o adotante, mas <b>não</b> precisa do CPF nem do endereço dele.</p>
+<p style="font-size:11.5px;margin:3px 0;"><b>Passo 3 - menor privilégio.</b> Só o necessário, nada além.</p>
+
+<table>
+<tr><th>Perfil</th><th><span class="cod">animais</span></th><th><span class="cod">adotantes</span></th><th><span class="cod">adocoes</span></th></tr>
+<tr><td><b>recepcionista</b></td><td>SELECT, INSERT, UPDATE</td><td>nenhum</td><td>SELECT, INSERT</td></tr>
+</table>
+
+<p style="font-size:11.5px;margin:6px 0 3px;"><b>Passo 4 - virar comando:</b></p>
+<pre>CREATE USER 'recepcionista'@'localhost' IDENTIFIED BY 'senha123';
+GRANT SELECT, INSERT, UPDATE ON abrigo.animais TO 'recepcionista'@'localhost';
+GRANT SELECT, INSERT ON abrigo.adocoes TO 'recepcionista'@'localhost';</pre>
+<p style="font-size:11.5px;margin:4px 0 0;">Repare: <b>nenhum</b> comando foi escrito para <span class="cod">adotantes</span>. Quando não se escreve nada, a conta não tem acesso. Permissão não existe por padrão, ela precisa ser dada.</p>
+</div>
+
+<h2>Parte 3 — Agora é você: complete a matriz</h2>
+<p style="font-size:11px;margin:4px 0;">Escreva os privilégios de cada célula, ou <b>nenhum</b>. Depois justifique <b>duas</b> células em uma frase cada.</p>
+
+<table>
+<tr><th style="width:24%;">Perfil</th><th><span class="cod">animais</span></th><th><span class="cod">adotantes</span></th><th><span class="cod">adocoes</span></th></tr>
+<tr><td><b>veterinária</b></td><td style="height:34px;"></td><td></td><td></td></tr>
+<tr><td><b>coordenadora</b></td><td style="height:34px;"></td><td></td><td></td></tr>
+<tr><td><b>estagiário de dados</b></td><td style="height:34px;"></td><td></td><td></td></tr>
+</table>
+
+<div class="item"><b>Justificativa 1</b> (diga qual célula e por quê):
+<span class="linha"></span><span class="linha"></span></div>
+
+<div class="item"><b>Justificativa 2</b>:
+<span class="linha"></span><span class="linha"></span></div>
+
+<div class="page-break"></div>
+
+<h2>Parte 4 — Escreva os comandos</h2>
+<p style="font-size:11px;margin:4px 0;">Escolha <b>dois</b> perfis da Parte 3 e escreva o <span class="cod">CREATE USER</span> e os <span class="cod">GRANT</span> de cada um, como no exemplo resolvido.</p>
+
+<div class="item"><b>Perfil escolhido 1:</b> <span class="campo" style="min-width:130px;">&nbsp;</span>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="item"><b>Perfil escolhido 2:</b> <span class="campo" style="min-width:130px;">&nbsp;</span>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<h2>Parte 5 — Mudou o contexto</h2>
+<p style="font-size:11.5px;margin:4px 0;">O estagiário saiu do projeto de dados e virou voluntário no canil: agora ele ajuda a cuidar dos animais e não faz mais relatório nenhum.</p>
+
+<div class="item"><b>a)</b> Escreva o comando que tira o acesso que ele não deve mais ter.
+<span class="linha"></span><span class="linha"></span></div>
+
+<div class="item"><b>b)</b> Depois desse comando, o que ele ainda consegue fazer no banco?
+<span class="linha"></span><span class="linha"></span></div>
+
+<h2>Parte 6 — Desafio</h2>
+<p style="font-size:11.5px;margin:4px 0;">A coordenadora quer que a veterinária veja o <b>histórico de adoções</b> de cada animal, mas <b>sem</b> enxergar o CPF do adotante.</p>
+<p style="font-size:11.5px;margin:4px 0;">Dar <span class="cod">SELECT</span> na tabela <span class="cod">adotantes</span> inteira resolveria, mas entregaria o CPF junto. Como resolver sem fazer isso?</p>
+<p style="font-size:10.5px;color:#555;margin:4px 0;">Dica: existe um jeito de criar uma "tabela de mentira" que mostra só algumas colunas das tabelas de verdade.</p>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span><span class="linha"></span>
+
+<div style="font-size:10px;color:#555;margin-top:14px;border-top:1px solid #ccc;padding-top:6px;">
+A Parte 6 não é obrigatória para o conceito Atendido. Ela existe para quem terminou antes.
+</div>
+
+<div class="page-break"></div>
+
+<h1>Fase 2 — Correção da própria prova</h1>
+<div class="sub">Caneta de <b>outra cor</b>. Só as questões que você errou. Se faltar espaço, use o verso.</div>
+
+<div class="cabecalho" style="border-width:1px;">Nome: <span class="campo">&nbsp;</span></div>
+
+<table>
+<tr><th style="width:12%;">Questão</th><th style="width:16%;">Eu respondi</th><th style="width:16%;">O que era</th><th>Por que eu errei (1 frase)</th></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>O que eu não tinha entendido antes desta prova</h2>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span>
+
+<h2>Se eu tivesse que dar acesso a uma pessoa nova amanhã, meu primeiro passo seria</h2>
+<span class="linha"></span><span class="linha"></span>
+
+<div style="border:1px solid #000;padding:10px;margin-top:18px;width:200px;">
+<div style="font-size:11px;">Visto do professor</div>
+<div style="height:36px;"></div>
+<div style="font-size:10px;color:#555;">Data: ____/____/______</div>
+</div>
+
+</body>
+</html>

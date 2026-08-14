@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# Banco do abrigo - Aula 47 (14/08/2026)
+#
+#   docker compose up -d          sobe e semeia tudo sozinho
+#   docker compose logs -f        acompanha a primeira carga
+#   ./verificar.sh                confere se ficou tudo certo
+#   docker compose down           desliga, mas GUARDA os dados
+#   docker compose down -v        desliga e APAGA tudo (para recomecar do zero)
+#
+# A carga inicial so roda quando o volume esta vazio. Se voce mudar o SQL
+# depois de ja ter subido, precisa de `down -v` para ele rodar de novo.
+# ---------------------------------------------------------------------------
+
+services:
+  abrigo:
+    image: postgres:16
+    container_name: abrigo
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-senac2026}
+      # Evita que o locale quebre a ordenacao de nomes com acento
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+
+    ports:
+      # Porta da sua maquina : porta dentro do container.
+      # Se 5432 ja estiver ocupada, rode com: PGPORT=5433 docker compose up -d
+      - "${PGPORT:-5432}:5432"
+
+    volumes:
+      - abrigo_dados:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+
+    # 16 grupos, cada um com duas contas, e o DBeaver abre mais de uma conexao
+    # por configuracao. O padrao de 100 fica apertado.
+    command: ["postgres", "-c", "max_connections=200"]
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  abrigo_dados:

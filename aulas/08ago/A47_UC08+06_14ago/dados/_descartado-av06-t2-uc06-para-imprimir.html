@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Av06-T2 UC06 — Processos, threads e GPU</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.4; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 8px; }
+  .cabecalho { border: 2px solid #000; padding: 8px 10px; margin: 10px 0 12px; }
+  .cabecalho td { border: none; padding: 3px 6px; font-size: 12px; }
+  .campo { border-bottom: 1px solid #000; display: inline-block; min-width: 150px; }
+  .caixa-nota { border: 1px solid #000; padding: 5px 8px; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 15px; }
+  .item { margin: 9px 0; page-break-inside: avoid; }
+  .alt { display: block; margin: 1px 0 1px 12px; font-size: 11px; }
+  .linha { border-bottom: 1px solid #999; display: block; height: 16px; margin-top: 3px; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eee; padding: 0 3px; }
+  table { border-collapse: collapse; width: 100%; margin: 7px 0; }
+  th, td { border: 1px solid #999; padding: 4px 6px; font-size: 11px; vertical-align: top; }
+  th { background: #eee; }
+  .ajuda { font-size: 11px; background: #fafafa; border: 1px solid #666; padding: 6px 9px; margin: 8px 0; }
+  .resolvido { border: 2px solid #444; background: #f7f7f7; padding: 8px 11px; margin: 10px 0; }
+  .resolvido h3 { margin: 0 0 5px; font-size: 12.5px; }
+  .page-break { page-break-before: always; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Av06-T2 — Quem executa o quê</h1>
+<div class="sub">UC06 Arquitetura de Computadores e GPU · A47 · 14/08/2026 · individual · em papel</div>
+
+<div class="cabecalho">
+<table style="width:100%;">
+<tr>
+  <td style="width:52%;">Nome: <span class="campo">&nbsp;</span></td>
+  <td>Entrega: <span class="campo" style="min-width:110px;">hoje, fim do bloco</span></td>
+</tr>
+<tr><td colspan="2" style="padding-top:6px;">
+  <div class="caixa-nota">
+    <b>Conceito:</b> &nbsp; ☐ Atendido &nbsp;&nbsp; ☐ Parcialmente Atendido &nbsp;&nbsp; ☐ Não Atendido
+    <div style="margin-top:6px;"><b>Feedback do professor:</b></div>
+    <div style="height:15px;border-bottom:1px solid #999;"></div>
+    <div style="height:15px;border-bottom:1px solid #999;margin-top:3px;"></div>
+  </div>
+</td></tr>
+</table>
+</div>
+
+<div class="ajuda">
+<b>Duas fases.</b> Agora você responde sozinho. Depois a gente corrige junto e você escreve, com caneta de outra cor,
+o que errou e por quê. <b>Parcialmente Atendido vira Atendido</b> se a sua correção mostrar que você entendeu.
+</div>
+
+<h2>Parte 1 — Conceitos <span style="font-weight:normal;font-size:11px;">(marque UMA opção por item)</span></h2>
+
+<div class="item"><b>1.1</b> A diferença principal entre um <b>processo</b> e uma <b>thread</b> é que:
+<span class="alt">☐ a) o processo roda na CPU e a thread roda sempre na GPU</span>
+<span class="alt">☐ b) cada processo tem a própria memória, e as threads dividem a mesma</span>
+<span class="alt">☐ c) o processo é do sistema e a thread é escrita pelo programador</span>
+<span class="alt">☐ d) a thread é mais antiga e o processo veio depois, para substituir</span></div>
+
+<div class="item"><b>1.2</b> Uma aba do navegador travar e as outras continuarem funcionando mostra que:
+<span class="alt">☐ a) cada aba é uma thread dentro do mesmo processo</span>
+<span class="alt">☐ b) o navegador foi instalado com uma configuração especial</span>
+<span class="alt">☐ c) cada aba roda como um processo separado, com memória própria</span>
+<span class="alt">☐ d) a aba travada foi movida sozinha para outro núcleo da CPU</span></div>
+
+<div class="item"><b>1.3</b> <b>Concorrência</b> e <b>paralelismo</b> são diferentes porque:
+<span class="alt">☐ a) concorrência é alternar rápido entre tarefas, paralelismo é fazer ao mesmo tempo</span>
+<span class="alt">☐ b) concorrência acontece dentro da CPU e paralelismo dentro da memória RAM</span>
+<span class="alt">☐ c) paralelismo é o conceito antigo e concorrência só existe em máquina moderna</span>
+<span class="alt">☐ d) concorrência serve para programa pequeno e paralelismo para programa grande</span></div>
+
+<div class="item"><b>1.4</b> O <b>GIL</b> do Python faz com que:
+<span class="alt">☐ a) o Python não consiga usar mais de um núcleo em hipótese nenhuma</span>
+<span class="alt">☐ b) só uma thread por vez execute código Python dentro de um processo</span>
+<span class="alt">☐ c) todo programa em Python seja obrigado a rodar dentro da GPU</span>
+<span class="alt">☐ d) as threads do Python fiquem mais rápidas que as de outras linguagens</span></div>
+
+<div class="item"><b>1.5</b> Uma GPU é boa para treinar modelo de IA porque:
+<span class="alt">☐ a) o relógio dela é muito mais rápido do que o de qualquer processador atual</span>
+<span class="alt">☐ b) a memória dela é bem maior do que toda a memória RAM da máquina inteira</span>
+<span class="alt">☐ c) ela consegue guardar o modelo inteiro sem precisar usar o disco rígido</span>
+<span class="alt">☐ d) ela tem milhares de núcleos simples fazendo a mesma conta ao mesmo tempo</span></div>
+
+<div class="page-break"></div>
+
+<div class="resolvido">
+<h3>Parte 2 — Exemplo resolvido</h3>
+<p style="font-size:11.5px;margin:4px 0;"><b>Leia com atenção.</b> A Parte 3 pede exatamente isso, em outras situações.</p>
+
+<p style="font-size:11.5px;margin:6px 0 3px;"><b>Situação:</b> um programa baixa três arquivos da internet ao mesmo tempo.</p>
+
+<table>
+<tr><th style="width:30%;">Pergunta</th><th>Raciocínio</th></tr>
+<tr><td>As três tarefas precisam trocar informação entre si?</td><td>Sim, todas escrevem na mesma pasta e atualizam a mesma barra de progresso. Então compartilhar memória ajuda.</td></tr>
+<tr><td>A tarefa fica <b>esperando</b> alguma coisa?</td><td>Sim, fica esperando a internet responder. Enquanto espera, não está usando a CPU.</td></tr>
+<tr><td>É a mesma conta repetida milhares de vezes?</td><td>Não. São três downloads diferentes.</td></tr>
+</table>
+
+<p style="font-size:11.5px;margin:6px 0 2px;"><b>Resposta: threads na mesma tarefa.</b></p>
+<p style="font-size:11.5px;margin:2px 0;"><b>Justificativa:</b> as três esperam a rede a maior parte do tempo e precisam compartilhar a mesma memória, então não compensa criar processos separados.</p>
+<p style="font-size:11px;margin:6px 0 0;color:#444;">A regra que sai daí: <b>esperar</b> pede thread. <b>Isolar</b> pede processo. <b>Repetir a mesma conta em muitos dados</b> pede GPU.</p>
+</div>
+
+<h2>Parte 3 — Agora é você</h2>
+<p style="font-size:11px;margin:4px 0;">Marque uma opção e justifique em <b>uma frase</b>, como no exemplo.</p>
+
+<div class="item"><b>3.1</b> Somar uma coluna de 2 milhões de números, todos do mesmo jeito.
+<div class="alt">☐ threads &nbsp;&nbsp; ☐ processos separados &nbsp;&nbsp; ☐ GPU</div>
+<span class="linha"></span></div>
+
+<div class="item"><b>3.2</b> Rodar o editor de código e o navegador ao mesmo tempo na sua máquina.
+<div class="alt">☐ threads &nbsp;&nbsp; ☐ processos separados &nbsp;&nbsp; ☐ GPU</div>
+<span class="linha"></span></div>
+
+<div class="item"><b>3.3</b> Um aplicativo que toca música enquanto você rola a tela.
+<div class="alt">☐ threads &nbsp;&nbsp; ☐ processos separados &nbsp;&nbsp; ☐ GPU</div>
+<span class="linha"></span></div>
+
+<div class="item"><b>3.4</b> Treinar um modelo com um lote de 5 mil imagens.
+<div class="alt">☐ threads &nbsp;&nbsp; ☐ processos separados &nbsp;&nbsp; ☐ GPU</div>
+<span class="linha"></span></div>
+
+<div class="item"><b>3.5</b> Um site que precisa continuar no ar mesmo se um dos programas dele quebrar.
+<div class="alt">☐ threads &nbsp;&nbsp; ☐ processos separados &nbsp;&nbsp; ☐ GPU</div>
+<span class="linha"></span></div>
+
+<div class="page-break"></div>
+
+<h2>Parte 4 — O caminho do lote até a GPU</h2>
+
+<p style="font-size:11.5px;margin:4px 0;">Para treinar um modelo, um lote (<i>batch</i>) de imagens percorre um caminho.
+Numere as etapas de <b>1 a 4</b> na ordem em que acontecem.</p>
+
+<table>
+<tr><th style="width:14%;">Ordem</th><th>Etapa</th></tr>
+<tr><td style="height:26px;text-align:center;"></td><td>milhares de núcleos da GPU fazem a mesma conta, cada um em um pedaço do lote</td></tr>
+<tr><td style="height:26px;text-align:center;"></td><td>o resultado volta da VRAM para a memória RAM</td></tr>
+<tr><td style="height:26px;text-align:center;"></td><td>o lote de imagens é copiado da RAM para a VRAM, a memória da GPU</td></tr>
+<tr><td style="height:26px;text-align:center;"></td><td>o programa em Python separa as imagens em um lote</td></tr>
+</table>
+
+<div class="item"><b>4.1</b> Por que a CPU sozinha demoraria muito mais para fazer esse mesmo trabalho?
+Use as palavras <b>concorrência</b> e <b>paralelismo</b> na sua resposta.
+<span class="linha"></span><span class="linha"></span><span class="linha"></span></div>
+
+<div class="item"><b>4.2</b> Se o lote for grande demais para caber na VRAM, o que precisa acontecer?
+<span class="linha"></span><span class="linha"></span></div>
+
+<h2>Parte 5 — Olhando a máquina de verdade</h2>
+<p style="font-size:11.5px;margin:4px 0;">Com o Gerenciador de Tarefas aberto na sua frente, responda:</p>
+
+<div class="item"><b>5.1</b> Quantos processos o navegador está usando neste momento? <span class="campo" style="min-width:70px;">&nbsp;</span></div>
+
+<div class="item"><b>5.2</b> Escolha um programa da lista e anote quantas threads ele tem.
+Programa: <span class="campo" style="min-width:120px;">&nbsp;</span> Threads: <span class="campo" style="min-width:60px;">&nbsp;</span></div>
+
+<div class="item"><b>5.3</b> Esse número de threads é maior que o número de processos do mesmo programa. Por que isso faz sentido?
+<span class="linha"></span><span class="linha"></span></div>
+
+<div class="page-break"></div>
+
+<h1>Fase 2 — Correção da própria prova</h1>
+<div class="sub">Caneta de <b>outra cor</b>. Só as questões que você errou. Se faltar espaço, use o verso.</div>
+
+<div class="cabecalho" style="border-width:1px;">Nome: <span class="campo">&nbsp;</span></div>
+
+<table>
+<tr><th style="width:12%;">Questão</th><th style="width:16%;">Eu respondi</th><th style="width:16%;">O que era</th><th>Por que eu errei (1 frase)</th></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>O que eu não tinha entendido antes desta prova</h2>
+<span class="linha"></span><span class="linha"></span><span class="linha"></span>
+
+<h2>A regra que eu vou levar daqui</h2>
+<p style="font-size:11px;margin:2px 0;color:#555;">Complete: esperar pede ______ , isolar pede ______ , repetir a mesma conta em muitos dados pede ______ .</p>
+<span class="linha"></span>
+
+<div style="border:1px solid #000;padding:10px;margin-top:18px;width:200px;">
+<div style="font-size:11px;">Visto do professor</div>
+<div style="height:36px;"></div>
+<div style="font-size:10px;color:#555;">Data: ____/____/______</div>
+</div>
+
+</body>
+</html>

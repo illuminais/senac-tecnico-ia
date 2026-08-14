@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Av06-T2 — Gabarito comentado</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.4; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 10px; }
+  h2 { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 2px; margin-top: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { border: 1px solid #999; padding: 4px 7px; font-size: 11px; vertical-align: top; }
+  th { background: #eee; }
+  .certa { font-weight: bold; background: #eef7ee; text-align: center; width: 40px; }
+  .armadilha { background: #fff6f0; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eee; padding: 0 3px; }
+  pre { font-family: 'Consolas','Courier New',monospace; font-size: 10.5px; background: #f5f5f5;
+        border: 1px solid #bbb; padding: 5px 7px; margin: 4px 0; white-space: pre; }
+  .caixa { border: 1px solid #666; padding: 7px 10px; margin: 8px 0; font-size: 11px; background: #fafafa; }
+  .page-break { page-break-before: always; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>Av06-T2 — Gabarito comentado (Fase 2)</h1>
+<div class="sub">UC08 Banco de Dados e UC06 Arquitetura e GPU · A47 · 14/08/2026 · projetar na correção conjunta</div>
+
+<div class="caixa">
+<b>Como usar:</b> não basta dizer a letra. Nas questões que a turma errou muito, leia em voz alta a coluna
+"por que a errada engana". Os alunos preenchem a folha de correção enquanto isso.
+</div>
+
+<h2>Gabarito rápido</h2>
+<div class="caixa" style="font-size:13px;font-family:Consolas,monospace;">
+<b>UC08</b> &nbsp; 1.1 <b>a</b> · 1.2 <b>c</b> · 1.3 <b>d</b> · 1.4 <b>b</b> · 1.5 <b>c</b> · 1.6 <b>d</b><br>
+<b>UC06</b> &nbsp; 1.1 <b>b</b> · 1.2 <b>c</b> · 1.3 <b>a</b> · 1.4 <b>b</b> · 1.5 <b>d</b>
+<div style="font-size:10px;color:#555;margin-top:6px;">Distribuição: a=3 · b=3 · c=3 · d=2. Nenhuma correta é a mais longa do item.</div>
+</div>
+
+<h2>UC08 Parte 1 — Conceitos</h2>
+<table>
+<tr><th>Q</th><th class="certa">✔</th><th>Por quê</th><th>Por que a errada engana</th></tr>
+<tr><td>1.1</td><td class="certa">a</td><td>Usuário do banco é uma conta com permissões, não uma pessoa. Uma pessoa pode ter várias contas, e uma conta pode ser usada por um sistema.</td><td class="armadilha">(b) é a leitura do dia a dia: "usuário é quem usa". No banco, não.</td></tr>
+<tr><td>1.2</td><td class="certa">c</td><td>Menor privilégio: só o necessário para a função, nada além.</td><td class="armadilha">(b) confunde privilégio com hierarquia. Não é sobre confiança na pessoa, é sobre a tarefa.</td></tr>
+<tr><td>1.3</td><td class="certa">d</td><td><span class="cod">SELECT</span> é só leitura.</td><td class="armadilha">(c) "dar permissão para outros" existe de verdade, mas exige <span class="cod">WITH GRANT OPTION</span>, que não foi dado aqui.</td></tr>
+<tr><td>1.4</td><td class="certa">b</td><td><span class="cod">REVOKE</span> tira privilégio.</td><td class="armadilha">(c) <span class="cod">DROP USER</span> apaga a conta inteira. Resolve, mas é muito além do pedido: a pessoa continua trabalhando ali.</td></tr>
+<tr><td>1.5</td><td class="certa">c</td><td>SQLite é um arquivo, sem servidor e sem contas. Quem controla o acesso é o sistema operacional.</td><td class="armadilha">(a) "é a versão grátis" é o palpite natural de quem não sabe. Não existe versão paga do SQLite com DCL.</td></tr>
+<tr><td>1.6</td><td class="certa">d</td><td>Restrito a quem precisa. É o menor privilégio aplicado a dado sensível.</td><td class="armadilha">(b) "bloqueado para todo mundo" soa mais seguro, mas quebra o trabalho: alguém precisa emitir o contrato de adoção.</td></tr>
+</table>
+
+<h2>UC08 Parte 3 — A matriz</h2>
+<table>
+<tr><th style="width:24%;">Perfil</th><th><span class="cod">animais</span></th><th><span class="cod">adotantes</span></th><th><span class="cod">adocoes</span></th></tr>
+<tr><td><b>veterinária</b></td><td>SELECT, UPDATE</td><td>nenhum</td><td>SELECT</td></tr>
+<tr><td><b>coordenadora</b></td><td>ALL PRIVILEGES</td><td>ALL PRIVILEGES</td><td>ALL PRIVILEGES</td></tr>
+<tr><td><b>estagiário de dados</b></td><td>SELECT</td><td>nenhum</td><td>SELECT</td></tr>
+</table>
+
+<div class="caixa">
+<b>O que aceitar como certo:</b> pequenas variações são válidas se a justificativa sustentar. Exemplos aceitáveis:
+veterinária com <span class="cod">INSERT</span> em <span class="cod">animais</span> (se ela também cadastra),
+estagiário sem acesso a <span class="cod">adocoes</span> (se o relatório dele for só sobre tempo de espera).
+<br><br>
+<b>O que NÃO aceitar:</b> qualquer acesso do <b>estagiário</b> ou da <b>veterinária</b> à tabela
+<span class="cod">adotantes</span>. Nenhum dos dois precisa de CPF para trabalhar. É o item que separa quem
+entendeu menor privilégio de quem só preencheu a tabela.
+<br><br>
+<b>Coordenadora com ALL PRIVILEGES</b> é aceitável, mas quem escreveu privilégio por privilégio, sem
+<span class="cod">DELETE</span>, mostrou mais cuidado, não menos. Vale <b>A</b> igual.
+</div>
+
+<h2>UC08 Parte 4 — Os comandos</h2>
+<pre>CREATE USER 'veterinaria'@'localhost' IDENTIFIED BY 'senha123';
+GRANT SELECT, UPDATE ON abrigo.animais TO 'veterinaria'@'localhost';
+GRANT SELECT ON abrigo.adocoes TO 'veterinaria'@'localhost';
+
+CREATE USER 'estagiario'@'localhost' IDENTIFIED BY 'senha123';
+GRANT SELECT ON abrigo.animais TO 'estagiario'@'localhost';
+GRANT SELECT ON abrigo.adocoes TO 'estagiario'@'localhost';</pre>
+<p style="font-size:11px;">Erro de sintaxe pequeno (ponto e vírgula, aspas) entra no feedback escrito, não derruba a questão. O que derruba é dar privilégio que o perfil não deveria ter.</p>
+
+<h2>UC08 Parte 5 — Mudou o contexto</h2>
+<pre>REVOKE SELECT ON abrigo.adocoes FROM 'estagiario'@'localhost';</pre>
+<p style="font-size:11px;"><b>b)</b> Ele continua com <span class="cod">SELECT</span> em <span class="cod">animais</span>, o que faz sentido para quem cuida dos bichos no canil. Aceitar também quem tirou os dois acessos e justificou que ele não mexe mais com dados.</p>
+
+<h2>UC08 Parte 6 — Desafio</h2>
+<pre>CREATE VIEW historico_sem_cpf AS
+SELECT a.nome_animal, ad.data_adocao, p.nome
+FROM adocoes ad
+JOIN animais a   ON a.id = ad.id_animal
+JOIN adotantes p ON p.id = ad.id_adotante;
+
+GRANT SELECT ON abrigo.historico_sem_cpf TO 'veterinaria'@'localhost';</pre>
+<p style="font-size:11px;">Aceitar qualquer resposta que diga <b>"criar uma visão só com as colunas permitidas e dar acesso a ela em vez da tabela"</b>, mesmo sem a sintaxe completa. A ideia é o que conta.</p>
+
+<div class="page-break"></div>
+
+<h2>UC06 Parte 1 — Conceitos</h2>
+<table>
+<tr><th>Q</th><th class="certa">✔</th><th>Por quê</th><th>Por que a errada engana</th></tr>
+<tr><td>1.1</td><td class="certa">b</td><td>Processo tem memória própria. Threads dividem a memória do processo em que vivem.</td><td class="armadilha">(a) associa thread com GPU. Thread é conceito de sistema operacional, existe na CPU também.</td></tr>
+<tr><td>1.2</td><td class="certa">c</td><td>Cada aba é um processo isolado. Por isso o estrago fica contido.</td><td class="armadilha">(a) é a resposta de quem trocou os dois conceitos. Se fossem threads, uma travada derrubaria o navegador inteiro.</td></tr>
+<tr><td>1.3</td><td class="certa">a</td><td>Concorrência é revezar. Paralelismo é acontecer junto de verdade, em núcleos diferentes.</td><td class="armadilha">(b) inventa uma divisão CPU x RAM que não existe.</td></tr>
+<tr><td>1.4</td><td class="certa">b</td><td>Uma thread por vez executa bytecode Python dentro do processo.</td><td class="armadilha"><b>(a) é a armadilha:</b> está quase certo. O Python <b>consegue</b> usar vários núcleos, com <span class="cod">multiprocessing</span>. O GIL limita threads, não o Python inteiro.</td></tr>
+<tr><td>1.5</td><td class="certa">d</td><td>Milhares de núcleos simples fazendo a mesma conta em pedaços diferentes do dado.</td><td class="armadilha">(a) "relógio mais rápido" é o oposto: o clock da GPU costuma ser <b>menor</b> que o da CPU. A vantagem é quantidade, não velocidade individual.</td></tr>
+</table>
+
+<h2>UC06 Parte 3 — Classificar</h2>
+<table>
+<tr><th style="width:8%;">Q</th><th style="width:22%;">Resposta</th><th>Justificativa esperada</th></tr>
+<tr><td>3.1</td><td><b>GPU</b></td><td>É a mesma conta repetida em muitos dados independentes.</td></tr>
+<tr><td>3.2</td><td><b>processos separados</b></td><td>São programas diferentes, cada um com a própria memória. Um travar não pode derrubar o outro.</td></tr>
+<tr><td>3.3</td><td><b>threads</b></td><td>É o mesmo programa, dividindo a mesma memória, e o áudio fica esperando boa parte do tempo.</td></tr>
+<tr><td>3.4</td><td><b>GPU</b></td><td>Mesma operação aplicada a milhares de imagens ao mesmo tempo.</td></tr>
+<tr><td>3.5</td><td><b>processos separados</b></td><td>Isolamento: se um cair, o resto continua de pé.</td></tr>
+</table>
+<p style="font-size:11px;"><b>A justificativa vale mais que a marcação.</b> Quem marcou certo sem justificar, ou justificou com "porque é mais rápido", não evidenciou o indicador. Quem marcou errado mas justificou com a regra certa merece ser lido com atenção.</p>
+
+<h2>UC06 Parte 4 — O pipeline</h2>
+<table>
+<tr><th style="width:14%;">Ordem</th><th>Etapa</th></tr>
+<tr><td style="text-align:center;"><b>3</b></td><td>milhares de núcleos da GPU fazem a mesma conta</td></tr>
+<tr><td style="text-align:center;"><b>4</b></td><td>o resultado volta da VRAM para a RAM</td></tr>
+<tr><td style="text-align:center;"><b>2</b></td><td>o lote é copiado da RAM para a VRAM</td></tr>
+<tr><td style="text-align:center;"><b>1</b></td><td>o programa em Python separa as imagens em um lote</td></tr>
+</table>
+<p style="font-size:11px;"><b>4.1</b> A CPU tem poucos núcleos, então ela <b>reveza</b> entre as imagens (concorrência). A GPU tem milhares, então ela faz de verdade ao mesmo tempo (paralelismo). Exigir as duas palavras usadas com sentido correto.</p>
+<p style="font-size:11px;"><b>4.2</b> O lote precisa ser quebrado em lotes menores, que entram na VRAM um de cada vez. Aceitar também "usar uma GPU com mais VRAM" ou "diminuir o tamanho do batch".</p>
+
+<h2>UC06 Parte 5 — A máquina de verdade</h2>
+<p style="font-size:11px;">Não há gabarito fixo: os números mudam de máquina para máquina. O que se avalia é a <b>5.3</b>: o aluno precisa dizer que <b>cada processo contém várias threads</b>, então o total de threads é naturalmente maior. Quem inverteu não entendeu a relação.</p>
+
+<h2>Conversão para o conceito Senac</h2>
+<table>
+<tr><th>Indicador</th><th>Onde se mede</th><th>A</th><th>PA</th><th>NA</th></tr>
+<tr><td><b>UC08 Ind.4</b><br>permissão de acesso</td><td>Partes 1, 3, 4 e 5</td><td>Matriz coerente com menor privilégio (<b>sem</b> acesso de estagiário ou veterinária a <span class="cod">adotantes</span>), comandos reconhecíveis e REVOKE correto</td><td>Matriz razoável mas com privilégio a mais em dado sensível, ou comandos com erro que não muda o sentido</td><td>Dá acesso total a todos, ou não escreve nenhum comando reconhecível</td></tr>
+<tr><td><b>UC06 Ind.3</b><br>processos e threads</td><td>Partes 1, 3 e 5</td><td>Distingue pela memória, acerta 4 ou 5 da Parte 3 com justificativa, e explica a 5.3</td><td>Distingue os conceitos mas erra 2 ou 3 da Parte 3, ou justifica sem citar memória</td><td>Trata processo e thread como sinônimos</td></tr>
+<tr><td><b>UC06 Ind.2</b><br>pipeline para GPU</td><td>Parte 4</td><td>Ordena o pipeline e explica o ganho usando concorrência e paralelismo</td><td>Ordena mas explica só como "GPU é mais rápida"</td><td>Não ordena o pipeline</td></tr>
+</table>
+
+<div class="caixa">
+<b>Regra da Fase 2:</b> um <b>PA</b> vira <b>A</b> se a folha de correção mostrar entendimento com as palavras do aluno,
+não cópia do gabarito. Um <b>NA</b> não sobe por autocorreção.
+</div>
+
+</body>
+</html>

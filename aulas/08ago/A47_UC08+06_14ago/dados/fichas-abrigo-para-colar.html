@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<title>Fichas do abrigo - A47</title><style>
+  @page { size: A4; margin: 1cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; color: #111; }
+  .ficha { border: 2px dashed #555; padding: 9px 11px; height: 13.2cm; box-sizing: border-box;
+           margin-bottom: 6px; page-break-inside: avoid; position: relative; }
+  .ficha h2 { font-size: 13px; margin: 0 0 4px; }
+  .tag { display:inline-block; background:#222; color:#fff; padding:1px 7px; border-radius:3px;
+         font-size:11px; font-weight:700; margin-right:6px; }
+  .linha-id { font-size: 10.5px; margin: 4px 0 6px; }
+  .linha-id span { border-bottom: 1px solid #000; display: inline-block; min-width: 90px; }
+  .pedido { background:#f4f4f4; border-left:3px solid #333; padding:6px 9px; margin:5px 0;
+            font-size:11.5px; line-height:1.4; }
+  .tarefas { margin: 5px 0 0; padding-left: 16px; font-size: 10.8px; line-height: 1.45; }
+  .tarefas li { margin-bottom: 2px; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eaeaea; padding:0 3px; }
+  .valida { border: 1px solid #000; padding: 5px 8px; margin-top: 6px; font-size: 10px; }
+  .valida .l { border-bottom: 1px solid #666; display:block; height: 13px; margin-top: 3px; }
+  .corte { text-align:center; font-size:9px; color:#888; margin: 2px 0 8px; }
+
+@media print { .no-print { display:none; } }</style></head><body>
+<button class="no-print" onclick="window.print()" style="margin-bottom:10px;padding:6px 14px;">Imprimir</button>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA A</span> Estagiário de dados</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Precisa montar um relatório de quanto tempo os animais esperam para ser adotados. A coordenadora foi clara: ele não pode ver dado pessoal de ninguém.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">estagiario_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA B</span> Veterinária</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Acompanha a saúde dos animais e atualiza a ficha deles quando faz um atendimento. Ela não mexe em contrato de adoção, só precisa saber se o animal já saiu.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">veterinaria_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA C</span> Recepcionista</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Cadastra o animal que chega no abrigo e registra quando uma adoção acontece. Ela conversa com o adotante na hora, mas não guarda nem consulta o CPF dele depois.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">recepcionista_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA D</span> Auditor externo</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Vem uma vez por ano conferir se está tudo certo. Precisa enxergar tudo que acontece no abrigo, mas não pode alterar nada, e por contrato não pode ver o CPF de nenhum adotante.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">auditor_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA E</span> Voluntário de fim de semana</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Ajuda no canil aos sábados. Só precisa saber quais animais estão no abrigo e quais já foram adotados, para não procurar bicho que não está mais lá.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">voluntario_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA F</span> Financeiro</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Precisa contar quantas adoções aconteceram em cada mês, para o relatório de doações. Não pode saber quem adotou, nem qual animal foi.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">financeiro_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA G</span> Sistema do site</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> O site público do abrigo mostra a lista de animais disponíveis para adoção. Ninguém digita senha: é o próprio site que se conecta ao banco, sozinho, o tempo todo.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">site_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA H</span> Coordenadora</h2>
+
+  <div class="linha-id">
+    Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span><br>
+    Banco: <span class="cod">abrigo_d__</span> &nbsp; Usuário: <span class="cod">dupla__</span> &nbsp; Senha: <span class="cod">abrigo__</span>
+  </div>
+
+  <div class="pedido"><b>O pedido:</b> Responde pelo abrigo inteiro e precisa poder fazer tudo. Mas a diretoria pediu uma trava: nem ela pode apagar um registro de adoção já feito, porque isso é documento.</div>
+
+  <p style="margin:5px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Que tabelas esse pedido toca? O que é o <b>mínimo</b> que a conta precisa poder fazer?</li>
+    <li>Escreva os comandos <span class="cod">CREATE ROLE</span> e <span class="cod">GRANT</span>. Use o nome
+        <span class="cod">coordenadora_d__</span> (com o número da sua dupla no fim).</li>
+    <li><b>Rode no DBeaver.</b> Depois abra uma <b>segunda conexão</b> com a conta nova
+        (Nova Conexão, mesmo host e banco, usuário e senha da conta que vocês criaram)
+        e teste uma coisa que <b>deve funcionar</b> e uma que <b>deve ser negada</b>.
+        <b style="background:#ffe9a8;">Teste sempre com a conta NOVA. Com a conta da dupla tudo passa, porque ela é a dona.</b></li>
+    <li><b>Copie da tela</b>, palavra por palavra, a mensagem de erro que apareceu.</li>
+    <li>O pedido foi resolvido só com <span class="cod">GRANT</span>? Se não, o que faltou?</li>
+  </ol>
+
+  <div style="font-size:9.5px;border:1px solid #999;padding:4px 7px;margin-top:4px;background:#fbfbfb;">
+    <b>Se errar e quiser refazer:</b> <span class="cod">REVOKE ALL ON tabela FROM conta;</span>
+    e só depois <span class="cod">DROP ROLE conta;</span> &nbsp;-&nbsp; apagar direto dá erro.
+  </div>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve a sua explicação, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura da dupla que ouviu: __________________  Pergunta feita (obrigatória): acima</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+</body></html>

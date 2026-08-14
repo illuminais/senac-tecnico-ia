@@ -176,7 +176,10 @@
     "export:a45-uc07-04-07ago": "npm run export --workspace=a45-uc07-04-07ago",
     "dev:a46-uc05-02-13ago": "npm run dev --workspace=a46-uc05-02-13ago",
     "build:a46-uc05-02-13ago": "npm run build --workspace=a46-uc05-02-13ago",
-    "export:a46-uc05-02-13ago": "npm run export --workspace=a46-uc05-02-13ago"
+    "export:a46-uc05-02-13ago": "npm run export --workspace=a46-uc05-02-13ago",
+    "dev:a47-uc08-06-14ago": "npm run dev --workspace=a47-uc08-06-14ago",
+    "build:a47-uc08-06-14ago": "npm run build --workspace=a47-uc08-06-14ago",
+    "export:a47-uc08-06-14ago": "npm run export --workspace=a47-uc08-06-14ago"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260730.1",

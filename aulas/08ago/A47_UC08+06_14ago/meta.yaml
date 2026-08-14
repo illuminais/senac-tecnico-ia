@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "47"
+slug: "a47-uc08-06-14ago"
+title: "Quem pode o quê, e quem executa o quê"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08", "UC06"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-08-14"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: []

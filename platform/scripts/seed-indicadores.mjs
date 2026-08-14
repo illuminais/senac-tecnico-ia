@@ -38,7 +38,7 @@ const UCS_MD = path.join(ROOT, 'contextos/conteudo-base/ucs-elementos-da-compete
 const TRIMESTRAL_MD = path.join(ROOT, 'contextos/conteudo-base/distribuicao-trimestral-ano1.md')
 const TURMAS_MD = path.join(ROOT, 'contextos/turmas.md')
 const AVALIACOES_DIR = path.join(ROOT, 'avaliacoes')
-const AVALIACAO_SLUGS = ['av01', 'av02', 'av03', 'av04', 'av05', 'av06', 'av07', 'av08', 'av09']
+const AVALIACAO_SLUGS = ['av01', 'av02', 'av03', 'av04', 'av05', 'av06', 'av07', 'av08', 'av09', 'av10']
 
 // ---------------------------------------------------------------------------
 // Duplicado de platform/shared/pure.ts (TS puro — não dá pra importar direto

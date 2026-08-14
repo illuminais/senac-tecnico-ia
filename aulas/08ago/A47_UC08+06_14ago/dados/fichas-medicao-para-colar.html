@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<title>Fichas de medicao - A47</title><style>
+  @page { size: A4; margin: 1cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; color: #111; }
+  .ficha { border: 2px dashed #555; padding: 9px 11px; height: 13.2cm; box-sizing: border-box;
+           margin-bottom: 6px; page-break-inside: avoid; }
+  .ficha h2 { font-size: 13px; margin: 0 0 4px; }
+  .tag { display:inline-block; background:#222; color:#fff; padding:1px 7px; border-radius:3px;
+         font-size:11px; font-weight:700; margin-right:6px; }
+  .linha-id { font-size: 10.5px; margin: 4px 0 6px; }
+  .linha-id span { border-bottom: 1px solid #000; display: inline-block; min-width: 90px; }
+  .pedido { background:#f4f4f4; border-left:3px solid #333; padding:6px 9px; margin:5px 0;
+            font-size:11.5px; line-height:1.4; }
+  .tarefas { margin: 4px 0 0; padding-left: 16px; font-size: 10.8px; line-height: 1.45; }
+  .cod { font-family: 'Consolas','Courier New',monospace; background:#eaeaea; padding:0 3px; }
+  table { border-collapse: collapse; width: 100%; margin: 4px 0; }
+  th, td { border: 1px solid #777; padding: 3px 5px; font-size: 10px; text-align:center; }
+  th { background:#eee; }
+  .valida { border: 1px solid #000; padding: 5px 8px; margin-top: 5px; font-size: 10px; }
+  .valida .l { border-bottom: 1px solid #666; display:block; height: 13px; margin-top: 3px; }
+  .corte { text-align:center; font-size:9px; color:#888; margin: 2px 0 8px; }
+
+@media print { .no-print { display:none; } }</style></head><body>
+<button class="no-print" onclick="window.print()" style="margin-bottom:10px;padding:6px 14px;">Imprimir</button>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA M1</span> Medindo a sua máquina</h2>
+  <div class="linha-id">Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span></div>
+
+  <div class="pedido"><b>O que fazer:</b> abra o arquivo <span class="cod">medir_threads.py</span>, rode,
+  e anote os tempos. Depois mude o número em <span class="cod">TAREFAS</span> e rode de novo.
+  Os tempos da sua máquina não são iguais aos de ninguém.</div>
+
+  <table>
+    <tr><th>TAREFAS</th><th>1 - uma de cada vez</th><th>2 - com THREADS</th><th>3 - com PROCESSOS</th></tr>
+    <tr><td><b>2</b></td><td style="height:20px;"></td><td></td><td></td></tr>
+    <tr><td><b>4</b></td><td style="height:20px;"></td><td></td><td></td></tr>
+    <tr><td><b>8</b></td><td style="height:20px;"></td><td></td><td></td></tr>
+  </table>
+
+  <p style="margin:4px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Comparando a coluna 1 com a coluna 2: usar threads deixou a conta <b>muito</b> mais rápida? Escreva os dois números.</li>
+    <li>E a coluna 3? O que mudou de verdade?</li>
+    <li>Pesquise o que é o <b>GIL do Python</b> e explique, <b>com os seus números na frente</b>, por que a coluna 2 se comportou assim.</li>
+    <li>Se a conta fosse a mesma repetida em 5 mil imagens, qual seria a ferramenta certa? Por quê?</li>
+    <li>Escreva, na ordem, as <b>4 etapas</b> que um lote de imagens percorre até a GPU e de volta. Onde entra a VRAM?</li>
+  </ol>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura de quem ouviu: __________________</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+<div class="ficha">
+  <h2><span class="tag">FICHA M2</span> Olhando a máquina por dentro</h2>
+  <div class="linha-id">Dupla: <span></span> &nbsp; Nomes: <span style="min-width:200px;"></span></div>
+
+  <div class="pedido"><b>O que fazer:</b> abra o Gerenciador de Tarefas, aba <b>Detalhes</b>, e ache a coluna
+  de <b>threads</b>. Se ela não aparecer, clique com o botão direito no cabeçalho e adicione.</div>
+
+  <table>
+    <tr><th>Programa</th><th>Quantos processos</th><th>Threads (do maior)</th></tr>
+    <tr><td>navegador</td><td style="height:20px;"></td><td></td></tr>
+    <tr><td>DBeaver</td><td style="height:20px;"></td><td></td></tr>
+    <tr><td>um de sua escolha: __________</td><td style="height:20px;"></td><td></td></tr>
+  </table>
+
+  <p style="margin:4px 0 2px;font-size:10.8px;"><b>No caderno, à mão:</b></p>
+  <ol class="tarefas">
+    <li>Por que o número de threads é sempre <b>maior</b> que o número de processos?</li>
+    <li>O navegador abre vários processos em vez de um só. Pesquise o motivo e explique com as suas palavras.</li>
+    <li>Feche uma aba do navegador e olhe de novo: o que mudou na lista? Anote o antes e o depois.</li>
+    <li>Se todas as abas fossem threads de um processo só, o que aconteceria quando uma travasse?</li>
+  </ol>
+
+  <div class="valida">
+    <b>Validação cruzada</b> - outra dupla ouve, assina e escreve a pergunta que fez.
+    <span class="l"></span>
+    <div style="font-size:9.5px;margin-top:2px;">Assinatura de quem ouviu: __________________</div>
+  </div>
+</div>
+<div class="corte">- - - - - - - - - - - - -  recortar e colar no caderno  - - - - - - - - - - - - -</div>
+
+</body></html>
