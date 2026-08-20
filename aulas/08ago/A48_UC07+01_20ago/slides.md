@@ -342,3 +342,589 @@ bgPreset: animate
 ## Daqui a pouco: dinheiro.
 
 Depois do intervalo, entra o Campo 3: custo-benefício.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 20: Conceito 3, definição e exemplo -->
+
+# Conceito 3: Custo-benefício
+
+**Definição:** é comparar, com números, o que a empresa vai gastar contra o que ela vai ganhar ou deixar de perder.
+
+**Exemplo:** um mercado gasta 3 horas por dia com uma pessoa separando reclamações de cliente por assunto. Um serviço automático custa 400 reais por mês. A conta compara essas duas coisas.
+
+O resultado é sempre uma frase de conclusão, e ela pode ser "compensa", "não compensa" ou "compensa só se". As três valem. O que não vale é conclusão sem número.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 21: Conceito 3, os três custos -->
+
+# Os três custos que quase todo mundo esquece
+
+**1. Implantação.** Pago uma vez só: instalar, configurar, treinar o pessoal.
+
+**2. Uso.** Pago todo mês: mensalidade, cobrança por uso, internet.
+
+**3. Hora de pessoa.** Alguém da empresa vai parar de fazer o trabalho dela pra cuidar disso.
+
+O terceiro é o mais esquecido e costuma ser o maior. Ninguém emite boleto por ele, mas o salário continua sendo pago.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 22: Conceito 3, analogia e pra que serve -->
+
+# Custo-benefício: a analogia
+
+Você pensa em pegar ônibus ou ir a pé pra escola.
+
+**Custo do ônibus:** a passagem, todo dia.
+**Ganho:** 25 minutos que você não gasta andando.
+
+Se aqueles 25 minutos viram sono ou estudo, talvez valha. Se você ia ficar no celular de qualquer jeito, talvez não.
+
+**Pra que serve:** pra decidir com número em vez de com opinião. Quem chega com a conta pronta é levado a sério. Quem chega sem, não.
+
+---
+layout: default
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 23: O custo de não fazer nada -->
+
+# E se a gente não fizer nada?
+
+Tem um custo que não aparece em nota fiscal nenhuma: o de continuar do jeito que está.
+
+Se o mercado joga fora mercadoria todo mês, isso **já é** dinheiro saindo.
+
+Não fazer nada não é de graça. É só invisível.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 24: A conta de guardanapo -->
+
+# A conta de guardanapo
+
+Chama assim porque cabe num guardanapo. É soma e multiplicação, nada além.
+
+```
+CUSTO  =  mensalidade  +  (horas de implantação x valor da hora)
+
+GANHO  =  horas economizadas por mês  x  valor da hora
+
+SOBRA  =  GANHO  -  CUSTO
+```
+
+Sobra positiva, compensa. Sobra negativa, não compensa ainda.
+
+**A turma inteira usa 80 reais como valor da hora**, pra todas as contas serem comparáveis.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 25: Campo 3 do canvas do professor -->
+
+# O Campo 3 do canvas do professor
+
+Voltando à conferência de nota fiscal: hoje são 2 horas por carga, 6 cargas por semana.
+
+```
+Hoje:     2h x 6 x 4 semanas        =  48 h/mês
+Depois:   0,5h x 6 x 4 semanas      =  12 h/mês
+Economia:                              36 h/mês
+
+GANHO  =  36 x 80                   =  2.880 por mês
+CUSTO  =  650 + (16h x 80)          =  1.930 no 1º mês
+SOBRA  =  2.880 - 1.930             =    950
+```
+
+**Conclusão:** compensa, e do segundo mês em diante a sobra sobe pra 2.230, porque a implantação sai da conta.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 26: Fixação 3 -->
+
+<!-- [EXERCICIO] -->
+<!-- objetivo: aluno monta a conta de custo-benefício com valores dados, antes de usar valores próprios -->
+
+# Fixação 3: completem a conta
+
+Uma pessoa gasta **3 horas por dia** separando reclamações. O mês tem **22 dias úteis**. A hora custa **80 reais**.
+
+O serviço custa **400 por mês** e a implantação leva **10 horas** de alguém da casa.
+
+```
+CUSTO no 1º mês  =  400 + ( ____ x 80 )  =  ______
+GANHO por mês    =  ( 3 x 22 ) x 80      =  ______
+SOBRA            =  ______ - ______      =  ______
+```
+
+<AdminOnly>
+
+**Gabarito:** CUSTO = 400 + 800 = **1.200** · GANHO = 66 x 80 = **5.280** · SOBRA = **4.080**
+
+Conclusão: compensa. Do segundo mês em diante o custo cai pra 400, porque a implantação não se repete. E continuar como está custa 5.280 por mês em hora de gente.
+
+**Puxar com a turma:** a pessoa não é demitida. Aquelas 3 horas por dia vão pra outra coisa. O ganho é de tempo, não é dinheiro entrando no caixa.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 27: Aplicação, Campo 3 -->
+
+<!-- [ATIV AVALIATIVA] -->
+
+# Mão na massa: Campo 3
+
+No caderno, no Campo 3 do canvas de vocês, montem a conta do tema do grupo.
+
+1. Escrevam os **três custos**, deixando o valor da mensalidade **em branco** por enquanto.
+2. Escrevam o **ganho** em uma unidade só: horas por mês, ou reais por mês, ou vendas por mês.
+3. Escrevam a **conclusão**, incluindo quanto custa não fazer nada.
+
+O preço de verdade vocês buscam no laboratório, depois do intervalo. Por enquanto, deixem a lacuna.
+
+---
+layout: default
+card: true
+bgPreset: palette
+---
+
+<!-- SLIDE 28: Planejamento da pesquisa -->
+
+<!-- [EXERCICIO] -->
+<!-- objetivo: aluno planeja a busca antes de sentar no computador, para não travar no laboratório -->
+
+# Antes de descer pro laboratório
+
+Escrevam no caderno, agora, **o que vocês vão procurar**. Quem chega sem isso perde metade do tempo lá embaixo.
+
+<SlideTable>
+
+| Se o tema de vocês é | Procurem por |
+|---|---|
+| Prever um número | preço de serviço de previsão em nuvem |
+| Enxergar em foto ou vídeo | preço de API de visão computacional |
+| Sugerir produto ao cliente | preço de serviço de recomendação |
+| Entender texto escrito | preço de API de modelo de linguagem |
+| Calcular rota de entrega | preço de API de rotas e mapas |
+| Guardar e processar dado | preço de máquina em nuvem por hora |
+
+</SlideTable>
+
+Escrevam **as palavras exatas** que vão digitar na busca.
+
+---
+layout: cover
+bgPreset: palette
+---
+
+<!-- SLIDE 29: Divisor de bloco -->
+
+# BLOCO 2: UC01 FUNDAMENTOS DE COMPUTAÇÃO
+
+## Av07-T2: Dossiê da Proposta
+
+De onde veio o número e onde ele foi parar
+
+---
+layout: center
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 30: Abertura do bloco 2 -->
+
+# Vocês vão usar um preço achado na internet
+
+Antes disso, uma pergunta.
+
+**Dá pra confiar em quem publicou aquilo?**
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 31: Conceito 4, definição -->
+
+# Conceito 4: fonte
+
+**Definição:** fonte é **quem publicou** a informação que você está usando. Não é o site onde você achou.
+
+Se você viu um número num vídeo, a fonte não é o vídeo: é de onde aquela pessoa tirou o número. Quase sempre ela não diz, e isso já responde bastante sobre a qualidade.
+
+Pra decidir se dá pra usar, são quatro perguntas. Vamos uma a uma.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 32: Perguntas 1 e 2 -->
+
+# Perguntas 1 e 2
+
+**1. Quem publicou?** Procure nome de empresa, de órgão público, de universidade ou de alguém que assina.
+
+> Se você não consegue dizer quem publicou, você não tem fonte. Tem um texto solto.
+
+**2. Quando foi publicado?** Procure a data, no topo, no rodapé ou perto do autor.
+
+> Preço de tecnologia muda todo ano e às vezes cai pela metade. Informação sem data não é falsa, é impossível de conferir, o que dá quase no mesmo.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 33: Perguntas 3 e 4 -->
+
+# Perguntas 3 e 4
+
+**3. Pra que aquilo foi publicado?** Quem publica ganha alguma coisa com a sua resposta?
+
+> Atenção: a página de preços do próprio fornecedor tem interesse comercial **e ainda assim é a melhor fonte que existe pra preço**. É ele que vai te cobrar. O que muda é o cuidado: procure a letra miúda.
+
+**4. Dá pra achar em outro lugar?** Pegue o número principal e procure num segundo lugar.
+
+> "Não achei em outro lugar" é resposta honesta e conta a favor. Não é fracasso.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 34: Fixação 4 -->
+
+<!-- [EXERCICIO] -->
+<!-- objetivo: aluno aplica as 4 perguntas para julgar fontes antes de julgar as próprias -->
+
+# Fixação 4: julguem as quatro
+
+No caderno: escrevam a letra, digam **confiável** ou **duvidosa**, e **por qual das 4 perguntas** decidiram.
+
+**A.** Página oficial de preços de uma empresa de nuvem, com "atualizado em agosto de 2026".
+**B.** Post em rede social dizendo "inteligência artificial custa caríssimo", sem autor e sem data.
+**C.** Notícia de jornal de 2018 com o preço de um serviço de reconhecimento de imagem.
+**D.** Blog "As 10 melhores ferramentas", sem autor, com botão de comprar em cada parágrafo.
+
+<AdminOnly>
+
+**Gabarito:**
+- **A. Confiável.** Passa na 1 e na 2. Tem interesse comercial na 3, então lê-se a letra miúda, mas pra preço é a melhor fonte que existe.
+- **B. Duvidosa.** Cai na 1 e na 2. E não tem número, só adjetivo.
+- **C. Duvidosa pela 2.** A fonte é boa, o problema é só a idade. Fonte ruim e fonte velha são problemas diferentes.
+- **D. Duvidosa.** Cai na 1 e principalmente na 3: ganha comissão por clique.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 35: Modelo da ficha de fonte -->
+
+# A ficha de fonte
+
+Copiem esta ficha no caderno **quatro vezes**, uma pra cada fonte que vocês forem usar.
+
+<SlideTable>
+
+| Campo | O que escrever |
+|---|---|
+| Endereço | o link completo |
+| Quem publicou | empresa, órgão ou autor |
+| Quando | a data que aparece na página |
+| Tipo | oficial, notícia, blog, ou fornecedor vendendo |
+| Qual dado saiu daqui | o número que vocês usaram |
+| Veredito | usar, usar com cuidado, ou descartar |
+| Por quê | **duas** das quatro perguntas, escritas |
+
+</SlideTable>
+
+Justificar com "porque é confiável" não vale. Diga **qual pergunta** decidiu.
+
+---
+layout: center
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 36: Abertura do conceito 5 -->
+
+# Você já perdeu um arquivo que você mesmo salvou?
+
+Ele não sumiu. Está lá.
+
+Você só não sabe mais **onde**, nem **qual** dos sete parecidos é o certo.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 37: Conceito 5, definição -->
+
+# Conceito 5: convenção de nomes
+
+**Definição:** convenção é uma regra de como escrever nomes, **combinada antes** e seguida por todo mundo do grupo.
+
+Não existe convenção certa no mundo. Existe convenção combinada. A nossa é esta, e vale pra este curso.
+
+São quatro regras, e nenhuma é enfeite: cada uma resolve um problema que aparece quando você tem muito arquivo.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 38: Regras 1 e 2 -->
+
+# Regra 1: sem espaço · Regra 2: sem acento
+
+**Sem espaço.** Em vez de `relatorio de vendas.pdf`, use `relatorio_de_vendas.pdf`.
+
+> No terminal, o espaço separa uma coisa da outra: o nome vira dois pedaços e o computador não acha nenhum. Na web, o espaço vira `%20`, aquele lixo no meio do link.
+
+**Sem acento e sem cedilha.** Em vez de `análise_de_preço.pdf`, use `analise_de_preco.pdf`.
+
+> Acento não é uma letra só pro computador. Quando o arquivo troca de sistema, o `á` pode virar `Ã¡` ou um losango com interrogação.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 39: Regras 3 e 4 -->
+
+# Regra 3: data na frente · Regra 4: pasta numerada
+
+**Data primeiro, no formato ano-mes-dia.** Em vez de `preco 20-08-2026.pdf`, use `2026-08-20_preco.pdf`.
+
+> O computador ordena nome da esquerda pra direita. Com o ano na frente, ordenar por nome já ordena por data. Se fosse dia-mes-ano, o dia 20 de agosto viria antes do dia 3 de setembro só porque 2 vem antes de 3.
+
+**Pasta numerada.** Em vez de `fontes`, use `01_fontes`.
+
+> Sem número a ordem é alfabética e não quer dizer nada. Com número, a ordem na tela é a ordem do trabalho.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 40: Fixação 5 -->
+
+<!-- [EXERCICIO] -->
+<!-- objetivo: aluno aplica as 4 regras da convenção antes de renomear arquivos de verdade -->
+
+# Fixação 5: consertem os seis nomes
+
+No caderno, reescrevam cada nome seguindo as quatro regras. Todos são de hoje, 20 de agosto de 2026.
+
+1. `Novo Documento (1).pdf`
+2. `preço nuvem.pdf`
+3. `print da tabela 20-08-2026.png`
+4. `RELATÓRIO FINAL versão 2 FINAL.pdf`
+5. `Ana - pesquisa mercado.docx`
+6. `dados supermercado agosto.csv`
+
+<AdminOnly>
+
+**Gabarito:**
+1. `2026-08-20_precos.pdf` (o pior problema é o nome não dizer o que tem dentro)
+2. `2026-08-20_preco_nuvem.pdf`
+3. `2026-08-20_tabela.png` (a data sai do fim e vai pro começo)
+4. `2026-08-20_relatorio.pdf` ("versão 2 final final" some: a data já diz qual é a mais nova)
+5. `2026-08-20_ana_pesquisa_mercado.docx`
+6. `2026-08-20_dados_supermercado.csv` ("agosto" some, a data já está lá)
+
+**Puxar com a turma:** em todos, o nome ficou mais curto e mais claro ao mesmo tempo.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 41: A árvore-modelo -->
+
+# A estrutura que vocês vão montar
+
+```
+td_supermercado/
+   01_fontes/      as paginas usadas, salvas em PDF
+   02_dados/       os numeros tirados delas
+   03_proposta/    a foto do canvas do caderno
+```
+
+Três pastas dentro de uma. Nenhum arquivo fica solto na raiz.
+
+**Onde cada coisa vai:** página de preço salva em PDF vai em `01_fontes`. Os números anotados vão em `02_dados`. A foto do canvas vai em `03_proposta`.
+
+---
+layout: default
+card: true
+bgPreset: palette
+---
+
+<!-- SLIDE 42: Planejamento antes do laboratório -->
+
+<!-- [EXERCICIO] -->
+<!-- objetivo: aluno desenha a estrutura no papel antes de criar na máquina, para chegar no lab sabendo o que fazer -->
+
+# Ainda no caderno, antes de descer
+
+**1.** Desenhem a árvore de pastas de vocês, com o nome da pasta principal já escolhido.
+
+**2.** Escrevam os **nomes já renomeados** dos arquivos que vocês vão salvar, no padrão da convenção.
+
+Quem desce com isso pronto cria a estrutura em cinco minutos. Quem desce sem, passa a aula inteira decidindo nome de pasta.
+
+---
+layout: default
+card: true
+bgPreset: palette
+---
+
+<!-- SLIDE 43: No laboratório -->
+
+<!-- [ATIV AVALIATIVA] -->
+
+# No laboratório: cinco passos
+
+**1.** Pesquisem o preço que vocês planejaram. Anotem **valor, endereço e data** no caderno.
+
+**2.** Fechem o Campo 3 do canvas com o valor de verdade no lugar da lacuna.
+
+**3.** Preencham as **quatro fichas de fonte**, cada veredito justificado por duas das quatro perguntas.
+
+**4.** Criem a pasta `td_supermercado` com as três subpastas.
+
+**5.** Salvem as páginas em PDF e **renomeiem** tudo na convenção.
+
+> Travou na busca? Chame antes de inventar um número.
+
+---
+layout: default
+card: true
+bgPreset: palette
+---
+
+<!-- SLIDE 44: Tarefa de casa, UC07 -->
+
+# Tarefa de casa: Transformação Digital
+
+> **Prazo: sexta 28/08, no início da aula.** Papel e caneta. Sem computador e sem internet.
+
+**1.** Quem precisa dizer **sim** pro plano sair do papel? No mínimo 3, pelo cargo e não pelo nome.
+
+**2.** O que cada um deles **ganha** com a proposta? Uma frase cada. Se você não consegue escrever o ganho de alguém, essa pessoa vai ser contra, e isso também é resposta.
+
+**3.** Como vocês vão saber que deu certo? Escrevam **quanto é hoje**, **quanto querem que seja** e **até quando**. Não saber quanto é hoje vale, desde que digam como descobririam.
+
+**4.** Reescrevam a **etapa 1** pra caber em **um mês**. Se não couber, quebrem em duas.
+
+---
+layout: default
+card: true
+bgPreset: palette
+---
+
+<!-- SLIDE 45: Tarefa de casa, UC01 -->
+
+# Tarefa de casa: Fundamentos de Computação
+
+> **Prazo: quinta 27/08, entrega em mãos.** Vale no papel ou no computador, os dois contam igual.
+
+**1.** Organizem a **própria pasta do curso** na convenção de hoje, e escrevam numa frase a regra que escolheram.
+
+**2.** Renomeiem pelo menos **5 arquivos**.
+
+**3.** Entreguem o desenho da árvore: print da tela **ou desenhada à mão** no caderno.
+
+**4.** Achem **uma fonte duvidosa** sobre um assunto qualquer e preencham a ficha, dizendo por que desconfiaram.
+
+> **Sem computador em casa?** No item 3, desenhe a árvore que você **vai** criar. No item 4 vale panfleto, vídeo ou recorte de jornal.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 46: Critérios de avaliação -->
+
+# Critérios de avaliação
+
+<AdminOnly>
+
+**UC07 Indicador 5, objetivos estratégicos e plano de implementação**
+Atendido: objetivo como resultado de negócio; 3 etapas em ordem, cada uma com responsável e prazo. Parcialmente: objetivo tecnológico, ou falta responsável e prazo. Não Atendido: lista tecnologias sem objetivo.
+
+**UC07 Indicador 6, análise de custo-benefício**
+Atendido: 3 itens de custo, ao menos um com valor de fonte citada; ganho em unidade coerente; conclusão comparando os dois lados e incluindo o custo de não fazer nada. Parcialmente: só um lado tem número, ou sem fonte. Não Atendido: só adjetivos.
+
+**UC01 Indicador 4, fontes confiáveis**
+Atendido: 4 fichas completas, veredito justificado por duas ou mais perguntas. Parcialmente: justifica por uma só, ou "porque é confiável". Não Atendido: links sem ficha.
+
+**UC01 Indicador 5, organiza e armazena**
+Atendido: estrutura criada na convenção, arquivos renomeados na subpasta certa. Parcialmente: nomes inconsistentes, espaços ou acentos. Não Atendido: arquivos soltos.
+
+</AdminOnly>
+
+---
+layout: end
+card: true
+bgPreset: palette
+github: LeoZanini
+---
+
+<!-- SLIDE 47: Encerramento -->
+
+# Até amanhã
+
+Hoje vocês saíram de um problema de supermercado e chegaram numa proposta com objetivo, plano, conta e fontes conferidas.
+
+Amanhã: as funções de Python voltam pra mão de vocês, e a gente descobre o que é um padrão dentro de um monte de número.
