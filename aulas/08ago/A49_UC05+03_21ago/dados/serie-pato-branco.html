@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>População de Pato Branco — tabela e gráfico</title>
+<style>
+  @page { size: A4; margin: 1.3cm; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #111; line-height: 1.4; }
+  h1 { font-size: 16px; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #444; margin-bottom: 8px; }
+  .cabecalho { border: 2px solid #000; padding: 8px 10px; margin: 10px 0 14px; }
+  .cabecalho td { border: none; padding: 3px 6px; font-size: 12px; }
+  .campo { border-bottom: 1px solid #000; display: inline-block; min-width: 150px; }
+  .caixa-nota { border: 1px solid #000; padding: 5px 8px; }
+  table.dados { border-collapse: collapse; width: 78%; margin: 10px 0; }
+  table.dados th, table.dados td { border: 1px solid #000; padding: 7px 9px; text-align: center; font-size: 13px; }
+  table.dados th { background: #eee; }
+  table.dados td.vazio { background: #fff; height: 26px; }
+  .linha { border-bottom: 1px solid #bbb; display: block; height: 18px; }
+  .rot { font-size: 11px; color: #333; margin-top: 7px; }
+  .fonte { font-size: 10px; color: #333; margin-top: 4px; font-style: italic; }
+  .aviso { font-size: 11px; background: #fafafa; border: 1px solid #666; padding: 6px 9px; margin: 10px 0; }
+  .page-break { page-break-before: always; }
+  .grid { width: 100%; height: 21cm; border: 1px solid #000; background-size: 0.5cm 0.5cm;
+          background-image: linear-gradient(to right, #ccc 1px, transparent 1px),
+                            linear-gradient(to bottom, #ccc 1px, transparent 1px); }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<button class="no-print" onclick="window.print()" style="margin-bottom:12px;padding:6px 14px;">Imprimir</button>
+
+<h1>População de Pato Branco por censo</h1>
+<div class="sub">UC03 Fundamentos Matemáticos · A49 · 21/08/2026</div>
+
+<div class="cabecalho">
+<table style="width:100%;">
+<tr><td style="width:60%;">Nome: <span class="campo">&nbsp;</span></td><td>Data: <span class="campo" style="min-width:90px;">&nbsp;</span></td></tr>
+<tr><td colspan="2" style="padding-top:6px;">
+  <div class="caixa-nota">
+    <b>Conceito:</b> &nbsp; &#9744; Atendido &nbsp;&nbsp; &#9744; Parcialmente Atendido &nbsp;&nbsp; &#9744; Não Atendido
+    <div style="margin-top:6px;"><b>Feedback do professor:</b></div>
+    <span class="linha"></span><span class="linha"></span>
+  </div>
+</td></tr>
+</table>
+</div>
+
+<table class="dados">
+<tr><th>Censo</th><th>Habitantes</th><th>Variação absoluta</th></tr>
+<tr><td>1970</td><td>23.597</td><td class="vazio"></td></tr>
+<tr><td>1980</td><td>45.937</td><td class="vazio"></td></tr>
+<tr><td>1991</td><td>55.675</td><td class="vazio"></td></tr>
+<tr><td>2000</td><td>62.234</td><td class="vazio"></td></tr>
+<tr><td>2010</td><td>72.370</td><td class="vazio"></td></tr>
+<tr><td>2022</td><td>91.836</td><td class="vazio"></td></tr>
+</table>
+
+<div class="fonte">Fonte: IBGE, Censos Demográficos. Município de Pato Branco, Paraná.</div>
+
+<div class="aviso">
+A primeira linha da coluna de variação fica <b>vazia</b>: não existe censo anterior para comparar.
+<br>Repare que o intervalo entre os censos <b>não é sempre de 10 anos</b>.
+</div>
+
+<div class="rot"><b>1.</b> Média das variações (some todas e divida pela quantidade), com a conta:</div>
+<span class="linha"></span><span class="linha"></span>
+
+<div class="rot"><b>2.</b> Essa série é aritmética, geométrica ou nenhuma das duas? Justifique com os seus números:</div>
+<span class="linha"></span><span class="linha"></span>
+
+<div class="rot"><b>3.</b> Leitura 1, a tendência: para onde vai no geral? Está acelerando ou desacelerando?</div>
+<span class="linha"></span><span class="linha"></span>
+
+<div class="rot"><b>4.</b> Leitura 2, o ponto fora: qual censo foge mais do resto, e por que você acha que foge?</div>
+<span class="linha"></span><span class="linha"></span>
+
+<div class="rot"><b>5.</b> Projeção: qual seria a população no próximo censo? Mostre a conta.</div>
+<span class="linha"></span><span class="linha"></span>
+
+<div class="page-break"></div>
+
+<h1>Gráfico de linha</h1>
+<div class="sub">Obrigatórios: título · nome e unidade nos dois eixos · fonte no rodapé</div>
+<div class="grid"></div>
+
+</body>
+</html>
