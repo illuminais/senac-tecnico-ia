@@ -33,13 +33,25 @@ Entrevistas individuais correm em paralelo a partir das 11:35.
 
 As folhas da A46 (`python-funcoes-exercicios.html`) já estão preenchidas e recolhidas. Devolver no início.
 
-## ⚠️ Conferir antes de imprimir
+## Fontes da série de Pato Branco
 
-**Os valores dos censos de 2000 e de 2022 precisam ser confirmados no IBGE Cidades.**
+**Conferido direto no IBGE em 20/08/2026.** Os valores da tabela impressa são os oficiais:
 
-Duas fontes divergem no censo de 2022: uma dá **91.836** e outra dá **96.606**. O valor de **2000 (62.234)** foi inferido a partir de uma reportagem, não lido direto do IBGE. Os demais (1970, 1980, 1991, 2010) batem entre as fontes.
+| Censo | Habitantes | Origem |
+|---|---|---|
+| 1970 | 33.808 | IBGE, tabela 200 |
+| 1980 | 45.938 | IBGE, tabela 200 |
+| 1991 | 55.675 | IBGE, tabela 200 |
+| 2000 | 62.234 | IBGE, tabela 200 |
+| 2010 | 72.370 | IBGE, tabela 200 |
+| 2022 | 91.836 | IBGE, tabela 4709 (Censo 2022) |
 
-A tabela impressa traz 62.234 e 91.836. Se o IBGE der outro número, corrigir no HTML antes de imprimir, porque a fonte está citada no rodapé da folha.
+Duas correções em relação à primeira versão desta folha, ambas vindas de fonte não oficial e já descartadas:
+
+- **1970 estava como 23.597.** O valor oficial é **33.808**. A diferença de 10 mil habitantes vinha de reportagem e distorcia toda a primeira variação.
+- **2022 aparecia como 96.606 numa fonte.** O censo oficial é **91.836**. Os 96.606 são estimativa populacional, que é outra coisa.
+
+Isso vale como exemplo em sala, se der tempo: duas fontes jornalísticas erraram um número que está publicado de graça no site do órgão que produziu o dado.
 
 ## Bloco de Python
 
@@ -83,8 +95,27 @@ A tabela impressa traz 62.234 e 91.836. Se o IBGE der outro número, corrigir no
 
 A sequência 3 é a que ensina que **diferença pode ser negativa**. A 4 é a que ensina que existe padrão sem ser aritmética nem geométrica: as diferenças (1, 2, 3, 4) formam elas mesmas uma sequência.
 
-**Sobre a série de Pato Branco:** as variações são +22.340, +9.738, +6.559, +10.136, +19.466. Ou seja, **não é aritmética nem geométrica**, e isso é o conteúdo. O salto de 1970 para 1980 é o maior de todos e tem explicação histórica real: o município perdeu território com a emancipação de distritos que viraram cidades (Mariópolis, Itapejara do Oeste, e Bom Sucesso do Sul em 1993). Parte da variação não é gente chegando, é a fronteira do município mudando.
+**Gabarito da série de Pato Branco.** As variações absolutas são:
 
-Vale puxar isso mesmo que ninguém chegue lá sozinho: **o número mudou sem a realidade ter mudado do jeito que parece.** É o mesmo raciocínio de fonte confiável que eles viram na quinta.
+| Período | Variação | Anos | Por ano |
+|---|---|---|---|
+| 1970 a 1980 | +12.130 | 10 | 1.213 |
+| 1980 a 1991 | +9.737 | 11 | 885 |
+| 1991 a 2000 | +6.559 | 9 | 729 |
+| 2000 a 2010 | +10.136 | 10 | 1.014 |
+| 2010 a 2022 | +19.466 | 12 | 1.622 |
+
+**Média das variações: 11.605,6.**
+
+**Classificação: nenhuma das duas.** As diferenças vão de 6.559 a 19.466, então não é aritmética. As razões são 1,36 / 1,21 / 1,12 / 1,16 / 1,27, então não é geométrica. Aceitar "quase aritmética" como Parcialmente Atendido se o aluno justificar com os números.
+
+**Leitura de tendência esperada:** sobe sempre, mas **desacelerou até 2000 e voltou a acelerar depois**. A coluna "por ano" é o que deixa isso óbvio, e é ela que separa o Atendido do Parcialmente.
+
+**Ponto que foge:** o período de 2010 a 2022, que é o maior salto. Duas explicações valem, e as duas são boas:
+
+1. **O intervalo é de 12 anos, não 10.** O censo de 2020 foi adiado. Comparar +19.466 com +10.136 sem notar isso é erro de leitura, e é exatamente o que a coluna "por ano" corrige.
+2. O período mais lento, de 1991 a 2000, coincide com a emancipação de **Bom Sucesso do Sul em 1993**, que tirou território e gente do município. Parte da desaceleração não é gente deixando de chegar, é a fronteira mudando.
+
+O segundo ponto é ouro e vale puxar mesmo que ninguém chegue lá: **o número mudou sem a realidade ter mudado do jeito que parece.** É o mesmo raciocínio de fonte confiável da aula de quinta.
 
 **Os dois indicadores morrem no T2 e hoje é o único slot restante da UC03 no trimestre.** Toda a evidência sai em sala. Sem tarefa de casa em nenhum dos dois blocos.

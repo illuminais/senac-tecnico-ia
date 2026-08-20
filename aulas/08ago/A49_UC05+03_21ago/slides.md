@@ -851,9 +851,18 @@ E depois:
 
 <AdminOnly>
 
-**Sobre o ponto fora:** o salto de 1970 para 1980 é o maior de todos, e tem explicação histórica real. Pato Branco perdeu território com a emancipação de distritos que viraram municípios (Mariópolis, Itapejara do Oeste, e depois Bom Sucesso do Sul em 1993). Ou seja, parte da variação não é gente nascendo ou chegando, é a fronteira do município mudando.
+**Variações:** +12.130 · +9.737 · +6.559 · +10.136 · +19.466. Média **11.605,6**.
 
-Isso é ouro pedagógico: **o número mudou sem a realidade mudar do jeito que parece**. Vale puxar mesmo que nenhum aluno chegue lá sozinho.
+**Classificação: nenhuma das duas.** Diferenças vão de 6.559 a 19.466, então não é aritmética. Razões 1,36 / 1,21 / 1,12 / 1,16 / 1,27, então não é geométrica.
+
+**Tendência esperada:** sobe sempre, mas **desacelera até 2000 e volta a acelerar depois**.
+
+**Ponto que foge: o período de 2010 a 2022**, o maior salto. Duas explicações, as duas boas:
+
+1. **O intervalo é de 12 anos, não 10.** O censo de 2020 foi adiado. Dividir a variação pelo número de anos corrige: dá 1.622 por ano contra 1.014 do período anterior.
+2. O trecho mais lento, de 1991 a 2000, coincide com a emancipação de **Bom Sucesso do Sul em 1993**, que tirou território e gente do município.
+
+O segundo é ouro e vale puxar mesmo que ninguém chegue lá: **o número mudou sem a realidade ter mudado do jeito que parece.** É o mesmo raciocínio de fonte confiável de quinta.
 
 </AdminOnly>
 
