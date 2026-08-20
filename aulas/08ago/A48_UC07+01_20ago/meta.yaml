@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "48"
+slug: "a48-uc07-01-20ago"
+title: "Proposta Digital no Varejo e Dossie de Fontes"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC07", "UC01"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-08-20"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: ["planejador-mensal"]

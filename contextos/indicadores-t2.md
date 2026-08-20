@@ -138,7 +138,33 @@ trimestre: T2
 | UC03 | 3 | 1 | 2 | 1 |
 | **Total** | **29** | **5** | **24** | **16 blocos** |
 
-**Morrem no T2** (sem continuação no T3): UC03 Ind.5 · UC05 Ind.2 · UC06 Ind.2 · UC07 Ind.3, 5, 6 · UC08 Ind.3. Detalhe da conta em [ATIVIDADES_AVALIATIVAS](ATIVIDADES_AVALIATIVAS.md#conta-de-fechamento-t2--recalculada-em-11082026).
+### Morrem no T2 — 17 indicadores
+
+> Sem continuação no T3: a evidência tem que sair até 04/09, não há recuperação depois.
+> ⚠️ Lista corrigida em 19/08/2026 — a versão anterior citava só 7 indicadores e omitia todos os marcados `T1🔄→**T2**` fora de UC06, além dos `**T2**` já avaliados.
+
+| UC | Ind. | Onde fecha |
+|---|---|---|
+| UC02 Inglês Instrumental | 1, 2 | Av05-T2 (13/08) |
+| UC03 Fundamentos Matemáticos | 4, 5 | Av08-T2 (21/08) — único slot restante da UC |
+| UC04 Fundamentos e Conceitos de IA | 2 | ✅ avaliado — Av04-T2 (07/08) |
+| UC05 Python para IA | 2 | Av12-T2 (21/08) |
+| UC06 Arquitetura de Computadores e GPU | 2, 3 | Av06-T2 (14/08) |
+| UC07 Transformação Digital | 3, 5, 6 | Av10-T2 ato 1 (20/08) |
+| UC07 Transformação Digital | 4 | Av10-T2 ato 2 (28/08) — fecha a UC |
+| UC08 Banco de Dados | 3 | Av06-T2 ato 2 (27/08) |
+| UC09 Estatística Aplicada | 3, 4 | Av09-T2 (27/08) |
+| UC09 Estatística Aplicada | 5, 6 | ✅ avaliados — Av03-T2 (06/08) |
+
+### Continuam no T3 — 12 indicadores
+
+> Cabe evidência parcial no T2; o indicador volta a ser trabalhado no T3.
+
+UC01 Fundamentos de Computação Ind.3, 4, 5 · UC02 Inglês Instrumental Ind.3 · UC03 Fundamentos Matemáticos Ind.6 · UC04 Fundamentos e Conceitos de IA Ind.3 · UC05 Python para IA Ind.3 · UC06 Arquitetura de Computadores e GPU Ind.4 · UC07 Transformação Digital Ind.7 · UC08 Banco de Dados Ind.4, 5 · UC09 Estatística Aplicada Ind.7.
+
+⚠️ **Pendência de painel:** UC09 Estatística Aplicada Ind.7 (dados discretos e contínuos) está sem avaliação atribuída. Continua no T3, então não é urgente — decidir se entra na Av09-T2 (27/08) ou escorre oficialmente para o T3.
+
+Detalhe da conta em [ATIVIDADES_AVALIATIVAS](ATIVIDADES_AVALIATIVAS.md#conta-de-fechamento-t2--recalculada-em-11082026).
 
 ---
 
