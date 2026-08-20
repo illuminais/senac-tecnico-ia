@@ -18,8 +18,8 @@ layout: cover
 # Aula 48
 ## Proposta Digital no Varejo e Dossiê de Fontes
 
-**Bloco 1 (manhã):** UC07 Transformação Digital - Av10-T2 ato 1, Proposta Digital
-**Bloco 2 (tarde):** UC01 Fundamentos de Computação - Dossiê de Fontes
+**Bloco 1:** UC07 Transformação Digital - Av10-T2 ato 1, Proposta Digital
+**Bloco 2:** UC01 Fundamentos de Computação - Dossiê de Fontes
 
 20 de agosto de 2026
 
@@ -48,11 +48,10 @@ bgPreset: default
 
 # Antes de começar
 
-- Entreguem a tarefa de casa da Aula 45: o segundo case brasileiro de inteligência artificial. Coloquem o nome da dupla na folha.
 - A atividade de hoje vale nota: é a Av10-T2 ato 1, "Proposta Digital", com dois atos.
 - Hoje vocês criam o objetivo estratégico e o plano de implementação.
 - Na próxima aula, ato 2, vocês fecham com o Indicador 6: realiza análise de custo-benefício.
-- Trabalho em dupla ou trio. Ao todo são 15 grupos, cada um com um tema diferente de varejo.
+- Trabalho em dupla com 1 trio. Ao todo são 15 grupos, cada um com um tema diferente de varejo.
 - Hoje trabalhamos o Indicador 5: analisa objetivos estratégicos e cria um plano de implementação.
 
 ---
