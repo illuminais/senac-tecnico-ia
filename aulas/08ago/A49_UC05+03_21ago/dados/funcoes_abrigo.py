@@ -16,11 +16,10 @@ def passou_do_prazo(dias_no_abrigo, limite):
     return dias_no_abrigo > limite
 
 def levar_guarda_chuva(chance_de_chuva, vai_de_carro):
+    # atencao: vai_de_carro e TEXTO, "sim" ou "nao", vem do input
     if chance_de_chuva >= 90:
         return True
-    if vai_de_carro:
-        return False
-    if chance_de_chuva >= 60:
+    elif chance_de_chuva >= 60 and vai_de_carro == "não":
         return True
     return False
 

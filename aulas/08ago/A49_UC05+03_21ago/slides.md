@@ -100,10 +100,10 @@ outputTone: neutral
 
 ```python
 def dobro_a(n):
-    print(n * 2)
+    return n * 2
 
 def dobro_b(n):
-    return n * 2
+    print(n * 2)
 
 dobro_a(7)
 dobro_b(7)
@@ -117,7 +117,7 @@ dobro_b(7)
 
 ::note::
 
-As duas funções fazem a mesma conta. Só o `dobro_a` mostrou. O `dobro_b` devolveu 14, mas ninguém guardou, então o valor se perdeu sem aparecer.
+As duas funções fazem a mesma conta. Só o `dobro_b` mostrou. O `dobro_a` devolveu 14, mas ninguém guardou, então o valor se perdeu sem aparecer. São as mesmas duas do exercício 3 da folha de vocês.
 
 ---
 layout: code-output
@@ -131,10 +131,10 @@ outputTone: error
 # Por que o `print` quebra depois
 
 ```python
-def dobro_a(n):
+def dobro_b(n):
     print(n * 2)
 
-resultado = dobro_a(7)
+resultado = dobro_b(7)
 print(resultado + 1)
 ```
 
@@ -304,16 +304,16 @@ Este é o coração da folha: dois parâmetros e ordem de `if` que importa.
 def levar_guarda_chuva(chance_de_chuva, vai_de_carro):
     if chance_de_chuva >= 90:
         return True
-    if vai_de_carro:
-        return False
-    if chance_de_chuva >= 60:
+    elif chance_de_chuva >= 60 and vai_de_carro == "não":
         return True
     return False
 ```
 
-**Erro mais comum:** testar as condições fora de ordem. O caso de 90% tem que vir **antes** do `vai_de_carro`, senão quem vai de carro nunca leva guarda-chuva, mesmo com chuva quase certa.
+**Atenção:** `vai_de_carro` é **texto**, não é verdadeiro ou falso. Ele vem do `input` do exercício 6, como `"sim"` ou `"não"`. Por isso a comparação é `vai_de_carro == "não"`.
 
-**Como mostrar que está errado:** peça pra turma testar com `chance_de_chuva = 95` e `vai_de_carro = True`. A ordem errada devolve `False`.
+**Erro mais comum:** testar as condições fora de ordem. O caso de 90 tem que vir **antes** do de 60, senão quem vai de carro nunca leva guarda-chuva, mesmo com chuva quase certa.
+
+**Como mostrar que está errado:** peça pra turma testar com `chance_de_chuva = 95` e `vai_de_carro = "sim"`. O certo devolve `True`. A ordem errada devolve `False`.
 
 </AdminOnly>
 
@@ -393,19 +393,21 @@ bgPreset: default
 
 # O acumulador: onde a variável nasce
 
-Nos exercícios 8 e 9 vocês precisam de um acumulador: uma variável que vai somando.
+Nos exercícios 8 e 9 vocês precisam de um acumulador: uma variável que vai juntando.
+
+Exemplo com **outra** lista, a da feira:
 
 ```python
-def soma_dias(lista_de_dias):
+def soma_precos(lista_de_precos):
     total = 0
-    for dia in lista_de_dias:
-        total = total + dia
+    for preco in lista_de_precos:
+        total = total + preco
     return total
 ```
 
-**A variável nasce ANTES do `for`.** Se `total = 0` estiver dentro do laço, ela volta a zero a cada volta e no fim sobra só o último número.
+**A variável nasce ANTES do `for`.** Se `total = 0` estiver dentro do laço, ela volta a zero a cada volta e no fim sobra só o último número. Foi o erro mais comum do exercício 8 na folha de vocês.
 
-Foi o erro mais comum do exercício 8 na folha de vocês.
+O formato é esse. Os exercícios 8 e 9 são de vocês.
 
 ---
 layout: default
