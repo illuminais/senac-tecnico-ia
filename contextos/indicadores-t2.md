@@ -79,7 +79,7 @@ trimestre: T2
 | 4 | Compreende e aplica funções matemáticas exponenciais | T1🔄→**T2** | ⬜ pendente | Av09-T2 (27/08) |
 | 5 | Interpreta e aplica probabilidades básicas | **T2** | ✅ avaliado | Av03-T2 (06/08) |
 | 6 | Compreende variável qualitativa e quantitativa | **T2** | ✅ avaliado | Av03-T2 (06/08) |
-| 7 | Aplica dados discretos e contínuos | **T2**→T3🔄 | ⬜ pendente | — |
+| 7 | Aplica dados discretos e contínuos | **T2**→T3🔄 | ⬜ pendente | **escorre para o T3** — decisão do professor em 26/08, ver nota abaixo |
 
 → [contexto-uc09](contexto-estatistica-aplicada.md)
 
@@ -162,7 +162,7 @@ trimestre: T2
 
 UC01 Fundamentos de Computação Ind.3, 4, 5 · UC02 Inglês Instrumental Ind.3 · UC03 Fundamentos Matemáticos Ind.6 · UC04 Fundamentos e Conceitos de IA Ind.3 · UC05 Python para IA Ind.3 · UC06 Arquitetura de Computadores e GPU Ind.4 · UC07 Transformação Digital Ind.7 · UC08 Banco de Dados Ind.4, 5 · UC09 Estatística Aplicada Ind.7.
 
-⚠️ **Pendência de painel:** UC09 Estatística Aplicada Ind.7 (dados discretos e contínuos) está sem avaliação atribuída. Continua no T3, então não é urgente — decidir se entra na Av09-T2 (27/08) ou escorre oficialmente para o T3.
+✅ **Resolvido em 26/08/2026:** UC09 Estatística Aplicada Ind.7 (dados discretos e contínuos) **escorre oficialmente para o T3** e NÃO entra na Av09-T2. Motivo: as 3h de 27/08 já precisam ensinar e avaliar Ind.3 e Ind.4 (funções logarítmicas e exponenciais), que morrem no T2 e não têm outro slot. Ind.7 continua no T3, então tem janela. Decisão tomada aplicando a regra de orçamento da skill `verbos-indicadores` (prioridade: morre+caro antes de continua+barato).
 
 Detalhe da conta em [ATIVIDADES_AVALIATIVAS](ATIVIDADES_AVALIATIVAS.md#conta-de-fechamento-t2--recalculada-em-11082026).
 

@@ -18,6 +18,7 @@ Você é o **agente planejador de avaliações** do curso Técnico em IA da Sena
 > **LANGUAGE RULE:** Todo conteúdo visível é **pt-BR sem exceção**.  
 > **MEMORY RULE:** Sempre leia `/memories/` antes de qualquer resposta para incorporar preferências do professor.  
 > **CONTEXT RULE:** Sempre leia `contextos/ATIVIDADES_AVALIATIVAS.md` inteiramente antes de qualquer resposta. Este arquivo é a fonte de verdade do estado atual do planejamento.
+> **SKILL RULE:** Sempre carregue `.claude/skills/verbos-indicadores/SKILL.md` antes de desenhar qualquer avaliação. O verbo inicial do indicador define o teto da evidência, a fronteira A/PA da rubrica e a prioridade de corte. Indicadores não têm todos a mesma profundidade.
 
 ---
 

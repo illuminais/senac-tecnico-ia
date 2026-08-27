@@ -73,13 +73,23 @@ A coordenadora quer que a veterinária veja o histórico de adoções **sem** en
 
 ## Ato 2 — 27/08 (A50) · Bloco UC08 · fecha Ind.3 e Ind.5
 
-Executado no sqliteonline.com, a partir da matriz que o próprio aluno desenhou no ato 1 (a folha do ato 1 é devolvida para consulta):
+> ⚠️ **Redesenhado em 26/08/2026.** Duas premissas do desenho original caíram:
+> 1. O ato 1 (A47) foi trocado por atividade de pesquisa com **Postgres real no DBeaver**, não gerou a folha impressa da matriz, e saiu **parcial** (parte da turma não chegou a executar).
+> 2. **27/08 não tem impressão** — nada pode depender de folha devolvida.
+>
+> Detalhamento completo em [semana13](../semanas/semana13.md).
 
-- **Ind.3 (estrutura física):** `CREATE TABLE` das 3 tabelas com tipos corretos, `PRIMARY KEY` e as chaves estrangeiras de `adocoes`.
-- **Ind.5 (consultas SQL):** escrever, para cada perfil, uma query que ele **teria** permissão de rodar segundo a própria matriz — e uma que ele não teria, explicando por quê.
-- Aqui a query volta, mas com propósito novo: a permissão define o que a query pode tocar.
+**Ambiente: Postgres + DBeaver**, não sqliteonline. Continuidade direta da A47 (`abrigo_dNN` / `duplaNN`). Cada dupla trabalha em schema próprio (`CREATE SCHEMA meu_abrigo` + `SET search_path`), preservando as tabelas da A47 como gabarito de comparação.
 
-> Detalhar as tarefas do ato 2 na semana 13, junto do planejamento de A50.
+**Abre com ~20min de nivelamento**, já que a A47 saiu parcial: reconexão de todos, com as duplas que conseguiram adotando as que travaram.
+
+- **Ind.3 (estrutura física, verbo `Cria`, nível 5, morre no T2):** o conceito novo não é sintaxe, é **rastreabilidade**. Cinco alavancas (`tipo`, `NOT NULL`, `PRIMARY KEY`/`UNIQUE`, `REFERENCES`, `CHECK`), cada uma respondendo a um requisito numerado. Fixação com 7 requisitos projetados, sendo R5 ("um animal só pode ser adotado uma vez") a pegadinha — quase todos respondem FK, e FK não resolve unicidade. Depois `CREATE TABLE` das 3 tabelas, escrito no caderno antes de digitar.
+- **Teste de violação obrigatório:** 3 `INSERT` que violam R3, R4 e R5, com a mensagem de erro exata copiada da tela. Sem o erro, constraint é fé.
+- **Ind.5 (consultas SQL, teto nível 3, continua no T3):** cada dupla escreve uma query que a conta `duplaNN` **tem** permissão de rodar e uma que **não tem**, executa as duas e copia o erro. A permissão define o que a query pode tocar.
+
+**Rubrica Ind.3:** **A** = as três tabelas rodam **e** cada cláusula é rastreável a um requisito numerado. **PA** = tabelas corretas sem rastreabilidade (aplicação da cláusula de contexto do indicador). **NA** = tabelas não rodam.
+
+**Prep:** rodar todo o SQL do gabarito no Postgres do laboratório antes da aula, inclusive os 3 `INSERT` de violação — a mensagem de erro varia com versão e idioma do servidor, e ela é o insumo do exercício.
 
 ---
 

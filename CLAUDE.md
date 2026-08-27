@@ -20,11 +20,12 @@ senac-tecnico-ia/
 │   ├── planejador-curricular.md
 │   ├── planejador-mensal.md    ← planeja um mês inteiro → gera semanaXX.md
 │   └── platform-agent.md (name: Leovio)
-├── .claude/skills/             ← Skills reutilizáveis (14 skills)
+├── .claude/skills/             ← Skills reutilizáveis (15 skills)
 │   ├── estilo-pedagogico/      ← linguagem ~14 anos, sem en-dash
 │   ├── layouts-slidev/         ← frontmatter, componentes Vue, convenções visuais
 │   ├── densidade-slides/       ← limites por layout, corte natural
 │   ├── estrutura-aula/         ← ordem T→E→D→TC, tags, templates
+│   ├── verbos-indicadores/     ← profundidade por verbo do indicador (escala 5 níveis)
 │   ├── revisao-conteudo/       ← checklists de revisão e commit
 │   └── uc01/ … uc09/           ← diretrizes, consolidado e indicadores por disciplina
 ├── contextos/   ← memória viva por disciplina (compartilhada por ambos)

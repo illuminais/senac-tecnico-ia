@@ -16,6 +16,7 @@ tools:
 Carregue SEMPRE antes de coordenar a produção:
 
 - `.claude/skills/estrutura-aula/SKILL.md` — ordem T→E→D→TC, blocos obrigatórios por aula, templates
+- `.claude/skills/verbos-indicadores/SKILL.md` — profundidade exigida por cada indicador, a partir do verbo inicial. Define o teto da evidência, o que fica FORA de escopo e a ordem de corte quando o tempo não fecha
 
 ---
 

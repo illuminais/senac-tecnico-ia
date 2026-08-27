@@ -204,6 +204,10 @@ Dia reservado para **ensino**, não avaliação:
 | 11/08/2026 | Av08-T2 passa a cobrir UC03 Ind.4 **+ Ind.5** | 21/08 é o único slot restante de UC03 no T2 e Ind.5 não tem continuação no T3. |
 | 11/08/2026 | UC08 Ind.4 será avaliado em papel, sem execução | SQLite (sqliteonline.com, ferramenta padrão da turma) não tem GRANT/REVOKE nem gestão de usuários. O "por que não roda aqui" foi convertido em conteúdo de escolha de SGBD. Decisão do professor entre 3 alternativas apresentadas. |
 | 11/08/2026 | Bloco de UC08 de 14/08 **não** revisa escrita de query | "eles já sabem queries, só preciso introduzir algo extra se for algo que eles realmente não sabem". DCL é inédito e nivela a turma bimodal. |
+| 26/08/2026 | **Escala de verbos de indicador adotada** — o verbo inicial define a profundidade exigida | Descoberta do professor: o repositório tratava todos os indicadores como iguais. Os documentos oficiais (DocTec2 §3.2, DocTec5 §2.1) definem só `ação + contexto` e delegam a calibragem ao docente, sem publicar tabela de verbos. Criada a skill `.claude/skills/verbos-indicadores/SKILL.md` com escala de 5 níveis, regra do verbo composto (o maior governa o teto, o menor é o piso do PA), regra da cláusula de contexto e regra de orçamento. `planejador-avaliacoes` e `produtor-aula` passam a carregá-la obrigatoriamente. |
+| 26/08/2026 | UC09 Ind.7 (dados discretos e contínuos) **escorre oficialmente para o T3** | Aplicação da regra de orçamento: as 3h de 27/08 já precisam ensinar e avaliar Ind.3 e Ind.4, que morrem no T2 e não têm outro slot. Ind.7 continua no T3. |
+| 26/08/2026 | **Av06-T2 ato 2 redesenhado** — Postgres/DBeaver em vez de sqliteonline, sem depender da folha do ato 1 | Duas premissas caíram: a A47 virou atividade de pesquisa com Postgres real (não gerou a folha da matriz) e saiu parcial; e 27/08 não tem impressão. Cada dupla trabalha em schema próprio, preservando o banco da A47 como gabarito. |
+| 26/08/2026 | **Dossiê do Abrigo** criado como artefato cumulativo no caderno | Resposta ao problema relatado pelo professor: "a gente vai perdendo tudo, se são só aulas pontuais". Uma página por aula, consultável nas avaliações (é isso que lhe dá valor real). Custo zero de impressão. |
 
 ---
 
@@ -223,8 +227,8 @@ Dia reservado para **ensino**, não avaliação:
 | Av06-T2 | 14/08 + 27/08 | A47 · A50 | UC08 · UC06 | **Quem pode o quê** — 2 atos · [detalhamento](aval/av06-t2-acesso-e-threads.md) · ato 1 (14/08): UC08 Ind.4 + UC06 Ind.2+3 · ato 2 (27/08): UC08 Ind.3+5 | ✅ Detalhada |
 | Av07-T2 | 20/08 | A48 | UC01 | **Fontes Confiáveis + Organização Digital** — Ind.4 + Ind.5 — fecha UC01 no T2 | ⏳ Pendente |
 | Av08-T2 | 21/08 | A49 | UC03 | Ind.4 **+ Ind.5** — Ind.5 morre no T2 e 21/08 é o único slot restante de UC03, então tem que sair no mesmo instrumento | ⏳ Pendente |
-| Av09-T2 | 27/08 | A50 | UC09 | Ind.3+4 (ato 2 do mini-projeto) | ⏳ Pendente |
-| Av10-T2 | 20/08 + 28/08 | A48 · A51 | UC07 | **2 atos, obrigatório** — 5 indicadores pendentes para 2 slots · ato 1 (20/08): Ind.3+5+6 · ato 2 (28/08): Ind.4+7 (fecha UC07) | ⏳ Pendente — desenho a aprovar na semana 12 |
+| Av09-T2 | 27/08 | A50 | UC09 | Ind.3+4 — exponencial contra linear + log como pergunta inversa, aplicado em dado real do Pix · **Ind.7 escorre para o T3** · [detalhamento](semanas/semana13.md) | ✅ Detalhada |
+| Av10-T2 | 20/08 + 28/08 | A48 · A51 | UC07 | **2 atos, obrigatório** — ato 1 (20/08): Ind.3+5+6 · ato 2 (28/08): Ind.4 (curva do Pix, ruptura) + Ind.7 (ciclo de vida de Beal + cultura organizacional) · [detalhamento ato 2](semanas/semana13.md) | ✅ Detalhada |
 | Av11-T2 | 04/09 | A53 | UC06 | Ind.4 (redes) — Ind.4 continua no T3, pode fechar depois do prazo de nota | ⏳ Pendente |
 | **Av12-T2** | 21/08 | A49 | UC05 | Ind.2+3 — **gap descoberto em 11/08:** UC05 não tinha nenhuma avaliação no plano T2 | ⏳ Pendente — desenho a aprovar na semana 12 |
 

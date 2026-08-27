@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "50"
+slug: "a50-uc08-09-27ago"
+title: "O banco do abrigo e o que cresce rápido demais"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08", "UC09"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-08-27"
+
+# em-planejamento | ready | published
+status: ready
+
+deployUrl: ""
+
+agentsUsed: []
