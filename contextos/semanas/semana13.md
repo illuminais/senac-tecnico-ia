@@ -103,7 +103,11 @@ numerado. Schema correto sem rastreabilidade = PA.
 Núcleo pedagógico: o **contraste com linear**, em duas colunas preenchidas à mão (`2ⁿ` contra
 `1+50n`), com a pergunta "em que dia o exponencial ultrapassa?" (entre 8 e 9). Descobrir que
 *começa perdendo e depois dispara* é a intuição inteira. Log entra como **a mesma tabela lida ao
-contrário**, não como fórmula nova.
+contrário**, e ganha notação formal (`2ⁿ` e `log₂`) só depois que a turma já calculou tudo à
+mão — revisão de 26/08: a notação e as fórmulas passam a ser ensinadas explicitamente, com
+gráfico de apoio e exercício de fixação próprio, porque "calculem direto" sozinho não estava
+solidificando a regra. Continua fora do escopo (teto Aplicar): propriedades, identidades,
+mudança de base.
 
 Av09-T2 fecha com dado real do Pix (8,9 bi em 2021 → ~80 bi em 2025, BCB): quantas vezes
 dobrou? Log aplicado **sem calculadora**, e gancho literal para a sexta.

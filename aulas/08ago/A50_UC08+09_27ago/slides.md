@@ -73,7 +73,7 @@ Mesmo banco da aula passada. Quem não conseguiu entrar na aula 47, entra agora.
 | Username | `duplaNN` |
 | Password | `abrigoNN` |
 
-> Duplas que já conectaram levantam a mão. Cada uma adota a dupla ao lado que travou.
+> Duplas que não conectaram levantam a mão. Cada dupla que conseguiu adota a dupla ao lado que travou.
 
 ---
 layout: code-output
@@ -322,7 +322,10 @@ aulaNum: "Aula 50"
 
 # Conferindo a fixação
 
-<v-click>
+Fechem o caderno na página da fixação. Cada dupla diz **em voz alta** a alavanca de um
+requisito, e a turma concorda ou discorda antes de eu confirmar.
+
+<AdminOnly>
 
 | # | Alavanca | Por quê |
 |---|---|---|
@@ -334,7 +337,7 @@ aulaNum: "Aula 50"
 | R6 | `UNIQUE` | não repete o CPF |
 | R7 | `BOOLEAN` | só dois valores possíveis |
 
-</v-click>
+</AdminOnly>
 
 ---
 layout: default
@@ -567,20 +570,60 @@ aulaNum: "Aula 50"
 ---
 
 <!-- SLIDE 24 -->
-<!-- objetivo: aluno retoma o fio da aula 47, ligando permissao a query -->
+<!-- objetivo: aluno relembra a sintaxe de DCL da aula 47 antes de aplicar em cima das tabelas de hoje -->
 
-# Fechando: a permissão manda na query
+# Lembrando a sintaxe da aula 47
 
-Na aula 47 vocês desenharam quem pode o quê. Agora as duas coisas se encontram.
+Na aula 47 vocês usaram três comandos novos. Antes de usar de novo, vamos relembrar o que cada
+um faz, sem depender de lembrar nome de conta nenhuma.
 
-Cada dupla escreve **duas queries** e roda as duas:
+| Comando | O que ele faz |
+|---|---|
+| `CREATE ROLE nome LOGIN PASSWORD 'senha'` | cria uma conta nova, que consegue logar sozinha |
+| `GRANT privilégio ON tabela TO nome` | dá uma permissão específica pra essa conta |
+| `REVOKE privilégio ON tabela FROM nome` | tira uma permissão específica dessa conta |
 
-1. Uma que a conta `duplaNN` **tem** permissão de rodar
-2. Uma que ela **não tem**
+> Ninguém nasce sabendo essa sintaxe de cor. Ela fica no quadro até o fim do bloco.
 
-Copiem no caderno o resultado da primeira e o erro da segunda.
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "O que o banco responde"
+outputTone: neutral
+aulaNum: "Aula 50"
+---
 
-> A pergunta não é "essa query está certa". É "essa query tem direito de existir nesta conta".
+<!-- SLIDE 25 -->
+<!-- objetivo: aluno segue receita mastigada para criar uma conta de teste nas proprias tabelas de hoje -->
+
+# Passo a passo: criando a conta de teste
+
+Três linhas, na ordem, com `NN` = número da sua dupla:
+
+```sql
+CREATE ROLE testeNN LOGIN PASSWORD 'testeNN';
+GRANT USAGE ON SCHEMA meu_abrigo TO testeNN;
+GRANT SELECT ON meu_abrigo.animais TO testeNN;
+```
+
+::output::
+
+```text
+CREATE ROLE
+GRANT
+GRANT
+```
+
+::note::
+
+<AdminOnly>
+
+O `GRANT USAGE ON SCHEMA` é o passo que quase todo mundo esquece. Sem ele, a query permitida
+também dá erro de permissão, só que erro no schema, não na tabela. Confira essa mensagem no
+Postgres do laboratório antes da aula.
+
+</AdminOnly>
 
 ---
 layout: default
@@ -589,7 +632,55 @@ bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 25 -->
+<!-- SLIDE 26 -->
+<!-- objetivo: aluno sabe exatamente quais cliques dar no dbeaver para testar como a conta nova -->
+
+# Passo a passo: testando como a conta nova
+
+No DBeaver, sem sair da conexão da dupla:
+
+1. Botão direito em cima da conexão atual → **Create New Connection**
+2. Mesmo host e mesmo banco (`abrigo_dNN`), mas usuário e senha são `testeNN`
+3. **Test Connection** → se aparecer verde, **Finish**
+4. Abra um editor SQL **nessa conexão nova**, não na antiga
+
+> Escrevam `meu_abrigo.nome_da_tabela` nas queries, com o nome do schema na frente. Essa conexão
+> nova não conhece o atalho que a conta da dupla já tinha configurado.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 27 -->
+<!-- objetivo: aluno retoma o fio da aula 47, ligando permissao a query -->
+
+# Fechando: a permissão manda na query
+
+Na aula 47 vocês desenharam quem pode o quê. Agora as duas coisas se encontram.
+
+Cada dupla escreve **duas queries** e roda as duas, conectada como a **conta de teste** que
+acabou de criar:
+
+1. Uma que `testeNN` **tem** permissão de rodar (em `animais`)
+2. Uma que ela **não tem** (em `adotantes` ou `adocoes`, onde ela não recebeu nenhum `GRANT`)
+
+Copiem no caderno o resultado da primeira e o erro da segunda.
+
+> A pergunta não é "essa query está certa". É "essa query tem direito de existir nesta conta". A
+> conta da dupla é dona de tudo, dono nunca é barrado. É por isso que o teste tem que ser feito
+> com a conta nova.
+
+---
+layout: default
+card: true
+bgPreset: palette
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 28 -->
 <!-- objetivo: aluno sabe exatamente o que separa atendido de parcialmente atendido -->
 
 # Como este bloco é avaliado
@@ -610,7 +701,27 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 26 -->
+<!-- SLIDE 29 -->
+<!-- objetivo: aluno sabe o que separa atendido de parcialmente atendido no exercicio de permissao -->
+
+# Como a permissão é avaliada
+
+| Nível | O que evidencia |
+|---|---|
+| **Atendido** | as duas queries rodam como esperado (uma passa, uma dá erro) **e** o caderno explica por quê cada uma tem ou não permissão |
+| **Parcialmente Atendido** | as queries rodam, mas sem explicação, ou a dupla confunde erro de permissão com erro de digitação |
+| **Não Atendido** | não criou a conta de teste, ou não rodou nenhuma query com ela |
+
+> "Deu erro" sozinho não vale nada. O erro **certo**, no lugar certo, é a prova.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 30 -->
 <!-- objetivo: aluno registra a pagina 1 do dossie -->
 
 # Dossiê do Abrigo: página 1
@@ -621,17 +732,18 @@ Título da página: **O banco do abrigo**. O que tem que estar nela:
 - O número do requisito ao lado de cada linha
 - As três mensagens de erro, copiadas da tela
 - Uma frase: qual alavanca vocês mais erraram, e por quê
+- A conta de teste que vocês criaram, com o `CREATE ROLE` e os `GRANT`
+- O resultado da query permitida e o erro da query negada
 
-> Essa página pode ser consultada amanhã e nas próximas avaliações de Banco de Dados.
 
 ---
 layout: cover
 bgPreset: palette
 ---
 
-<!-- SLIDE 27: Divisor bloco 2 -->
+<!-- SLIDE 31: Divisor bloco 2 -->
 
-# BLOCO 2: ESTATÍSTICA APLICADA
+# ESTATÍSTICA APLICADA
 
 ## O que cresce rápido demais
 
@@ -642,7 +754,7 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 28 -->
+<!-- SLIDE 32 -->
 <!-- objetivo: aluno entra no bloco por uma situacao concreta do abrigo -->
 
 # O post do abrigo
@@ -661,6 +773,15 @@ A pergunta do abrigo é simples e prática:
 
 </v-click>
 
+<v-click>
+
+**Por que um multiplica e o outro soma:** o post ativa gente nova a cada compartilhada, e essa
+gente nova compartilha de novo. É um efeito em cadeia. O cartaz não: é sempre a mesma equipe
+colando os mesmos cinquenta cartazes, todo santo dia, não importa quantas pessoas já viram os de
+ontem.
+
+</v-click>
+
 ---
 layout: default
 card: true
@@ -668,7 +789,7 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 29 -->
+<!-- SLIDE 33 -->
 <!-- objetivo: aluno recebe a definicao de exponencial contrastada com o que ja sabe -->
 
 # Função exponencial
@@ -690,14 +811,15 @@ bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 30 -->
+<!-- SLIDE 34 -->
 <!-- objetivo: aluno preenche a tabela a mao e enxerga as duas curvas lado a lado -->
 
 # Fixação no caderno: as duas colunas
 
-Copiem e completem. À esquerda o post dobrando, à direita os cinquenta cartazes por dia.
+Copiem e completem. À esquerda o post, que **multiplica por 2** a cada dia. À direita os
+cartazes, que **somam 50** a cada dia.
 
-| n (dias) | dobrando | somando 50 |
+| dia | post: multiplica por 2 | cartaz: soma 50 |
 |---|---|---|
 | 0 | 1 | 1 |
 | 2 | 4 | 101 |
@@ -713,27 +835,56 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 31 -->
+<!-- SLIDE 35 -->
 <!-- objetivo: aluno confere a tabela e percebe a ultrapassagem -->
 
 # Conferindo, e a pergunta que importa
 
-<v-click>
+Antes de eu mostrar qualquer número: cada dupla canta o valor que achou para o **dia 10**, nas
+duas colunas. Depois a pergunta que interessa:
 
-| n | dobrando | somando 50 |
+> **Em que dia o post ultrapassa os cartazes?**
+
+<AdminOnly>
+
+| dia | post: multiplica por 2 | cartaz: soma 50 |
 |---|---|---|
 | 4 | 16 | 201 |
 | 6 | 64 | 301 |
 | 8 | 256 | 401 |
 | 10 | **1024** | 501 |
 
-</v-click>
+**Resposta da pergunta:** entre o dia 8 e o dia 9. No dia 8 o cartaz ainda ganha (401 contra
+256); no dia 9 o post já passou (512 contra 451).
 
-<v-click>
+</AdminOnly>
 
-**Em que dia o post ultrapassa os cartazes?** Entre o dia 8 e o dia 9.
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
 
-</v-click>
+<!-- SLIDE 36 -->
+<!-- objetivo: aluno formaliza a tabela que acabou de calcular usando notacao de potencia -->
+
+# A notação: potência de base 2
+
+Vocês acabaram de calcular tudo isso na mão. Agora vamos escrever com o nome certo das coisas.
+
+Em `2ⁿ`, o **2** é a **base** (o número que se repete na multiplicação) e o **n** é o
+**expoente** (quantas vezes ele entra). O resultado se chama **potência**.
+
+| expoente (n) | a multiplicação | potência | valor |
+|---|---|---|---|
+| 0 | nenhum fator | `2⁰` | 1 |
+| 1 | 2 | `2¹` | 2 |
+| 3 | 2 × 2 × 2 | `2³` | 8 |
+| 10 | 2 × 2 × … × 2 (dez fatores) | `2¹⁰` | 1024 |
+
+> **quantidade = 2ⁿ**. Aumentar o expoente em 1 é multiplicar o valor por 2 — é por isso que na
+> prática dá pra ir dobrando.
 
 ---
 layout: default
@@ -742,7 +893,39 @@ bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 32 -->
+<!-- SLIDE 37 -->
+<!-- objetivo: aluno pratica a notacao de potencia isolada da historia do abrigo, para solidificar a regra -->
+
+# Fixação no caderno: pratique o expoente
+
+Sem calculadora. Escrevam a multiplicação por extenso e só depois o valor.
+
+| Potência | A multiplicação por extenso | Valor |
+|---|---|---|
+| `2³` | | |
+| `2⁵` | | |
+| `2⁷` | | |
+| `2⁹` | | |
+
+> Dica: cada expoente a mais é **uma multiplicação por 2** em cima do anterior. Achou `2⁵`?
+> Então `2⁶` é só multiplicar aquele resultado por 2.
+
+<AdminOnly>
+
+Gabarito: `2³` = 2×2×2 = **8** · `2⁵` = **32** · `2⁷` = **128** · `2⁹` = **512**.
+Erro comum: multiplicar a base pelo expoente (`2×3=6` em vez de `2³=8`). Se aparecer, voltar ao
+"a multiplicação por extenso" antes de seguir.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: palette
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 38 -->
 <!-- objetivo: aluno entende que exponencial comeca perdendo, que e a intuicao central -->
 
 # O exponencial começa perdendo
@@ -764,7 +947,48 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 33 -->
+<!-- SLIDE 39 -->
+<!-- objetivo: aluno enxerga visualmente a virada entre as duas curvas, nao so na tabela -->
+
+# Vendo a virada
+
+<div style="display:flex; justify-content:center;">
+<svg viewBox="0 0 500 300" width="440" style="background:transparent">
+  <line x1="40" y1="260" x2="460" y2="260" stroke="#94a3b8" stroke-width="1.5" />
+  <line x1="40" y1="260" x2="40" y2="20" stroke="#94a3b8" stroke-width="1.5" />
+  <polyline points="40,260 124,259 208,256 292,245 376,200 460,20" fill="none" stroke="#67e8f9" stroke-width="3" />
+  <polyline points="40,260 124,236 208,213 292,189 376,166 460,143" fill="none" stroke="#fbbf24" stroke-width="3" />
+  <line x1="418" y1="20" x2="418" y2="260" stroke="#f87171" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="424" y="35" fill="#f87171" font-size="14">vira aqui</text>
+  <text x="36" y="278" fill="#cbd5e1" font-size="13">0</text>
+  <text x="118" y="278" fill="#cbd5e1" font-size="13">2</text>
+  <text x="202" y="278" fill="#cbd5e1" font-size="13">4</text>
+  <text x="286" y="278" fill="#cbd5e1" font-size="13">6</text>
+  <text x="370" y="278" fill="#cbd5e1" font-size="13">8</text>
+  <text x="450" y="278" fill="#cbd5e1" font-size="13">10 (dias)</text>
+  <circle cx="376" cy="200" r="4" fill="#67e8f9" />
+  <circle cx="460" cy="20" r="4" fill="#67e8f9" />
+  <rect x="70" y="30" width="12" height="12" fill="#67e8f9" />
+  <text x="86" y="40" fill="#e2e8f0" font-size="14">post (dobrando)</text>
+  <rect x="240" y="30" width="12" height="12" fill="#fbbf24" />
+  <text x="256" y="40" fill="#e2e8f0" font-size="14">cartaz (+50/dia)</text>
+</svg>
+</div>
+
+O cartaz sai na frente e fica confortável até o dia 8. Depois disso a curva do post dobra de
+altura a cada dois dias e passa por cima.
+
+> É essa forma de "reta que vira gancho" que separa o que cresce somando do que cresce
+> multiplicando.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 40 -->
 <!-- objetivo: aluno recebe log como a pergunta inversa, nao como formula nova -->
 
 # Logaritmo: a pergunta ao contrário
@@ -788,7 +1012,7 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 34 -->
+<!-- SLIDE 41 -->
 <!-- objetivo: aluno pratica ler a tabela ao contrario antes da avaliacao -->
 
 # Fixação no caderno: lendo ao contrário
@@ -805,11 +1029,94 @@ Sem fórmula e sem calculadora. Usem a tabela que vocês acabaram de preencher.
 ---
 layout: default
 card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 42 -->
+<!-- objetivo: aluno registra as duas formulas de forma explicita, para ter como consultar na prova -->
+
+# Fórmulas para guardar
+
+Copiem os dois quadros no Dossiê. São as duas faces da mesma moeda.
+
+| Pergunta | Fórmula |
+|---|---|
+| Depois de `n` dobras, quanto vira? | **quantidade = 2ⁿ** |
+| Pra chegar em uma quantidade, quantas dobras precisou? | **n = log₂(quantidade)** |
+
+> Não precisa decorar pra usar a tabela. Mas se souberem a fórmula, funciona pra qualquer número,
+> não só pros que já estão na tabela.
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 43 -->
+<!-- objetivo: aluno pratica plugar direto na formula, sem depender de preencher tabela linha a linha -->
+
+# Fixação no caderno: usando a fórmula direto
+
+Resolvam plugando na fórmula, sem preencher tabela linha por linha.
+
+1. `quantidade = 2ⁿ`, com `n = 7`. Quanto é a quantidade?
+2. `quantidade = 2ⁿ` deu **32**. Quanto vale `n`, ou seja, `log₂(32)`?
+3. Um post dobrou **9 vezes**. Quantas pessoas ele alcançou?
+
+> Mesma conta de sempre. A diferença é que agora vocês escrevem ela numa linha só.
+
+---
+layout: default
+card: true
 bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 35 -->
+<!-- SLIDE 44 -->
+<!-- objetivo: aluno ve visualmente por que log e a ferramenta certa para dado exponencial -->
+
+# Por que o log "endireita" a curva
+
+Mesmos dias, mesmos dados. Só que agora o eixo vertical não é a quantidade, é **quantas dobras
+ela representa** (`log₂`).
+
+<div style="display:flex; justify-content:center;">
+<svg viewBox="0 0 500 300" width="440" style="background:transparent">
+  <line x1="40" y1="260" x2="460" y2="260" stroke="#94a3b8" stroke-width="1.5" />
+  <line x1="40" y1="260" x2="40" y2="20" stroke="#94a3b8" stroke-width="1.5" />
+  <polyline points="40,260 124,212 208,164 292,116 376,68 460,20" fill="none" stroke="#67e8f9" stroke-width="3" />
+  <polyline points="40,260 124,100 208,76 292,62 376,52 460,45" fill="none" stroke="#fbbf24" stroke-width="3" />
+  <text x="36" y="278" fill="#cbd5e1" font-size="13">0</text>
+  <text x="118" y="278" fill="#cbd5e1" font-size="13">2</text>
+  <text x="202" y="278" fill="#cbd5e1" font-size="13">4</text>
+  <text x="286" y="278" fill="#cbd5e1" font-size="13">6</text>
+  <text x="370" y="278" fill="#cbd5e1" font-size="13">8</text>
+  <text x="450" y="278" fill="#cbd5e1" font-size="13">10 (dias)</text>
+  <rect x="70" y="30" width="12" height="12" fill="#67e8f9" />
+  <text x="86" y="40" fill="#e2e8f0" font-size="14">post: virou reta</text>
+  <rect x="260" y="30" width="12" height="12" fill="#fbbf24" />
+  <text x="276" y="40" fill="#e2e8f0" font-size="14">cartaz: virou curva</text>
+</svg>
+</div>
+
+O post, que era a curva disparando, **virou uma linha reta**. Isso não é coincidência: contar
+dobras é exatamente o que o log faz. Já o cartaz, que crescia numa reta certinha, agora aparece
+torto: o log só "endireita" quem cresce multiplicando.
+
+> É por isso que log aparece em terremoto, som e crescimento de dados: sempre que a grandeza real
+> multiplica, o log devolve ela pra uma escala que dá pra desenhar numa régua.
+
+---
+layout: default
+card: true
+bgPreset: palette
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 45 -->
 <!-- objetivo: aluno entende para que log serve fora da sala -->
 
 # Pra que serve contar dobras
@@ -823,6 +1130,11 @@ a contar **quantas vezes ele dobrou**. Isso é ordem de grandeza.
 - **Dados:** quando alguém diz que um sistema "cresceu duas ordens de grandeza", está contando
   dobras, não unidades
 
+> Exemplo real: o terremoto do Chile de 1960 teve magnitude 9,5, o maior já registrado. Um
+> terremoto de magnitude 6,5 solta **mil vezes menos energia**: são três degraus de dez vezes
+> cada, um atrás do outro. A escala parece pequena porque é logarítmica, não porque a diferença é
+> pequena.
+
 ---
 layout: default
 card: true
@@ -830,7 +1142,47 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 36 -->
+<!-- SLIDE 46 -->
+<!-- objetivo: aluno ve um problema modelo resolvido passo a passo antes da avaliacao -->
+
+# Exemplo resolvido: passo a passo
+
+**Pergunta:** o post do abrigo dobrou 6 vezes. Quantas pessoas ele alcançou?
+
+<v-click>
+
+**Passo 1.** Identificar a fórmula certa: já sei quantas dobras (`n`), quero a quantidade. Uso
+`quantidade = 2ⁿ`.
+
+</v-click>
+
+<v-click>
+
+**Passo 2.** Substituir: `quantidade = 2⁶`.
+
+</v-click>
+
+<v-click>
+
+**Passo 3.** Calcular contando dobra por dobra: 1 → 2 → 4 → 8 → 16 → 32 → **64**.
+
+</v-click>
+
+<v-click>
+
+**Resposta:** 64 pessoas. É a mesma linha que já apareceu na tabela lá atrás, só que chegando
+nela pela fórmula em vez de pela tabela.
+
+</v-click>
+
+---
+layout: default
+card: true
+bgPreset: default
+aulaNum: "Aula 50"
+---
+
+<!-- SLIDE 47 -->
 <!-- [ATIV AVALIATIVA] Av09-T2: instrucoes -->
 
 # Av09-T2: avaliação de Estatística Aplicada
@@ -838,7 +1190,8 @@ aulaNum: "Aula 50"
 **Individual, no caderno, cerca de uma hora.** O Dossiê pode ficar aberto.
 
 Cinco questões. Todas se resolvem dobrando ou desdobrando números, à mão. **Não precisa de
-calculadora e não precisa de fórmula decorada.**
+calculadora e não precisa de fórmula decorada.** Quem preferir usar a fórmula (`2ⁿ` ou `log₂`)
+direto pode usar à vontade: tabela e fórmula valem igual.
 
 O que vale é mostrar a conta. Resposta certa sem conta não conta.
 
@@ -851,7 +1204,7 @@ bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 37 -->
+<!-- SLIDE 48 -->
 <!-- [ATIV AVALIATIVA] Av09-T2: questoes 1 a 3 -->
 
 # Av09-T2: questões 1 a 3
@@ -877,7 +1230,7 @@ bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 38 -->
+<!-- SLIDE 49 -->
 <!-- [ATIV AVALIATIVA] Av09-T2: questoes 4 e 5 com dado real -->
 
 # Av09-T2: questões 4 e 5
@@ -902,7 +1255,7 @@ bgPreset: default
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 39 -->
+<!-- SLIDE 50 -->
 <!-- objetivo: aluno registra a pagina 2 do dossie -->
 
 # Dossiê do Abrigo: página 2
@@ -912,6 +1265,7 @@ Título: **O que cresce rápido**. O que tem que estar nela:
 - A tabela das duas colunas, completa
 - O dia em que o post ultrapassa os cartazes
 - Uma frase explicando a diferença entre somar sempre igual e multiplicar sempre igual
+- As duas fórmulas, do jeito que ficaram no quadro (`quantidade = 2ⁿ` e `n = log₂(quantidade)`)
 - A conta das dobras do Pix
 
 ---
@@ -921,7 +1275,7 @@ bgPreset: palette
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 40 -->
+<!-- SLIDE 51 -->
 <!-- tarefa de casa: aula 50 -->
 
 # Tarefa de Casa: Aula 50
@@ -943,7 +1297,7 @@ bgPreset: animate
 aulaNum: "Aula 50"
 ---
 
-<!-- SLIDE 41 -->
+<!-- SLIDE 52 -->
 <!-- objetivo: aluno fecha o dia enxergando o gancho para a sexta -->
 
 # Fim da Aula 50

@@ -12,7 +12,7 @@ disciplines: ["UC08", "UC09"]
 date: "2026-08-27"
 
 # em-planejamento | ready | published
-status: ready
+status: published
 
 deployUrl: ""
 
