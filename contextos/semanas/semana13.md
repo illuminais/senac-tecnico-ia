@@ -124,13 +124,20 @@ dobrou? Log aplicado **sem calculadora**, e gancho literal para a sexta.
 
 | # | UC | HA | Método | Tópicos | Ind. |
 |---|---|---|---|---|---|
-| 1 | UC07 | 3h | avaliacao | **Av10-T2 ato 2 (parte Ind.4)** — curva do Pix com dado do BCB, curva em S, ruptura vs melhoria, classificação do próprio número trazido de casa | UC07-4 |
-| 2 | UC07 | 3h | avaliacao | **Av10-T2 ato 2 (parte Ind.7)** — ciclo de vida da informação (7 etapas), cultura organizacional em 3 camadas, decisão de descarte do CPF | UC07-7 |
-| 3 | UC04 | — | recuperação | 2ª e última janela da Av04-T2, cenários novos do abrigo. Não é avaliação nova | UC04-2, UC04-3 |
+| 1 | UC07 | 3 HA | ensino + avaliacao | **Av10-T2 ato 2, instrumento único integrado** — curva do Pix e curva em S, ruptura vs melhoria, ciclo de vida da informação (7 etapas), cultura organizacional em 3 camadas. Fecha os dois indicadores numa prova só, em papel, consulta apenas ao caderno | UC07-4, UC07-7 |
+| 2 | UC04 | 3 HA | ensino + recuperação | **Métricas de avaliação** (matriz de confusão, acurácia, recall, precisão) aplicadas ao abrigo, tópico 7 do plano anual de UC04. Fecha com a 2ª e última janela da Av04-T2, cenários novos. Não é avaliação nova de UC04 | UC04-2, UC04-3 |
 
-**Entradas prontas:** vencem hoje a tarefa da A48 (*"quem precisa dizer sim para o plano sair do
-papel?"* — insumo direto de cultura organizacional) e a tarefa da A50 (um número real que
-cresceu, com fonte e conta de dobras — vira o caso que o aluno classifica no Ind.4).
+> **Correção de 27/08:** a versão anterior desta tabela alocava UC07 3h + 3h e deixava UC04 sem
+> HA, contrariando a Rotação 3-Sex (`horario-rotacao-t2.md:81`), que é UC07 + UC04. Além disso
+> "3h" aqui é **3 hora-aula**, não 3 horas de relógio: com 6 HA por manhã e um intervalo, cada
+> bloco tem **~130 min reais**. O bloco de UC07 foi orçado para caber nisso.
+
+**Entradas prontas:** vence hoje a tarefa da A48 (*"quem precisa dizer sim para o plano sair do
+papel?"* — insumo direto de cultura organizacional).
+
+**A tarefa da A50 não entra.** O professor confirmou que a turma não vai entregar. O instrumento
+foi redesenhado para rodar com a série de adoções do próprio abrigo, impressa no enunciado, sem
+depender de nada trazido de casa.
 
 ### Bloco 1 — UC07 Ind.4 (nível 2, morre no T2)
 

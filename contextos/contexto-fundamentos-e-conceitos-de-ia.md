@@ -20,7 +20,7 @@ trimestre-atual: T2
 | T1 | 4 | Clustering: K-Means · DBSCAN · exemplos práticos | 1 | ✅ A39 |
 | T1 | 5 | Bias · fairness · impacto social — aprofundamento com debate | 1 | ⬜ |
 | T2 | 6 | Shark Tank Tech — arquitetura de solução IA (entrada→IA→saída→GPU→custo) | 3 | ✅ A26/A27 |
-| T2 | 7 | Métricas de avaliação: acurácia · precisão · recall · F1 | 2 | ⬜ |
+| T2 | 7 | Métricas de avaliação: acurácia · precisão · recall · F1 | 2 | 🔄 A51 (acurácia, recall e precisão dados; F1 escorre para o T3) |
 | T2 | 8 | Computer Vision: CNN · detecção de objetos · demo prática | 2 | ⬜ |
 | T2 | 9 | NLP avançado: tokenização · embeddings práticos · demo LLM | 2 | ⬜ |
 | T2 | 10 | IA generativa: GANs · diffusion models · ChatGPT por dentro | 2 | ⬜ |
