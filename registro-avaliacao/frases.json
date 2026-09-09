@@ -1,0 +1,260 @@
+{
+  "UC1/2": {
+    "A": "Classifica diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.",
+    "PA": "Classifica parcialmente diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.",
+    "NA": "Não classifica adequadamente diferentes métodos algoritmos e técnicas utilizadas em Inteligência Artificial.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC1/3": {
+    "A": "Compreende e utiliza resultados supervisionados e não supervisionados por reforço.",
+    "PA": "Compreende e utiliza parcialmente resultados supervisionados e não supervisionados por reforço.",
+    "NA": "Não compreende e não utiliza adequadamente resultados supervisionados e não supervisionados por reforço.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC2/2": {
+    "A": "Utiliza comandos de integração dos códigos construídos em Python, conforme estrutura projetada.",
+    "PA": "Utiliza parcialmente comandos de integração dos códigos construídos em Python, conforme estrutura projetada.",
+    "NA": "Não utiliza adequadamente comandos de integração dos códigos construídos em Python, conforme estrutura projetada.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC2/3": {
+    "A": "Realiza a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica.",
+    "PA": "Realiza parcialmente a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica.",
+    "NA": "Não realiza adequadamente a depuração, verificando e corrigindo erros na programação, de acordo com recomendação técnica.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC3/2": {
+    "A": "Reconhece e aplica conceitos de Pipeline para GPU.",
+    "PA": "Reconhece e aplica parcialmente conceitos de Pipeline para GPU.",
+    "NA": "Não reconhece e não aplica adequadamente conceitos de Pipeline para GPU.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC3/3": {
+    "A": "Interpreta processos e threads em arquitetura de computadores e GPU.",
+    "PA": "Interpreta parcialmente processos e threads em arquitetura de computadores e GPU.",
+    "NA": "Não interpreta adequadamente processos e threads em arquitetura de computadores e GPU.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC3/4": {
+    "A": "Reconhece protocolos e serviços básicos de redes de computadores.",
+    "PA": "Reconhece parcialmente protocolos e serviços básicos de redes de computadores.",
+    "NA": "Não reconhece adequadamente protocolos e serviços básicos de redes de computadores.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/3": {
+    "A": "Considera a segurança digital na transformação digital em uma organização empresarial conforme prática em sala.",
+    "PA": "Considera parcialmente a segurança digital na transformação digital em uma organização empresarial conforme prática em sala.",
+    "NA": "Não considera adequadamente a segurança digital na transformação digital em uma organização empresarial conforme prática em sala.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/4": {
+    "A": "Compreende as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital.",
+    "PA": "Compreende parcialmente as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital.",
+    "NA": "Não compreende adequadamente as rupturas das tecnologias emergentes para a aplicação de práticas na transformação digital.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/5": {
+    "A": "Analisa objetivos estratégicos e cria um plano de implementação.",
+    "PA": "Analisa parcialmente objetivos estratégicos e cria parcialmente um plano de implementação.",
+    "NA": "Não analisa adequadamente objetivos estratégicos e não cria um plano de implementação.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/6": {
+    "A": "Realiza análise de custo-benefício para garantir alinhamento financeiro.",
+    "PA": "Realiza parcialmente análise de custo-benefício para garantir alinhamento financeiro.",
+    "NA": "Não realiza adequadamente análise de custo-benefício para garantir alinhamento financeiro.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/7": {
+    "A": "Estuda o ciclo de vida da informação e avalia a cultura organizacional.",
+    "PA": "Estuda parcialmente o ciclo de vida da informação e avalia parcialmente a cultura organizacional.",
+    "NA": "Não estuda adequadamente o ciclo de vida da informação e não avalia a cultura organizacional.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC5/3": {
+    "A": "Cria a estrutura física de banco de dados, de acordo com os requisitos da aplicação e da modelagem de dados.",
+    "PA": "Cria parcialmente a estrutura física de banco de dados, de acordo com os requisitos da aplicação e da modelagem de dados.",
+    "NA": "Não cria adequadamente a estrutura física de banco de dados, de acordo com os requisitos da aplicação e da modelagem de dados.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC5/4": {
+    "A": "Gerencia a permissão de acesso ao banco de dados, de acordo com o perfil do usuário e as políticas de acesso.",
+    "PA": "Gerencia parcialmente a permissão de acesso ao banco de dados, de acordo com o perfil do usuário e as políticas de acesso.",
+    "NA": "Não gerencia adequadamente a permissão de acesso ao banco de dados, de acordo com o perfil do usuário e as políticas de acesso.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC5/5": {
+    "A": "Cria e manipula consultas SQL de forma adequada para resolução de problemas.",
+    "PA": "Cria e manipula parcialmente consultas SQL para resolução de problemas.",
+    "NA": "Não cria e não manipula adequadamente consultas SQL para resolução de problemas.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/3": {
+    "A": "Compreende e aplica funções matemáticas logarítmicas.",
+    "PA": "Compreende e aplica parcialmente funções matemáticas logarítmicas.",
+    "NA": "Não compreende e não aplica adequadamente funções matemáticas logarítmicas.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/4": {
+    "A": "Compreende e aplica funções matemáticas exponenciais.",
+    "PA": "Compreende e aplica parcialmente funções matemáticas exponenciais.",
+    "NA": "Não compreende e não aplica adequadamente funções matemáticas exponenciais.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/5": {
+    "A": "Interpreta e aplica probabilidades básicas.",
+    "PA": "Interpreta e aplica parcialmente probabilidades básicas.",
+    "NA": "Não interpreta e não aplica adequadamente probabilidades básicas.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/6": {
+    "A": "Compreende variável qualitativa e quantitativa.",
+    "PA": "Compreende parcialmente variável qualitativa e quantitativa.",
+    "NA": "Não compreende adequadamente variável qualitativa e quantitativa.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/7": {
+    "A": "Aplica dados discretos e contínuos.",
+    "PA": "Aplica parcialmente dados discretos e contínuos.",
+    "NA": "Não aplica adequadamente dados discretos e contínuos.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC7/3": {
+    "A": "Aplica estratégias de edição e revisão para solucionar problemas de digitação e estrutura em documentos.",
+    "PA": "Aplica parcialmente estratégias de edição e revisão para solucionar problemas de digitação e estrutura em documentos.",
+    "NA": "Não aplica adequadamente estratégias de edição e revisão para solucionar problemas de digitação e estrutura em documentos.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC7/4": {
+    "A": "Acessa e utiliza navegadores de internet com segurança, realizando pesquisas por meio de palavras-chave e critérios de confiabilidade.",
+    "PA": "Acessa e utiliza parcialmente navegadores de internet com segurança, realizando pesquisas por meio de palavras-chave e critérios de confiabilidade.",
+    "NA": "Não acessa e não utiliza adequadamente navegadores de internet com segurança, realizando pesquisas por meio de palavras-chave e critérios de confiabilidade.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC7/5": {
+    "A": "Organiza e armazena informações digitais de forma lógica e coerente, demonstrando autonomia e criticidade.",
+    "PA": "Organiza e armazena parcialmente informações digitais de forma lógica e coerente, demonstrando autonomia e criticidade.",
+    "NA": "Não organiza e não armazena adequadamente informações digitais de forma lógica e coerente, demonstrando autonomia e criticidade.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC8/1": {
+    "A": "Reconhece vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação.",
+    "PA": "Reconhece parcialmente vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação.",
+    "NA": "Não reconhece adequadamente vocabulário técnico em inglês presente em softwares, interfaces digitais e ambientes de programação.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC8/2": {
+    "A": "Interpreta instruções simples em inglês em manuais, menus e tutoriais de tecnologia.",
+    "PA": "Interpreta parcialmente instruções simples em inglês em manuais, menus e tutoriais de tecnologia.",
+    "NA": "Não interpreta adequadamente instruções simples em inglês em manuais, menus e tutoriais de tecnologia.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC8/3": {
+    "A": "Utiliza estratégias básicas de leitura para compreender textos técnicos curtos.",
+    "PA": "Utiliza parcialmente estratégias básicas de leitura para compreender textos técnicos curtos.",
+    "NA": "Não utiliza adequadamente estratégias básicas de leitura para compreender textos técnicos curtos.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC9/4": {
+    "A": "Reconhece padrões e sequências numéricas para apoiar a construção de algoritmos básicos.",
+    "PA": "Reconhece parcialmente padrões e sequências numéricas para apoiar a construção de algoritmos básicos.",
+    "NA": "Não reconhece adequadamente padrões e sequências numéricas para apoiar a construção de algoritmos básicos.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC9/5": {
+    "A": "Interpreta e representa dados em tabelas e gráficos, aplicando conceitos estatísticos iniciais.",
+    "PA": "Interpreta e representa parcialmente dados em tabelas e gráficos, aplicando conceitos estatísticos iniciais.",
+    "NA": "Não interpreta e não representa adequadamente dados em tabelas e gráficos, aplicando conceitos estatísticos iniciais.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC9/6": {
+    "A": "Resolve situações-problema utilizando estratégias matemáticas aplicadas à computação e Inteligência Artificial.",
+    "PA": "Resolve parcialmente situações-problema utilizando estratégias matemáticas aplicadas à computação e Inteligência Artificial.",
+    "NA": "Não resolve adequadamente situações-problema utilizando estratégias matemáticas aplicadas à computação e Inteligência Artificial.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC1/4": {
+    "A": "Compreende e aplica questões éticas e impactos sociais relacionados ao uso de Inteligência Artificial.",
+    "PA": "Compreende e aplica parcialmente questões éticas e impactos sociais relacionados ao uso de Inteligência Artificial.",
+    "NA": "Não compreende e não aplica adequadamente questões éticas e impactos sociais relacionados ao uso de Inteligência Artificial.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC2/4": {
+    "A": "Utiliza bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.",
+    "PA": "Utiliza parcialmente bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.",
+    "NA": "Não utiliza adequadamente bibliotecas de manipulação de dados para aplicações de Inteligência Artificial.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC3/5": {
+    "A": "Compreende e aplica endereçamento de redes IPv4 e IPv6.",
+    "PA": "Compreende e aplica parcialmente endereçamento de redes IPv4 e IPv6.",
+    "NA": "Não compreende e não aplica adequadamente endereçamento de redes IPv4 e IPv6.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/8": {
+    "A": "Identifica fontes de dados relevantes, para desenvolver um plano de coleta, considerando a qualidade e legalidade e aplicando técnicas de análise descritiva, preditiva e prescritiva.",
+    "PA": "Identifica parcialmente fontes de dados relevantes, para desenvolver um plano de coleta, considerando a qualidade e legalidade e aplicando técnicas de análise descritiva, preditiva e prescritiva.",
+    "NA": "Não identifica adequadamente fontes de dados relevantes, para desenvolver um plano de coleta, considerando a qualidade e legalidade e aplicando técnicas de análise descritiva, preditiva e prescritiva.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/9": {
+    "A": "Analisa os tipos de cultura informacional e avalia a influência na estratégia de informação.",
+    "PA": "Analisa parcialmente os tipos de cultura informacional e avalia a influência na estratégia de informação.",
+    "NA": "Não analisa adequadamente os tipos de cultura informacional e avalia a influência na estratégia de informação.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC4/10": {
+    "A": "Explora ferramentas analíticas considerando as necessidades específicas e desenvolve relatórios personalizados de modo a integrar a ferramentas com Sistema BI.",
+    "PA": "Explora parcialmente ferramentas analíticas considerando as necessidades específicas e desenvolve relatórios personalizados de modo a integrar a ferramentas com Sistema BI.",
+    "NA": "Não explora adequadamente ferramentas analíticas considerando as necessidades específicas e desenvolve relatórios personalizados de modo a integrar a ferramentas com Sistema BI.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC5/6": {
+    "A": "Cria e manipula armazenamento e backup de banco de dados.",
+    "PA": "Cria e manipula parcialmente armazenamento e backup de banco de dados.",
+    "NA": "Não cria e não manipula adequadamente armazenamento e backup de banco de dados.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/8": {
+    "A": "Aplica frequência absoluta e relativa.",
+    "PA": "Aplica parcialmente frequência absoluta e relativa.",
+    "NA": "Não aplica adequadamente frequência absoluta e relativa.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/9": {
+    "A": "Usa medidas de tendência central em aplicações de Inteligência Artificial.",
+    "PA": "Usa parcialmente medidas de tendência central em aplicações de Inteligência Artificial.",
+    "NA": "Não usa adequadamente medidas de tendência central em aplicações de Inteligência Artificial.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC6/10": {
+    "A": "Aplica raiz quadrada da variância em aplicações de Inteligência Artificial.",
+    "PA": "Aplica parcialmente raiz quadrada da variância em aplicações de Inteligência Artificial.",
+    "NA": "Não aplica adequadamente raiz quadrada da variância em aplicações de Inteligência Artificial.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC7/6": {
+    "A": "Organiza e analisa informações digitais de forma lógica, identificando padrões e relações que orientem a tomada de decisões com autonomia e criticidade.",
+    "PA": "Organiza e analisa parcialmente informações digitais de forma lógica, identificando padrões e relações que orientem a tomada de decisões com autonomia e criticidade.",
+    "NA": "Não organiza e não analisa adequadamente informações digitais de forma lógica, identificando padrões e relações que orientem a tomada de decisões com autonomia e criticidade.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC9/7": {
+    "A": "Demonstra clareza, estrutura lógica e capacidade de comunicação na explicação de procedimentos matemáticos.",
+    "PA": "Demonstra parcialmente clareza, estrutura lógica e capacidade de comunicação na explicação de procedimentos matemáticos.",
+    "NA": "Não demonstra adequadamente clareza, estrutura lógica e capacidade de comunicação na explicação de procedimentos matemáticos.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC8/4": {
+    "A": "Relaciona termos técnicos em inglês com suas funções no cotidiano digital e computacional.",
+    "PA": "Relaciona parcialmente termos técnicos em inglês com suas funções no cotidiano digital e computacional.",
+    "NA": "Não relaciona adequadamente termos técnicos em inglês com suas funções no cotidiano digital e computacional.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  },
+  "UC9/8": {
+    "A": "Age com persistência, criticidade e ética no uso da matemática em contextos digitais.",
+    "PA": "Age parcialmente com persistência, criticidade e ética no uso da matemática em contextos digitais.",
+    "NA": "Não age adequadamente com persistência, criticidade e ética no uso da matemática em contextos digitais.",
+    "NAV": "Não houve evidências suficientes para avaliação deste indicador."
+  }
+}
