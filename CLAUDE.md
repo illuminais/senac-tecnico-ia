@@ -87,13 +87,18 @@ Use o agente `criar-nova-aula` para criar a próxima pasta de aula. O agente cop
 
 ## Contexto Atual do Curso
 
-- **Última aula ministrada**: A45 (07/08/2026) — UC07 Transformação Digital (cases brasileiros) + UC04 Fundamentos e Conceitos de IA (Av04-T2, encerra UC04 no T2). ⚠️ A44 e A45 ainda não foram registradas em `AULAS-DADAS.md` — rodar `atualizador-pos-aula` com o relato
-- **Próxima aula**: A46 (13/08) — UC05 Python para IA (funções na prática) + UC02 Inglês Instrumental (Av05-T2 Error Report) · plano em `contextos/semanas/semana11.md`
-- **Avaliações T2 aplicadas**: Av02-T2 (31/07 UC03), Av03-T2 (06/08 UC09), Av04-T2 (07/08 UC04)
-- **Próximas avaliações**: Av05-T2 (13/08 UC02) · Av06-T2 (14/08 + 27/08, UC08 + UC06, dois atos) · Av07-T2 (20/08 UC01) · Av08-T2 e Av12-T2 (21/08, UC03 e UC05) · Av09-T2 (27/08 UC09) · Av10-T2 (20/08 + 28/08, UC07, dois atos) · Av11-T2 (04/09 UC06)
+- **Trimestre**: T3 (10/09 a 18/12/2026), rodando em **modelo de épicos** desde 10/09. A rotação Sem1/Sem2/Sem3 foi abandonada. O dia inteiro (6 HA) é de uma UC só; quando o conteúdo acaba, aplica-se a avaliação, faz-se a recuperação, fecha-se a menção e o próximo épico começa. Mapa em `contextos/roteiro-t3.md`
+- **Última aula ministrada**: A53 (04/09/2026) — último dia do T2, recuperação geral. ⚠️ A44 a A51 ainda não foram registradas em `AULAS-DADAS.md` — rodar `atualizador-pos-aula`
+- **Próxima aula**: A54 (10/09) — **Épico 1: UC01 Fundamentos de Computação**, dia 1 de 4 · slides prontos em `aulas/09set/A54_UC01_10set/`, plano em `contextos/semanas/semana15.md`
+- **Épico 1 em curso (A54 a A57, 19 HA)**: os quatro dias já estão gerados. Arco Indicador 4 → 5 → 6 sobre **um arquivo só** (`painel_dengue_pr.xlsx`) que ganha uma aba por dia. Verbos: organizar, comparar, decidir, refazer. Glossário fixo de 5 palavras (registro, atributo, critério, padrão, relação). Dado real de dengue do InfoDengue, entregue sujo de propósito, em `aulas/09set/A54_UC01_10set/public/dados/` (ler o `README.md`, tem o gabarito). Avaliação **Av01-T3** em A56, recuperação por trilha em A57
+- ⚠️ **Indicador 4 de UC01 está saturado** (dado em A42, avaliado em A48 e retomado por outro professor em set/2026). No épico entra só como diagnóstico de 1 HA. O peso vai para o Indicador 6, nível 4 e nunca tocado
+- **Ordem dos épicos**: UC01 → UC04 → UC03 → UC09 → UC05 → UC08 → UC06 → UC02 → UC07 (ver `contextos/roteiro-t3.md`)
+- **Saldo de horas**: 294 HA dadas de 481. Faltam 187 HA e o calendário tem 174 → **déficit de 13 HA**, absorvido com corte em UC05 (-3), UC08 (-5) e UC07 (-5)
+- **Fonte de verdade de horas**: OrionWeb, transcrito em `orionweb/*.csv`. Rodar `node scripts/balanco-ha.mjs` após cada aula — ele regenera `contextos/relatorio-horas-t3.md`, o CSV de faltas e a seção Estado Geral dos 9 contextos. **Nunca editar HA à mão.**
+- **Antes de gerar slides de qualquer UC**: rodar `node scripts/checar-repeticao.mjs <slides.md>`. Em 09/09 a primeira versão da A54 repetiu quase slide a slide o bloco UC01 da A48 porque o contexto estava três aulas atrasado. Contexto desatualizado gera aula repetida; o script compara contra os `slides.md` que existem de fato
+- **Frequência**: 6 alunos abaixo de 75% (ver `orionweb/faltas-2026-09-09.csv`)
 - **Histórico completo**: ver `AULAS-DADAS.md`
-- **Calendário e composição de UCs**: ver `contextos/horarios/08-agosto.md`
-- **Plano de avaliações T2 e conta de fechamento**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
+- **Plano de avaliações**: ver `contextos/ATIVIDADES_AVALIATIVAS.md`
 
 > ⚠️ **Manter esta seção atualizada** após cada uso de `atualizador-pos-aula`.
 

@@ -278,3 +278,47 @@ Instrumento de dois atos só vale quando a UC tem 2 ou mais slots restantes **e 
 - **UC03 e UC09:** 1 slot cada, sem margem para remarcação. Qualquer falta de aula em 21/08 ou 27/08 derruba o indicador.
 - **UC06 Ind.4:** Av11-T2 em 04/09 depende de confirmação de que UC06 realmente cai nesse dia; como Ind.4 continua no T3, o risco é absorvível.
 - **Turma bimodal em SQL** (relatado em 11/08, pós-A44): parte da turma foi longe, parte não entregou nada. Av06-T2 abre com conteúdo inédito (DCL) justamente para zerar a largada, e reserva a tarefa desafio como teto para quem já está adiantado.
+
+---
+
+## Plano de Avaliações — T3 2026 (modelo de épicos)
+
+> **Regra do modelo:** uma avaliação por épico, aplicada no último dia de conteúdo daquele épico.
+> A recuperação acontece no bloco de fechamento, logo em seguida, ainda dentro do épico.
+> Quando o épico acaba, a menção está lançada e a UC não volta.
+> Isso elimina o problema estrutural do T2, em que indicadores morriam por falta de slot:
+> aqui cada UC tem todos os seus slots juntos e a recuperação é garantida por desenho.
+>
+> Menções: **A** Atendido · **PA** Parcialmente Atendido · **NA** Não Atendido. Sem nota numérica.
+> Calendário dos épicos: [roteiro-t3](roteiro-t3.md).
+
+| Av | Épico | UC | Avaliação em | Recuperação em | Indicadores T3 | Estado |
+|---|---|---|---|---|---|---|
+| Av01-T3 | 1 | UC01 Fundamentos de Computação | A56 · 17/09 | A57 · 18/09 | 4, 5, 6 | ✅ [detalhada](aval/av01-t3-painel-decisao.md) |
+| Av02-T3 | 2 | UC04 Fundamentos e Conceitos de IA | A58 · 24/09 | A58 · 24/09 | 3, 4 | ⬜ pendente |
+| Av03-T3 | 3 | UC03 Fundamentos Matemáticos | A60 · 01/10 | A60 · 01/10 | 6, 7, 8 | ⬜ pendente |
+| Av04-T3 | 4 | UC09 Estatística Aplicada | A63 · 09/10 | A63 · 09/10 | 7, 8, 9, 10 | ⬜ pendente |
+| Av05-T3 | 5 | UC05 Python para IA | A66 · 22/10 | A66 · 22/10 | 3, 4 | ⬜ pendente |
+| Av06-T3 | 6 | UC08 Banco de Dados | A71 · 06/11 | A71 · 06/11 | 4, 5, 6 | ⬜ pendente |
+| Av07-T3 | 7 | UC06 Arquitetura e GPU | A74 · 19/11 | A74 · 19/11 | 4, 5 | ⬜ pendente |
+| Av08-T3 | 8 | UC02 Inglês Instrumental | A77 · 03/12 | A77 · 03/12 | 3, 4 | ⬜ pendente |
+| Av09-T3 | 9 | UC07 Transformação Digital | A82 · 18/12 | A82 · 18/12 | 7, 8, 9, 10 | ⬜ pendente |
+
+### Av01-T3 — Épico UC01, "Painel de decisão"
+
+Instrumento único cobrindo os três indicadores, porque o épico é um projeto contínuo: o aluno
+recebe um arquivo sujo na A54 e entrega uma decisão defendida na A56, sempre no mesmo arquivo.
+
+O que torna a avaliação nível 4 (Analisar) e não nível 3: o dado sustenta **duas decisões
+opostas e defensáveis**. Londrina é 1ª em casos absolutos e Jacarezinho é 1ª por 100 mil
+habitantes, sendo apenas a 16ª em absoluto. A menção não depende da cidade escolhida, e sim de
+declarar o critério e sustentar a escolha.
+
+**Detalhamento completo, rubrica dos três indicadores e trilhas de recuperação:**
+[aval/av01-t3-painel-decisao.md](aval/av01-t3-painel-decisao.md)
+
+### Riscos do T3
+
+- **Av09-T3 cai em 18/12**, último dia letivo, e `contextos/horarios/12-dezembro.md` levanta a dúvida de a A82 ser só Conselho de Classe. Se for, UC07 perde a avaliação e a recuperação de uma vez. **Confirmar com a coordenação antes de outubro.**
+- **UC07 e UC09 têm 4 indicadores cada** para fechar num épico só. São os dois instrumentos mais pesados do trimestre.
+- **UC05 fica sem ser tocado de 03/09 a 09/10**, cinco semanas, numa turma fraca em programação. Considerar antecipar o épico ou manter um fio de Python dentro dos épicos de UC03 e UC09.

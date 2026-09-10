@@ -19,11 +19,14 @@
 
 | Arquivo | O que é | Quando ler |
 |---|---|---|
-| `roteiro-t2.md` | Visão geral do T2: semanas, UCs, métodos, datas | Planejar uma aula do T2 |
+| `roteiro-t3.md` | **T3 em modelo de épicos:** uma UC por dia, ordem dos 9 épicos, data de fechamento de cada um | Planejar qualquer aula do T3 |
+| `roteiro-t2.md` | Visão geral do T2: semanas, UCs, métodos, datas | Consultar histórico do T2 |
 | `semanas/horario-rotacao-t2.md` | Ciclo Sem1/Sem2/Sem3 com HA por UC e calendário semana a semana | Verificar qual UC toca em qual dia |
 | `semanas/semana01.md` | Plano operacional detalhado da semana 01 | Produzir ou revisar aulas da semana específica |
 | `semanas/semana02.md` | Plano operacional detalhado da semana 02 | Produzir ou revisar aulas da semana específica |
 | `semanas/semana03.md` … | Plano operacional das semanas seguintes (gerado por @planejador-mensal) | Produzir ou revisar aulas da semana específica |
+| `semanas/semana15.md` | T3 semana 1: A54 e A55, épico UC01 dias 1 e 2 | Produzir ou revisar A54/A55 |
+| `semanas/semana16.md` | T3 semana 2: A56 e A57, épico UC01 dias 3 e 4 (avaliação e fechamento) | Produzir ou revisar A56/A57 |
 | `horarios/06-junho.md` | Aulas A31–A37 · 42 HA | Planejar ou revisar junho |
 | `horarios/07-julho.md` | Aulas A38–A43 · 36 HA | Planejar ou revisar julho |
 | `horarios/08-agosto.md` | Aulas A44–A51 · 48 HA | Planejar ou revisar agosto |
@@ -66,6 +69,7 @@ Ler quando: gerar slides de uma UC · atualizar pós-aula · verificar o que já
 | `aval/av05-sql-pratica.md` | AV05 — SQL prática | Detalhes da av |
 | `aval/av06-mini-projeto.md` | AV06 — Mini-projeto final (T1) | Detalhes da av |
 | `aval/av05-t2-error-report.md` | **Av05-T2** — Error Report: decodificar traceback em inglês (13/08, UC02) | Detalhes da av |
+| `aval/av01-t3-painel-decisao.md` | **Av01-T3** — Painel de decisão: dengue no Paraná (UC01 Ind.4+5+6, instrumento único do épico 1) · 17/09 com recuperação em 18/09 | Detalhes da av |
 | `aval/av06-t2-acesso-e-threads.md` | **Av06-T2** — Quem pode o quê: permissões de acesso (UC08) + processos/threads e pipeline de GPU (UC06) · dois atos, 14/08 e 27/08 | Detalhes da av |
 
 ---
@@ -74,8 +78,23 @@ Ler quando: gerar slides de uma UC · atualizar pós-aula · verificar o que já
 
 | Arquivo | O que é | Quando ler |
 |---|---|---|
-| `panorama-primeiro-ano-ucs.md` | HA dado vs. meta por UC — snapshot consolidado | Verificar saldo global de horas |
+| `relatorio-horas-t3.md` | **GERADO.** Saldo vigente por UC (dado/meta/falta), capacidade do calendário e déficit | Sempre que precisar saber quanto falta de uma UC |
 | `relatorio-horas-t1.md` | Dados oficiais Senac do T1 (plano 156 HA, real 114 HA) | Entender déficit do T1 |
+| `panorama-primeiro-ano-ucs.md` | Snapshot histórico de 02/06 — **desatualizado, não usar para planejar** | Só arqueologia |
+
+### Fonte de verdade de horas (`orionweb/`)
+
+| Arquivo | O que é |
+|---|---|
+| `../orionweb/disciplinas.csv` | Código, CH, meta de HA e período de cada UC |
+| `../orionweb/aulas-registradas.csv` | Uma linha por aula registrada no OrionWeb (uc, data, HA) |
+| `../orionweb/faltas-por-uc.csv` | Faltas por aluno por UC |
+| `../orionweb/ajustes-denominador.csv` | HA a descontar do denominador de frequência (matrícula posterior) |
+| `../orionweb/epicos-t3.csv` | Ordem dos épicos do T3, HA de cada um e onde encerra |
+
+> Transcrição manual dos extratos do OrionWeb. **Atualizar após cada aula** e rodar
+> `node scripts/balanco-ha.mjs`, que regenera `relatorio-horas-t3.md`, o CSV de faltas
+> e a seção Estado Geral dos 9 `contexto-*.md`.
 
 ---
 
