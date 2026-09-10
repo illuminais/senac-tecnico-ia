@@ -16,11 +16,11 @@ layout: cover
 <!-- SLIDE 1: Capa -->
 
 # Aula 55
-## Comparar exige critério
+## O dado que ninguém consegue usar
 
 **UC01 Fundamentos de Computação** · Épico 1, dia 2 de 4
 
-**Hoje o verbo é COMPARAR**
+**Hoje o verbo é ORGANIZAR**
 
 11 de setembro de 2026
 
@@ -38,40 +38,16 @@ bgPreset: palette
 
 | Dia | Verbo | O que você produz | |
 |---|---|---|---|
-| 10/09 | organizar | um dado que dá para usar | feito |
-| **11/09** | **comparar** | **as comparações que o dado permite** | **você está aqui** |
-| 17/09 | analisar e decidir | o painel e a recomendação | |
+| 10/09 | conferir | um julgamento defendido sobre uma notícia | |
+| **11/09** | **organizar** | **um dado que dá para usar** | **você está aqui** |
+| 17/09 | comparar e decidir | o painel e a recomendação | |
 | 18/09 | refazer | o que ficou em aberto | |
 
 </SlideTable>
 
-**Ontem você produziu:** as abas `01_dados` e `02_limpeza`, com 408 linhas limpas.
+Quatro dias, **um arquivo só**. Ele ganha uma aba por dia e no fim vira a resposta.
 
-**Hoje você cria:** a aba `03_comparacoes`, no mesmo arquivo.
-
-Abra o `painel_dengue_pr.xlsx` agora. Sem ele você não acompanha a aula.
-
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 3: Confere a tarefa -->
-
-<!-- objetivo: aluno confronta o próprio palpite com o dado, criando tensão para o conceito de critério -->
-
-# Antes de tudo: seu palpite de ontem
-
-A tarefa 4 pedia para você escrever, sem olhar a planilha, qual município teve mais dengue no Paraná em 2025.
-
-Pegue o caderno. Leia o que você escreveu.
-
-Agora ordene a coluna `casos` do maior para o menor, filtrando só o ano de 2025.
-
-**Quem acertou?**
-
-> Guarde essa folha. No fim da aula ela vai fazer sentido de um jeito diferente.
+Depois de 18/09 esta disciplina encerra e não volta.
 
 ---
 layout: center
@@ -79,61 +55,13 @@ card: true
 bgPreset: animate
 ---
 
-<!-- SLIDE 4: A pergunta que parece fácil -->
+<!-- SLIDE 3: A pergunta -->
 
-# "Qual município teve mais dengue?"
+# A pergunta dos quatro dias
 
-Parece a pergunta mais simples do mundo.
+## "Em que mês e em que região o Paraná deveria concentrar a campanha contra a dengue?"
 
-Ela tem **duas respostas certas e diferentes**, e é isso que a aula de hoje resolve.
-
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 5: Conceito critério -->
-
-<!-- objetivo: aluno define critério e entende que comparar sem critério não é comparar -->
-
-# Conceito 5: critério
-
-**Definição:** critério é **a régua** que você escolheu para decidir qual opção ganha.
-
-**Analogia:** dois alunos, um tirou 8 numa prova e o outro tirou 7 em três provas. Quem é melhor? Depende da régua: a maior nota, ou a média, ou quem melhorou mais. Nenhuma régua é a verdadeira. Mas **sem declarar a régua, a discussão não termina nunca**.
-
-**No nosso dado:** "mais dengue" pode ser mais casos no total, ou mais casos para o tamanho da cidade. São réguas diferentes.
-
-**Para que serve:** sem critério declarado, qualquer resposta parece boa e ninguém consegue discordar de forma útil.
-
----
-layout: two-cols-text
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 6: Duas réguas -->
-
-<!-- objetivo: aluno vê que a mesma pergunta muda de resposta conforme a régua -->
-
-# Régua 1: casos absolutos
-
-Quantas pessoas adoeceram, ponto.
-
-**Responde bem:** quantos leitos vão precisar? Quantos remédios comprar? Onde vai ter fila no hospital?
-
-**Engana quando:** cidade grande sempre ganha, mesmo com pouca dengue proporcionalmente.
-
-::right::
-
-# Régua 2: casos por 100 mil
-
-Quantos adoeceram **a cada 100 mil habitantes**.
-
-**Responde bem:** onde o problema é mais grave? Onde a doença está mais espalhada na população?
-
-**Engana quando:** cidade pequena com poucos casos pode disparar, porque o divisor é pequeno.
+Quem responde isso decide onde vai gente, dinheiro e propaganda.
 
 ---
 layout: default
@@ -141,22 +69,75 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 7: Por que bruto engana -->
+<!-- SLIDE 4: O arquivo -->
 
-<!-- objetivo: aluno entende com exemplo do próprio cotidiano por que número absoluto engana -->
+<!-- objetivo: aluno percebe que o obstáculo não é a pergunta, é o estado do dado -->
 
-# Por que o número bruto engana
+# Você já tem o dado
 
-Duas turmas tiveram falta hoje.
+Abra o arquivo `dengue_pr_bruto.xlsx`.
 
-- Turma A: **10 faltas**, de 300 alunos
-- Turma B: **8 faltas**, de 20 alunos
+Ele tem casos de dengue de **17 municípios do Paraná**, mês a mês, em 2024 e 2025. É dado real, do InfoDengue, que é um projeto da Fiocruz com a FGV.
 
-Qual turma tem problema de frequência?
+A resposta da pergunta está aí dentro.
 
-No número bruto, a A ganha: 10 é mais que 8. Na proporção, a B tem 40% da turma faltando e a A tem 3%.
+**Agora tente responder.** Qual município teve mais casos em 2025?
 
-**A pergunta "quantos?" e a pergunta "quão grave?" não são a mesma pergunta.** Cada uma tem a sua régua.
+---
+layout: center
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 5: O problema -->
+
+# Não dá.
+
+E não é porque você não sabe Excel.
+
+É porque **este arquivo não está em condição de ser usado**, e ninguém nunca te mostrou como deixar um arquivo em condição de ser usado.
+
+Isso é a aula de hoje.
+
+---
+layout: default
+card: true
+bgPreset: palette
+---
+
+<!-- SLIDE 6: Glossário do épico -->
+
+<!-- objetivo: aluno registra as cinco palavras que vai usar nos quatro dias para nomear o que está fazendo -->
+
+# As cinco palavras dos quatro dias
+
+Copie no caderno. São as **únicas** palavras novas do épico inteiro. Nos quatro dias você vai usar estas cinco e nenhuma outra.
+
+<SlideTable compact>
+
+| Palavra | O que quer dizer | Entra em |
+|---|---|---|
+| **registro** | uma ocorrência do mundo real, virada linha | hoje |
+| **atributo** | uma característica do registro, virada coluna | hoje |
+| **critério** | a régua que decide qual opção ganha | 17/09 |
+| **padrão** | algo que se repete de forma previsível | 17/09 |
+| **relação** | duas coisas que variam juntas | 17/09 |
+
+</SlideTable>
+
+Se você não consegue nomear o que está fazendo, você não consegue repetir depois.
+
+---
+layout: center
+card: true
+bgPreset: palette
+pulse: true
+---
+
+<!-- SLIDE 7: Divisor bloco A -->
+
+# PRIMEIRO
+## De onde veio este arquivo?
 
 ---
 layout: default
@@ -164,23 +145,27 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 8: A conta -->
+<!-- SLIDE 8: Proveniência dentro do arquivo -->
 
-<!-- objetivo: aluno sabe montar a fórmula de taxa por 100 mil e entende cada pedaço dela -->
+<!-- objetivo: aluno registra a origem do dado dentro do próprio arquivo, não em papel solto -->
 
-# Como se calcula "por 100 mil"
+# Isso vocês já sabem fazer
 
-```text
-casos ÷ população × 100000
-```
+Vocês já julgaram fonte, já preencheram ficha, já separaram confiável de duvidosa. Hoje não tem teoria nova sobre isso.
 
-**Por que dividir:** dividir casos por população dá quantos casos existem **por habitante**. Um número minúsculo, tipo 0,05.
+Muda **onde** o registro fica. Ficha em papel se perde. A origem tem que morar **dentro do arquivo**, colada no dado.
 
-**Por que multiplicar por 100 mil:** para virar um número que dá para ler e comparar. 0,05 vira 5.000 casos por 100 mil habitantes.
+Três campos, numa aba só, e acabou:
 
-**Por que 100 mil e não 1.000:** é o padrão que a saúde pública usa no mundo inteiro. Como todo mundo usa o mesmo, dá para comparar Paraná com qualquer outro lugar.
+<SlideTable compact>
 
-> Essa conta se chama **taxa**. É a mesma ideia de velocidade: não interessa só a distância, interessa a distância dividida pelo tempo.
+| Campo | O que escrever |
+|---|---|
+| Quem produziu | o nome da instituição |
+| A que período se refere | não é a data em que você baixou |
+| Endereço | o link completo |
+
+</SlideTable>
 
 ---
 layout: default
@@ -190,75 +175,24 @@ bgPreset: default
 
 <!-- SLIDE 9: Exercício 1 -->
 
-# Exercício 1: faça a conta na mão
+# Exercício 1: a origem deste arquivo
 
-Três municípios, ano de 2025, dados da sua planilha. Calcule a taxa por 100 mil de cada um, no caderno, com calculadora.
+Está tudo escrito no topo da planilha. Abra, leia, e responda no caderno.
 
-<SlideTable compact>
-
-| Município | Casos em 2025 | População |
-|---|---|---|
-| Londrina | 32.804 | 588.101 |
-| Jacarezinho | 1.005 | 11.870 |
-| Curitiba | 8.337 | 1.871.789 |
-
-</SlideTable>
-
-Depois responda: **qual dos três é o pior caso?** E a resposta muda dependendo da régua?
+**1.** Quem produziu o dado?
+**2.** A que período ele se refere?
+**3.** Qual o endereço da fonte?
+**4.** O arquivo foi acessado em 09/09/2026. O dado é de 2024 e 2025. **Por que essas duas datas são diferentes, e qual delas importa para a nossa pergunta?**
 
 <AdminOnly>
 
 **Gabarito:**
-- Londrina: 32.804 ÷ 588.101 × 100000 = **5.578** por 100 mil
-- Jacarezinho: 1.005 ÷ 11.870 × 100000 = **8.467** por 100 mil
-- Curitiba: 8.337 ÷ 1.871.789 × 100000 = **445** por 100 mil
+1. InfoDengue, projeto da Fiocruz com a FGV
+2. Casos prováveis de dengue, 2024 e 2025, por mês
+3. `info.dengue.mat.br`
+4. Uma é quando o professor baixou, a outra é o período que o dado mede. Para decidir a campanha importa a **do dado**: o que aconteceu em 2024 e 2025. A data do acesso serve só para saber se existe versão mais nova.
 
-**Muda tudo.** Em casos absolutos a ordem é Londrina, Curitiba, Jacarezinho. Por 100 mil a ordem é Jacarezinho, Londrina, Curitiba.
-
-Jacarezinho tem **19 vezes** a taxa de Curitiba, e tem oito vezes menos casos que ela. Deixe esse número no ar: é o coração da avaliação de quarta.
-
-</AdminOnly>
-
----
-layout: center
-card: true
-bgPreset: animate
----
-
-<!-- SLIDE 10: A virada -->
-
-# Nenhuma das duas réguas é a certa
-
-A régua certa é a que responde **a pergunta que você está fazendo**.
-
-Por isso o critério vem antes da conta, e não depois.
-
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 11: Exercício 2 -->
-
-# Exercício 2: qual régua para qual decisão
-
-Para cada decisão, diga qual critério serve melhor e escreva **uma linha** de justificativa.
-
-**1.** Quantas doses de soro mandar para cada cidade.
-**2.** Em que cidade fazer a campanha de rua mais forte.
-**3.** Onde abrir um posto de atendimento novo.
-**4.** Qual prefeito deveria ser cobrado por não ter agido.
-
-<AdminOnly>
-
-**Gabarito:**
-1. **Absoluto.** Soro é por pessoa doente. 32 mil doentes precisam de mais soro que 1 mil, ponto.
-2. **Por 100 mil.** Campanha de rua muda comportamento da população. Onde a proporção é alta, tem mais gente a convencer por metro quadrado.
-3. **Absoluto**, com ressalva. Posto atende volume. Mas se a cidade é minúscula, o posto pode ser inviável mesmo com taxa alta. Aceite quem levantar isso.
-4. **Por 100 mil.** Cobrar gestão é comparar desempenho, e comparar desempenho exige tirar o tamanho da conta.
-
-**O que avaliar:** não é acertar a régua, é a justificativa ligar a régua à decisão. Quem escreve "porque é melhor" não atendeu.
+A 4 é a que separa quem entendeu de quem copiou. Insista nela.
 
 </AdminOnly>
 
@@ -269,30 +203,10 @@ bgPreset: palette
 pulse: true
 ---
 
-<!-- SLIDE 12: Divisor ferramentas -->
+<!-- SLIDE 10: Divisor bloco B -->
 
-# AS FERRAMENTAS
-## Comparar 408 linhas na mão não dá
-
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 13: Ordenar -->
-
-<!-- objetivo: aluno ordena corretamente e evita o erro de ordenar coluna solta -->
-
-# Ferramenta 1: ordenar
-
-Coloca as linhas da maior para a menor, ou o contrário.
-
-**O erro que destrói a planilha:** selecionar **só uma coluna** e mandar ordenar. O Excel reordena aquela coluna e deixa as outras paradas. Aí o número de Londrina aparece na linha de Curitiba, e nada mais faz sentido.
-
-**Como fazer certo:** clique em uma célula qualquer de dentro da tabela e ordene por aí, sem selecionar coluna. O Excel entende a tabela inteira e leva a linha junto.
-
-> Se ele perguntar "expandir a seleção?", a resposta é sim, sempre.
+# AGORA O ASSUNTO NOVO
+## O que é uma tabela que dá para usar
 
 ---
 layout: default
@@ -300,39 +214,19 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 14: Filtrar -->
+<!-- SLIDE 11: Conceito registro -->
 
-<!-- objetivo: aluno usa filtro para recortar o dado sem apagar nada -->
+<!-- objetivo: aluno define registro e reconhece um registro numa tabela -->
 
-# Ferramenta 2: filtrar
+# Conceito 1: registro
 
-Esconde temporariamente as linhas que não interessam.
+**Definição:** registro é **uma ocorrência do mundo real** transformada em uma linha.
 
-**A diferença que importa:** filtrar **não apaga**. Ele só esconde. Tirou o filtro, tudo volta.
+**Analogia:** a lista de chamada. Cada aluno é um registro. Uma linha por aluno, sempre.
 
-**Onde isso salva você:** ontem, para achar as linhas de TOTAL, o caminho era filtrar. Hoje, para ver só 2025, o caminho também é filtrar.
+**No nosso arquivo:** um registro é "os casos de dengue de **um** município, em **um** mês, de **um** ano". Londrina em março de 2025 é um registro. Londrina em abril de 2025 é outro.
 
-**A pegadinha:** com filtro ligado, a função SOMA continua somando as linhas escondidas. Se você quer somar só o que está aparecendo, o nome da função é `SUBTOTAL`.
-
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 15: Formatação condicional -->
-
-<!-- objetivo: aluno usa cor para enxergar padrão antes de calcular qualquer coisa -->
-
-# Ferramenta 3: formatação condicional
-
-Pinta as células conforme o valor. Verde para baixo, vermelho para alto.
-
-**Para que serve de verdade:** enxergar padrão **antes** de calcular. Com 408 números na tela você não vê nada. Com 408 números coloridos, o olho acha sozinho onde estão os picos.
-
-**Onde aplicar hoje:** na coluna `casos`, com escala de cores. Depois role a planilha devagar e repare em que meses o vermelho aparece.
-
-> Isso não é enfeite. É a forma mais rápida de levantar hipótese, e hipótese é o passo 2 do método de ontem.
+**Para que serve saber isso:** se você não sabe qual é o seu registro, você não sabe quantas linhas a tabela deveria ter. E se você não sabe isso, não tem como saber se limpou certo.
 
 ---
 layout: default
@@ -340,24 +234,114 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 16: CONT.SE e SOMASE -->
+<!-- SLIDE 12: Conceito atributo -->
 
-<!-- objetivo: aluno usa contagem e soma condicionais para responder perguntas específicas -->
+<!-- objetivo: aluno define atributo e distingue atributo de registro -->
 
-# Ferramentas 4 e 5: CONT.SE e SOMASE
+# Conceito 2: atributo
 
-As duas fazem a mesma pergunta: "só as linhas que atendem tal condição".
+**Definição:** atributo é **uma característica** do registro, transformada em uma coluna.
 
-```text
-=CONT.SE(B:B; "Norte")
-=SOMASE(B:B; "Norte"; G:G)
-```
+**Analogia:** ainda na chamada. Nome, matrícula e presença são atributos do aluno. Cada um na sua coluna.
 
-**CONT.SE** conta **quantas linhas** atendem. A de cima devolve quantas linhas são da região Norte.
+**No nosso arquivo:** município, macrorregional, ano, mês, casos e população são atributos. Seis características do mesmo registro.
 
-**SOMASE** soma **uma outra coluna**, mas só nas linhas que atendem. A de baixo devolve quantos casos a região Norte teve.
+**A confusão comum:** achar que "março" é um atributo. Não é. `mes` é o atributo. `março` é o **valor** que o atributo tem naquele registro.
 
-**A diferença:** uma conta linhas, a outra soma valores. Confundir as duas é o erro mais comum, e o resultado sai absurdo o bastante para você perceber.
+---
+layout: default
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 13: A regra de ouro -->
+
+<!-- objetivo: aluno memoriza a regra que define uma tabela analisável -->
+
+# A regra de ouro da tabela
+
+Uma tabela dá para usar quando as três valem ao mesmo tempo:
+
+**1.** Um registro por linha
+**2.** Um atributo por coluna
+**3.** Um tipo de dado por coluna
+
+Quebre qualquer uma das três e o Excel para de funcionar. Não é frescura de organização: é o que faz soma, filtro e gráfico existirem.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 14: Exercício 2 -->
+
+# Exercício 2: qual delas dá para usar?
+
+Três formas de guardar o mesmo dado. No caderno, diga qual respeita a regra de ouro e **qual das três regras** as outras quebram.
+
+**A.** Uma coluna `municipio` e doze colunas: `jan`, `fev`, `mar`, ... `dez`
+
+**B.** Uma coluna `municipio`, uma coluna `mes`, uma coluna `casos`
+
+**C.** Uma coluna `municipio` e uma coluna `dados`, com "março: 8300, abril: 5200" escrito dentro
+
+<AdminOnly>
+
+**Gabarito:**
+- **B é a correta.** Um registro por linha (município + mês), um atributo por coluna, um tipo por coluna.
+- **A quebra a regra 2.** `jan` não é um atributo, é um valor do atributo `mes`. Com essa forma, para somar o ano você precisa mexer em doze colunas, e se aparecer 2026 você tem que criar coluna nova.
+- **C quebra a regra 3 e a 2.** A coluna `dados` tem texto e número misturados. O Excel não soma, não filtra e não ordena nada ali dentro.
+
+**Puxar com a turma:** a forma A é a que quase todo mundo faz sozinho, porque é a que fica bonita na tela. Bonita de ler e boa de calcular são coisas diferentes.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 15: Conceito tipo -->
+
+<!-- objetivo: aluno entende que a planilha trata número, texto e data de formas diferentes -->
+
+# Conceito 3: tipo de dado
+
+**Definição:** tipo é **o que a planilha acha que aquilo é**. Número, texto ou data.
+
+**Analogia:** o número da sua casa e o seu telefone são os dois feitos de algarismos. Ninguém soma os dois. A planilha precisa saber qual é qual, e ela não adivinha.
+
+**O problema:** `1005` pode estar guardado como número (e soma) ou como texto (e não soma). Na tela os dois parecem iguais.
+
+**Por que isso arruína tudo:** uma coluna com número e texto misturados soma **só uma parte**, e não avisa. O resultado sai errado com cara de certo.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 16: Como enxergar o tipo -->
+
+<!-- objetivo: aluno identifica visualmente o tipo de uma célula sem clicar nela -->
+
+# Como enxergar o tipo sem clicar
+
+O Excel te conta o tempo todo, pelo **alinhamento**:
+
+<SlideTable compact>
+
+| O que você vê | O que é |
+|---|---|
+| encostado na **direita** | número ou data. Ele calcula |
+| encostado na **esquerda** | texto. Ele não calcula |
+| triangulinho verde no canto | ele desconfia que virou texto sem querer |
+
+</SlideTable>
+
+Isso vale mesmo se você não mexer em nada. Uma coluna de números com algumas células à esquerda tem defeito, e você vê isso de longe.
 
 ---
 layout: default
@@ -367,48 +351,36 @@ bgPreset: default
 
 <!-- SLIDE 17: Exercício 3 -->
 
-# Exercício 3: responda com fórmula
+# Exercício 3: leia o alinhamento
 
-Na aba `03_comparacoes`, responda usando CONT.SE ou SOMASE. Escreva a fórmula que você usou ao lado de cada resposta.
+Abra o arquivo e vá até a coluna `casos`. Não clique em nada ainda. Só olhe.
 
-**1.** Quantas linhas do arquivo são da macrorregional Oeste?
-**2.** Quantos casos a macrorregional Norte teve ao todo, nos dois anos?
-**3.** Quantos casos Maringá teve ao todo?
-**4.** Qual das quatro regiões teve mais casos somando 2024 e 2025?
+**1.** Todas as células estão alinhadas do mesmo lado?
+**2.** Aponte **três linhas** onde o valor está do lado errado.
+**3.** Se você somar essa coluna inteira agora, o resultado vai vir maior, menor ou igual ao verdadeiro? Por quê?
 
 <AdminOnly>
 
 **Gabarito:**
-1. `=CONT.SE(B:B;"Oeste")` → 120 linhas (5 municípios × 12 meses × 2 anos)
-2. `=SOMASE(B:B;"Norte";G:G)`
-3. `=SOMASE(A:A;"Maringá";G:G)`
-4. Quatro SOMASE, uma por região, e compara. **Norte** vence.
+1. Não. A maioria está à direita, e um punhado está à esquerda.
+2. Varia por aluno. O que interessa é ele achar sozinho, olhando.
+3. **Menor.** As células de texto são ignoradas pela soma. Some 73 valores que existem na tela e não entram na conta.
 
-**Se der zero em alguma:** a limpeza de ontem falhou na coluna `macrorregional`. É o defeito 4 voltando. Mande conferir se sobraram exatamente quatro valores diferentes.
-
-Esse é o momento em que quem limpou mal descobre que limpou mal. É de propósito.
+**O ponto pedagógico:** o Excel não dá erro. Ele devolve um número menor, com cara de resposta certa. Erro que aparece é fácil; o perigoso é esse.
 
 </AdminOnly>
 
 ---
-layout: default
+layout: center
 card: true
-bgPreset: default
+bgPreset: palette
+pulse: true
 ---
 
-<!-- SLIDE 18: Conceito tabela dinâmica -->
+<!-- SLIDE 18: Divisor bloco C -->
 
-<!-- objetivo: aluno entende o que uma tabela dinâmica faz antes de tentar montar uma -->
-
-# Conceito 6: tabela dinâmica
-
-**Definição:** é uma ferramenta que **agrupa suas linhas por uma coluna e resume outra coluna**, sozinha.
-
-**Analogia:** imagine separar 408 fichas de papel em quatro pilhas, uma por região, e depois somar cada pilha. A tabela dinâmica faz as duas coisas de uma vez, e refaz na hora se você mudar de ideia sobre as pilhas.
-
-**Por que ela existe:** o Exercício 3 exigiu quatro fórmulas para comparar quatro regiões. Com vinte municípios seriam vinte fórmulas. A tabela dinâmica faz todas de uma vez.
-
-**Onde ela quebra:** se o cabeçalho não estiver na primeira linha, ou se a mesma categoria tiver grafias diferentes. Exatamente os defeitos 1 e 4 de ontem.
+# ANTES DE CONSERTAR
+## Como se descobre o que está quebrado
 
 ---
 layout: default
@@ -416,47 +388,52 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 19: Os campos -->
+<!-- SLIDE 19: O método -->
 
-<!-- objetivo: aluno sabe onde arrastar cada coluna ao montar a tabela dinâmica -->
+<!-- objetivo: aluno aprende o procedimento de diagnóstico que vai aplicar no laboratório -->
 
-# A tabela dinâmica tem três lugares
+# Conceito 4: diagnosticar antes de consertar
 
-Você arrasta o nome de uma coluna para um dos três:
+Quatro passos, sempre nesta ordem. É o mesmo método de quem conserta qualquer coisa.
 
-<SlideTable compact>
+**1. Diagnosticar.** Qual é o sintoma? Descreva sem chutar a causa.
+**2. Levantar hipótese.** O que poderia causar esse sintoma? Escreva mais de uma.
+**3. Testar.** Faça um teste que elimine uma hipótese de cada vez.
+**4. Validar.** Depois de consertar, prove que consertou.
 
-| Lugar | O que ele faz | Exemplo |
-|---|---|---|
-| **Linhas** | vira uma pilha por valor diferente | `macrorregional` vira 4 linhas |
-| **Colunas** | quebra cada pilha em subpilhas | `ano` vira 2 colunas |
-| **Valores** | o que é calculado dentro da pilha | `casos`, somado |
-
-</SlideTable>
-
-Com esses três você monta "casos por região, comparando 2024 e 2025" arrastando três nomes. Sem uma fórmula.
-
-**Confira sempre:** em Valores, o padrão às vezes vem como Contagem em vez de Soma. Contagem devolve 102 quando você queria 60 mil. Se o número vier pequeno demais, é isso.
+**O erro que todo mundo comete:** pular do passo 1 direto para o conserto, sem hipótese e sem teste. Aí conserta a coisa errada e o problema volta.
 
 ---
-layout: default
-card: true
-bgPreset: default
+layout: code-output
+outputLabel: "O que o Excel devolveu"
+outputTone: error
 ---
 
-<!-- SLIDE 20: A armadilha da soma -->
+<!-- SLIDE 20: O teste que revela -->
 
-<!-- objetivo: aluno reconhece que nem toda coluna faz sentido somar -->
+<!-- objetivo: aluno vê o sintoma concreto que vai investigar -->
 
-# A armadilha: nem tudo se soma
+# O teste que revela tudo
 
-Ponha `populacao` em Valores e a tabela dinâmica vai somar a população.
+```text
+=SOMA(G4:G442)
+```
 
-Somar população de Londrina doze vezes, uma para cada mês, dá sete milhões de habitantes em Londrina.
+::output::
 
-**A regra:** casos você soma, porque cada mês tem casos novos. População você **não** soma, porque é a mesma gente todo mês.
+```text
+um número. Mas é o número certo?
+```
 
-> A ferramenta faz o que você mandar. Ela não sabe o que os números significam. Quem sabe é você, e é por isso que você não pode terceirizar a conta para ela.
+::note::
+
+<AdminOnly>
+
+A soma da coluna inteira vem **inflada**, apesar de o defeito do texto tirar valores. Motivo: as 17 linhas de TOTAL e as 14 duplicatas somam muito mais do que os 73 valores em texto tiram.
+
+Deixe eles descobrirem o sentido do erro sozinhos no Exercício 4. Não entregue.
+
+</AdminOnly>
 
 ---
 layout: default
@@ -466,22 +443,26 @@ bgPreset: default
 
 <!-- SLIDE 21: Exercício 4 -->
 
-# Exercício 4: monte três
+# Exercício 4: levante as hipóteses
 
-Na aba `03_comparacoes`, monte três tabelas dinâmicas. Escreva embaixo de cada uma **o que ela mostra**, em uma frase.
+Você somou a coluna `casos` inteira. O número não bate com a realidade.
 
-**1.** Casos por macrorregional, comparando 2024 e 2025.
-**2.** Casos por mês, só do ano de 2025, somando o Paraná inteiro.
-**3.** Casos por município, só de 2025, ordenado do maior para o menor.
+No caderno, **antes de olhar a planilha de novo**, escreva:
+
+**1.** Três hipóteses diferentes para a soma estar errada.
+**2.** Para cada hipótese, **um teste** que provaria se ela é verdade.
+**3.** A soma pode estar errada para **mais** e para **menos** ao mesmo tempo? Explique.
 
 <AdminOnly>
 
-**Gabarito, o que deve aparecer:**
-1. Linhas `macrorregional`, Colunas `ano`, Valores soma de `casos`. Norte na frente nos dois anos.
-2. Linhas `mes`, filtro de `ano` em 2025, Valores soma de `casos`. **Março dispara**, com quase um quarto do ano.
-3. Linhas `municipio`, filtro de `ano` em 2025, Valores soma de `casos`. Londrina em primeiro com 32.804.
+**Gabarito (hipóteses esperadas):**
+- Tem linha repetida, então algo é contado duas vezes. **Teste:** ordenar por município e mês e procurar linhas iguais coladas.
+- Tem linha de total no meio dos dados, e o total entra na soma. **Teste:** filtrar a coluna município e procurar valores que não são nome de cidade.
+- Tem número guardado como texto que ficou de fora. **Teste:** contar quantas células a função CONT.NÚM enxerga e comparar com o número de linhas.
 
-A número 2 é a que abre a aula de quarta. Se sobrar tempo, peça para eles olharem bem para ela.
+**3. Sim, e é o que acontece aqui.** Os totais e as duplicatas empurram para cima, o texto puxa para baixo. Por isso não adianta olhar só se o número é grande ou pequeno: os erros se escondem um atrás do outro.
+
+Este é o exercício mais importante do dia.
 
 </AdminOnly>
 
@@ -492,32 +473,10 @@ bgPreset: palette
 pulse: true
 ---
 
-<!-- SLIDE 22: Divisor criticidade -->
+<!-- SLIDE 22: Divisor bloco D -->
 
-# A PARTE QUE QUASE NINGUÉM FAZ
-## O que este dado NÃO responde
-
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 23: O que o dado mede -->
-
-<!-- objetivo: aluno distingue o que o dado mede do que ele quer saber -->
-
-# O dado nunca mede o que você quer saber
-
-Você quer saber **quantas pessoas tiveram dengue**.
-
-O dado mede **quantos casos foram notificados** ao sistema de saúde.
-
-Não é a mesma coisa. Para um caso virar dado, a pessoa precisa ter procurado atendimento, e alguém precisa ter registrado.
-
-**Quem fica de fora:** quem teve sintoma leve e ficou em casa. Quem não tem posto perto. Quem foi atendido e o registro não subiu.
-
-> Isso não invalida o dado. Só define **até onde** ele responde. Confundir "o que foi medido" com "o que aconteceu" é o erro mais caro da análise de dados.
+# OS SEIS DEFEITOS
+## Cada um quebra uma coisa específica
 
 ---
 layout: default
@@ -525,23 +484,19 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 24: O caso Campo Mourão -->
+<!-- SLIDE 23: Defeito 1 -->
 
-<!-- objetivo: aluno pratica criticidade num caso real e ambíguo do próprio dado -->
+<!-- objetivo: aluno identifica célula mesclada e sabe por que ela impede filtro e tabela dinâmica -->
 
-# Olhe para Campo Mourão
+# Defeito 1: célula mesclada
 
-Filtre Campo Mourão, ano de 2025, e veja o total. Depois calcule a taxa por 100 mil.
+**O que é:** duas ou mais células viradas uma só, para caber um título bonito no topo.
 
-O número é **muito** mais baixo que o dos vizinhos do Noroeste. Maringá, Umuarama e Paranavaí estão todos em outro patamar.
+**Como aparece aqui:** o título ocupa da célula A1 até a H2. Por causa dele, o cabeçalho das colunas **não está na linha 1**, está na linha 3.
 
-**Duas explicações possíveis, e as duas cabem no dado:**
+**O que quebra:** filtro e tabela dinâmica. As duas ferramentas procuram o nome das colunas na primeira linha. Achando um título mesclado, elas desistem ou tratam o título como nome de coluna.
 
-**A.** Campo Mourão realmente teve pouca dengue. Talvez a campanha de lá funcione bem.
-
-**B.** Campo Mourão notificou pouco. A dengue aconteceu e não virou registro.
-
-**Qual das duas é?** Este dado não distingue. Nenhuma conta que você fizer aqui resolve isso.
+**Como consertar:** selecione as linhas 1 e 2 inteiras e exclua. O título não some do mundo: ele vai para a aba de origem, junto com os três campos do Exercício 1.
 
 ---
 layout: default
@@ -549,28 +504,140 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 25: Exercício 5 -->
+<!-- SLIDE 24: Defeito 2 -->
 
-# Exercício 5: responde ou não responde
+<!-- objetivo: aluno converte texto em número e valida a conversão -->
 
-Para cada pergunta, escreva **RESPONDE** ou **NÃO RESPONDE**, e por quê. Nas que não responde, escreva **que dado faltaria**.
+# Defeito 2: número guardado como texto
 
-**1.** Qual região teve mais casos notificados em 2025?
-**2.** Em qual município a dengue é mais grave em relação ao tamanho da cidade?
-**3.** A campanha de 2025 foi melhor que a de 2024?
-**4.** Quantas pessoas morreram de dengue no Paraná?
-**5.** Por que o Norte tem mais dengue que o Leste?
+**O que é:** um número que a planilha está tratando como palavra.
+
+**Como aparece aqui:** parte da coluna `casos`, encostada na esquerda, com triangulinho verde.
+
+**O que quebra:** soma, média e ordenação. Ordenar texto coloca `1005` antes de `213`, porque compara letra por letra: o `1` vem antes do `2`.
+
+**Como consertar:** selecione a coluna, clique no aviso do triangulinho e escolha converter em número. Ou use Dados, Texto para Colunas, e conclua sem mudar nada, o que força a releitura de tudo.
+
+**Como validar:** depois de converter, nenhuma célula pode continuar à esquerda.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 25: Defeito 3 -->
+
+<!-- objetivo: aluno reconhece mistura de formatos de data e escolhe uma saída -->
+
+# Defeito 3: data em três formatos
+
+**O que é:** a mesma informação escrita de jeitos diferentes na mesma coluna.
+
+**Como aparece aqui:** a coluna `data_referencia` tem data de verdade, tem texto no formato `01/03/2025` e tem texto no formato `mar/2025`.
+
+**O que quebra:** ordenação cronológica e agrupamento por mês. Como parte é texto, ordenar coloca `abr` antes de `jan`, em ordem alfabética.
+
+**Como consertar:** você **não precisa** dessa coluna. As colunas `ano` e `mes` já têm a mesma informação, em número, sem defeito. Apague `data_referencia`.
+
+> Reconhecer que uma coluna é redundante e apagar é decisão de quem entendeu o dado. Consertar por consertar é trabalho à toa.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 26: Defeito 4 -->
+
+<!-- objetivo: aluno percebe que grafia inconsistente multiplica categorias -->
+
+# Defeito 4: a mesma categoria escrita de quatro jeitos
+
+**O que é:** `Norte`, `norte`, `NORTE` e `Norte ` com espaço no fim. Para você é a mesma região. Para o Excel são **quatro regiões diferentes**.
+
+**Como aparece aqui:** as quatro macrorregionais viram dezesseis.
+
+**O que quebra:** agrupar por região, CONT.SE e tabela dinâmica. Dia 17 você vai comparar regiões. Com dezesseis regiões, a comparação não existe.
+
+**Como consertar:** use Localizar e Substituir na coluna, uma grafia de cada vez, até sobrarem quatro. O espaço no fim é o mais traiçoeiro, porque é invisível.
+
+**Como validar:** monte uma lista dos valores diferentes da coluna. Tem que dar exatamente quatro.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 27: Defeito 5 -->
+
+<!-- objetivo: aluno remove duplicatas com critério, sabendo o que define uma repetição -->
+
+# Defeito 5: linha duplicada
+
+**O que é:** o mesmo registro aparecendo duas vezes.
+
+**Como aparece aqui:** linhas repetidas exatas, cada uma logo abaixo da original.
+
+**O que quebra:** qualquer soma. O município repetido fica com casos a mais e sobe no ranking sem merecer.
+
+**Como consertar:** Dados, Remover Duplicatas. Mas atenção ao que você marca: duas linhas com o mesmo município **não** são duplicata, porque o mesmo município aparece em doze meses. O que define a repetição aqui é município **mais** ano **mais** mês, os três juntos.
+
+> Marcar coluna demais não apaga nada. Marcar coluna de menos apaga dado bom. Pense no seu registro antes de clicar.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 28: Defeito 6 -->
+
+<!-- objetivo: aluno localiza e remove linhas de agregação misturadas aos dados -->
+
+# Defeito 6: total no meio dos dados
+
+**O que é:** linhas de resumo salvas junto com os dados, como `TOTAL Londrina`.
+
+**Como aparece aqui:** uma linha dessas no fim de cada município.
+
+**O que quebra:** a soma, e é o pior dos seis, porque conta tudo **duas vezes**: uma nas linhas do município e outra na linha de total.
+
+**Como consertar:** filtre a coluna `municipio` e procure os valores que não são nome de cidade. Selecione e exclua as linhas.
+
+**Por que isso é tão comum:** quem montou a planilha queria ler o total na tela. Total é resultado, não é dado. Resultado se calcula na hora, não se guarda junto com o que o gerou.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 29: Exercício 5 -->
+
+# Exercício 5: quem quebra o quê
+
+No caderno, ligue cada defeito à operação que ele estraga. Um defeito pode estragar mais de uma.
+
+**Defeitos:** célula mesclada · número como texto · data em três formatos · categoria em quatro grafias · linha duplicada · total no meio
+
+**Operações:** somar a coluna · ordenar do maior para o menor · filtrar por região · agrupar por mês · criar tabela dinâmica
 
 <AdminOnly>
 
 **Gabarito:**
-1. **Responde.** É soma direta. Norte.
-2. **Responde**, com a ressalva do slide anterior: é a taxa de notificação, não a de doença.
-3. **Não responde.** O dado mostra que os números caíram ou subiram, mas não diz por quê. Chuva, temperatura e sorotipo circulante mudam tudo. Faltaria dado de clima e de o que a campanha fez.
-4. **Não responde.** Não existe coluna de óbito. Faltaria dado de mortalidade.
-5. **Não responde.** O dado descreve, não explica. Faltaria temperatura, umidade, saneamento, cobertura de agente de saúde.
 
-**O padrão:** o dado responde "o quê", "quanto" e "onde". Ele quase nunca responde "por quê". Confundir os dois é o erro que a gente está treinando a não cometer.
+| Defeito | Estraga |
+|---|---|
+| célula mesclada | filtrar, tabela dinâmica |
+| número como texto | somar, ordenar |
+| data em três formatos | ordenar, agrupar por mês |
+| categoria em quatro grafias | filtrar, agrupar, tabela dinâmica |
+| linha duplicada | somar |
+| total no meio | somar, ordenar |
+
+**Puxar:** somar aparece em quatro dos seis. Por isso a soma é o melhor teste de diagnóstico: é o que mais dá errado, então é o que mais denuncia.
 
 </AdminOnly>
 
@@ -581,10 +648,10 @@ bgPreset: palette
 pulse: true
 ---
 
-<!-- SLIDE 26: Divisor laboratório -->
+<!-- SLIDE 30: Divisor laboratório -->
 
 # LABORATÓRIO
-## Monte a aba 03_comparacoes
+## Agora você conserta
 
 ---
 layout: default
@@ -592,49 +659,28 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 27: O formato da aba -->
+<!-- SLIDE 31: O log de limpeza -->
 
-<!-- objetivo: aluno sabe exatamente o que a aba dele precisa conter -->
+<!-- objetivo: aluno entende por que registrar a limpeza e com que formato -->
 
-# O que vai na aba `03_comparacoes`
+# A aba que ninguém pensa em fazer
 
-Quatro blocos, nesta ordem, um embaixo do outro:
+Você vai consertar seis coisas. Daqui a uma semana você não vai lembrar de nenhuma.
 
-**1. A coluna nova.** Volte na aba `01_dados` e crie a coluna `casos_por_100mil`, com a fórmula do slide 8, para todas as 408 linhas.
+Pior: quem receber seu arquivo não tem como saber se aquele número sempre foi assim ou se você mexeu.
 
-**2. As três tabelas dinâmicas** do Exercício 4, cada uma com a frase do que ela mostra.
+Por isso existe a aba **`02_limpeza`**. Uma linha por conserto:
 
-**3. Três comparações que o dado sustenta.** Cada uma escrita assim: pergunta, critério usado, resposta, número.
+<SlideTable compact>
 
-**4. Duas perguntas que o dado não responde.** Cada uma com o dado que faltaria.
+| Defeito | O que eu fiz | Linhas afetadas |
+|---|---|---|
+| total no meio | excluí as linhas TOTAL | 17 |
+| linha duplicada | removi duplicatas por município, ano e mês | 14 |
 
-O bloco 4 vale tanto quanto o 3. Ele é a diferença entre saber usar planilha e saber pensar com dado.
+</SlideTable>
 
----
-layout: default
-card: true
-bgPreset: default
----
-
-<!-- SLIDE 28: Os passos -->
-
-<!-- objetivo: aluno executa o laboratório sem depender de instrução verbal -->
-
-# No laboratório: seis passos
-
-**1.** Abra o `painel_dengue_pr.xlsx` de ontem. Não comece arquivo novo.
-
-**2.** Na aba `01_dados`, crie a coluna `casos_por_100mil`. Escreva a fórmula uma vez e arraste.
-
-**3.** Crie a aba `03_comparacoes`.
-
-**4.** Monte as três tabelas dinâmicas do Exercício 4 lá dentro.
-
-**5.** Escreva as três comparações. Cada uma **precisa** dizer qual critério você usou.
-
-**6.** Escreva as duas perguntas que o dado não responde, com o que faltaria.
-
-> Comparação sem critério declarado não conta. Vai voltar para refazer.
+Sem essa aba, no dia 17 você não consegue defender nenhum número seu.
 
 ---
 layout: default
@@ -642,20 +688,97 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 29: Checklist -->
+<!-- SLIDE 32: Quantas linhas deveria ter -->
 
-<!-- objetivo: aluno sabe o que precisa mostrar para receber o visto -->
+<!-- objetivo: aluno calcula sozinho o critério de validação da própria limpeza -->
+
+# Como saber se você limpou certo
+
+Você não precisa perguntar para ninguém. **Você consegue calcular quantas linhas o arquivo deveria ter.**
+
+Volte na definição de registro: um município, em um mês, de um ano.
+
+- Quantos municípios tem no arquivo?
+- Quantos meses tem um ano?
+- Quantos anos o arquivo cobre?
+
+Multiplique os três. Esse é o número de linhas que a tabela limpa **tem** que ter.
+
+<AdminOnly>
+
+17 municípios × 12 meses × 2 anos = **408 linhas** de dado, mais a linha de cabeçalho.
+
+Antes de limpar são 439. Se ele chegar em 439, não tirou totais nem duplicatas. Se passar de 408 para baixo, apagou dado bom.
+
+Não entregue o 408. Fazer eles calcularem é a parte "validação de resultados" do indicador, e é articulação direta com Matemática.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 33: Os passos -->
+
+<!-- objetivo: aluno executa a limpeza sem depender de instrução verbal -->
+
+# No laboratório: sete passos
+
+**1.** Abra `dengue_pr_bruto.xlsx` e salve como **`painel_dengue_pr.xlsx`**. O original fica intacto.
+
+**2.** Renomeie a primeira aba para `01_dados`.
+
+**3.** Crie a aba `02_limpeza` com as três colunas do slide anterior.
+
+**4.** Calcule quantas linhas a tabela limpa deve ter. Escreva esse número na aba `02_limpeza`.
+
+**5.** Conserte os seis defeitos. **Um de cada vez**, registrando cada um na aba `02_limpeza` antes de passar para o próximo.
+
+**6.** Confira o número de linhas contra o que você calculou no passo 4.
+
+**7.** Some a coluna `casos` de novo e compare com a soma de antes.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 34: Regras do laboratório -->
+
+<!-- objetivo: aluno trabalha de forma que o próprio trabalho seja verificável depois -->
+
+# Duas regras
+
+**Um defeito de cada vez, registrando antes de seguir.** Consertar seis coisas de uma vez e depois descobrir que quebrou alguma é o jeito mais rápido de perder a aula inteira.
+
+**Não digite número na mão.** Se você corrigir um valor digitando por cima, ninguém nunca mais vai saber que aquilo foi você. Conserto é operação, não digitação.
+
+> Travou? Chame. Mas antes tenha uma hipótese escrita: "acho que é isto porque aquilo". Chamar com hipótese é diferente de chamar sem.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 35: Checklist -->
+
+<!-- objetivo: aluno sabe exatamente o que precisa mostrar para receber o visto -->
 
 # Checklist para o visto
 
-O visto de hoje conta para o Indicador 6.
+Chame quando os sete estiverem prontos. O visto de hoje conta para o Indicador 5.
 
 - [ ] Exercícios 1 a 5 feitos no caderno
-- [ ] Coluna `casos_por_100mil` preenchida nas 408 linhas
-- [ ] Aba `03_comparacoes` criada
-- [ ] Três tabelas dinâmicas montadas, cada uma com a frase do que mostra
-- [ ] Três comparações escritas, **cada uma com o critério declarado**
-- [ ] Duas perguntas que o dado não responde, com o dado que faltaria
+- [ ] Arquivo salvo como `painel_dengue_pr.xlsx`
+- [ ] Aba `01_dados` sem os seis defeitos
+- [ ] Aba `02_limpeza` com uma linha por conserto e o número de linhas esperado
+- [ ] Contagem de linhas batendo com o que você calculou
+- [ ] A coluna `casos` soma inteira, sem célula à esquerda
+- [ ] A coluna `macrorregional` tem exatamente quatro valores diferentes
 
 ---
 layout: default
@@ -663,23 +786,33 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 30: Tarefa de casa -->
+<!-- SLIDE 36: Tarefa de casa (1 de 2) -->
 
 <!-- tarefa de casa: aula 55 -->
 
 # Tarefa de Casa: Aula 55
 
-> **Prazo: quinta 17/09, início da aula.** Vale no caderno.
+> **Prazo: início da aula de quinta, 17/09.** Vale no caderno.
 
-**1.** Olhe a tabela dinâmica de casos por mês em 2025. Escreva **em que mês** os casos disparam e **em que mês** eles são mais baixos.
+**1.** Escreva com suas palavras o que é **registro** e o que é **atributo**, dando um exemplo que **não** seja dengue e não seja chamada de aula.
 
-**2.** Uma campanha contra dengue leva **cerca de dois meses** para fazer efeito, porque precisa eliminar criadouro antes de o mosquito nascer. Sabendo disso e olhando a sua resposta da 1, **em que mês a campanha deveria começar?** Justifique.
+**2.** Dos seis defeitos, qual foi o mais difícil de achar no seu arquivo? Escreva por que ele foi difícil.
 
-**3.** Volte no seu palpite da tarefa de ontem, sobre qual município teve mais dengue. Agora você tem duas réguas. Sua resposta muda dependendo da régua? Escreva as duas respostas.
+---
+layout: default
+card: true
+bgPreset: default
+---
 
-**4.** Se você fosse o secretário de saúde e só pudesse escolher **uma** cidade para mandar reforço, qual escolheria e por quê? Uma linha.
+<!-- SLIDE 37: Tarefa de casa (2 de 2) -->
 
-> A 4 é o começo da avaliação de quinta. Pense com calma.
+# Tarefa de Casa: Aula 55 (cont.)
+
+**3.** A coluna `populacao` está lá e você não usou ela hoje. Escreva uma pergunta sobre dengue que **só** dá para responder tendo a população junto com os casos.
+
+**4.** Dia 17 você vai comparar municípios. Escreva agora, sem abrir a planilha, qual município você **acha** que teve mais dengue no Paraná em 2025, e por quê.
+
+> A 4 não tem certo nem errado hoje. Ela vai ser conferida dia 17 contra o dado, e é para ser guardada.
 
 ---
 layout: default
@@ -687,19 +820,21 @@ card: true
 bgPreset: palette
 ---
 
-<!-- SLIDE 31: Amanhã -->
+<!-- SLIDE 38: Amanhã -->
 
-<!-- objetivo: aluno entende a dependência entre os dias e o peso da próxima aula -->
+<!-- objetivo: aluno entende a dependência entre os dias e o que precisa trazer -->
 
-# Quinta: dia 3 de 4
+# Dia 17: o verbo muda
 
-O verbo muda de **comparar** para **analisar e decidir**.
+Na quinta que vem o verbo muda de **organizar** para **comparar e decidir**.
 
-Você vai transformar essas comparações em duas coisas: um **padrão** e uma **relação**. E depois vai ter que **escolher** e defender uma recomendação.
+Você abre o **mesmo arquivo**, o `painel_dengue_pr.xlsx` que você acabou de fazer, e cria a aba `03_comparacoes` em cima dele.
 
-**A avaliação do épico é na quinta**, dentro da aula, e ela usa exatamente o arquivo que você está construindo. Não tem prova separada, não tem conteúdo novo para decorar.
+**Dia 17 começa com o seu arquivo de hoje na tela.** Quem não terminar hoje, termina no começo da aula, e perde o começo da aula.
 
-Faltou hoje? Existe uma cópia com a aba `03_comparacoes` pronta para você copiar e entrar junto. Peça no início da aula.
+São seis dias de intervalo. **Não conte com a sua memória, conte com o seu log de limpeza.**
+
+Faltou hoje? Existe uma cópia já limpa para você copiar e entrar junto. Peça no início da aula.
 
 ---
 layout: end
@@ -709,10 +844,10 @@ github: LeoZanini
 avatar: https://github.com/LeoZanini.png?size=256
 ---
 
-<!-- SLIDE 32: Encerramento -->
+<!-- SLIDE 39: Encerramento -->
 
-# Até quinta
+# Até dia 17
 
-Hoje você descobriu que "qual é o maior?" é uma pergunta mal feita enquanto ninguém disser a régua.
+Hoje você pegou um arquivo que não respondia nada e deixou ele pronto para responder.
 
-Quinta você escolhe a régua e assume a escolha.
+Isso tem nome de profissão.

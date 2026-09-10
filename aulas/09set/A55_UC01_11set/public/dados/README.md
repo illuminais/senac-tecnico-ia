@@ -1,4 +1,4 @@
-# Conjunto de dados do épico UC01 — leia antes da A54
+# Conjunto de dados do épico UC01 — leia antes da A55
 
 > Material do professor. Não distribuir para os alunos: contém o gabarito da limpeza.
 
@@ -6,8 +6,8 @@
 
 | Arquivo | Para que serve |
 |---|---|
-| `dengue_pr_bruto.xlsx` | **O que o aluno recebe na A54.** Dado real com seis defeitos injetados |
-| `dengue_pr_limpo.xlsx` | Gabarito da limpeza. Rede para quem faltar na A54 e chegar na A55 |
+| `dengue_pr_bruto.xlsx` | **O que o aluno recebe na A55.** Dado real com seis defeitos injetados |
+| `dengue_pr_limpo.xlsx` | Gabarito da limpeza. Rede para quem faltar na A55 e chegar na A55 |
 | `dengue_pr_comparado.xlsx` | Rede para quem faltar na A55 e chegar na A56: dado limpo, coluna `casos_por_100mil` pronta, log preenchido e o esqueleto da aba `03_comparacoes` em branco |
 | `gabarito.json` | Lista dos defeitos, gerada junto com os arquivos |
 

@@ -8,13 +8,15 @@ modelo: epicos
 
 # Roteiro T3
 
+> **Replanejado em 10/09:** A54 virou dia de CONFERIR (caso OpenAI e Navier-Stokes) e a dengue escorregou um dia; A56 absorveu o bloco COMPARAR. Ver [semana15](semanas/semana15.md).
+>
 > Épicos: o dia é de uma UC só; ao fim, avaliação, recuperação e fechamento de menção. Rotação do T2 abandonada em 10/09/2026. HA e déficit: [relatorio-horas-t3](relatorio-horas-t3.md).
 
 | S | Aula | Data | Tipo | UCs | Método | Semana |
 |---|---|---|---|---|---|---|
-| 01 | A54 | 10/09 | Ep1 d1/4 | UC01 6 | projeto | [S15](semanas/semana15.md) |
+| 01 | A54 | 10/09 | Ep1 d1/4 | UC01 6 | pesquisa | [S15](semanas/semana15.md) |
 | 02 | A55 | 11/09 | Ep1 d2/4 | UC01 6 | projeto | [S15](semanas/semana15.md) |
-| 03 | A56 | 17/09 | Ep1 d3/4 | UC01 6 | avaliacao | — |
+| 03 | A56 | 17/09 | Ep1 d3/4 | UC01 6 | live-coding·avaliacao | [S16](semanas/semana16.md) |
 | 04 | A57 | 18/09 | Ep1 fecha · Ep2 abre | UC01 1 · UC04 5 | avaliacao·expositivo | — |
 | 05 | A58 | 24/09 | Ep2 fecha · Ep3 abre | UC04 5 · UC03 1 | avaliacao·expositivo | — |
 | 06 | A59 | 25/09 | Ep3 d2/3 | UC03 6 | pbl | — |

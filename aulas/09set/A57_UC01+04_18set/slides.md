@@ -50,9 +50,9 @@ bgPreset: palette
 
 | Dia | Verbo | O que você produz | |
 |---|---|---|---|
-| 10/09 | organizar | um dado que dá para usar | feito |
-| 11/09 | comparar | as comparações que o dado permite | feito |
-| 17/09 | analisar e decidir | o painel e a recomendação | feito |
+| 10/09 | conferir | um julgamento defendido sobre uma notícia | feito |
+| 11/09 | organizar | um dado que dá para usar | feito |
+| 17/09 | comparar e decidir | o painel e a recomendação | feito |
 | **18/09** | **refazer** | **o que ficou em aberto** | **você está aqui** |
 
 </SlideTable>
@@ -249,6 +249,7 @@ Em quatro dias você pegou um arquivo que não respondia nada e entregou uma dec
 
 **O que fica, e vai ser cobrado nas outras disciplinas:**
 
+- Afirmação sem como conferir não é resultado, é anúncio
 - Um dado só serve depois de organizado, e organizar tem regra
 - Comparar sem declarar a régua não é comparar
 - Padrão serve para agir antes, não para explicar o passado

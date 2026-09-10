@@ -16,11 +16,11 @@ layout: cover
 <!-- SLIDE 1: Capa -->
 
 # Aula 56
-## Do padrão à decisão
+## Da comparação à decisão
 
 **UC01 Fundamentos de Computação** · Épico 1, dia 3 de 4
 
-**Hoje o verbo é DECIDIR**
+**Hoje os verbos são COMPARAR e DECIDIR**
 
 17 de setembro de 2026
 
@@ -38,16 +38,16 @@ bgPreset: palette
 
 | Dia | Verbo | O que você produz | |
 |---|---|---|---|
-| 10/09 | organizar | um dado que dá para usar | feito |
-| 11/09 | comparar | as comparações que o dado permite | feito |
-| **17/09** | **analisar e decidir** | **o painel e a recomendação** | **você está aqui** |
+| 10/09 | conferir | um julgamento defendido sobre uma notícia | feito |
+| 11/09 | organizar | um dado que dá para usar | feito |
+| **17/09** | **comparar e decidir** | **o painel e a recomendação** | **você está aqui** |
 | 18/09 | refazer | o que ficou em aberto | |
 
 </SlideTable>
 
-**Você já produziu:** `01_dados` limpa, `02_limpeza` registrada, `03_comparacoes` com as tabelas dinâmicas e a coluna de taxa.
+**Você já produziu:** `01_dados` limpa e `02_limpeza` registrada, na sexta passada.
 
-**Hoje você cria:** a aba `04_painel`. E ela vale a menção do épico.
+**Hoje você cria duas:** a `03_comparacoes` de manhã e a `04_painel` na segunda metade. A `04_painel` vale a menção do épico.
 
 ---
 layout: default
@@ -63,7 +63,7 @@ bgPreset: default
 
 Não tem prova separada. Não tem conteúdo para decorar.
 
-A primeira metade da aula é conteúdo novo: **padrão**, **relação** e gráfico. A segunda metade é a avaliação, e ela usa o arquivo que você vem construindo desde terça.
+A primeira metade da aula é conteúdo novo: **critério**, **tabela dinâmica**, **padrão** e **relação**. A segunda metade é a avaliação, e ela usa o arquivo que você vem construindo desde a sexta.
 
 **O que é avaliado:** os três indicadores do épico, de uma vez.
 
@@ -71,7 +71,81 @@ A primeira metade da aula é conteúdo novo: **padrão**, **relação** e gráfi
 - O arquivo está organizado e o que você fez está registrado (Indicador 5)
 - Você achou um padrão e transformou ele numa decisão defendida (Indicador 6)
 
-Quem não terminou terça ou quarta: os arquivos prontos estão disponíveis. Pegue agora, no começo.
+Quem faltou na sexta ou não terminou: o arquivo de partida já vem pronto para todo mundo hoje, ver o próximo slide.
+
+---
+layout: center
+card: true
+bgPreset: palette
+pulse: true
+---
+
+<!-- SLIDE 4: Divisor comparar -->
+
+# PRIMEIRO
+## Comparar exige uma régua declarada
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 5: Arquivo de partida -->
+
+<!-- objetivo: aluno começa o dia com todos no mesmo ponto, sem perder HA em conserto -->
+
+# Todo mundo começa do mesmo ponto
+
+Abra o `dengue_pr_comparado.xlsx` e salve como **`painel_dengue_pr.xlsx`**.
+
+Ele já vem com o dado limpo, a coluna **`casos_por_100mil`** calculada e a aba `03_comparacoes` em branco, esperando você.
+
+<SlideTable compact>
+
+| Por que já vem pronto | O que isso muda para você |
+|---|---|
+| são seis dias desde a limpeza | ninguém perde a aula consertando arquivo |
+| a conta da taxa você já viu na sexta | hoje você **usa** a taxa, não recalcula |
+| a avaliação é hoje | o tempo vai para o painel, que é o que vale |
+
+</SlideTable>
+
+**Guarde o seu arquivo da sexta.** Ele é a evidência do Indicador 5 e vai ser conferido junto.
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 6: Confere a tarefa -->
+
+<!-- objetivo: aluno confronta o próprio palpite com o dado, criando tensão para o conceito de critério -->
+
+# Antes de tudo: seu palpite de ontem
+
+A tarefa 4 pedia para você escrever, sem olhar a planilha, qual município teve mais dengue no Paraná em 2025.
+
+Pegue o caderno. Leia o que você escreveu.
+
+Agora ordene a coluna `casos` do maior para o menor, filtrando só o ano de 2025.
+
+**Quem acertou?**
+
+> Guarde essa folha. No fim da aula ela vai fazer sentido de um jeito diferente.
+
+---
+layout: center
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 7: A pergunta que parece fácil -->
+
+# "Qual município teve mais dengue?"
+
+Parece a pergunta mais simples do mundo.
+
+Ela tem **duas respostas certas e diferentes**, e é isso que a aula de hoje resolve.
 
 ---
 layout: default
@@ -79,19 +153,47 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 4: Confere a tarefa -->
+<!-- SLIDE 8: Conceito critério -->
 
-<!-- objetivo: aluno traz a conclusão da tarefa para dentro da aula, ligando os dias -->
+<!-- objetivo: aluno define critério e entende que comparar sem critério não é comparar -->
 
-# A tarefa de quarta já era a aula de hoje
+# Conceito 5: critério
 
-A tarefa 2 pedia: sabendo que a campanha leva dois meses para fazer efeito, em que mês ela deveria começar?
+**Definição:** critério é **a régua** que você escolheu para decidir qual opção ganha.
 
-Levantem a mão quem respondeu **janeiro**. Quem respondeu **dezembro**. Quem respondeu **março**.
+**Analogia:** dois alunos, um tirou 8 numa prova e o outro tirou 7 em três provas. Quem é melhor? Depende da régua: a maior nota, ou a média, ou quem melhorou mais. Nenhuma régua é a verdadeira. Mas **sem declarar a régua, a discussão não termina nunca**.
 
-Quem respondeu março olhou para o pico. Quem respondeu janeiro ou dezembro fez outra coisa: **usou o padrão para antecipar**.
+**No nosso dado:** "mais dengue" pode ser mais casos no total, ou mais casos para o tamanho da cidade. São réguas diferentes.
 
-É exatamente disso que a aula trata.
+**Para que serve:** sem critério declarado, qualquer resposta parece boa e ninguém consegue discordar de forma útil.
+
+---
+layout: two-cols-text
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 9: Duas réguas -->
+
+<!-- objetivo: aluno vê que a mesma pergunta muda de resposta conforme a régua -->
+
+# Régua 1: casos absolutos
+
+Quantas pessoas adoeceram, ponto.
+
+**Responde bem:** quantos leitos vão precisar? Quantos remédios comprar? Onde vai ter fila no hospital?
+
+**Engana quando:** cidade grande sempre ganha, mesmo com pouca dengue proporcionalmente.
+
+::right::
+
+# Régua 2: casos por 100 mil
+
+Quantos adoeceram **a cada 100 mil habitantes**.
+
+**Responde bem:** onde o problema é mais grave? Onde a doença está mais espalhada na população?
+
+**Engana quando:** cidade pequena com poucos casos pode disparar, porque o divisor é pequeno.
 
 ---
 layout: default
@@ -99,7 +201,246 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 5: Conceito padrão -->
+<!-- SLIDE 10: Por que bruto engana -->
+
+<!-- objetivo: aluno entende com exemplo do próprio cotidiano por que número absoluto engana -->
+
+# Por que o número bruto engana
+
+Duas turmas tiveram falta hoje.
+
+- Turma A: **10 faltas**, de 300 alunos
+- Turma B: **8 faltas**, de 20 alunos
+
+Qual turma tem problema de frequência?
+
+No número bruto, a A ganha: 10 é mais que 8. Na proporção, a B tem 40% da turma faltando e a A tem 3%.
+
+**A pergunta "quantos?" e a pergunta "quão grave?" não são a mesma pergunta.** Cada uma tem a sua régua.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 11: A conta -->
+
+<!-- objetivo: aluno sabe montar a fórmula de taxa por 100 mil e entende cada pedaço dela -->
+
+# Como se calcula "por 100 mil"
+
+```text
+casos ÷ população × 100000
+```
+
+**Por que dividir:** dividir casos por população dá quantos casos existem **por habitante**. Um número minúsculo, tipo 0,05.
+
+**Por que multiplicar por 100 mil:** para virar um número que dá para ler e comparar. 0,05 vira 5.000 casos por 100 mil habitantes.
+
+**Por que 100 mil e não 1.000:** é o padrão que a saúde pública usa no mundo inteiro. Como todo mundo usa o mesmo, dá para comparar Paraná com qualquer outro lugar.
+
+> Essa conta se chama **taxa**. É a mesma ideia de velocidade: não interessa só a distância, interessa a distância dividida pelo tempo.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 12: Exercício 1 -->
+
+# Exercício 1: faça a conta na mão
+
+Três municípios, ano de 2025, dados da sua planilha. Calcule a taxa por 100 mil de cada um, no caderno, com calculadora.
+
+<SlideTable compact>
+
+| Município | Casos em 2025 | População |
+|---|---|---|
+| Londrina | 32.804 | 588.101 |
+| Jacarezinho | 1.005 | 11.870 |
+| Curitiba | 8.337 | 1.871.789 |
+
+</SlideTable>
+
+Depois responda: **qual dos três é o pior caso?** E a resposta muda dependendo da régua?
+
+<AdminOnly>
+
+**Gabarito:**
+- Londrina: 32.804 ÷ 588.101 × 100000 = **5.578** por 100 mil
+- Jacarezinho: 1.005 ÷ 11.870 × 100000 = **8.467** por 100 mil
+- Curitiba: 8.337 ÷ 1.871.789 × 100000 = **445** por 100 mil
+
+**Muda tudo.** Em casos absolutos a ordem é Londrina, Curitiba, Jacarezinho. Por 100 mil a ordem é Jacarezinho, Londrina, Curitiba.
+
+Jacarezinho tem **19 vezes** a taxa de Curitiba, e tem oito vezes menos casos que ela. Deixe esse número no ar: é o coração da avaliação de quarta.
+
+</AdminOnly>
+
+---
+layout: center
+card: true
+bgPreset: animate
+---
+
+<!-- SLIDE 13: A virada -->
+
+# Nenhuma das duas réguas é a certa
+
+A régua certa é a que responde **a pergunta que você está fazendo**.
+
+Por isso o critério vem antes da conta, e não depois.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 14: Conceito tabela dinâmica -->
+
+<!-- objetivo: aluno entende o que uma tabela dinâmica faz antes de tentar montar uma -->
+
+# Conceito 6: tabela dinâmica
+
+**Definição:** é uma ferramenta que **agrupa suas linhas por uma coluna e resume outra coluna**, sozinha.
+
+**Analogia:** imagine separar 408 fichas de papel em quatro pilhas, uma por região, e depois somar cada pilha. A tabela dinâmica faz as duas coisas de uma vez, e refaz na hora se você mudar de ideia sobre as pilhas.
+
+**Por que ela existe:** o Exercício 3 exigiu quatro fórmulas para comparar quatro regiões. Com vinte municípios seriam vinte fórmulas. A tabela dinâmica faz todas de uma vez.
+
+**Onde ela quebra:** se o cabeçalho não estiver na primeira linha, ou se a mesma categoria tiver grafias diferentes. Exatamente os defeitos 1 e 4 de ontem.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 15: Os campos -->
+
+<!-- objetivo: aluno sabe onde arrastar cada coluna ao montar a tabela dinâmica -->
+
+# A tabela dinâmica tem três lugares
+
+Você arrasta o nome de uma coluna para um dos três:
+
+<SlideTable compact>
+
+| Lugar | O que ele faz | Exemplo |
+|---|---|---|
+| **Linhas** | vira uma pilha por valor diferente | `macrorregional` vira 4 linhas |
+| **Colunas** | quebra cada pilha em subpilhas | `ano` vira 2 colunas |
+| **Valores** | o que é calculado dentro da pilha | `casos`, somado |
+
+</SlideTable>
+
+Com esses três você monta "casos por região, comparando 2024 e 2025" arrastando três nomes. Sem uma fórmula.
+
+**Confira sempre:** em Valores, o padrão às vezes vem como Contagem em vez de Soma. Contagem devolve 102 quando você queria 60 mil. Se o número vier pequeno demais, é isso.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 16: A armadilha da soma -->
+
+<!-- objetivo: aluno reconhece que nem toda coluna faz sentido somar -->
+
+# A armadilha: nem tudo se soma
+
+Ponha `populacao` em Valores e a tabela dinâmica vai somar a população.
+
+Somar população de Londrina doze vezes, uma para cada mês, dá sete milhões de habitantes em Londrina.
+
+**A regra:** casos você soma, porque cada mês tem casos novos. População você **não** soma, porque é a mesma gente todo mês.
+
+> A ferramenta faz o que você mandar. Ela não sabe o que os números significam. Quem sabe é você, e é por isso que você não pode terceirizar a conta para ela.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 17: Exercício 4 -->
+
+# Exercício 4: monte três
+
+Na aba `03_comparacoes`, monte três tabelas dinâmicas. Escreva embaixo de cada uma **o que ela mostra**, em uma frase.
+
+**1.** Casos por macrorregional, comparando 2024 e 2025.
+**2.** Casos por mês, só do ano de 2025, somando o Paraná inteiro.
+**3.** Casos por município, só de 2025, ordenado do maior para o menor.
+
+<AdminOnly>
+
+**Gabarito, o que deve aparecer:**
+1. Linhas `macrorregional`, Colunas `ano`, Valores soma de `casos`. Norte na frente nos dois anos.
+2. Linhas `mes`, filtro de `ano` em 2025, Valores soma de `casos`. **Março dispara**, com quase um quarto do ano.
+3. Linhas `municipio`, filtro de `ano` em 2025, Valores soma de `casos`. Londrina em primeiro com 32.804.
+
+A número 2 é a que abre a aula de quarta. Se sobrar tempo, peça para eles olharem bem para ela.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 18: O que o dado mede -->
+
+<!-- objetivo: aluno distingue o que o dado mede do que ele quer saber -->
+
+# O dado nunca mede o que você quer saber
+
+Você quer saber **quantas pessoas tiveram dengue**.
+
+O dado mede **quantos casos foram notificados** ao sistema de saúde.
+
+Não é a mesma coisa. Para um caso virar dado, a pessoa precisa ter procurado atendimento, e alguém precisa ter registrado.
+
+**Quem fica de fora:** quem teve sintoma leve e ficou em casa. Quem não tem posto perto. Quem foi atendido e o registro não subiu.
+
+> Isso não invalida o dado. Só define **até onde** ele responde. Confundir "o que foi medido" com "o que aconteceu" é o erro mais caro da análise de dados.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 19: O caso Campo Mourão -->
+
+<!-- objetivo: aluno pratica criticidade num caso real e ambíguo do próprio dado -->
+
+# Olhe para Campo Mourão
+
+Filtre Campo Mourão, ano de 2025, e veja o total. Depois calcule a taxa por 100 mil.
+
+O número é **muito** mais baixo que o dos vizinhos do Noroeste. Maringá, Umuarama e Paranavaí estão todos em outro patamar.
+
+**Duas explicações possíveis, e as duas cabem no dado:**
+
+**A.** Campo Mourão realmente teve pouca dengue. Talvez a campanha de lá funcione bem.
+
+**B.** Campo Mourão notificou pouco. A dengue aconteceu e não virou registro.
+
+**Qual das duas é?** Este dado não distingue. Nenhuma conta que você fizer aqui resolve isso.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 20: Conceito padrão -->
 
 <!-- objetivo: aluno define padrão e distingue padrão de acaso -->
 
@@ -119,7 +460,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 6: Para que serve padrão -->
+<!-- SLIDE 21: Para que serve padrão -->
 
 <!-- objetivo: aluno entende que o valor do padrão está em permitir agir antes -->
 
@@ -141,7 +482,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 7: Exercício 1 -->
+<!-- SLIDE 22: Exercício 1 -->
 
 # Exercício 1: o padrão se confirma?
 
@@ -170,7 +511,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 8: Conceito relação -->
+<!-- SLIDE 23: Conceito relação -->
 
 <!-- objetivo: aluno define relação e entende que ela liga dois atributos -->
 
@@ -190,7 +531,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 9: Padrão x relação -->
+<!-- SLIDE 24: Padrão x relação -->
 
 <!-- objetivo: aluno separa os dois conceitos com exemplos do próprio dado -->
 
@@ -222,7 +563,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 10: O aviso -->
+<!-- SLIDE 25: O aviso -->
 
 <!-- objetivo: aluno entende que relação não prova causa, aplicando ao próprio dado -->
 
@@ -242,7 +583,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 11: Exercício 2 -->
+<!-- SLIDE 26: Exercício 2 -->
 
 # Exercício 2: padrão ou relação?
 
@@ -274,7 +615,7 @@ bgPreset: palette
 pulse: true
 ---
 
-<!-- SLIDE 12: Divisor gráfico -->
+<!-- SLIDE 27: Divisor gráfico -->
 
 # O GRÁFICO
 ## Ele não é enfeite do relatório
@@ -285,7 +626,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 13: Cada gráfico responde uma coisa -->
+<!-- SLIDE 28: Cada gráfico responde uma coisa -->
 
 <!-- objetivo: aluno escolhe o tipo de gráfico a partir da pergunta, não do gosto -->
 
@@ -311,7 +652,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 14: O gráfico errado esconde -->
+<!-- SLIDE 29: O gráfico errado esconde -->
 
 <!-- objetivo: aluno vê que a escolha errada de gráfico apaga a resposta -->
 
@@ -333,7 +674,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 15: Gráfico legível -->
+<!-- SLIDE 30: Gráfico legível -->
 
 <!-- objetivo: aluno aplica as três regras que tornam um gráfico compreensível sozinho -->
 
@@ -351,7 +692,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 16: Exercício 3 -->
+<!-- SLIDE 31: Exercício 3 -->
 
 # Exercício 3: qual gráfico
 
@@ -379,7 +720,7 @@ bgPreset: palette
 pulse: true
 ---
 
-<!-- SLIDE 17: Divisor decisão -->
+<!-- SLIDE 32: Divisor decisão -->
 
 # AGORA O PROBLEMA DE VERDADE
 ## As duas réguas discordam
@@ -390,7 +731,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 18: O conflito -->
+<!-- SLIDE 33: O conflito -->
 
 <!-- objetivo: aluno enxerga que o dado sustenta duas decisões diferentes e opostas -->
 
@@ -419,7 +760,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 19: Os dois lados -->
+<!-- SLIDE 34: Os dois lados -->
 
 <!-- objetivo: aluno reconhece que as duas escolhas têm sustentação e nenhuma é obviamente certa -->
 
@@ -447,7 +788,7 @@ card: true
 bgPreset: animate
 ---
 
-<!-- SLIDE 20: A regra -->
+<!-- SLIDE 35: A regra -->
 
 # As duas estão certas
 
@@ -461,7 +802,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 21: O que faz uma recomendação valer -->
+<!-- SLIDE 36: O que faz uma recomendação valer -->
 
 <!-- objetivo: aluno conhece a estrutura exata da recomendação que vai escrever na avaliação -->
 
@@ -485,7 +826,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 22: Exercício 4 -->
+<!-- SLIDE 37: Exercício 4 -->
 
 # Exercício 4: julguem as três recomendações
 
@@ -515,7 +856,7 @@ bgPreset: palette
 pulse: true
 ---
 
-<!-- SLIDE 23: Divisor avaliação -->
+<!-- SLIDE 38: Divisor avaliação -->
 
 # AVALIAÇÃO DO ÉPICO
 ## Av01-T3: o painel de decisão
@@ -526,7 +867,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 24: O que entregar -->
+<!-- SLIDE 39: O que entregar -->
 
 <!-- objetivo: aluno sabe exatamente o que precisa existir na aba 04_painel -->
 
@@ -552,7 +893,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 25: Como você é avaliado -->
+<!-- SLIDE 40: Como você é avaliado -->
 
 <!-- objetivo: aluno conhece os critérios antes de produzir, não depois -->
 
@@ -597,7 +938,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 26: Os passos -->
+<!-- SLIDE 41: Os passos -->
 
 <!-- objetivo: aluno executa a avaliação sem depender de instrução verbal -->
 
@@ -623,7 +964,7 @@ card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 27: Checklist -->
+<!-- SLIDE 42: Checklist -->
 
 <!-- objetivo: aluno confere a própria entrega antes de encerrar -->
 
@@ -644,7 +985,7 @@ card: true
 bgPreset: palette
 ---
 
-<!-- SLIDE 28: Amanhã -->
+<!-- SLIDE 43: Amanhã -->
 
 <!-- objetivo: aluno sabe o que acontece no último dia do épico -->
 
@@ -666,7 +1007,7 @@ github: LeoZanini
 avatar: https://github.com/LeoZanini.png?size=256
 ---
 
-<!-- SLIDE 29: Encerramento -->
+<!-- SLIDE 44: Encerramento -->
 
 # Até amanhã
 

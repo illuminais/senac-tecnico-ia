@@ -16,7 +16,12 @@ status: detalhada
 > indicadores porque o trabalho é contínuo desde 10/09.
 
 **Tipo:** AS — atividade em situação, produzida no computador durante a aula
-**Datas:** 17/09/2026 (A56, últimos 3 HA) · recuperação em 18/09/2026 (A57, 1 HA)
+**Datas:** 17/09/2026 (A56, últimos **2 HA**) · recuperação em 18/09/2026 (A57, 1 HA)
+
+> ⚠️ **Ajuste de 10/09/2026:** a A54 virou dia de CONFERIR e o épico perdeu um dia de dengue. A A56
+> absorveu o bloco COMPARAR e a aplicação caiu de 3 HA para 2 HA. **Rubrica e critérios inalterados.**
+> Compensação: os alunos partem de `dengue_pr_comparado.xlsx`, com a coluna `casos_por_100mil` pronta,
+> então o tempo de aplicação vai inteiro para o painel.
 **Formação:** Individual, consulta livre ao próprio arquivo, caderno e slides
 **Indicadores:** UC01 Ind.4, Ind.5 e Ind.6
 
@@ -24,7 +29,7 @@ status: detalhada
 
 ## Por que um instrumento só para três indicadores
 
-O épico inteiro é um projeto contínuo: o aluno recebe um arquivo sujo na A54 e entrega uma
+O épico inteiro é um projeto contínuo: o aluno recebe um arquivo sujo na A55 e entrega uma
 decisão defendida na A56, sempre no mesmo `painel_dengue_pr.xlsx`. Separar em três instrumentos
 exigiria três produtos artificiais e consumiria HA que a UC não tem (19 HA no total).
 
@@ -126,7 +131,7 @@ vizinhos: pouca dengue ou pouca notificação?). Não altera a menção.
 
 ## Material
 
-`aulas/09set/A54_UC01_10set/public/dados/` — dados reais do InfoDengue (Fiocruz e FGV) com seis
+`aulas/09set/A55_UC01_11set/public/dados/` — dados reais do InfoDengue (Fiocruz e FGV) com seis
 defeitos injetados de propósito, mais o `README.md` com o gabarito da limpeza e os arquivos de
 rede para quem faltar. Regerar com `python scripts/dataset-dengue/gerar.py`.
 

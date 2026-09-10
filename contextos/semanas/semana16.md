@@ -8,18 +8,28 @@ periodo: 2026-09-17 / 2026-09-18
 # Semana 16 — 17–18/set
 
 ## Fio condutor
-Fecha o épico 1. Quinta o aluno transforma comparação em padrão, relação e decisão defendida, e a Av01-T3 acontece dentro da aula usando o arquivo dos três dias. Sexta é recuperação por camada e fechamento de menção; nos 5 HA restantes abre o épico 2 (UC04).
+Fecha o épico 1. **Replanejado em 10/09:** a A56 absorveu o bloco COMPARAR que era da A55, porque o
+épico perdeu um dia de dengue para o dia de CONFERIR. Quinta o aluno declara critério, monta tabela
+dinâmica, tira padrão e relação e entrega a decisão defendida, com a Av01-T3 dentro da aula. Sexta é
+recuperação por camada e fechamento de menção; nos 5 HA restantes abre o épico 2 (UC04).
 
-## A56 — 17/09 · Qui · Épico 1 dia 3 de 4 · verbo DECIDIR
+## A56 — 17/09 · Qui · Épico 1 dia 3 de 4 · verbos COMPARAR e DECIDIR
 
 | # | UC | HA | Método | Tópicos | Ind. |
 |---|---|---|---|---|---|
-| 1 | UC01 | 1h30 | expositivo | Conceito padrão (só vira padrão se repete nos 2 anos) · conceito relação · relação não é causa | UC01-6 |
-| 2 | UC01 | 1h | expositivo | Linha, barra e dispersão: cada gráfico responde um tipo de pergunta · 3 regras de gráfico legível | UC01-6 |
-| 3 | UC01 | 30min | pbl | O conflito: Londrina 1º em absoluto, Jacarezinho 1º por 100 mil (16º em absoluto) · as 4 partes de uma recomendação | UC01-6 |
-| 4 | UC01 | 3h | avaliacao | **Av01-T3** — aba `04_painel`: pergunta, gráfico de padrão, gráfico de relação, recomendação com 4 partes, limite do dado | UC01-4 · UC01-5 · UC01-6 |
+| 1 | UC01 | 1h30 | expositivo | Arquivo de partida pronto · conceito critério · duas réguas (absoluto vs por 100 mil) · a virada Londrina/Jacarezinho | UC01-6 |
+| 2 | UC01 | 1h | live-coding | Tabela dinâmica: campos, valores e a armadilha de somar população · o que o dado não mede (caso Campo Mourão) | UC01-6 |
+| 3 | UC01 | 1h30 | expositivo | Padrão e relação · relação não é causa · linha, barra e dispersão · 3 regras de gráfico legível · as 4 partes de uma recomendação | UC01-6 |
+| 4 | UC01 | 2h | avaliacao | **Av01-T3** — aba `04_painel`: pergunta, gráfico de padrão, gráfico de relação, recomendação com 4 partes, limite do dado | UC01-4 · UC01-5 · UC01-6 |
 
-**Prep:** ler a rubrica em [av01-t3-painel-decisao](../aval/av01-t3-painel-decisao.md) antes da aula · a fronteira A/PA mais comum é painel bonito com recomendação sem critério declarado · ter os arquivos de rede à mão
+> ⚠️ **A Av01-T3 caiu de 3h para 2h** e o bloco de ensino ficou com 4h. Se a turma travar na tabela
+> dinâmica, o corte sai do bloco 3 (gráficos), não da avaliação. Rubrica inalterada.
+
+**Prep:** ler a rubrica em [av01-t3-painel-decisao](../aval/av01-t3-painel-decisao.md) antes da aula ·
+**todo mundo começa de `dengue_pr_comparado.xlsx`**, que já traz o dado limpo, a coluna
+`casos_por_100mil` e a `03_comparacoes` em branco · a fronteira A/PA mais comum é painel bonito com
+recomendação sem critério declarado · o arquivo da sexta (11/09) continua sendo a evidência do Ind.5
+e é conferido junto
 
 ## A57 — 18/09 · Sex · Épico 1 dia 4 de 4 + abertura do épico 2
 

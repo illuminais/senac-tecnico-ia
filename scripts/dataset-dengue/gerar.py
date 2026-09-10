@@ -6,8 +6,8 @@ Baixa dados REAIS de dengue do InfoDengue (Fiocruz e FGV), agrega por mês e
 injeta seis defeitos de propósito. O aluno limpa esses defeitos na A54.
 
   Fonte:  https://info.dengue.mat.br/api/alertcity
-  Saída:  aulas/09set/A54_UC01_10set/public/dados/dengue_pr_bruto.xlsx   (entrada da A54)
-          aulas/09set/A54_UC01_10set/public/dados/dengue_pr_limpo.xlsx   (rede p/ quem faltou)
+  Saída:  aulas/09set/A55_UC01_11set/public/dados/dengue_pr_bruto.xlsx   (entrada da A55)
+          aulas/09set/A55_UC01_11set/public/dados/dengue_pr_limpo.xlsx   (rede p/ quem faltou)
 
 Uso:  ./venv/bin/python scripts/dataset-dengue/gerar.py [--cache DIR]
 
@@ -23,7 +23,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 
 RAIZ = Path(__file__).resolve().parents[2]
-SAIDA = RAIZ / "aulas/09set/A54_UC01_10set/public/dados"
+SAIDA = RAIZ / "aulas/09set/A55_UC01_11set/public/dados"
 API = ("https://info.dengue.mat.br/api/alertcity"
        "?geocode={cod}&disease=dengue&format=csv&ew_start=1&ew_end=53&ey_start=2024&ey_end=2025")
 ANOS = (2024, 2025)
