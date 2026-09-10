@@ -3,9 +3,9 @@ schema: contexto-uc
 uc: UC08
 disciplina: Banco de Dados
 ha-total: 80
-ha-dado: 26
-ha-restante: 54
-trimestre-atual: T2
+ha-dado: 45
+ha-restante: 35
+trimestre-atual: T3
 ---
 
 # Contexto — UC08 Banco de Dados
@@ -51,11 +51,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 6 do T3: **30 HA**, encerra em **A71** (2026-11-06) · corte de 5 HA para caber no calendário.
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 26 | 21 | 0 (T1 encerrado, 5 HA de déficit absorvidos) |
-| T2 | 27 | 5 | 22 |
-| T3 | 27 | 0 | 27 |
+| T1 | 26 | 21 | 5 |
+| T2 | 27 | 24 | 3 |
+| T3 | 30 | 0 | 30 |
+| **Total** | **83** | **45** | **35** |
 
 ---
 

@@ -1,0 +1,10 @@
+uc,codigo,nome,ch_relogio,meta_ha,periodo_inicio,periodo_fim
+UC01,17525,Fundamentos de Computação,34,41,2026-03-19,2026-12-18
+UC02,17526,Inglês Instrumental aplicado à computação,33,40,2026-03-19,2026-11-26
+UC03,17527,Fundamentos matemáticos para computação e IA,33,40,2026-03-26,2026-11-13
+UC04,17528,Fundamentos e conceitos de Inteligência Artificial,33,40,2026-03-26,2026-10-30
+UC05,17529,Desenvolvimento de linguagem de programação Python,67,80,2026-03-12,2026-12-10
+UC06,17530,Reconhecimento de modelos de arquitetura de computadores e GPU,33,40,2026-03-20,2026-11-27
+UC07,17531,Compreensão sobre a transformação digital e estratégias de informação,67,80,2026-03-19,2026-11-12
+UC08,17532,Desenvolvimento de banco de dados,67,80,2026-03-13,2026-11-27
+UC09,17533,Utilização da estatística aplicada e lógica matemática em IA,33,40,2026-03-27,2026-11-19

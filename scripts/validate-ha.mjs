@@ -12,7 +12,7 @@ import { readFileSync, readdirSync } from 'fs'
 import { join } from 'path'
 
 const ROOT = join(import.meta.dirname, '..')
-const CONTEXTOS_DIR = join(ROOT, '.github/agents/contextos')
+const CONTEXTOS_DIR = join(ROOT, 'contextos')
 const AULAS_DADAS = join(ROOT, 'AULAS-DADAS.md')
 
 // UC code → slug mapping
@@ -28,11 +28,14 @@ const UC_SLUGS = {
   UC09: 'estatistica-aplicada',
 }
 
-// Expected total HA per UC for the full course
-const TOTAL_HA = {
-  UC01: 41, UC02: 26, UC03: 40, UC04: 32,
-  UC05: 80, UC06: 20, UC07: 40, UC08: 40, UC09: 27
-}
+// Meta de HA por UC — lida de orionweb/disciplinas.csv, que é a transcrição do OrionWeb.
+// Nunca escreva estes números à mão: o OrionWeb é a fonte de verdade (ver contextos/relatorio-horas-t3.md).
+const TOTAL_HA = Object.fromEntries(
+  readFileSync(join(ROOT, 'orionweb/disciplinas.csv'), 'utf8')
+    .trim().split('\n').slice(1)
+    .map(l => l.split(','))
+    .map(([uc, , , , meta]) => [uc, Number(meta)])
+)
 
 // ── Extract HA from context files ──
 function parseContextHA(uc, slug) {

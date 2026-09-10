@@ -3,9 +3,9 @@ schema: contexto-uc
 uc: UC07
 disciplina: Transformação Digital e Estratégias de Informação para IA
 ha-total: 80
-ha-dado: 18
-ha-restante: 62
-trimestre-atual: T2
+ha-dado: 45
+ha-restante: 35
+trimestre-atual: T3
 ---
 
 # Contexto — UC07 Transformação Digital
@@ -42,11 +42,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 9 do T3: **30 HA**, encerra em **A82** (2026-12-18) · corte de 5 HA para caber no calendário.
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 20 (ajustado) | ~11,5 | ~8,5 |
-| T2 | 27 | ~2,5 (A27) | ~24,5 |
-| T3 | 27 | 0 | 27 |
+| T1 | 26 | 21 | 5 |
+| T2 | 27 | 24 | 3 |
+| T3 | 30 | 0 | 30 |
+| **Total** | **83** | **45** | **35** |
 
 ---
 

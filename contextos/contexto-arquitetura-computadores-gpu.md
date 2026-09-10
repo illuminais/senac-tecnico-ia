@@ -3,9 +3,9 @@ schema: contexto-uc
 uc: UC06
 disciplina: Arquitetura de Computadores e GPU
 ha-total: 40
-ha-dado: 7
-ha-restante: 33
-trimestre-atual: T2
+ha-dado: 24
+ha-restante: 16
+trimestre-atual: T3
 ---
 
 # Contexto — UC06 Arquitetura de Computadores e GPU
@@ -38,11 +38,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 7 do T3: **16 HA**, encerra em **A74** (2026-11-19).
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 11 (ajustado) | 1 | 10 |
-| T2 | 14 | ~4 | ~10 |
-| T3 | 13 | 0 | 13 |
+| T1 | 13 | 6 | 7 |
+| T2 | 14 | 18 | -4 |
+| T3 | 16 | 0 | 16 |
+| **Total** | **43** | **24** | **16** |
 
 ---
 

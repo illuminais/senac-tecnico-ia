@@ -3,9 +3,9 @@ schema: contexto-uc
 uc: UC05
 disciplina: Python para IA
 ha-total: 80
-ha-dado: 36
-ha-restante: 44
-trimestre-atual: T2
+ha-dado: 57
+ha-restante: 23
+trimestre-atual: T3
 ---
 
 # Contexto — UC05 Python para IA
@@ -39,11 +39,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 5 do T3: **20 HA**, encerra em **A66** (2026-10-22) · corte de 3 HA para caber no calendário.
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 26 | 24 | 0 (T1 encerrado, 2 HA de déficit absorvidos) |
-| T2 | 27 | 8 | 19 |
-| T3 | 13 | 0 | 13 |
+| T1 | 26 | 24 | 2 |
+| T2 | 27 | 33 | -6 |
+| T3 | 20 | 0 | 20 |
+| **Total** | **73** | **57** | **23** |
 
 ---
 

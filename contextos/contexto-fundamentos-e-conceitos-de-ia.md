@@ -2,10 +2,10 @@
 schema: contexto-uc
 uc: UC04
 disciplina: Fundamentos e Conceitos de IA
-ha-total: 41
-ha-dado: 12
-ha-restante: 29
-trimestre-atual: T2
+ha-total: 40
+ha-dado: 30
+ha-restante: 10
+trimestre-atual: T3
 ---
 
 # Contexto — UC04 Fundamentos e Conceitos de IA
@@ -37,11 +37,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 2 do T3: **10 HA**, encerra em **A58** (2026-09-24).
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 11 (ajustado) | 6 | 5 |
-| T2 | 14 | ~3 (A26/A27 Shark Tank) | ~11 |
-| T3 | 14 | 0 | 14 |
+| T1 | 13 | 9 | 4 |
+| T2 | 14 | 21 | -7 |
+| T3 | 10 | 0 | 10 |
+| **Total** | **37** | **30** | **10** |
 
 ---
 

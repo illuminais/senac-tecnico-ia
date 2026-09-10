@@ -3,9 +3,9 @@ schema: contexto-uc
 uc: UC03
 disciplina: Fundamentos Matemáticos para Computação e IA
 ha-total: 40
-ha-dado: 5
-ha-restante: 35
-trimestre-atual: T2
+ha-dado: 27
+ha-restante: 13
+trimestre-atual: T3
 ---
 
 # Contexto — UC03 Fundamentos Matemáticos
@@ -36,11 +36,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 3 do T3: **13 HA**, encerra em **A60** (2026-10-01).
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 13 | 3 | 10 |
-| T2 | 14 | 0 | 14 |
+| T1 | 13 | 9 | 4 |
+| T2 | 14 | 18 | -4 |
 | T3 | 13 | 0 | 13 |
+| **Total** | **40** | **27** | **13** |
 
 ---
 

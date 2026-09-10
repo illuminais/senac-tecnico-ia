@@ -2,9 +2,16 @@
 schema: panorama-horas
 cutoff: 2026-06-02
 fonte: relatorio-horas-t1 + pastas de aula (A24–A30)
+status: historico
 ---
 
 # Panorama de Horas — 1º Ano (até 02/06/2026)
+
+> ⚠️ **SNAPSHOT HISTÓRICO, congelado em 02/06/2026. Não use para planejar.**
+> Os números abaixo foram estimados por pasta de aula e divergem muito do OrionWeb
+> (ex.: UC01 aparece com 13 HA; o real era 22). O saldo vigente vive em
+> [relatorio-horas-t3](relatorio-horas-t3.md), gerado por `scripts/balanco-ha.mjs`
+> a partir da transcrição dos extratos oficiais em `orionweb/`.
 
 > Cálculo: T1 = `relatorio-horas-t1.md` (inclui "T2 Iniciado" de A24/A25).
 > T2 = pastas de aula A24→A30, regra: 2 UCs por dia = 3 HA cada.

@@ -3,9 +3,9 @@ schema: contexto-uc
 uc: UC02
 disciplina: Inglês Instrumental
 ha-total: 40
-ha-dado: 7
-ha-restante: 33
-trimestre-atual: T2
+ha-dado: 20
+ha-restante: 20
+trimestre-atual: T3
 ---
 
 # Contexto — UC02 Inglês Instrumental
@@ -39,11 +39,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 8 do T3: **20 HA**, encerra em **A77** (2026-12-03).
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 13 | 5 | 8 |
-| T2 | 14 | 2 | 12 |
-| T3 | 13 | 0 | 13 |
+| T2 | 14 | 15 | -1 |
+| T3 | 20 | 0 | 20 |
+| **Total** | **47** | **20** | **20** |
 
 ---
 
