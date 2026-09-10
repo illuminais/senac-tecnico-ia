@@ -3,12 +3,19 @@ schema: contexto-uc
 uc: UC09
 disciplina: Estatística Aplicada e Lógica Matemática em IA
 ha-total: 40
-ha-dado: 21
-ha-restante: 19
-trimestre-atual: T2
+ha-dado: 24
+ha-restante: 16
+trimestre-atual: T3
 ---
 
 # Contexto — UC09 Estatística Aplicada e Lógica Matemática em IA
+
+> ⚠️ **Fronteira com UC01, registrada em 09/09/2026.** O épico de UC01 (A54 a A57) usa dado de
+> dengue em planilha e trabalha comparação, padrão e relação, **sem calcular nenhuma medida
+> estatística**. Média, mediana, frequência absoluta e relativa e desvio padrão são Ind.7 a
+> Ind.10 desta UC e pertencem ao épico 4 (A61 a A63). Ao planejar o épico 4, o aluno já vai
+> saber limpar planilha, montar tabela dinâmica e calcular taxa por 100 mil: **não reensinar
+> isso**, partir dali direto para a medida estatística. Ver [roteiro-t3](roteiro-t3.md).
 
 ## Plano Anual
 
@@ -36,13 +43,16 @@ trimestre-atual: T2
 
 ## Estado Geral
 
+<!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
+
+> Épico 4 do T3: **16 HA**, encerra em **A63** (2026-10-09).
+
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
-| T1 | 13 | 9 | 0 (T1 encerrado, 4 HA de déficit absorvidos) |
-| T2 | 14 | 12 | 2 |
-| T3 | 13 | 0 | 13 |
-
-> T1 encerrado com déficit de 7 HA — conteúdo de pandas/matplotlib/estatística descritiva migrado para T2.
+| T1 | 13 | 9 | 4 |
+| T2 | 14 | 15 | -1 |
+| T3 | 16 | 0 | 16 |
+| **Total** | **43** | **24** | **16** |
 
 ---
 

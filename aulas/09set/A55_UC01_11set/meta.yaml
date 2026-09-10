@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "55"
+slug: "a55-uc01-11set"
+title: "Comparar Exige Criterio"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC01"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-09-11"
+
+# em-planejamento | ready | published
+status: ready
+
+deployUrl: ""
+
+agentsUsed: ["autor-slides"]

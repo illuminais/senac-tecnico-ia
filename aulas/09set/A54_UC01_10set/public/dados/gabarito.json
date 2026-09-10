@@ -1,0 +1,25 @@
+{
+  "seed": 20260910,
+  "linhas_limpas": 408,
+  "linhas_sujas": 439,
+  "defeitos": {
+    "1_mesclada": [
+      "titulo mesclado de A1 ate H2: o cabecalho nao esta na linha 1"
+    ],
+    "2_texto": [
+      "73 valores da coluna casos gravados como texto"
+    ],
+    "3_data": [
+      "data_referencia em 3 formatos: data real, texto dd/mm/aaaa e texto mmm/aaaa"
+    ],
+    "4_categoria": [
+      "macrorregional em 4 grafias: Norte, norte, NORTE e 'Norte ' com espaco no fim"
+    ],
+    "5_duplicata": [
+      "14 linhas duplicadas exatas, sempre logo abaixo da original"
+    ],
+    "6_total": [
+      "17 linhas 'TOTAL <municipio>' no meio dos dados"
+    ]
+  }
+}

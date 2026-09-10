@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "53"
+slug: "a53-uc08-06-04set"
+title: "Recuperacao T2"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08", "UC06"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-09-04"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: []

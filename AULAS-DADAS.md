@@ -492,6 +492,39 @@
 
 ---
 
+## A44 a A51 — 06/08 a 28/08/2026
+
+> ⚠️ **PENDENTE DE REGISTRO.** Oito aulas dadas sem entrada aqui. As HA já estão contabilizadas
+> no OrionWeb (ver `contextos/relatorio-horas-t3.md`), mas o conteúdo e o feedback de campo não
+> foram capturados. Rodar `atualizador-pos-aula` com o relato do professor para fechar a lacuna.
+> Pastas de aula existem em `aulas/08ago/` e servem de base para reconstruir.
+
+---
+
+## A52 — 03/09/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC05 | Python para IA | Recuperação do T2: refazer atividades pendentes, sem conteúdo novo | ~3 |
+| UC02 | Inglês Instrumental | Recuperação do T2: refazer atividades pendentes, sem conteúdo novo | ~3 |
+| | **Total** | | **~6** |
+
+**Feedback:** Dia inteiro de recuperação para fechar menções do T2. Slides são placeholder, só para rastreabilidade.
+
+---
+
+## A53 — 04/09/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC08 | Banco de Dados | Recuperação do T2: refazer atividades pendentes, sem conteúdo novo | ~3 |
+| UC06 | Arquitetura de Computadores e GPU | Recuperação do T2: refazer atividades pendentes, sem conteúdo novo | ~3 |
+| | **Total** | | **~6** |
+
+**Feedback:** Último dia do T2. Dia inteiro de recuperação e fechamento de menções.
+
+---
+
 <!-- TEMPLATE PARA NOVAS ENTRADAS — copie e preencha:
 
 ## A{NN} — {DD/MM/AAAA}
