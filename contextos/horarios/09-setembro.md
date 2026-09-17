@@ -24,14 +24,18 @@ aulas: A52–A59
 
 > **Modelo de épicos** desde 10/09/2026: o dia inteiro (6 HA) é de uma UC só.
 > Rotação Sem1/Sem2/Sem3 abandonada. Mapa completo em [roteiro-t3](../roteiro-t3.md).
+>
+> ⚠️ **16/09:** A56 e A57 caíram para 3 HA cada por ajuste de calendário. As 6 HA que faltam somem
+> do conteúdo e são lançadas como dadas no OrionWeb (decisão da coordenação); por isso o
+> `relatorio-horas-t3` não muda. UC04 sai da A57; épico 2 começa em A58.
 
 | A# | Data | Dia | Épico do dia | Etapa | HA |
 |---|---|---|---|---|---|
 | A54 | 10/09 | Qui | Ep1 UC01 Fund. Computação | d1/4 | 6 |
 | A55 | 11/09 | Sex | Ep1 UC01 Fund. Computação | d2/4 | 6 |
-| A56 | 17/09 | Qui | Ep1 UC01 Fund. Computação | d3/4 · avaliação | 6 |
-| A57 | 18/09 | Sex | Ep1 UC01 1HA + Ep2 UC04 5HA | Ep1 fecha | 6 |
-| A58 | 24/09 | Qui | Ep2 UC04 5HA + Ep3 UC03 1HA | Ep2 fecha | 6 |
+| A56 | 17/09 | Qui | Ep1 UC01 Fund. Computação | d3/4 · painel parte 1 | **3** (6 lançadas) |
+| A57 | 18/09 | Sex | Ep1 UC01 Fund. Computação | Ep1 fecha · painel parte 2 · menção | **3** (6 lançadas) |
+| A58 | 24/09 | Qui | Ep2 UC04 Fund. e Conceitos de IA | Ep2 abre ⚠️ replanejar | 6 |
 | A59 | 25/09 | Sex | Ep3 UC03 Matemática | d2/3 | 6 |
 
 ---

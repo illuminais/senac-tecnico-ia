@@ -48,3 +48,7 @@ pnpm-debug.log*
 # (gerencie cada um separadamente)
 slidev-theme-neural/
 senac-planning-ai-tech/'    '
+
+# Python (scripts/dataset-dengue)
+venv/
+__pycache__/

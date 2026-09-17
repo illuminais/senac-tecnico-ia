@@ -2,7 +2,7 @@
 
 aula: "56"
 slug: "a56-uc01-17set"
-title: "Comparar, Decidir e Avaliar"
+title: "Da Comparacao a Decisao"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
@@ -12,7 +12,7 @@ disciplines: ["UC01"]
 date: "2026-09-17"
 
 # em-planejamento | ready | published
-status: ready
+status: published
 
 deployUrl: ""
 

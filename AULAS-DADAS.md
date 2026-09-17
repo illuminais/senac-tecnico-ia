@@ -525,6 +525,28 @@
 
 ---
 
+## A54 — 10/09/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC01 | Fundamentos de Computação | Conferir: caso Navier-Stokes (anúncio OpenAI 08/09) · as três acusações · régua de prova (fato/não descartado/palavra contra palavra) · autópsia da negativa corporativa (quatro amortecedores) · pesquisa em cinco fontes divididas por dupla · data de corte de modelo · opinião apoiada em fato · exercício 5 (veredito das duas perguntas) | ~6 |
+| | **Total** | | **~6** |
+
+**Feedback:** ⚠️ professor não relatou engajamento nem dificuldades da A54. Preencher.
+
+---
+
+## A55 — 11/09/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC01 | Fundamentos de Computação | Organizar: mapa do épico · glossário de cinco palavras (registro · atributo · critério · padrão · relação) · origem do dado em três campos (Exercício 1, respondido no caderno) · conceitos registro/atributo/regra de ouro da tabela/tipo de dado/alinhamento · método diagnosticar-hipótese-testar-validar · os seis defeitos injetados (célula mesclada · número como texto · data em três formatos · categoria em quatro grafias · linha duplicada · total no meio) · operação quebrada por cada defeito · laboratório de limpeza em Excel com aba 02_limpeza · validação por contagem de linhas (17 × 12 × 2 = 408) | ~6 |
+| | **Total** | | **~6** |
+
+**Feedback:** Conhecimento ficou atrelado ao saber Excel mais que ao objetivo real da disciplina; tempo gasto com "como fazer em Excel" em vez de tópicos importantes da disciplina. Ajuste: A56 e A57 recebem comparações prontas (tabelas T1/T2/T3 geradas por script), sem montagem de tabelas dinâmicas; tempo vai para critério, padrão, relação e decisão. Regra para T3 nesta UC: ferramenta é meio, indicador é fim.
+
+---
+
 <!-- TEMPLATE PARA NOVAS ENTRADAS — copie e preencha:
 
 ## A{NN} — {DD/MM/AAAA}

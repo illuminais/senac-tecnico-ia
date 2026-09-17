@@ -1,18 +1,18 @@
 # Metadados da Aula — Neural Slides
 
 aula: "57"
-slug: "a57-uc01-04-18set"
-title: "Fechamento UC01 e abertura UC04"
+slug: "a57-uc01-18set"
+title: "Fechamento de Fundamentos de Computacao"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
 
-disciplines: ["UC01", "UC04"]
+disciplines: ["UC01"]
 
 # formato ISO: YYYY-MM-DD
 date: "2026-09-18"
 
 # em-planejamento | ready | published
-status: em-planejamento  # bloco UC01 pronto; bloco UC04 pendente do épico 2
+status: published
 
 deployUrl: ""
 

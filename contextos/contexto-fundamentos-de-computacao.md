@@ -26,14 +26,14 @@ trimestre-atual: T3
 | T2 | 10 | Apresentações profissionais: slides · design · storytelling de dados | 2 | ⬜ |
 | T2 | 11 | Colaboração e versionamento: Google Drive · GitHub (commits · branches) | 3 | ⬜ |
 | T2 | 12 | Terminal avançado: scripts básicos · variáveis de ambiente · pipe | 2 | ⬜ |
-| T3 | 13 | Tabela analisável: registro · atributo · tipo de dado · os 6 defeitos · diagnóstico-hipótese-teste-validação | 6 | ⏳ A54 (10/09) |
-| T3 | 14 | Critério e comparação: taxa por 100 mil · ordenar · filtrar · CONT.SE · SOMASE · tabela dinâmica · o que o dado não responde | 6 | ⏳ A55 (11/09) |
-| T3 | 15 | Padrão e relação · gráfico por tipo de pergunta · recomendação em 4 partes · **Av01-T3** | 6 | ⏳ A56 (17/09) |
-| T3 | 16 | Recuperação por camada e fechamento de menção | 1 | ⏳ A57 (18/09) |
+| T3 | 13 | Conferir: caso Navier-Stokes · régua de prova · negativa corporativa · pesquisa em fontes · data de corte | 6 | ✅ A54 (10/09) |
+| T3 | 14 | Tabela analisável: registro · atributo · tipo de dado · os 6 defeitos · diagnóstico-hipótese-teste-validação · limpeza com log | 6 | ✅ A55 (11/09) |
+| T3 | 15 | Critério · padrão · relação · gráfico por tipo de pergunta · recomendação em 4 partes · atestar em fonte externa · Av01-T3 parte 1 | 3 | ⏳ A56 (17/09) |
+| T3 | 16 | Av01-T3 parte 2 · conferência na mesa · recuperação por trilha · fechamento de menção | 3 | ⏳ A57 (18/09) |
 
-> **T3 roda como épico de 19 HA**, 10/09 a 18/09, arco Ind.4 → Ind.5 → Ind.6 sobre um único
-> arquivo que ganha uma aba por dia. Os tópicos 6 e 8 a 12 acima não serão dados: não sobrou HA
-> e não são os indicadores do T3. Ver [roteiro-t3](roteiro-t3.md).
+> **T3 roda como épico de 18 HA** (6+6+3+3), 10/09 a 18/09, arco Ind.4 → Ind.5 → Ind.6 sobre um único
+> arquivo que ganha uma aba por dia. No OrionWeb as 6 HA de cada dia serão lançadas como dadas (decisão da coordenação).
+> Os tópicos 6 e 8 a 12 acima não serão dados: não sobrou HA e não são os indicadores do T3. Ver [roteiro-t3](roteiro-t3.md).
 
 **Legenda:** ✅ concluído · ⏳ próxima aula · ⬜ pendente
 
@@ -56,9 +56,7 @@ trimestre-atual: T3
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A48 · 20/08 · Av07-T2 Dossiê da Proposta: conceito de fonte · as 4 perguntas de confiabilidade · ficha de fonte · convenção de nomes · estrutura de pastas · Ind.4 e Ind.5 avaliados
-
-⚠️ Entre 04/09 e 09/09 **outro professor deu busca e avaliação de fontes** com a turma, enquanto o professor titular corrigia prova. Nem todos os alunos participaram. O Ind.4 está saturado: foi trabalhado em A42, A48 e por esse terceiro caminho.
+A55 · 11/09 · Organizar: mapa do épico, glossário, origem do dado, registro, atributo, regra de ouro, tipo de dado, alinhamento, diagnosticar-hipótese-testar-validar, seis defeitos injetados, laboratório de limpeza, validação por contagem
 
 ---
 
@@ -93,6 +91,8 @@ A48 · 20/08 · Av07-T2 Dossiê da Proposta: conceito de fonte · as 4 perguntas
 | A04 | 06/03 | ~1,5 | Continuação Windows profissional · terminal básico (cd · dir · mkdir · cls) | — |
 | A11 | 09/04 | ~2 | Word: margens ABNT · fonte Calibri 12 · espaçamento 1,5 · estilos H1/H2 · tabela 3 colunas · exportar PDF | Aula top — engajamento alto |
 | A42 | 30/07 | ~2 | Navegação segura · fontes confiáveis vs duvidosas · busca por palavras-chave · fact-checking · ferramentas de verificação (Aos Fatos, Lupa) · classificação de fontes | Exercícios precisam passo a passo explícito; alguns alunos dispersam após exercício 1 |
+| A54 | 10/09 | ~6 | Conferir: caso Navier-Stokes · as três acusações · régua de prova · autópsia da negativa corporativa · pesquisa em cinco fontes · data de corte de modelo · opinião apoiada em fato · exercício 5 veredito · Épico 1 dia 1 de 4 | — |
+| A55 | 11/09 | ~6 | Organizar: mapa do épico · glossário (registro · atributo · critério · padrão · relação) · origem do dado em três campos · conceitos registro/atributo/regra de ouro/tipo de dado/alinhamento · diagnosticar-hipótese-testar-validar · seis defeitos injetados · laboratório de limpeza · validação por contagem de linhas 408 · Épico 1 dia 2 de 4 | Conhecimento atrelado ao saber Excel; tempo com "como fazer em Excel" em vez de disciplina |
 
 ---
 
@@ -131,6 +131,7 @@ A48 · 20/08 · Av07-T2 Dossiê da Proposta: conceito de fonte · as 4 perguntas
 | 2026-07-30 | Exercícios de pesquisa crítica/fact-checking precisam de instruções passo a passo; engajamento cai após exercício 1 quando há apenas 2 exercícios | Próximas aulas: quebrar exercícios em mínimo 3–4 passos menores; incluir checklist visual no caderno para visto do professor |
 | 2026-09-09 | Este contexto estava três aulas atrasado (Log parava em A42, sem A48) e por isso a primeira versão da A54 repetiu quase slide a slide o bloco UC01 da A48 | Log e Conceitos Consolidados atualizados. Regra nova: antes de gerar slides de qualquer UC, cruzar os títulos dos `slides.md` já dados contra a tabela de Conceitos Consolidados |
 | 2026-09-09 | Indicador 4 saturado: dado em A42, avaliado em A48 e retomado por outro professor no início de setembro | No épico do T3 ele vira diagnóstico de 1 HA, não bloco. O peso vai para o Ind.6, que é nível 4 e nunca foi tocado |
+| 2026-09-11 | Conhecimento ficou atrelado ao saber Excel mais que ao objetivo real da disciplina; tempo gasto com "como fazer em Excel" em vez de tópicos importantes da disciplina | Ferramenta é meio, indicador é fim: A56 e A57 recebem comparações prontas (tabelas T1/T2/T3 geradas por script), sem montagem de tabelas dinâmicas; tempo vai para critério, padrão, relação e decisão. Regra para T3 nesta UC |
 
 ---
 

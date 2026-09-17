@@ -8,7 +8,9 @@ modelo: epicos
 
 # Roteiro T3
 
-> **Replanejado em 10/09:** A54 virou dia de CONFERIR (caso OpenAI e Navier-Stokes) e a dengue escorregou um dia; A56 absorveu o bloco COMPARAR. Ver [semana15](semanas/semana15.md).
+> **Replanejado em 16/09:** por ajuste de calendário, **A56 e A57 têm 3 HA cada** (as 6 HA restantes somem e são lançadas como dadas no OrionWeb). UC01 fecha em 18/09 com 3+3 HA; **UC04 não abre mais em A57** e o épico 2 começa em A58. ⚠️ Os 5 HA de UC04 que estavam em A57 precisam sair de algum lugar: **épicos 2 a 9 a redistribuir** ao planejar o épico 2. Ver [semana16](semanas/semana16.md).
+>
+> Replanejado em 10/09: A54 virou dia de CONFERIR (caso OpenAI e Navier-Stokes) e a dengue escorregou um dia; A56 absorveu o bloco COMPARAR. Ver [semana15](semanas/semana15.md).
 >
 > Épicos: o dia é de uma UC só; ao fim, avaliação, recuperação e fechamento de menção. Rotação do T2 abandonada em 10/09/2026. HA e déficit: [relatorio-horas-t3](relatorio-horas-t3.md).
 
@@ -16,9 +18,9 @@ modelo: epicos
 |---|---|---|---|---|---|---|
 | 01 | A54 | 10/09 | Ep1 d1/4 | UC01 6 | pesquisa | [S15](semanas/semana15.md) |
 | 02 | A55 | 11/09 | Ep1 d2/4 | UC01 6 | projeto | [S15](semanas/semana15.md) |
-| 03 | A56 | 17/09 | Ep1 d3/4 | UC01 6 | live-coding·avaliacao | [S16](semanas/semana16.md) |
-| 04 | A57 | 18/09 | Ep1 fecha · Ep2 abre | UC01 1 · UC04 5 | avaliacao·expositivo | — |
-| 05 | A58 | 24/09 | Ep2 fecha · Ep3 abre | UC04 5 · UC03 1 | avaliacao·expositivo | — |
+| 03 | A56 | 17/09 | Ep1 d3/4 · **3 HA** | UC01 3 | expositivo·avaliacao | [S16](semanas/semana16.md) |
+| 04 | A57 | 18/09 | Ep1 fecha · **3 HA** | UC01 3 | avaliacao | [S16](semanas/semana16.md) |
+| 05 | A58 | 24/09 | Ep2 abre ⚠️ replanejar | UC04 6 | — | — |
 | 06 | A59 | 25/09 | Ep3 d2/3 | UC03 6 | pbl | — |
 | 07 | A60 | 01/10 | Ep3 fecha | UC03 6 | avaliacao | — |
 | 08 | A61 | 02/10 | Ep4 d1/3 | UC09 6 | expositivo | — |
@@ -48,8 +50,8 @@ modelo: epicos
 
 | # | Épico | HA | Encerra em | Indicadores T3 |
 |---|---|---|---|---|
-| 1 | UC01 Fundamentos de Computação | 19 | A57 · 18/09 | 4, 5, 6 |
-| 2 | UC04 Fundamentos e Conceitos de IA | 10 | A58 · 24/09 | 3, 4 |
+| 1 | UC01 Fundamentos de Computação | 18 reais (6+6+3+3) · lançamento no OrionWeb a definir | A57 · 18/09 | 4, 5, 6 |
+| 2 | UC04 Fundamentos e Conceitos de IA | 10 ⚠️ começa em A58, fim a redefinir | A58 · 24/09 → ? | 3, 4 |
 | 3 | UC03 Fundamentos Matemáticos | 13 | A60 · 01/10 | 6, 7, 8 |
 | 4 | UC09 Estatística Aplicada | 16 | A63 · 09/10 | 7, 8, 9, 10 |
 | 5 | UC05 Python para IA | 20 | A66 · 22/10 | 3, 4 |
