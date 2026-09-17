@@ -24,15 +24,20 @@ const bgOpacity = computed(() =>
 
 const headerRef = ref<HTMLElement | null>(null);
 const leftRef = ref<HTMLElement | null>(null);
+const rightRef = ref<HTMLElement | null>(null);
 
 const moveHeader = () => {
   if (!headerRef.value || !leftRef.value) return;
 
-  const left = leftRef.value;
+  const title = leftRef.value.querySelector("h1");
+  if (!title) return;
 
-  // Move o primeiro H1 (título) para o header
-  const title = left.querySelector("h1");
-  if (title) headerRef.value.appendChild(title);
+  // Um H1 em cada coluna = títulos de coluna, não título compartilhado.
+  // Ficam onde estão (estilizados menores via .content-wrapper h1).
+  if (rightRef.value?.querySelector("h1")) return;
+
+  // Move o primeiro H1 (título compartilhado) para o header
+  headerRef.value.appendChild(title);
 };
 
 onMounted(async () => {
@@ -66,7 +71,7 @@ onMounted(async () => {
           <slot />
         </div>
 
-        <div class="col-right content-wrapper">
+        <div ref="rightRef" class="col-right content-wrapper">
           <slot name="right" />
         </div>
       </div>
@@ -90,6 +95,11 @@ onMounted(async () => {
   position: relative;
   z-index: 10;
   margin-bottom: 1.25rem;
+}
+
+/* Sem título compartilhado (H1 em cada coluna): header não ocupa espaço */
+.two-cols-text-header:empty {
+  display: none;
 }
 
 .two-cols-text-grid {
@@ -135,6 +145,14 @@ onMounted(async () => {
 }
 
 /* Colunas */
+/* H1 que fica na coluna é título de coluna: menor que o título do slide */
+.content-wrapper :deep(h1) {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.1em;
+}
+
 .content-wrapper :deep(h2) {
   font-size: 1.5rem;
   font-weight: 600;
