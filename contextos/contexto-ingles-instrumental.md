@@ -41,14 +41,14 @@ trimestre-atual: T3
 
 <!-- GERADO por scripts/balanco-ha.mjs a partir do OrionWeb. Não editar à mão. -->
 
-> Épico 8 do T3: **20 HA**, encerra em **A77** (2026-12-03).
+> Épico 9 do T3: **18 HA**, encerra em **A82** (2026-12-18) · corte de 2 HA para caber no calendário.
 
 | Trim. | HA Alocado | HA Dado | HA Restante |
 |---|---|---|---|
 | T1 | 13 | 5 | 8 |
 | T2 | 14 | 15 | -1 |
-| T3 | 20 | 0 | 20 |
-| **Total** | **47** | **20** | **20** |
+| T3 | 18 | 0 | 18 |
+| **Total** | **45** | **20** | **20** |
 
 ---
 

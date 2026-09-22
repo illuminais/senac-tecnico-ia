@@ -1,7 +1,7 @@
 # Metadados da Aula — Neural Slides
 
-aula: "57"
-slug: "a57-uc01-18set"
+aula: "58"
+slug: "a58-uc01-24set"
 title: "Fechamento de Fundamentos de Computacao"
 author: "Leonardo Zanini"
 courseTitle: "Técnico em Inteligência Artificial"
@@ -9,10 +9,10 @@ courseTitle: "Técnico em Inteligência Artificial"
 disciplines: ["UC01"]
 
 # formato ISO: YYYY-MM-DD
-date: "2026-09-18"
+date: "2026-09-24"
 
 # em-planejamento | ready | published
-status: published
+status: ready
 
 deployUrl: ""
 

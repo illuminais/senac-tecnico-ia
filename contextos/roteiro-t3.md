@@ -8,57 +8,68 @@ modelo: epicos
 
 # Roteiro T3
 
-> **Replanejado em 16/09:** por ajuste de calendário, **A56 e A57 têm 3 HA cada** (as 6 HA restantes somem e são lançadas como dadas no OrionWeb). UC01 fecha em 18/09 com 3+3 HA; **UC04 não abre mais em A57** e o épico 2 começa em A58. ⚠️ Os 5 HA de UC04 que estavam em A57 precisam sair de algum lugar: **épicos 2 a 9 a redistribuir** ao planejar o épico 2. Ver [semana16](semanas/semana16.md).
+> **Replanejado em 22/09 (vale este):** jogos escolares derrubaram a semana de 17/09. A56 valeu meio dia (3 HA) e A57 foi **cancelada**. UC01 fecha na **A58 (24/09)** e ponto final. A partir da A59 (25/09), a ordem é **trilho de dados** (Banco de Dados → Python → Estatística → Transformação Digital), depois as UCs conceituais, e **Inglês na zona de evasão de dezembro**. Justificativa na seção "Por que esta ordem", abaixo.
 >
-> Replanejado em 10/09: A54 virou dia de CONFERIR (caso OpenAI e Navier-Stokes) e a dengue escorregou um dia; A56 absorveu o bloco COMPARAR. Ver [semana15](semanas/semana15.md).
+> **Déficit das UCs 2 a 9: 24 HA** (168 HA faltando no OrionWeb, 144 HA de A59 a A82). Se a A82 for só Conselho de Classe, 30 HA. O saldo global do `relatorio-horas-t3` mostra −22 porque UC01 fecha com 2 HA acima da meta.
+>
+> **Zona de evasão (10/12 a 18/12):** a sala esvazia. Regra: nenhuma avaliação pontual em 17/12 ou 18/12; Inglês fecha a menção por evidência entregue a cada dia; Fundamentos de IA tem um indicador por dia (A78 = Indicador 3, A79 = Indicador 4).
+>
+> Histórico: replanejado em 16/09 (A56/A57 com 3 HA, superado em 22/09) e em 10/09 (A54 virou dia de CONFERIR). Ver [semana15](semanas/semana15.md), [semana16](semanas/semana16.md).
 >
 > Épicos: o dia é de uma UC só; ao fim, avaliação, recuperação e fechamento de menção. Rotação do T2 abandonada em 10/09/2026. HA e déficit: [relatorio-horas-t3](relatorio-horas-t3.md).
 
 | S | Aula | Data | Tipo | UCs | Método | Semana |
 |---|---|---|---|---|---|---|
-| 01 | A54 | 10/09 | Ep1 d1/4 | UC01 6 | pesquisa | [S15](semanas/semana15.md) |
-| 02 | A55 | 11/09 | Ep1 d2/4 | UC01 6 | projeto | [S15](semanas/semana15.md) |
-| 03 | A56 | 17/09 | Ep1 d3/4 · **3 HA** | UC01 3 | expositivo·avaliacao | [S16](semanas/semana16.md) |
-| 04 | A57 | 18/09 | Ep1 fecha · **3 HA** | UC01 3 | avaliacao | [S16](semanas/semana16.md) |
-| 05 | A58 | 24/09 | Ep2 abre ⚠️ replanejar | UC04 6 | — | — |
-| 06 | A59 | 25/09 | Ep3 d2/3 | UC03 6 | pbl | — |
-| 07 | A60 | 01/10 | Ep3 fecha | UC03 6 | avaliacao | — |
-| 08 | A61 | 02/10 | Ep4 d1/3 | UC09 6 | expositivo | — |
-| 09 | A62 | 08/10 | Ep4 d2/3 | UC09 6 | pbl | — |
-| 10 | A63 | 09/10 | Ep4 fecha · Ep5 abre | UC09 4 · UC05 2 | avaliacao·live-coding | — |
-| 11 | A64 | 15/10 | Ep5 d2/4 | UC05 6 | live-coding | — |
-| 12 | A65 | 16/10 | Ep5 d3/4 | UC05 6 | live-coding | — |
-| 13 | A66 | 22/10 | Ep5 fecha | UC05 6 | avaliacao | — |
-| 14 | A67 | 23/10 | Ep6 d1/5 | UC08 6 | expositivo | — |
-| 15 | A68 | 29/10 | Ep6 d2/5 | UC08 6 | live-coding | — |
-| 16 | A69 | 30/10 | Ep6 d3/5 | UC08 6 | pbl | — |
-| 17 | A70 | 05/11 | Ep6 d4/5 | UC08 6 | pbl | — |
-| 18 | A71 | 06/11 | Ep6 fecha | UC08 6 | avaliacao | — |
-| 19 | A72 | 12/11 | Ep7 d1/3 | UC06 6 | expositivo | — |
-| 20 | A73 | 13/11 | Ep7 d2/3 | UC06 6 | simulacao | — |
-| 21 | A74 | 19/11 | Ep7 fecha · Ep8 abre | UC06 4 · UC02 2 | avaliacao·expositivo | — |
-| 22 | A75 | 26/11 | Ep8 d2/4 | UC02 6 | sala-inversa | — |
-| 23 | A76 | 27/11 | Ep8 d3/4 | UC02 6 | pbl | — |
-| 24 | A77 | 03/12 | Ep8 fecha | UC02 6 | avaliacao | — |
-| 25 | A78 | 04/12 | Ep9 d1/5 | UC07 6 | expositivo | — |
-| 26 | A79 | 10/12 | Ep9 d2/5 | UC07 6 | pbl | — |
-| 27 | A80 | 11/12 | Ep9 d3/5 | UC07 6 | projeto | — |
-| 28 | A81 | 17/12 | Ep9 d4/5 | UC07 6 | projeto | — |
-| 29 | A82 | 18/12 | Ep9 fecha | UC07 6 | avaliacao | — |
+| 01 | A54 | 10/09 | Ep1 d1/5 | UC01 6 | pesquisa | [S15](semanas/semana15.md) |
+| 02 | A55 | 11/09 | Ep1 d2/5 | UC01 6 | projeto | [S15](semanas/semana15.md) |
+| 03 | A56 | 17/09 | Ep1 d3/5 · **3 HA** (jogos escolares) | UC01 3 | expositivo·avaliacao | [S16](semanas/semana16.md) |
+| 04 | A57 | 18/09 | **cancelada** (jogos escolares) | — 0 | — | — |
+| 05 | A58 | 24/09 | Ep1 fecha | UC01 6 | avaliacao | [S16](semanas/semana16.md) |
+| 06 | A59 | 25/09 | Ep2 d1/5 · Indicador 5 (consultas) | UC08 6 | live-coding | — |
+| 07 | A60 | 01/10 | Ep2 d2/5 · Indicador 5 | UC08 6 | live-coding | — |
+| 08 | A61 | 02/10 | Ep2 d3/5 · Indicadores 4 e 6 | UC08 6 | pbl | — |
+| 09 | A62 | 08/10 | Ep2 d4/5 | UC08 6 | pbl | — |
+| 10 | A63 | 09/10 | Ep2 fecha | UC08 6 | avaliacao | — |
+| 11 | A64 | 15/10 | Ep3 d1/3 | UC05 6 | live-coding | — |
+| 12 | A65 | 16/10 | Ep3 d2/3 | UC05 6 | live-coding | — |
+| 13 | A66 | 22/10 | Ep3 fecha | UC05 6 | avaliacao | — |
+| 14 | A67 | 23/10 | Ep4 d1/3 | UC09 6 | expositivo | — |
+| 15 | A68 | 29/10 | Ep4 d2/3 | UC09 6 | pbl | — |
+| 16 | A69 | 30/10 | Ep4 fecha | UC09 6 | avaliacao | — |
+| 17 | A70 | 05/11 | Ep5 d1/4 | UC07 6 | expositivo | — |
+| 18 | A71 | 06/11 | Ep5 d2/4 | UC07 6 | pbl | — |
+| 19 | A72 | 12/11 | Ep5 d3/4 | UC07 6 | projeto | — |
+| 20 | A73 | 13/11 | Ep5 fecha | UC07 6 | avaliacao | — |
+| 21 | A74 | 19/11 | Ep6 d1/2 | UC03 6 | pbl | — |
+| 22 | A75 | 26/11 | Ep6 fecha | UC03 6 | avaliacao | — |
+| 23 | A76 | 27/11 | Ep7 d1/2 | UC06 6 | expositivo | — |
+| 24 | A77 | 03/12 | Ep7 fecha | UC06 6 | avaliacao | — |
+| 25 | A78 | 04/12 | Ep8 d1/2 · Indicador 3 | UC04 6 | expositivo | — |
+| 26 | A79 | 10/12 | Ep8 fecha · Indicador 4 | UC04 6 | avaliacao | — |
+| 27 | A80 | 11/12 | Ep9 d1/3 · evidência diária | UC02 6 | sala-inversa | — |
+| 28 | A81 | 17/12 | Ep9 d2/3 · evidência diária · menção fecha | UC02 6 | pbl | — |
+| 29 | A82 | 18/12 | Ep9 d3/3 · sem avaliação | UC02 6 | — | — |
 
 ## Ordem dos épicos
 
-| # | Épico | HA | Encerra em | Indicadores T3 |
-|---|---|---|---|---|
-| 1 | UC01 Fundamentos de Computação | 18 reais (6+6+3+3) · lançamento no OrionWeb a definir | A57 · 18/09 | 4, 5, 6 |
-| 2 | UC04 Fundamentos e Conceitos de IA | 10 ⚠️ começa em A58, fim a redefinir | A58 · 24/09 → ? | 3, 4 |
-| 3 | UC03 Fundamentos Matemáticos | 13 | A60 · 01/10 | 6, 7, 8 |
-| 4 | UC09 Estatística Aplicada | 16 | A63 · 09/10 | 7, 8, 9, 10 |
-| 5 | UC05 Python para IA | 20 | A66 · 22/10 | 3, 4 |
-| 6 | UC08 Banco de Dados | 30 | A71 · 06/11 | 4, 5, 6 |
-| 7 | UC06 Arquitetura e GPU | 16 | A74 · 19/11 | 4, 5 |
-| 8 | UC02 Inglês Instrumental | 20 | A77 · 03/12 | 3, 4 |
-| 9 | UC07 Transformação Digital | 30 | A82 · 18/12 | 7, 8, 9, 10 |
+| # | Épico | HA no T3 | Falta no OrionWeb | Encerra em | Indicadores T3 |
+|---|---|---|---|---|---|
+| 1 | UC01 Fundamentos de Computação | 21 (6+6+3+0+6) | 19 | A58 · 24/09 | 4, 5, 6 |
+| 2 | UC08 Banco de Dados | 30 | 35 (−5) | A63 · 09/10 | 4, 5, 6 |
+| 3 | UC05 Python para IA | 18 | 23 (−5) | A66 · 22/10 | 3, 4 |
+| 4 | UC09 Estatística Aplicada | 18 | 16 (+2) | A69 · 30/10 | 7, 8, 9, 10 |
+| 5 | UC07 Transformação Digital | 24 | 35 (−11) | A73 · 13/11 | 7, 8, 9, 10 |
+| 6 | UC03 Fundamentos Matemáticos | 12 | 13 (−1) | A75 · 26/11 | 6, 7, 8 |
+| 7 | UC06 Arquitetura e GPU | 12 | 16 (−4) | A77 · 03/12 | 4, 5 |
+| 8 | UC04 Fundamentos e Conceitos de IA | 12 | 10 (+2) | A79 · 10/12 | 3, 4 |
+| 9 | UC02 Inglês Instrumental | 18 (12 se A82 for Conselho) | 20 (−2) | A81 · 17/12 (menção) | 3, 4 |
+
+### Por que esta ordem (resumo)
+
+- **Banco de Dados na sexta 25/09:** roda no navegador (sqliteonline), sem risco de instalação no laboratório. A59 e A60 só com o Indicador 5 (consultas) sobre o mesmo dado de dengue que a turma limpou em UC01. O ambiente dos Indicadores 4 (permissões) e 6 (backup) precisa estar decidido no épico **até 30/09**, porque o SQLite não tem `GRANT`/`REVOKE`.
+- **Python logo antes de Estatística:** o pandas é usado em dois épicos seguidos (`value_counts`, `mean`, `std` são os Indicadores 8, 9 e 10 de Estatística).
+- **Transformação Digital depois do bloco de dados:** os Indicadores 8 e 10 recebem dado pronto; é quem mais paga o déficit (−11).
+- **Inglês por último:** cada dia é um texto técnico independente, e a menção fecha com as evidências diárias. É a UC que melhor aguenta a falta de dezembro.
 
 ## Refs
 → [relatorio-horas-t3](relatorio-horas-t3.md) · [horarios](horarios/) · [indicadores](indicadores.md) · [ATIVIDADES_AVALIATIVAS](ATIVIDADES_AVALIATIVAS.md)

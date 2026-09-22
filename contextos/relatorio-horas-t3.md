@@ -4,7 +4,7 @@ trimestre: T3
 fonte: OrionWeb (extratos por disciplina)
 ha-aula-duracao: 50min
 cutoff: 2026-09-04
-gerado-em: 2026-09-09
+gerado-em: 2026-09-22
 gerado-por: scripts/balanco-ha.mjs
 ---
 
@@ -37,11 +37,11 @@ gerado-por: scripts/balanco-ha.mjs
 
 | Mês | Aulas | HA |
 |---|---|---|
-| setembro | 6 | 36 |
+| setembro | 6 | 27 |
 | outubro | 10 | 60 |
 | novembro | 7 | 42 |
 | dezembro | 6 | 36 |
-| **Total** | **29** | **174** |
+| **Total** | **29** | **165** |
 
 Primeira aula futura: **A54** (2026-09-10) ·
 última: **A82** (2026-12-18).
@@ -49,8 +49,8 @@ Primeira aula futura: **A54** (2026-09-10) ·
 ## Fechamento
 
 - Falta dar: **187 HA**
-- Calendário disponível: **174 HA**
-- Saldo: **-13 HA** — déficit de 13 HA (2,2 dias). Herdado do T1, que fechou -42 HA.
+- Calendário disponível: **165 HA**
+- Saldo: **-22 HA** — déficit de 22 HA (3,7 dias). Herdado do T1, que fechou -42 HA.
 
 ## Refs
 → [relatorio-horas-t1](relatorio-horas-t1.md) · [panorama](panorama-primeiro-ano-ucs.md)

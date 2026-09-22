@@ -1,28 +1,28 @@
 ---
 theme: ../../../neural-slides-template
 colorSchema: dark
-title: "Técnico em IA — Aula 57"
+title: "Técnico em IA — Aula 58"
 author: Leonardo Zanini
 github: LeoZanini
 courseTitle: Técnico em Inteligência Artificial
-aulaNum: "Aula 57"
+aulaNum: "Aula 58"
 footerLogo: /assets/senac-logo.png
 bgPreset: palette
-aulaDate: "2026-09-18"
+aulaDate: "2026-09-24"
 unlockHour: 13
 layout: cover
 ---
 
 <!-- SLIDE 1: Capa -->
 
-# Aula 57
+# Aula 58
 ## Fechamento de Fundamentos de Computação
 
-**UC01 Fundamentos de Computação** · Épico 1, dia 4 de 4
+**UC01 Fundamentos de Computação** · Épico 1, último dia
 
 **Hoje o verbo é REFAZER, e a menção sai**
 
-18 de setembro de 2026 · 3 horas-aula
+24 de setembro de 2026 · 6 horas-aula
 
 ---
 layout: default
@@ -40,12 +40,13 @@ bgPreset: palette
 |---|---|---|---|
 | 10/09 | conferir | um julgamento defendido sobre uma notícia | feito |
 | 11/09 | organizar | um dado que dá para usar | feito |
-| 17/09 | comparar e decidir | o painel, primeira metade | feito |
-| **18/09** | **refazer** | **o painel, segunda metade, e a menção** | **você está aqui** |
+| 17/09 | comparar e decidir | o painel, primeira metade (meio dia) | feito |
+| 18/09 | | sem aula (jogos escolares) | cancelada |
+| **24/09** | **refazer** | **o painel inteiro fechado, e a menção** | **você está aqui** |
 
 </SlideTable>
 
-Quatro dias, um arquivo, cinco abas. Hoje o `painel_dengue_pr.xlsx` fecha, e a disciplina fecha com ele.
+Um arquivo, cinco abas. Hoje o `painel_dengue_pr.xlsx` fecha, e a disciplina fecha com ele.
 
 ---
 layout: default
@@ -59,13 +60,55 @@ bgPreset: default
 
 # Como funciona hoje
 
-Abra o `painel_dengue_pr.xlsx` que você salvou ontem.
+Abra o `painel_dengue_pr.xlsx` que você salvou em 17/09.
 
-**Primeiros 75 minutos:** você termina o painel: gráfico de relação, recomendação com as quatro partes, e o limite do dado.
+**Primeiros 20 minutos:** revisão do que foi visto em 17/09 (os próximos dois slides).
+
+**Até o intervalo e um pouco depois (cerca de 2 horas e meia):** você termina os cinco elementos do painel. Quem já fez os elementos 1, 2 e 5 em 17/09 vai direto para o elemento 3.
 
 **Depois:** o professor passa na sua mesa com a rubrica, confere os três indicadores e lança a menção. O que ficar em aberto você refaz **na hora**, só aquela parte.
 
-**Faltou ontem?** Peça o `dengue_pr_comparado.xlsx`, salve como `painel_dengue_pr.xlsx` (formato `.xlsx`, também no LibreOffice) e faça os cinco elementos hoje. Os slides de ontem estão publicados; os que você precisa são o 29 (as duas réguas discordam), o 31 (as quatro partes) e o 34 (o que vai no painel).
+**Faltou em 17/09?** Peça o `dengue_pr_comparado.xlsx`, salve como `painel_dengue_pr.xlsx` (formato `.xlsx`) e faça os cinco elementos hoje. Os slides da Aula 56 estão publicados; os que você precisa são o 29 (as duas réguas discordam), o 31 (as quatro partes) e o 34 (o que vai no painel).
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 3b: Revisão de 17/09 -->
+
+<!-- objetivo: aluno que ficou uma semana sem a disciplina recupera os três conceitos que a avaliação cobra -->
+
+# Uma semana depois: as três palavras que o painel cobra
+
+**Critério** é a régua que você escolhe para comparar. Na T2, a coluna de casos diz **onde tem mais gente doente**. A coluna de casos por 100 mil habitantes diz **onde a doença pesa mais para o tamanho da cidade**. Londrina ganha na primeira régua; Jacarezinho, na segunda.
+
+**Padrão** é o que se repete. Na T1, março é o mês mais alto em 2024 **e** em 2025. Se repete nos dois anos, é padrão; se aparece em um ano só, pode ser acaso.
+
+**Relação** é quando duas coisas andam juntas. Na T3, saber a região já diz muito sobre a taxa por 100 mil em 2025: o Norte fica em 5.989, o Oeste em 3.931. Andar junto não prova que uma coisa causa a outra.
+
+**Confira:** abra a `03_comparacoes` e ache as três tabelas, T1, T2 e T3.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 3c: Elementos 1, 2 e 5 -->
+
+# Não fez os elementos 1, 2 e 5 em 17/09? Comece por aqui (40 min)
+
+**1.** Na `04_painel`, elemento 1: a pergunta, com lugar e período. Forma: "Em que mês e para qual município o Paraná deveria mandar o reforço contra a dengue, com base em 2024 e 2025?"
+
+**2.** Elemento 2: gráfico de **linha** a partir da T1. Selecione a T1 → guia **Inserir** → **Gráficos** → **Linha**. Título em frase ("Março é o pico nos dois anos"), eixo vertical "casos".
+
+**3.** Elemento 5: uma pergunta que o dado não responde e o dado que faltaria para responder.
+
+**4.** Salve com `Ctrl+S`, no formato `.xlsx`.
+
+**Confira:** pergunta com lugar e período · gráfico com título em frase e eixo com unidade · março é o ponto mais alto nos dois anos.
 
 ---
 layout: default
@@ -114,14 +157,12 @@ A: decisão e resto de número, sem critério, sem número com tabela, sem renú
 </AdminOnly>
 
 ---
-layout: two-cols-text
+layout: default
 card: true
 bgPreset: default
 ---
 
-<!-- SLIDE 6: Elemento 3, nos dois programas -->
-
-<!-- ANTES DA AULA: o laboratório pode ser Windows/Excel ou Linux/LibreOffice Calc. Os dois caminhos ficam no slide. -->
+<!-- SLIDE 6: Elemento 3 no Excel -->
 
 # Elemento 3 no Excel
 
@@ -134,20 +175,6 @@ A relação do seu arquivo é **região e taxa por 100 mil andam juntas**, na **
 **3.** Clique em "Título do Gráfico" e escreva a frase.
 
 **4.** Guia **Design do Gráfico** → **Adicionar Elemento Gráfico** → **Títulos dos Eixos** → **Vertical Principal**. Escreva "casos por 100 mil habitantes".
-
-::right::
-
-# Elemento 3 no LibreOffice Calc
-
-Mesma tabela, mesmo resultado.
-
-**1.** Selecione de `macrorregional` até o `634` do Leste (`A38` até `B42`).
-
-**2.** Menu **Inserir** → **Gráfico...**. Em "Tipo de gráfico", **Coluna** → **Normal**. **Avançar** até "Elementos do gráfico".
-
-**3.** Em **Título**, escreva a frase. Em **Eixo Y**, escreva "casos por 100 mil habitantes". **Concluir**.
-
-**4.** Clique fora do gráfico para sair da edição.
 
 ---
 layout: default
@@ -216,7 +243,7 @@ bgPreset: default
 
 No espaço do elemento 5 da `04_painel`, escreva **uma pergunta que este arquivo não responde** e **qual dado faltaria** para responder.
 
-Você rascunhou isso ontem no caderno, no Exercício 4, a partir de Campo Mourão: 213 casos e 148 por 100 mil, muito abaixo dos vizinhos. Pouca dengue ou pouca notificação? As três tabelas não separam as duas coisas.
+Você rascunhou isso em 17/09 no caderno, no Exercício 4 da Aula 56, a partir de Campo Mourão: 213 casos e 148 por 100 mil, muito abaixo dos vizinhos. Pouca dengue ou pouca notificação? As três tabelas não separam as duas coisas.
 
 **Confira:** a pergunta não pode ser respondida pela T1, T2 nem T3. "Qual mês tem mais casos?" a T1 responde; não serve.
 
@@ -411,7 +438,7 @@ bgPreset: default
 
 <!-- SLIDE 19: As cinco palavras -->
 
-# As cinco palavras, quatro dias depois
+# As cinco palavras, duas semanas depois
 
 Sem olhar o caderno, escreva o que cada uma quer dizer e **onde ela apareceu no seu arquivo**.
 
@@ -447,7 +474,7 @@ bgPreset: palette
 
 # Fundamentos de Computação encerra aqui
 
-Em quatro dias você pegou um arquivo que não respondia nada e entregou uma decisão defendida.
+Em cinco encontros você pegou um arquivo que não respondia nada e entregou uma decisão defendida.
 
 **O que fica, e vai ser cobrado nas outras disciplinas:**
 
@@ -469,4 +496,4 @@ avatar: https://github.com/LeoZanini.png?size=256
 
 # Até a próxima
 
-Uma disciplina fechada. A próxima começa quinta, 24/09.
+Uma disciplina fechada. A próxima, Banco de Dados, começa amanhã, sexta 25/09.

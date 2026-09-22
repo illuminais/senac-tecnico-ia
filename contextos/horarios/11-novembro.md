@@ -14,17 +14,17 @@ aulas: A70–A76
 > 02/11 (Seg) = Finados · 15/11 (Dom) = Proclamação da República. Não afetam qui/sex.
 > **20/11 (Sex) = Zumbi e Consciência Negra: FERIADO, sem aula.**
 > **Modelo de épicos** desde 10/09/2026: o dia inteiro (6 HA) é de uma UC só.
-> Rotação Sem1/Sem2/Sem3 abandonada. Mapa completo em [roteiro-t3](../roteiro-t3.md).
+> Rotação Sem1/Sem2/Sem3 abandonada. Mapa completo em [roteiro-t3](../roteiro-t3.md). **Ordem replanejada em 22/09.**
 
 | A# | Data | Dia | Épico do dia | Etapa | HA |
 |---|---|---|---|---|---|
-| A70 | 05/11 | Qui | Ep6 UC08 Banco de Dados | d4/5 | 6 |
-| A71 | 06/11 | Sex | Ep6 UC08 Banco de Dados | d5/5 · Ep6 fecha | 6 |
-| A72 | 12/11 | Qui | Ep7 UC06 Arquitetura e GPU | d1/3 | 6 |
-| A73 | 13/11 | Sex | Ep7 UC06 Arquitetura e GPU | d2/3 | 6 |
-| A74 | 19/11 | Qui | Ep7 UC06 4HA + Ep8 UC02 2HA | Ep7 fecha | 6 |
-| A75 | 26/11 | Qui | Ep8 UC02 Inglês | d2/4 | 6 |
-| A76 | 27/11 | Sex | Ep8 UC02 Inglês | d3/4 | 6 |
+| A70 | 05/11 | Qui | Ep5 UC07 Transformação Digital | d1/4 · Ep5 abre | 6 |
+| A71 | 06/11 | Sex | Ep5 UC07 Transformação Digital | d2/4 | 6 |
+| A72 | 12/11 | Qui | Ep5 UC07 Transformação Digital | d3/4 | 6 |
+| A73 | 13/11 | Sex | Ep5 UC07 Transformação Digital | d4/4 · Ep5 fecha | 6 |
+| A74 | 19/11 | Qui | Ep6 UC03 Matemática | d1/2 · Ep6 abre | 6 |
+| A75 | 26/11 | Qui | Ep6 UC03 Matemática | d2/2 · Ep6 fecha | 6 |
+| A76 | 27/11 | Sex | Ep7 UC06 Arquitetura e GPU | d1/2 · Ep7 abre | 6 |
 
 ---
 

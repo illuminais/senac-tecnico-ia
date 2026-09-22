@@ -292,17 +292,25 @@ Instrumento de dois atos só vale quando a UC tem 2 ou mais slots restantes **e 
 > Menções: **A** Atendido · **PA** Parcialmente Atendido · **NA** Não Atendido. Sem nota numérica.
 > Calendário dos épicos: [roteiro-t3](roteiro-t3.md).
 
+> **Replanejado em 22/09:** nova ordem dos épicos (ver [roteiro-t3](roteiro-t3.md)). As avaliações
+> foram renumeradas pela ordem nova. A A57 foi cancelada (jogos escolares), então a Av01-T3
+> termina e a menção de UC01 é lançada na A58.
+>
+> **Regra de dezembro (zona de evasão, 10/12 a 18/12):** nenhuma avaliação pontual em 17/12 ou
+> 18/12. A Av09-T3 (Inglês) é por **evidência diária**: cada encontro entrega uma tarefa de
+> leitura, e a menção fecha na A81 com as evidências disponíveis. A A82 não tem avaliação.
+
 | Av | Épico | UC | Avaliação em | Recuperação em | Indicadores T3 | Estado |
 |---|---|---|---|---|---|---|
-| Av01-T3 | 1 | UC01 Fundamentos de Computação | A56 · 17/09 | A57 · 18/09 | 4, 5, 6 | ✅ [detalhada](aval/av01-t3-painel-decisao.md) |
-| Av02-T3 | 2 | UC04 Fundamentos e Conceitos de IA | A58 · 24/09 | A58 · 24/09 | 3, 4 | ⬜ pendente |
-| Av03-T3 | 3 | UC03 Fundamentos Matemáticos | A60 · 01/10 | A60 · 01/10 | 6, 7, 8 | ⬜ pendente |
-| Av04-T3 | 4 | UC09 Estatística Aplicada | A63 · 09/10 | A63 · 09/10 | 7, 8, 9, 10 | ⬜ pendente |
-| Av05-T3 | 5 | UC05 Python para IA | A66 · 22/10 | A66 · 22/10 | 3, 4 | ⬜ pendente |
-| Av06-T3 | 6 | UC08 Banco de Dados | A71 · 06/11 | A71 · 06/11 | 4, 5, 6 | ⬜ pendente |
-| Av07-T3 | 7 | UC06 Arquitetura e GPU | A74 · 19/11 | A74 · 19/11 | 4, 5 | ⬜ pendente |
-| Av08-T3 | 8 | UC02 Inglês Instrumental | A77 · 03/12 | A77 · 03/12 | 3, 4 | ⬜ pendente |
-| Av09-T3 | 9 | UC07 Transformação Digital | A82 · 18/12 | A82 · 18/12 | 7, 8, 9, 10 | ⬜ pendente |
+| Av01-T3 | 1 | UC01 Fundamentos de Computação | A56 · 17/09 (parte 1) · A58 · 24/09 (parte 2) | A58 · 24/09 | 4, 5, 6 | ✅ [detalhada](aval/av01-t3-painel-decisao.md) · ⚠️ ajustar à A57 cancelada |
+| Av02-T3 | 2 | UC08 Banco de Dados | A63 · 09/10 | A63 · 09/10 | 4, 5, 6 | ⬜ pendente · ambiente dos Indicadores 4 e 6 até 30/09 |
+| Av03-T3 | 3 | UC05 Python para IA | A66 · 22/10 | A66 · 22/10 | 3, 4 | ⬜ pendente |
+| Av04-T3 | 4 | UC09 Estatística Aplicada | A69 · 30/10 | A69 · 30/10 | 7, 8, 9, 10 | ⬜ pendente |
+| Av05-T3 | 5 | UC07 Transformação Digital | A73 · 13/11 | A73 · 13/11 | 7, 8, 9, 10 | ⬜ pendente |
+| Av06-T3 | 6 | UC03 Fundamentos Matemáticos | A75 · 26/11 | A75 · 26/11 | 6, 7, 8 | ⬜ pendente |
+| Av07-T3 | 7 | UC06 Arquitetura e GPU | A77 · 03/12 | A77 · 03/12 | 4, 5 | ⬜ pendente |
+| Av08-T3 | 8 | UC04 Fundamentos e Conceitos de IA | A78 · 04/12 (Indicador 3) · A79 · 10/12 (Indicador 4) | A79 · 10/12 | 3, 4 | ⬜ pendente |
+| Av09-T3 | 9 | UC02 Inglês Instrumental | evidência diária A80 · 11/12 e A81 · 17/12 | A81 · 17/12 | 3, 4 | ⬜ pendente |
 
 ### Av01-T3 — Épico UC01, "Painel de decisão"
 
@@ -319,6 +327,7 @@ declarar o critério e sustentar a escolha.
 
 ### Riscos do T3
 
-- **Av09-T3 cai em 18/12**, último dia letivo, e `contextos/horarios/12-dezembro.md` levanta a dúvida de a A82 ser só Conselho de Classe. Se for, UC07 perde a avaliação e a recuperação de uma vez. **Confirmar com a coordenação antes de outubro.**
-- **UC07 e UC09 têm 4 indicadores cada** para fechar num épico só. São os dois instrumentos mais pesados do trimestre.
-- **UC05 fica sem ser tocado de 03/09 a 09/10**, cinco semanas, numa turma fraca em programação. Considerar antecipar o épico ou manter um fio de Python dentro dos épicos de UC03 e UC09.
+- **A82 (18/12) pode ser só Conselho de Classe.** Na ordem de 22/09 nenhuma avaliação depende dela: Inglês fecha a menção na A81. Se for Conselho, Inglês fica com 12 HA em vez de 18.
+- **UC07 e UC09 têm 4 indicadores cada** para fechar num épico só. Transformação Digital ainda paga o maior corte (−11 HA), então os Indicadores 8 e 10 precisam receber dado pronto dos épicos de Banco de Dados, Python e Estatística.
+- **Banco de Dados abre com 3 dias de preparo** e é a disciplina em que a turma está mais fraca. A59 e A60 cobrem só o Indicador 5 (consultas). Os Indicadores 4 (permissões) e 6 (backup) precisam de um ambiente decidido até 30/09, porque o SQLite não tem `GRANT`/`REVOKE`.
+- **Jogos escolares:** derrubaram a semana de 17/09 (A56 pela metade, A57 cancelada). Se voltarem, o dia perdido sai do épico em curso, e a avaliação dele não pode escorregar para depois do fim do épico.
