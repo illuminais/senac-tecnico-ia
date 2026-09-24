@@ -43,7 +43,7 @@ MUNICIPIOS = [
     ("4118501", "Pato Branco",          "Oeste"),
     ("4113700", "Londrina",             "Norte"),
     ("4101408", "Apucarana",            "Norte"),
-    ("4112801", "Jacarezinho",          "Norte"),
+    ("4112801", "Joaquim Távora",       "Norte"),  # 4112801 é Joaquim Távora (Jacarezinho é 4111803); rótulo corrigido em 23/09/2026
     ("4115200", "Maringá",              "Noroeste"),
     ("4128104", "Umuarama",             "Noroeste"),
     ("4104204", "Campo Mourão",         "Noroeste"),

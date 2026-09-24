@@ -82,7 +82,7 @@ bgPreset: default
 
 # Uma semana depois: as três palavras que o painel cobra
 
-**Critério** é a régua que você escolhe para comparar. Na T2, a coluna de casos diz **onde tem mais gente doente**. A coluna de casos por 100 mil habitantes diz **onde a doença pesa mais para o tamanho da cidade**. Londrina ganha na primeira régua; Jacarezinho, na segunda.
+**Critério** é a régua que você escolhe para comparar. Na T2, a coluna de casos diz **onde tem mais gente doente**. A coluna de casos por 100 mil habitantes diz **onde a doença pesa mais para o tamanho da cidade**. Londrina ganha na primeira régua; Joaquim Távora, na segunda.
 
 **Padrão** é o que se repete. Na T1, março é o mês mais alto em 2024 **e** em 2025. Se repete nos dois anos, é padrão; se aparece em um ano só, pode ser acaso.
 
@@ -146,7 +146,7 @@ Para cada uma, diga em voz alta quais das quatro partes estão presentes e quais
 
 **A.** "Mandar o reforço para Londrina, porque teve mais casos."
 
-**B.** "Mandar o reforço para Jacarezinho em janeiro. Critério: casos por 100 mil, porque reforço serve para conter espalhamento. Jacarezinho tem 8.467 por 100 mil contra 5.578 de Londrina (T2). Londrina fica sem reforço extra, mas tem hospital de referência próprio."
+**B.** "Mandar o reforço para Joaquim Távora em janeiro. Critério: casos por 100 mil, porque reforço serve para conter espalhamento. Joaquim Távora tem 8.467 por 100 mil contra 5.578 de Londrina (T2). Londrina fica sem reforço extra, mas tem hospital de referência próprio."
 
 **C.** "Mandar para as duas, porque as duas estão ruins."
 
@@ -210,7 +210,7 @@ Passe a recomendação do caderno para o espaço do elemento 4 da `04_painel`. C
 |---|---|---|
 | 1. Decisão | o que fazer, onde, e quando? | "mandar o reforço para X em dezembro" |
 | 2. Critério | qual régua, e por que serve **para esta decisão**? | "casos por 100 mil, porque reforço é para conter espalhamento" |
-| 3. Número | com unidade, e a tabela e a linha ao lado? | "8.467 por 100 mil (T2, linha Jacarezinho)" |
+| 3. Número | com unidade, e a tabela e a linha ao lado? | "8.467 por 100 mil (T2, linha Joaquim Távora)" |
 | 4. Renúncia | o que se perde ao escolher assim? | "Londrina fica sem reforço extra, e tem 32.804 doentes" |
 
 </SlideTable>
@@ -225,7 +225,7 @@ bgPreset: default
 
 # Elemento 4 (cont.): antes de dar por pronta
 
-Londrina ou Jacarezinho: as duas têm defesa. Você é avaliado pela **defesa**, não pela cidade.
+Londrina ou Joaquim Távora: as duas têm defesa. Você é avaliado pela **defesa**, não pela cidade.
 
 Releia as quatro partes na aba. Se alguma responde a pergunta dela com "porque sim" ou com um número sem tabela, ela ainda não está pronta.
 

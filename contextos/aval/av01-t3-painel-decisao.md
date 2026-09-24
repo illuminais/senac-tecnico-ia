@@ -53,7 +53,7 @@ Aba `04_painel`, cabendo numa tela sem rolar, com cinco elementos:
 5. Uma pergunta que o dado **não** responde, e qual dado faltaria (rascunho 17/09, final 18/09)
 
 **A planilha é a fonte de verdade das interpretações.** Todo número do painel tem que existir em
-T1, T2 ou T3 e vir citado com a tabela e a linha ("8.467 por 100 mil, T2, linha Jacarezinho"). Na
+T1, T2 ou T3 e vir citado com a tabela e a linha ("8.467 por 100 mil, T2, linha Joaquim Távora"). Na
 conferência de mesa o professor pede "me mostra na tabela". Número que não existe em nenhuma tabela
 não veio do arquivo.
 
@@ -74,10 +74,10 @@ O dado sustenta **duas decisões opostas e igualmente defensáveis**:
 
 | Critério | 1º lugar | O outro |
 |---|---|---|
-| Casos absolutos | Londrina, 32.804 casos | Jacarezinho é o 16º, com 1.005 |
-| Casos por 100 mil | Jacarezinho, 8.467 por 100 mil | Londrina cai para 3º, com 5.578 |
+| Casos absolutos | Londrina, 32.804 casos | Joaquim Távora é o 16º, com 1.005 |
+| Casos por 100 mil | Joaquim Távora, 8.467 por 100 mil | Londrina cai para 3º, com 5.578 |
 
-Jacarezinho salta da 16ª para a 1ª posição só ao trocar o critério.
+Joaquim Távora salta da 16ª para a 1ª posição só ao trocar o critério.
 
 **A avaliação não é sobre qual cidade o aluno escolheu.** É sobre declarar o critério e sustentar
 a escolha. Sem ambiguidade real a evidência não passaria de nível 3 (Aplicar), e o Ind.6, cujo

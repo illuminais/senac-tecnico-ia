@@ -27,7 +27,7 @@ na sexta. Todo número do painel tem que existir numa tabela do arquivo e vir ci
 | 61-74 | UC01 | relação | expositivo | conceito; T3 região x taxa (Norte 5.989, Leste 634); relação não é causa | 18-20 | UC01-6 |
 | 74-84 | UC01 | limite do dado | pbl | notificação vs doença; Campo Mourão; Ex.4 pergunta que o dado não responde | 21-23 | UC01-6 |
 | 84-92 | UC01 | gráfico | expositivo | tipo por pergunta; 3 regras; o único como-fazer do dia, com os caminhos do Excel e do LibreOffice Calc | 24-27 | UC01-6 |
-| 92-105 | UC01 | decisão | pbl | Londrina 1º/3º vs Jacarezinho 16º/1º; os dois lados; as quatro partes; Ex.5 julgue A, B, C | 28-32 | UC01-6 |
+| 92-105 | UC01 | decisão | pbl | Londrina 1º/3º vs Joaquim Távora 16º/1º; os dois lados; as quatro partes; Ex.5 julgue A, B, C | 28-32 | UC01-6 |
 | 105-148 | UC01 | **Av01-T3 parte 1** | avaliacao | elementos 1, 2 e 5 do painel; extra: tabela dinâmica conferida contra T1 | 33-38 | UC01-4·5·6 |
 | 148-150 | UC01 | fecho | | tarefa: recomendação com 4 partes no caderno | 39-40 | |
 

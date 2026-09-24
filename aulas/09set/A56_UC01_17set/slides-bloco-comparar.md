@@ -199,7 +199,7 @@ Três municípios, ano de 2025, dados da sua planilha. Calcule a taxa por 100 mi
 | Município | Casos em 2025 | População |
 |---|---|---|
 | Londrina | 32.804 | 588.101 |
-| Jacarezinho | 1.005 | 11.870 |
+| Joaquim Távora | 1.005 | 11.870 |
 | Curitiba | 8.337 | 1.871.789 |
 
 </SlideTable>
@@ -210,12 +210,12 @@ Depois responda: **qual dos três é o pior caso?** E a resposta muda dependendo
 
 **Gabarito:**
 - Londrina: 32.804 ÷ 588.101 × 100000 = **5.578** por 100 mil
-- Jacarezinho: 1.005 ÷ 11.870 × 100000 = **8.467** por 100 mil
+- Joaquim Távora: 1.005 ÷ 11.870 × 100000 = **8.467** por 100 mil
 - Curitiba: 8.337 ÷ 1.871.789 × 100000 = **445** por 100 mil
 
-**Muda tudo.** Em casos absolutos a ordem é Londrina, Curitiba, Jacarezinho. Por 100 mil a ordem é Jacarezinho, Londrina, Curitiba.
+**Muda tudo.** Em casos absolutos a ordem é Londrina, Curitiba, Joaquim Távora. Por 100 mil a ordem é Joaquim Távora, Londrina, Curitiba.
 
-Jacarezinho tem **19 vezes** a taxa de Curitiba, e tem oito vezes menos casos que ela. Deixe esse número no ar: é o coração da avaliação de quarta.
+Joaquim Távora tem **19 vezes** a taxa de Curitiba, e tem oito vezes menos casos que ela. Deixe esse número no ar: é o coração da avaliação de quarta.
 
 </AdminOnly>
 

@@ -1,5 +1,8 @@
 # Conjunto de dados do épico UC01 — leia antes da A55
 
+
+> **Correção de rótulo, 23/09/2026:** o município de código IBGE **4112801** estava rotulado como "Jacarezinho", mas esse código é de **Joaquim Távora** (o de Jacarezinho é 4111803, com 40.375 habitantes no Censo 2022). Os casos e a população (11.870) sempre foram de Joaquim Távora. Só o nome foi corrigido, nas três planilhas, no banco do épico 2, na rubrica e nos slides. Nenhum número mudou. Os arquivos em `dist/` e o site publicado só mudam depois de um novo build e deploy.
+
 > Material do professor. Não distribuir para os alunos: contém o gabarito da limpeza.
 
 ## O que tem aqui
@@ -28,7 +31,7 @@ chegam prontas e o tempo vai para critério, padrão, relação, decisão e limi
 | **T3** | `A38:F42` | 4 macrorregionais: casos por 100 mil em 2025 (soma de casos ÷ soma de população), casos 2025, casos 2024, população, nº de municípios. Gráfico de relação (coluna) sai de `A38:B42` |
 
 **Regra da avaliação:** todo número do painel tem que existir numa dessas tabelas e vir citado com
-a tabela ("T2, linha Jacarezinho"). Na conferência de mesa, peça "me mostra na tabela".
+a tabela ("T2, linha Joaquim Távora"). Na conferência de mesa, peça "me mostra na tabela".
 
 **Canários (detecção de uso de IA).** O arquivo carrega, em `04_painel` (célula com fonte branca,
 abaixo do modelo) e na aba oculta `_notas`, uma instrução dirigida a assistentes de IA pedindo a
@@ -94,14 +97,14 @@ Noroeste 3.143, Leste 634. A relação "cidade menor, taxa maior" que a primeira
 
 | Critério | 1º lugar | Situação do outro |
 |---|---|---|
-| Casos absolutos | **Londrina**, 32.804 casos | Jacarezinho é só o 16º, com 1.005 casos |
-| Casos por 100 mil habitantes | **Jacarezinho**, 8.467 por 100 mil | Londrina cai para 3º, com 5.578 |
+| Casos absolutos | **Londrina**, 32.804 casos | Joaquim Távora é só o 16º, com 1.005 casos |
+| Casos por 100 mil habitantes | **Joaquim Távora**, 8.467 por 100 mil | Londrina cai para 3º, com 5.578 |
 
-Jacarezinho salta da 16ª posição para a 1ª só ao trocar o critério. Curitiba faz o caminho
-inverso: 7º em absoluto, 15º por 100 mil (445 por 100 mil, quase 19 vezes menos que Jacarezinho).
+Joaquim Távora salta da 16ª posição para a 1ª só ao trocar o critério. Curitiba faz o caminho
+inverso: 7º em absoluto, 15º por 100 mil (445 por 100 mil, quase 19 vezes menos que Joaquim Távora).
 
 **As duas respostas são defensáveis.** Londrina tem mais gente doente e mais pressão no hospital.
-Jacarezinho tem proporcionalmente muito mais gente adoecendo. O que separa Atendido de
+Joaquim Távora tem proporcionalmente muito mais gente adoecendo. O que separa Atendido de
 Parcialmente Atendido não é qual escolheu: é **declarar o critério e sustentar a escolha**.
 
 ## O gancho de criticidade
