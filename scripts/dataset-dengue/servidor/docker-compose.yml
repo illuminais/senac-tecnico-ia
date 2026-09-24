@@ -1,0 +1,49 @@
+# ---------------------------------------------------------------------------
+# Banco de dengue: épico 2, Banco de Dados (A59 a A63)
+#
+#   docker compose up -d          sobe e semeia tudo sozinho (uns 30 s na 1a vez)
+#   ./verificar.sh                confere e imprime o que vai no quadro
+#   docker compose down           desliga, mas GUARDA os dados das duplas
+#   docker compose down -v        desliga e APAGA tudo (recomeça do zero)
+#
+# A carga (initdb/01-dengue.sql) é gerada por ../banco.py e só roda com o
+# volume vazio. Mudou o script? Gere de novo e faça `down -v`.
+#
+# O `name: dengue` separa este projeto do servidor do abrigo da A47, que
+# também mora numa pasta chamada `servidor`. Sem isso o Compose acha que os
+# dois são o mesmo projeto e pode derrubar o abrigo junto.
+# ---------------------------------------------------------------------------
+
+name: dengue
+
+services:
+  dengue:
+    image: postgres:16
+    container_name: dengue
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-senac2026}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+
+    ports:
+      # PGBIND=127.0.0.1 prende no localhost (plano B, com ngrok)
+      # PGPORT=5433 se a 5432 estiver ocupada
+      - "${PGBIND:-0.0.0.0}:${PGPORT:-5432}:5432"
+
+    volumes:
+      - dengue_dados:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+
+    # 16 duplas, contas extras do Indicador 4, e o DBeaver abre mais de uma
+    # conexão por configuração. O padrão de 100 fica apertado.
+    command: ["postgres", "-c", "max_connections=200"]
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  dengue_dados:

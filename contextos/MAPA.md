@@ -20,6 +20,8 @@
 | Arquivo | O que é | Quando ler |
 |---|---|---|
 | `roteiro-t3.md` | **T3 em modelo de épicos:** uma UC por dia, ordem dos 9 épicos, data de fechamento de cada um | Planejar qualquer aula do T3 |
+| `epicos/ep02-uc08.md` | **Épico 2 (Banco de Dados, A59 a A63):** fio "Plantão da Vigilância", encontros com chamado do dia, molde de blocos de 50 min, argumentos contra cada aula, ordem de corte | **Ler antes de planejar qualquer aula de A59 a A63** |
+| `pesquisa-uc08-t3.md` | Pesquisa conferida do épico de Banco de Dados: erros típicos de SQL, estratégias com evidência, casos reais (GitLab 2017, Replit 2025, OWASP LLM06), teste de `pg_dump`/restore, bibliografia | Planejar ou avaliar qualquer aula de A59 a A63 |
 | `roteiro-t2.md` | Visão geral do T2: semanas, UCs, métodos, datas | Consultar histórico do T2 |
 | `semanas/horario-rotacao-t2.md` | Ciclo Sem1/Sem2/Sem3 com HA por UC e calendário semana a semana | Verificar qual UC toca em qual dia |
 | `semanas/semana01.md` | Plano operacional detalhado da semana 01 | Produzir ou revisar aulas da semana específica |

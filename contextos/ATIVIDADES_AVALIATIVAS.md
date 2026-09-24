@@ -303,7 +303,7 @@ Instrumento de dois atos só vale quando a UC tem 2 ou mais slots restantes **e 
 | Av | Épico | UC | Avaliação em | Recuperação em | Indicadores T3 | Estado |
 |---|---|---|---|---|---|---|
 | Av01-T3 | 1 | UC01 Fundamentos de Computação | A56 · 17/09 (parte 1) · A58 · 24/09 (parte 2) | A58 · 24/09 | 4, 5, 6 | ✅ [detalhada](aval/av01-t3-painel-decisao.md) · ⚠️ ajustar à A57 cancelada |
-| Av02-T3 | 2 | UC08 Banco de Dados | A63 · 09/10 | A63 · 09/10 | 4, 5, 6 | ⬜ pendente · ambiente dos Indicadores 4 e 6 até 30/09 |
+| Av02-T3 | 2 | UC08 Banco de Dados | A60 · 01/10 (parte 1, Ind. 5) e A62 · 08/10 (parte 2, Ind. 4 e 6) | A63 · 09/10 (só recuperação e 2ª chamada) | 4, 5, 6 | ⬜ pendente · Postgres + DBeaver, um banco por aluno · desenho em `contextos/epicos/ep02-uc08.md` |
 | Av03-T3 | 3 | UC05 Python para IA | A66 · 22/10 | A66 · 22/10 | 3, 4 | ⬜ pendente |
 | Av04-T3 | 4 | UC09 Estatística Aplicada | A69 · 30/10 | A69 · 30/10 | 7, 8, 9, 10 | ⬜ pendente |
 | Av05-T3 | 5 | UC07 Transformação Digital | A73 · 13/11 | A73 · 13/11 | 7, 8, 9, 10 | ⬜ pendente |
@@ -318,7 +318,7 @@ Instrumento único cobrindo os três indicadores, porque o épico é um projeto 
 recebe um arquivo sujo na A54 e entrega uma decisão defendida na A56, sempre no mesmo arquivo.
 
 O que torna a avaliação nível 4 (Analisar) e não nível 3: o dado sustenta **duas decisões
-opostas e defensáveis**. Londrina é 1ª em casos absolutos e Jacarezinho é 1ª por 100 mil
+opostas e defensáveis**. Londrina é 1ª em casos absolutos e Joaquim Távora é 1ª por 100 mil
 habitantes, sendo apenas a 16ª em absoluto. A menção não depende da cidade escolhida, e sim de
 declarar o critério e sustentar a escolha.
 
@@ -329,5 +329,5 @@ declarar o critério e sustentar a escolha.
 
 - **A82 (18/12) pode ser só Conselho de Classe.** Na ordem de 22/09 nenhuma avaliação depende dela: Inglês fecha a menção na A81. Se for Conselho, Inglês fica com 12 HA em vez de 18.
 - **UC07 e UC09 têm 4 indicadores cada** para fechar num épico só. Transformação Digital ainda paga o maior corte (−11 HA), então os Indicadores 8 e 10 precisam receber dado pronto dos épicos de Banco de Dados, Python e Estatística.
-- **Banco de Dados abre com 3 dias de preparo** e é a disciplina em que a turma está mais fraca. A59 e A60 cobrem só o Indicador 5 (consultas). Os Indicadores 4 (permissões) e 6 (backup) precisam de um ambiente decidido até 30/09, porque o SQLite não tem `GRANT`/`REVOKE`.
+- **Banco de Dados abre com 3 dias de preparo** e é a disciplina em que a turma está mais fraca. A59 e A60 cobrem só o Indicador 5 (consultas). Os Indicadores 4 (permissões) e 6 (backup) rodam no mesmo Postgres + DBeaver da A47 (decidido em 22/09, servidor em `scripts/dataset-dengue/servidor/`).
 - **Jogos escolares:** derrubaram a semana de 17/09 (A56 pela metade, A57 cancelada). Se voltarem, o dia perdido sai do épico em curso, e a avaliação dele não pode escorregar para depois do fim do épico.

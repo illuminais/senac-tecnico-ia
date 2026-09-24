@@ -26,10 +26,10 @@ modelo: epicos
 | 04 | A57 | 18/09 | **cancelada** (jogos escolares) | — 0 | — | — |
 | 05 | A58 | 24/09 | Ep1 fecha | UC01 6 | avaliacao | [S16](semanas/semana16.md) |
 | 06 | A59 | 25/09 | Ep2 d1/5 · Indicador 5 (consultas) | UC08 6 | live-coding | — |
-| 07 | A60 | 01/10 | Ep2 d2/5 · Indicador 5 | UC08 6 | live-coding | — |
-| 08 | A61 | 02/10 | Ep2 d3/5 · Indicadores 4 e 6 | UC08 6 | pbl | — |
-| 09 | A62 | 08/10 | Ep2 d4/5 | UC08 6 | pbl | — |
-| 10 | A63 | 09/10 | Ep2 fecha | UC08 6 | avaliacao | — |
+| 07 | A60 | 01/10 | Ep2 d2/5 · Indicador 5 + **Av02-T3 parte 1 (Ind. 5)** | UC08 6 | live-coding | — |
+| 08 | A61 | 02/10 | Ep2 d3/5 · Indicador 4 | UC08 6 | pbl | — |
+| 09 | A62 | 08/10 | Ep2 d4/5 · Indicador 6 + **Av02-T3 parte 2 (Ind. 4 e 6)** | UC08 6 | pbl | — |
+| 10 | A63 | 09/10 | Ep2 fecha · **só recuperação e 2ª chamada** + menção | UC08 6 | recuperacao | — |
 | 11 | A64 | 15/10 | Ep3 d1/3 | UC05 6 | live-coding | — |
 | 12 | A65 | 16/10 | Ep3 d2/3 | UC05 6 | live-coding | — |
 | 13 | A66 | 22/10 | Ep3 fecha | UC05 6 | avaliacao | — |
@@ -66,7 +66,7 @@ modelo: epicos
 
 ### Por que esta ordem (resumo)
 
-- **Banco de Dados na sexta 25/09:** roda no navegador (sqliteonline), sem risco de instalação no laboratório. A59 e A60 só com o Indicador 5 (consultas) sobre o mesmo dado de dengue que a turma limpou em UC01. O ambiente dos Indicadores 4 (permissões) e 6 (backup) precisa estar decidido no épico **até 30/09**, porque o SQLite não tem `GRANT`/`REVOKE`.
+- **Banco de Dados na sexta 25/09:** sem instalação nova no laboratório. O DBeaver já está nas máquinas desde a A47, e o Postgres 16 roda em Docker na máquina do professor (`scripts/dataset-dengue/servidor/`). Decidido em 22/09; o sqliteonline saiu do épico. A59 e A60 só com o Indicador 5 (consultas) sobre o mesmo dado de dengue que a turma limpou em UC01, agora no banco `dengue_NN` de cada aluno (um por aluno, decisão de 23/09). O mesmo servidor atende os Indicadores 4 (`CREATE ROLE`, `GRANT`, `REVOKE`, revisados do zero) e 6 (`pg_dump` e restore). Referências em `contextos/pesquisa-uc08-t3.md`.
 - **Python logo antes de Estatística:** o pandas é usado em dois épicos seguidos (`value_counts`, `mean`, `std` são os Indicadores 8, 9 e 10 de Estatística).
 - **Transformação Digital depois do bloco de dados:** os Indicadores 8 e 10 recebem dado pronto; é quem mais paga o déficit (−11).
 - **Inglês por último:** cada dia é um texto técnico independente, e a menção fecha com as evidências diárias. É a UC que melhor aguenta a falta de dezembro.
