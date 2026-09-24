@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "59"
+slug: "a59-uc08-25set"
+title: "Plantao da Vigilancia: consultas"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-09-25"
+
+# em-planejamento | ready | published
+status: em-planejamento
+
+deployUrl: ""
+
+agentsUsed: []

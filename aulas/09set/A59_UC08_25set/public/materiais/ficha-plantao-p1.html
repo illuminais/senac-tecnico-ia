@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A59: ficha do plantão, página 1 (frente e verso)</title>
+<!--
+  Uma folha A4 por aluno, impressa frente e verso. Os nomes dos campos são os mesmos dos slides:
+  "linhas da tabela" (slide 8), os cinco campos de cada pergunta (slide 6), as 4 etapas no quadro
+  da pergunta 3 (slide 45), as três previsões dos exemplos (slides 35, 38 e 46) e o desafio no verso (slide 54).
+-->
+<style>
+@page { size: A4; margin: 9mm 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; font-size: 9.5pt; }
+code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 9pt; }
+.pagina { width: 190mm; min-height: 277mm; display: flex; flex-direction: column; gap: 3mm;
+          page-break-after: always; break-after: page; }
+.pagina:last-child { page-break-after: auto; break-after: auto; }
+.topo { display: flex; justify-content: space-between; align-items: flex-end;
+        border-bottom: 2px solid #111; padding-bottom: 2mm; }
+.topo h1 { margin: 0; font-size: 15pt; }
+.topo p { margin: 0; font-size: 8.5pt; color: #444; text-align: right; }
+.id { display: grid; grid-template-columns: 1fr 45mm 45mm; gap: 4mm; }
+.campo { border-bottom: 1px solid #111; padding-top: 5mm; font-size: 8pt; color: #444; }
+.caixa { border: 1.2px solid #111; border-radius: 2mm; padding: 2mm 3mm; }
+.caixa h2 { margin: 0 0 1.5mm; font-size: 10.5pt; }
+.caixa h2 span { font-weight: 400; color: #444; font-size: 8.5pt; }
+.linha { display: flex; gap: 4mm; align-items: flex-end; margin: 1.2mm 0; }
+.linha b { white-space: nowrap; font-size: 9pt; }
+.traco { flex: 1; border-bottom: 1px solid #777; height: 5mm; }
+.curto { flex: 0 0 28mm; }
+.pautas { margin: 1mm 0 1.5mm; }
+.pautas div { border-bottom: 1px solid #bbb; height: 6.5mm; }
+.marcas { font-size: 9pt; white-space: nowrap; }
+.etapas { display: grid; grid-template-columns: 1fr; gap: 0; margin: 1mm 0 1.5mm; }
+.etapas .linha { margin: 0.6mm 0; }
+.nota { font-size: 8pt; color: #444; margin: 0; }
+.previsoes { display: grid; grid-template-columns: 1fr; gap: 2mm; }
+@media screen { body { background: #ddd; } .pagina { background: #fff; margin: 8mm auto; padding: 9mm 10mm; width: 210mm; } }
+</style>
+</head>
+<body>
+
+<!-- ====================== FRENTE ====================== -->
+<div class="pagina">
+  <div class="topo">
+    <h1>Plantão da Vigilância · ficha do analista</h1>
+    <p>Página 1 · 25/09/2026 · Banco de Dados<br>A previsão vem antes do computador. Previsão errada não se apaga.</p>
+  </div>
+
+  <div class="id">
+    <div class="campo">Nome</div>
+    <div class="campo">Número da chamada (NN)</div>
+    <div class="campo">Meu banco: <code>dengue_</code></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Linhas da tabela <span>· bloco 1, sem computador; conferência no bloco 3</span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linhas. A conta que fiz:</b><div class="traco"></div></div>
+    <div class="linha"><b>O número que o <code>count(*)</code> devolveu:</b><div class="traco curto"></div><span class="marcas">Bateu? ☐ sim ☐ não</span></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Pergunta 1 · Quantos casos Londrina teve em março de 2025?</h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s), número</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div></div>
+    <div class="linha"><b>O número do banco:</b><div class="traco curto"></div><b>Onde conferi:</b><span class="marcas">☐ cartão ☐ T1 ☐ T2 ☐ T3</span><div class="traco"></div></div>
+    <div class="linha"><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span><b>Se não, por quê:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Preveja: 1, 12 ou 408 linhas? <span>· a consulta de Maringá com <code>SUM</code></span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>Por quê:</b><div class="traco"></div></div>
+    <div class="linha"><b>O banco devolveu:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Pergunta 2 · Quantos casos Londrina teve em 2025 inteiro?</h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s), número</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div></div>
+    <div class="linha"><b>O número do banco:</b><div class="traco curto"></div><b>Onde conferi:</b><span class="marcas">☐ cartão ☐ T1 ☐ T2 ☐ T3</span><div class="traco"></div></div>
+    <div class="linha"><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span><b>Se não, por quê:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Preveja: o que volta? <span>· a consulta com <code>macrorregional = 'Norte' AND macrorregional = 'Noroeste'</code></span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s), número</b><div class="traco"></div></div>
+    <div class="linha"><b>O banco devolveu:</b><div class="traco"></div></div>
+  </div>
+  <div class="caixa">
+    <h2>Preveja: roda ou dá erro? <span>· a consulta com <code>GROUP BY municipio</code> e <code>ano</code> no <code>SELECT</code></span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco"></div></div>
+    <div class="linha"><b>O banco devolveu:</b><div class="traco"></div></div>
+  </div>
+</div>
+
+<!-- ====================== VERSO ====================== -->
+<div class="pagina">
+  <div class="topo">
+    <h1>Plantão da Vigilância · verso</h1>
+    <p>Página 1 · 25/09/2026</p>
+  </div>
+
+  <div class="caixa">
+    <h2>Pergunta 3 · Quantos casos cada macrorregional teve em 2025?</h2>
+    <p class="nota">Antes de escrever a consulta, responda as 4 etapas do cartão para esta pergunta.</p>
+    <div class="etapas">
+      <div class="linha"><b>1. Filtrar linhas (<code>WHERE</code>):</b><div class="traco"></div></div>
+      <div class="linha"><b>2. Definir o grupo (<code>GROUP BY</code>):</b><div class="traco"></div></div>
+      <div class="linha"><b>3. Calcular o resumo (<code>SUM</code>):</b><div class="traco"></div></div>
+      <div class="linha"><b>4. Filtrar grupos:</b><span class="nota">fica vazia hoje</span></div>
+    </div>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s)</b></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="linha"><b>Os números do banco:</b><div class="traco"></div></div>
+    <div class="linha"><b>Onde conferi:</b><span class="marcas">☐ cartão ☐ T1 ☐ T2 ☐ T3</span><div class="traco"></div><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Pergunta 4 · Quais os 5 municípios com mais casos em 2025?</h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="linha"><b>Os 5 do banco:</b><div class="traco"></div></div>
+    <div class="linha"><b>Onde conferi:</b><span class="marcas">☐ cartão ☐ T1 ☐ T2 ☐ T3</span><div class="traco"></div><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Pergunta 5 · Em que mês de 2025 houve mais casos?</h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s), mês</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="linha"><b>O mês e o número do banco:</b><div class="traco"></div></div>
+    <div class="linha"><b>Onde conferi:</b><span class="marcas">☐ cartão ☐ T1 ☐ T2 ☐ T3</span><div class="traco"></div><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Desafio · Qual município perdeu mais casos de 2024 para 2025? <span>· para quem terminou as 5 perguntas</span></h2>
+    <div class="linha"><b>Município:</b><div class="traco"></div><b>2024:</b><div class="traco curto"></div><b>2025:</b><div class="traco curto"></div><b>Diferença:</b><div class="traco curto"></div></div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -209,7 +209,10 @@
     "export:a56-uc01-17set": "npm run export --workspace=a56-uc01-17set",
     "dev:a58-uc01-24set": "npm run dev --workspace=a58-uc01-24set",
     "build:a58-uc01-24set": "npm run build --workspace=a58-uc01-24set",
-    "export:a58-uc01-24set": "npm run export --workspace=a58-uc01-24set"
+    "export:a58-uc01-24set": "npm run export --workspace=a58-uc01-24set",
+    "dev:a59-uc08-25set": "npm run dev --workspace=a59-uc08-25set",
+    "build:a59-uc08-25set": "npm run build --workspace=a59-uc08-25set",
+    "export:a59-uc08-25set": "npm run export --workspace=a59-uc08-25set"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260730.1",

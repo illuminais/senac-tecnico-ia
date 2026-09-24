@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A59: cartão das 4 etapas (4 por folha)</title>
+<!--
+  Um cartão por aluno, entregue no começo do bloco 5 (slide 42). Fica na mesa o épico inteiro.
+  A etapa 4 fica em branco: em 01/10 o aluno escreve nela o comando que filtra grupos.
+  Base: exemplo resolvido com etapas nomeadas (Margulieux, Morrison e Decker, 2019), ver contextos/pesquisa-uc08-t3.md.
+  30 alunos: imprimir 8 folhas.
+-->
+<style>
+@page { size: A4; margin: 8mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; }
+.folha { width: 194mm; height: 281mm; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.cartao { border: 1px dashed #888; padding: 6mm; display: flex; flex-direction: column; gap: 2.2mm; }
+h1 { margin: 0; font-size: 13pt; line-height: 1.2; }
+.sub { margin: 0; font-size: 8.5pt; color: #444; }
+.etapa { display: grid; grid-template-columns: 8mm 1fr; gap: 2mm; align-items: start;
+         border-top: 1px solid #ccc; padding-top: 1.8mm; }
+.num { font-size: 18pt; font-weight: 800; line-height: 1; }
+.etapa p { margin: 0; font-size: 9pt; line-height: 1.3; }
+.etapa b { font-size: 10pt; }
+code, pre { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+code { font-size: 8.5pt; background: #eee; padding: 0 1mm; border-radius: 1mm; }
+.branco { display: inline-block; width: 26mm; border-bottom: 1px solid #111; }
+.ordem { margin: 0; font-size: 8pt; border: 1px solid #111; border-radius: 1.5mm; padding: 1.5mm 2mm; }
+pre { margin: 0; font-size: 7.3pt; line-height: 1.35; background: #f3f3f3; padding: 2mm; border-radius: 1.5mm; }
+.nome { margin-top: auto; font-size: 8pt; color: #444; border-bottom: 1px solid #111; padding-top: 3mm; }
+@media screen { body { background: #ddd; } .folha { background: #fff; margin: 8mm auto; } }
+</style>
+</head>
+<body>
+<div class="folha">
+<!-- o mesmo cartão, 4 vezes -->
+<section class="cartao">
+  <h1>As 4 etapas de uma consulta com grupos</h1>
+  <p class="sub">Responda as 4, nesta ordem, antes de escrever a consulta.</p>
+  <div class="etapa"><span class="num">1</span><p><b>Filtrar linhas</b> · <code>WHERE</code><br>Quais linhas entram na conta?</p></div>
+  <div class="etapa"><span class="num">2</span><p><b>Definir o grupo</b> · <code>GROUP BY</code><br>O resultado tem uma linha para cada o quê?</p></div>
+  <div class="etapa"><span class="num">3</span><p><b>Calcular o resumo</b> · <code>SUM</code> dentro do <code>SELECT</code><br>O que calcular em cada grupo?</p></div>
+  <div class="etapa"><span class="num">4</span><p><b>Filtrar grupos</b> · comando de 01/10: <span class="branco"></span><br>Quais grupos ficam no resultado?</p></div>
+  <pre>SELECT macrorregional, SUM(casos) AS total  ← 3
+FROM casos_dengue
+WHERE ano = 2025 AND mes = 3                ← 1
+GROUP BY macrorregional                     ← 2
+ORDER BY total DESC;</pre>
+  <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
+  <p class="nome">Nome</p>
+</section>
+<section class="cartao">
+  <h1>As 4 etapas de uma consulta com grupos</h1>
+  <p class="sub">Responda as 4, nesta ordem, antes de escrever a consulta.</p>
+  <div class="etapa"><span class="num">1</span><p><b>Filtrar linhas</b> · <code>WHERE</code><br>Quais linhas entram na conta?</p></div>
+  <div class="etapa"><span class="num">2</span><p><b>Definir o grupo</b> · <code>GROUP BY</code><br>O resultado tem uma linha para cada o quê?</p></div>
+  <div class="etapa"><span class="num">3</span><p><b>Calcular o resumo</b> · <code>SUM</code> dentro do <code>SELECT</code><br>O que calcular em cada grupo?</p></div>
+  <div class="etapa"><span class="num">4</span><p><b>Filtrar grupos</b> · comando de 01/10: <span class="branco"></span><br>Quais grupos ficam no resultado?</p></div>
+  <pre>SELECT macrorregional, SUM(casos) AS total  ← 3
+FROM casos_dengue
+WHERE ano = 2025 AND mes = 3                ← 1
+GROUP BY macrorregional                     ← 2
+ORDER BY total DESC;</pre>
+  <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
+  <p class="nome">Nome</p>
+</section>
+<section class="cartao">
+  <h1>As 4 etapas de uma consulta com grupos</h1>
+  <p class="sub">Responda as 4, nesta ordem, antes de escrever a consulta.</p>
+  <div class="etapa"><span class="num">1</span><p><b>Filtrar linhas</b> · <code>WHERE</code><br>Quais linhas entram na conta?</p></div>
+  <div class="etapa"><span class="num">2</span><p><b>Definir o grupo</b> · <code>GROUP BY</code><br>O resultado tem uma linha para cada o quê?</p></div>
+  <div class="etapa"><span class="num">3</span><p><b>Calcular o resumo</b> · <code>SUM</code> dentro do <code>SELECT</code><br>O que calcular em cada grupo?</p></div>
+  <div class="etapa"><span class="num">4</span><p><b>Filtrar grupos</b> · comando de 01/10: <span class="branco"></span><br>Quais grupos ficam no resultado?</p></div>
+  <pre>SELECT macrorregional, SUM(casos) AS total  ← 3
+FROM casos_dengue
+WHERE ano = 2025 AND mes = 3                ← 1
+GROUP BY macrorregional                     ← 2
+ORDER BY total DESC;</pre>
+  <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
+  <p class="nome">Nome</p>
+</section>
+<section class="cartao">
+  <h1>As 4 etapas de uma consulta com grupos</h1>
+  <p class="sub">Responda as 4, nesta ordem, antes de escrever a consulta.</p>
+  <div class="etapa"><span class="num">1</span><p><b>Filtrar linhas</b> · <code>WHERE</code><br>Quais linhas entram na conta?</p></div>
+  <div class="etapa"><span class="num">2</span><p><b>Definir o grupo</b> · <code>GROUP BY</code><br>O resultado tem uma linha para cada o quê?</p></div>
+  <div class="etapa"><span class="num">3</span><p><b>Calcular o resumo</b> · <code>SUM</code> dentro do <code>SELECT</code><br>O que calcular em cada grupo?</p></div>
+  <div class="etapa"><span class="num">4</span><p><b>Filtrar grupos</b> · comando de 01/10: <span class="branco"></span><br>Quais grupos ficam no resultado?</p></div>
+  <pre>SELECT macrorregional, SUM(casos) AS total  ← 3
+FROM casos_dengue
+WHERE ano = 2025 AND mes = 3                ← 1
+GROUP BY macrorregional                     ← 2
+ORDER BY total DESC;</pre>
+  <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
+  <p class="nome">Nome</p>
+</section>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* Aula 59: grades ANTES e DEPOIS dentro do painel de saída do layout code-output.
+   Duas grades lado a lado cabem com até uns 50 caracteres por linha cada uma.
+   Grade mais larga (a tabela com as 7 colunas) usa .uma-coluna e fica embaixo da outra. */
+
+.slidev-layout .antes-depois {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.slidev-layout .antes-depois.uma-coluna {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+}
+
+.slidev-layout .co-output .antes-depois pre,
+.slidev-layout .co-output .antes-depois .slidev-code {
+  font-size: 0.78rem !important;
+  line-height: 1.3 !important;
+  padding: 0.45rem 0.6rem !important;
+}
+
+.slidev-layout .co-output .antes-depois p {
+  font-size: 0.8rem !important;
+  line-height: 1.3 !important;
+  margin: 0 0 0.25rem !important;
+}
