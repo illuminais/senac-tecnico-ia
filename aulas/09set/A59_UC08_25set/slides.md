@@ -297,11 +297,9 @@ Os 34 cartões juntos formam uma tabela, que aqui chamamos de `cartoes`. Ela exi
 Nos slides das rodadas, as grades mostram algumas linhas e só as colunas que a rodada usa.
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 12: Rodada 1, SELECT * -->
@@ -313,6 +311,20 @@ outputTone: neutral
 **O comando:** "Cada um lê o seu cartão em voz alta."
 
 `FROM cartoes` diz **de qual tabela** vêm as linhas. `SELECT` diz **quais colunas** voltam, e o `*` quer dizer "todas as colunas". Sem mais nada, voltam as 34 linhas, cada uma com as 7 colunas.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 12x: Rodada 1, SELECT * (cont.) -->
+
+<!-- objetivo: aluno confere na grade que SELECT * sem mais nada devolve todas as linhas e todas as colunas -->
+
+# Rodada 1 · `SELECT * FROM cartoes`: todo mundo lê (cont.)
 
 ::output::
 
@@ -340,11 +352,9 @@ outputTone: neutral
 **Ordem em que o banco executa, até agora:** `FROM cartoes` → `SELECT *`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 13: Rodada 2, WHERE -->
@@ -356,6 +366,20 @@ outputTone: neutral
 **O comando:** "Fiquem de pé só os cartões de março."
 
 `WHERE` testa uma condição **em cada linha, uma por uma**. A linha em que a condição é verdadeira fica no resultado; as outras saem (continuam na tabela, só não voltam). `mes = 3` é verdadeiro quando o mês do cartão é 3. O `SELECT` escolhe colunas; o `WHERE` escolhe linhas.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 13x: Rodada 2, WHERE (cont.) -->
+
+<!-- objetivo: aluno vê na grade quais linhas o WHERE mes = 3 deixa e quais tira -->
+
+# Rodada 2 · `WHERE mes = 3`: de pé, só março (cont.)
 
 ::output::
 
@@ -396,11 +420,9 @@ Toledo    |   3 |  1844
 **Ordem em que o banco executa, até agora:** `FROM cartoes` → `WHERE mes = 3` → `SELECT *`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 14: Rodada 3, AND -->
@@ -412,6 +434,20 @@ outputTone: neutral
 **O comando:** "De pé, só os cartões de março **e** da macrorregional Oeste."
 
 `AND` junta duas condições. A linha fica só se **as duas** forem verdadeiras **no mesmo cartão**. Texto vai entre aspas simples: `WHERE mes = 3 AND macrorregional = 'Oeste'`. Ficam 5 pessoas de pé.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 14x: Rodada 3, AND (cont.) -->
+
+<!-- objetivo: aluno vê na grade que o AND só deixa a linha que cumpre as duas condições -->
+
+# Rodada 3 · `AND`: março e Oeste (cont.)
 
 ::output::
 
@@ -452,11 +488,9 @@ Toledo            |  1844
 **Ordem em que o banco executa, até agora:** `FROM cartoes` → `WHERE mes = 3 AND macrorregional = 'Oeste'` → `SELECT *`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 15: Rodada 4, Norte e Noroeste, o erro silencioso -->
@@ -468,6 +502,26 @@ outputTone: neutral
 **O comando:** "De pé, quem é da macrorregional Norte **e** da Noroeste." No quadro: `WHERE macrorregional = 'Norte' AND macrorregional = 'Noroeste'`.
 
 Cada cartão tem **uma** macrorregional. Nenhuma linha é Norte e Noroeste ao mesmo tempo, então o `AND` não deixa ninguém. O banco devolve uma tabela vazia e **nenhuma mensagem de erro**. Isso é um **erro silencioso**: a consulta roda e a resposta está errada. Só percebe quem tinha previsto que o Norte e o Noroeste têm casos.
+
+<!--
+Professor: o estudo por trás do "prever antes de rodar" é Tucker, Wang, Son e Stigler (2024),
+Learning and Instruction 91, 101871. Com 121 universitários sem experiência, quem previa a saída
+aprendeu mais e reagiu melhor às mensagens de erro. Fica aqui, não no slide.
+-->
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 15x: Rodada 4, Norte e Noroeste, o erro silencioso (cont.) -->
+
+<!-- objetivo: aluno vê na grade que o AND contraditório tira todas as linhas e o banco não avisa -->
+
+# Rodada 4 · Norte **e** Noroeste: ninguém levanta (cont.)
 
 ::output::
 
@@ -499,18 +553,10 @@ municipio | macrorregional
 </div>
 </div>
 
-<!--
-Professor: o estudo por trás do "prever antes de rodar" é Tucker, Wang, Son e Stigler (2024),
-Learning and Instruction 91, 101871. Com 121 universitários sem experiência, quem previa a saída
-aprendeu mais e reagiu melhor às mensagens de erro. Fica aqui, não no slide.
--->
-
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 16: Rodada 4 (cont.), OR e IN -->
@@ -522,6 +568,20 @@ outputTone: neutral
 **O comando:** "Agora, de pé quem é da Norte **ou** da Noroeste." Levantam 14 cartões: 7 municípios, março e abril.
 
 `OR` (ou): a linha fica se **pelo menos uma** condição for verdadeira. `IN ('Norte', 'Noroeste')`: a linha fica se o valor estiver **na lista**. É o mesmo resultado do `OR`, escrito mais curto. Quando alguém pede "os casos do Norte e do Noroeste", em SQL isso é `IN`.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 16x: Rodada 4 (cont.), OR e IN (cont.) -->
+
+<!-- objetivo: aluno vê na grade que o IN deixa a linha que cumpre pelo menos uma das condições -->
+
+# Rodada 4 (cont.) · `OR` e `IN`: Norte **ou** Noroeste (cont.)
 
 ::output::
 
@@ -561,11 +621,9 @@ Londrina       | Norte          |   4
 **Ordem em que o banco executa, até agora:** `FROM cartoes` → `WHERE macrorregional IN ('Norte', 'Noroeste')` → `SELECT *`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 17: Rodada 5, GROUP BY -->
@@ -577,6 +635,20 @@ outputTone: neutral
 **O comando:** "Só os cartões de março. Cada um vai para o canto da sua macrorregional."
 
 `GROUP BY macrorregional` junta numa **pilha** as linhas que têm o mesmo valor na coluna `macrorregional`. As 17 linhas de março viram 4 pilhas: Leste com 5 cartões, Noroeste com 4, Norte com 3, Oeste com 5. No resultado, **cada pilha vira uma linha**. O que está dentro dela só aparece com um resumo, como a soma da rodada 6.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 17x: Rodada 5, GROUP BY (cont.) -->
+
+<!-- objetivo: aluno vê na grade as 17 linhas de março virando 4 pilhas, uma linha por pilha -->
+
+# Rodada 5 · `GROUP BY macrorregional`: cada um no seu canto (cont.)
 
 ::output::
 
@@ -617,11 +689,9 @@ Oeste
 **Ordem, até agora:** `FROM cartoes` → `WHERE mes = 3` → `GROUP BY macrorregional` → `SELECT macrorregional`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 18: Rodada 6, SUM -->
@@ -633,6 +703,20 @@ outputTone: neutral
 **O comando:** "Cada canto soma os casos dos seus cartões." Use a calculadora do celular.
 
 `SUM(casos)` soma os valores da coluna `casos`. Com o `GROUP BY`, a soma é feita **dentro de cada pilha**, e cada pilha vira uma linha com o total. No canto Leste: 2.070 + 312 + 321 + 1.153 + 215 = **4.071**. Uma função que transforma várias linhas em um número só se chama **função de agregação**.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 18x: Rodada 6, SUM (cont.) -->
+
+<!-- objetivo: aluno vê na grade a pilha Leste virar uma soma e as 4 pilhas virarem 4 linhas com o total -->
+
+# Rodada 6 · `SUM(casos)`: cada canto soma (cont.)
 
 ::output::
 
@@ -673,11 +757,9 @@ Oeste          |  8319
 **Ordem, até agora:** `FROM cartoes` → `WHERE mes = 3` → `GROUP BY macrorregional` → `SELECT macrorregional, SUM(casos)`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 19: Rodada 7, ORDER BY DESC -->
@@ -689,6 +771,20 @@ outputTone: neutral
 **O comando:** "Os 4 cantos formam uma fila: o canto com mais casos na frente."
 
 `ORDER BY` arruma as linhas do resultado pela coluna que você escolher. `DESC` (do inglês *descending*, decrescente) põe do maior para o menor. `ASC` (*ascending*, crescente) põe do menor para o maior, e é o que o banco faz quando você não escreve nenhum dos dois. Nenhuma linha entra ou sai: muda só a ordem.
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 19x: Rodada 7, ORDER BY DESC (cont.) -->
+
+<!-- objetivo: aluno vê na grade que o ORDER BY muda só a ordem, sem tirar nem pôr linha -->
+
+# Rodada 7 · `ORDER BY ... DESC`: a fila do maior para o menor (cont.)
 
 ::output::
 
@@ -728,11 +824,9 @@ Leste          |  4071
 **Ordem, até agora:** `FROM` → `WHERE mes = 3` → `GROUP BY macrorregional` → `SELECT macrorregional, SUM(casos)` → `ORDER BY SUM(casos) DESC`
 
 ---
-layout: code-output
+layout: default
 card: true
 bgPreset: default
-outputLabel: "Antes e depois"
-outputTone: neutral
 ---
 
 <!-- SLIDE 20: A consulta do SQL humano no banco, e o AS -->
@@ -756,6 +850,20 @@ Oeste|8319
 Noroeste|6553
 Leste|4071
 -->
+
+---
+layout: code-output
+card: true
+bgPreset: default
+outputLabel: "Antes e depois"
+outputTone: neutral
+---
+
+<!-- SLIDE 20x: A consulta do SQL humano no banco, e o AS (cont.) -->
+
+<!-- objetivo: aluno vê na grade as 408 linhas do banco virarem os 4 números que os cantos somaram -->
+
+# A consulta do SQL humano, no banco, e o `AS` (cont.)
 
 ::output::
 
