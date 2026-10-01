@@ -303,7 +303,7 @@ Instrumento de dois atos só vale quando a UC tem 2 ou mais slots restantes **e 
 | Av | Épico | UC | Avaliação em | Recuperação em | Indicadores T3 | Estado |
 |---|---|---|---|---|---|---|
 | Av01-T3 | 1 | UC01 Fundamentos de Computação | A56 · 17/09 (parte 1) · A58 · 24/09 (parte 2) | A58 · 24/09 | 4, 5, 6 | ✅ [detalhada](aval/av01-t3-painel-decisao.md) · ⚠️ ajustar à A57 cancelada |
-| Av02-T3 | 2 | UC08 Banco de Dados | A60 · 01/10 (parte 1, Ind. 5) e A62 · 08/10 (parte 2, Ind. 4 e 6) | A63 · 09/10 (só recuperação e 2ª chamada) | 4, 5, 6 | ⬜ pendente · Postgres + DBeaver, um banco por aluno · desenho em `contextos/epicos/ep02-uc08.md` |
+| Av02-T3 | 2 | UC08 Banco de Dados | A61 · 02/10 (parte 1, Ind. 5, no meio do dia; era A60, mudou em 29/09) e A62 · 08/10 (parte 2, Ind. 4 e 6: o incidente é a prova) | A63 · 09/10 (plantão final: prova para todos, que por dentro é a recuperação e a 2ª chamada; não anunciar como rec; quem já tem A não perde) | 4, 5, 6 | ✅ [detalhada](aval/av02-t3-plantao.md) em 30/09 · Postgres + DBeaver, um banco por aluno · desenho em `contextos/epicos/ep02-uc08.md` |
 | Av03-T3 | 3 | UC05 Python para IA | A66 · 22/10 | A66 · 22/10 | 3, 4 | ⬜ pendente |
 | Av04-T3 | 4 | UC09 Estatística Aplicada | A69 · 30/10 | A69 · 30/10 | 7, 8, 9, 10 | ⬜ pendente |
 | Av05-T3 | 5 | UC07 Transformação Digital | A73 · 13/11 | A73 · 13/11 | 7, 8, 9, 10 | ⬜ pendente |
@@ -329,5 +329,5 @@ declarar o critério e sustentar a escolha.
 
 - **A82 (18/12) pode ser só Conselho de Classe.** Na ordem de 22/09 nenhuma avaliação depende dela: Inglês fecha a menção na A81. Se for Conselho, Inglês fica com 12 HA em vez de 18.
 - **UC07 e UC09 têm 4 indicadores cada** para fechar num épico só. Transformação Digital ainda paga o maior corte (−11 HA), então os Indicadores 8 e 10 precisam receber dado pronto dos épicos de Banco de Dados, Python e Estatística.
-- **Banco de Dados abre com 3 dias de preparo** e é a disciplina em que a turma está mais fraca. A59 e A60 cobrem só o Indicador 5 (consultas). Os Indicadores 4 (permissões) e 6 (backup) rodam no mesmo Postgres + DBeaver da A47 (decidido em 22/09, servidor em `scripts/dataset-dengue/servidor/`).
+- **Banco de Dados** é a disciplina em que a turma está mais fraca. A A59 só fechou o bloco 1 (atividade extraclasse no começo da aula) e o resto virou a A60. Desde 30/09, um indicador por dia: A61 avalia o 5 e ensina o 4; A62 ensina o 6 e avalia o 4 e o 6 dentro do incidente. Os Indicadores 4 (permissões) e 6 (backup) rodam no mesmo Postgres + DBeaver da A47 (decidido em 22/09, servidor em `scripts/dataset-dengue/servidor/`).
 - **Jogos escolares:** derrubaram a semana de 17/09 (A56 pela metade, A57 cancelada). Se voltarem, o dia perdido sai do épico em curso, e a avaliação dele não pode escorregar para depois do fim do épico.

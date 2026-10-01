@@ -9,7 +9,7 @@ PORTA="${PGPORT:-5432}"
 falhas=0
 
 # como o aluno NN, pela rede (-h localhost), igual ao DBeaver dele
-# Os testes que criam e apagam coisas usam o aluno 32, uma das contas de folga.
+# Os testes que criam e apagam coisas usam o aluno 42, uma das contas de folga.
 sql() { local n=$1 db=$2; shift 2
   docker exec -i -e PGPASSWORD="dengue$n" dengue psql -h localhost -U "aluno$n" -d "$db" -v ON_ERROR_STOP=1 -tA "$@"; }
 adm() { docker exec -i dengue psql -U postgres -tA "$@"; }
@@ -48,33 +48,33 @@ j=$(sql 01 dengue_01 -c "SELECT count(*) FROM casos_dengue c JOIN municipios m U
 [ "$j" = "$LINHAS" ] && ok "JOIN com municipios casa as $LINHAS linhas" || falha "JOIN devolveu $j linhas"
 
 # 3. Indicador 4: o aluno cria conta, dá SELECT numa VIEW e a conta é barrada na tabela
-sql 32 dengue_32 -q >/dev/null 2>&1 <<SQL
+sql 42 dengue_42 -q >/dev/null 2>&1 <<SQL
 DROP VIEW IF EXISTS smoke_resumo;
-DROP ROLE IF EXISTS smoke_32;
+DROP ROLE IF EXISTS smoke_42;
 CREATE VIEW smoke_resumo AS SELECT municipio, ano, SUM(casos) AS total FROM casos_dengue GROUP BY municipio, ano;
-CREATE ROLE smoke_32 LOGIN PASSWORD 'smoke';
-GRANT SELECT ON smoke_resumo TO smoke_32;
+CREATE ROLE smoke_42 LOGIN PASSWORD 'smoke';
+GRANT SELECT ON smoke_resumo TO smoke_42;
 SQL
-v=$(docker exec -e PGPASSWORD=smoke dengue psql -h localhost -U smoke_32 -d dengue_32 -tAc "SELECT count(*) FROM smoke_resumo" 2>/dev/null)
-neg=$(docker exec -e PGPASSWORD=smoke dengue psql -h localhost -U smoke_32 -d dengue_32 -c "SELECT * FROM casos_dengue" 2>&1 | grep -c "permission denied")
+v=$(docker exec -e PGPASSWORD=smoke dengue psql -h localhost -U smoke_42 -d dengue_42 -tAc "SELECT count(*) FROM smoke_resumo" 2>/dev/null)
+neg=$(docker exec -e PGPASSWORD=smoke dengue psql -h localhost -U smoke_42 -d dengue_42 -c "SELECT * FROM casos_dengue" 2>&1 | grep -c "permission denied")
 [ "$v" = "34" ] && ok "conta criada pelo aluno lê a VIEW (34 linhas)" || falha "conta nova não leu a VIEW (veio '$v')"
 [ "$neg" = "1" ] && ok "conta nova é BARRADA na tabela casos_dengue" || falha "conta nova não foi barrada na tabela"
 
 # 4. Indicador 6: o aluno faz backup do próprio banco e restaura num banco novo
-docker exec -e PGPASSWORD=dengue32 dengue sh -c '
-  pg_dump -h localhost -U aluno32 -d dengue_32 -Fc -f /tmp/smoke.dump &&
-  dropdb   -h localhost -U aluno32 --if-exists smoke_restaurado &&
-  createdb -h localhost -U aluno32 smoke_restaurado &&
-  pg_restore -h localhost -U aluno32 -d smoke_restaurado /tmp/smoke.dump' >/dev/null 2>&1
-r=$(sql 32 smoke_restaurado -c "SELECT count(*) FROM casos_dengue" 2>/dev/null)
-[ "$r" = "$LINHAS" ] && ok "backup e restore pelo próprio aluno: $LINHAS linhas de volta" || falha "restore do aluno 32 veio com '$r' linhas"
+docker exec -e PGPASSWORD=dengue42 dengue sh -c '
+  pg_dump -h localhost -U aluno42 -d dengue_42 -Fc -f /tmp/smoke.dump &&
+  dropdb   -h localhost -U aluno42 --if-exists smoke_restaurado &&
+  createdb -h localhost -U aluno42 smoke_restaurado &&
+  pg_restore -h localhost -U aluno42 -d smoke_restaurado /tmp/smoke.dump' >/dev/null 2>&1
+r=$(sql 42 smoke_restaurado -c "SELECT count(*) FROM casos_dengue" 2>/dev/null)
+[ "$r" = "$LINHAS" ] && ok "backup e restore pelo próprio aluno: $LINHAS linhas de volta" || falha "restore do aluno 42 veio com '$r' linhas"
 
 # limpeza: nada de smoke sobra para a aula
-docker exec -e PGPASSWORD=dengue32 dengue dropdb -h localhost -U aluno32 --if-exists smoke_restaurado >/dev/null 2>&1
+docker exec -e PGPASSWORD=dengue42 dengue dropdb -h localhost -U aluno42 --if-exists smoke_restaurado >/dev/null 2>&1
 docker exec dengue rm -f /tmp/smoke.dump
-sql 32 dengue_32 -q -c "REVOKE ALL ON smoke_resumo FROM smoke_32; DROP VIEW smoke_resumo; DROP ROLE smoke_32;" >/dev/null 2>&1
+sql 42 dengue_42 -q -c "REVOKE ALL ON smoke_resumo FROM smoke_42; DROP VIEW smoke_resumo; DROP ROLE smoke_42;" >/dev/null 2>&1
 sobra=$(adm -c "SELECT count(*) FROM pg_roles WHERE rolname LIKE 'smoke%'")
-[ "$sobra" = "0" ] && ok "teste limpo, banco do aluno 32 como novo" || falha "sobrou conta smoke no servidor"
+[ "$sobra" = "0" ] && ok "teste limpo, banco do aluno 42 como novo" || falha "sobrou conta smoke no servidor"
 
 echo "-----------------------------------------------------------------"
 if [ "$falhas" = "0" ]; then

@@ -41,6 +41,16 @@ CREATE ROLE aluno29 LOGIN PASSWORD 'dengue29' CREATEROLE CREATEDB;
 CREATE ROLE aluno30 LOGIN PASSWORD 'dengue30' CREATEROLE CREATEDB;
 CREATE ROLE aluno31 LOGIN PASSWORD 'dengue31' CREATEROLE CREATEDB;
 CREATE ROLE aluno32 LOGIN PASSWORD 'dengue32' CREATEROLE CREATEDB;
+CREATE ROLE aluno33 LOGIN PASSWORD 'dengue33' CREATEROLE CREATEDB;
+CREATE ROLE aluno34 LOGIN PASSWORD 'dengue34' CREATEROLE CREATEDB;
+CREATE ROLE aluno35 LOGIN PASSWORD 'dengue35' CREATEROLE CREATEDB;
+CREATE ROLE aluno36 LOGIN PASSWORD 'dengue36' CREATEROLE CREATEDB;
+CREATE ROLE aluno37 LOGIN PASSWORD 'dengue37' CREATEROLE CREATEDB;
+CREATE ROLE aluno38 LOGIN PASSWORD 'dengue38' CREATEROLE CREATEDB;
+CREATE ROLE aluno39 LOGIN PASSWORD 'dengue39' CREATEROLE CREATEDB;
+CREATE ROLE aluno40 LOGIN PASSWORD 'dengue40' CREATEROLE CREATEDB;
+CREATE ROLE aluno41 LOGIN PASSWORD 'dengue41' CREATEROLE CREATEDB;
+CREATE ROLE aluno42 LOGIN PASSWORD 'dengue42' CREATEROLE CREATEDB;
 
 -- ---------- 2. Banco modelo ----------
 CREATE DATABASE dengue_modelo;
@@ -528,6 +538,16 @@ CREATE DATABASE dengue_29 TEMPLATE dengue_modelo OWNER aluno29;
 CREATE DATABASE dengue_30 TEMPLATE dengue_modelo OWNER aluno30;
 CREATE DATABASE dengue_31 TEMPLATE dengue_modelo OWNER aluno31;
 CREATE DATABASE dengue_32 TEMPLATE dengue_modelo OWNER aluno32;
+CREATE DATABASE dengue_33 TEMPLATE dengue_modelo OWNER aluno33;
+CREATE DATABASE dengue_34 TEMPLATE dengue_modelo OWNER aluno34;
+CREATE DATABASE dengue_35 TEMPLATE dengue_modelo OWNER aluno35;
+CREATE DATABASE dengue_36 TEMPLATE dengue_modelo OWNER aluno36;
+CREATE DATABASE dengue_37 TEMPLATE dengue_modelo OWNER aluno37;
+CREATE DATABASE dengue_38 TEMPLATE dengue_modelo OWNER aluno38;
+CREATE DATABASE dengue_39 TEMPLATE dengue_modelo OWNER aluno39;
+CREATE DATABASE dengue_40 TEMPLATE dengue_modelo OWNER aluno40;
+CREATE DATABASE dengue_41 TEMPLATE dengue_modelo OWNER aluno41;
+CREATE DATABASE dengue_42 TEMPLATE dengue_modelo OWNER aluno42;
 
 -- ---------- 4. Cada aluno vira dono das tabelas do próprio banco ----------
 -- Sem isso as tabelas continuam do superusuário e o aluno não consegue dar GRANT.
@@ -596,6 +616,26 @@ ALTER TABLE municipios OWNER TO aluno30; ALTER TABLE casos_dengue OWNER TO aluno
 ALTER TABLE municipios OWNER TO aluno31; ALTER TABLE casos_dengue OWNER TO aluno31;
 \connect dengue_32
 ALTER TABLE municipios OWNER TO aluno32; ALTER TABLE casos_dengue OWNER TO aluno32;
+\connect dengue_33
+ALTER TABLE municipios OWNER TO aluno33; ALTER TABLE casos_dengue OWNER TO aluno33;
+\connect dengue_34
+ALTER TABLE municipios OWNER TO aluno34; ALTER TABLE casos_dengue OWNER TO aluno34;
+\connect dengue_35
+ALTER TABLE municipios OWNER TO aluno35; ALTER TABLE casos_dengue OWNER TO aluno35;
+\connect dengue_36
+ALTER TABLE municipios OWNER TO aluno36; ALTER TABLE casos_dengue OWNER TO aluno36;
+\connect dengue_37
+ALTER TABLE municipios OWNER TO aluno37; ALTER TABLE casos_dengue OWNER TO aluno37;
+\connect dengue_38
+ALTER TABLE municipios OWNER TO aluno38; ALTER TABLE casos_dengue OWNER TO aluno38;
+\connect dengue_39
+ALTER TABLE municipios OWNER TO aluno39; ALTER TABLE casos_dengue OWNER TO aluno39;
+\connect dengue_40
+ALTER TABLE municipios OWNER TO aluno40; ALTER TABLE casos_dengue OWNER TO aluno40;
+\connect dengue_41
+ALTER TABLE municipios OWNER TO aluno41; ALTER TABLE casos_dengue OWNER TO aluno41;
+\connect dengue_42
+ALTER TABLE municipios OWNER TO aluno42; ALTER TABLE casos_dengue OWNER TO aluno42;
 
 \connect postgres
-\echo '--- carga concluida: 32 alunos, 32 bancos dengue_NN ---'
+\echo '--- carga concluida: 42 alunos, 42 bancos dengue_NN ---'

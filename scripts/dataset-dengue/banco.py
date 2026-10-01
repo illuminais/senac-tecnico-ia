@@ -5,8 +5,8 @@ banco.py: gera o banco de dengue do épico 2 (Banco de Dados, A59 a A63).
 Lê dengue_pr_limpo.xlsx (congelado com os números baixados em 09/09/2026; este
 script NÃO acessa a rede) e escreve, em scripts/dataset-dengue/servidor/:
 
-  initdb/01-dengue.sql   carga do Postgres: 32 contas de aluno, 1 banco modelo
-                         com as duas tabelas, e 32 bancos dengue_NN copiados
+  initdb/01-dengue.sql   carga do Postgres: 42 contas de aluno, 1 banco modelo
+                         com as duas tabelas, e 42 bancos dengue_NN copiados
                          dele, cada um com o aluno como dono
   esperado.env           totais de conferência, lidos pelo verificar.sh
 
@@ -24,7 +24,8 @@ Duas tabelas:
                 macrorregional junto, igual à planilha, para a A59 fazer WHERE
                 e GROUP BY sem precisar de JOIN.
   municipios    17 linhas. A população mora só aqui: casos por 100 mil
-                habitantes exige JOIN, e esse é o gancho da A60.
+                habitantes exige juntar as duas tabelas (na A61, duas
+                consultas e a calculadora; o JOIN fica como demonstração).
 
 Uso:  venv/bin/python scripts/dataset-dengue/banco.py
 Depois de gerar de novo, o servidor só recarrega com o volume vazio:
@@ -42,7 +43,9 @@ SERVIDOR = Path(__file__).resolve().parent / "servidor"
 SAIDA_SQL = SERVIDOR / "initdb/01-dengue.sql"
 SAIDA_ENV = SERVIDOR / "esperado.env"
 
-ALUNOS = 32  # 30 na chamada + folga. NN = número da chamada
+# NN = número da chamada. A chamada vai até 40, com buracos de desistentes (30/09);
+# 41 e 42 são folga, e o checar-sql.mjs e o verificar.sh usam a 42.
+ALUNOS = 42
 REGIOES = ("Leste", "Noroeste", "Norte", "Oeste")
 ANOS = (2024, 2025)
 

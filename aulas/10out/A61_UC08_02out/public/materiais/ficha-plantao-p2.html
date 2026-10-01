@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A61: ficha do plantão, página 2 (frente e verso)</title>
+<!--
+  Uma folha A4 por aluno presente, impressa frente e verso. Volta junto com a página 1 (recolhida na A60).
+  Os campos seguem os slides da A61: três perguntas de memória (slide 5), aquecimento de Maringá
+  (slides 7 a 15x: previsão, passos 1 a 4, as duas conferências, a resposta para a secretária),
+  e no verso o robô (slides 35 a 40: as previsões dos passos 3, 4 e 7 e a tabela "pode / não pode").
+  Números de conferência (professor): 5 meses e 15.253 casos acima de 1.000 em 2025; 7 meses e 3.601 até 1.000;
+  18.854 na T2; 2024: 6 meses e 36.146 casos. VIEW painel_totais: 34 linhas.
+-->
+<style>
+@page { size: A4; margin: 9mm 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; font-size: 9.5pt; }
+code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 9pt; }
+.pagina { width: 190mm; min-height: 277mm; display: flex; flex-direction: column; gap: 3mm;
+          page-break-after: always; break-after: page; }
+.pagina:last-child { page-break-after: auto; break-after: auto; }
+.topo { display: flex; justify-content: space-between; align-items: flex-end;
+        border-bottom: 2px solid #111; padding-bottom: 2mm; }
+.topo h1 { margin: 0; font-size: 15pt; }
+.topo .marca { display: flex; align-items: flex-end; gap: 3mm; flex: none; }
+.topo .marca h1 { white-space: nowrap; }
+.topo .logo { height: 6mm; filter: brightness(0); }
+.topo p { margin: 0; font-size: 8.5pt; color: #444; text-align: right; }
+.id { display: grid; grid-template-columns: 1fr 45mm 45mm; gap: 4mm; }
+.campo { border-bottom: 1px solid #111; padding-top: 5mm; font-size: 8pt; color: #444; }
+.caixa { border: 1.2px solid #111; border-radius: 2mm; padding: 2mm 3mm; }
+.caixa h2 { margin: 0 0 1.5mm; font-size: 10.5pt; }
+.caixa h2 span { font-weight: 400; color: #444; font-size: 8.5pt; }
+.linha { display: flex; gap: 3mm; align-items: flex-end; margin: 1.2mm 0; }
+.linha b { white-space: nowrap; font-size: 9pt; }
+.traco { flex: 1; border-bottom: 1px solid #777; height: 5mm; }
+.curto { flex: 0 0 22mm; }
+.pautas { margin: 1mm 0 1.5mm; }
+.pautas div { border-bottom: 1px solid #bbb; height: 6.5mm; }
+.marcas { font-size: 9pt; white-space: nowrap; }
+.nota { font-size: 8pt; color: #444; margin: 0; }
+table.robo { width: 100%; border-collapse: collapse; margin-top: 1mm; font-size: 9pt; }
+table.robo th, table.robo td { border: 1px solid #777; padding: 1.5mm 2mm; text-align: left; vertical-align: top; }
+table.robo th { background: #eee; font-size: 8.5pt; }
+table.robo td { height: 17mm; }
+table.robo td:first-child { width: 42mm; }
+table.robo td:nth-child(2) { width: 18mm; }
+@media screen { body { background: #ddd; } .pagina { background: #fff; margin: 8mm auto; padding: 9mm 10mm; width: 210mm; } }
+</style>
+</head>
+<body>
+
+<!-- ====================== FRENTE ====================== -->
+<div class="pagina">
+  <div class="topo">
+    <div class="marca"><img class="logo" src="../assets/senac-logo.png" alt="Senac"><h1>Plantão da Vigilância · ficha do analista</h1></div>
+    <p>Página 2 · 02/10/2026 · Banco de Dados<br>A previsão vem antes do computador. Previsão errada não se apaga.</p>
+  </div>
+
+  <div class="id">
+    <div class="campo">Nome</div>
+    <div class="campo">Número da chamada (NN)</div>
+    <div class="campo">Meu banco: <code>dengue_</code></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Três perguntas de memória <span>· sem olhar os slides de 01/10</span></h2>
+    <b>1. O que o <code>WHERE</code> faz com as linhas da tabela?</b>
+    <div class="pautas"><div></div></div>
+    <b>2. O que acontece com as 408 linhas da <code>casos_dengue</code> num <code>GROUP BY macrorregional</code>?</b>
+    <div class="pautas"><div></div></div>
+    <div class="linha"><b>3. Em que ordem o banco executa <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code>, <code>ORDER BY</code>?</b></div>
+    <div class="pautas"><div></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Aquecimento · A dengue em Maringá mudou de 2024 para 2025? <span>· a resposta só vale com números do banco</span></h2>
+    <div class="linha"><b>Minha previsão · meses acima de 1.000 casos em 2025:</b><div class="traco curto"></div><b>em 2024:</b><div class="traco curto"></div></div>
+    <b>O que eu acho que mudou, antes de consultar o banco:</b>
+    <div class="pautas"><div></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Passo 1 · Os meses de 2025 acima de 1.000 casos</h2>
+    <div class="linha"><b>Quantas linhas voltaram:</b><div class="traco curto"></div><b>Quais meses:</b><div class="traco"></div></div>
+    <div class="linha"><b>Bateu com a minha previsão?</b><span class="marcas">☐ sim ☐ não</span></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Passo 2 · Qual consulta dá 5, e qual dá 15.253?</h2>
+    <div class="linha"><b>Minha previsão: dá 5 a consulta</b><div class="traco curto"></div><b>e dá 15.253 a consulta</b><div class="traco curto"></div></div>
+    <div class="linha"><b>Rodei. O 5 conta:</b><div class="traco"></div></div>
+    <div class="linha"><b>O 15.253 soma:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>Passo 3 · A outra parte, com <code>&lt;=</code> <span>· meses de 2025 com até 1.000 casos</span></h2>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div></div>
+    <div class="linha"><b>Meses com até 1.000 casos:</b><div class="traco curto"></div><b>Casos nesses meses:</b><div class="traco curto"></div></div>
+    <div class="linha"><b>Conferência dos meses:</b><span>5 +</span><div class="traco curto"></div><span>= 12?</span><span class="marcas">☐ sim ☐ não</span></div>
+    <div class="linha"><b>Conferência dos casos:</b><span>15.253 +</span><div class="traco curto"></div><span>=</span><div class="traco curto"></div><b>Maringá na T2:</b><div class="traco curto"></div><span class="marcas">☐ bateu</span></div>
+  </div>
+</div>
+
+<!-- ====================== VERSO ====================== -->
+<div class="pagina">
+  <div class="topo">
+    <h1>Plantão da Vigilância · verso</h1>
+    <p>Página 2 · 02/10/2026</p>
+  </div>
+
+  <div class="caixa">
+    <h2>Passo 4 · Os dois anos numa consulta só</h2>
+    <div class="linha"><b>Minha previsão · quantas linhas a consulta devolve:</b><div class="traco curto"></div></div>
+    <div class="linha"><b>2024:</b><div class="traco curto"></div><span>meses acima de 1.000, com</span><div class="traco curto"></div><span>casos nesses meses</span></div>
+    <div class="linha"><b>2025:</b><div class="traco curto"></div><span>meses acima de 1.000, com</span><div class="traco curto"></div><span>casos nesses meses</span></div>
+    <b>Resposta para a secretária, em uma frase, com os números (o que mudou, e o que ficou parecido):</b>
+    <div class="pautas"><div></div><div></div><div></div></div>
+    <div class="linha"><b>Comparando com a minha frase do começo:</b><span class="marcas">☐ bateu ☐ não bateu</span><b>O que eu não tinha considerado:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>O robô · previsões <span>· escreva antes de rodar</span></h2>
+    <div class="linha"><b>Passo 3 · O robô consegue ler a tabela <code>casos_dengue</code>?</b><span class="marcas">☐ sim ☐ não</span><b>Por quê:</b><div class="traco"></div></div>
+    <div class="linha"><b>A mensagem que o banco devolveu:</b><div class="traco"></div></div>
+    <div class="linha"><b>Passo 4 · Quantas linhas a VIEW <code>painel_totais</code> vai ter?</b><div class="traco curto"></div><b>O banco:</b><div class="traco curto"></div></div>
+    <div class="linha"><b>Passo 7 · Depois do <code>REVOKE</code>, o robô lê o painel?</b><span class="marcas">☐ sim ☐ não</span><b>O banco:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2>O robô · o que ele pode e não pode <span>· com o que o banco respondeu e o porquê</span></h2>
+    <table class="robo">
+      <tr><th>Ação</th><th>Pode?</th><th>O que o banco respondeu</th><th>Por quê (o trabalho do robô e o menor privilégio)</th></tr>
+      <tr><td>Ler o painel (<code>painel_totais</code>)</td><td>☐ sim<br>☐ não</td><td></td><td></td></tr>
+      <tr><td>Ler a tabela <code>casos_dengue</code></td><td>☐ sim<br>☐ não</td><td></td><td></td></tr>
+      <tr><td>Apagar linhas</td><td>☐ sim<br>☐ não</td><td></td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

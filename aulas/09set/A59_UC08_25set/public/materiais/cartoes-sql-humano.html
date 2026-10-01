@@ -5,26 +5,30 @@
 <title>A59: cartões do SQL humano (34)</title>
 <!-- Gerado por scripts/dataset-dengue/cartoes.py a partir do banco. Não editar à mão. -->
 <style>
-@page { size: A4; margin: 8mm; }
+@page { size: A4 portrait; margin: 8mm; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; }
-.folha { width: 194mm; height: 281mm; display: grid; grid-template-columns: 1fr 1fr;
-         grid-template-rows: 1fr 1fr; gap: 0; page-break-after: always; break-after: page; }
+/* minmax(0, 1fr) + overflow: hidden: nada estica a folha, senão o navegador encolhe a página inteira.
+   280mm e não 281mm (A4 menos as margens) para o arredondamento não abrir uma página em branco. */
+.folha { width: 194mm; height: 280mm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+         grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 0; overflow: hidden;
+         page-break-after: always; break-after: page; }
 .folha:last-child { page-break-after: auto; break-after: auto; }
-.cartao { border: 1px dashed #888; padding: 6mm 6mm 5mm; display: flex; flex-direction: column; }
+.cartao { border: 1px dashed #888; padding: 6mm 5mm 5mm; display: flex; flex-direction: column;
+          min-width: 0; overflow: hidden; }
 header { display: flex; justify-content: space-between; font-size: 8pt; color: #555;
          border-bottom: 1px solid #ccc; padding-bottom: 1.5mm; margin-bottom: 3mm; }
 code, table { font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .rotulo { margin: 0; font-size: 8pt; color: #555; font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .municipio { margin: 0 0 3mm; font-size: 24pt; font-weight: 800; line-height: 1.1; }
-.campos { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 3mm; margin-bottom: 3mm; }
+.campos { display: grid; grid-template-columns: repeat(3, max-content); gap: 3mm 7mm; margin-bottom: 3mm; }
 .grande { margin: 0; font-size: 17pt; font-weight: 700; }
 .grande small { font-size: 10pt; font-weight: 400; }
 .caixa { border: 2px solid #111; border-radius: 2mm; padding: 0.5mm 2mm; display: inline-block; }
 .casos { margin: 0; font-size: 34pt; font-weight: 800; font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .vazio { flex: 1; min-height: 10mm; }
 table { border-collapse: collapse; width: 100%; font-size: 6.5pt; margin-top: 1mm; }
-th, td { border: 1px solid #999; padding: 0.8mm 1mm; text-align: left; }
+th, td { border: 1px solid #999; padding: 0.8mm 0.6mm; text-align: left; vertical-align: top; }
 th { background: #eee; font-weight: 600; }
 @media screen { body { background: #ddd; } .folha { background: #fff; margin: 8mm auto; } }
 </style>
@@ -44,7 +48,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">3851</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4101408</td><td>Apucarana</td><td>Norte</td><td>2025</td><td>3</td><td>2025-03-01</td><td>3851</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4101408</td><td>Apucarana</td><td>Norte</td><td>2025</td><td>3</td><td>2025-03-01</td><td>3851</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 2 de 34</span></header>
@@ -59,7 +63,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">2552</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4101408</td><td>Apucarana</td><td>Norte</td><td>2025</td><td>4</td><td>2025-04-01</td><td>2552</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4101408</td><td>Apucarana</td><td>Norte</td><td>2025</td><td>4</td><td>2025-04-01</td><td>2552</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 3 de 34</span></header>
@@ -74,7 +78,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">63</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4104204</td><td>Campo Mourão</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>63</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4104204</td><td>Campo Mourão</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>63</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 4 de 34</span></header>
@@ -89,7 +93,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">24</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4104204</td><td>Campo Mourão</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>24</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4104204</td><td>Campo Mourão</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>24</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -106,7 +110,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">3421</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4104808</td><td>Cascavel</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>3421</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4104808</td><td>Cascavel</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>3421</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 6 de 34</span></header>
@@ -121,7 +125,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">2011</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4104808</td><td>Cascavel</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>2011</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4104808</td><td>Cascavel</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>2011</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 7 de 34</span></header>
@@ -136,7 +140,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">2070</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4106902</td><td>Curitiba</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>2070</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4106902</td><td>Curitiba</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>2070</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 8 de 34</span></header>
@@ -151,7 +155,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1239</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4106902</td><td>Curitiba</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1239</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4106902</td><td>Curitiba</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1239</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -168,7 +172,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1278</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4108304</td><td>Foz do Iguaçu</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1278</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4108304</td><td>Foz do Iguaçu</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1278</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 10 de 34</span></header>
@@ -183,7 +187,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1350</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4108304</td><td>Foz do Iguaçu</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1350</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4108304</td><td>Foz do Iguaçu</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1350</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 11 de 34</span></header>
@@ -198,7 +202,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">772</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4108403</td><td>Francisco Beltrão</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>772</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4108403</td><td>Francisco Beltrão</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>772</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 12 de 34</span></header>
@@ -213,7 +217,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">871</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4108403</td><td>Francisco Beltrão</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>871</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4108403</td><td>Francisco Beltrão</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>871</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -230,7 +234,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">312</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4109401</td><td>Guarapuava</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>312</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4109401</td><td>Guarapuava</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>312</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 14 de 34</span></header>
@@ -245,7 +249,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">176</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4109401</td><td>Guarapuava</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>176</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4109401</td><td>Guarapuava</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>176</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 15 de 34</span></header>
@@ -260,7 +264,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">476</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4112801</td><td>Joaquim Távora</td><td>Norte</td><td>2025</td><td>3</td><td>2025-03-01</td><td>476</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4112801</td><td>Joaquim Távora</td><td>Norte</td><td>2025</td><td>3</td><td>2025-03-01</td><td>476</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 16 de 34</span></header>
@@ -275,7 +279,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">270</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4112801</td><td>Joaquim Távora</td><td>Norte</td><td>2025</td><td>4</td><td>2025-04-01</td><td>270</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4112801</td><td>Joaquim Távora</td><td>Norte</td><td>2025</td><td>4</td><td>2025-04-01</td><td>270</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -292,7 +296,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">6614</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4113700</td><td>Londrina</td><td>Norte</td><td>2025</td><td>3</td><td>2025-03-01</td><td>6614</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4113700</td><td>Londrina</td><td>Norte</td><td>2025</td><td>3</td><td>2025-03-01</td><td>6614</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 18 de 34</span></header>
@@ -307,7 +311,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">5482</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4113700</td><td>Londrina</td><td>Norte</td><td>2025</td><td>4</td><td>2025-04-01</td><td>5482</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4113700</td><td>Londrina</td><td>Norte</td><td>2025</td><td>4</td><td>2025-04-01</td><td>5482</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 19 de 34</span></header>
@@ -322,7 +326,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">5090</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4115200</td><td>Maringá</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>5090</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4115200</td><td>Maringá</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>5090</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 20 de 34</span></header>
@@ -337,7 +341,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">4179</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4115200</td><td>Maringá</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>4179</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4115200</td><td>Maringá</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>4179</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -354,7 +358,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">321</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4118204</td><td>Paranaguá</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>321</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4118204</td><td>Paranaguá</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>321</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 22 de 34</span></header>
@@ -369,7 +373,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">187</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4118204</td><td>Paranaguá</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>187</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4118204</td><td>Paranaguá</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>187</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 23 de 34</span></header>
@@ -384,7 +388,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">881</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4118402</td><td>Paranavaí</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>881</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4118402</td><td>Paranavaí</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>881</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 24 de 34</span></header>
@@ -399,7 +403,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">550</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4118402</td><td>Paranavaí</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>550</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4118402</td><td>Paranavaí</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>550</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -416,7 +420,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1004</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4118501</td><td>Pato Branco</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1004</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4118501</td><td>Pato Branco</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1004</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 26 de 34</span></header>
@@ -431,7 +435,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">730</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4118501</td><td>Pato Branco</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>730</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4118501</td><td>Pato Branco</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>730</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 27 de 34</span></header>
@@ -446,7 +450,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1153</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4119905</td><td>Ponta Grossa</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1153</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4119905</td><td>Ponta Grossa</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1153</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 28 de 34</span></header>
@@ -461,7 +465,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1146</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4119905</td><td>Ponta Grossa</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1146</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4119905</td><td>Ponta Grossa</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1146</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -478,7 +482,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">215</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4125506</td><td>São José dos Pinhais</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>215</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4125506</td><td>São José dos Pinhais</td><td>Leste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>215</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 30 de 34</span></header>
@@ -493,7 +497,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">186</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4125506</td><td>São José dos Pinhais</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>186</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4125506</td><td>São José dos Pinhais</td><td>Leste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>186</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 31 de 34</span></header>
@@ -508,7 +512,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1844</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4127700</td><td>Toledo</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1844</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4127700</td><td>Toledo</td><td>Oeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>1844</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 32 de 34</span></header>
@@ -523,7 +527,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">1436</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4127700</td><td>Toledo</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1436</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4127700</td><td>Toledo</td><td>Oeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>1436</td></tr></table>
   </section>
 </div>
 <div class="folha">
@@ -540,7 +544,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">519</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4128104</td><td>Umuarama</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>519</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4128104</td><td>Umuarama</td><td>Noroeste</td><td>2025</td><td>3</td><td>2025-03-01</td><td>519</td></tr></table>
   </section>
   <section class="cartao">
     <header><span>SQL humano · uma linha da tabela <code>casos_dengue</code></span><span>cartão 34 de 34</span></header>
@@ -555,7 +559,7 @@ th { background: #eee; font-weight: 600; }
     <p class="casos">443</p>
     <div class="vazio"></div>
     <p class="rotulo">a linha inteira, como está no banco</p>
-    <table><tr><th>codigo_ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_referencia</th><th>casos</th></tr><tr><td>4128104</td><td>Umuarama</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>443</td></tr></table>
+    <table><tr><th>codigo_<wbr>ibge</th><th>municipio</th><th>macrorregional</th><th>ano</th><th>mes</th><th>data_<wbr>referencia</th><th>casos</th></tr><tr><td>4128104</td><td>Umuarama</td><td>Noroeste</td><td>2025</td><td>4</td><td>2025-04-01</td><td>443</td></tr></table>
   </section>
 </div>
 </body>

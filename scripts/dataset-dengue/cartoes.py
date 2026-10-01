@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-cartoes.py: gera os 34 cartões do SQL humano da A59 (épico 2, Banco de Dados).
+cartoes.py: gera os 34 cartões do SQL humano da A60 (épico 2, Banco de Dados).
+O SQL humano era da A59, mas a A59 (25/09) só fez o bloco 1 e ele passou para a A60.
 
 Cada cartão é UMA LINHA REAL da tabela casos_dengue: os 17 municípios em março e
 abril de 2025. Os números saem do banco de pé (container `dengue`), não da
 planilha, para o cartão bater com o que o aluno vê no DBeaver depois.
 
-Saída: aulas/09set/A59_UC08_25set/public/materiais/cartoes-sql-humano.html
+Saída: aulas/10out/A60_UC08_01out/public/materiais/cartoes-sql-humano.html
        4 cartões por folha A4, 9 folhas. Imprimir e recortar.
 
 Ordem de impressão: por município, março e depois abril. Assim os 4 alunos que
@@ -22,7 +23,7 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
-SAIDA = RAIZ / "aulas/09set/A59_UC08_25set/public/materiais/cartoes-sql-humano.html"
+SAIDA = RAIZ / "aulas/10out/A60_UC08_01out/public/materiais/cartoes-sql-humano.html"
 
 CONSULTA = """
 SELECT codigo_ibge, municipio, macrorregional, ano, mes, data_referencia, casos
@@ -37,8 +38,8 @@ MESES = {3: "março", 4: "abril"}
 def ler_linhas():
     # mesma conta de folga que o checar-sql.mjs usa: o banco dela está sempre como no primeiro dia
     r = subprocess.run(
-        ["docker", "exec", "-i", "-e", "PGPASSWORD=dengue32", "dengue", "psql", "-h", "localhost",
-         "-U", "aluno32", "-d", "dengue_32", "-X", "-q", "-tA", "-F", "|", "-c", CONSULTA],
+        ["docker", "exec", "-i", "-e", "PGPASSWORD=dengue42", "dengue", "psql", "-h", "localhost",
+         "-U", "aluno42", "-d", "dengue_42", "-X", "-q", "-tA", "-F", "|", "-c", CONSULTA],
         capture_output=True, text=True)
     if r.returncode:
         sys.exit(f"ERRO: o servidor de dengue não respondeu.\n{r.stderr}")
@@ -51,7 +52,8 @@ def ler_linhas():
 def cartao(n, l):
     e = {k: html.escape(v) for k, v in l.items()}
     mes = int(l["mes"])
-    celulas_cab = "".join(f"<th>{c}</th>" for c in COLUNAS)
+    # <wbr> depois do _ deixa data_referencia e macrorregional quebrarem sem mudar o nome da coluna
+    celulas_cab = "".join(f"<th>{c.replace('_', '_<wbr>')}</th>" for c in COLUNAS)
     celulas = "".join(f"<td>{e[c]}</td>" for c in COLUNAS)
     return f"""
   <section class="cartao">
@@ -72,26 +74,30 @@ def cartao(n, l):
 
 
 CSS = """
-@page { size: A4; margin: 8mm; }
+@page { size: A4 portrait; margin: 8mm; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; }
-.folha { width: 194mm; height: 281mm; display: grid; grid-template-columns: 1fr 1fr;
-         grid-template-rows: 1fr 1fr; gap: 0; page-break-after: always; break-after: page; }
+/* minmax(0, 1fr) + overflow: hidden: nada estica a folha, senão o navegador encolhe a página inteira.
+   280mm e não 281mm (A4 menos as margens) para o arredondamento não abrir uma página em branco. */
+.folha { width: 194mm; height: 280mm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+         grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 0; overflow: hidden;
+         page-break-after: always; break-after: page; }
 .folha:last-child { page-break-after: auto; break-after: auto; }
-.cartao { border: 1px dashed #888; padding: 6mm 6mm 5mm; display: flex; flex-direction: column; }
+.cartao { border: 1px dashed #888; padding: 6mm 5mm 5mm; display: flex; flex-direction: column;
+          min-width: 0; overflow: hidden; }
 header { display: flex; justify-content: space-between; font-size: 8pt; color: #555;
          border-bottom: 1px solid #ccc; padding-bottom: 1.5mm; margin-bottom: 3mm; }
 code, table { font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .rotulo { margin: 0; font-size: 8pt; color: #555; font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .municipio { margin: 0 0 3mm; font-size: 24pt; font-weight: 800; line-height: 1.1; }
-.campos { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 3mm; margin-bottom: 3mm; }
+.campos { display: grid; grid-template-columns: repeat(3, max-content); gap: 3mm 7mm; margin-bottom: 3mm; }
 .grande { margin: 0; font-size: 17pt; font-weight: 700; }
 .grande small { font-size: 10pt; font-weight: 400; }
 .caixa { border: 2px solid #111; border-radius: 2mm; padding: 0.5mm 2mm; display: inline-block; }
 .casos { margin: 0; font-size: 34pt; font-weight: 800; font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .vazio { flex: 1; min-height: 10mm; }
 table { border-collapse: collapse; width: 100%; font-size: 6.5pt; margin-top: 1mm; }
-th, td { border: 1px solid #999; padding: 0.8mm 1mm; text-align: left; }
+th, td { border: 1px solid #999; padding: 0.8mm 0.6mm; text-align: left; vertical-align: top; }
 th { background: #eee; font-weight: 600; }
 @media screen { body { background: #ddd; } .folha { background: #fff; margin: 8mm auto; } }
 """
@@ -107,7 +113,7 @@ def main():
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>A59: cartões do SQL humano (34)</title>
+<title>A60: cartões do SQL humano (34)</title>
 <!-- Gerado por scripts/dataset-dengue/cartoes.py a partir do banco. Não editar à mão. -->
 <style>{CSS}</style>
 </head>

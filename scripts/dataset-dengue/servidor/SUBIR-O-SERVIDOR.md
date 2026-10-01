@@ -11,7 +11,7 @@ docker compose up -d
 ./verificar.sh
 ```
 
-O `verificar.sh` roda tudo dentro do container e espera a carga terminar (na primeira subida leva até 1 minuto). Ele confere os números contra a planilha e testa, como se fosse um aluno, os três indicadores: consulta, criar conta com `GRANT` numa VIEW, e backup com restore. No fim imprime o que vai no quadro. Os testes que criam e apagam coisas usam a conta de folga `aluno32` e limpam tudo depois, então dá para rodar com a turma já conectada.
+O `verificar.sh` roda tudo dentro do container e espera a carga terminar (na primeira subida leva até 1 minuto). Ele confere os números contra a planilha e testa, como se fosse um aluno, os três indicadores: consulta, criar conta com `GRANT` numa VIEW, e backup com restore. No fim imprime o que vai no quadro. Os testes que criam e apagam coisas usam a conta de folga `aluno42` e limpam tudo depois, então dá para rodar com a turma já conectada.
 
 Para manter os dois servidores de pé ao mesmo tempo: `PGPORT=5433 docker compose up -d` e `PGPORT=5433 ./verificar.sh`. Aí a porta no quadro é 5433.
 
@@ -19,14 +19,14 @@ Para manter os dois servidores de pé ao mesmo tempo: `PGPORT=5433 docker compos
 
 - Postgres 16, `max_connections=200`
 - **Um banco por aluno, não por dupla** (decisão de 23/09). No banco compartilhado da A47, um mexia e o outro ficava travado sem saber por quê, e a aula virava sessão de depuração.
-- **32 contas**: `aluno01` a `aluno32`, senhas `dengue01` a `dengue32`. **NN é o número da chamada**: são 30 alunos, e 31 e 32 ficam de folga (o `verificar.sh` usa a 32). As contas têm `CREATEROLE` e `CREATEDB`, sem superusuário.
-- **32 bancos** `dengue_01` a `dengue_32`. Cada aluno é dono do seu. Consegue ver os nomes das tabelas dos outros, mas leva `permission denied` se tentar ler ou alterar.
+- **42 contas**: `aluno01` a `aluno42`, senhas `dengue01` a `dengue42`. **NN é o número da chamada**, que vai até 40 com buracos de desistentes (em 30/09 o `banco.py` passou de 32 para 42 contas: com 32, quem tinha número acima de 32 não entrava). **41 e 42 ficam de folga**: o `verificar.sh` e o `checar-sql.mjs` usam a 42, e os testes de sala usam a 41. As contas têm `CREATEROLE` e `CREATEDB`, sem superusuário.
+- **42 bancos** `dengue_01` a `dengue_42`. Cada aluno é dono do seu. Consegue ver os nomes das tabelas dos outros, mas leva `permission denied` se tentar ler ou alterar.
 - Duas tabelas em cada banco:
 
 | Tabela | Linhas | Colunas | Para quê |
 |---|---|---|---|
-| `casos_dengue` | 408 | `codigo_ibge`, `municipio`, `macrorregional`, `ano`, `mes`, `data_referencia`, `casos` | A59: `WHERE`, `GROUP BY` e `ORDER BY` numa tabela só, sem JOIN |
-| `municipios` | 17 | `codigo_ibge` (PK), `municipio`, `macrorregional`, `populacao` | A60: a população só existe aqui, então casos por 100 mil exige `JOIN` |
+| `casos_dengue` | 408 | `codigo_ibge`, `municipio`, `macrorregional`, `ano`, `mes`, `data_referencia`, `casos` | A60: `WHERE`, `GROUP BY` e `ORDER BY` numa tabela só, sem JOIN |
+| `municipios` | 17 | `codigo_ibge` (PK), `municipio`, `macrorregional`, `populacao` | A61: a população só existe aqui, então casos por 100 mil exige juntar as duas tabelas (duas consultas e a calculadora; o `JOIN` fica como demonstração) |
 
 A `casos_dengue` repete `municipio` e `macrorregional` de propósito, igual à planilha, para a primeira aula não depender de JOIN. Se quiser uma tabela normalizada, é só mudar o `banco.py`.
 
@@ -40,6 +40,7 @@ A `casos_dengue` repete `municipio` e `macrorregional` de propósito, igual à p
 | Conferir tudo | `./verificar.sh` |
 | **Aluno enrolado: devolver só o banco dele ao início** | `./resetar.sh 07` (vários: `./resetar.sh 07 12 15`) |
 | Desligar guardando o que os alunos fizeram | `docker compose down` |
+| **Acrescentar contas sem zerar a turma** (ex.: 33 a 42, num servidor carregado com 32) | `for n in $(seq 33 42); do docker exec dengue psql -U postgres -qc "CREATE ROLE aluno$n LOGIN PASSWORD 'dengue$n' CREATEROLE CREATEDB"; done && ./resetar.sh $(seq 33 42)`. O `resetar.sh` monta o banco de cada conta nova a partir do modelo. Depois, suba o `ALUNOS` do `banco.py` e gere de novo, para a próxima vez que zerar |
 | **Zerar a turma inteira** (apaga o trabalho de todos) | `docker compose down -v && docker compose up -d` |
 | Mudou o dado ou o esquema | `venv/bin/python scripts/dataset-dengue/banco.py` (na raiz do repo), depois zerar |
 | Abrir um psql como administrador | `docker exec -it dengue psql -U postgres` |
@@ -50,16 +51,16 @@ A `casos_dengue` repete `municipio` e `macrorregional` de propósito, igual à p
 
 O plano A é o IP da sua máquina, e o `verificar.sh` já imprime ele. O teste que decide é conectar **de outra máquina do laboratório**: `Test-NetConnection SEU_IP -Port 5432` no PowerShell. Deu timeout, é isolamento de rede: plano B com `PGBIND=127.0.0.1 docker compose up -d` + `ngrok tcp 5432`. Os detalhes e as ressalvas do ngrok estão no `SUBIR-O-SERVIDOR.md` da A47.
 
-## ⚠️ Antes da A61 (backup, Indicador 6)
+## ⚠️ Antes da A62 (backup, Indicador 6)
 
 No servidor, o ciclo `pg_dump` → banco novo → `pg_restore` feito pelo próprio aluno funciona (o `verificar.sh` testa). No **DBeaver do aluno**, o backup chama o `pg_dump` **da máquina do aluno**:
 
 - se ele for **anterior ao 16**, o backup é recusado (o `pg_dump` não faz backup de um servidor mais novo que ele);
 - se for mais novo (17 ou 18), funciona, mas o restore mostra um erro de `transaction_timeout` que assusta. Os dados voltam mesmo assim.
 
-**Conferir num PC do laboratório:** DBeaver → clique direito no banco → Tools → Backup → ver qual "Local client" ele usa.
+**Teste de 5 minutos num PC do laboratório, na A60 ou na A61:** conectar com a conta de folga `aluno41` e fazer um backup pelo DBeaver (clique direito no banco, ferramenta de backup, ver qual "Local client" ele usa). O DBeaver do laboratório foi instalado na semana de 21/09; se o backup reclamar de versão, atualizar o DBeaver ou o cliente antes da A62. O teste também dá os rótulos exatos dos menus para os slides.
 
-E o `pg_dump` de um banco **não leva as contas**. Se o aluno criou a `robo_ia`, fez o backup e restaurou em outro servidor, o `GRANT` falha com `role "robo_ia" does not exist`. Isso é conteúdo, não bug (ver `contextos/pesquisa-uc08-t3.md`).
+E o `pg_dump` de um banco **não leva as contas**. Se o aluno criou a `robo_ia`, fez o backup e restaurou em **outro** servidor, o `GRANT` falha com `role "robo_ia" does not exist`. Isso é conteúdo, não bug (ver `contextos/pesquisa-uc08-t3.md`). No **mesmo** servidor, que é o caso da A62, a conta continua existindo e o restore traz os `GRANT`s de volta: o robô não some. Por isso, na A62, o robô é o suspeito que o aluno inocenta (ele não tem permissão de `DELETE`), e o fato de o backup não levar contas fica como teoria.
 
 ## Aluno enrolado: `resetar.sh`
 

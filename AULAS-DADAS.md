@@ -547,6 +547,17 @@
 
 ---
 
+## A59 — 25/09/2026
+
+| UC | Disciplina | Conteúdo | HA |
+|---|---|---|---|
+| UC08 | Banco de Dados | Bloco 1 — Épico 2 dia 1: entrega ficha "Plantão da Vigilância" (página 1) · cenário "analista de plantão" com chamado de secretária (5 perguntas iniciais) · leitura linha-a-linha da tabela `casos_dengue` (colunas: codigo_ibge, municipio, macrorregional, ano, mes, data_referencia, casos; fonte InfoDengue) · previsão de tamanho (17 × 12 × 2 = 408 linhas) — sem SQL no computador | ~6 |
+| | **Total** | | **~6** |
+
+**Feedback:** Só o bloco 1 aconteceu. **Causa (relato do professor em 30/09):** uma atividade extraclasse teve de ser feita no começo da aula e tirou o ritmo do dia; não foi o ritmo da turma. **Também do relato de 30/09:** a turma escreveu consultas na folha do plantão, com os resultados mostrados, e a taxa de casos por 100 mil habitantes foi bastante trabalhada (por isso ela não volta com slide próprio na A61). Blocos 2 a 6 (SQL humano, DBeaver, SELECT/WHERE/AND/IN/SUM/NULL/GROUP BY/ORDER BY/LIMIT, as 5 perguntas) realocados para A60. Replanejado em 30/09, um indicador por dia: A61 com a avaliação do Indicador 5 e o ensino do 4; A62 com o 6 e a avaliação do 4 e do 6 (ver `contextos/epicos/ep02-uc08.md`).
+
+---
+
 <!-- TEMPLATE PARA NOVAS ENTRADAS — copie e preencha:
 
 ## A{NN} — {DD/MM/AAAA}

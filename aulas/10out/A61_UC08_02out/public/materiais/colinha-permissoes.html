@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A61: colinha de permissões (4 por folha)</title>
+<!--
+  Colinha "fraca": só o formato dos comandos, sem nenhum exemplo com as tabelas reais (mesmo padrão da A47).
+  Vale na A61 (o robô), na avaliação da A62 e no plantão final da A63. Uma por aluno presente: 4 por folha.
+-->
+<style>
+@page { size: A4; margin: 8mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; }
+.folha { width: 194mm; height: 281mm; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.cartao { border: 1px dashed #888; padding: 6mm; display: flex; flex-direction: column; gap: 2.4mm; }
+h1 { margin: 0; font-size: 13pt; line-height: 1.2; }
+.sub { margin: 0; font-size: 8.5pt; color: #444; }
+.item { border-top: 1px solid #ccc; padding-top: 1.8mm; display: flex; flex-direction: column; gap: 1mm; }
+.item b { font-size: 9.5pt; }
+code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 8.6pt; background: #eee; padding: 0.4mm 1mm; border-radius: 1mm; }
+.item code { font-size: 9pt; }
+.lembrete { margin: 0; font-size: 8.2pt; border: 1px solid #111; border-radius: 1.5mm; padding: 1.5mm 2mm; }
+.nome { margin-top: auto; font-size: 8pt; color: #444; border-bottom: 1px solid #111; padding-top: 3mm; }
+@media screen { body { background: #ddd; } .folha { background: #fff; margin: 8mm auto; } }
+</style>
+</head>
+<body>
+<div class="folha">
+  <section class="cartao">
+    <h1>Permissões no banco · só o formato</h1>
+    <p class="sub">Troque cada ______ pelo nome certo. Termine com <code>;</code>.</p>
+    <div class="item"><b>Criar uma conta</b><code>CREATE ROLE ______ LOGIN PASSWORD '______';</code></div>
+    <div class="item"><b>Guardar uma consulta com nome</b><code>CREATE VIEW ______ AS SELECT ...;</code></div>
+    <div class="item"><b>Dar uma permissão</b><code>GRANT ______ ON ______ TO ______;</code></div>
+    <div class="item"><b>Tirar uma permissão</b><code>REVOKE ______ ON ______ FROM ______;</code></div>
+    <p class="lembrete">Conta nova não pode nada até receber um <code>GRANT</code>. O dono da tabela pode tudo: teste sempre com a conexão da conta nova.</p>
+    <p class="nome">Nome</p>
+  </section>
+  <section class="cartao">
+    <h1>Permissões no banco · só o formato</h1>
+    <p class="sub">Troque cada ______ pelo nome certo. Termine com <code>;</code>.</p>
+    <div class="item"><b>Criar uma conta</b><code>CREATE ROLE ______ LOGIN PASSWORD '______';</code></div>
+    <div class="item"><b>Guardar uma consulta com nome</b><code>CREATE VIEW ______ AS SELECT ...;</code></div>
+    <div class="item"><b>Dar uma permissão</b><code>GRANT ______ ON ______ TO ______;</code></div>
+    <div class="item"><b>Tirar uma permissão</b><code>REVOKE ______ ON ______ FROM ______;</code></div>
+    <p class="lembrete">Conta nova não pode nada até receber um <code>GRANT</code>. O dono da tabela pode tudo: teste sempre com a conexão da conta nova.</p>
+    <p class="nome">Nome</p>
+  </section>
+  <section class="cartao">
+    <h1>Permissões no banco · só o formato</h1>
+    <p class="sub">Troque cada ______ pelo nome certo. Termine com <code>;</code>.</p>
+    <div class="item"><b>Criar uma conta</b><code>CREATE ROLE ______ LOGIN PASSWORD '______';</code></div>
+    <div class="item"><b>Guardar uma consulta com nome</b><code>CREATE VIEW ______ AS SELECT ...;</code></div>
+    <div class="item"><b>Dar uma permissão</b><code>GRANT ______ ON ______ TO ______;</code></div>
+    <div class="item"><b>Tirar uma permissão</b><code>REVOKE ______ ON ______ FROM ______;</code></div>
+    <p class="lembrete">Conta nova não pode nada até receber um <code>GRANT</code>. O dono da tabela pode tudo: teste sempre com a conexão da conta nova.</p>
+    <p class="nome">Nome</p>
+  </section>
+  <section class="cartao">
+    <h1>Permissões no banco · só o formato</h1>
+    <p class="sub">Troque cada ______ pelo nome certo. Termine com <code>;</code>.</p>
+    <div class="item"><b>Criar uma conta</b><code>CREATE ROLE ______ LOGIN PASSWORD '______';</code></div>
+    <div class="item"><b>Guardar uma consulta com nome</b><code>CREATE VIEW ______ AS SELECT ...;</code></div>
+    <div class="item"><b>Dar uma permissão</b><code>GRANT ______ ON ______ TO ______;</code></div>
+    <div class="item"><b>Tirar uma permissão</b><code>REVOKE ______ ON ______ FROM ______;</code></div>
+    <p class="lembrete">Conta nova não pode nada até receber um <code>GRANT</code>. O dono da tabela pode tudo: teste sempre com a conexão da conta nova.</p>
+    <p class="nome">Nome</p>
+  </section>
+</div>
+</body>
+</html>
