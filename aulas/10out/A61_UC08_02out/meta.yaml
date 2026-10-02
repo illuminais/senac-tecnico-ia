@@ -1,0 +1,19 @@
+# Metadados da Aula — Neural Slides
+
+aula: "61"
+slug: "a61-uc08-02out"
+title: "Plantao da Vigilancia: avaliacao das consultas e o robo, dia 3"
+author: "Leonardo Zanini"
+courseTitle: "Técnico em Inteligência Artificial"
+
+disciplines: ["UC08"]
+
+# formato ISO: YYYY-MM-DD
+date: "2026-10-02"
+
+# em-planejamento | ready | published
+status: published
+
+deployUrl: ""
+
+agentsUsed: []

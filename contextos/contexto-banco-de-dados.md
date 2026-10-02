@@ -66,7 +66,7 @@ trimestre-atual: T3
 
 ## Última Aula
 <!-- REPLACE a cada aula — não é append -->
-A41 · 10/07 · WHERE (reforço) · GROUP BY · HAVING (novo) · atividade de transcrição guiada de queries-resposta
+A59 · 25/09 · Bloco 1 (Épico 2): cenário plantão, leitura linha-a-linha tabela casos_dengue, previsão de linhas (408)
 
 ---
 
@@ -99,6 +99,7 @@ A41 · 10/07 · WHERE (reforço) · GROUP BY · HAVING (novo) · atividade de tr
 | A18 | 24/04 | 3 | - Sistema de Gerenciamento de Banco de Dados - SGBD: conceito, estruturainfraestrutura (requisitos de software e hardware). - Banco de dados: características, arquitetura (relacional e não relacional). | (enriquecido via diário OrionWeb) |
 | A21 | 08/05 | 3 | - Instruções da linguagem SQL-DDL: create, alter, drop e truncate. - Instruções da linguagem SQL-DCL: user, grant e revoke. - Instruções da linguagem SQL-DQL: select. — Observações: av06 | (enriquecido via diário OrionWeb) |
 | A36 | 25/06 | ~3 | Revisão SELECT/WHERE/ORDER BY · GROUP BY (separar em pilhas, agregar) · funções de agregação (AVG, COUNT, SUM, MAX, MIN, ROUND) · INNER JOIN (live coding, alias) · atividade em grupos (5 hipóteses da Copa) | Turma com dificuldade em escrever SQL manualmente sem modelo pronto |
+| A59 | 25/09 | ~6 | Bloco 1 (Épico 2 dia 1): cenário plantão · leitura linha-a-linha tabela casos_dengue · previsão linhas (17×12×2=408) — sem SQL computador | Ritmo muito abaixo do planejado: aula inteira em bloco 1 apenas |
 
 ---
 
@@ -113,6 +114,9 @@ A41 · 10/07 · WHERE (reforço) · GROUP BY · HAVING (novo) · atividade de tr
 | 2026-07-10 | Estratégia de cópia guiada (transcrever as queries-resposta do exercício) funcionou bem como resposta à dificuldade relatada em A36 | Manter cópia guiada como passo intermediário antes de pedir SQL do zero |
 | 2026-07-30 | Turma muito divergente em SQL — alguns lembram maioria dos conceitos, outros não lembram do básico; há gap significativo de compreensão | Necessário reforço seletivo: alguns alunos prontos para FK/subqueries, outros precisam revisão de SELECT/WHERE básico; considerar pequenos grupos para nivelamento |
 | 2026-08-11 | Pós-A44: trilhas diferenciadas não fecharam o gap — parte da turma foi longe, parte praticamente não entregou nada (bimodal). Professor decidiu **não** gastar o slot de 14/08 reensinando query: "eles já sabem queries, só preciso introduzir algo extra se for algo que eles realmente não sabem" | A47 (14/08) abre com SQL-DCL, conteúdo inédito que zera a largada de todos, com tarefa desafio (VIEW + GRANT) como teto para quem já está adiantado. Reforço de escrita de query volta no ato 2 (27/08), agora com propósito novo: a permissão define o que a query pode tocar |
+| 2026-09-25 | Ritmo muito abaixo do planejado na A59 (Épico 2 dia 1) — aula inteira (6 HA) em apenas bloco 1 de SQL; nem SQL humano nem DBeaver foram iniciados | Realocação urgente: blocos 2–6 e SQL humano → A60; JOIN, HAVING e avaliação Indicador 5 → A61; Indicador 4 + 6 → A62 |
+| 2026-09-30 | Causa da A59, relatada pelo professor: uma atividade extraclasse ocupou o começo da aula. Não foi o ritmo da turma, então a A59 não serve para calibrar o ritmo das próximas aulas | A60 mantém o desenho, com relógio e ordem de corte. Sequência replanejada, um indicador por dia: A61 = avaliação do Indicador 5 + ensino do 4 (robô de IA); A62 = ensino do 6 + avaliação do 4 e do 6 (o incidente é a prova); `HAVING` sai do épico e o `JOIN` vira demonstração. A chamada vai até 40, com buracos de desistentes: contas `aluno01` a `aluno40`, folga 41 e 42 |
+| 2026-09-30 | Relato do professor: na A59 a turma já escreveu consultas na folha, com os resultados, e a taxa de casos por 100 mil foi muito trabalhada (também na A56, em Fundamentos de Computação). Em Fundamentos, a turma respondia por opinião, sem dado ("Curitiba porque é a capital", "Pato Branco porque minha vó mora lá") | A61 não volta à taxa por 100 mil: o aquecimento aplica conceitos novos (comparar números no `WHERE`, contar × somar, conferir com outra consulta, comparar 2024 com 2025). Toda resposta à secretária, na aula e na prova, só vale com número do banco e a consulta que o gerou |
 
 ---
 

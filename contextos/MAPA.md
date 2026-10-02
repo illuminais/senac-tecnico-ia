@@ -29,6 +29,8 @@
 | `semanas/semana03.md` … | Plano operacional das semanas seguintes (gerado por @planejador-mensal) | Produzir ou revisar aulas da semana específica |
 | `semanas/semana15.md` | T3 semana 1: A54 e A55, épico UC01 dias 1 e 2 | Produzir ou revisar A54/A55 |
 | `semanas/semana16.md` | T3 semana 2: A56 e A57, épico UC01 dias 3 e 4 (avaliação e fechamento) | Produzir ou revisar A56/A57 |
+| `semanas/semana18.md` | T3: A60 e A61, épico 2 (Banco de Dados) dias 2 e 3: consultas; prova do Indicador 5 e o robô de IA (Indicador 4). A semana17 (A58, A59) não foi criada | Produzir ou revisar A60/A61 |
+| `semanas/semana19.md` | T3: A62 e A63, épico 2 fecha: backup e incidente (prova dos Indicadores 4 e 6) e plantão final | Produzir ou revisar A62/A63 |
 | `horarios/06-junho.md` | Aulas A31–A37 · 42 HA | Planejar ou revisar junho |
 | `horarios/07-julho.md` | Aulas A38–A43 · 36 HA | Planejar ou revisar julho |
 | `horarios/08-agosto.md` | Aulas A44–A51 · 48 HA | Planejar ou revisar agosto |
@@ -72,6 +74,7 @@ Ler quando: gerar slides de uma UC · atualizar pós-aula · verificar o que já
 | `aval/av06-mini-projeto.md` | AV06 — Mini-projeto final (T1) | Detalhes da av |
 | `aval/av05-t2-error-report.md` | **Av05-T2** — Error Report: decodificar traceback em inglês (13/08, UC02) | Detalhes da av |
 | `aval/av01-t3-painel-decisao.md` | **Av01-T3** — Painel de decisão: dengue no Paraná (UC01 Ind.4+5+6, instrumento único do épico 1) · 17/09 com recuperação em 18/09 | Detalhes da av |
+| `aval/av02-t3-plantao.md` | **Av02-T3** — Plantão da Vigilância (UC08 Ind.4+5+6): parte 1 na A61 (consultas), parte 2 na A62 (o incidente), plantão final na A63 · rubrica A/PA/NA e gabaritos conferidos | Produzir A61 a A63 ou conferir menções |
 | `aval/av06-t2-acesso-e-threads.md` | **Av06-T2** — Quem pode o quê: permissões de acesso (UC08) + processos/threads e pipeline de GPU (UC06) · dois atos, 14/08 e 27/08 | Detalhes da av |
 
 ---

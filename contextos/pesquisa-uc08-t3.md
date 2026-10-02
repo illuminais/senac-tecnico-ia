@@ -6,7 +6,7 @@
 
 ## Decisões que já valem para o épico
 
-- **Ambiente:** Postgres 16 em Docker na máquina do professor, com os alunos entrando pelo DBeaver via TCP. **Pronto e testado em 23/09:** `scripts/dataset-dengue/servidor/` (docker-compose, `verificar.sh`, `SUBIR-O-SERVIDOR.md`), com a carga gerada por `scripts/dataset-dengue/banco.py`. **Um banco por aluno** (32: `dengue_NN`, conta `alunoNN`/`dengueNN`, NN = número da chamada; `resetar.sh NN` refaz o banco de um aluno só) e duas tabelas: `casos_dengue` (408 linhas) e `municipios` (17 linhas, com a população). O sqliteonline sai do épico.
+- **Ambiente:** Postgres 16 em Docker na máquina do professor, com os alunos entrando pelo DBeaver via TCP. **Pronto e testado em 23/09:** `scripts/dataset-dengue/servidor/` (docker-compose, `verificar.sh`, `SUBIR-O-SERVIDOR.md`), com a carga gerada por `scripts/dataset-dengue/banco.py`. **Um banco por aluno** (42 desde 30/09: `dengue_NN`, conta `alunoNN`/`dengueNN`, NN = número da chamada, que vai até 40 com buracos; 41 e 42 são folga; `resetar.sh NN` refaz o banco de um aluno só) e duas tabelas: `casos_dengue` (408 linhas) e `municipios` (17 linhas, com a população). O sqliteonline sai do épico.
 - **Indicador 4:** revisão do zero sobre o banco de dengue (a turma está desigual), mesmo já tendo sido dado na A47 e na A50.
 - **Ponte com Python:** mínima. Exportar o CSV pelo DBeaver e abrir com `read_csv`. O épico de Python faz a própria revisão.
 - **Coluna de região no dado:** é `macrorregional` (4 valores), não `regional`. Os exemplos de erro abaixo já usam esse nome. Cuidado com o canário "Centro-Sul": ele não é macrorregional real e não pode aparecer como dado verdadeiro.

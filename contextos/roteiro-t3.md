@@ -8,6 +8,10 @@ modelo: epicos
 
 # Roteiro T3
 
+> **Ajuste de 30/09 (vale este para o épico 2):** um indicador por dia. A causa da A59 foi uma atividade extraclasse no começo da aula, não o ritmo da turma. A61 = Av02-T3 parte 1 (Indicador 5) no meio do dia + ensino do Indicador 4 (o robô de IA); A62 = ensino do Indicador 6 + Av02-T3 parte 2 (Indicadores 4 e 6) dentro do incidente; A63 = plantão final, em que quem já tem A não perde. `HAVING` sai do épico e o `JOIN` vira demonstração. Detalhe em [semana18](semanas/semana18.md), [semana19](semanas/semana19.md) e no [épico 2](epicos/ep02-uc08.md).
+>
+> **Ajuste de 29/09:** a A59 (25/09) só fechou o bloco 1. Os blocos 2 a 6 viraram a A60 (01/10), e o que era da A60 (JOIN, HAVING, avaliação do Indicador 5) passou para a A61 (02/10). A A61 separada de permissões caiu: o Indicador 4 entra na A62, dentro do incidente, como previa a ordem de corte do [épico 2](epicos/ep02-uc08.md). O fim do épico (A63, 09/10) não muda.
+>
 > **Replanejado em 22/09 (vale este):** jogos escolares derrubaram a semana de 17/09. A56 valeu meio dia (3 HA) e A57 foi **cancelada**. UC01 fecha na **A58 (24/09)** e ponto final. A partir da A59 (25/09), a ordem é **trilho de dados** (Banco de Dados → Python → Estatística → Transformação Digital), depois as UCs conceituais, e **Inglês na zona de evasão de dezembro**. Justificativa na seção "Por que esta ordem", abaixo.
 >
 > **Déficit das UCs 2 a 9: 24 HA** (168 HA faltando no OrionWeb, 144 HA de A59 a A82). Se a A82 for só Conselho de Classe, 30 HA. O saldo global do `relatorio-horas-t3` mostra −22 porque UC01 fecha com 2 HA acima da meta.
@@ -25,11 +29,11 @@ modelo: epicos
 | 03 | A56 | 17/09 | Ep1 d3/5 · **3 HA** (jogos escolares) | UC01 3 | expositivo·avaliacao | [S16](semanas/semana16.md) |
 | 04 | A57 | 18/09 | **cancelada** (jogos escolares) | — 0 | — | — |
 | 05 | A58 | 24/09 | Ep1 fecha | UC01 6 | avaliacao | [S16](semanas/semana16.md) |
-| 06 | A59 | 25/09 | Ep2 d1/5 · Indicador 5 (consultas) | UC08 6 | live-coding | — |
-| 07 | A60 | 01/10 | Ep2 d2/5 · Indicador 5 + **Av02-T3 parte 1 (Ind. 5)** | UC08 6 | live-coding | — |
-| 08 | A61 | 02/10 | Ep2 d3/5 · Indicador 4 | UC08 6 | pbl | — |
-| 09 | A62 | 08/10 | Ep2 d4/5 · Indicador 6 + **Av02-T3 parte 2 (Ind. 4 e 6)** | UC08 6 | pbl | — |
-| 10 | A63 | 09/10 | Ep2 fecha · **só recuperação e 2ª chamada** + menção | UC08 6 | recuperacao | — |
+| 06 | A59 | 25/09 | Ep2 d1/5 · Indicador 5 · **só o bloco 1** (abertura, sem PC) | UC08 6 | expositivo | — |
+| 07 | A60 | 01/10 | Ep2 d2/5 · Indicador 5 (consultas: os blocos 2 a 6 da A59) | UC08 6 | live-coding | [S18](semanas/semana18.md) |
+| 08 | A61 | 02/10 | Ep2 d3/5 · **Av02-T3 parte 1 (Ind. 5)** no meio do dia + Indicador 4 (o robô de IA) | UC08 6 | avaliacao·lab | [S18](semanas/semana18.md) |
+| 09 | A62 | 08/10 | Ep2 d4/5 · Indicador 6 (backup) + **Av02-T3 parte 2 (Ind. 4 e 6)**: o incidente é a prova | UC08 6 | pbl | [S19](semanas/semana19.md) |
+| 10 | A63 | 09/10 | Ep2 fecha · **plantão final** (prova para todos; por dentro é recuperação e 2ª chamada; quem tem A não perde) + menção | UC08 6 | avaliacao | [S19](semanas/semana19.md) |
 | 11 | A64 | 15/10 | Ep3 d1/3 | UC05 6 | live-coding | — |
 | 12 | A65 | 16/10 | Ep3 d2/3 | UC05 6 | live-coding | — |
 | 13 | A66 | 22/10 | Ep3 fecha | UC05 6 | avaliacao | — |

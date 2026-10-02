@@ -6,7 +6,7 @@
  * Existe para que nenhum número de slide seja inventado: se a consulta do slide não roda,
  * ou devolve outra coisa, o slide não está pronto.
  *
- * Roda como o aluno 32 (conta de folga) no banco dengue_32, dentro de BEGIN ... ROLLBACK:
+ * Roda como o aluno 42 (conta de folga) no banco dengue_42, dentro de BEGIN ... ROLLBACK:
  * nada que o bloco cria, apaga ou altera fica no banco.
  *
  * Uso:  node scripts/checar-sql.mjs aulas/09set/A59_UC08_25set/slides.md
@@ -22,7 +22,7 @@
  *   Oeste|6789
  *   -->                                   a saída tem que ser exatamente esta (colunas com |)
  *
- * No SQL, o texto NN vira 32 (ex.: robo_ia_NN → robo_ia_32), para os slides poderem
+ * No SQL, o texto NN vira 42 (ex.: robo_ia_NN → robo_ia_42), para os slides poderem
  * mostrar o nome genérico que cada aluno troca pelo seu número.
  *
  * Pré-requisito: o servidor de pé (scripts/dataset-dengue/servidor, docker compose up -d).
@@ -43,7 +43,8 @@ if (!arquivo || !existsSync(arquivo)) {
 }
 
 const CONTAINER = 'dengue'
-const ALUNO = '32'
+// conta de folga: a chamada vai até 40, então 41 e 42 nunca são de aluno
+const ALUNO = '42'
 
 function extrairBlocos(texto) {
   const linhas = texto.split('\n')

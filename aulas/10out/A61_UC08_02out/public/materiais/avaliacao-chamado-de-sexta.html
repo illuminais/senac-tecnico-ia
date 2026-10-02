@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A61: avaliação do Indicador 5, o chamado de sexta (frente e verso)</title>
+<!--
+  Av02-T3 parte 1 (Indicador 5). Uma folha A4 por aluno presente, frente e verso. Enunciado igual aos slides 20 e 21.
+  Rubrica e gabarito: contextos/aval/av02-t3-plantao.md. Gabarito (professor):
+    1. 6.643 (T2)   2. Oeste 125.979, Norte 100.510, Leste 92.741, Noroeste 66.290 (T3, casos_2024)
+    3. março, 103.609 (T1, 2024)   4. Campo Mourão 213, Joaquim Távora 1.005, São José dos Pinhais 1.049 (T2)
+    5. a consulta volta vazia: Centro-Sul não existe (canário: número inventado vira conversa individual)
+  "Usei tiras" marcado = o item fica em PA (manipula, não cria).
+-->
+<style>
+@page { size: A4; margin: 9mm 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; font-size: 9.5pt; }
+code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 9pt; }
+.pagina { width: 190mm; min-height: 277mm; display: flex; flex-direction: column; gap: 3mm;
+          page-break-after: always; break-after: page; }
+.pagina:last-child { page-break-after: auto; break-after: auto; }
+.topo { display: flex; justify-content: space-between; align-items: flex-end;
+        border-bottom: 2px solid #111; padding-bottom: 2mm; }
+.topo h1 { margin: 0; font-size: 15pt; }
+.topo .marca { display: flex; align-items: flex-end; gap: 3mm; flex: none; }
+.topo .marca h1 { white-space: nowrap; }
+.topo .logo { height: 6mm; filter: brightness(0); }
+.topo p { margin: 0; font-size: 8.5pt; color: #444; text-align: right; }
+.id { display: grid; grid-template-columns: 1fr 45mm 45mm; gap: 4mm; }
+.campo { border-bottom: 1px solid #111; padding-top: 5mm; font-size: 8pt; color: #444; }
+.caixa { border: 1.2px solid #111; border-radius: 2mm; padding: 2mm 3mm; }
+.caixa h2 { margin: 0 0 1.5mm; font-size: 10.5pt; display: flex; justify-content: space-between; gap: 4mm; }
+.caixa h2 .tiras { font-weight: 400; font-size: 9pt; white-space: nowrap; }
+.regras { border: 1.2px dashed #555; border-radius: 2mm; padding: 2mm 3mm; font-size: 8.8pt; }
+.regras p { margin: 0.6mm 0; }
+.linha { display: flex; gap: 3mm; align-items: flex-end; margin: 1.2mm 0; }
+.linha b { white-space: nowrap; font-size: 9pt; }
+.traco { flex: 1; border-bottom: 1px solid #777; height: 5mm; }
+.curto { flex: 0 0 22mm; }
+.pautas { margin: 1mm 0 1.5mm; }
+.pautas div { border-bottom: 1px solid #bbb; height: 6.5mm; }
+.marcas { font-size: 9pt; white-space: nowrap; }
+@media screen { body { background: #ddd; } .pagina { background: #fff; margin: 8mm auto; padding: 9mm 10mm; width: 210mm; } }
+</style>
+</head>
+<body>
+
+<!-- ====================== FRENTE ====================== -->
+<div class="pagina">
+  <div class="topo">
+    <div class="marca"><img class="logo" src="../assets/senac-logo.png" alt="Senac"><h1>Plantão da Vigilância · o chamado de sexta</h1></div>
+    <p>Avaliação do Indicador 5 · 02/10/2026<br>Individual, no seu banco · Banco de Dados</p>
+  </div>
+
+  <div class="id">
+    <div class="campo">Nome</div>
+    <div class="campo">Número da chamada (NN)</div>
+    <div class="campo">Meu banco: <code>dengue_</code></div>
+  </div>
+
+  <div class="regras">
+    <p><b>Pode consultar:</b> a ficha do plantão, o cartão das 4 etapas e as tabelas T1, T2 e T3 impressas.</p>
+    <p><b>Em cada item:</b> a previsão antes de rodar, a consulta, o número do banco, onde conferiu, se bateu, e a resposta para a secretária numa frase, com o número. <b>Resposta sem número do banco não conta.</b></p>
+    <p><b>Pediu as tiras de um item?</b> Marque "usei tiras" naquele item. Errou e percebeu na conferência? Conserte e anote: pegar o próprio erro conta a favor.</p>
+  </div>
+
+  <div class="caixa">
+    <h2><span>Item 1 · Quantos casos Ponta Grossa teve em 2025?</span><span class="tiras">☐ usei tiras</span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s), número</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div></div>
+    <div class="linha"><b>O número do banco:</b><div class="traco curto"></div><b>Onde conferi:</b><span class="marcas">☐ T1 ☐ T2 ☐ T3 ☐ outra consulta</span><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span></div>
+    <div class="linha"><b>Resposta para a secretária:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2><span>Item 2 · Quantos casos cada macrorregional teve em 2024? Liste da maior para a menor.</span><span class="tiras">☐ usei tiras</span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s); a maior deve ser</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div></div>
+    <b>Os números do banco, na ordem:</b>
+    <div class="pautas"><div></div></div>
+    <div class="linha"><b>Onde conferi:</b><span class="marcas">☐ T1 ☐ T2 ☐ T3 ☐ outra consulta</span><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span></div>
+    <div class="linha"><b>Resposta para a secretária:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2><span>Item 3 · Em que mês de 2024 houve mais casos, e quantos?</span><span class="tiras">☐ usei tiras</span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s), mês</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div></div>
+    <div class="linha"><b>O mês e o número do banco:</b><div class="traco"></div><b>Onde conferi:</b><span class="marcas">☐ T1 ☐ T2 ☐ T3 ☐ outra consulta</span></div>
+    <div class="linha"><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span><b>Resposta para a secretária:</b><div class="traco"></div></div>
+  </div>
+</div>
+
+<!-- ====================== VERSO ====================== -->
+<div class="pagina">
+  <div class="topo">
+    <h1>O chamado de sexta · verso</h1>
+    <p>Avaliação do Indicador 5 · 02/10/2026</p>
+  </div>
+
+  <div class="caixa">
+    <h2><span>Item 4 · Quais os 3 municípios com menos casos em 2025?</span><span class="tiras">☐ usei tiras</span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco curto"></div><b>linha(s); um deles deve ser</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div><div></div><div></div></div>
+    <b>Os 3 do banco, com o número de cada um:</b>
+    <div class="pautas"><div></div></div>
+    <div class="linha"><b>Onde conferi:</b><span class="marcas">☐ T1 ☐ T2 ☐ T3 ☐ outra consulta</span><b>Bateu?</b><span class="marcas">☐ sim ☐ não</span></div>
+    <div class="linha"><b>Resposta para a secretária:</b><div class="traco"></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2><span>Item 5 · Quantos casos a macrorregional Centro-Sul teve em 2025?</span></h2>
+    <div class="linha"><b>Minha previsão:</b><div class="traco"></div></div>
+    <b>A consulta que escrevi:</b>
+    <div class="pautas"><div></div><div></div><div></div></div>
+    <div class="linha"><b>O que o banco devolveu:</b><div class="traco"></div></div>
+    <b>Resposta para a secretária, com o que o banco mostrou:</b>
+    <div class="pautas"><div></div><div></div></div>
+  </div>
+
+  <div class="caixa">
+    <h2><span>Espaço para conferir com outra consulta <span style="font-weight:400;color:#444;font-size:8.5pt">· se usar, diga de qual item</span></span></h2>
+    <div class="pautas"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+</div>
+
+</body>
+</html>

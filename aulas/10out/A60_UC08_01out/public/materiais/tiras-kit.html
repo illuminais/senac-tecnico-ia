@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A60: kit de tiras de Parsons (perguntas 1 a 5)</title>
+<!--
+  Kit completo de tiras de Parsons: as 42 tiras das perguntas 1 a 5, um kit por aluno.
+  Um kit = 2 folhas A4 deitadas. Para 30 alunos: 30 cópias = 60 folhas.
+  Cada tira traz no canto "Pergunta N", e cada linha da folha só tem tiras de uma pergunta: recortando linha
+  por linha, os montes já saem separados. As perguntas 3, 4 e 5 têm uma tira que sobra (o erro típico).
+  As perguntas, por extenso, estão no slide 6 da A60 ("O chamado continua").
+  Ordem certa (gabarito do professor):
+    1: SELECT · municipio, mes, casos · FROM casos_dengue · WHERE · municipio = 'Londrina' · AND ano = 2025 · AND mes = 3 · ;
+       (as duas tiras com AND podem trocar de lugar)                                    → Londrina | 3 | 6614
+    2: SELECT · SUM(casos) · FROM casos_dengue · WHERE · municipio = 'Londrina' · AND ano = 2025 · ;      → 32804
+    3: SELECT · macrorregional, SUM(casos) AS total_2025 · FROM casos_dengue · WHERE ano = 2025 ·
+       GROUP BY macrorregional · ORDER BY total_2025 DESC · ;   sobra: AND mes = 3          → Norte 44080 ... Leste 18623
+    4: SELECT · municipio, SUM(casos) AS total_2025 · FROM casos_dengue · WHERE ano = 2025 ·
+       GROUP BY municipio · ORDER BY total_2025 · DESC · LIMIT 5 · ;   sobra: ASC           → Londrina ... Apucarana
+    5: SELECT · mes, SUM(casos) AS total · FROM casos_dengue · WHERE ano = 2025 · GROUP BY mes ·
+       ORDER BY total DESC · LIMIT 1 · ;   sobra: GROUP BY municipio                        → 3 | 29884
+-->
+<style>
+@page { size: A4 landscape; margin: 8mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; }
+.folha { width: 281mm; height: 194mm; display: flex; flex-direction: column; gap: 2.5mm;
+         page-break-after: always; break-after: page; }
+.folha:last-child { page-break-after: auto; break-after: auto; }
+.linha { display: flex; gap: 5mm; align-items: stretch; height: 19mm; }
+.tira { position: relative; display: flex; align-items: flex-end; justify-content: center;
+        min-width: 34mm; padding: 0 5mm 1.6mm; border: 1.5px dashed #444;
+        font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 700; white-space: nowrap; line-height: 1; }
+.tira i { position: absolute; top: 1mm; left: 1.5mm; font-family: "IBM Plex Sans", system-ui, sans-serif;
+          font-style: normal; font-weight: 700; font-size: 8.5pt; color: #444; }
+@media screen { body { background: #ddd; } .folha { background: #fff; margin: 8mm auto; padding: 8mm; width: 297mm; height: 210mm; } }
+</style>
+</head>
+<body>
+<div class="folha">
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>municipio = &#x27;Londrina&#x27;</span><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>AND ano = 2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>municipio, mes, casos</span><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>AND mes = 3</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>FROM casos_dengue</span><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>SELECT</span><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>WHERE</span><span class="tira" style="font-size:32pt"><i>Pergunta 1</i>;</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>municipio = &#x27;Londrina&#x27;</span><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>AND ano = 2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>FROM casos_dengue</span><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>SUM(casos)</span><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>SELECT</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>WHERE</span><span class="tira" style="font-size:32pt"><i>Pergunta 2</i>;</span></div>
+<div class="linha"><span class="tira" style="font-size:31pt"><i>Pergunta 3</i>macrorregional, SUM(casos) AS total_2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>ORDER BY total_2025 DESC</span><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>AND mes = 3</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>GROUP BY macrorregional</span><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>SELECT</span><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>;</span></div>
+</div>
+<div class="folha">
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>FROM casos_dengue</span><span class="tira" style="font-size:32pt"><i>Pergunta 3</i>WHERE ano = 2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>municipio, SUM(casos) AS total_2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>ORDER BY total_2025</span><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>FROM casos_dengue</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>GROUP BY municipio</span><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>WHERE ano = 2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>LIMIT 5</span><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>SELECT</span><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>DESC</span><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>ASC</span><span class="tira" style="font-size:32pt"><i>Pergunta 4</i>;</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>mes, SUM(casos) AS total</span><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>GROUP BY mes</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>ORDER BY total DESC</span><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>FROM casos_dengue</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>GROUP BY municipio</span><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>WHERE ano = 2025</span></div>
+<div class="linha"><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>LIMIT 1</span><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>SELECT</span><span class="tira" style="font-size:32pt"><i>Pergunta 5</i>;</span></div>
+</div>
+</body>
+</html>

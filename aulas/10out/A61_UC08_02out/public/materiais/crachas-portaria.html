@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A61: portaria, 6 crachás e 3 placas de porta</title>
+<!--
+  Dinâmica da portaria (slides 24 e 25 da A61), sem computador. Folha 1: 6 crachás (5 voluntários + 1 de reserva),
+  recortar. Folhas 2 a 4: as três placas, uma por porta, para colar na parede ou segurar.
+  O professor é o porteiro. Rodadas: 1. crachá sem carimbo é barrado em casos_dengue; 2. carimbo "pode ler o painel"
+  (GRANT); 3. com esse carimbo, barrado em casos_dengue; 4. barrado ao tentar apagar no painel; 5. carimbo riscado
+  (REVOKE), barrado no painel.
+-->
+<style>
+@page { size: A4; margin: 8mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; color: #111; }
+.folha { width: 194mm; height: 281mm; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;
+         gap: 4mm; page-break-after: always; break-after: page; }
+.cracha { border: 1.5px dashed #555; border-radius: 3mm; padding: 5mm; display: flex; flex-direction: column; gap: 3mm; }
+.tipo { margin: 0; font-size: 10pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.linha { display: flex; gap: 3mm; align-items: flex-end; }
+.linha b { white-space: nowrap; font-size: 11pt; }
+.traco { flex: 1; border-bottom: 1.2px solid #111; height: 7mm; }
+.rotulo { margin: 0; font-size: 8.5pt; color: #444; }
+.carimbos { flex: 1; border: 1.2px solid #111; border-radius: 2mm; }
+.placa { width: 194mm; height: 281mm; display: flex; flex-direction: column; justify-content: center; align-items: center;
+         border: 3px solid #111; border-radius: 6mm; page-break-after: always; break-after: page; }
+.placa:last-child { page-break-after: auto; break-after: auto; }
+.placa .porta { margin: 0; font-size: 22pt; text-transform: uppercase; letter-spacing: 0.1em; color: #444; }
+.placa h1 { margin: 6mm 0; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 54pt; }
+.placa .sub { margin: 0; font-size: 18pt; color: #333; }
+@media screen { body { background: #ddd; } .folha, .placa { background: #fff; margin: 8mm auto; } }
+</style>
+</head>
+<body>
+<div class="folha">
+  <section class="cracha">
+    <p class="tipo">Crachá · conta do banco</p>
+    <div class="linha"><b>Nome da conta:</b><div class="traco"></div></div>
+    <p class="rotulo">Carimbos: o que esta conta pode fazer, e em qual porta</p>
+    <div class="carimbos"></div>
+  </section>
+  <section class="cracha">
+    <p class="tipo">Crachá · conta do banco</p>
+    <div class="linha"><b>Nome da conta:</b><div class="traco"></div></div>
+    <p class="rotulo">Carimbos: o que esta conta pode fazer, e em qual porta</p>
+    <div class="carimbos"></div>
+  </section>
+  <section class="cracha">
+    <p class="tipo">Crachá · conta do banco</p>
+    <div class="linha"><b>Nome da conta:</b><div class="traco"></div></div>
+    <p class="rotulo">Carimbos: o que esta conta pode fazer, e em qual porta</p>
+    <div class="carimbos"></div>
+  </section>
+  <section class="cracha">
+    <p class="tipo">Crachá · conta do banco</p>
+    <div class="linha"><b>Nome da conta:</b><div class="traco"></div></div>
+    <p class="rotulo">Carimbos: o que esta conta pode fazer, e em qual porta</p>
+    <div class="carimbos"></div>
+  </section>
+  <section class="cracha">
+    <p class="tipo">Crachá · conta do banco</p>
+    <div class="linha"><b>Nome da conta:</b><div class="traco"></div></div>
+    <p class="rotulo">Carimbos: o que esta conta pode fazer, e em qual porta</p>
+    <div class="carimbos"></div>
+  </section>
+  <section class="cracha">
+    <p class="tipo">Crachá · conta do banco</p>
+    <div class="linha"><b>Nome da conta:</b><div class="traco"></div></div>
+    <p class="rotulo">Carimbos: o que esta conta pode fazer, e em qual porta</p>
+    <div class="carimbos"></div>
+  </section>
+</div>
+<div class="placa">
+  <p class="porta">porta</p>
+  <h1>casos_dengue</h1>
+  <p class="sub">tabela: as 408 linhas, mês a mês</p>
+</div>
+<div class="placa">
+  <p class="porta">porta</p>
+  <h1>municipios</h1>
+  <p class="sub">tabela: a população de cada município</p>
+</div>
+<div class="placa">
+  <p class="porta">porta</p>
+  <h1>painel</h1>
+  <p class="sub">o resumo com os totais</p>
+</div>
+</body>
+</html>
