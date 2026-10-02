@@ -67,6 +67,8 @@
 
 **Recolha os cartões.** O de Londrina em março é a conferência da pergunta 1.
 
+**Kit de tiras por aluno** (`public/materiais/tiras-kit.html`): as 42 tiras das perguntas 1 a 5, 2 folhas A4 deitadas por kit; **30 alunos = 30 cópias = 60 folhas**. Cada tira traz "Pergunta N" no canto, e cada linha da folha é de uma pergunta só: recortando linha por linha, os montes já saem separados. As perguntas por extenso estão no slide 6 (pág. 6, "O chamado continua"), que pode ficar projetado. Nas perguntas 3, 4 e 5 uma tira sobra (o erro típico), e o aluno diz por que ela não entra. Antes de montar, as 4 etapas em voz alta (que linhas entram, uma linha para cada o quê, o que calcular, que grupos ficam). Em grupo com rotação, cada grupo monta uma pergunta e passa para a próxima; você confere com o gabarito do comentário do arquivo. No laboratório, cada um digita no próprio banco o que montou e confere o número na tabela impressa.
+
 **Se estourar o minuto 60:** rodadas 6 e 7 no quadro, sem mover a turma. **Sala pequena:** cartões na mesa, grupos de 5, e cada rodada vira "separem os cartões".
 
 ---
@@ -108,7 +110,7 @@
 **Objetivo:** escrever uma consulta com `GROUP BY` planejando antes com as 4 etapas, e entender o erro que o Postgres avisa.
 
 **Como:**
-1. **Distribua o cartão das 4 etapas** (um por aluno). Ele fica na mesa o épico inteiro e vale como consulta na avaliação de sexta: no fim, recolha junto com a ficha, para não sumir. A etapa 4 é o `HAVING`, só como desafio.
+1. **Deixe um cartão das 4 etapas em cada PC do laboratório**, sem nome: ele fica no PC o épico inteiro e vale como consulta na avaliação de sexta. A etapa 4 é o `HAVING`, só como desafio.
 2. **Pág. 58:** `GROUP BY ano`: as 408 linhas viram 2 (385.520 em 2024 e 126.732 em 2025, linha `total` da T1).
 3. **Pág. 59-60:** as 4 etapas: filtrar linhas (`WHERE`), definir o grupo (`GROUP BY`), calcular o resumo (`SUM`), filtrar grupos (vazia).
 4. **Pág. 61 · Pergunta 3 (20 min):** casos de cada macrorregional em 2025 → Norte **44.080** · Oeste **38.681** · Noroeste **25.348** · Leste **18.623** (T3). **Erro provável:** deixar o `mes = 3` do SQL humano e voltarem os números dos cantos (Norte 10.941...).
@@ -126,20 +128,21 @@
 **Como:**
 1. **Pág. 66:** `ORDER BY` (o Noroeste em 2025, do maior para o menor). `DESC` é decrescente; `ASC`, crescente, é o padrão quando não se escreve nada.
 2. **Pág. 67:** `LIMIT` (os 3 meses de 2024 com mais casos: março, abril e maio, na T1).
-3. **Pág. 68 · Pergunta 4 (15 min):** os 5 municípios com mais casos em 2025 → Londrina 32.804, Maringá 18.854, Cascavel 12.372, Foz do Iguaçu 10.728, Apucarana 10.271 (T2, linhas 1 a 5). **Erros prováveis:** sem `DESC` voltam os 5 menores (começando por Campo Mourão, 213); sem `ano = 2025`, Curitiba aparece em 3º, porque somou os dois anos.
-4. **Pág. 70 · Pergunta 5 (15 min):** o mês de 2025 com mais casos → **março, 29.884** (T1). **Erro provável:** sem o ano volta março também, mas com 133.493. O mês bate e o número não: só a conferência pega.
-5. **Pág. 72 · Desafio (quem terminou):** qual município perdeu mais casos de 2024 para 2025? Londrina: 79.341 → 32.804, **46.537 a menos**.
+3. **Antes das perguntas 4 e 5, peça as 4 etapas em voz alta para o colega** (os slides só pedem na pergunta 3, e a ficha não tem campo para elas). Na 4: só 2025 · uma linha por município · somar os casos · vazia. Na 5: só 2025 · uma linha por mês · somar os casos · vazia.
+4. **Pág. 68 · Pergunta 4 (15 min):** os 5 municípios com mais casos em 2025 → Londrina 32.804, Maringá 18.854, Cascavel 12.372, Foz do Iguaçu 10.728, Apucarana 10.271 (T2, linhas 1 a 5). **Erros prováveis:** sem `DESC` voltam os 5 menores (começando por Campo Mourão, 213); sem `ano = 2025`, Curitiba aparece em 3º, porque somou os dois anos.
+5. **Pág. 70 · Pergunta 5 (15 min):** o mês de 2025 com mais casos → **março, 29.884** (T1). **Erro provável:** sem o ano volta março também, mas com 133.493. O mês bate e o número não: só a conferência pega.
+6. **Pág. 72 · Desafio (quem terminou):** qual município perdeu mais casos de 2024 para 2025? Londrina: 79.341 → 32.804, **46.537 a menos**.
 
 ---
 
 ## Fechamento (285-300 min · pág. 73-77 · sem PC)
 
 1. **Pág. 73-74:** os comandos de hoje, como tabela de consulta.
-2. **Pág. 75:** cada um confere a própria ficha (nome, NN, previsões, as 5 consultas, onde conferiu). **Recolha as fichas e os cartões das 4 etapas.** Sexta eles voltam, e a ficha ganha a página 2.
+2. **Pág. 75:** cada um confere a própria ficha (nome, NN, previsões, as 5 consultas, onde conferiu). **Recolha as fichas** (os cartões das 4 etapas ficam nos PCs). Sexta elas voltam e ganham a página 2.
 3. **Pág. 76:** o próximo plantão. O chamado de sexta é "a dengue em Maringá mudou de 2024 para 2025?", com resposta só com números do banco. A **avaliação do Indicador 5 é no meio do dia de sexta**, e depois dela vem o Indicador 4 (o robô de IA).
 4. Servidor: para desligar guardando o trabalho dos alunos, `docker compose down` (**sem** o `-v`).
 
 ## Depois da aula
 
 - Anote **até onde a turma chegou** (qual pergunta, qual página). Isso decide se o aquecimento de sexta começa pelas perguntas 4 e 5, e o que a avaliação cobra.
-- Fichas e cartões das 4 etapas guardados para sexta.
+- Fichas guardadas para sexta; os cartões das 4 etapas continuam nos PCs.

@@ -405,6 +405,45 @@ card: true
 bgPreset: default
 ---
 
+<!-- SLIDE 13y: Planeje com o cartão das 4 etapas -->
+
+<!-- objetivo: aluno planeja com o cartão das 4 etapas uma consulta nova, com comparação e grupo, antes de ver a resposta -->
+
+# Planeje com o cartão das 4 etapas: os dois anos
+
+**Exercício · 5 min · no verso da ficha, antes de ver a consulta**
+
+A secretária quer, numa consulta só, quantos meses Maringá passou de 1.000 casos e quantos casos houve nesses meses, em 2024 e em 2025. Responda as 4 etapas do cartão:
+
+1. **Filtrar linhas** (`WHERE`): quais linhas entram na conta?
+2. **Definir o grupo** (`GROUP BY`): o resultado tem uma linha para cada o quê?
+3. **Calcular o resumo:** o que calcular em cada grupo?
+4. **Filtrar grupos:** fica vazia.
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
+<!-- SLIDE 13z: Planeje com o cartão (cont.) -->
+
+<!-- objetivo: aluno confere as 4 etapas planejadas e o erro de filtrar um ano só -->
+
+# Planeje com o cartão (cont.): gabarito
+
+<AdminOnly>
+
+**Gabarito:** 1. só Maringá, e só os meses com mais de 1.000 casos: `municipio = 'Maringá' AND casos > 1000`, sem filtro de ano, porque a pergunta quer os dois anos. 2. uma linha por ano: `GROUP BY ano`. 3. dois resumos: `count(*)` para os meses e `SUM(casos)` para os casos. 4. vazia. **Erro provável:** pôr `ano = 2025` no `WHERE` e perder 2024.
+
+</AdminOnly>
+
+---
+layout: default
+card: true
+bgPreset: default
+---
+
 <!-- SLIDE 14: Os dois anos numa consulta só -->
 
 <!-- objetivo: aluno junta o WHERE com comparação ao GROUP BY da A60 para comparar os dois anos numa consulta só -->

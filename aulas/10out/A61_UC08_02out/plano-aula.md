@@ -110,6 +110,8 @@ WHERE municipio = 'Maringá' AND ano = 2025 AND casos <= 1000;
 
 5 + 7 = 12 meses. 15.253 + 3.601 = 18.854, que é a linha de Maringá na T2. As duas conferências fecham.
 
+**Antes de ver a consulta, planejar com o cartão das 4 etapas (slide 13y, gabarito no 13z, campos no verso da ficha p2):** 1. só Maringá e meses acima de 1.000, sem filtro de ano · 2. uma linha por ano · 3. `count(*)` e `SUM(casos)` · 4. vazia. Erro provável: pôr `ano = 2025` e perder 2024. O cartão é o mesmo da A60: um por PC, sem nome, fica no laboratório.
+
 **Conceito 4 (juntar o de hoje com o da A60): comparar os anos numa consulta só.** O `GROUP BY ano` da A60 separa as linhas por ano; o `WHERE casos > 1000` de hoje filtra antes (o banco executa `FROM`, depois `WHERE`, depois `GROUP BY`).
 
 **Passo 4:**

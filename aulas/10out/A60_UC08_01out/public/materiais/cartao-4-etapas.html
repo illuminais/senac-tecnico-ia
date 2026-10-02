@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <title>A60: cartão das 4 etapas (4 por folha)</title>
 <!--
-  Um cartão por aluno, entregue no começo do bloco 5 (slide 42). Fica na mesa o épico inteiro.
+  Um cartão por computador do laboratório, sem nome: fica no PC o épico inteiro (A60 a A63).
   A etapa 4 (HAVING) saiu do núcleo do épico em 30/09: fica como desafio para quem quiser ir além.
   Base: exemplo resolvido com etapas nomeadas (Margulieux, Morrison e Decker, 2019), ver contextos/pesquisa-uc08-t3.md.
-  4 cartões por folha: imprimir uma folha para cada 4 alunos presentes.
+  4 cartões por folha: imprimir uma folha para cada 4 computadores do laboratório.
 -->
 <style>
 @page { size: A4; margin: 8mm; }
@@ -27,7 +27,6 @@ code { font-size: 8.5pt; background: #eee; padding: 0 1mm; border-radius: 1mm; }
 .branco { display: inline-block; width: 26mm; border-bottom: 1px solid #111; }
 .ordem { margin: 0; font-size: 8pt; border: 1px solid #111; border-radius: 1.5mm; padding: 1.5mm 2mm; }
 pre { margin: 0; font-size: 7.3pt; line-height: 1.35; background: #f3f3f3; padding: 2mm; border-radius: 1.5mm; }
-.nome { margin-top: auto; font-size: 8pt; color: #444; border-bottom: 1px solid #111; padding-top: 3mm; }
 @media screen { body { background: #ddd; } .folha { background: #fff; margin: 8mm auto; } }
 </style>
 </head>
@@ -47,7 +46,6 @@ WHERE ano = 2025 AND mes = 3                ← 1
 GROUP BY macrorregional                     ← 2
 ORDER BY total DESC;</pre>
   <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
-  <p class="nome">Nome</p>
 </section>
 <section class="cartao">
   <h1>As 4 etapas de uma consulta com grupos</h1>
@@ -62,7 +60,6 @@ WHERE ano = 2025 AND mes = 3                ← 1
 GROUP BY macrorregional                     ← 2
 ORDER BY total DESC;</pre>
   <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
-  <p class="nome">Nome</p>
 </section>
 <section class="cartao">
   <h1>As 4 etapas de uma consulta com grupos</h1>
@@ -77,7 +74,6 @@ WHERE ano = 2025 AND mes = 3                ← 1
 GROUP BY macrorregional                     ← 2
 ORDER BY total DESC;</pre>
   <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
-  <p class="nome">Nome</p>
 </section>
 <section class="cartao">
   <h1>As 4 etapas de uma consulta com grupos</h1>
@@ -92,7 +88,6 @@ WHERE ano = 2025 AND mes = 3                ← 1
 GROUP BY macrorregional                     ← 2
 ORDER BY total DESC;</pre>
   <p class="ordem"><b>Ordem em que o banco executa:</b> FROM → WHERE → GROUP BY → SELECT → ORDER BY → LIMIT</p>
-  <p class="nome">Nome</p>
 </section>
 </div>
 </body>

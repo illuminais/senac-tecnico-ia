@@ -7,7 +7,7 @@
   Uma folha A4 por aluno presente, impressa frente e verso. Volta junto com a página 1 (recolhida na A60).
   Os campos seguem os slides da A61: três perguntas de memória (slide 5), aquecimento de Maringá
   (slides 7 a 15x: previsão, passos 1 a 4, as duas conferências, a resposta para a secretária),
-  e no verso o robô (slides 35 a 40: as previsões dos passos 3, 4 e 7 e a tabela "pode / não pode").
+  e no verso as 4 etapas do cartão para os dois anos (slide 13y) e o robô (slides 35 a 40: as previsões dos passos 3, 4 e 7 e a tabela "pode / não pode").
   Números de conferência (professor): 5 meses e 15.253 casos acima de 1.000 em 2025; 7 meses e 3.601 até 1.000;
   18.854 na T2; 2024: 6 meses e 36.146 casos. VIEW painel_totais: 34 linhas.
 -->
@@ -39,6 +39,8 @@ code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 9pt; }
 .pautas div { border-bottom: 1px solid #bbb; height: 6.5mm; }
 .marcas { font-size: 9pt; white-space: nowrap; }
 .nota { font-size: 8pt; color: #444; margin: 0; }
+.etapas { margin: 0.5mm 0 1mm; }
+.etapas .linha { margin: 0.6mm 0; }
 table.robo { width: 100%; border-collapse: collapse; margin-top: 1mm; font-size: 9pt; }
 table.robo th, table.robo td { border: 1px solid #777; padding: 1.5mm 2mm; text-align: left; vertical-align: top; }
 table.robo th { background: #eee; font-size: 8.5pt; }
@@ -112,6 +114,13 @@ table.robo td:nth-child(2) { width: 18mm; }
 
   <div class="caixa">
     <h2>Passo 4 · Os dois anos numa consulta só</h2>
+    <p class="nota">As 4 etapas do cartão, <b>antes</b> de ver a consulta:</p>
+    <div class="etapas">
+      <div class="linha"><b>1. Filtrar linhas (<code>WHERE</code>):</b><div class="traco"></div></div>
+      <div class="linha"><b>2. Definir o grupo (<code>GROUP BY</code>):</b><div class="traco"></div></div>
+      <div class="linha"><b>3. Calcular o resumo:</b><div class="traco"></div></div>
+      <div class="linha"><b>4. Filtrar grupos:</b><span class="nota">fica vazia</span></div>
+    </div>
     <div class="linha"><b>Minha previsão · quantas linhas a consulta devolve:</b><div class="traco curto"></div></div>
     <div class="linha"><b>2024:</b><div class="traco curto"></div><span>meses acima de 1.000, com</span><div class="traco curto"></div><span>casos nesses meses</span></div>
     <div class="linha"><b>2025:</b><div class="traco curto"></div><span>meses acima de 1.000, com</span><div class="traco curto"></div><span>casos nesses meses</span></div>

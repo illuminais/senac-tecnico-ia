@@ -42,7 +42,7 @@ a A60 praticou. Servidor: contas `aluno01` a `aluno40` (a chamada vai até 40, c
 | min | Bloco | Método | O que o aluno faz | Slides | Ind. |
 |---|---|---|---|---|---|
 | 0-10 | abertura | sem PC | ficha p2; 3 perguntas de memória: o que o `WHERE` faz, o que o `GROUP BY` faz com 408 linhas, a ordem de execução | 1-5 | |
-| 10-70 | aquecimento | lab | "a dengue em Maringá mudou de 2024 para 2025?", resposta só com número do banco. Conceitos novos: comparar números no `WHERE` (`>`, `<=`...), `count(*)` × `SUM` (5 meses × 15.253 casos), conferir com outra consulta (5 + 7 = 12; 15.253 + 3.601 = 18.854 = T2), e os dois anos numa consulta só com `GROUP BY ano` (6 × 5 meses; 36.146 × 15.253 casos). Se a A60 não fechou, P4 e P5 aqui | 6-16y | UC08-5 |
+| 10-70 | aquecimento | lab | "a dengue em Maringá mudou de 2024 para 2025?", resposta só com número do banco. Conceitos novos: comparar números no `WHERE` (`>`, `<=`...), `count(*)` × `SUM` (5 meses × 15.253 casos), conferir com outra consulta (5 + 7 = 12; 15.253 + 3.601 = 18.854 = T2), e os dois anos numa consulta só com `GROUP BY ano` (6 × 5 meses; 36.146 × 15.253 casos), planejada antes com o cartão das 4 etapas (um por PC, sem nome). Se a A60 não fechou, P4 e P5 aqui | 6-16y | UC08-5 |
 | 70-170 | **Av02-T3 parte 1** | avaliacao | "o chamado de sexta", 5 itens: Ponta Grossa 2025; macrorregionais 2024 ordenadas; mês de 2024 com mais casos; 3 municípios com menos casos em 2025; "Centro-Sul" (não existe). Cada item termina numa resposta para a secretária, com o número | 17-22z | UC08-5 |
 | intervalo | | | | | |
 | 170-185 | portaria | dinâmica | crachás: `GRANT` carimba, `REVOKE` risca, porteiro barra quem não tem carimbo | 23-25 | UC08-4 |
